@@ -2488,7 +2488,7 @@
 
       <!-- Desktop Categories Navigation Bar (Desktop only) -->
       <nav class="header-desktop-categories" aria-label="Meal Categories">
-        <a class="header-cat-link active" data-cat="Rice">Rice</a>
+        <a class="header-cat-link" data-cat="Rice">Rice</a>
         <a class="header-cat-link" data-cat="Meals">Meals</a>
         <a class="header-cat-link" data-cat="Breakfast">Breakfast</a>
         <a class="header-cat-link" data-cat="Dals">Dals</a>
@@ -2510,13 +2510,12 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
 
-        <!-- Sign In / Sign Up Option -->
-        <button class="icon-btn auth-nav-btn" id="authOpenBtn" aria-label="Sign In or Sign Up" title="Sign In / Sign Up">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Sign In / Sign Up Option (Icon-only matching Search and Cart) -->
+        <button class="icon-btn" id="authOpenBtn" aria-label="Sign In or Sign Up" title="Sign In / Sign Up">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
             <circle cx="12" cy="7" r="4"/>
           </svg>
-          <span class="auth-btn-text">Sign In</span>
         </button>
 
         <!-- Bag / Cart Icon -->
@@ -2540,7 +2539,7 @@
     
     <div class="mobile-drawer-body">
       <div class="mobile-categories-list">
-        <button class="drawer-cat-btn active" data-cat="Rice">Rice</button>
+        <button class="drawer-cat-btn" data-cat="Rice">Rice</button>
         <button class="drawer-cat-btn" data-cat="Meals">Meals</button>
         <button class="drawer-cat-btn" data-cat="Breakfast">Breakfast</button>
         <button class="drawer-cat-btn" data-cat="Dals">Dals</button>
@@ -2664,10 +2663,7 @@
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h4>Shopify Ready Architecture</h4>
-          <p style="font-size:13px;">This prototype is built with clean component state, collection filters, and cart-drawer logic ready for seamless Shopify Online Store 2.0 Theme integration.</p>
-        </div>
+
       </div>
 
       <div class="footer-bottom">
@@ -3494,20 +3490,20 @@
         container.innerHTML = renderProductView();
       }
 
-      // Update Desktop Categories Top Bar States
+      // Update Desktop Categories Top Bar States (Only active on shop/category page, NOT on homepage)
       document.querySelectorAll('.header-cat-link').forEach(link => {
         const cat = link.dataset.cat;
-        if (State.selectedCategory === cat) {
+        if (State.view === 'shop' && State.selectedCategory === cat) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
         }
       });
 
-      // Update Mobile Drawer Categories States
+      // Update Mobile Drawer Categories States (Only active on shop/category page)
       document.querySelectorAll('.drawer-cat-btn').forEach(btn => {
         const cat = btn.dataset.cat;
-        if (State.selectedCategory === cat) {
+        if (State.view === 'shop' && State.selectedCategory === cat) {
           btn.classList.add('active');
         } else {
           btn.classList.remove('active');
