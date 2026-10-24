@@ -255,6 +255,86 @@
         calories: '420 kcal',
         protein: '11.7g',
         desc: '100% Jain verified dinner set. Light, warming, and gentle on digestion after a tiring journey.'
+      },
+      {
+        id: 'south-indian-breakfast-combo',
+        title: 'South Indian Breakfast Combo (Idli Sambar + Upma)',
+        category: 'Combos',
+        price: 299,
+        mrp: 350,
+        img: 'assets/combos/combo_idli_upma.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 4.9,
+        reviews: 168,
+        weight: '2 Packs (Makes 500g)',
+        calories: '460 kcal',
+        protein: '12.5g',
+        desc: 'Traditional morning pairing: 1x South Indian Idli Sambar (makes 250g) + 1x Homestyle Vegetable Upma (makes 250g). Just add hot water.'
+      },
+      {
+        id: 'maharashtrian-nashta-combo',
+        title: 'Maharashtrian Nashta Combo (Kanda Poha + Mumbai Misal)',
+        category: 'Combos',
+        price: 280,
+        mrp: 330,
+        img: 'assets/combos/combo_poha_misal.jpg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 4.9,
+        reviews: 192,
+        weight: '2 Packs (Makes 500g)',
+        calories: '490 kcal',
+        protein: '13.8g',
+        desc: 'Classic Mumbai breakfast duo: 1x Homestyle Kanda Poha (makes 250g) + 1x Fiery Mumbai Misal (makes 250g).'
+      },
+      {
+        id: 'fiesta-bowl-combo',
+        title: 'Fiesta Bowl Combo (Sweet Corn Soup + Mexican Rice)',
+        category: 'Combos',
+        price: 290,
+        mrp: 340,
+        img: 'assets/combos/combo_soup_mexican_rice.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 4.8,
+        reviews: 124,
+        weight: '2 Packs (Makes 580g)',
+        calories: '410 kcal',
+        protein: '9.5g',
+        desc: 'Global flavors comfort set: 1x Creamy Sweet Corn Vegetable Soup (makes 330g) + 1x Zesty Mexican Rice with corn & peppers (makes 250g).'
+      },
+      {
+        id: 'dinner-dessert-combo',
+        title: 'Dinner & Dessert Combo (Dal Khichdi + Gajar Halwa)',
+        category: 'Combos',
+        price: 320,
+        mrp: 370,
+        img: 'assets/combos/combo_khichdi_gajar_halwa.jpg',
+        jain: false,
+        spice: 'Mild',
+        rating: 5.0,
+        reviews: 210,
+        weight: '2 Packs (Makes 400g)',
+        calories: '630 kcal',
+        protein: '14.2g',
+        desc: 'Ultimate comfort meal: 1x Pure Ghee Comforting Dal Khichdi (makes 250g) + 1x Slow-Cooked Winter Gajar Ka Halwa with mawa & cashews (makes 150g).'
+      },
+      {
+        id: 'indo-chinese-feast-combo',
+        title: 'Indo-Chinese Feast Combo (Hot & Sour Soup + Manchurian Fried Rice)',
+        category: 'Combos',
+        price: 310,
+        mrp: 360,
+        img: 'assets/combos/combo_hot_sour_manchurian.jpg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 4.9,
+        reviews: 145,
+        weight: '2 Packs (Makes 580g)',
+        calories: '450 kcal',
+        protein: '10.5g',
+        desc: 'Tangy and savory desi-Chinese combo: 1x Vegetable Hot & Sour Soup (makes 330g) + 1x Wok Fried Rice with Manchurian Gravy (makes 250g).'
       }
     ];
 
@@ -542,7 +622,7 @@
 
         <!-- Money-Saving Combos -->
         ${combos.length ? `
-          <section style="margin-top:38px;">
+          <section id="combos" style="margin-top:38px;">
             <div class="section-header">
               <h2 class="section-title">Value Combos <span class="title-badge">Save up to 15%</span></h2>
               <a class="view-all-link" data-go="shop" data-cat="Combos">Browse All Combos →</a>
@@ -782,6 +862,18 @@
               <option value="price-low" ${State.sortBy === 'price-low' ? 'selected' : ''}>Price: Low to High</option>
               <option value="price-high" ${State.sortBy === 'price-high' ? 'selected' : ''}>Price: High to Low</option>
             </select>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="shop-cat-tabs" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin: 12px 0 20px 0; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'].map(cat => {
+              const isActive = State.selectedCategory === cat;
+              return `
+                <button type="button" class="cat-pill ${isActive ? 'active' : ''}" data-cat="${cat}" style="white-space:nowrap; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid ${isActive ? 'var(--brand-primary)' : 'var(--border)'}; background:${isActive ? 'var(--brand-primary)' : 'var(--white)'}; color:${isActive ? '#ffffff' : 'var(--text-body)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:5px; box-shadow: ${isActive ? '0 2px 6px rgba(224,90,43,0.25)' : 'none'};">
+                  ${cat === 'Combos' ? '🔥 Combos' : cat}
+                </button>
+              `;
+            }).join('')}
           </div>
 
           <!-- Products Listing -->
@@ -2091,6 +2183,7 @@
     }
 
     initRoute();
+    window.addEventListener('hashchange', initRoute);
     
       // Auth Modal Open/Close & Tabs (Delegated on document)
       document.addEventListener('click', (e) => {
