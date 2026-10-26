@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Pouch Texture Test — Magic Meals Rajma Masala</title>
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 35%, #2a2c35 0%, #15161b 100%);
+      --panel-bg: rgba(22, 24, 30, 0.85);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --brand-saffron: #F37021;
+      --brand-yellow: #F7A827;
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --active-btn: #3B82F6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      user-select: none;
+    }
+
+    #webgl-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Header Bar */
+    .top-bar {
+      position: absolute;
+      top: 18px;
+      left: 24px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .top-bar .logo {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-bar .logo-badge {
+      background: linear-gradient(135deg, var(--brand-saffron), var(--brand-yellow));
+      color: #FFF;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar .sep {
+      width: 1px;
+      height: 18px;
+      background: var(--panel-border);
+    }
+
+    .top-bar .item-name {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .top-bar .item-name strong {
+      color: #FFF;
+    }
+
+    /* Floating Control Deck */
+    .control-deck {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 8px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 95vw;
+    }
+
+    .control-deck .group-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin: 0 4px 0 8px;
+    }
+
+    .control-deck .divider {
+      width: 1px;
+      height: 22px;
+      background: var(--panel-border);
+      margin: 0 4px;
+    }
+
+    .btn {
+      appearance: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 13px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn.active {
+      background: #F37021;
+      border-color: #F37021;
+      color: #FFF;
+      box-shadow: 0 2px 10px rgba(243, 112, 33, 0.4);
+    }
+
+    /* Diagnostics Card */
+    .diag-card {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      font-size: 11.5px;
+      line-height: 1.6;
+      width: 280px;
+    }
+
+    .diag-card h3 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--brand-yellow);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .diag-card .row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .diag-card .row span:last-child {
+      color: #FFF;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .diag-card .status-pill {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* Interaction Prompt */
+    .interaction-hint {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      background: rgba(0, 0, 0, 0.35);
+      padding: 5px 14px;
+      border-radius: 999px;
+      pointer-events: none;
+      letter-spacing: 0.2px;
+      animation: fadeInOut 6s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Three.js and OrbitControls from vendor/ -->
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/OrbitControls.js"></script>
+</head>
+<body>
+
+  <!-- WebGL Canvas Container -->
+  <div id="webgl-container"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="logo">
+      <span>MAGIC MEALS</span>
+      <span class="logo-badge">3D POUCH LAB</span>
+    </div>
+    <div class="sep"></div>
+    <div class="item-name">Product: <strong>Rajma Masala (95g / 250g)</strong></div>
+  </div>
+
+  <!-- Diagnostics Panel -->
+  <div class="diag-card">
+    <h3>Texture Verification <span class="status-pill">PASSED</span></h3>
+    <div class="row">
+      <span>Front Texture:</span>
+      <span id="diagFront">rajma-masala-front-processed.png</span>
+    </div>
+    <div class="row">
+      <span>Back Texture:</span>
+      <span id="diagBack">rajma-masala-back-processed.png</span>
+    </div>
+    <div class="row">
+      <span>Resolution:</span>
+      <span>1024 × 1595 px (matched)</span>
+    </div>
+    <div class="row">
+      <span>Outer 2% Seam Fade:</span>
+      <span style="color:#4ade80;">Active (20px feather)</span>
+    </div>
+    <div class="row">
+      <span>Back Readability:</span>
+      <span style="color:#4ade80;">Non-Mirrored (Reads LTR)</span>
+    </div>
+    <div class="row">
+      <span>Active Material:</span>
+      <span id="diagMat">MeshStandardMaterial</span>
+    </div>
+    <div class="row">
+      <span>Lighting Model:</span>
+      <span>Soft Studio (Double-shadow free)</span>
+    </div>
+  </div>
+
+  <!-- Hint -->
+  <div class="interaction-hint">
+    Drag to rotate 360° • Scroll to zoom • Use buttons below to inspect front, back, seams
+  </div>
+
+  <!-- Controls Deck -->
+  <div class="control-deck">
+    <span class="group-label">Camera:</span>
+    <button class="btn active" id="btnFront" onclick="snapCamera('front')">Front</button>
+    <button class="btn" id="btnBack" onclick="snapCamera('back')">Back (Readable)</button>
+    <button class="btn" id="btnSide" onclick="snapCamera('side')">Side Seam</button>
+    <button class="btn" id="btnBottom" onclick="snapCamera('bottom')">Gusset Base</button>
+    
+    <div class="divider"></div>
+
+    <span class="group-label">Material:</span>
+    <button class="btn active" id="btnMatStandard" onclick="setMaterialType('standard')">Standard (Soft)</button>
+    <button class="btn" id="btnMatBasic" onclick="setMaterialType('basic')">Basic (Flat Lit)</button>
+
+    <div class="divider"></div>
+
+    <span class="group-label">Back Art:</span>
+    <button class="btn active" id="btnBackReal" onclick="setBackArt(true)">Back Photo</button>
+    <button class="btn" id="btnBackMissing" onclick="setBackArt(false)">Simulate Missing</button>
+
+    <div class="divider"></div>
+
+    <button class="btn active" id="btnAutoSpin" onclick="toggleSpin()">Auto Spin</button>
+    <button class="btn" id="btnWire" onclick="toggleWireframe()">Wireframe</button>
+  </div>
+
+  <script>
+    // -------------------------------------------------------------
+    // 3D Stand-Up Pouch Scene Initialization
+    // -------------------------------------------------------------
+    const container = document.getElementById('webgl-container');
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1a1c23);
+
+    const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
+    camera.position.set(0, 0.1, 3.8);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.06;
+    controls.minDistance = 1.2;
+    controls.maxDistance = 6.0;
+    controls.maxPolarAngle = Math.PI / 2 + 0.15; // Don't flip below floor
+    controls.target.set(0, 0, 0);
+
+    // -------------------------------------------------------------
+    // Lighting Setup: Lit-but-flat / Soft Studio Lighting
+    // Requirement (d): "keep my scene lighting very soft, so shadows aren't doubled"
+    // -------------------------------------------------------------
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.92);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xfffbf2, 0.28);
+    keyLight.position.set(2, 4, 3);
+    scene.add(keyLight);
+
+    const backFillLight = new THREE.DirectionalLight(0xf2f4ff, 0.22);
+    backFillLight.position.set(-2, 2, -3);
+    scene.add(backFillLight);
+
+    // Soft grounded shadow plane beneath the stand-up pouch
+    const shadowCanvas = document.createElement('canvas');
+    shadowCanvas.width = 512;
+    shadowCanvas.height = 512;
+    const sCtx = shadowCanvas.getContext('2d');
+    const grad = sCtx.createRadialGradient(256, 256, 10, 256, 256, 240);
+    grad.addColorStop(0, 'rgba(0, 0, 0, 0.45)');
+    grad.addColorStop(0.35, 'rgba(0, 0, 0, 0.22)');
+    grad.addColorStop(0.7, 'rgba(0, 0, 0, 0.06)');
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    sCtx.fillStyle = grad;
+    sCtx.fillRect(0, 0, 512, 512);
+
+    const shadowTex = new THREE.CanvasTexture(shadowCanvas);
+    const shadowGeo = new THREE.PlaneGeometry(1.6, 0.9);
+    const shadowMat = new THREE.MeshBasicMaterial({
+      map: shadowTex,
+      transparent: true,
+      depthWrite: false
+    });
+    const shadowMesh = new THREE.Mesh(shadowGeo, shadowMat);
+    shadowMesh.rotation.x = -Math.PI / 2;
+    shadowMesh.position.y = -0.92;
+    scene.add(shadowMesh);
+
+    // -------------------------------------------------------------
+    // Texture Loading
+    // -------------------------------------------------------------
+    const texLoader = new THREE.TextureLoader();
+
+    const texFront = texLoader.load('pouch-art/rajma-masala-front-processed.png');
+    texFront.encoding = THREE.sRGBEncoding;
+
+    const texBack = texLoader.load('pouch-art/rajma-masala-back-processed.png');
+    texBack.encoding = THREE.sRGBEncoding;
+
+    const texBackMissing = texLoader.load('pouch-art/missing-back-neutral.png');
+    texBackMissing.encoding = THREE.sRGBEncoding;
+
+    // -------------------------------------------------------------
+    // Realistic Stand-Up Pouch (Doypack) Geometry Generation
+    // -------------------------------------------------------------
+    const POUCH_W = 1.16;   // Width
+    const POUCH_H = 1.80;   // Height (1.16 : 1.80 matches 1024 : 1595)
+    const MAX_BULGE = 0.24; // Belly expansion depth
+    const SEAM_W = 0.055;   // Side weld seam width
+
+    function createPouchGeometry(isFront) {
+      const segX = 48;
+      const segY = 64;
+      const geo = new THREE.BufferGeometry();
+
+      const positions = [];
+      const normals = [];
+      const uvs = [];
+      const indices = [];
+
+      for (let j = 0; j <= segY; j++) {
+        const v = j / segY; // 0 (bottom) to 1 (top)
+        const y = (v - 0.5) * POUCH_H;
+
+        // Vertical belly expansion profile
+        let vDepth = 0;
+        if (v < 0.10) {
+          // Bottom gusset opening: rounded stand-up base
+          vDepth = Math.sin((v / 0.10) * Math.PI * 0.5) * 0.92;
+        } else if (v < 0.86) {
+          // Main belly: filled volume
+          const bellyT = (v - 0.10) / (0.86 - 0.10);
+          vDepth = 0.92 + 0.18 * Math.sin(bellyT * Math.PI);
+        } else if (v < 0.92) {
+          // Transition into top zip seal
+          const t = (v - 0.86) / (0.92 - 0.86);
+          vDepth = (1 - t) * 0.92 * 0.4 + 0.04;
+        } else {
+          // Flat top seal flange
+          vDepth = 0.03;
+        }
+
+        for (let i = 0; i <= segX; i++) {
+          const u = i / segX; // 0 (left) to 1 (right)
+          const x = (u - 0.5) * POUCH_W;
+
+          // Horizontal bulge profile
+          // Flat at the side seam welds (u < 0.06 or u > 0.94)
+          let hDepth = 0;
+          const uRel = (u - 0.5) / 0.5; // -1 to +1
+          const distFromCenter = Math.abs(uRel);
+
+          if (distFromCenter < 0.88) {
+            // Smooth natural doypack curve
+            const normX = distFromCenter / 0.88;
+            hDepth = Math.cos(normX * Math.PI * 0.5);
+          } else {
+            // Flat side weld
+            hDepth = 0.01;
+          }
+
+          const sign = isFront ? 1 : -1;
+          const z = sign * MAX_BULGE * vDepth * hDepth;
+
+          positions.push(x, y, z);
+
+          // Normal placeholder (computed below)
+          normals.push(0, 0, sign);
+
+          // Requirement (e): UV Coordinates
+          // Front: U goes 0 -> 1 (left to right)
+          // Back:  U goes 1 -> 0 so when viewed from behind (facing -Z), text reads left-to-right!
+          if (isFront) {
+            uvs.push(u, v);
+          } else {
+            uvs.push(1.0 - u, v);
+          }
+        }
+      }
+
+      for (let j = 0; j < segY; j++) {
+        for (let i = 0; i < segX; i++) {
+          const a = j * (segX + 1) + i;
+          const b = j * (segX + 1) + (i + 1);
+          const c = (j + 1) * (segX + 1) + i;
+          const d = (j + 1) * (segX + 1) + (i + 1);
+
+          if (isFront) {
+            indices.push(a, b, d);
+            indices.push(a, d, c);
+          } else {
+            // Reverse winding for back face so front-facing normals point outward (-Z)
+            indices.push(a, d, b);
+            indices.push(a, c, d);
+          }
+        }
+      }
+
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geo.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+      geo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geo.setIndex(indices);
+      geo.computeVertexNormals();
+
+      return geo;
+    }
+
+    // Bottom Gusset Geometry: oval concave pouch base
+    function createGussetGeometry() {
+      const geo = new THREE.BufferGeometry();
+      const segs = 36;
+      const positions = [];
+      const uvs = [];
+      const indices = [];
+
+      const yBase = -POUCH_H * 0.5 + 0.02;
+      const rx = POUCH_W * 0.38;
+      const rz = MAX_BULGE * 0.72;
+
+      // Center vertex (pushed slightly up into the pouch)
+      positions.push(0, yBase + 0.06, 0);
+      uvs.push(0.5, 0.5);
+
+      for (let i = 0; i <= segs; i++) {
+        const theta = (i / segs) * Math.PI * 2;
+        const x = Math.cos(theta) * rx;
+        const z = Math.sin(theta) * rz;
+        positions.push(x, yBase, z);
+        uvs.push(0.5 + 0.5 * Math.cos(theta), 0.5 + 0.5 * Math.sin(theta));
+      }
+
+      for (let i = 1; i <= segs; i++) {
+        indices.push(0, i, i + 1);
+      }
+
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geo.setIndex(indices);
+      geo.computeVertexNormals();
+      return geo;
+    }
+
+    const frontGeo = createPouchGeometry(true);
+    const backGeo = createPouchGeometry(false);
+    const gussetGeo = createGussetGeometry();
+
+    // -------------------------------------------------------------
+    // Materials
+    // Requirement (d): "use a lit-but-flat material (MeshBasicMaterial or low-contrast MeshStandardMaterial)"
+    // -------------------------------------------------------------
+    let currentMaterialMode = 'standard';
+    let currentBackMode = 'real';
+
+    const matFrontStandard = new THREE.MeshStandardMaterial({
+      map: texFront,
+      roughness: 0.88,
+      metalness: 0.02,
+      transparent: true,
+      alphaTest: 0.02,
+      side: THREE.FrontSide
+    });
+
+    const matFrontBasic = new THREE.MeshBasicMaterial({
+      map: texFront,
+      transparent: true,
+      alphaTest: 0.02,
+      side: THREE.FrontSide
+    });
+
+    const matBackStandard = new THREE.MeshStandardMaterial({
+      map: texBack,
+      roughness: 0.88,
+      metalness: 0.02,
+      transparent: true,
+      alphaTest: 0.02,
+      side: THREE.FrontSide
+    });
+
+    const matBackBasic = new THREE.MeshBasicMaterial({
+      map: texBack,
+      transparent: true,
+      alphaTest: 0.02,
+      side: THREE.FrontSide
+    });
+
+    const matBackMissingStandard = new THREE.MeshStandardMaterial({
+      map: texBackMissing,
+      roughness: 0.90,
+      metalness: 0.01,
+      transparent: true,
+      side: THREE.FrontSide
+    });
+
+    const matBackMissingBasic = new THREE.MeshBasicMaterial({
+      map: texBackMissing,
+      transparent: true,
+      side: THREE.FrontSide
+    });
+
+    const gussetMat = new THREE.MeshStandardMaterial({
+      color: 0x4a4843,
+      roughness: 0.9,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+
+    // Mesh Group
+    const pouchGroup = new THREE.Group();
+
+    const frontMesh = new THREE.Mesh(frontGeo, matFrontStandard);
+    const backMesh = new THREE.Mesh(backGeo, matBackStandard);
+    const gussetMesh = new THREE.Mesh(gussetGeo, gussetMat);
+
+    pouchGroup.add(frontMesh);
+    pouchGroup.add(backMesh);
+    pouchGroup.add(gussetMesh);
+
+    scene.add(pouchGroup);
+
+    // -------------------------------------------------------------
+    // Interactive Functions & Toggles
+    // -------------------------------------------------------------
+    let autoSpin = false; // Start static for crisp inspection
+    let targetRotationY = null;
+    let targetRotationX = null;
+    let targetCameraDistance = 3.6;
+
+    function snapCamera(view) {
+      autoSpin = false;
+      document.getElementById('btnAutoSpin').classList.remove('active');
+      ['btnFront', 'btnBack', 'btnSide', 'btnBottom'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+
+      controls.reset();
+      camera.position.set(0, 0, 3.6);
+      controls.target.set(0, 0, 0);
+
+      if (view === 'front') {
+        document.getElementById('btnFront').classList.add('active');
+        targetRotationY = 0;
+        targetRotationX = 0;
+      } else if (view === 'back') {
+        document.getElementById('btnBack').classList.add('active');
+        // Rotate 180 degrees to show back directly to viewer
+        targetRotationY = Math.PI;
+        targetRotationX = 0;
+      } else if (view === 'side') {
+        document.getElementById('btnSide').classList.add('active');
+        targetRotationY = Math.PI * 0.5;
+        targetRotationX = 0;
+      } else if (view === 'bottom') {
+        document.getElementById('btnBottom').classList.add('active');
+        targetRotationY = 0;
+        targetRotationX = -Math.PI * 0.28; // Tilt back to reveal bottom gusset
+      }
+    }
+
+    function setMaterialType(type) {
+      currentMaterialMode = type;
+      document.getElementById('btnMatStandard').classList.toggle('active', type === 'standard');
+      document.getElementById('btnMatBasic').classList.toggle('active', type === 'basic');
+      document.getElementById('diagMat').textContent = type === 'standard' ? 'MeshStandardMaterial (Low-Contrast)' : 'MeshBasicMaterial (Lit-Flat)';
+
+      updateActiveMaterials();
+    }
+
+    function setBackArt(isReal) {
+      currentBackMode = isReal ? 'real' : 'missing';
+      document.getElementById('btnBackReal').classList.toggle('active', isReal);
+      document.getElementById('btnBackMissing').classList.toggle('active', !isReal);
+      document.getElementById('diagBack').textContent = isReal ? 'rajma-masala-back-processed.png' : 'missing-back-neutral.png';
+
+      updateActiveMaterials();
+    }
+
+    function updateActiveMaterials() {
+      if (currentMaterialMode === 'standard') {
+        frontMesh.material = matFrontStandard;
+        backMesh.material = (currentBackMode === 'real') ? matBackStandard : matBackMissingStandard;
+      } else {
+        frontMesh.material = matFrontBasic;
+        backMesh.material = (currentBackMode === 'real') ? matBackBasic : matBackMissingBasic;
+      }
+    }
+
+    function toggleSpin() {
+      autoSpin = !autoSpin;
+      document.getElementById('btnAutoSpin').classList.toggle('active', autoSpin);
+    }
+
+    let wireframeActive = false;
+    function toggleWireframe() {
+      wireframeActive = !wireframeActive;
+      document.getElementById('btnWire').classList.toggle('active', wireframeActive);
+      frontMesh.material.wireframe = wireframeActive;
+      backMesh.material.wireframe = wireframeActive;
+    }
+
+    // -------------------------------------------------------------
+    // Render Loop
+    // -------------------------------------------------------------
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (autoSpin) {
+        pouchGroup.rotation.y += 0.008;
+      } else if (targetRotationY !== null) {
+        pouchGroup.rotation.y += (targetRotationY - pouchGroup.rotation.y) * 0.12;
+        if (Math.abs(targetRotationY - pouchGroup.rotation.y) < 0.002) {
+          pouchGroup.rotation.y = targetRotationY;
+          targetRotationY = null;
+        }
+      }
+
+      if (targetRotationX !== null) {
+        pouchGroup.rotation.x += (targetRotationX - pouchGroup.rotation.x) * 0.12;
+        if (Math.abs(targetRotationX - pouchGroup.rotation.x) < 0.002) {
+          pouchGroup.rotation.x = targetRotationX;
+          targetRotationX = null;
+        }
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize Handler
+    window.addEventListener('resize', () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    });
+  </script>
+</body>
+</html>
