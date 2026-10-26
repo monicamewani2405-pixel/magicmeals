@@ -49,10 +49,7 @@
         <nav class="header-key-links" aria-label="Quick Links">
           <a class="header-quick-link" data-go="shop" data-cat="All">Shop</a>
           <a class="header-quick-link" data-go="byob" id="byobHeaderLink">BYOB</a>
-          <button class="jain-toggle" id="jainToggleBtn" aria-pressed="false" title="Filter 100% Jain-friendly meals">
-            <span class="veg-icon"></span>
-            <span>Jain</span>
-          </button>
+          <button class="header-quick-link" id="headerProfileBtn" data-action="profile" aria-label="Profile">Profile</button>
         </nav>
       </div>
 
@@ -86,27 +83,17 @@
 
   <!-- Mobile Categories Drawer & Backdrop -->
   <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
-  <aside id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Categories Menu">
+  <aside id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Main Menu">
     <div class="mobile-drawer-header">
-      <div class="drawer-logo" data-go="home">
-        <img src="logo_live.png" alt="Magic Meals" class="drawer-logo-img" width="600" height="240">
-      </div>
       <button id="mobileMenuCloseBtn" class="drawer-close-btn" aria-label="Close menu">✕</button>
     </div>
     
     <div class="mobile-drawer-body">
-      <div class="mobile-categories-list">
-        <button class="drawer-cat-btn" data-go="byob" style="font-weight:700; color:var(--brand-primary); background:var(--brand-primary-tint);">🍱 Build Your Box (BYOB)</button>
-        <button class="drawer-cat-btn" data-cat="Rice">Rice</button>
-        <button class="drawer-cat-btn" data-cat="Meals">Meals</button>
-        <button class="drawer-cat-btn" data-cat="Breakfast">Breakfast</button>
-        <button class="drawer-cat-btn" data-cat="Dals">Dals</button>
-        <button class="drawer-cat-btn" data-cat="Soups">Soups</button>
-        <button class="drawer-cat-btn" data-cat="Desserts">Desserts</button>
-        <button class="drawer-cat-btn" data-cat="Breads">Breads</button>
-        <button class="drawer-cat-btn" data-cat="Combos">Combos</button>
-        <button class="drawer-cat-btn" data-cat="All">All</button>
-      </div>
+      <nav class="mobile-categories-list" aria-label="Main Menu">
+        <button class="drawer-cat-btn" data-go="shop" aria-label="Shop">Shop</button>
+        <button class="drawer-cat-btn" data-go="byob" aria-label="Build Your Own Box">Build Your Own Box</button>
+        <button class="drawer-cat-btn" id="drawerProfileBtn" data-action="profile" aria-label="Profile">Profile</button>
+      </nav>
     </div>
   </aside>
 

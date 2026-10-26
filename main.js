@@ -864,8 +864,13 @@
             </select>
           </div>
 
-          <!-- Category Filter Tabs -->
-          <div class="shop-cat-tabs" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin: 12px 0 20px 0; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
+          <!-- Category Filter Tabs & Jain Filter Chip -->
+          <div class="shop-cat-tabs" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin: 12px 0 20px 0; -webkit-overflow-scrolling:touch; scrollbar-width:none; align-items:center;">
+            <button type="button" class="cat-pill ${State.jainOnly ? 'active' : ''}" data-jain-toggle="true" id="shopJainFilterChip" style="white-space:nowrap; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid ${State.jainOnly ? 'var(--veg-green, #15803D)' : 'var(--border)'}; background:${State.jainOnly ? 'var(--veg-green, #15803D)' : 'var(--white)'}; color:${State.jainOnly ? '#ffffff' : 'var(--text-body)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:6px; box-shadow: ${State.jainOnly ? '0 2px 6px rgba(21,128,61,0.25)' : 'none'};" aria-pressed="${State.jainOnly}">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${State.jainOnly ? '#ffffff' : 'var(--veg-green, #15803D)'};"></span>
+              Jain Only
+            </button>
+            <span style="width:1px; height:20px; background:var(--border); flex-shrink:0;"></span>
             ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'].map(cat => {
               const isActive = State.selectedCategory === cat;
               return `
@@ -1379,10 +1384,12 @@
         }
       });
 
-      // Update Mobile Drawer Categories States (Only active on shop/category page)
+      // Update Mobile Drawer States (Shop, Build Your Own Box, Profile)
       document.querySelectorAll('.drawer-cat-btn').forEach(btn => {
-        const cat = btn.dataset.cat;
-        if (State.view === 'shop' && State.selectedCategory === cat) {
+        const go = btn.dataset.go;
+        if (go === 'shop' && State.view === 'shop') {
+          btn.classList.add('active');
+        } else if (go === 'byob' && State.view === 'byob') {
           btn.classList.add('active');
         } else {
           btn.classList.remove('active');
@@ -1595,13 +1602,18 @@
       }
     }
 
+    let lastFocusedBeforeDrawer = null;
+
     function openMobileDrawer() {
       const drawer = document.getElementById('mobileDrawer');
       const backdrop = document.getElementById('mobileDrawerBackdrop');
       if (drawer && backdrop) {
+        lastFocusedBeforeDrawer = document.activeElement;
         drawer.classList.add('open');
         backdrop.classList.add('open');
         document.body.style.overflow = 'hidden';
+        const closeBtn = document.getElementById('mobileMenuCloseBtn');
+        if (closeBtn) closeBtn.focus();
       }
     }
 
@@ -1612,6 +1624,9 @@
         drawer.classList.remove('open');
         backdrop.classList.remove('open');
         document.body.style.overflow = '';
+        if (lastFocusedBeforeDrawer && typeof lastFocusedBeforeDrawer.focus === 'function') {
+          lastFocusedBeforeDrawer.focus();
+        }
       }
     }
 
@@ -1897,6 +1912,15 @@
         closeMobileDrawer();
         return;
       }
+      if (target.id === 'drawerProfileBtn' || target.closest('#drawerProfileBtn') || target.dataset.action === 'profile' || target.closest('[data-action="profile"]')) {
+        closeMobileDrawer();
+        const backdrop = document.getElementById('authModalBackdrop');
+        if (backdrop) {
+          backdrop.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+        return;
+      }
       if (target.closest('#mobileDrawer') && (target.dataset.cat || target.dataset.go)) {
         closeMobileDrawer();
       }
@@ -2063,7 +2087,7 @@
         return;
       }
 
-      if (target.id === 'jainToggleBtn') {
+      if (target.id === 'jainToggleBtn' || target.closest('#jainToggleBtn') || target.dataset.jainToggle !== undefined || target.closest('[data-jain-toggle]')) {
         State.jainOnly = !State.jainOnly;
         showToast(State.jainOnly ? 'Showing Jain-friendly meals only' : 'Showing all vegetarian meals');
         renderApp();
@@ -2139,7 +2163,30 @@
     if (mBackdrop) mBackdrop.addEventListener('click', closeMobileDrawer);
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { closeCart(); closeMobileDrawer(); closeVideoModal(); }
+      const drawer = document.getElementById('mobileDrawer');
+      const isDrawerOpen = drawer && drawer.classList.contains('open');
+
+      if (e.key === 'Escape') {
+        closeCart();
+        closeMobileDrawer();
+        closeVideoModal();
+        return;
+      }
+
+      if (e.key === 'Tab' && isDrawerOpen) {
+        const focusables = Array.from(drawer.querySelectorAll('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'));
+        if (focusables.length > 0) {
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (e.shiftKey && (document.activeElement === first || !drawer.contains(document.activeElement))) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && (document.activeElement === last || !drawer.contains(document.activeElement))) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     });
 
     document.addEventListener('input', e => {

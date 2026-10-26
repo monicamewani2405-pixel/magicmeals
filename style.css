@@ -259,82 +259,17 @@
       top: 0;
       left: 0;
       bottom: 0;
-      width: 340px;
-      max-width: 88vw;
-      background: #F4F1FA; /* Soft pastel matching Misfits Screenshot 3 */
+      width: 320px;
+      max-width: 82vw;
+      background: #EDE6FA; /* Soft pastel lilac matching Misfits Screenshot 2 */
       z-index: 210;
       transform: translateX(-100%);
       visibility: hidden;
       pointer-events: none;
       transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
-      box-shadow: 12px 0 40px rgba(0, 0, 0, 0.22);
+      box-shadow: 16px 0 48px rgba(0, 0, 0, 0.25);
       display: flex;
       flex-direction: column;
-    }
-    .drawer-giant-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 32px 20px 20px;
-    }
-    .drawer-giant-link {
-      font-family: var(--font-heading);
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      color: #1A1726;
-      text-decoration: none;
-      background: none;
-      border: none;
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      cursor: pointer;
-      text-align: left;
-      transition: color 0.2s, transform 0.2s;
-    }
-    .drawer-giant-link:hover {
-      color: var(--brand-primary);
-      transform: translateX(6px);
-    }
-    .drawer-accordion-icon {
-      font-size: 24px;
-      transition: transform 0.3s ease;
-    }
-    .drawer-cat-accordion.open .drawer-accordion-icon {
-      transform: rotate(180deg);
-    }
-    .drawer-accordion-content {
-      display: none;
-      flex-direction: column;
-      gap: 8px;
-      padding: 8px 0 16px 14px;
-    }
-    .drawer-cat-accordion.open .drawer-accordion-content {
-      display: flex;
-    }
-    .drawer-subcat-btn {
-      font-size: 18px;
-      font-weight: 700;
-      color: #4A4658;
-      background: none;
-      border: none;
-      text-align: left;
-      padding: 6px 0;
-      cursor: pointer;
-      transition: color 0.15s, transform 0.15s;
-    }
-    .drawer-subcat-btn:hover {
-      color: var(--brand-primary);
-      transform: translateX(4px);
-    }
-    .drawer-jain-btn {
-      color: var(--brand-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
     }
     .mobile-drawer.open {
       transform: translateX(0);
@@ -344,96 +279,85 @@
     .mobile-drawer-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-    .drawer-logo-img {
-      height: 30px;
-      width: auto;
-      cursor: pointer;
+      justify-content: flex-start;
+      padding: 24px 24px 0;
+      border: none;
+      background: transparent;
     }
     .drawer-close-btn {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: var(--bg-alt);
+      background: rgba(0, 0, 0, 0.06);
       border: none;
       display: grid;
       place-items: center;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
-      color: var(--text);
+      color: #1E1A2B;
       cursor: pointer;
       transition: background 0.2s, transform 0.15s;
     }
     .drawer-close-btn:hover {
-      background: var(--brand-primary-tint);
-      color: var(--brand-primary);
-      transform: rotate(90deg);
+      background: rgba(0, 0, 0, 0.12);
+      transform: scale(1.06);
+    }
+    .drawer-close-btn:focus-visible {
+      outline: 2px solid var(--brand-primary);
+      outline-offset: 2px;
     }
     .mobile-drawer-body {
-      padding: 18px 16px 32px;
-      overflow-y: auto;
-      flex: 1;
-    }
-    .drawer-cat-heading {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-      padding-left: 4px;
-    }
-    .mobile-categories-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-    }
-    .mobile-drawer-body {
-      padding: 10px 0 24px;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 24px 80px;
       overflow-y: auto;
       flex: 1;
     }
     .mobile-categories-list {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      width: 100%;
     }
     .drawer-cat-btn {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 15px 22px;
+      justify-content: center;
+      min-height: 54px;
+      padding: 12px 16px;
       background: transparent;
       border: none;
-      border-bottom: 1px solid var(--bg-alt);
-      border-radius: 0;
-      color: var(--text);
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      text-align: left;
+      border-bottom: none;
+      border-radius: 12px;
+      color: #1E1A2B;
+      font-family: var(--font-sans);
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      text-align: center;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.2s ease;
       width: 100%;
     }
     .drawer-cat-btn:hover, .drawer-cat-btn.active {
-      background: var(--brand-primary-tint);
+      background: transparent;
       color: var(--brand-primary);
-      font-weight: 700;
-      padding-left: 26px;
+      font-weight: 800;
+      transform: scale(1.04);
+      padding-left: 16px;
+    }
+    .drawer-cat-btn:focus-visible {
+      outline: 2px solid var(--brand-primary);
+      outline-offset: 2px;
     }
     .drawer-cat-btn::after {
-      content: '›';
-      font-size: 19px;
-      color: var(--border);
-      font-weight: 400;
-      transition: transform 0.18s, color 0.18s;
-    }
-    .drawer-cat-btn:hover::after, .drawer-cat-btn.active::after {
-      color: var(--brand-primary);
-      transform: translateX(3px);
+      display: none !important;
+      content: none !important;
     }
     .drawer-divider {
       height: 1px;
