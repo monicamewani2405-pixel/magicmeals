@@ -2993,7 +2993,7 @@
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  height: 300vh; /* Scrub distance for 4 distinct stages */
+  height: 380vh; /* Scrub distance for stages + slide-over */
   background: linear-gradient(
     180deg,
     rgb(var(--brand-primary-rgb) / 0.05) 0%,
@@ -3449,7 +3449,7 @@
 /* Mobile Layout (max-width: 768px) */
 @media (max-width: 768px) {
   .hiw-section {
-    height: 250vh;
+    height: 320vh;
   }
 
   .hiw-pin-container {
@@ -4374,8 +4374,8 @@ body[data-view="home"] .homepage-sheet {
   background: var(--bg);
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
-  box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.09);
-  margin-top: -60px;
+  box-shadow: 0 -14px 44px rgba(0, 0, 0, 0.12);
+  margin-top: calc(-100vh + 72px);
   padding-top: 36px;
   padding-bottom: 24px;
 }
@@ -4384,7 +4384,7 @@ body[data-view="home"] .homepage-sheet {
   body[data-view="home"] .homepage-sheet {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-top: -40px;
+    margin-top: calc(-100vh + 64px);
     padding-top: 28px;
   }
 }

@@ -259,11 +259,11 @@
     var heroH = hero.offsetHeight || 600;
     var hiwH = hiwSection.offsetHeight || 2000;
     var totalScroll = heroH + hiwH - window.innerHeight;
-    var pGlide = Math.min(0.26, Math.max(0.18, heroH / totalScroll));
+    var pGlide = Math.min(0.24, Math.max(0.16, heroH / totalScroll));
     var pRemain = 1 - pGlide;
     var pStep1 = pGlide;                  // Step 1: Pour
-    var pStep2 = pGlide + pRemain * 0.38; // Step 2: Add hot water
-    var pStep3 = pGlide + pRemain * 0.72; // Step 3: Eat
+    var pStep2 = pGlide + pRemain * 0.26; // Step 2: Add hot water
+    var pStep3 = pGlide + pRemain * 0.52; // Step 3: Eat
 
     function jumpToStep(step) {
       var trigger = ScrollTrigger.getById('sharedPouchTrigger');
@@ -446,22 +446,10 @@
       .to(waterBeam, { scaleY: 0, transformOrigin: 'bottom center', duration: pRemain * 0.08, ease: 'power1.out' }, pStep2 + pRemain * 0.18)
       .to(waterStream, { opacity: 0, duration: pRemain * 0.04 }, pStep2 + pRemain * 0.24)
 
-      // Step 3: Eat (pStep3 -> 0.90) - crossfade into photographic finished biryani bowl with scale 0.97 -> 1, steam continues
-      .to(foodFinished, { opacity: 1, scale: 1, duration: Math.min(pRemain * 0.12, 0.88 - pStep3), ease: 'power2.out' }, pStep3)
+      // Step 3: Eat (pStep3 -> finish) - crossfade into photographic finished biryani bowl with scale 0.97 -> 1, steam continues
+      .to(foodFinished, { opacity: 1, scale: 1, duration: pRemain * 0.14, ease: 'power2.out' }, pStep3)
       .to(foodDry, { opacity: 0, duration: pRemain * 0.10, ease: 'power1.out' }, pStep3)
       .to(foodWater, { opacity: 0, duration: pRemain * 0.10, ease: 'power1.out' }, pStep3);
-
-    // Phase 4: HOW IT WORKS EXIT (0.90 -> 1.0)
-    // In the last 10% of the pin distance, fade stage elements to opacity 0 and y -16px so the section unpins cleanly
-    var stageExitElements = [hiwBowlActor, steamWisps].filter(Boolean);
-    if (hiwStageLabel) stageExitElements.push(hiwStageLabel);
-
-    masterTl.to(stageExitElements, {
-      opacity: 0,
-      y: -16,
-      duration: 0.10,
-      ease: 'power1.in'
-    }, 0.90);
   }
 
   /* ---------- init ---------- */
