@@ -4375,7 +4375,7 @@ body[data-view="home"] .homepage-sheet {
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
   box-shadow: 0 -14px 44px rgba(0, 0, 0, 0.12);
-  margin-top: calc(-100vh + 72px);
+  margin-top: calc(-80vh);
   padding-top: 36px;
   padding-bottom: 24px;
 }
@@ -4384,7 +4384,7 @@ body[data-view="home"] .homepage-sheet {
   body[data-view="home"] .homepage-sheet {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-top: calc(-100vh + 64px);
+    margin-top: calc(-75vh);
     padding-top: 28px;
   }
 }
