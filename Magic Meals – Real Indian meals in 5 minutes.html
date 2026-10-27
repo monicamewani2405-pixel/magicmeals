@@ -1410,18 +1410,30 @@
     .card-thumb {
       position: relative;
       aspect-ratio: 1/1;
-      background: #F3ECE2;
+      background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f5f7 100%);
       overflow: hidden;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .card-thumb img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
+      object-fit: contain;
+      padding: 12px 14px;
+      box-sizing: border-box;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card[data-p="rajma-masala"] .card-thumb img,
+    .card-thumb img[src*="pouch-art"],
+    .card-thumb img[src*="processed"] {
+      padding: 16px 14px 12px 14px;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
     }
     .product-card:hover .card-thumb img {
-      transform: scale(1.05);
+      transform: scale(1.04) translateY(-2px);
     }
     .card-badges {
       position: absolute;

@@ -1,6 +1,23 @@
     // Complete Product Database with Real Imagery extracted from magicmeals.shop
     const PRODUCTS = [
       {
+        id: 'rajma-masala',
+        title: 'Authentic Punjabi Rajma Masala',
+        category: 'Meals',
+        price: 205,
+        mrp: 240,
+        img: 'pouch-art/rajma-masala-front-processed.png',
+        jain: false,
+        spice: 'Medium',
+        rating: 4.9,
+        reviews: 168,
+        weight: '95g net (makes 250g)',
+        calories: '440 kcal',
+        protein: '13.0g',
+        desc: 'Rich kidney beans slow-simmered in a robust onion, ginger, garlic, and tomato gravy infused with authentic Punjabi spices. Interactive 3D pouch available.',
+        has3D: true
+      },
+      {
         id: 'dal-khichdi',
         title: 'Comforting Dal Khichdi',
         category: 'Rice',
@@ -430,7 +447,7 @@
             <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
             <div class="card-badges">
               ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
-              
+              ${p.has3D ? '<span class="badge-3d">↻ 3D Pouch</span>' : ''}
             </div>
             <div class="veg-corner" title="100% Vegetarian"></div>
           </div>
@@ -913,15 +930,33 @@
           </div>
 
           <div class="pdp-layout">
-            <!-- Product Gallery Image -->
-            <div class="pdp-gallery">
-              <img src="${p.img}" alt="${p.title}" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
-              <div class="card-badges">
-                ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
-                
+            <!-- Product Gallery (Interactive 3D Pouch for Rajma Masala only) -->
+            ${p.id === 'rajma-masala' ? `
+              <div class="pdp-gallery pdp-gallery-3d" id="pdpGallery3D">
+                <div id="pdp3dCanvasContainer" class="pdp-3d-canvas-container"></div>
+                <div class="pdp-3d-hint">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  <span>Drag to rotate 360° (Front & Back)</span>
+                </div>
+                <div class="pdp-3d-controls">
+                  <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('front')">Front</button>
+                  <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('back')">Back</button>
+                  <button type="button" class="pdp-3d-btn" onclick="window.togglePdp3dSpin()">Auto Spin</button>
+                </div>
+                <div class="card-badges">
+                  ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
+                </div>
+                <div class="veg-corner"></div>
               </div>
-              <div class="veg-corner"></div>
-            </div>
+            ` : `
+              <div class="pdp-gallery">
+                <img src="${p.img}" alt="${p.title}" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
+                <div class="card-badges">
+                  ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
+                </div>
+                <div class="veg-corner"></div>
+              </div>
+            `}
 
             <!-- Product Purchase Details -->
             <div class="pdp-info">
@@ -1407,6 +1442,12 @@
       $('#jainToggleBtn')?.setAttribute('aria-pressed', State.jainOnly);
 
       renderCartDrawer();
+
+      if (State.view === 'product' && State.productId === 'rajma-masala') {
+        setTimeout(initPdp3dPouch, 50);
+      } else {
+        disposePdp3dPouch();
+      }
 
       // Let feature modules (hero.js) re-initialise after the SPA swaps the view
       document.dispatchEvent(new CustomEvent('app:rendered', { detail: { view: State.view } }));
@@ -2153,10 +2194,178 @@
       }
 
       if (target.id === 'checkoutBtn') {
-        alert('Proceeding to Shopify Checkout API...\n\nYour selected meal items and bundles will seamlessly map to Shopify Cart Line Items.');
+        handleShopifyCheckout();
         return;
       }
     });
+
+    async function handleShopifyCheckout() {
+      const btn = document.getElementById('checkoutBtn');
+      if (!btn) return;
+
+      const cfg = window.SHOPIFY_CONFIG || {};
+      const shop = cfg.shopDomain || '1z10zd-y0.myshopify.com';
+      const token = cfg.storefrontAccessToken;
+
+      const cartEntries = Object.entries(State.cart);
+      if (cartEntries.length === 0) {
+        showToast('Your meal box is empty!');
+        return;
+      }
+
+      // Check if token is still placeholder
+      if (!token || token.includes('PASTE_YOUR_PUBLIC_STOREFRONT_TOKEN') || token.trim() === '') {
+        alert(
+          '⚠️ Shopify Storefront Token Not Configured Yet!\n\n' +
+          'Please open "shopify-config.js" in your project folder and paste your Public Storefront API Access Token.\n\n' +
+          'Redirecting to your store admin in the meantime...'
+        );
+        window.open(`https://${shop}`, '_blank');
+        return;
+      }
+
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+      btn.innerHTML = `
+        <span style="display:inline-flex; align-items:center; justify-content:center; gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" style="animation: spin 0.8s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+          Connecting to Shopify...
+        </span>
+      `;
+
+      try {
+        const lines = [];
+        const mapping = cfg.productVariantMapping || {};
+
+        for (const [key, qty] of cartEntries) {
+          if (qty <= 0) continue;
+          let variantId = null;
+          if (key.startsWith('BYOB')) {
+            variantId = mapping[key] || mapping['family-feast-box'] || null;
+          } else {
+            const [pId] = key.split('|');
+            variantId = mapping[pId] || null;
+          }
+
+          if (variantId) {
+            const gid = String(variantId).startsWith('gid://') ? variantId : `gid://shopify/ProductVariant/${variantId}`;
+            lines.push({ merchandiseId: gid, quantity: qty });
+          }
+        }
+
+        // If no mapped variant IDs found yet, auto-discover products from Shopify Storefront API!
+        if (lines.length === 0) {
+          const fetchProductsQuery = `
+            query {
+              products(first: 20) {
+                edges {
+                  node {
+                    id
+                    handle
+                    title
+                    variants(first: 1) {
+                      edges {
+                        node {
+                          id
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `;
+
+          const prodRes = await fetch(`https://${shop}/api/${cfg.apiVersion || '2024-01'}/graphql.json`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Shopify-Storefront-Access-Token': token
+            },
+            body: JSON.stringify({ query: fetchProductsQuery })
+          });
+
+          const prodData = await prodRes.json();
+          const shopifyProds = prodData?.data?.products?.edges || [];
+
+          if (shopifyProds.length > 0) {
+            for (const [key, qty] of cartEntries) {
+              const [pId] = key.split('|');
+              const localProd = PRODUCTS.find(x => x.id === pId);
+              const matched = shopifyProds.find(e => {
+                const t = e.node.title.toLowerCase();
+                const h = e.node.handle.toLowerCase();
+                return (localProd && (t.includes(localProd.title.toLowerCase().slice(0, 10)) || h.includes(pId))) || false;
+              }) || shopifyProds[0];
+
+              const vId = matched?.node?.variants?.edges?.[0]?.node?.id;
+              if (vId) {
+                lines.push({ merchandiseId: vId, quantity: qty });
+              }
+            }
+          }
+        }
+
+        if (lines.length === 0) {
+          alert(
+            '⚠️ No Products Found in Shopify Store!\n\n' +
+            'Your Storefront API is connected successfully, but no products are published in your Shopify store.\n\n' +
+            'Please go to Shopify Admin > Products, create at least 1 product, and make sure its Sales Channel is set to "Headless" or "Online Store".'
+          );
+          return;
+        }
+
+        // Create Checkout Cart via Storefront API
+        const cartCreateMutation = `
+          mutation cartCreate($input: CartInput!) {
+            cartCreate(input: $input) {
+              cart {
+                id
+                checkoutUrl
+              }
+              userErrors {
+                code
+                field
+                message
+              }
+            }
+          }
+        `;
+
+        const cartRes = await fetch(`https://${shop}/api/${cfg.apiVersion || '2024-01'}/graphql.json`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Storefront-Access-Token': token
+          },
+          body: JSON.stringify({
+            query: cartCreateMutation,
+            variables: { input: { lines } }
+          })
+        });
+
+        const cartData = await cartRes.json();
+        const checkoutUrl = cartData?.data?.cartCreate?.cart?.checkoutUrl;
+
+        if (checkoutUrl) {
+          showToast('Redirecting to secure Shopify Checkout...');
+          window.location.href = checkoutUrl;
+          return;
+        } else {
+          const userErrs = cartData?.data?.cartCreate?.userErrors || cartData?.errors || [];
+          const msg = userErrs.map(e => e.message).join('\n') || 'Unable to create checkout cart.';
+          alert('Shopify Notice:\n' + msg);
+        }
+      } catch (err) {
+        console.error('Shopify checkout error:', err);
+        alert('Checkout error: ' + err.message + '\n\nPlease check console for details.');
+      } finally {
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        btn.innerHTML = originalText;
+      }
+    }
 
     $('#drawerOverlay').addEventListener('click', closeCart);
     const mBackdrop = document.getElementById('mobileDrawerBackdrop');
@@ -2279,3 +2488,247 @@
       });
 
       initPromoBar();
+
+      // =========================================================================
+      // 3D Stand-Up Pouch Interactive Viewer for Rajma Masala PDP
+      // (Exclusively enabled when viewing this specific product)
+      // =========================================================================
+      var pdp3dScene = null;
+      var pdp3dCamera = null;
+      var pdp3dRenderer = null;
+      var pdp3dControls = null;
+      var pdp3dAnimId = null;
+      var pdp3dPouchGroup = null;
+      var pdp3dIsSpinning = false;
+      var pdp3dTargetRotY = null;
+      var pdp3dResizeObserver = null;
+
+      window.snapPdp3d = function(view) {
+        pdp3dIsSpinning = false;
+        if (!pdp3dPouchGroup) return;
+        if (view === 'front') {
+          pdp3dTargetRotY = 0;
+        } else if (view === 'back') {
+          pdp3dTargetRotY = Math.PI;
+        }
+      };
+
+      window.togglePdp3dSpin = function() {
+        pdp3dIsSpinning = !pdp3dIsSpinning;
+      };
+
+      function initPdp3dPouch() {
+        disposePdp3dPouch();
+        const container = document.getElementById('pdp3dCanvasContainer');
+        if (!container || !window.THREE) return;
+
+        const rect = container.getBoundingClientRect();
+        const width = rect.width || container.clientWidth || 420;
+        const height = rect.height || container.clientHeight || 420;
+
+        pdp3dScene = new THREE.Scene();
+
+        pdp3dCamera = new THREE.PerspectiveCamera(32, width / height, 0.1, 50);
+        pdp3dCamera.position.set(0, 0, 2.95);
+
+        pdp3dRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+        pdp3dRenderer.setSize(width, height);
+        pdp3dRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        pdp3dRenderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild(pdp3dRenderer.domElement);
+
+        if (window.THREE.OrbitControls) {
+          pdp3dControls = new THREE.OrbitControls(pdp3dCamera, pdp3dRenderer.domElement);
+          pdp3dControls.enableDamping = true;
+          pdp3dControls.dampingFactor = 0.08;
+          pdp3dControls.minDistance = 1.3;
+          pdp3dControls.maxDistance = 4.2;
+          pdp3dControls.minPolarAngle = Math.PI * 0.35;
+          pdp3dControls.maxPolarAngle = Math.PI * 0.65;
+          pdp3dControls.addEventListener('start', () => { 
+            pdp3dIsSpinning = false; 
+            pdp3dTargetRotY = null;
+          });
+        }
+
+        // Soft uniform lighting to preserve crisp contrast of printed packaging details
+        const amb = new THREE.AmbientLight(0xffffff, 0.96);
+        pdp3dScene.add(amb);
+        const keyLight = new THREE.DirectionalLight(0xfffbf2, 0.22);
+        keyLight.position.set(2, 4, 3);
+        pdp3dScene.add(keyLight);
+        const backFill = new THREE.DirectionalLight(0xf2f4ff, 0.22);
+        backFill.position.set(-2, 2, -3);
+        pdp3dScene.add(backFill);
+
+        // Ground shadow
+        const shadowCanvas = document.createElement('canvas');
+        shadowCanvas.width = 256;
+        shadowCanvas.height = 256;
+        const sCtx = shadowCanvas.getContext('2d');
+        const grad = sCtx.createRadialGradient(128, 128, 5, 128, 128, 120);
+        grad.addColorStop(0, 'rgba(0, 0, 0, 0.28)');
+        grad.addColorStop(0.4, 'rgba(0, 0, 0, 0.12)');
+        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        sCtx.fillStyle = grad;
+        sCtx.fillRect(0, 0, 256, 256);
+        const sTex = new THREE.CanvasTexture(shadowCanvas);
+        const shadowMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.9), new THREE.MeshBasicMaterial({ map: sTex, transparent: true, depthWrite: false }));
+        shadowMesh.rotation.x = -Math.PI / 2;
+        shadowMesh.position.y = -0.92;
+        pdp3dScene.add(shadowMesh);
+
+        // Load Textures (Uses embedded high-resolution data URIs to guarantee zero CORS issues under file:///)
+        const texLoader = new THREE.TextureLoader();
+        const frontSrc = (window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.front) || 'pouch-art/rajma-masala-front-processed.png';
+        const backSrc = (window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.back) || 'pouch-art/rajma-masala-back-processed.png';
+        const maxAniso = pdp3dRenderer.capabilities ? pdp3dRenderer.capabilities.getMaxAnisotropy() : 8;
+
+        const texF = texLoader.load(frontSrc);
+        texF.encoding = THREE.sRGBEncoding;
+        texF.generateMipmaps = false;
+        texF.minFilter = THREE.LinearFilter;
+        texF.magFilter = THREE.LinearFilter;
+        texF.anisotropy = maxAniso;
+
+        const texB = texLoader.load(backSrc);
+        texB.encoding = THREE.sRGBEncoding;
+        texB.generateMipmaps = false;
+        texB.minFilter = THREE.LinearFilter;
+        texB.magFilter = THREE.LinearFilter;
+        texB.anisotropy = maxAniso;
+
+        // Pouch Geometry
+        const POUCH_W = 1.16;
+        const POUCH_H = 1.80;
+        const MAX_BULGE = 0.22;
+
+        function createGeo(isFront) {
+          const segX = 40, segY = 56;
+          const geo = new THREE.BufferGeometry();
+          const pos = [], nrm = [], uvs = [], idx = [];
+
+          for (let j = 0; j <= segY; j++) {
+            const v = j / segY;
+            const y = (v - 0.5) * POUCH_H;
+            
+            // Continuous, smooth depth profile without any abrupt drops or creases across the logo
+            let vDepth = 0;
+            if (v < 0.12) {
+              // Base gusset: smooth expansion from bottom edge
+              vDepth = Math.sin((v / 0.12) * Math.PI * 0.5) * 0.85;
+            } else if (v < 0.65) {
+              // Main food cavity: gentle belly fullness
+              const t = (v - 0.12) / (0.65 - 0.12);
+              vDepth = 0.85 + 0.15 * Math.sin(t * Math.PI);
+            } else {
+              // Smooth, continuous taper up to top heat seal (NO DENT across the logo)
+              const t = (v - 0.65) / (1.0 - 0.65);
+              vDepth = 0.05 + 0.80 * 0.5 * (1 + Math.cos(t * Math.PI));
+            }
+
+            for (let i = 0; i <= segX; i++) {
+              const u = i / segX;
+              const x = (u - 0.5) * POUCH_W;
+              let hDepth = 0;
+              const distFromCenter = Math.abs((u - 0.5) / 0.5);
+              if (distFromCenter < 0.90) {
+                hDepth = Math.cos((distFromCenter / 0.90) * Math.PI * 0.5);
+              } else {
+                hDepth = 0.0;
+              }
+
+              const sign = isFront ? 1 : -1;
+              const z = sign * MAX_BULGE * vDepth * hDepth;
+              pos.push(x, y, z);
+              nrm.push(0, 0, sign);
+              if (isFront) {
+                uvs.push(u, v);
+              } else {
+                // Non-mirrored back UV so text reads correctly left-to-right
+                uvs.push(1.0 - u, v);
+              }
+            }
+          }
+
+          for (let j = 0; j < segY; j++) {
+            for (let i = 0; i < segX; i++) {
+              const a = j * (segX + 1) + i;
+              const b = j * (segX + 1) + (i + 1);
+              const c = (j + 1) * (segX + 1) + i;
+              const d = (j + 1) * (segX + 1) + (i + 1);
+              if (isFront) {
+                idx.push(a, b, d, a, d, c);
+              } else {
+                idx.push(a, d, b, a, c, d);
+              }
+            }
+          }
+
+          geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+          geo.setAttribute('normal', new THREE.Float32BufferAttribute(nrm, 3));
+          geo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+          geo.setIndex(idx);
+          geo.computeVertexNormals();
+          return geo;
+        }
+
+        const matF = new THREE.MeshStandardMaterial({ map: texF, roughness: 0.65, metalness: 0.01, transparent: true, alphaTest: 0.02 });
+        const matB = new THREE.MeshStandardMaterial({ map: texB, roughness: 0.65, metalness: 0.01, transparent: true, alphaTest: 0.02 });
+
+        pdp3dPouchGroup = new THREE.Group();
+        pdp3dPouchGroup.add(new THREE.Mesh(createGeo(true), matF));
+        pdp3dPouchGroup.add(new THREE.Mesh(createGeo(false), matB));
+        pdp3dScene.add(pdp3dPouchGroup);
+
+        function loop() {
+          pdp3dAnimId = requestAnimationFrame(loop);
+          if (pdp3dIsSpinning && pdp3dPouchGroup) {
+            pdp3dPouchGroup.rotation.y += 0.007;
+          } else if (pdp3dTargetRotY !== null && pdp3dPouchGroup) {
+            pdp3dPouchGroup.rotation.y += (pdp3dTargetRotY - pdp3dPouchGroup.rotation.y) * 0.12;
+            if (Math.abs(pdp3dTargetRotY - pdp3dPouchGroup.rotation.y) < 0.003) {
+              pdp3dPouchGroup.rotation.y = pdp3dTargetRotY;
+              pdp3dTargetRotY = null;
+            }
+          }
+          if (pdp3dControls) pdp3dControls.update();
+          if (pdp3dRenderer && pdp3dScene && pdp3dCamera) {
+            pdp3dRenderer.render(pdp3dScene, pdp3dCamera);
+          }
+        }
+        loop();
+
+        if (window.ResizeObserver) {
+          pdp3dResizeObserver = new ResizeObserver(() => {
+            if (!container || !pdp3dRenderer || !pdp3dCamera) return;
+            const r = container.getBoundingClientRect();
+            if (r.width > 0 && r.height > 0) {
+              pdp3dCamera.aspect = r.width / r.height;
+              pdp3dCamera.updateProjectionMatrix();
+              pdp3dRenderer.setSize(r.width, r.height);
+            }
+          });
+          pdp3dResizeObserver.observe(container);
+        }
+      }
+
+      function disposePdp3dPouch() {
+        if (pdp3dAnimId) {
+          cancelAnimationFrame(pdp3dAnimId);
+          pdp3dAnimId = null;
+        }
+        if (pdp3dResizeObserver) {
+          pdp3dResizeObserver.disconnect();
+          pdp3dResizeObserver = null;
+        }
+        if (pdp3dRenderer && pdp3dRenderer.domElement && pdp3dRenderer.domElement.parentNode) {
+          pdp3dRenderer.domElement.parentNode.removeChild(pdp3dRenderer.domElement);
+        }
+        pdp3dScene = null;
+        pdp3dCamera = null;
+        pdp3dRenderer = null;
+        pdp3dControls = null;
+        pdp3dPouchGroup = null;
+        pdp3dTargetRotY = null;
+      }

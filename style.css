@@ -1576,18 +1576,30 @@
     .card-thumb {
       position: relative;
       aspect-ratio: 1/1;
-      background: var(--bg-alt);
+      background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f5f7 100%);
       overflow: hidden;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .card-thumb img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
+      object-fit: contain;
+      padding: 12px 14px;
+      box-sizing: border-box;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card[data-p="rajma-masala"] .card-thumb img,
+    .card-thumb img[src*="pouch-art"],
+    .card-thumb img[src*="processed"] {
+      padding: 16px 14px 12px 14px;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
     }
     .product-card:hover .card-thumb img {
-      transform: scale(1.05);
+      transform: scale(1.04) translateY(-2px);
     }
     .card-badges {
       position: absolute;
@@ -1957,7 +1969,113 @@
       height: 100%;
       object-fit: cover;
     }
-    .pdp-info {
+    .pdp-gallery-3d {
+      background: radial-gradient(circle at 50% 40%, #ffffff 0%, #f6f3ee 100%);
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pdp-gallery-3d:active {
+      cursor: grabbing;
+    }
+    .pdp-3d-canvas-container {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      position: relative;
+    }
+    .pdp-3d-canvas-container canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      touch-action: none;
+    }
+    .pdp-3d-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(26, 28, 35, 0.88);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .pdp-3d-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+    }
+    .pdp-3d-hint {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(26, 28, 35, 0.88);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      z-index: 5;
+      pointer-events: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      white-space: nowrap;
+    }
+    .pdp-3d-controls {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 6;
+    }
+    .pdp-3d-btn {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      color: #1f2937;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.15s ease;
+    }
+    .pdp-3d-btn:hover {
+      background: #fff;
+      transform: translateY(-1px);
+    }
+    .badge-3d {
+      background: #1e293b;
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -2144,6 +2262,13 @@
       flex-shrink: 0;
     }
     .cart-item-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-thumb img[src*="pouch-art"],
+    .cart-item-thumb img[src*="processed"] {
+      object-fit: contain;
+      padding: 4px;
+      box-sizing: border-box;
+      background: #ffffff;
+    }
     .cart-item-info { flex: 1; }
     .cart-item-info b { font-size: 14.5px; color: var(--text); display: block; line-height: 1.3; }
     .cart-item-info small { color: var(--text-muted); font-size: 12px; }
@@ -4220,3 +4345,7 @@
   }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

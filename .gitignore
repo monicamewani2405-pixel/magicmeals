@@ -3,3 +3,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 scratch/
+*.png_test*
+*verified*.png
+*preview*.png
+*current*.png
+*zoomed_out*.png
+page_view*.png
+dal_khichdi_raw.jpg
