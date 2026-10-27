@@ -1391,7 +1391,7 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      z-index: 90;
+      z-index: 600;
       width: 58px;
       height: 58px;
       border-radius: 50%;
@@ -2301,7 +2301,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 28;
+      z-index: 600;
       background: rgb(var(--white-rgb) / 0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -4351,3 +4351,37 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* ==========================================================================
+   CHANGE 1: HOMEPAGE SCROLL-OVER SHEET (Best Sellers & Below)
+   ========================================================================== */
+body[data-view="home"] .homepage-sheet {
+  position: relative;
+  z-index: 20;
+  background: var(--bg);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.09);
+  margin-top: -60px;
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  body[data-view="home"] .homepage-sheet {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: -40px;
+    padding-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-view="home"] .homepage-sheet {
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding-top: 24px !important;
+  }
+}
+

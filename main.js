@@ -1001,7 +1001,9 @@
         </section>
 
         <!-- Best Sellers Grid -->
-        <section id="best-sellers" data-section="best-sellers" style="margin-top:24px;">
+        <div id="homepageSheet" class="homepage-sheet">
+        <!-- Best Sellers Grid -->
+        <section id="best-sellers" data-section="best-sellers" style="margin-top:0;">
           <div class="section-header">
             <h2 class="section-title">Best Sellers</h2>
             <a class="view-all-link" data-go="shop" data-cat="All">See All Meals (${PRODUCTS.length}) →</a>
@@ -1209,26 +1211,27 @@
         </section>
 
         <!-- Customer Testimonials -->
-        <section style="margin-top:38px;">
-          <div class="section-header">
-            <h2 class="section-title">Loved by Travelers & Students</h2>
-          </div>
-          <div class="reviews-scroll">
-            ${REVIEWS.map(r => `
-              <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <blockquote>"${r.text}"</blockquote>
-                <div class="reviewer-meta">
-                  <div class="reviewer-avatar">${r.name.charAt(0)}</div>
-                  <div>
-                    <b>${r.name}</b>
-                    <small>${r.loc}</small>
+          <section id="testimonials-section" style="margin-top:38px; padding-bottom:48px;">
+            <div class="section-header">
+              <h2 class="section-title">Loved by Travelers & Students</h2>
+            </div>
+            <div class="reviews-scroll">
+              ${REVIEWS.map(r => `
+                <div class="review-card">
+                  <div class="review-stars">★★★★★</div>
+                  <blockquote>"${r.text}"</blockquote>
+                  <div class="reviewer-meta">
+                    <div class="reviewer-avatar">${r.name.charAt(0)}</div>
+                    <div>
+                      <b>${r.name}</b>
+                      <small>${r.loc}</small>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `).join('')}
-          </div>
-        </section>
+              `).join('')}
+            </div>
+          </section>
+        </div>
       `;
     }
 
@@ -1319,7 +1322,6 @@
                 <div class="pdp-3d-controls">
                   <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('front')">Front</button>
                   <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('back')">Back</button>
-                  <button type="button" class="pdp-3d-btn" onclick="window.togglePdp3dSpin()">Auto Spin</button>
                 </div>
                 <div class="card-badges">
                   ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
@@ -1823,10 +1825,17 @@
 
       const currentProduct = PRODUCTS.find(x => x.id === State.productId);
       if (State.view === 'product' && currentProduct && currentProduct.imgBack) {
-        setTimeout(() => initPdp3dPouch(currentProduct), 50);
+        if (currentPdpPouchProductId !== currentProduct.id) {
+          currentPdpPouchProductId = currentProduct.id;
+          window._pdpUserInteracted = false;
+          setTimeout(() => initPdp3dPouch(currentProduct), 50);
+        }
       } else {
+        currentPdpPouchProductId = null;
         disposePdp3dPouch();
       }
+
+
 
       // Let feature modules (hero.js) re-initialise after the SPA swaps the view
       document.dispatchEvent(new CustomEvent('app:rendered', { detail: { view: State.view } }));
@@ -2542,18 +2551,31 @@
 
       if (target.dataset.pdpPack) {
         State.pdpPack = target.dataset.pdpPack;
-        renderApp();
+        document.querySelectorAll('.pack-opt').forEach(btn => {
+          btn.setAttribute('aria-pressed', btn.dataset.pdpPack === State.pdpPack ? 'true' : 'false');
+        });
+        const currentProduct = PRODUCTS.find(x => x.id === State.productId);
+        if (currentProduct) {
+          const packPrice = calcPrice(currentProduct, State.pdpPack);
+          const totalAmount = packPrice * State.pdpQty;
+          const addBtn = document.getElementById('pdpAddToCartBtn');
+          if (addBtn) addBtn.textContent = `Add to Meal Box • ${formatINR(totalAmount)}`;
+        }
         return;
       }
 
-      if (target.id === 'pdpQtyPlus') {
-        State.pdpQty++;
-        renderApp();
-        return;
-      }
-      if (target.id === 'pdpQtyMinus') {
-        State.pdpQty = Math.max(1, State.pdpQty - 1);
-        renderApp();
+      if (target.id === 'pdpQtyPlus' || target.id === 'pdpQtyMinus') {
+        if (target.id === 'pdpQtyPlus') State.pdpQty++;
+        else State.pdpQty = Math.max(1, State.pdpQty - 1);
+        const qtySpan = target.closest('.qty-stepper')?.querySelector('span');
+        if (qtySpan) qtySpan.textContent = State.pdpQty;
+        const currentProduct = PRODUCTS.find(x => x.id === State.productId);
+        if (currentProduct) {
+          const packPrice = calcPrice(currentProduct, State.pdpPack);
+          const totalAmount = packPrice * State.pdpQty;
+          const addBtn = document.getElementById('pdpAddToCartBtn');
+          if (addBtn) addBtn.textContent = `Add to Meal Box • ${formatINR(totalAmount)}`;
+        }
         return;
       }
 
@@ -2905,25 +2927,26 @@
       var pdp3dScene = null;
       var pdp3dCamera = null;
       var pdp3dRenderer = null;
-      var pdp3dControls = null;
       var pdp3dAnimId = null;
       var pdp3dPouchGroup = null;
       var pdp3dIsSpinning = false;
       var pdp3dTargetRotY = null;
+      var pdp3dTargetRotX = null;
       var pdp3dResizeObserver = null;
+      var currentPdpPouchProductId = null;
 
       window.snapPdp3d = function(view) {
         pdp3dIsSpinning = false;
+        window._pdpUserInteracted = true;
         if (!pdp3dPouchGroup) return;
+        const currentY = pdp3dPouchGroup.rotation.y;
+        const twoPi = Math.PI * 2;
         if (view === 'front') {
-          pdp3dTargetRotY = 0;
+          pdp3dTargetRotY = Math.round(currentY / twoPi) * twoPi;
         } else if (view === 'back') {
-          pdp3dTargetRotY = Math.PI;
+          pdp3dTargetRotY = (Math.round((currentY - Math.PI) / twoPi) * 2 + 1) * Math.PI;
         }
-      };
-
-      window.togglePdp3dSpin = function() {
-        pdp3dIsSpinning = !pdp3dIsSpinning;
+        pdp3dTargetRotX = 0;
       };
 
       function initPdp3dPouch(product) {
@@ -2948,21 +2971,51 @@
         pdp3dRenderer.setSize(width, height);
         pdp3dRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         pdp3dRenderer.outputEncoding = THREE.sRGBEncoding;
+        pdp3dRenderer.domElement.style.touchAction = 'pan-y';
         container.appendChild(pdp3dRenderer.domElement);
 
-        if (window.THREE.OrbitControls) {
-          pdp3dControls = new THREE.OrbitControls(pdp3dCamera, pdp3dRenderer.domElement);
-          pdp3dControls.enableDamping = true;
-          pdp3dControls.dampingFactor = 0.08;
-          pdp3dControls.minDistance = 1.3;
-          pdp3dControls.maxDistance = 4.2;
-          pdp3dControls.minPolarAngle = Math.PI * 0.35;
-          pdp3dControls.maxPolarAngle = Math.PI * 0.65;
-          pdp3dControls.addEventListener('start', () => { 
-            pdp3dIsSpinning = false; 
-            pdp3dTargetRotY = null;
-          });
-        }
+        // Pointer Drag & Inertia on Canvas
+        let isDragging = false;
+        let lastX = 0;
+        let lastY = 0;
+        let velY = 0;
+        let velX = 0;
+
+        const onPointerDown = (e) => {
+          pdp3dIsSpinning = false;
+          window._pdpUserInteracted = true;
+          pdp3dTargetRotY = null;
+          pdp3dTargetRotX = null;
+          isDragging = true;
+          lastX = e.clientX;
+          lastY = e.clientY;
+          velY = 0;
+          velX = 0;
+          try { pdp3dRenderer.domElement.setPointerCapture(e.pointerId); } catch (_) {}
+        };
+
+        const onPointerMove = (e) => {
+          if (!isDragging || !pdp3dPouchGroup) return;
+          const dx = e.clientX - lastX;
+          const dy = e.clientY - lastY;
+          lastX = e.clientX;
+          lastY = e.clientY;
+          velY = dx * 0.007;
+          velX = dy * 0.005;
+          pdp3dPouchGroup.rotation.y += velY;
+          pdp3dPouchGroup.rotation.x = Math.max(-0.25, Math.min(0.25, pdp3dPouchGroup.rotation.x + velX));
+        };
+
+        const onPointerUp = (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          try { pdp3dRenderer.domElement.releasePointerCapture(e.pointerId); } catch (_) {}
+        };
+
+        pdp3dRenderer.domElement.addEventListener('pointerdown', onPointerDown);
+        pdp3dRenderer.domElement.addEventListener('pointermove', onPointerMove);
+        pdp3dRenderer.domElement.addEventListener('pointerup', onPointerUp);
+        pdp3dRenderer.domElement.addEventListener('pointercancel', onPointerUp);
 
         // Soft uniform lighting to preserve crisp contrast of printed packaging details
         const amb = new THREE.AmbientLight(0xffffff, 0.96);
@@ -3001,9 +3054,20 @@
                      || `pouch-art/${product.id}-back-processed.png`;
         const maxAniso = pdp3dRenderer.capabilities ? pdp3dRenderer.capabilities.getMaxAnisotropy() : 8;
 
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        pdp3dIsSpinning = false;
+        let texturesLoaded = 0;
+
         const onTextureLoaded = () => {
-          const loadingEl = document.getElementById('pdp3dLoading');
-          if (loadingEl) loadingEl.style.display = 'none';
+          texturesLoaded++;
+          if (texturesLoaded >= 2) {
+            const loadingEl = document.getElementById('pdp3dLoading');
+            if (loadingEl) loadingEl.style.display = 'none';
+            if (!prefersReducedMotion && !window._pdpUserInteracted) {
+              if (pdp3dPouchGroup) pdp3dPouchGroup.rotation.y = 0;
+              pdp3dIsSpinning = true;
+            }
+          }
         };
 
         const texF = texLoader.load(frontSrc, onTextureLoaded);
@@ -3020,13 +3084,6 @@
         texB.magFilter = THREE.LinearFilter;
         texB.anisotropy = maxAniso;
 
-        // Ensure canvas does not block vertical touch scrolling on mobile
-        pdp3dRenderer.domElement.style.touchAction = 'pan-y';
-
-        // Respect prefers-reduced-motion
-        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        pdp3dIsSpinning = false; // default off so users rotate or click Auto Spin
-
         // Pouch Geometry
         const POUCH_W = 1.16;
         const POUCH_H = 1.80;
@@ -3041,17 +3098,13 @@
             const v = j / segY;
             const y = (v - 0.5) * POUCH_H;
             
-            // Continuous, smooth depth profile without any abrupt drops or creases across the logo
             let vDepth = 0;
             if (v < 0.12) {
-              // Base gusset: smooth expansion from bottom edge
               vDepth = Math.sin((v / 0.12) * Math.PI * 0.5) * 0.85;
             } else if (v < 0.65) {
-              // Main food cavity: gentle belly fullness
               const t = (v - 0.12) / (0.65 - 0.12);
               vDepth = 0.85 + 0.15 * Math.sin(t * Math.PI);
             } else {
-              // Smooth, continuous taper up to top heat seal (NO DENT across the logo)
               const t = (v - 0.65) / (1.0 - 0.65);
               vDepth = 0.05 + 0.80 * 0.5 * (1 + Math.cos(t * Math.PI));
             }
@@ -3074,7 +3127,6 @@
               if (isFront) {
                 uvs.push(u, v);
               } else {
-                // Non-mirrored back UV so text reads correctly left-to-right
                 uvs.push(1.0 - u, v);
               }
             }
@@ -3116,12 +3168,27 @@
             pdp3dPouchGroup.rotation.y += 0.007;
           } else if (pdp3dTargetRotY !== null && pdp3dPouchGroup) {
             pdp3dPouchGroup.rotation.y += (pdp3dTargetRotY - pdp3dPouchGroup.rotation.y) * 0.12;
+            if (pdp3dTargetRotX !== null) {
+              pdp3dPouchGroup.rotation.x += (pdp3dTargetRotX - pdp3dPouchGroup.rotation.x) * 0.12;
+            }
             if (Math.abs(pdp3dTargetRotY - pdp3dPouchGroup.rotation.y) < 0.003) {
               pdp3dPouchGroup.rotation.y = pdp3dTargetRotY;
               pdp3dTargetRotY = null;
+              if (pdp3dTargetRotX !== null) {
+                pdp3dPouchGroup.rotation.x = pdp3dTargetRotX;
+                pdp3dTargetRotX = null;
+              }
+            }
+          } else if (!isDragging && pdp3dPouchGroup) {
+            if (Math.abs(velY) > 0.0001) {
+              pdp3dPouchGroup.rotation.y += velY;
+              velY *= 0.92;
+            }
+            if (Math.abs(velX) > 0.0001) {
+              pdp3dPouchGroup.rotation.x = Math.max(-0.25, Math.min(0.25, pdp3dPouchGroup.rotation.x + velX));
+              velX *= 0.92;
             }
           }
-          if (pdp3dControls) pdp3dControls.update();
           if (pdp3dRenderer && pdp3dScene && pdp3dCamera) {
             pdp3dRenderer.render(pdp3dScene, pdp3dCamera);
           }
@@ -3157,7 +3224,8 @@
         pdp3dScene = null;
         pdp3dCamera = null;
         pdp3dRenderer = null;
-        pdp3dControls = null;
         pdp3dPouchGroup = null;
+        pdp3dIsSpinning = false;
         pdp3dTargetRotY = null;
+        pdp3dTargetRotX = null;
       }
