@@ -2993,7 +2993,7 @@
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  height: 380vh; /* Scrub distance for stages + slide-over */
+  height: 440vh; /* Scrub distance for stages + slide-over */
   background: linear-gradient(
     180deg,
     rgb(var(--brand-primary-rgb) / 0.05) 0%,
@@ -3449,7 +3449,7 @@
 /* Mobile Layout (max-width: 768px) */
 @media (max-width: 768px) {
   .hiw-section {
-    height: 320vh;
+    height: 390vh;
   }
 
   .hiw-pin-container {

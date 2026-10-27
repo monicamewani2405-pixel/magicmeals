@@ -259,18 +259,18 @@
     var heroH = hero.offsetHeight || 600;
     var hiwH = hiwSection.offsetHeight || 2000;
     var totalScroll = heroH + hiwH - window.innerHeight;
-    var pGlide = Math.min(0.24, Math.max(0.16, heroH / totalScroll));
+    var pGlide = Math.min(0.18, Math.max(0.10, heroH / totalScroll));
     var pRemain = 1 - pGlide;
     var pStep1 = pGlide;                  // Step 1: Pour
-    var pStep2 = pGlide + pRemain * 0.26; // Step 2: Add hot water
-    var pStep3 = pGlide + pRemain * 0.52; // Step 3: Eat
+    var pStep2 = pGlide + pRemain * 0.16; // Step 2: Add hot water
+    var pStep3 = pGlide + pRemain * 0.32; // Step 3: Eat
 
     function jumpToStep(step) {
       var trigger = ScrollTrigger.getById('sharedPouchTrigger');
       if (trigger) {
-        var targetP = (step === 1) ? pStep1 + pRemain * 0.10 :
-                      (step === 2) ? pStep2 + pRemain * 0.12 :
-                      pStep3 + pRemain * 0.15;
+        var targetP = (step === 1) ? pStep1 + pRemain * 0.06 :
+                      (step === 2) ? pStep2 + pRemain * 0.06 :
+                      pStep3 + pRemain * 0.10;
         var scrollPos = trigger.start + (trigger.end - trigger.start) * targetP;
         window.scrollTo({ top: scrollPos, behavior: 'smooth' });
       }
@@ -405,7 +405,7 @@
         rotation: 35,
         x: function () { return coords.deltaX + (isMobile ? 22 : 36); },
         y: function () { return coords.deltaY + (isMobile ? -10 : -16); },
-        duration: pRemain * 0.16,
+        duration: pRemain * 0.10,
         ease: 'power2.inOut'
       }, pStep1)
       .to(particles, {
@@ -413,22 +413,22 @@
         y: function (i) { return 110 + (i % 6) * 14; },
         x: function (i) { return ((i % 5) - 2) * 12 + (Math.random() - 0.5) * 16; },
         rotation: function (i) { return (i * 35) + 120; },
-        stagger: 0.003,
-        duration: pRemain * 0.18,
+        stagger: 0.002,
+        duration: pRemain * 0.10,
         ease: 'power2.in'
-      }, pStep1 + pRemain * 0.04)
+      }, pStep1 + pRemain * 0.02)
       .to(foodDry, {
         opacity: 1,
         scaleY: 1,
         y: 0,
-        duration: pRemain * 0.20,
+        duration: pRemain * 0.12,
         ease: 'power1.out'
-      }, pStep1 + pRemain * 0.08)
+      }, pStep1 + pRemain * 0.04)
       .to(particles, {
         opacity: 0,
-        duration: pRemain * 0.06,
+        duration: pRemain * 0.04,
         ease: 'power1.out'
-      }, pStep1 + pRemain * 0.26)
+      }, pStep1 + pRemain * 0.12)
       .set(particles, { opacity: 0 }, pStep2)
 
       // Step 2: Add hot water (pStep2 -> pStep3) - pouch floats away/fades, water stream animates in, water level rises with sheen, steam starts
@@ -436,20 +436,20 @@
         opacity: 0,
         x: function () { return coords.deltaX + (isMobile ? 60 : 90); },
         y: function () { return coords.deltaY - 30; },
-        duration: pRemain * 0.10,
+        duration: pRemain * 0.06,
         ease: 'power1.in'
       }, pStep2)
-      .to(waterStream, { opacity: 0.85, duration: pRemain * 0.04 }, pStep2 + pRemain * 0.02)
-      .fromTo(waterBeam, { scaleY: 0 }, { scaleY: 1, duration: pRemain * 0.12, ease: 'power1.in' }, pStep2 + pRemain * 0.02)
-      .to(foodWater, { opacity: 0.75, duration: pRemain * 0.14 }, pStep2 + pRemain * 0.06)
-      .to(steamWisps, { opacity: 0.85, duration: pRemain * 0.14 }, pStep2 + pRemain * 0.08)
-      .to(waterBeam, { scaleY: 0, transformOrigin: 'bottom center', duration: pRemain * 0.08, ease: 'power1.out' }, pStep2 + pRemain * 0.18)
-      .to(waterStream, { opacity: 0, duration: pRemain * 0.04 }, pStep2 + pRemain * 0.24)
+      .to(waterStream, { opacity: 0.85, duration: pRemain * 0.03 }, pStep2 + pRemain * 0.01)
+      .fromTo(waterBeam, { scaleY: 0 }, { scaleY: 1, duration: pRemain * 0.08, ease: 'power1.in' }, pStep2 + pRemain * 0.01)
+      .to(foodWater, { opacity: 0.75, duration: pRemain * 0.08, ease: 'power1.out' }, pStep2 + pRemain * 0.03)
+      .to(steamWisps, { opacity: 0.85, duration: pRemain * 0.08, ease: 'power1.out' }, pStep2 + pRemain * 0.04)
+      .to(waterBeam, { scaleY: 0, transformOrigin: 'bottom center', duration: pRemain * 0.05, ease: 'power1.out' }, pStep2 + pRemain * 0.10)
+      .to(waterStream, { opacity: 0, duration: pRemain * 0.03 }, pStep2 + pRemain * 0.13)
 
       // Step 3: Eat (pStep3 -> finish) - crossfade into photographic finished biryani bowl with scale 0.97 -> 1, steam continues
-      .to(foodFinished, { opacity: 1, scale: 1, duration: pRemain * 0.14, ease: 'power2.out' }, pStep3)
-      .to(foodDry, { opacity: 0, duration: pRemain * 0.10, ease: 'power1.out' }, pStep3)
-      .to(foodWater, { opacity: 0, duration: pRemain * 0.10, ease: 'power1.out' }, pStep3);
+      .to(foodFinished, { opacity: 1, scale: 1, duration: pRemain * 0.09, ease: 'power2.out' }, pStep3)
+      .to(foodDry, { opacity: 0, duration: pRemain * 0.06, ease: 'power1.out' }, pStep3)
+      .to(foodWater, { opacity: 0, duration: pRemain * 0.06, ease: 'power1.out' }, pStep3);
   }
 
   /* ---------- init ---------- */
