@@ -7,6 +7,7 @@
         price: 205,
         mrp: 240,
         img: 'pouch-art/rajma-masala-front-processed.png',
+        imgBack: 'pouch-art/rajma-masala-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.9,
@@ -14,8 +15,7 @@
         weight: '95g net (makes 250g)',
         calories: '440 kcal',
         protein: '13.0g',
-        desc: 'Rich kidney beans slow-simmered in a robust onion, ginger, garlic, and tomato gravy infused with authentic Punjabi spices. Interactive 3D pouch available.',
-        has3D: true
+        desc: 'Rich kidney beans slow-simmered in a robust onion, ginger, garlic, and tomato gravy infused with authentic Punjabi spices.'
       },
       {
         id: 'paneer-butter-masala',
@@ -23,8 +23,8 @@
         category: 'Meals',
         price: 230,
         mrp: 260,
-        img: 'assets/products/paneer_butter_masala_front.png',
-        imgBack: 'assets/products/paneer_butter_masala_back.png',
+        img: 'pouch-art/paneer-butter-masala-front-processed.png',
+        imgBack: 'pouch-art/paneer-butter-masala-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.9,
@@ -40,8 +40,8 @@
         category: 'Meals',
         price: 240,
         mrp: 280,
-        img: 'assets/products/paneer_bhurji_front.png',
-        imgBack: 'assets/products/paneer_bhurji_back.png',
+        img: 'pouch-art/paneer-bhurji-front-processed.png',
+        imgBack: 'pouch-art/paneer-bhurji-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.9,
@@ -57,8 +57,8 @@
         category: 'Meals',
         price: 210,
         mrp: 240,
-        img: 'assets/products/pind_ke_chole_front.png',
-        imgBack: 'assets/products/pind_ke_chole_back.png',
+        img: 'pouch-art/pind-ke-chhole-front-processed.png',
+        imgBack: 'pouch-art/pind-ke-chhole-back-processed.png',
         jain: true,
         spice: 'Spicy',
         rating: 4.8,
@@ -74,8 +74,8 @@
         category: 'Meals',
         price: 195,
         mrp: 225,
-        img: 'assets/products/pav_bhaji_front.png',
-        imgBack: 'assets/products/pav_bhaji_back.png',
+        img: 'pouch-art/pav-bhaji-front-processed.png',
+        imgBack: 'pouch-art/pav-bhaji-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.9,
@@ -91,8 +91,8 @@
         category: 'Meals',
         price: 195,
         mrp: 230,
-        img: 'assets/products/bhindi_masala_front.png',
-        imgBack: 'assets/products/bhindi_masala_back.png',
+        img: 'pouch-art/bhindi-masala-front-processed.png',
+        imgBack: 'pouch-art/bhindi-masala-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.8,
@@ -108,8 +108,8 @@
         category: 'Meals',
         price: 220,
         mrp: 255,
-        img: 'assets/products/veg_kadhai_front.png',
-        imgBack: 'assets/products/veg_kadhai_back.png',
+        img: 'pouch-art/veg-kadhai-front-processed.png',
+        imgBack: 'pouch-art/veg-kadhai-back-processed.png',
         jain: true,
         spice: 'Spicy',
         rating: 4.7,
@@ -125,8 +125,8 @@
         category: 'Meals',
         price: 225,
         mrp: 260,
-        img: 'assets/products/veg_makhanwala_front.png',
-        imgBack: 'assets/products/veg_makhanwala_back.png',
+        img: 'pouch-art/veg-makhanwala-front-processed.png',
+        imgBack: 'pouch-art/veg-makhanwala-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.9,
@@ -142,8 +142,8 @@
         category: 'Meals',
         price: 185,
         mrp: 215,
-        img: 'assets/products/moong_masala_front.png',
-        imgBack: 'assets/products/moong_masala_back.png',
+        img: 'pouch-art/moong-masala-front-processed.png',
+        imgBack: 'pouch-art/moong-masala-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.8,
@@ -161,8 +161,8 @@
         category: 'Dals',
         price: 200,
         mrp: 240,
-        img: 'assets/products/dal_makhani_front.png',
-        imgBack: 'assets/products/dal_makhani_back.png',
+        img: 'pouch-art/dal-makhani-front-processed.png',
+        imgBack: 'pouch-art/dal-makhani-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.8,
@@ -178,8 +178,8 @@
         category: 'Dals',
         price: 185,
         mrp: 215,
-        img: 'assets/products/dal_tadka_front.png',
-        imgBack: 'assets/products/dal_tadka_back.png',
+        img: 'pouch-art/dal-tadka-front-processed.png',
+        imgBack: 'pouch-art/dal-tadka-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.9,
@@ -195,8 +195,8 @@
         category: 'Dals',
         price: 175,
         mrp: 205,
-        img: 'assets/products/dal_fry_front.png',
-        imgBack: 'assets/products/dal_fry_back.png',
+        img: 'pouch-art/dal-fry-front-processed.png',
+        imgBack: 'pouch-art/dal-fry-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.8,
@@ -212,8 +212,8 @@
         category: 'Dals',
         price: 175,
         mrp: 205,
-        img: 'assets/products/gujarati_dal_front.png',
-        imgBack: 'assets/products/gujarati_dal_back.png',
+        img: 'pouch-art/gujarati-dal-front-processed.png',
+        imgBack: 'pouch-art/gujarati-dal-back-processed.png',
         jain: true,
         spice: 'Sweet',
         rating: 4.9,
@@ -231,8 +231,8 @@
         category: 'Rice',
         price: 190,
         mrp: 220,
-        img: 'assets/products/dal_khichdi_front.png',
-        imgBack: 'assets/products/dal_khichdi_back.png',
+        img: 'pouch-art/dal-khichdi-front-processed.png',
+        imgBack: 'pouch-art/dal-khichdi-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.9,
@@ -248,8 +248,8 @@
         category: 'Rice',
         price: 170,
         mrp: 199,
-        img: 'assets/products/masala_khichdi_kadhi_front.png',
-        imgBack: 'assets/products/masala_khichdi_kadhi_back.png',
+        img: 'pouch-art/masala-khichdi-kadhi-front-processed.png',
+        imgBack: 'pouch-art/masala-khichdi-kadhi-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.8,
@@ -265,8 +265,8 @@
         category: 'Rice',
         price: 225,
         mrp: 260,
-        img: 'assets/products/veg_biryani_front.png',
-        imgBack: 'assets/products/veg_biryani_back.png',
+        img: 'pouch-art/veg-biryani-front-processed.png',
+        imgBack: 'pouch-art/veg-biryani-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.7,
@@ -282,8 +282,8 @@
         category: 'Rice',
         price: 140,
         mrp: 165,
-        img: 'assets/products/jeera_rice_front.png',
-        imgBack: 'assets/products/jeera_rice_back.png',
+        img: 'pouch-art/jeera-rice-front-processed.png',
+        imgBack: 'pouch-art/jeera-rice-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.8,
@@ -299,8 +299,8 @@
         category: 'Rice',
         price: 195,
         mrp: 225,
-        img: 'assets/products/tawa_pulao_front.png',
-        imgBack: 'assets/products/tawa_pulao_back.png',
+        img: 'pouch-art/tawa-pulao-front-processed.png',
+        imgBack: 'pouch-art/tawa-pulao-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.8,
@@ -316,8 +316,8 @@
         category: 'Rice',
         price: 210,
         mrp: 245,
-        img: 'assets/products/fried_rice_with_manchurian_gravy_front.png',
-        imgBack: 'assets/products/fried_rice_with_manchurian_gravy_back.png',
+        img: 'pouch-art/fried-rice-manchurian-front-processed.png',
+        imgBack: 'pouch-art/fried-rice-manchurian-back-processed.png',
         jain: false,
         spice: 'Spicy',
         rating: 4.7,
@@ -333,8 +333,8 @@
         category: 'Rice',
         price: 175,
         mrp: 205,
-        img: 'assets/products/fried_rice_front.png',
-        imgBack: 'assets/products/fried_rice_back.png',
+        img: 'pouch-art/fried-rice-front-processed.png',
+        imgBack: 'pouch-art/fried-rice-back-processed.png',
         jain: false,
         spice: 'Medium',
         rating: 4.7,
@@ -350,8 +350,8 @@
         category: 'Rice',
         price: 195,
         mrp: 225,
-        img: 'assets/products/schezwan_rice_front.png',
-        imgBack: 'assets/products/schezwan_rice_back.png',
+        img: 'pouch-art/schezwan-rice-front-processed.png',
+        imgBack: 'pouch-art/schezwan-rice-back-processed.png',
         jain: true,
         spice: 'Spicy',
         rating: 4.8,
@@ -367,8 +367,8 @@
         category: 'Rice',
         price: 195,
         mrp: 230,
-        img: 'assets/products/mexican_rice_front.png',
-        imgBack: 'assets/products/mexican_rice_back.png',
+        img: 'pouch-art/mexican-rice-front-processed.png',
+        imgBack: 'pouch-art/mexican-rice-back-processed.png',
         jain: true,
         spice: 'Medium',
         rating: 4.7,
@@ -386,8 +386,8 @@
         category: 'Breakfast',
         price: 120,
         mrp: 140,
-        img: 'assets/products/kanda_poha_front.png',
-        imgBack: 'assets/products/kanda_poha_back.png',
+        img: 'pouch-art/kanda-poha-front-processed.png',
+        imgBack: 'pouch-art/kanda-poha-back-processed.png',
         jain: false,
         spice: 'Mild',
         rating: 4.8,
@@ -403,8 +403,8 @@
         category: 'Breakfast',
         price: 140,
         mrp: 165,
-        img: 'assets/products/idli_sambar_front.png',
-        imgBack: 'assets/products/idli_sambar_back.png',
+        img: 'pouch-art/idli-sambar-front-processed.png',
+        imgBack: 'pouch-art/idli-sambar-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.9,
@@ -420,8 +420,8 @@
         category: 'Breakfast',
         price: 120,
         mrp: 140,
-        img: 'assets/products/upma_front.png',
-        imgBack: 'assets/products/upma_back.png',
+        img: 'pouch-art/upma-front-processed.png',
+        imgBack: 'pouch-art/upma-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.8,
@@ -437,8 +437,8 @@
         category: 'Breakfast',
         price: 180,
         mrp: 210,
-        img: 'assets/products/mumbai_misal_front.png',
-        imgBack: 'assets/products/mumbai_misal_back.png',
+        img: 'pouch-art/mumbai-misal-front-processed.png',
+        imgBack: 'pouch-art/mumbai-misal-back-processed.png',
         jain: false,
         spice: 'Spicy',
         rating: 4.9,
@@ -472,8 +472,8 @@
         category: 'Soups',
         price: 95,
         mrp: 120,
-        img: 'assets/products/tomato_soup_front.png',
-        imgBack: 'assets/products/tomato_soup_back.png',
+        img: 'pouch-art/tomato-soup-front-processed.png',
+        imgBack: 'pouch-art/tomato-soup-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.6,
@@ -489,8 +489,8 @@
         category: 'Soups',
         price: 95,
         mrp: 120,
-        img: 'assets/products/sweet_corn_soup_front.png',
-        imgBack: 'assets/products/sweet_corn_soup_back.png',
+        img: 'pouch-art/sweet-corn-soup-front-processed.png',
+        imgBack: 'pouch-art/sweet-corn-soup-back-processed.png',
         jain: true,
         spice: 'Mild',
         rating: 4.8,
@@ -506,8 +506,8 @@
         category: 'Soups',
         price: 95,
         mrp: 120,
-        img: 'assets/products/hot_&_sour_soup_front.png',
-        imgBack: 'assets/products/hot_&_sour_soup_back.png',
+        img: 'pouch-art/hot-and-sour-soup-front-processed.png',
+        imgBack: 'pouch-art/hot-and-sour-soup-back-processed.png',
         jain: false,
         spice: 'Spicy',
         rating: 4.7,
@@ -525,8 +525,8 @@
         category: 'Desserts',
         price: 150,
         mrp: 180,
-        img: 'assets/products/gajar_halwa_front.png',
-        imgBack: 'assets/products/gajar_halwa_back.png',
+        img: 'pouch-art/gajar-halwa-front-processed.png',
+        imgBack: 'pouch-art/gajar-halwa-back-processed.png',
         jain: false,
         spice: 'Sweet',
         rating: 5.0,
@@ -542,8 +542,8 @@
         category: 'Desserts',
         price: 180,
         mrp: 210,
-        img: 'assets/products/aam_ras_front.png',
-        imgBack: 'assets/products/aam_ras_back.png',
+        img: 'pouch-art/aam-ras-front-processed.png',
+        imgBack: 'pouch-art/aam-ras-back-processed.png',
         jain: true,
         spice: 'Sweet',
         rating: 4.9,
@@ -559,8 +559,8 @@
         category: 'Desserts',
         price: 140,
         mrp: 165,
-        img: 'assets/products/rawa_sheera_front.png',
-        imgBack: 'assets/products/rawa_sheera_back.png',
+        img: 'pouch-art/rawa-sheera-front-processed.png',
+        imgBack: 'pouch-art/rawa-sheera-back-processed.png',
         jain: true,
         spice: 'Sweet',
         rating: 4.9,
@@ -709,11 +709,54 @@
       }
     ];
 
+    
+    // Valid Category List and URL/Storage Synchronization (Step 6)
+    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'];
+
+    function getInitialCategory() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        let catParam = urlParams.get('category') || urlParams.get('cat');
+        if (!catParam && location.hash) {
+          const rawHash = location.hash.slice(1);
+          const qIndex = rawHash.indexOf('?');
+          if (qIndex !== -1) {
+            const hashParams = new URLSearchParams(rawHash.slice(qIndex + 1));
+            catParam = hashParams.get('category') || hashParams.get('cat');
+          } else if (rawHash.startsWith('shop/')) {
+            catParam = decodeURIComponent(rawHash.slice(5));
+          }
+        }
+        if (catParam) {
+          const match = VALID_CATEGORIES.find(c => c.toLowerCase() === catParam.toLowerCase().trim());
+          if (match) return match;
+        }
+      } catch (e) {}
+
+      try {
+        const saved = sessionStorage.getItem('mm_selected_category');
+        if (saved) {
+          const match = VALID_CATEGORIES.find(c => c.toLowerCase() === saved.toLowerCase().trim());
+          if (match) return match;
+        }
+      } catch (e) {}
+
+      return 'All';
+    }
+
+    function setSelectedCategory(cat) {
+      const match = VALID_CATEGORIES.find(c => c.toLowerCase() === (cat || '').toLowerCase().trim()) || 'All';
+      State.selectedCategory = match;
+      try {
+        sessionStorage.setItem('mm_selected_category', match);
+      } catch (e) {}
+    }
+
     // Global App State
     const State = {
       view: 'home',
       productId: null,
-      selectedCategory: 'Rice',
+      selectedCategory: getInitialCategory(),
       searchQuery: '',
       sortBy: 'popular',
       jainOnly: false,
@@ -778,7 +821,7 @@
             <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
             <div class="card-badges">
               ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
-              ${p.has3D ? '<span class="badge-3d">↻ 3D Pouch</span>' : ''}
+              
             </div>
             <div class="veg-corner" title="100% Vegetarian"></div>
           </div>
@@ -1261,10 +1304,14 @@
           </div>
 
           <div class="pdp-layout">
-            <!-- Product Gallery (Interactive 3D Pouch for Rajma Masala only) -->
-            ${p.id === 'rajma-masala' ? `
+            <!-- Product Gallery (Interactive Rotate Viewer) -->
+            ${p.imgBack ? `
               <div class="pdp-gallery pdp-gallery-3d" id="pdpGallery3D">
-                <div id="pdp3dCanvasContainer" class="pdp-3d-canvas-container"></div>
+                <div id="pdp3dCanvasContainer" class="pdp-3d-canvas-container" style="position:relative; width:100%; aspect-ratio:1/1;">
+                  <div class="pdp-3d-loading" id="pdp3dLoading" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:var(--bg-warm, #FAF6F0); border-radius:16px; z-index:1;">
+                    <img src="${p.img}" alt="${p.title}" style="max-height:88%; max-width:88%; object-fit:contain;">
+                  </div>
+                </div>
                 <div class="pdp-3d-hint">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>Drag to rotate 360° (Front & Back)</span>
@@ -1774,8 +1821,9 @@
 
       renderCartDrawer();
 
-      if (State.view === 'product' && State.productId === 'rajma-masala') {
-        setTimeout(initPdp3dPouch, 50);
+      const currentProduct = PRODUCTS.find(x => x.id === State.productId);
+      if (State.view === 'product' && currentProduct && currentProduct.imgBack) {
+        setTimeout(() => initPdp3dPouch(currentProduct), 50);
       } else {
         disposePdp3dPouch();
       }
@@ -1881,9 +1929,14 @@
       $('#cartSubtotalAmt').textContent = formatINR(subtotal);
     }
 
-    function navigateTo(view, productId = null) {
+    function navigateTo(view, productId = null, category = null) {
       State.view = view;
       State.productId = productId;
+      if (view === 'shop') {
+        if (category) {
+          setSelectedCategory(category);
+        }
+      }
       if (view === 'product') {
         State.pdpPack = '1';
         State.pdpQty = 1;
@@ -1892,8 +1945,15 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       renderApp(true);
       try {
-        const hash = view === 'product' ? `p-${productId}` : view;
-        history.replaceState(null, '', `#${hash}`);
+        let hash = view;
+        if (view === 'product') {
+          hash = `p-${productId}`;
+        } else if (view === 'shop') {
+          hash = State.selectedCategory !== 'All' ? `shop?category=${encodeURIComponent(State.selectedCategory)}` : 'shop';
+        }
+        if (location.hash !== `#${hash}`) {
+          history.pushState(null, '', `#${hash}`);
+        }
       } catch (e) {}
     }
 
@@ -2441,8 +2501,8 @@
 
       if (target.dataset.cat) {
         e.preventDefault();
-        State.selectedCategory = target.dataset.cat;
-        navigateTo('shop');
+        setSelectedCategory(target.dataset.cat);
+        navigateTo('shop', null, State.selectedCategory);
         return;
       }
 
@@ -2518,9 +2578,12 @@
 
       if (target.id === 'resetFiltersBtn') {
         State.searchQuery = '';
-        State.selectedCategory = 'All';
+        setSelectedCategory('All');
         State.jainOnly = false;
         renderApp();
+        try {
+          history.replaceState(null, '', '#shop');
+        } catch (e) {}
         return;
       }
 
@@ -2750,16 +2813,31 @@
     });
 
     function initRoute() {
-      const hash = (location.hash || '').slice(1);
-      if (hash.startsWith('p-')) {
-        const id = hash.slice(2);
+      const rawHash = (location.hash || '').slice(1);
+      const qIndex = rawHash.indexOf('?');
+      const hash = qIndex !== -1 ? rawHash.slice(0, qIndex) : rawHash;
+      const hashParams = qIndex !== -1 ? new URLSearchParams(rawHash.slice(qIndex + 1)) : new URLSearchParams();
+      const urlParams = new URLSearchParams(window.location.search);
+
+      let catParam = urlParams.get('category') || urlParams.get('cat') || hashParams.get('category') || hashParams.get('cat');
+      if (rawHash.startsWith('shop/')) {
+        catParam = decodeURIComponent(rawHash.slice(5));
+      }
+
+      if (rawHash.startsWith('p-')) {
+        const id = rawHash.slice(2);
         if (PRODUCTS.some(x => x.id === id)) {
           navigateTo('product', id);
           return;
         }
       }
-      if (hash === 'shop') {
-        navigateTo('shop');
+      if (hash === 'shop' || rawHash.startsWith('shop')) {
+        if (catParam) {
+          setSelectedCategory(catParam);
+        } else {
+          setSelectedCategory(getInitialCategory());
+        }
+        navigateTo('shop', null, State.selectedCategory);
         return;
       }
       if (hash === 'byob') {
@@ -2848,10 +2926,14 @@
         pdp3dIsSpinning = !pdp3dIsSpinning;
       };
 
-      function initPdp3dPouch() {
+      function initPdp3dPouch(product) {
         disposePdp3dPouch();
         const container = document.getElementById('pdp3dCanvasContainer');
         if (!container || !window.THREE) return;
+        if (!product) {
+          product = PRODUCTS.find(x => x.id === State.productId);
+        }
+        if (!product) return;
 
         const rect = container.getBoundingClientRect();
         const width = rect.width || container.clientWidth || 420;
@@ -2909,25 +2991,41 @@
         shadowMesh.position.y = -0.92;
         pdp3dScene.add(shadowMesh);
 
-        // Load Textures (Uses embedded high-resolution data URIs to guarantee zero CORS issues under file:///)
+        // Load Textures with embedded high-resolution data URIs (zero CORS issues) or WebP/PNG fallbacks
         const texLoader = new THREE.TextureLoader();
-        const frontSrc = (window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.front) || 'pouch-art/rajma-masala-front-processed.png';
-        const backSrc = (window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.back) || 'pouch-art/rajma-masala-back-processed.png';
+        const frontSrc = (window.POUCH_TEXTURES && window.POUCH_TEXTURES[product.id] && window.POUCH_TEXTURES[product.id].front)
+                      || (product.id === 'rajma-masala' && window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.front)
+                      || `pouch-art/${product.id}-front-processed.png`;
+        const backSrc = (window.POUCH_TEXTURES && window.POUCH_TEXTURES[product.id] && window.POUCH_TEXTURES[product.id].back)
+                     || (product.id === 'rajma-masala' && window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.back)
+                     || `pouch-art/${product.id}-back-processed.png`;
         const maxAniso = pdp3dRenderer.capabilities ? pdp3dRenderer.capabilities.getMaxAnisotropy() : 8;
 
-        const texF = texLoader.load(frontSrc);
+        const onTextureLoaded = () => {
+          const loadingEl = document.getElementById('pdp3dLoading');
+          if (loadingEl) loadingEl.style.display = 'none';
+        };
+
+        const texF = texLoader.load(frontSrc, onTextureLoaded);
         texF.encoding = THREE.sRGBEncoding;
         texF.generateMipmaps = false;
         texF.minFilter = THREE.LinearFilter;
         texF.magFilter = THREE.LinearFilter;
         texF.anisotropy = maxAniso;
 
-        const texB = texLoader.load(backSrc);
+        const texB = texLoader.load(backSrc, onTextureLoaded);
         texB.encoding = THREE.sRGBEncoding;
         texB.generateMipmaps = false;
         texB.minFilter = THREE.LinearFilter;
         texB.magFilter = THREE.LinearFilter;
         texB.anisotropy = maxAniso;
+
+        // Ensure canvas does not block vertical touch scrolling on mobile
+        pdp3dRenderer.domElement.style.touchAction = 'pan-y';
+
+        // Respect prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        pdp3dIsSpinning = false; // default off so users rotate or click Auto Spin
 
         // Pouch Geometry
         const POUCH_W = 1.16;
