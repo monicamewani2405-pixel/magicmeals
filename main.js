@@ -1430,6 +1430,66 @@
             </div>
           </div>
 
+          <!-- How It Works Video & Prep Showcase -->
+          <section class="pdp-hiw-section" aria-label="How Magic Meals Works">
+            <div class="pdp-hiw-header">
+              <span class="pdp-hiw-pill">Preparation Guide</span>
+              <h2 class="pdp-hiw-title">See How Easy It Is: Ready in 5 Minutes</h2>
+              <p class="pdp-hiw-subtitle">Just add boiling water. No cooking, no mess, zero chemical preservatives.</p>
+            </div>
+
+            <div class="pdp-hiw-grid">
+              <!-- Left: Real Video Reel -->
+              <div class="pdp-hiw-video-card">
+                <video 
+                  class="pdp-hiw-video" 
+                  src="https://magicmeals.shop/wp-content/uploads/2026/04/WhatsApp-Video-2026-04-09-at-1.03.01-PM-1-1.mp4" 
+                  controls 
+                  playsinline 
+                  preload="metadata"
+                  title="How to Prepare Magic Meals"
+                ></video>
+                <div class="pdp-hiw-video-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>Real Preparation Video</span>
+                </div>
+              </div>
+
+              <!-- Right: 3 Visual Steps -->
+              <div class="pdp-hiw-steps">
+                <div class="pdp-hiw-step">
+                  <div class="pdp-hiw-step-num">1</div>
+                  <div class="pdp-hiw-step-info">
+                    <h4>Open Pouch & Remove Absorber</h4>
+                    <p>Unzip the top of the pouch and take out the small white freshness absorber packet inside.</p>
+                  </div>
+                </div>
+
+                <div class="pdp-hiw-step">
+                  <div class="pdp-hiw-step-num">2</div>
+                  <div class="pdp-hiw-step-info">
+                    <h4>Pour Boiling Hot Water</h4>
+                    <p>Pour boiling water up to the marked fill line inside. Stir gently to mix the authentic spices.</p>
+                  </div>
+                </div>
+
+                <div class="pdp-hiw-step">
+                  <div class="pdp-hiw-step-num">3</div>
+                  <div class="pdp-hiw-step-info">
+                    <h4>Zip Tight & Rest 5–7 Minutes</h4>
+                    <p>Zip seal the pouch tightly. Wait 5-7 minutes for the meal to naturally rehydrate into fresh, hot comfort food!</p>
+                  </div>
+                </div>
+
+                <div class="pdp-hiw-perks">
+                  <span>✨ Pure Ghee & Natural Spices</span>
+                  <span>🌿 Zero Preservatives</span>
+                  <span>✈️ Travel-Ready Bowl Included</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- Related Dishes -->
           ${related.length > 0 ? `
             <div style="margin-top:48px;">
