@@ -3494,6 +3494,19 @@
     top: 5px;
   }
 
+  .hiw-particles-field {
+    top: 75px;
+    height: 65px;
+    width: 120px;
+    overflow: hidden;
+  }
+
+  .hiw-water-stream {
+    top: 20px;
+    height: 95px;
+    overflow: hidden;
+  }
+
   .hiw-bowl-actor {
     width: 200px;
     height: 173px;
