@@ -12,7 +12,7 @@ const DESIGN_CHOOSER = true;
 (function () {
   'use strict';
 
-  var NAMES = { 1: 'Classic', 2: 'Switcher', 3: 'Wall' };
+  var NAMES = { 1: 'Classic', 2: 'Switcher', 3: 'Split' };
   var MODS = { 1: 'classic', 2: 'switcher', 3: 'wall' };
   var STORE_KEY = 'mm-hero-design';
   var FADE_MS = 200;

@@ -588,3 +588,885 @@ body[data-view="home"] .v-wall { margin-top: -72px; }
   .v-wall-steam i { animation: none; opacity: 0.3; }
   .v-wall-pouch, .v-wall-card { transition: none; }
 }
+
+/* =========================================================
+   Design 3: Diagonal Split Journey Hero (v-split-*)
+   ========================================================= */
+.v-split {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 85px 24px calc(var(--bottom-nav-h, 0px) + 90px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+body[data-view="home"] .v-split { margin-top: -72px; }
+
+/* Diagonal Background Panels */
+.v-split-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.v-split-panel {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Travel side: Fresh airy sky & cool mint tint */
+.v-split-panel--travel {
+  background: linear-gradient(135deg, #F0F7FB 0%, #E2F0F9 50%, #CDE5F4 100%);
+  clip-path: polygon(0 0, 62% 0, 38% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* Work/Desk side: Warm cozy terracotta & golden saffron tint */
+.v-split-panel--work {
+  background: linear-gradient(135deg, #FFF9F2 0%, #FDF3E7 50%, #F9E7D2 100%);
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 38% 100%);
+  z-index: 1;
+}
+
+.v-split-divider {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgb(var(--black-rgb) / 0.1) 20%, rgb(var(--black-rgb) / 0.1) 80%, transparent);
+  transform: rotate(-14deg);
+  transform-origin: center;
+  z-index: 2;
+}
+
+/* Header Area */
+.v-split-header {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin: 0 auto 12px;
+  max-width: 800px;
+}
+
+.v-split-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-secondary);
+  background: rgb(var(--white-rgb) / 0.85);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgb(var(--black-rgb) / 0.05);
+  margin-bottom: 8px;
+}
+
+.v-split-headline {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(26px, 4vw, 48px);
+  line-height: 1.1;
+  color: var(--brand-primary-dark);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.v-split-line {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+/* Stage Area (Two Sides) */
+.v-split-stage {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.v-split-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  background: rgb(var(--white-rgb) / 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgb(var(--white-rgb) / 0.9);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgb(var(--black-rgb) / 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, flex 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  min-height: 290px;
+}
+
+.v-split-side:hover,
+.v-split-side.is-expanded {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgb(var(--black-rgb) / 0.12);
+  border-color: var(--brand-secondary);
+  background: rgb(var(--white-rgb) / 0.92);
+}
+
+.v-split-side--travel.is-expanded {
+  border-color: var(--brand-primary);
+}
+
+.v-split-side--work.is-expanded {
+  border-color: #D97706; /* warm amber tone */
+}
+
+/* Card Content Inside Side */
+.v-split-card-content {
+  flex: 1;
+  max-width: 280px;
+  text-align: left;
+}
+
+.v-split-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--brand-secondary);
+  margin-bottom: 6px;
+}
+
+.v-split-side--work .v-split-tag {
+  color: #D97706;
+}
+
+.v-split-title {
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.v-split-desc {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.v-split-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.v-split-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 13.5px;
+  background: var(--brand-primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.v-split-btn:hover {
+  background: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}
+
+.v-split-side--work .v-split-btn {
+  background: #D97706;
+}
+.v-split-side--work .v-split-btn:hover {
+  background: #B45309;
+}
+
+.v-split-add-btn {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.v-split-add-btn:hover {
+  opacity: 1;
+}
+
+/* Pouch Image Visual */
+.v-split-pouch-wrap {
+  position: relative;
+  width: 175px;
+  height: 270px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-split-pouch-float {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-split-pouch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgb(var(--black-rgb) / 0.15));
+  transition: transform 0.3s ease;
+}
+
+.v-split-side:hover .v-split-pouch-img {
+  transform: scale(1.05);
+}
+
+.v-split-badge {
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  background: var(--white);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgb(var(--black-rgb) / 0.12);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.v-split-shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 15%;
+  width: 70%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgb(var(--black-rgb) / 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Footer Cue */
+.v-split-footer-cue {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.v-split-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgb(var(--white-rgb) / 0.7);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.v-split-scroll-cue:hover {
+  background: var(--white);
+  color: var(--text);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 860px) {
+  .v-split {
+    padding: 75px 16px calc(var(--bottom-nav-h, 0px) + 95px);
+  }
+  .v-split-stage {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .v-split-panel--travel {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  .v-split-panel--work {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  }
+  .v-split-divider {
+    display: none;
+  }
+  .v-split-side {
+    padding: 16px 20px;
+    min-height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .v-split-pouch-wrap {
+    width: 120px;
+    height: 180px;
+  }
+  .v-split-title {
+    font-size: 18px;
+  }
+  .v-split-desc {
+    font-size: 12.5px;
+    margin-bottom: 12px;
+  }
+  .v-split-btn {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+}
+
+/* =========================================================
+   Design 3: True Full-Bleed Diagonal Split Hero (v-split-*)
+   ========================================================= */
+.v-split {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+body[data-view="home"] .v-split { margin-top: -72px; }
+
+/* The Two Full-Bleed Diagonal Halves */
+.v-split-half {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  transition: clip-path 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Travel Half (Top-Left to Bottom-Mid) */
+.v-split-half--travel {
+  background: linear-gradient(135deg, #EBF5FB 0%, #D8ECF8 45%, #BCDFF4 100%);
+  clip-path: polygon(0 0, 58% 0, 42% 100%, 0 100%);
+  z-index: 2;
+  justify-content: flex-start;
+  padding-left: clamp(24px, 7vw, 100px);
+}
+
+/* Work Half (Top-Mid to Bottom-Right) */
+.v-split-half--work {
+  background: linear-gradient(135deg, #FFFDF8 0%, #FDF4E7 50%, #FAE4C8 100%);
+  clip-path: polygon(58% 0, 100% 0, 100% 100%, 42% 100%);
+  z-index: 2;
+  justify-content: flex-end;
+  padding-right: clamp(24px, 7vw, 100px);
+}
+
+/* Active Hover Expansion */
+.v-split[data-active-side="travel"] .v-split-half--travel {
+  clip-path: polygon(0 0, 68% 0, 52% 100%, 0 100%);
+  z-index: 3;
+}
+.v-split[data-active-side="travel"] .v-split-half--work {
+  clip-path: polygon(68% 0, 100% 0, 100% 100%, 52% 100%);
+}
+
+.v-split[data-active-side="work"] .v-split-half--travel {
+  clip-path: polygon(0 0, 48% 0, 32% 100%, 0 100%);
+}
+.v-split[data-active-side="work"] .v-split-half--work {
+  clip-path: polygon(48% 0, 100% 0, 100% 100%, 32% 100%);
+  z-index: 3;
+}
+
+/* Diagonal Seam Glow Line */
+.v-split-seam {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, transparent);
+  box-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 30px rgba(1, 115, 194, 0.15);
+  transform: rotate(-9deg);
+  transform-origin: center;
+  z-index: 4;
+  pointer-events: none;
+  transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v-split[data-active-side="travel"] .v-split-seam { left: 60%; }
+.v-split[data-active-side="work"] .v-split-seam { left: 40%; }
+
+/* Half Body Content (Text + Direct Pouch) */
+.v-split-content {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3.5vw, 40px);
+  max-width: 540px;
+  position: relative;
+  z-index: 5;
+  margin-top: 50px;
+}
+.v-split-half--work .v-split-content {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.v-split-text {
+  flex: 1;
+  min-width: 170px;
+}
+
+.v-split-pill-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-secondary);
+  background: rgba(255,255,255,0.85);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+}
+.v-split-half--work .v-split-pill-tag {
+  color: #D97706;
+}
+
+.v-split-half-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.2vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.v-split-half-desc {
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+.v-split-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.v-split-half--work .v-split-btn-group {
+  align-items: flex-end;
+}
+
+.v-split-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--brand-primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(1, 115, 194, 0.3);
+  transition: all 0.25s ease;
+}
+.v-split-cta-btn:hover {
+  background: var(--brand-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(1, 115, 194, 0.4);
+}
+.v-split-half--work .v-split-cta-btn {
+  background: #D97706;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+}
+.v-split-half--work .v-split-cta-btn:hover {
+  background: #B45309;
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
+}
+
+.v-split-quick-add {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.v-split-quick-add:hover { opacity: 1; color: var(--brand-secondary); }
+
+/* Pouch Standout Directly in Space */
+.v-split-pouch-stage {
+  position: relative;
+  width: clamp(160px, 18vw, 260px);
+  height: clamp(250px, 28vw, 410px);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-split-pouch-actor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-split-pouch-standout {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 35px rgba(0,0,0,0.22));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v-split-half:hover .v-split-pouch-standout {
+  transform: scale(1.08) rotate(-2deg);
+}
+.v-split-half--work:hover .v-split-pouch-standout {
+  transform: scale(1.08) rotate(2deg);
+}
+
+.v-split-pouch-floor {
+  position: absolute;
+  bottom: 0px;
+  left: 10%;
+  width: 80%;
+  height: 18px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.v-split-pouch-badge {
+  position: absolute;
+  top: 15px;
+  background: rgba(255,255,255,0.95);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 3;
+  white-space: nowrap;
+}
+.v-split-half--travel .v-split-pouch-badge { right: -10px; }
+.v-split-half--work .v-split-pouch-badge { left: -10px; }
+
+/* Centered Top Headline */
+.v-split-topbar {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  text-align: center;
+  pointer-events: none;
+}
+.v-split-top-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-secondary);
+  background: rgba(255,255,255,0.92);
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  margin-bottom: 6px;
+}
+.v-split-top-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(22px, 3.2vw, 42px);
+  color: var(--brand-primary-dark);
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(255,255,255,0.8);
+}
+
+/* Centered Bottom Cue */
+.v-split-bottom-cue {
+  position: absolute;
+  bottom: calc(var(--bottom-nav-h, 0px) + 72px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 6;
+  pointer-events: auto;
+}
+.v-split-cue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+}
+.v-split-cue-btn:hover {
+  background: var(--white);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 860px) {
+  .v-split {
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: calc(var(--bottom-nav-h, 0px) + 90px);
+  }
+  .v-split-half {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 48vh;
+    padding: 30px 20px;
+    clip-path: none !important;
+    justify-content: center;
+  }
+  .v-split-half--travel {
+    background: linear-gradient(180deg, #EBF5FB 0%, #D8ECF8 100%);
+  }
+  .v-split-half--work {
+    background: linear-gradient(180deg, #FFFDF8 0%, #FDF4E7 100%);
+    padding-right: 20px;
+  }
+  .v-split-seam { display: none; }
+  .v-split-topbar {
+    position: relative;
+    top: 0;
+    margin-bottom: 12px;
+  }
+  .v-split-content {
+    margin-top: 0;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+  .v-split-half-title {
+    font-size: 24px;
+  }
+  .v-split-pouch-stage {
+    width: 130px;
+    height: 200px;
+  }
+  .v-split-bottom-cue {
+    position: relative;
+    bottom: 0;
+    margin-top: 14px;
+  }
+}
+
+/* Fix Seam and Pouch Overlap on Desktop */
+@media (min-width: 861px) {
+  .v-split-half--travel {
+    clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+    padding-left: clamp(20px, 4vw, 60px);
+  }
+  .v-split-half--work {
+    clip-path: polygon(56% 0, 100% 0, 100% 100%, 44% 100%);
+    padding-right: clamp(20px, 4vw, 60px);
+  }
+  .v-split[data-active-side="travel"] .v-split-half--travel {
+    clip-path: polygon(0 0, 62% 0, 50% 100%, 0 100%);
+  }
+  .v-split[data-active-side="travel"] .v-split-half--work {
+    clip-path: polygon(62% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+  .v-split[data-active-side="work"] .v-split-half--travel {
+    clip-path: polygon(0 0, 50% 0, 38% 100%, 0 100%);
+  }
+  .v-split[data-active-side="work"] .v-split-half--work {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 38% 100%);
+  }
+  .v-split-seam {
+    transform: rotate(-7deg);
+    left: 50%;
+  }
+  .v-split[data-active-side="travel"] .v-split-seam { left: 56%; }
+  .v-split[data-active-side="work"] .v-split-seam { left: 44%; }
+  .v-split-content {
+    max-width: 480px;
+    gap: 20px;
+  }
+  .v-split-pouch-stage {
+    width: clamp(140px, 15vw, 210px);
+    height: clamp(220px, 24vw, 330px);
+  }
+}
+
+/* Fix Mobile Padding and Spacing to clear bottom nav & chooser */
+@media (max-width: 860px) {
+  .v-split {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 75px;
+    padding-bottom: calc(var(--bottom-nav-h, 0px) + 120px);
+    gap: 16px;
+  }
+  .v-split-half {
+    min-height: 40vh;
+    padding: 24px 16px;
+    border-radius: 20px;
+    margin: 0 12px;
+  }
+  .v-split-half-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .v-split-half-desc {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .v-split-pouch-stage {
+    width: 105px;
+    height: 165px;
+  }
+  .v-split-pouch-badge {
+    top: 5px;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+/* Ensure Mobile Two Halves Fit in Single Screen without Overflow */
+@media (max-width: 860px) {
+  .v-split {
+    min-height: 100svh;
+    height: auto;
+    padding-top: 65px;
+    padding-bottom: calc(var(--bottom-nav-h, 0px) + 95px);
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .v-split-topbar {
+    margin-bottom: 4px;
+  }
+  .v-split-top-kicker {
+    font-size: 9.5px;
+    padding: 2px 10px;
+    margin-bottom: 2px;
+  }
+  .v-split-top-title {
+    font-size: 20px;
+  }
+  .v-split-half {
+    min-height: auto;
+    padding: 12px 14px;
+    border-radius: 16px;
+    margin: 0 10px;
+  }
+  .v-split-content {
+    gap: 8px;
+  }
+  .v-split-pill-tag {
+    font-size: 9px;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+  }
+  .v-split-half-title {
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+  .v-split-half-desc {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .v-split-cta-btn {
+    padding: 6px 14px;
+    font-size: 11.5px;
+  }
+  .v-split-quick-add {
+    font-size: 11px;
+  }
+  .v-split-pouch-stage {
+    width: 85px;
+    height: 135px;
+  }
+  .v-split-pouch-badge {
+    top: 0px;
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .v-split-bottom-cue {
+    display: none;
+  }
+}
+
+/* Remove dividing seam completely and create clean seamless diagonal edge */
+.v-split-seam {
+  display: none !important;
+}
+
+/* Base Work Panel underneath across entire canvas */
+.v-split-half--work {
+  clip-path: none !important;
+  z-index: 1 !important;
+  background: linear-gradient(135deg, #FFFDF8 0%, #FDF4E7 50%, #FAE4C8 100%) !important;
+}
+
+/* Travel Panel clips cleanly on top with a seamless diagonal edge - 0px gap */
+.v-split-half--travel {
+  clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%) !important;
+  z-index: 2 !important;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.04);
+}
+
+.v-split[data-active-side="travel"] .v-split-half--travel {
+  clip-path: polygon(0 0, 58% 0, 48% 100%, 0 100%) !important;
+}
+
+.v-split[data-active-side="work"] .v-split-half--travel {
+  clip-path: polygon(0 0, 46% 0, 36% 100%, 0 100%) !important;
+}
