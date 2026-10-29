@@ -5,15 +5,16 @@
    - Renders the static How It Works for Designs 2 and 3
    - Builds the fixed 1/2/3 chooser (Home view only)
    To remove the feature: delete this file, variants.css, heroes/switcher.js
-   and heroes/wall.js, and their includes in index.html.
+   and heroes/stack.js, and their includes in index.html.
    ========================================================= */
 const DESIGN_CHOOSER = true;
 
 (function () {
   'use strict';
 
-  var NAMES = { 1: 'Classic', 2: 'Switcher', 3: 'Split' };
-  var MODS = { 1: 'classic', 2: 'switcher', 3: 'wall' };
+  var NAMES = { 1: 'Classic', 2: 'Switcher', 3: 'Stack' };              // captions
+  var LABELS = { 1: 'Classic', 2: 'Switcher', 3: 'Flavour Stack' };     // aria-labels and announcements
+  var MODS = { 1: 'classic', 2: 'switcher', 3: 'stack' };
   var STORE_KEY = 'mm-hero-design';
   var FADE_MS = 200;
 
@@ -145,7 +146,7 @@ const DESIGN_CHOOSER = true;
     current = n;
     persist(n);
     renderChooserState(true);
-    announce('Hero design ' + n + ': ' + NAMES[n]);
+    announce('Hero design ' + n + ': ' + LABELS[n]);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     clearTimeout(switchTimer);
     setFading(true);
@@ -209,7 +210,7 @@ const DESIGN_CHOOSER = true;
       b.type = 'button';
       b.className = 'v-chooser-btn';
       b.textContent = String(n);
-      b.setAttribute('aria-label', 'Hero design ' + n + ': ' + NAMES[n]);
+      b.setAttribute('aria-label', 'Hero design ' + n + ': ' + LABELS[n]);
       b.setAttribute('aria-pressed', 'false');
       b.addEventListener('click', function () { switchTo(n); });
       pill.appendChild(b);

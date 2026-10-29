@@ -113,7 +113,7 @@ Let a viewer flip between **three homepage hero designs** using numbered buttons
 |---|---|---|
 | **1** | **Classic** | The existing hero (single Veg Biryani pouch drop) with its pinned How It Works. Must look and behave exactly as it does now. |
 | **2** | **Range Switcher** | A trio (extendable to 5) of pouches: one large in the centre, neighbours smaller and angled behind it. Tap a neighbour to bring it to the centre. Background tint and dish details change per product. |
-| **3** | **Range Wall** | A wall of many pouches in 2 or 3 rows drifting slowly in opposite directions (infinite marquee), with the headline and one featured pouch in front. Hover or tap a pouch to enlarge it and show its name, price and Add button. |
+| **3** | **Flavour Stack** | A cluster of overlapping, tilted pouches with the selected one in front and largest; a big dish name, tagline, price and round thumbnail buttons on the right. Switching tweens every pouch to its new slot (Smart Animate style) and changes the background tint. |
 
 ### Product list
 Define once, in one config array (e.g. `HERO_PRODUCTS = ['veg-biryani', 'rajma-masala', 'gajar-halwa', ...]`, slugs to be confirmed with the user). Read name, price and image from the existing product data. Every image must be a **transparent PNG** of the front of the pouch. If an image has a background or is angled, show a labelled placeholder and report it. Never invent or generate product imagery.
@@ -131,7 +131,7 @@ Define once, in one config array (e.g. `HERO_PRODUCTS = ['veg-biryani', 'rajma-m
 ### Architecture
 - `variants.js`: reads the choice, mounts and unmounts hero modules, builds the chooser.
 - `heroes/classic.js`: a thin wrapper around the EXISTING hero code (no behaviour change). Exposes `mount(container)` and `unmount()`.
-- `heroes/switcher.js`, `heroes/wall.js`: new modules with the same API. Prefix their CSS with `v-switcher-` and `v-wall-`.
+- `heroes/switcher.js`, `heroes/stack.js`: new modules with the same API. Prefix their CSS with `v-switcher-` and `v-stack-`.
 - Each module owns a `gsap.context` and kills every ScrollTrigger, timer, listener and frame on `unmount()`. Mount and unmount must be idempotent, and switching 1 → 2 → 3 → 1 repeatedly must leave no leaks, no duplicate pouches and no leftover transforms on the header or body.
 - Designs 2 and 3 have no shared pouch to glide into How It Works, so they use a **static 4-step card version** of How It Works (Tear, Pour, Add hot water, Eat) with the existing copy. Design 1 keeps the pinned version. The header stays transparent-to-solid in all three.
 
@@ -144,12 +144,14 @@ Define once, in one config array (e.g. `HERO_PRODUCTS = ['veg-biryani', 'rajma-m
 - Hero background tint changes per product via CSS variables defined in `:root`, transitioning over 0.6 s.
 - Idle float with a different phase per pouch; mouse parallax on desktop only, with depth.
 
-### Design 3 detail (Range Wall)
-- Two or three rows of pouches (use every product in `HERO_PRODUCTS`, repeated to fill), each row moving slowly horizontally in the opposite direction to its neighbour, as a seamless infinite loop (transform only, duplicate the track for the loop).
-- A semi-transparent brand-coloured wash and the headline sit in front of the rows; one larger featured pouch drops in at the centre with the same intro as Design 1.
-- Hover (desktop) or tap (mobile) on a wall pouch pauses the row, lifts and enlarges that pouch, and shows a small card: name, price, Add to cart (existing function).
-- Slight vertical parallax between rows on scroll.
-- Performance: limit to what is visible, use `will-change: transform` only on the moving tracks, keep image sizes small (use resized copies, WebP if available), and pause all motion when the hero is off-screen or the tab is hidden.
+### Design 3 detail (Flavour Stack, `heroes/stack.js`, CSS `v-stack-`; full spec in `TASK-design3.md`)
+- Desktop: two columns. Left 55%: a cluster of 3 to 5 overlapping, tilted pouches in fixed slots (front slot 0 largest and fully visible, the rest fanned behind in circular order). Right 45%: kicker "REAL FOOD. READY IN MINUTES.", a huge uppercase dish name (colour `color-mix(in srgb, var(--tint-<slug>) 55%, var(--text))`), tagline, price, round thumbnail buttons with a sliding ring and a "1 / 5" caption, Add to cart and Shop Now.
+- Mobile (under 768px): cluster on top (about 40svh, 3 visible slots), then the name, tagline, thumbnails and buttons (price shown inside the Add button).
+- Background is the active product's `--tint-<slug>`, tweened over 0.6s.
+- Intro: text fades up, pouches fall in back-most first, squash and settle; then idle float and a slow sway on the front pouch.
+- Switching (thumbnail, back pouch, arrow keys, swipe, auto-advance every 6s): one 0.8s timeline moves every persistent pouch to its new slot (front-to-last-slot moves arc away from the text and dip in opacity), crossfades text and price, slides the ring. Interruptions kill and restart from current values. Auto-advance pauses on hover, hidden tab, off-screen and for 10s after manual input.
+- Optional ingredient cutouts per product via `HERO_INGREDIENTS` in `hero-products.js` (none supplied yet; none are drawn as substitutes).
+- Mouse parallax on desktop only; scroll exit fades and drifts the hero up; no pinning. Uses the static 4-card How It Works.
 
 ### Acceptance checks (run once at the end of each phase, at 1440 px and 390 px)
 - Design 1 is identical to before.
@@ -165,7 +167,7 @@ Define once, in one config array (e.g. `HERO_PRODUCTS = ['veg-biryani', 'rajma-m
 - **Phase 0 (read-only):** list the folder, read `index.html` structure, `main.js` top-level layout, `hero.js`, and the `:root` block. In 10 lines or fewer, report which items in section 5 "NOT verified" actually exist, and any surprises. Change nothing.
 - **Phase 1:** `variants.js`, the chooser UI, `heroes/classic.js` wrapper, stubs for designs 2 and 3 (labelled placeholders), the static How It Works variant, and routing/cleanup. Design 1 must be unchanged.
 - **Phase 2:** `heroes/switcher.js` (Design 2).
-- **Phase 3:** `heroes/wall.js` (Design 3).
+- **Phase 3:** `heroes/stack.js` (Design 3, Flavour Stack; replaces the earlier Range Wall, see `TASK-design3.md`).
 - **Phase 4 (later, only when asked):** Diwali layer.
 
 ### Diwali layer (for later, do not build yet)
