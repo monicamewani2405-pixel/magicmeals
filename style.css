@@ -28,6 +28,12 @@
       --white-rgb: 255 255 255;
       --whatsapp-rgb: 37 211 102;
       --youtube-rgb: 255 0 0;
+      /* Design 2 (Range Switcher) hero tints: pale pouch tones, all >= 4.5:1 under the brand-blue headline */
+      --tint-veg-biryani: #F4F5F8;
+      --tint-rajma-masala: #FEF6DE;
+      --tint-paneer-butter-masala: #FDF7E6;
+      --tint-dal-makhani: #FBF5E9;
+      --tint-pav-bhaji: #F2F8FA;
 
       /* ===== Fonts ===== */
       --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;

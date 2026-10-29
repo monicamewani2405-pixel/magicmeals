@@ -4,7 +4,7 @@
    - This file adds motion (GSAP + ScrollTrigger) when allowed.
    - Continuous story: Veg Biryani pouch drops in hero,
      then transitions smoothly into the How It Works sequence.
-   - Re-initialises on every SPA render via the 'app:rendered' event.
+   - Design 1 (Classic): mounted/unmounted by variants.js (window.MMHeroes.classic).
    ========================================================= */
 (function () {
   'use strict';
@@ -14,6 +14,146 @@
   var ctx = null;          // gsap.context, reverted on re-init
   var teardown = [];       // plain listeners to remove on re-init
   var initToken = 0;
+  var hiwHost = null;      // #hiw-slot, filled with the pinned How It Works
+
+  var HERO_HTML = `
+        <section id="hero" data-section="hero" class="hero" aria-labelledby="heroTitle">
+          <div class="hero-inner">
+            <div class="hero-stage-wrap">
+              <h1 id="heroTitle" class="hero-headline" data-hero="headline">
+                <span class="hero-headline-line"><span>REAL</span> <span>FOOD.</span></span>
+                <span class="hero-headline-line"><span>READY IN</span> <span>MINUTES.</span></span>
+              </h1>
+              <div class="hero-stage">
+                <div class="hero-steam" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="hero-shadow" data-hero="shadow" aria-hidden="true"></div>
+                <!-- Layout footprint anchor for the pouch -->
+                <div class="hero-pouch-anchor" id="heroPouchAnchor" aria-hidden="true"></div>
+                <!-- 4 nested wrappers so scroll / parallax / float / drop tweens never fight over one transform -->
+                <div class="hero-pouch" data-hero="scroll" id="heroPouch">
+                  <div class="hero-pouch-parallax" data-hero="parallax">
+                    <div class="hero-pouch-float" data-hero="float">
+                      <img src="biryani_pouch_front.png" width="919" height="1007" alt="Magic Meals Royal Dum Veg Biryani freeze-dried meal pouch" class="hero-pouch-img" data-hero="pouch" fetchpriority="high">
+                      <div class="hero-pouch-placeholder" aria-hidden="true">POUCH IMAGE HERE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-copy">
+              <p class="hero-sub" data-hero="sub">Homestyle Indian meals. Just add hot water.</p>
+              <div class="hero-actions">
+                <button type="button" class="hero-btn hero-btn--primary" data-hero="btn" data-scroll-to="best-sellers">Shop Now</button>
+                <button type="button" class="hero-btn hero-btn--secondary" data-hero="btn" data-scroll-to="how-it-works" data-scroll-fallback="best-sellers">How It Works</button>
+              </div>
+            </div>
+          </div>
+        </section>
+  `;
+  var HIW_HTML = `
+        <section id="how-it-works" data-section="how-it-works" class="hiw-section" aria-labelledby="hiwTitle">
+          <div class="hiw-pin-container" id="hiwPinContainer">
+            <div class="wrap hiw-inner-wrap">
+              <div class="hiw-header-group">
+                <h2 id="hiwTitle" class="hiw-title">How It Works</h2>
+                <div class="hiw-progress-nav" aria-label="Step progress">
+                  <div class="hiw-progress-bar-track">
+                    <div class="hiw-progress-bar-fill" id="hiwProgressBarFill"></div>
+                  </div>
+                  <div class="hiw-progress-dots" id="hiwProgressDots">
+                    <button type="button" class="hiw-dot active" data-step-target="1" aria-label="Step 1: Pour"></button>
+                    <button type="button" class="hiw-dot" data-step-target="2" aria-label="Step 2: Add hot water"></button>
+                    <button type="button" class="hiw-dot" data-step-target="3" aria-label="Step 3: Eat"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hiw-layout-grid">
+                <!-- Left Column: Step list (only active highlighted, others dimmed) -->
+                <div class="hiw-steps-col" id="hiwStepsList" role="list" aria-label="Preparation steps">
+                  <div class="hiw-step-card active" data-hiw-step="1" role="listitem">
+                    <div class="hiw-step-badge">1</div>
+                    <div class="hiw-step-text">
+                      <h3 class="hiw-step-name">Pour</h3>
+                      <p class="hiw-step-desc">Empty the rice and veggies into a bowl.</p>
+                    </div>
+                  </div>
+
+                  <div class="hiw-step-card" data-hiw-step="2" role="listitem">
+                    <div class="hiw-step-badge">2</div>
+                    <div class="hiw-step-text">
+                      <h3 class="hiw-step-name">Add hot water</h3>
+                      <p class="hiw-step-desc">Pour hot water up to the line.</p>
+                    </div>
+                  </div>
+
+                  <div class="hiw-step-card" data-hiw-step="3" role="listitem">
+                    <div class="hiw-step-badge">3</div>
+                    <div class="hiw-step-text">
+                      <h3 class="hiw-step-name">Eat</h3>
+                      <p class="hiw-step-desc">Wait 7 minutes, stir gently, and enjoy.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Column: Visual Stage (Pouch Target, falling grains, water stream, steam, ceramic bowl) -->
+                <div class="hiw-stage-col">
+                  <div class="hiw-stage" id="hiwStage">
+                    <!-- Target placeholder for the shared hero pouch (NO duplicate pouch element) -->
+                    <div class="hiw-pouch-target" id="hiw-pouch-target" aria-hidden="true"></div>
+
+                    <!-- Rice & Veggie Particles Stream (CSS shapes: warm cream, green, orange) -->
+                    <div class="hiw-particles-field" id="hiwParticles" aria-hidden="true"></div>
+
+                    <!-- Hot Water Stream -->
+                    <div class="hiw-water-stream" id="hiwWaterStream" aria-hidden="true">
+                      <div class="hiw-water-beam"></div>
+                    </div>
+
+                    <!-- Steam Wisps -->
+                    <div class="hiw-steam-wisps" id="hiwSteamWisps" aria-hidden="true">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <!-- Photographic Ceramic Bowl with exact matching dimensions & geometry -->
+                    <div class="hiw-bowl-actor" id="hiwBowlActor">
+                      <div class="hiw-ceramic-bowl">
+                        <div class="hiw-bowl-shadow" aria-hidden="true"></div>
+                        <img src="how-it-works/bowl_empty.png" alt="Empty Ceramic Bowl" class="hiw-bowl-img hiw-bowl-empty-img" id="bowlEmptyImg" width="657" height="568">
+
+                        <!-- Inner Cavity for Pour & Water animations -->
+                        <div class="hiw-bowl-opening" id="hiwBowlOpening">
+                          <!-- Dry mix mound (fills up at Step 1) -->
+                          <div class="hiw-food-dry" id="foodDry">
+                            <div class="hiw-dry-base"></div>
+                            <div class="hiw-fleck hiw-fleck-pea" style="top:42%; left:42%;"></div>
+                            <div class="hiw-fleck hiw-fleck-carrot" style="top:52%; left:58%;"></div>
+                            <div class="hiw-fleck hiw-fleck-pea" style="top:58%; left:34%;"></div>
+                            <div class="hiw-fleck hiw-fleck-carrot" style="top:45%; left:68%;"></div>
+                            <div class="hiw-fleck hiw-fleck-pea" style="top:48%; left:25%;"></div>
+                            <div class="hiw-fleck hiw-fleck-carrot" style="top:62%; left:72%;"></div>
+                          </div>
+
+                          <!-- Translucent water level with glossy sheen (rises at Step 2) -->
+                          <div class="hiw-food-water" id="foodWater"></div>
+                        </div>
+
+                        <!-- Cooked Biryani Photo: exact matching photographic bowl (crossfades at Step 3) -->
+                        <img src="how-it-works/bowl_ready_biryani.png" alt="Finished Veg Biryani" class="hiw-bowl-img hiw-bowl-ready-img" id="foodFinished" width="657" height="568">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fallback view for reduced motion or <360px screens -->
+              <div class="hiw-fallback-view" id="hiwFallbackView" aria-hidden="true">
+                <img src="how-it-works/bowl_ready_biryani.png" alt="Delicious Veg Biryani Ready" class="hiw-fallback-img" width="320" height="320" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+  `;
 
   /* ---------- helpers ---------- */
 
@@ -460,15 +600,15 @@
     cleanup();
     var token = ++initToken;   // ignore stale async inits if a re-render happens mid-load
     var hero = document.getElementById('hero');
-    if (!hero) return;
+    if (!hero) return Promise.resolve();
 
     bindButtons(hero);
     watchImage(hero);
 
     // Reduced motion: leave the static final state exactly as authored
-    if (reduceMotion.matches) return;
+    if (reduceMotion.matches) return Promise.resolve();
 
-    ensureGsap().then(function () {
+    return ensureGsap().then(function () {
       if (token !== initToken || !document.body.contains(hero)) return;   // view changed while scripts loaded
 
       var q = function (name) { return hero.querySelector('[data-hero="' + name + '"]'); };
@@ -496,6 +636,27 @@
     });
   }
 
-  document.addEventListener('app:rendered', initHero);
-  initHero();   // main.js may already have rendered before this deferred script ran
+  /* ---------- module API ---------- */
+
+  function mount(slot) {
+    unmount();
+    slot.innerHTML = HERO_HTML;
+    hiwHost = document.getElementById('hiw-slot');
+    if (hiwHost) hiwHost.innerHTML = HIW_HTML;
+    return initHero();
+  }
+
+  function unmount() {
+    initToken++;                       // abort any pending async init
+    cleanup();                         // ctx.revert() kills ScrollTriggers/tweens; teardown removes listeners
+    var hero = document.getElementById('hero');
+    if (hero && hero.parentNode) hero.parentNode.removeChild(hero);   // takes the shared fixed pouch with it
+    var pouch = document.getElementById('heroPouch');
+    if (pouch && pouch.parentNode) pouch.parentNode.removeChild(pouch);
+    if (hiwHost) hiwHost.innerHTML = '';
+    hiwHost = null;
+  }
+
+  window.MMHeroes = window.MMHeroes || {};
+  window.MMHeroes.classic = { mount: mount, unmount: unmount };
 })();
