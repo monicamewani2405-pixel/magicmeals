@@ -121,7 +121,7 @@
     }).join('');
 
     return '<section class="v-switcher" data-design="2" aria-roledescription="carousel" aria-label="Featured meals">' +
-      '<h1 class="v-switcher-headline"><span class="v-switcher-line">REAL FOOD.</span> <span class="v-switcher-line">READY IN MINUTES.</span></h1>' +
+      '<h1 class="v-switcher-headline"><span class="v-switcher-line">Homely Cooked Food.</span> <span class="v-switcher-line">Ready in Minutes.</span></h1>' +
       '<div class="v-switcher-stage">' +
         '<div class="v-switcher-glow" aria-hidden="true"></div>' +
         '<button type="button" class="v-switcher-arrow v-switcher-arrow--prev" aria-label="Previous meal"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>' +

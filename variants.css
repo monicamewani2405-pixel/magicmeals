@@ -63,7 +63,7 @@
    Home hero: Range Switcher (v-switcher-*)
    ========================================================= */
 .v-switcher {
-  --v-sw-h: clamp(190px, 37svh, 500px);
+  --v-sw-h: clamp(210px, 44svh, 580px);
   --v-sw-w: calc(var(--v-sw-h) * 0.64);
   --v-sw-fs: clamp(34px, min(6vw, 9.5svh), 96px);
   position: relative;
@@ -299,7 +299,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 /* Phones: everything above the fold on 360x640 and up (pouch height, type and buttons are sized from svh) */
 @media (max-width: 767px) {
   .v-switcher {
-    --v-sw-h: clamp(150px, 33svh, 320px);
+    --v-sw-h: clamp(150px, min(calc(100svh - 425px), 78vw), 340px);
     --v-sw-fs: clamp(26px, min(9.2vw, 6svh), 48px);
     min-height: 100svh;
     padding: 84px 12px calc(96px + env(safe-area-inset-bottom, 0px));   /* 96px keeps 72px clear above the screen bottom for the WhatsApp button */
@@ -327,7 +327,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 }
 @supports not (height: 1svh) {
   @media (max-width: 767px) {
-    .v-switcher { --v-sw-h: clamp(150px, 33vh, 320px); --v-sw-fs: clamp(26px, min(9.2vw, 6vh), 48px); min-height: 100vh; }
+    .v-switcher { --v-sw-h: clamp(150px, min(calc(100vh - 425px), 78vw), 340px); --v-sw-fs: clamp(26px, min(9.2vw, 6vh), 48px); min-height: 100vh; }
   }
 }
 /* Landscape phones: compact, scrolls normally */
