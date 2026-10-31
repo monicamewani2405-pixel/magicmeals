@@ -103,11 +103,37 @@ const DESIGN_CHOOSER = true;
     if (staticCtx) { staticCtx.revert(); staticCtx = null; }
   }
 
+  /* ---------- Design 2 only: pinned per-dish scene (scenes/hiw-scene.js), static cards when the dish has none ---------- */
+
+  function mountHiwDesign2() {
+    var host = document.getElementById('hiw-slot');
+    var hero = window.MMHeroes && window.MMHeroes.switcher;
+    var a = hero && hero.getActive && hero.getActive();
+    var cfg = a && window.sceneFor && window.sceneFor(a.slug);
+    if (cfg && window.MMScene && window.MMScene.mount(host, cfg, hero)) return;
+    mountStaticHiw();
+  }
+
+  function unmountHiw() {
+    if (window.MMScene) window.MMScene.unmount();
+    unmountStaticHiw();
+    var host = document.getElementById('hiw-slot');
+    if (host) host.innerHTML = '';
+  }
+
+  document.addEventListener('hero:switcher-change', function () {
+    if (active !== 2) return;
+    unmountHiw();
+    mountHiwDesign2();
+    refresh();
+  });
+
   /* ---------- mount / unmount ---------- */
 
   function unmountActive() {
     if (!active) return;
     var mod = window.MMHeroes && window.MMHeroes[MODS[active]];
+    if (window.MMScene) window.MMScene.unmount();   // before the hero: it hands the pouch back first
     if (mod) mod.unmount();
     unmountStaticHiw();
     var hiw = document.getElementById('hiw-slot');
@@ -128,7 +154,8 @@ const DESIGN_CHOOSER = true;
     active = current;
     document.body.dataset.heroDesign = String(current);
     var p = mod.mount(slot);
-    if (current !== 1) mountStaticHiw();
+    if (current === 2) mountHiwDesign2();
+    else if (current !== 1) mountStaticHiw();
     Promise.resolve(p).then(refresh, refresh);
     refresh();
   }

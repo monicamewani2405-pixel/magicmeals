@@ -186,7 +186,7 @@ body[data-view="home"] .v-stub { margin-top: -72px; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 96px 16px 104px;
+  padding: 96px 16px max(104px, var(--v-sw-clear, 0px));
   overflow: hidden;
   background-color: var(--v-sw-tint, var(--bg));
   transition: background-color 0.6s ease;
@@ -332,7 +332,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 .v-switcher-arrow--next { right: 2%; }
 .v-switcher-arrow:hover { background: var(--brand-primary); color: var(--white); }
 .v-switcher-arrow:focus-visible, .v-switcher-dot:focus-visible,
-.v-switcher .hero-btn:focus-visible { outline: 3px solid var(--brand-primary-dark); outline-offset: 3px; }
+.v-switcher .v-switcher-btn:focus-visible { outline: 3px solid var(--brand-secondary); outline-offset: 3px; }
 
 /* dish text, buttons, dots */
 .v-switcher-info {
@@ -356,13 +356,39 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   position: relative;
   z-index: 3;
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
   width: min(92vw, 420px);
   margin-top: 12px;
 }
-.v-switcher-add { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--brand-secondary); border-color: var(--brand-secondary); }
-.v-switcher-add:hover { background: var(--brand-secondary-dark); border-color: var(--brand-secondary-dark); box-shadow: var(--shadow-md); }
-.v-switcher-add-img { width: 16px; height: 25px; object-fit: contain; }
+/* only box-shadow, background-color, border-color and color change on hover/active: GSAP owns transform + opacity */
+.v-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  height: 52px;
+  min-width: 170px;
+  padding: 0 28px;
+  border: 2px solid var(--brand-secondary);
+  border-radius: var(--radius-full);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s var(--v-ease), border-color 0.2s var(--v-ease), color 0.2s var(--v-ease), box-shadow 0.2s var(--v-ease);
+}
+.v-switcher-btn svg { flex: none; display: block; }
+.v-switcher-add { background-color: var(--brand-secondary); color: var(--white); }
+.v-switcher-add:hover { background-color: color-mix(in srgb, var(--brand-secondary) 88%, var(--text)); border-color: color-mix(in srgb, var(--brand-secondary) 88%, var(--text)); box-shadow: var(--shadow-md); }
+.v-switcher-add:active { background-color: color-mix(in srgb, var(--brand-secondary) 78%, var(--text)); border-color: color-mix(in srgb, var(--brand-secondary) 78%, var(--text)); box-shadow: none; }
+.v-switcher-shop { background-color: transparent; color: var(--brand-secondary); }
+.v-switcher-shop:hover { background-color: color-mix(in srgb, var(--brand-secondary) 8%, transparent); box-shadow: var(--shadow-md); }
+.v-switcher-shop:active { background-color: color-mix(in srgb, var(--brand-secondary) 16%, transparent); box-shadow: none; }
 .v-switcher-dots { position: relative; z-index: 3; display: flex; gap: 2px; margin-top: 6px; }
 .v-switcher-dot { position: relative; width: 24px; height: 24px; background: none; }
 .v-switcher-dot::before {
@@ -381,7 +407,12 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
     --v-sw-fs: clamp(34px, min(13vw, 8.5svh), 56px);
     padding: 100px 12px calc(var(--bottom-nav-h, 0px) + 112px);
   }
+  .v-switcher {
+    padding-bottom: max(calc(var(--bottom-nav-h, 0px) + 112px), var(--v-sw-clear, 0px));
+  }
   .v-switcher-arrow { display: none; }
+  .v-switcher-btn { height: 48px; padding: 0 22px; }
+  .v-switcher-actions { gap: 10px 14px; }
   .v-switcher-title { font-size: 18px; }
   .v-switcher-desc { font-size: 13px; }
 }

@@ -1,0 +1,315 @@
+/* =========================================================
+   scenes/scene.css: Design 2 pinned How It Works (v-scene-*)
+   Colours: :root variables only (water + food tokens live in scene-colors.css).
+   ========================================================= */
+:root { --v-ease: cubic-bezier(0.16, 1, 0.3, 1); }   /* CSS twin of MMMotion.EASE_OUT (scenes/motion.js) */
+.v-scene {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--brand-primary-rgb) / 0.05) 0%,
+    var(--bg) 180px,
+    var(--bg) calc(100% - 180px),
+    rgb(var(--brand-primary-rgb) / 0.04) 100%
+  );
+}
+.v-scene-pin {
+  position: relative;
+  height: calc(100svh - 72px);
+  max-height: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  --v-scene-h: min(70svh, 560px, calc(100svh - 250px));
+}
+.v-scene-inner {
+  width: 100%;
+  max-width: 1180px;
+  padding: 16px 24px 24px;
+  box-sizing: border-box;
+}
+.v-scene-head { text-align: center; margin-bottom: 18px; }
+.v-scene-title {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.v-scene-progress { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.v-scene-track { width: 160px; height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.v-scene-fill { width: 100%; height: 100%; background: var(--brand-primary); border-radius: 4px; transform-origin: 0 50%; transform: scaleX(0); }
+.v-scene-dots { display: flex; align-items: center; justify-content: center; gap: 2px; }
+.v-scene-dot { position: relative; width: 24px; height: 24px; padding: 0; background: none; border: 0; cursor: pointer; }
+.v-scene-dot::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background-color 0.4s var(--v-ease), transform 0.4s var(--v-ease);
+}
+.v-scene-dot.is-active::before { background: var(--brand-primary); transform: scale(1.35); }
+.v-scene-dot:focus-visible, .v-scene-card:focus-visible { outline: 3px solid var(--brand-primary-dark); outline-offset: 2px; }
+
+.v-scene-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+.v-scene-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.v-scene-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  opacity: 0.38;
+  transform: translateX(0);
+  transition: background-color 0.4s var(--v-ease),
+              border-color 0.4s var(--v-ease),
+              box-shadow 0.4s var(--v-ease),
+              transform 0.4s var(--v-ease),
+              opacity 0.4s var(--v-ease);
+}
+.v-scene-card.is-active {
+  opacity: 1;
+  transform: translateX(4px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 24px rgb(var(--brand-primary-rgb) / 0.12);
+}
+.v-scene-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  transition: background-color 0.4s var(--v-ease), color 0.4s var(--v-ease);
+}
+.v-scene-card.is-active .v-scene-badge { background: var(--brand-primary); color: var(--white); }
+.v-scene-text { flex: 1; }
+.v-scene-name { margin: 0 0 4px; font-size: 17px; font-weight: 800; color: var(--text); }
+.v-scene-desc { margin: 0; font-size: 14px; line-height: 1.45; color: var(--text-muted); }
+.v-scene-card.is-active .v-scene-desc { color: var(--text); }
+
+/* ---------- stage ---------- */
+.v-scene-stage-col { display: flex; justify-content: center; }
+.v-scene-stage {
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--v-scene-h) * 1.2);
+  height: var(--v-scene-h);
+}
+.v-scene-target {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  width: 20%;
+  aspect-ratio: 0.64;
+  transform: translateX(-50%);
+  visibility: hidden;
+  pointer-events: none;
+}
+/* sits directly under the bowl's foot (the foot ends ~5% above the image bottom); behind the bowl images so it tucks under the base */
+.v-scene-shadow {
+  position: absolute;
+  left: 15%;
+  width: 70%;
+  bottom: 1.5%;
+  height: 7%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgb(var(--black-rgb) / 0.5) 0%, rgb(var(--black-rgb) / 0.2) 45%, rgb(var(--black-rgb) / 0) 72%);
+  pointer-events: none;
+}
+.v-scene-bowl { position: absolute; left: 11%; bottom: 8%; width: 78%; }
+.v-scene-base, .v-scene-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.v-scene-layer { opacity: 0; transform-origin: 50% var(--v-pivot, 94.7%); backface-visibility: hidden; }
+.v-scene-opening { position: absolute; border-radius: 50%; overflow: hidden; pointer-events: none; }
+.v-scene-sheen {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  clip-path: ellipse(45% 3% at 50% 100%);
+  /* dish colour mixed toward the water colour; fades to nothing at the edge, so it never reads as a flat disc */
+  background: radial-gradient(ellipse 60% 44% at 50% 52%,
+    color-mix(in srgb, var(--v-sheen-food, var(--brand-primary)) 40%, var(--scene-water-2)) 0%,
+    color-mix(in srgb, var(--v-sheen-food, var(--brand-primary)) 25%, var(--scene-water-1)) 55%,
+    transparent 100%);
+}
+.v-scene-ripple {
+  position: absolute;
+  left: 44%;
+  top: 55%;
+  width: 46%;
+  aspect-ratio: 2.6;
+  border: 1px solid var(--scene-water-ring);
+  border-radius: 50%;
+  opacity: 0;
+}
+.v-scene-spec {
+  position: absolute;
+  left: 44%;
+  top: 55%;
+  width: 7%;
+  aspect-ratio: 2.4;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, var(--white) 0%, transparent 70%);
+  opacity: 0;
+}
+
+/* hot water: a thin, soft, near-vertical stream (like Design 1's beam), no outline, no halo */
+.v-scene-flow {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  opacity: 0;
+  transform-origin: 50% 100%;
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+.v-scene-strand {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+}
+.v-scene-strand i { position: absolute; inset: 0; display: block; }
+.v-scene-strand--a { left: 3px; width: 6px; border-radius: 3px; }
+.v-scene-strand--a i {
+  background: linear-gradient(180deg, transparent 0%, var(--scene-water-1) 24%, var(--scene-water-1) 62%, var(--scene-water-2) 92%, transparent 100%);
+  transform-origin: 50% 50%;
+  animation: v-scene-shimmer 1.7s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.v-scene-strand--b { left: 8px; width: 3px; border-radius: 2px; opacity: 0.2; }
+.v-scene-strand--b i {
+  height: calc(100% + 40px);
+  background: repeating-linear-gradient(180deg, transparent 0 8px, var(--scene-water-2) 8px 20px, transparent 20px 40px);
+  animation: v-scene-run 0.9s linear infinite;
+  animation-play-state: paused;
+}
+.v-scene-flow.is-flowing .v-scene-strand i { animation-play-state: running; }
+@keyframes v-scene-shimmer { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.8); } }
+@keyframes v-scene-run { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(0, 40px, 0); } }
+.v-scene-particles { position: absolute; inset: 0; pointer-events: none; }
+.v-scene-p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  box-sizing: border-box;
+  width: var(--p-s, 8px);
+  opacity: 0;
+  --p-c: var(--brand-primary);
+  --p-e: var(--brand-primary-dark);
+}
+.v-scene-p--bean { height: calc(var(--p-s, 8px) * 0.66); border-radius: 50%; background: var(--p-c); border: 1px solid var(--p-e); }
+.v-scene-p--grain { height: calc(var(--p-s, 8px) * 0.32); border-radius: 50%; background: var(--p-c); border: 1px solid var(--p-e); }
+.v-scene-p--shred { height: calc(var(--p-s, 8px) * 0.5); border-top: 2px solid var(--p-c); border-radius: 50% 50% 0 0; }
+
+/* steam: the wet and ready images already carry steam, so this only adds a faint, irregular drift (transform + opacity) */
+.v-scene-steam { position: absolute; left: 30%; width: 40%; top: 14%; height: 30%; opacity: 0; pointer-events: none; }
+.v-scene-steam i {
+  position: absolute;
+  bottom: 0;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--black-rgb) / 0.05) 0%, rgb(var(--black-rgb) / 0.02) 40%, rgb(var(--black-rgb) / 0) 70%);
+  opacity: 0;
+  animation: v-scene-steam-rise var(--d, 5s) ease-in-out infinite;
+  animation-delay: var(--dl, 0s);
+  animation-play-state: paused;
+}
+.v-scene-steam.is-steaming i { animation-play-state: running; }
+.v-scene-steam i:nth-child(1) { left: 4%;  --d: 5.2s; --dl: 0s;    --sx: 14%; }
+.v-scene-steam i:nth-child(2) { left: 22%; --d: 6.1s; --dl: -1.8s; --sx: -10%; }
+.v-scene-steam i:nth-child(3) { left: 40%; --d: 4.6s; --dl: -3.1s; --sx: 8%; }
+.v-scene-steam i:nth-child(4) { left: 56%; --d: 5.7s; --dl: -0.9s; --sx: -16%; }
+.v-scene-steam i:nth-child(5) { left: 70%; --d: 6.4s; --dl: -4.2s; --sx: 11%; }
+@keyframes v-scene-steam-rise {
+  0%   { opacity: 0;   transform: translate3d(0, 0, 0) scale(0.7); }
+  30%  { opacity: 0.7; transform: translate3d(calc(var(--sx, 8%) * 0.5), -30%, 0) scale(1); }
+  65%  { opacity: 0.45; transform: translate3d(var(--sx, 8%), -62%, 0) scale(1.25); }
+  100% { opacity: 0;   transform: translate3d(calc(var(--sx, 8%) * -0.4), -95%, 0) scale(1.5); }
+}
+
+.v-scene-label {
+  position: absolute;
+  top: 2%;
+  right: 0;
+  margin: 0;
+  padding: 8px 16px;
+  font-weight: 800;
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: var(--white);
+  background: var(--brand-primary);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transform-origin: 100% 0;
+}
+
+/* ---------- pouch overlay (fixed, outside every transformed ancestor) ---------- */
+.v-scene-overlay { position: fixed; inset: 0; z-index: 90; pointer-events: none; }
+.v-scene-pouch { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; }
+.v-scene-pouch-in { position: relative; transform-origin: 50% 50%; }
+.v-scene-open {
+  position: absolute;
+  left: 9%;
+  width: 82%;
+  top: 11%;
+  height: 4%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgb(var(--black-rgb) / 0.7) 0%, rgb(var(--black-rgb) / 0) 100%);
+  opacity: 0;
+}
+.v-scene-strip { position: absolute; inset: 0; z-index: 3; opacity: 0; transform-origin: 20% 10%; backface-visibility: hidden; }
+.v-scene-strip img { display: block; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; }
+.v-scene-mouth { position: absolute; left: 50%; width: 2px; height: 2px; margin: -1px 0 0 -1px; visibility: hidden; }
+
+/* ---------- mobile: stage on top, active card below ---------- */
+@media (max-width: 767px) {
+  .v-scene-pin {
+    --v-scene-h: 45svh;
+    align-items: flex-start;
+    padding-bottom: calc(var(--bottom-nav-h, 0px) + 64px);
+  }
+  .v-scene-inner { padding: 8px 16px 0; }
+  .v-scene-head { margin-bottom: 8px; }
+  .v-scene-title { margin-bottom: 4px; font-size: 24px; }
+  .v-scene-grid { grid-template-columns: 1fr; gap: 10px; }
+  .v-scene-stage-col { order: -1; }
+  .v-scene-stage { max-width: 100%; }
+  .v-scene-target { width: 26%; }
+  .v-scene-steps { display: grid; }
+  .v-scene-card { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateX(0); padding: 12px 16px; }
+  .v-scene-card.is-active { opacity: 1; visibility: visible; transform: translateX(4px); }
+}
+
+/* ---------- static fallback: reduced motion or very narrow screens ---------- */
+.v-scene--static { padding: 64px 0; background: var(--bg); }
+.v-scene--static .v-scene-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.v-scene--static .v-scene-steps { width: 100%; max-width: 560px; }
+.v-scene--static .v-scene-card { opacity: 1; visibility: visible; }
+.v-scene-static-img { display: block; width: min(100%, 420px); height: auto; }
+.v-scene-label--static { position: static; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-scene-steam i, .v-scene-strand i { animation: none; }
+  .v-scene-card { transition: none; }
+}

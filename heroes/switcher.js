@@ -12,6 +12,7 @@
 (function () {
   'use strict';
 
+  var M = window.MMMotion;   // shared eases and durations (scenes/motion.js)
   var AUTO_MS = 6000;
   var MANUAL_HOLD_MS = 6000;   // short pause after a manual switch, then rotation continues
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -20,6 +21,7 @@
   var root = null, ctx = null, cleanups = [], items = [], active = 0, ready = false;
   var autoTimer = null, resizeTimer = null, floatTweens = [], preloadLink = null;
   var hovering = false, onScreen = true, lastAdvance = 0, manualHold = 0, infoToken = 0;
+  var frozen = false, exitTween = null;   // frozen: the pinned scene (scenes/hiw-scene.js) owns the hero while scrolling
   var el = {};
 
   /* ---------- data ---------- */
@@ -121,8 +123,8 @@
         '<p class="v-switcher-desc"></p>' +
       '</div>' +
       '<div class="v-switcher-actions">' +
-        '<button type="button" class="hero-btn hero-btn--primary v-switcher-add" data-add=""><img class="v-switcher-add-img" src="" width="16" height="25" alt="">Add to cart</button>' +
-        '<button type="button" class="hero-btn hero-btn--primary v-switcher-shop" data-scroll-to="best-sellers">Shop Now</button>' +
+        '<button type="button" class="v-switcher-btn v-switcher-add" data-add=""><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6"/></svg><span>Add to cart</span></button>' +
+        '<button type="button" class="v-switcher-btn v-switcher-shop" data-scroll-to="best-sellers">Shop Now</button>' +
       '</div>' +
       '<div class="v-switcher-dots" role="group" aria-label="Choose meal">' + dots + '</div>' +
     '</section>';
@@ -141,7 +143,6 @@
     el.desc.textContent = it.desc;
     el.add.setAttribute('data-add', it.slug);
     el.add.setAttribute('aria-label', 'Add ' + it.name + ' to cart');
-    el.addImg.src = it.src;
   }
 
   function markDots() {
@@ -150,6 +151,17 @@
       d.setAttribute('aria-pressed', on ? 'true' : 'false');
       d.classList.toggle('is-active', on);
     });
+  }
+
+  // keep the button row fully above the fixed chooser (#heroChooser): bottom padding = its height + bottom offset + 24px
+  function clearChooser() {
+    if (!root) return;
+    var c = document.getElementById('heroChooser'), px = 0;
+    if (c && !c.hidden) {
+      var r = c.getBoundingClientRect();
+      if (r.height) px = Math.ceil(window.innerHeight - r.top) + 24;
+    }
+    root.style.setProperty('--v-sw-clear', px + 'px');
   }
 
   function setTint() {
@@ -163,10 +175,12 @@
     next = ((next % n) + n) % n;
     if (next === active) return;
     if (!ready && !reduceMotion.matches && window.gsap) return;   // intro still playing
+    if (frozen) return;
     var old = items.map(function (it, i) { return offsetOf(i); });
     active = next;
     lastAdvance = performance.now();
     if (manual) manualHold = lastAdvance + MANUAL_HOLD_MS;
+    document.dispatchEvent(new CustomEvent('hero:switcher-change', { detail: { slug: items[active].slug } }));
     setTint();
     markDots();
 
@@ -182,11 +196,11 @@
         var done = function () { gsap.set(it.btn, { willChange: 'auto' }); };
         if (crossing) {
           gsap.timeline({ onComplete: done })
-            .to(it.btn, { opacity: 0, duration: 0.25, ease: 'power1.out' })
+            .to(it.btn, { opacity: 0, duration: M.D.fast, ease: M.EASE_OUT })
             .set(it.btn, { x: p.x, scale: p.scale, rotation: p.rotation })
-            .to(it.btn, { opacity: p.opacity, duration: 0.35, ease: 'power1.out' }, 0.4);
+            .to(it.btn, { opacity: p.opacity, duration: M.D.base, ease: M.EASE_OUT }, M.D.fast + 0.1);
         } else {
-          gsap.to(it.btn, { x: p.x, scale: p.scale, rotation: p.rotation, opacity: p.opacity, duration: 0.7, ease: 'power3.out', onComplete: done });
+          gsap.to(it.btn, { x: p.x, scale: p.scale, rotation: p.rotation, opacity: p.opacity, duration: M.D.slow, ease: M.EASE_OUT, overwrite: true, onComplete: done });
         }
       });
     });
@@ -195,10 +209,11 @@
     if (instant) { fillInfo(); return; }
     ctx.add(function () {
       gsap.killTweensOf(el.info);
-      gsap.to(el.info, { opacity: 0, duration: 0.18, onComplete: function () {
+      gsap.to(el.info, { opacity: 0, duration: M.D.fast * 0.7, ease: M.EASE_OUT, onComplete: function () {
         if (token !== infoToken) return;
         fillInfo();
-        gsap.to(el.info, { opacity: 1, duration: 0.3 });
+        gsap.killTweensOf(el.info);
+        gsap.to(el.info, { opacity: 1, duration: M.D.base, ease: M.EASE_OUT });
       } });
     });
   }
@@ -227,32 +242,32 @@
       lastAdvance = performance.now();
     } });
 
-    tl.from(el.headline, { opacity: 0, y: 40, duration: 0.6, ease: 'power2.out' }, 0)
+    tl.from(el.headline, { opacity: 0, y: 40, duration: M.D.slow, ease: M.EASE_OUT }, 0)
       // active pouch: fall, squash, elastic recovery, wobble; shadow grows with it
-      .from(main.drop, { y: '-120vh', rotation: -12, duration: 0.9, ease: 'power2.in' }, 0.3)
-      .from(main.shadow, { scale: 0.35, opacity: 0.08, duration: 0.9, ease: 'power2.in' }, 0.3)
-      .to(main.drop, { scaleY: 0.88, scaleX: 1.08, duration: 0.12, ease: 'power1.out' }, 1.2)
-      .to(main.shadow, { scaleX: 1.12, scaleY: 0.9, duration: 0.12, ease: 'power1.out' }, 1.2)
-      .to(main.drop, { scaleX: 1, scaleY: 1, duration: 0.6, ease: 'elastic.out(1, 0.4)' }, 1.32)
-      .to(main.shadow, { scaleX: 1, scaleY: 1, duration: 0.6, ease: 'elastic.out(1, 0.4)' }, 1.32)
-      .to(main.drop, { keyframes: [{ rotation: -3, duration: 0.15 }, { rotation: 2, duration: 0.15 }, { rotation: -1, duration: 0.15 }, { rotation: 0, duration: 0.15 }], ease: 'sine.inOut' }, 1.32);
+      .from(main.drop, { y: '-120vh', rotation: -12, duration: M.D.fall, ease: M.EASE_IN }, 0.3)
+      .from(main.shadow, { scale: 0.35, opacity: 0.08, duration: M.D.fall, ease: M.EASE_IN }, 0.3)
+      .to(main.drop, { scaleY: 0.88, scaleX: 1.08, duration: 0.12, ease: M.EASE_OUT }, 1.2)
+      .to(main.shadow, { scaleX: 1.12, scaleY: 0.9, duration: 0.12, ease: M.EASE_OUT }, 1.2)
+      .to(main.drop, { scaleX: 1, scaleY: 1, duration: 0.6, ease: M.EASE_LAND }, 1.32)
+      .to(main.shadow, { scaleX: 1, scaleY: 1, duration: 0.6, ease: M.EASE_LAND }, 1.32)
+      .to(main.drop, { keyframes: [{ rotation: -3, duration: 0.15 }, { rotation: 2, duration: 0.15 }, { rotation: -1, duration: 0.15 }, { rotation: 0, duration: 0.15 }], ease: M.EASE_LOOP }, 1.32);
 
     // neighbours: drop in with a 0.15s stagger while spreading out to their positions
     neighbours.forEach(function (i, k) {
       var it = items[i], p = posFor(offsetOf(i)), t = 1.0 + k * 0.15;
       tl.set(it.btn, { opacity: p.opacity }, t)
-        .from(it.drop, { y: '-120vh', rotation: -12, duration: 0.8, ease: 'power2.in' }, t)
-        .from(it.shadow, { scale: 0.35, opacity: 0.08, duration: 0.8, ease: 'power2.in' }, t)
-        .to(it.btn, { x: p.x, duration: 0.8, ease: 'power3.out' }, t);
+        .from(it.drop, { y: '-120vh', rotation: -12, duration: M.D.fall * 0.9, ease: M.EASE_IN }, t)
+        .from(it.shadow, { scale: 0.35, opacity: 0.08, duration: M.D.fall * 0.9, ease: M.EASE_IN }, t)
+        .to(it.btn, { x: p.x, duration: M.D.fall * 0.9, ease: M.EASE_OUT }, t);
     });
 
     // text, dots and buttons last
-    tl.from([el.info, el.actions, el.dotsWrap], { opacity: 0, y: 14, duration: 0.4, stagger: 0.1, ease: 'power2.out' }, 1.7);
+    tl.from([el.info, el.actions, el.dotsWrap], { opacity: 0, y: 14, duration: M.D.base, stagger: 0.1, ease: M.EASE_OUT }, 1.7);
   }
 
   function startIdle() {
     items.forEach(function (it, i) {
-      var tw = gsap.fromTo(it.float, { y: -8 }, { y: 8, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+      var tw = gsap.fromTo(it.float, { y: -8 }, { y: 8, duration: 3, ease: M.EASE_LOOP, yoyo: true, repeat: -1 });
       tw.progress((0.5 + i * 0.17) % 1);   // different phase per pouch
       floatTweens.push(tw);
     });
@@ -262,9 +277,9 @@
   function startParallax() {
     var q = items.map(function (it) {
       return {
-        x: gsap.quickTo(it.par, 'x', { duration: 0.6, ease: 'power3.out' }),
-        y: gsap.quickTo(it.par, 'y', { duration: 0.6, ease: 'power3.out' }),
-        r: gsap.quickTo(it.par, 'rotation', { duration: 0.6, ease: 'power3.out' })
+        x: gsap.quickTo(it.par, 'x', { duration: M.D.slow, ease: M.EASE_OUT }),
+        y: gsap.quickTo(it.par, 'y', { duration: M.D.slow, ease: M.EASE_OUT }),
+        r: gsap.quickTo(it.par, 'rotation', { duration: M.D.slow, ease: M.EASE_OUT })
       };
     });
     function depth(i) { var a = Math.abs(offsetOf(i)); return a === 0 ? 1 : a === 1 ? 0.5 : 0.3; }
@@ -282,16 +297,40 @@
   function scrollExit() {
     if (!window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(el.stage, {
+    exitTween = gsap.to(el.stage, {
       y: -60, opacity: 0, ease: 'none',
       scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true }
     });
   }
 
+  // The pinned How It Works scene takes over the scroll exit (it glides the pouch and fades the hero itself)
+  function suspendExit() {
+    if (!exitTween) return;
+    exitTween.scrollTrigger && exitTween.scrollTrigger.kill();
+    exitTween.kill(); exitTween = null;
+    if (el.stage) gsap.set(el.stage, { clearProps: 'opacity,transform' });
+  }
+  function resumeExit() {
+    if (!exitTween && ctx && root) ctx.add(scrollExit);
+  }
+
+  // Handles for the scene: the active pouch image plus everything that fades while it glides away
+  function getActive() {
+    if (!root || !items.length) return null;
+    var it = items[active];
+    var fade = [el.info, el.actions, el.dotsWrap].concat([].slice.call(root.querySelectorAll('.v-switcher-arrow')), [it.shadow, it.btn.querySelector('.v-switcher-steam')]);
+    items.forEach(function (o, i) { if (i !== active) fade.push(o.par, o.shadow); });
+    return {
+      slug: it.slug, ready: ready, img: it.btn.querySelector('img'),
+      chain: [it.btn, it.drop, it.par, it.float],
+      fade: fade.filter(Boolean)
+    };
+  }
+
   /* ---------- auto-advance ---------- */
 
   function autoTick() {
-    if (reduceMotion.matches || !ready) return;
+    if (reduceMotion.matches || !ready || frozen) return;
     var now = performance.now();
     if (document.hidden || !onScreen || now < manualHold) { lastAdvance = now; return; }
     if (now - lastAdvance >= AUTO_MS) goTo(active + 1, false);
@@ -321,7 +360,6 @@
       desc: root.querySelector('.v-switcher-desc'),
       actions: root.querySelector('.v-switcher-actions'),
       add: root.querySelector('.v-switcher-add'),
-      addImg: root.querySelector('.v-switcher-add-img'),
       dotsWrap: root.querySelector('.v-switcher-dots'),
       dots: [].slice.call(root.querySelectorAll('.v-switcher-dot'))
     };
@@ -337,6 +375,13 @@
     });
 
     fillInfo(); markDots(); setTint();
+    clearChooser();
+    var chooserEl = document.getElementById('heroChooser');
+    if (chooserEl && window.ResizeObserver) {   // fires when the chooser is shown, hidden or resized
+      var ro = new ResizeObserver(clearChooser);
+      ro.observe(chooserEl);
+      cleanups.push(function () { ro.disconnect(); });
+    }
 
     // events
     listen(el.stage, 'click', function (e) {
@@ -371,7 +416,7 @@
     listen(root, 'pointerleave', function () { hovering = false; });
     listen(window, 'resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () { if (root && window.gsap) setLayout(); }, 120);
+      resizeTimer = setTimeout(function () { clearChooser(); if (root && window.gsap) setLayout(); }, 120);
     });
     if (window.IntersectionObserver) {
       var io = new IntersectionObserver(function (entries) { onScreen = entries[entries.length - 1].isIntersecting; }, { threshold: 0.1 });
@@ -418,9 +463,13 @@
     if (preloadLink && preloadLink.parentNode) preloadLink.parentNode.removeChild(preloadLink);
     preloadLink = null;
     if (root && root.parentNode) root.parentNode.removeChild(root);
-    root = null; el = {}; items = []; ready = false;
+    root = null; el = {}; items = []; ready = false; frozen = false; exitTween = null;
   }
 
   window.MMHeroes = window.MMHeroes || {};
-  window.MMHeroes.switcher = { mount: mount, unmount: unmount };
+  window.MMHeroes.switcher = {
+    mount: mount, unmount: unmount,
+    getActive: getActive, suspendExit: suspendExit, resumeExit: resumeExit,
+    freeze: function (on) { frozen = !!on; }
+  };
 })();
