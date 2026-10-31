@@ -63,7 +63,7 @@
    Home hero: Range Switcher (v-switcher-*)
    ========================================================= */
 .v-switcher {
-  --v-sw-h: clamp(170px, 32svh, 440px);
+  --v-sw-h: clamp(190px, 37svh, 500px);
   --v-sw-w: calc(var(--v-sw-h) * 0.64);
   --v-sw-fs: clamp(34px, min(6vw, 9.5svh), 96px);
   position: relative;
@@ -292,7 +292,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 
 @media (max-width: 767px) {
   .v-switcher {
-    --v-sw-h: clamp(170px, 29svh, 360px);
+    --v-sw-h: clamp(185px, 33svh, 400px);
     --v-sw-fs: clamp(34px, min(13vw, 8.5svh), 56px);
     padding: 100px 12px calc(var(--bottom-nav-h, 0px) + 112px);
   }
