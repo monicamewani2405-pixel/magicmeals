@@ -17,6 +17,9 @@
   var MANUAL_HOLD_MS = 6000;   // short pause after a manual switch, then rotation continues
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var canHover = window.matchMedia('(hover: hover)');
+  var TOUCH_HOLD_MS = 10000;   // after a touch, auto-advance resumes 10 s after the last interaction
+  var lastTouch = 0, lastW = 0, paused = false;
 
   var root = null, ctx = null, cleanups = [], items = [], active = 0, ready = false;
   var autoTimer = null, resizeTimer = null, floatTweens = [], preloadLink = null;
@@ -26,7 +29,10 @@
 
   /* ---------- data ---------- */
 
-  function imgFor(slug) { return 'assets/hero/' + slug + '-front-800.png'; }
+  // phones get the 480px-tall WebP (assets/hero/*-front-480.webp, built by tools/prep-scene.py); desktop keeps the 800px PNG
+  function imgFor(slug) {
+    return window.innerWidth < 768 ? 'assets/hero/' + slug + '-front-480.webp' : 'assets/hero/' + slug + '-front-800.png';
+  }
 
   function rupees(n) { return '\u20B9' + Number(n).toLocaleString('en-IN'); }
 
@@ -67,7 +73,11 @@
     var n = items.length, mobile = isMobile();
     var stageW = el.stage ? el.stage.offsetWidth : window.innerWidth;
     var s = offset < 0 ? -1 : 1, a = Math.abs(offset);
-    var x1 = mobile ? window.innerWidth * 0.36 : stageW * 0.26;
+    var x1 = stageW * 0.26;
+    if (mobile) {   // neighbours sit just inside the screen edge, never cut off
+      var pw = items[0] && items[0].btn ? items[0].btn.offsetWidth : 0;
+      x1 = pw ? Math.min(window.innerWidth * 0.36, window.innerWidth / 2 - pw * 0.44 - 4) : window.innerWidth * 0.36;   // 0.3 pw = half the scaled pouch, 0.14 pw = its tilt
+    }
     var x2 = stageW * 0.42;
     if (offset === 0) return { x: 0, scale: 1, rotation: 0, opacity: 1, z: 5, show: true };
     if (a === 1) return { x: s * x1, scale: mobile ? 0.6 : 0.7, rotation: s * 8, opacity: 1, z: 4, show: true };
@@ -168,7 +178,7 @@
     var old = items.map(function (it, i) { return offsetOf(i); });
     active = next;
     lastAdvance = performance.now();
-    if (manual) manualHold = lastAdvance + MANUAL_HOLD_MS;
+    if (manual) manualHold = lastAdvance + (lastAdvance - lastTouch < 1500 ? TOUCH_HOLD_MS : MANUAL_HOLD_MS);
     document.dispatchEvent(new CustomEvent('hero:switcher-change', { detail: { slug: items[active].slug } }));
     setTint();
     markDots();
@@ -316,6 +326,15 @@
     };
   }
 
+  // pause every loop (float tweens, CSS steam) while the hero is off-screen or the tab is hidden
+  function syncPaused() {
+    var off = document.hidden || !onScreen;
+    if (off === paused || !root) return;
+    paused = off;
+    floatTweens.forEach(function (t) { if (off) t.pause(); else t.play(); });
+    root.classList.toggle('is-paused', off);
+  }
+
   /* ---------- auto-advance ---------- */
 
   function autoTick() {
@@ -387,21 +406,32 @@
       if (!onScreen || e.ctrlKey || e.metaKey || e.altKey) return;
       goTo(active + (e.key === 'ArrowRight' ? 1 : -1), true);
     });
+    // swipe: horizontal only when |dx| > 40 and |dx| > 1.5 x |dy|; passive listeners, vertical scrolling is never blocked (touch-action: pan-y)
     var sx = 0, sy = 0, tracking = false;
+    function touched() { lastTouch = performance.now(); manualHold = lastTouch + TOUCH_HOLD_MS; }
+    listen(root, 'touchstart', touched, { passive: true });
+    listen(root, 'touchend', touched, { passive: true });
     listen(el.stage, 'touchstart', function (e) { var t = e.touches[0]; sx = t.clientX; sy = t.clientY; tracking = true; }, { passive: true });
+    listen(el.stage, 'touchcancel', function () { tracking = false; }, { passive: true });
     listen(el.stage, 'touchend', function (e) {
       if (!tracking) return; tracking = false;
       var t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) goTo(active + (dx < 0 ? 1 : -1), true);
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) goTo(active + (dx < 0 ? 1 : -1), true);
     }, { passive: true });
-    listen(root, 'pointerenter', function (e) { if (e.pointerType === 'mouse') hovering = true; });
+    listen(root, 'pointerenter', function (e) { if (e.pointerType === 'mouse' && canHover.matches) hovering = true; });
     listen(root, 'pointerleave', function () { hovering = false; });
+    lastW = window.innerWidth;
     listen(window, 'resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () { if (root && window.gsap) setLayout(); }, 120);
+      resizeTimer = setTimeout(function () {
+        if (window.innerWidth === lastW) return;   // height-only changes (phone address bar) never re-layout
+        lastW = window.innerWidth;
+        if (root && window.gsap) setLayout();
+      }, 120);
     });
+    listen(document, 'visibilitychange', syncPaused);
     if (window.IntersectionObserver) {
-      var io = new IntersectionObserver(function (entries) { onScreen = entries[entries.length - 1].isIntersecting; }, { threshold: 0.1 });
+      var io = new IntersectionObserver(function (entries) { onScreen = entries[entries.length - 1].isIntersecting; syncPaused(); }, { threshold: 0.1 });
       io.observe(root);
       cleanups.push(function () { io.disconnect(); });
     }
@@ -439,7 +469,7 @@
     clearInterval(autoTimer); autoTimer = null;
     clearTimeout(resizeTimer);
     infoToken++;
-    floatTweens.forEach(function (t) { t.kill(); }); floatTweens = [];
+    floatTweens.forEach(function (t) { t.kill(); }); floatTweens = []; paused = false;
     if (ctx) { ctx.revert(); ctx = null; }
     cleanups.forEach(function (fn) { fn(); }); cleanups = [];
     if (preloadLink && preloadLink.parentNode) preloadLink.parentNode.removeChild(preloadLink);

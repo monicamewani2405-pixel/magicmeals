@@ -1737,14 +1737,6 @@
         }
       });
 
-      document.querySelectorAll('.mobile-bottom-nav button').forEach(b => {
-        const go = b.dataset.go;
-        const cat = b.dataset.cat;
-        if (State.view === 'home' && go === 'home') b.classList.add('active');
-        else if (State.view === 'shop' && (!cat || cat === State.selectedCategory)) b.classList.add('active');
-        else b.classList.remove('active');
-      });
-
       $('#jainToggleBtn')?.setAttribute('aria-pressed', State.jainOnly);
 
       renderCartDrawer();
@@ -1788,8 +1780,8 @@
       const leftForFreeShip = Math.max(0, freeShipThreshold - subtotal);
       const shipPercent = Math.min(100, Math.round((subtotal / freeShipThreshold) * 100));
 
-      $('#cartBadgeCount').textContent = totalCount;
-      $('#mobileCartCount').textContent = totalCount;
+      const badgeEl = $('#cartBadgeCount');
+      if (badgeEl) badgeEl.textContent = totalCount > 99 ? '99+' : totalCount;
       $('#drawerItemCount').textContent = totalCount;
 
       if (leftForFreeShip === 0 && subtotal > 0) {
@@ -2016,10 +2008,8 @@
     }
 
     function pulseCartIcon() {
-      const isMobile = window.innerWidth <= 768;
-      const destEl = (isMobile && document.getElementById('mobileCartTrigger')) || document.getElementById('cartOpenBtn');
+      const destEl = document.getElementById('cartOpenBtn');
       const badge = document.getElementById('cartBadgeCount');
-      const mobBadge = document.getElementById('mobileCartCount');
 
       if (destEl && typeof gsap !== 'undefined') {
         gsap.fromTo(destEl, 
@@ -2027,7 +2017,7 @@
           { scale: 1.25, duration: 0.16, yoyo: true, repeat: 1, ease: 'back.out(2)' }
         );
       }
-      [badge, mobBadge].forEach(b => {
+      [badge].forEach(b => {
         if (b) {
           b.classList.remove('pop');
           void b.offsetWidth;
@@ -2043,7 +2033,7 @@
       }
 
       // Target the header cart button (visible on all screens at top-right)
-      const destEl = document.getElementById('cartOpenBtn') || document.getElementById('mobileCartTrigger');
+      const destEl = document.getElementById('cartOpenBtn');
       if (!destEl) {
         pulseCartIcon();
         return;
@@ -2263,10 +2253,6 @@
       }
 
       
-      if (target.id === 'mobileBottomCategoriesBtn') {
-        openMobileDrawer();
-        return;
-      }
       if (target.id === 'heroJainQuickBtn') {
         State.jainOnly = true;
         navigateTo('shop');
@@ -2464,7 +2450,7 @@
         return;
       }
 
-      if (target.id === 'cartOpenBtn' || target.id === 'mobileCartTrigger') {
+      if (target.id === 'cartOpenBtn') {
         toggleCart(true);
         return;
       }

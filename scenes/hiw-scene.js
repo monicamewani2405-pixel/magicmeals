@@ -29,6 +29,25 @@
   function rnd(i, j) { var x = Math.sin(i * 12.9898 + j * 78.233) * 43758.5453; return x - Math.floor(x); }
   function headerH() { var h = document.querySelector('header'); return (h && h.offsetHeight) || 72; }
   function isDesktop() { return window.innerWidth >= 768; }
+  var coarse = window.matchMedia('(pointer: coarse)');
+  var landscapePhoneMq = window.matchMedia('(max-height: 499px) and (max-width: 932px) and (orientation: landscape)');
+  // 'land' (no pin, static cards), 'tiny' (< 360px, static), 'd' (>= 768px) or 'm' (phone)
+  function modeKey() { return landscapePhoneMq.matches ? 'land' : window.innerWidth < 360 ? 'tiny' : isDesktop() ? 'd' : 'm'; }
+  function wh() { return window.innerWidth > window.innerHeight ? 'l' : 'p'; }
+  // phones: stable 100svh in px (read at refresh only; never innerHeight, which moves with the address bar)
+  function svh() { return (S && S.svhEl && S.svhEl.offsetHeight) || window.innerHeight; }
+  // mobile image variants (640px scene images, 480px kettle) built by tools/prep-scene.py
+  function forDevice(cfg) {
+    if (isDesktop()) return cfg;
+    var k = 640 / cfg.size[0], kk = 480 / cfg.kettle.size[0];
+    var v = function (p) { return p.replace(/\.webp$/, '-640.webp'); };
+    var c = {};
+    for (var key in cfg) c[key] = cfg[key];
+    c.bowl = v(cfg.bowl); c.dry = v(cfg.dry); c.wet = v(cfg.wet); c.ready = v(cfg.ready);
+    c.size = [640, Math.round(cfg.size[1] * k)];
+    c.kettle = { src: cfg.kettle.src.replace(/\.webp$/, '-480.webp'), size: [480, Math.round(cfg.kettle.size[1] * kk)], tip: cfg.kettle.tip };
+    return c;
+  }
 
   /* ---------- markup ---------- */
 
@@ -63,9 +82,9 @@
     var layers = ['dry', 'wet', 'ready'].map(function (k) {
       return '<img class="v-scene-layer v-scene-layer--' + k + '" data-src="' + cfg[k] + '" width="' + w + '" height="' + h + '" alt="" decoding="async">';
     }).join('');
-    var steam = '<i></i><i></i><i></i><i></i><i></i>';
+    var steam = isDesktop() ? '<i></i><i></i><i></i><i></i><i></i>' : '<i></i><i></i><i></i>';   // phones: 3 wisps
     return '<section id="how-it-works" data-section="how-it-works" class="v-scene" aria-labelledby="vSceneTitle">' +
-      '<div class="v-scene-pin"><div class="wrap v-scene-inner">' +
+      '<div class="v-scene-pin"><span class="v-scene-svh" aria-hidden="true"></span><div class="wrap v-scene-inner">' +
         '<div class="v-scene-head">' +
           '<h2 id="vSceneTitle" class="v-scene-title">How It Works</h2>' +
           '<div class="v-scene-progress">' +
@@ -82,10 +101,10 @@
               '<img class="v-scene-base" src="' + cfg.bowl + '" width="' + w + '" height="' + h + '" alt="">' +
               layers +
               '<div class="v-scene-opening" style="left:' + (o.cx - o.rx) + '%;top:' + (o.cy - o.ry) + '%;width:' + (o.rx * 2) + '%;height:' + (o.ry * 2) + '%">' +
-                '<i class="v-scene-sheen"></i><i class="v-scene-ripple"></i><i class="v-scene-ripple"></i><i class="v-scene-spec"></i>' +
+                (isDesktop() ? '<i class="v-scene-sheen"></i><i class="v-scene-ripple"></i><i class="v-scene-ripple"></i><i class="v-scene-spec"></i>' : '') +
               '</div>' +
             '</div>' +
-            '<div class="v-scene-flow"><span class="v-scene-strand v-scene-strand--a"><i></i></span><span class="v-scene-strand v-scene-strand--b"><i></i></span></div>' +
+            '<div class="v-scene-flow"><span class="v-scene-strand v-scene-strand--a"><i></i></span>' + (isDesktop() ? '<span class="v-scene-strand v-scene-strand--b"><i></i></span>' : '') + '</div>' +
             '<div class="v-scene-particles"></div>' +
             '<img class="v-scene-kettle" data-src="' + cfg.kettle.src + '" width="' + cfg.kettle.size[0] + '" height="' + cfg.kettle.size[1] + '" alt="" decoding="async">' +
             '<div class="v-scene-steam">' + steam + '</div>' +
@@ -149,7 +168,8 @@
     var ox = -my * Math.sin(th), oy = my * Math.cos(th);       // mouth offset from the pouch centre
     var hw = (pw * Math.abs(Math.cos(th)) + ph * Math.abs(Math.sin(th))) / 2;
     var hh = (pw * Math.abs(Math.sin(th)) + ph * Math.abs(Math.cos(th))) / 2;
-    var headBottom = headerH() + offsetIn(S.head, S.pin).y + S.head.offsetHeight + 6;   // stay clear of the headline and progress dots
+    var headEl = isDesktop() ? S.head : S.title;
+    var headBottom = headerH() + offsetIn(headEl, S.pin).y + headEl.offsetHeight + 6;   // stay clear of the headline and progress dots
     var mxs = G.stageScreen.x + G.mouth.x, mys = G.stageScreen.y + G.mouth.y;
     var cxs = mxs - ox, cys = mys - oy;
     if (cxs + hw > window.innerWidth - 8) mxs -= cxs + hw - (window.innerWidth - 8);
@@ -334,8 +354,8 @@
       scrollTrigger: {
         trigger: S.pin,
         start: function () { return 'top ' + headerH() + 'px'; },
-        end: function () { return '+=' + Math.round(window.innerHeight * (isDesktop() ? 3 : 2.5)); },
-        pin: true, scrub: M.SCRUB, anticipatePin: 1, invalidateOnRefresh: true,
+        end: function () { return '+=' + Math.round((isDesktop() ? window.innerHeight : svh()) * (isDesktop() ? 3 : 2.5)); },
+        pin: true, scrub: isDesktop() ? M.SCRUB : 0.5, anticipatePin: 1, invalidateOnRefresh: true,
         onRefresh: function (self) { onProgress(self.progress); }
       }
     });
@@ -346,7 +366,7 @@
     var layerDry = S.layers.dry, layerWet = S.layers.wet, layerReady = S.layers.ready;
     var grow = 'inset(0% 0% 0% 0%)', hidden = 'inset(0% 0% 100% 0%)', gone = 'inset(100% 0% 0% 0%)';
 
-    gsap.set(S.ripples.concat(S.spec), { xPercent: -50, yPercent: -50 });   // centred on the impact point
+    if (S.spec) gsap.set(S.ripples.concat(S.spec), { xPercent: -50, yPercent: -50 });   // centred on the impact point
     tl.fromTo(S.fill, { scaleX: 0 }, { scaleX: 1, duration: 1 }, 0);
 
     // 1. Tear (0 to 25%)
@@ -373,20 +393,26 @@
         { opacity: 1, x: 0, y: 0, rotation: KETTLE_DEG, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.53)
       .set(S.flow, { opacity: 1 }, 0.60)
       .fromTo(S.strands[0], { clipPath: hidden }, { clipPath: grow, duration: 0.06, ease: OUT, immediateRender: false }, 0.60)
-      .fromTo(S.strands[1], { clipPath: hidden }, { clipPath: grow, duration: 0.08, ease: OUT, immediateRender: false }, 0.61)
       .fromTo(S.strands[0], { clipPath: grow }, { clipPath: gone, duration: 0.06, ease: INOUT, immediateRender: false }, 0.74)
-      .fromTo(S.strands[1], { clipPath: grow }, { clipPath: gone, duration: 0.07, ease: INOUT, immediateRender: false }, 0.75)
-      .set(S.flow, { opacity: 0 }, 0.83)
+      .set(S.flow, { opacity: 0 }, 0.83);
+    if (S.strands[1]) {   // desktop only: the faint second strand
+      tl.fromTo(S.strands[1], { clipPath: hidden }, { clipPath: grow, duration: 0.08, ease: OUT, immediateRender: false }, 0.61)
+        .fromTo(S.strands[1], { clipPath: grow }, { clipPath: gone, duration: 0.07, ease: INOUT, immediateRender: false }, 0.75);
+    }
+    tl
       // the kettle tips back and fades out as the stream thins
       .fromTo(S.kettle, { rotation: KETTLE_DEG, x: 0, y: 0 }, { rotation: 6, x: function () { return -0.12 * G.kw; }, y: function () { return -0.2 * G.kh; }, duration: 0.08, ease: INOUT, force3D: true, immediateRender: false }, 0.73)
       .fromTo(S.kettle, { opacity: 1 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.75)
+      ;
+    if (S.sheen) {   // desktop only; phones skip the water-surface extras (sheen, spot, rings)
       // water surface: a faint tinted sheen rises inside the opening while the stream flows, then hands over to the wet image
-      .fromTo(S.sheen, { clipPath: 'ellipse(45% 3% at 50% 100%)' }, { clipPath: 'ellipse(78% 74% at 50% 56%)', duration: 0.17, ease: OUT, immediateRender: false }, 0.62)
-      .fromTo(S.sheen, { opacity: 0 }, { opacity: 0.3, duration: 0.08, ease: OUT, immediateRender: false }, 0.62)
-      .fromTo(S.sheen, { opacity: 0.3 }, { opacity: 0, duration: 0.08, ease: INOUT, immediateRender: false }, 0.74)
-      // impact: a soft specular spot and two faint rings (the opening's overflow clips them to the ellipse)
-      .fromTo(S.spec, { opacity: 0 }, { opacity: 0.45, duration: 0.05, ease: OUT, immediateRender: false }, 0.62)
-      .fromTo(S.spec, { opacity: 0.45 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.75);
+      tl.fromTo(S.sheen, { clipPath: 'ellipse(45% 3% at 50% 100%)' }, { clipPath: 'ellipse(78% 74% at 50% 56%)', duration: 0.17, ease: OUT, immediateRender: false }, 0.62)
+        .fromTo(S.sheen, { opacity: 0 }, { opacity: 0.3, duration: 0.08, ease: OUT, immediateRender: false }, 0.62)
+        .fromTo(S.sheen, { opacity: 0.3 }, { opacity: 0, duration: 0.08, ease: INOUT, immediateRender: false }, 0.74)
+        // impact: a soft specular spot and two faint rings (the opening's overflow clips them to the ellipse)
+        .fromTo(S.spec, { opacity: 0 }, { opacity: 0.45, duration: 0.05, ease: OUT, immediateRender: false }, 0.62)
+        .fromTo(S.spec, { opacity: 0.45 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.75);
+    }
     for (var pulse = 0; pulse < 2; pulse++) {
       S.ripples.forEach(function (r, k) {
         var at = 0.625 + pulse * 0.075 + k * 0.04;
@@ -407,17 +433,43 @@
 
   /* ---------- module API ---------- */
 
-  function mountStatic(host, cfg) {
-    host.innerHTML = staticHtml(cfg);
-    S = { host: host, cfg: cfg, static: true };
+  function mountStatic(host, cfg, hero) {
+    host.innerHTML = staticHtml(forDevice(cfg));
+    S = { host: host, cfg: cfg, hero: hero, static: true, mode: modeKey(), cleanups: [], timers: [] };
+    watch();
     return true;
+  }
+
+  // Resize / rotation. Phones (coarse pointer): only width or orientation changes count, never the address bar's small height changes.
+  // A change of layout mode (phone, desktop, landscape phone, < 360px) remounts; otherwise the triggers refresh.
+  function watch() {
+    var st = S, rt = null, lastW = window.innerWidth, lastO = wh();
+    var onResize = function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () {
+        if (S !== st) return;
+        if (coarse.matches && window.innerWidth === lastW && wh() === lastO) return;
+        lastW = window.innerWidth; lastO = wh();
+        if (modeKey() !== st.mode) {
+          var h = st.host, c = st.raw || st.cfg, hr = st.hero;
+          if (!mount(h, c, hr)) mountStatic(h, c, hr);
+          return;
+        }
+        if (!st.static) ScrollTrigger.refresh();
+      }, coarse.matches ? 250 : 150);
+    };
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+    st.cleanups.push(function () { clearTimeout(rt); window.removeEventListener('resize', onResize); window.removeEventListener('orientationchange', onResize); });
   }
 
   function mount(host, cfg, hero) {
     unmount();
     if (!host || !cfg) return false;
-    if (reduceMotion.matches || window.innerWidth < 360 || !window.gsap || !window.ScrollTrigger || !hero) return mountStatic(host, cfg);
+    if (reduceMotion.matches || window.innerWidth < 360 || landscapePhoneMq.matches || !window.gsap || !window.ScrollTrigger || !hero) return mountStatic(host, cfg, hero);
     gsap.registerPlugin(ScrollTrigger);
+    var raw = cfg;
+    cfg = forDevice(cfg);   // phones: 640px scene images, 480px kettle
     var active = hero.getActive();
     if (!active || active.slug !== cfg.slug) return false;
 
@@ -432,7 +484,7 @@
     var q = function (sel, root) { return (root || section).querySelector(sel); };
     var qa = function (sel, root) { return [].slice.call((root || section).querySelectorAll(sel)); };
     S = {
-      host: host, cfg: cfg, hero: hero, section: section, overlay: overlay,
+      host: host, cfg: cfg, raw: raw, hero: hero, section: section, overlay: overlay, mode: modeKey(), svhEl: q('.v-scene-svh'), title: q('.v-scene-title'),
       pin: q('.v-scene-pin'), stage: q('.v-scene-stage'), bowl: q('.v-scene-bowl'), target: q('.v-scene-target'),
       steam: q('.v-scene-steam'), fill: q('.v-scene-fill'),
       cards: qa('.v-scene-card'), dots: qa('.v-scene-dot'),
@@ -459,17 +511,7 @@
     ScrollTrigger.addEventListener('refreshInit', onRefreshInit);
     S.cleanups.push(function () { ScrollTrigger.removeEventListener('refreshInit', onRefreshInit); });
 
-    var wasDesktop = isDesktop(), rt = null;
-    var onResize = function () {
-      clearTimeout(rt);
-      rt = setTimeout(function () {
-        if (!S || S.static) return;
-        if (isDesktop() !== wasDesktop) { var h = S.host, c = S.cfg, hr = S.hero; mount(h, c, hr); }
-        ScrollTrigger.refresh();
-      }, 150);
-    };
-    window.addEventListener('resize', onResize);
-    S.cleanups.push(function () { clearTimeout(rt); window.removeEventListener('resize', onResize); });
+    watch();
 
     hero.suspendExit();
     S.ctx = gsap.context(function () {
@@ -478,7 +520,7 @@
       S.gtween = gsap.to(S.g, {
         p: 1, ease: 'none',
         scrollTrigger: {
-          trigger: section, start: 0, scrub: M.SCRUB, invalidateOnRefresh: true,
+          trigger: section, start: 0, scrub: isDesktop() ? M.SCRUB : 0.5, invalidateOnRefresh: true,
           end: function () { return Math.max(60, section.getBoundingClientRect().top + window.scrollY - headerH()); }
         },
         onUpdate: function () { glide(S.g.p); }
@@ -486,20 +528,33 @@
       buildTimeline();
     }, section);
 
-    // decode the processed images after the hero intro, before the pin starts
+    // load and decode this dish's images (never other dishes') once the hero intro has finished, in idle time, before the pin starts
+    var st0 = S, tries = 0;
     var preload = function () {
-      if (!S) return;
+      if (S !== st0) return;
       var imgs = [S.layers.dry, S.layers.wet, S.layers.ready, S.kettle];
       imgs.forEach(function (im) { if (!im.src) { im.src = im.dataset.src; if (im.decode) im.decode().catch(function () {}); } });
     };
-    S.timers.push(setTimeout(preload, 2200));
+    var arm = function () {
+      if (S !== st0) return;
+      var a = hero.getActive();
+      if ((a && a.ready) || ++tries > 30) {
+        if (window.requestIdleCallback) {
+          var id = window.requestIdleCallback(preload, { timeout: 2500 });
+          S.cleanups.push(function () { if (window.cancelIdleCallback) window.cancelIdleCallback(id); });
+        } else S.timers.push(setTimeout(preload, 200));
+      } else S.timers.push(setTimeout(arm, 300));
+    };
+    S.timers.push(setTimeout(arm, 600));
     return true;
   }
 
   function unmount() {
     if (!S) return;
     var s = S;
-    if (!s.static) {
+    if (s.static) {
+      s.cleanups.forEach(function (fn) { fn(); });
+    } else {
       drop();
       s.timers.forEach(clearTimeout);
       s.cleanups.forEach(function (fn) { fn(); });

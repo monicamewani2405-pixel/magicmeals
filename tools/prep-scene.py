@@ -5,6 +5,9 @@ Usage (from the project root):
     python tools/prep-scene.py <slug>          e.g.  python tools/prep-scene.py rajma-masala
 
        python tools/prep-scene.py kettle          the kettle cutout (scenes/kettle.*), once
+       python tools/prep-scene.py mobile          (re)writes every mobile variant: scenes/processed/**/*-640.webp (scene images and
+                                                  bowls, 640px wide max), kettle-480.webp (480px max) and assets/hero/*-front-480.webp
+                                                  (hero pouches, 480px tall max). Also runs after every dish or kettle run.
 
 Inputs (any of .jpg .jpeg .png .webp, never modified or moved):
     scenes/bowl-empty.* (or empty-bowl.*)
@@ -168,6 +171,45 @@ def update_css(slug, cols):
         f.write('\n'.join(out))
 
 
+def shrink(src, max_w=None, max_h=None, suffix='-640'):
+    """Writes <name><suffix>.webp next to src, scaled down to the given max width or height (never up)."""
+    im = Image.open(src)
+    k = min(1.0, (max_w / float(im.width)) if max_w else 1.0, (max_h / float(im.height)) if max_h else 1.0)
+    out = im.convert('RGBA').resize((max(1, int(round(im.width * k))), max(1, int(round(im.height * k)))), Image.LANCZOS)
+    dst = os.path.splitext(src)[0] + suffix + '.webp'
+    out.save(dst, 'WEBP', quality=82, method=6)
+    return dst, out.size, os.path.getsize(dst)
+
+
+def mobile_variants(only=None):
+    """Mobile variants of the processed scene images (640px wide), the kettle (480px) and the hero pouches (480px tall)."""
+    done = []
+    for dp, _, files in os.walk(OUT):
+        for f in files:
+            if not f.endswith('.webp') or f.endswith('-640.webp') or f.endswith('-480.webp'):
+                continue
+            p = os.path.join(dp, f)
+            if only and only not in p.replace('\\', '/'):
+                continue
+            if f == 'kettle.webp':
+                done.append(shrink(p, max_w=480, suffix='-480'))
+            else:
+                done.append(shrink(p, max_w=640, suffix='-640'))
+    hero = os.path.join(ROOT, 'assets', 'hero')
+    if not only and os.path.isdir(hero):
+        for f in sorted(os.listdir(hero)):
+            if f.endswith('-front-800.png'):
+                src = os.path.join(hero, f)
+                dst = os.path.join(hero, f.replace('-front-800.png', '-front-480.webp'))
+                im = Image.open(src).convert('RGBA')
+                k = min(1.0, 480 / float(im.height))
+                im = im.resize((int(round(im.width * k)), 480 if k < 1 else im.height), Image.LANCZOS)
+                im.save(dst, 'WEBP', quality=82, method=6)
+                done.append((dst, im.size, os.path.getsize(dst)))
+    for d in done:
+        print('%s  %dx%d  %d KB' % (os.path.relpath(d[0], ROOT).replace('\\', '/'), d[1][0], d[1][1], d[2] // 1024))
+
+
 def kettle():
     """Kettle cutout: dark body on white. Colour of the edge pixels is copied from the nearest solid pixel (no white fringe)."""
     im = load(find(os.path.join(SCENES, 'kettle')))
@@ -209,8 +251,11 @@ def main():
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     slug = sys.argv[1]
+    if slug == 'mobile':
+        return mobile_variants()
     if slug == 'kettle':
-        return kettle()
+        kettle()
+        return mobile_variants('kettle')
     names = ['bowl-empty', 'dry', 'wet', 'ready']
     paths = [find(os.path.join(SCENES, 'bowl-empty'), 'empty-bowl')] + [find(os.path.join(SCENES, slug, n)) for n in names[1:]]
     cut = [cutout(load(p)) for p in paths]
@@ -272,6 +317,8 @@ def main():
     ImageDraw.Draw(qa).ellipse([cx - rx, cy - ry, cx + rx, cy + ry], outline=(255, 255, 0), width=2)
     qa.save(os.path.join(OUT, 'qa-%s.png' % slug))
     print(json.dumps(data, indent=2))
+    mobile_variants('/' + slug + '/')
+    mobile_variants('bowl-empty')
 
 
 if __name__ == '__main__':

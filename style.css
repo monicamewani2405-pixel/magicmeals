@@ -60,7 +60,6 @@
       font-family: var(--font-body);
       font-size: 15px;
       line-height: 1.55;
-      padding-bottom: 74px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -1414,11 +1413,12 @@
     }
     @media (max-width: 768px) {
       .whatsapp-float-btn {
-        bottom: 84px;
-        right: 18px;
-        width: 52px;
-        height: 52px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        right: 12px;
+        width: 48px;
+        height: 48px;
       }
+      .whatsapp-float-btn svg { width: 28px; height: 28px; }
     }
 
     /* Trust Highlights Strip */
@@ -2299,42 +2299,6 @@
       font-size: 16px;
     }
 
-    /* Mobile Bottom Navigation */
-    .mobile-bottom-nav {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 600;
-      background: rgb(var(--white-rgb) / 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
-      display: flex;
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-    .mobile-bottom-nav button {
-      flex: 1;
-      min-height: 58px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--text-muted);
-      position: relative;
-    }
-    .mobile-bottom-nav button.active {
-      color: var(--brand-primary);
-      font-weight: 700;
-    }
-    .mobile-bottom-nav button svg {
-      width: 20px;
-      height: 20px;
-    }
-
     /* Search & Sort Input */
     .search-bar-wrap {
       display: flex;
@@ -2456,7 +2420,6 @@
     /* Desktop Media Queries */
     @media (min-width: 860px) {
       body { padding-bottom: 0; }
-      .mobile-bottom-nav { display: none; }
       .header-left-nav { display: flex; }
       .product-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -2560,6 +2523,32 @@
       .auth-btn-text {
         display: none;
       }
+    }
+
+    /* Mobile header: menu, logo, search/account/cart, each a 44x44 tap area (the bottom nav is gone) */
+    @media (max-width: 768px) {
+      #toast { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+      .hamburger-btn { width: 44px; height: 44px; }
+      .header-right-actions { gap: 0; }
+      .header-right-actions .icon-btn { width: 44px; height: 44px; padding: 0; border-radius: 12px; }
+      .header-right-actions .icon-btn svg { width: 24px; height: 24px; }
+      /* count: a small pill on the icon's top-right corner, outside the glyph; top/right (not transform) so the pop animation can scale it */
+      .cart-badge {
+        top: -2px;
+        right: 0;
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 16px;
+        border-radius: 999px;
+        white-space: nowrap;
+        outline: 2px solid var(--bg);
+        transform-origin: center;
+      }
+      .drawer-footer { padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
     }
 
     /* Auth Modal */
@@ -3283,14 +3272,12 @@
     display: none !important;
   }
 
-  /* Hide default mobile bottom navigation bar on BYOB view */
-  body[data-view="byob"] .mobile-bottom-nav {
-    display: none !important;
-  }
-
   /* Reposition WhatsApp floating button cleanly above the BYOB action bar */
   body[data-view="byob"] .whatsapp-float-btn {
-    bottom: 74px !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  body[data-view="byob"] #toast {
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
   }
 
   /* Add extra padding at the bottom of the pantry so last dishes scroll comfortably above the action bar */

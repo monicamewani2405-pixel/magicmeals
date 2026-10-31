@@ -4,7 +4,6 @@
    - Pinned per-dish scene (scenes/hiw-scene.js) when the active dish has one,
      otherwise the static 4-card How It Works below
    - Falls back to ./vendor/ copies of GSAP if the CDN failed
-   - Publishes --bottom-nav-h (mobile bottom nav height) for the hero and the scene
    ========================================================= */
 (function () {
   'use strict';
@@ -93,7 +92,7 @@
     var hero = window.MMHeroes && window.MMHeroes.switcher;
     var a = hero && hero.getActive && hero.getActive();
     var cfg = a && window.sceneFor && window.sceneFor(a.slug);
-    if (cfg && window.MMScene && window.MMScene.mount(host, cfg, hero)) return;
+    if (cfg && window.MMScene && window.MMScene.mount(host, cfg, hero)) return;   // (landscape phones get the static cards from MMScene itself)
     mountStaticHiw();
   }
 
@@ -138,6 +137,7 @@
     var go = function () {
       if (token !== mountToken) return;
       mounted = true;
+      if (window.ScrollTrigger) ScrollTrigger.config({ ignoreMobileResize: true });   // address-bar show/hide never refreshes the triggers
       var p = hero.mount(slot);
       mountHiw();
       Promise.resolve(p).then(refresh, refresh);
@@ -147,20 +147,9 @@
     else ensureGsap().then(go, go);
   }
 
-  function measureBottomNav() {
-    var nav = document.querySelector('.mobile-bottom-nav');
-    var h = 0;
-    if (nav && getComputedStyle(nav).display !== 'none') {
-      var pb = parseFloat(getComputedStyle(nav).paddingBottom) || 0;   // safe-area is added again where it is used
-      h = Math.max(0, nav.offsetHeight - pb);
-    }
-    document.documentElement.style.setProperty('--bottom-nav-h', h + 'px');
-  }
-
   /* ---------- routing ---------- */
 
   function onRendered(view) {
-    measureBottomNav();
     if (view === 'home') mountHome();
     else unmountHome();
   }
@@ -170,7 +159,6 @@
   });
 
   function init() {
-    window.addEventListener('resize', measureBottomNav);
     // main.js may already have rendered before this deferred script ran
     if (document.body.dataset.view) onRendered(document.body.dataset.view);
   }
