@@ -4,12 +4,15 @@ prep-scene.py: prepares the Design 2 "How It Works" scene images for one dish.
 Usage (from the project root):
     python tools/prep-scene.py <slug>          e.g.  python tools/prep-scene.py rajma-masala
 
+       python tools/prep-scene.py kettle          the kettle cutout (scenes/kettle.*), once
+
 Inputs (any of .jpg .jpeg .png .webp, never modified or moved):
-    scenes/bowl-empty.*
+    scenes/bowl-empty.* (or empty-bowl.*)
     scenes/<slug>/dry.*   scenes/<slug>/wet.*   scenes/<slug>/ready.*
 
 Outputs:
-    scenes/processed/bowl-empty.webp
+    scenes/processed/bowl-empty.webp               (the first dish only; later dishes get their own scenes/processed/<slug>/bowl.webp,
+                                                    because the crop depends on the dish's images)
     scenes/processed/<slug>/{dry,wet,ready}.webp   (same size, bowl aligned, transparent background)
     scenes/processed/<slug>.json                   (paths, bowl bbox, inner opening in %, alignment numbers)
     scenes/scene-colors.css                        (:root --scene-<slug>-c1..c3 + water tokens; other dishes kept)
@@ -40,11 +43,12 @@ PAD = 0.06
 CSS_PATH = os.path.join(SCENES, 'scene-colors.css')
 
 
-def find(base):
+def find(base, *alts):
     d, name = os.path.split(base)
+    names = [name.lower()] + [a.lower() for a in alts]
     for f in os.listdir(d):
         stem, ext = os.path.splitext(f)
-        if stem.lower() == name.lower() and ext.lower() in EXTS:
+        if stem.lower() in names and ext.lower() in EXTS:
             return os.path.join(d, f)
     sys.exit('missing input: %s.(jpg|jpeg|png|webp)' % base)
 
@@ -164,12 +168,51 @@ def update_css(slug, cols):
         f.write('\n'.join(out))
 
 
+def kettle():
+    """Kettle cutout: dark body on white. Colour of the edge pixels is copied from the nearest solid pixel (no white fringe)."""
+    im = load(find(os.path.join(SCENES, 'kettle')))
+    rgb = np.asarray(im.convert('RGB')).astype(np.uint8)
+    lum = rgb.astype(np.int32).mean(2)
+    fg = lum < 175
+    lab, n = ndimage.label(fg)
+    fg = lab == (1 + int(np.argmax(ndimage.sum(fg, lab, range(1, n + 1)))))
+    yy, xx = np.ogrid[-2:3, -2:3]
+    fg = ndimage.binary_closing(fg, structure=(xx * xx + yy * yy) <= 4)
+    fg = ndimage.binary_fill_holes(fg)
+    core = ndimage.binary_erosion(fg, iterations=2)
+    idx = ndimage.distance_transform_edt(~core, return_distances=False, return_indices=True)
+    solid = rgb[idx[0], idx[1]]                                # nearest solid colour everywhere
+    soft = ndimage.gaussian_filter(ndimage.binary_erosion(fg, iterations=1).astype(np.float32), 1.0)
+    a = (np.clip((soft - 0.5) * 2.4 + 0.5, 0, 1) * 255).astype(np.uint8)
+    out = Image.fromarray(np.dstack([solid, a]), 'RGBA')
+    l, t, r, b = bbox(a > 10)
+    pw, ph = (r - l) * 0.03, (b - t) * 0.03
+    out = out.crop((int(max(0, l - pw)), int(max(0, t - ph)), int(min(out.width, r + pw)), int(min(out.height, b + ph))))
+    k = min(1.0, 700 / float(out.width))
+    out = out.resize((int(round(out.width * k)), int(round(out.height * k))), Image.LANCZOS)
+    os.makedirs(OUT, exist_ok=True)
+    out.save(os.path.join(OUT, 'kettle.webp'), 'WEBP', quality=90, method=6)
+    am = np.asarray(out.split()[3]) > 127
+    w, h = out.size
+    xs = np.where(am.any(0))[0]
+    tip_x = xs.max()
+    tip_y = np.where(am[:, max(0, tip_x - 3):tip_x + 1].any(1))[0].mean()      # spout tip (rightmost point)
+    data = {'src': 'scenes/processed/kettle.webp', 'size': [w, h], 'tip': {'x': round(tip_x / w * 100, 2), 'y': round(tip_y / h * 100, 2)}}
+    print(json.dumps(data))
+    qa = Image.new('RGB', (w, h), (60, 120, 200))
+    qa.paste(out, (0, 0), out)
+    ImageDraw.Draw(qa).ellipse([tip_x - 4, tip_y - 4, tip_x + 4, tip_y + 4], outline=(255, 255, 0), width=2)
+    qa.save(os.path.join(OUT, 'qa-kettle.png'))
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     slug = sys.argv[1]
+    if slug == 'kettle':
+        return kettle()
     names = ['bowl-empty', 'dry', 'wet', 'ready']
-    paths = [find(os.path.join(SCENES, 'bowl-empty'))] + [find(os.path.join(SCENES, slug, n)) for n in names[1:]]
+    paths = [find(os.path.join(SCENES, 'bowl-empty'), 'empty-bowl')] + [find(os.path.join(SCENES, slug, n)) for n in names[1:]]
     cut = [cutout(load(p)) for p in paths]
 
     ref = bbox(np.asarray(cut[0].split()[3]) > 127)
@@ -190,7 +233,10 @@ def main():
     cut = [c.resize((sw, sh), Image.LANCZOS) for c in cut]
 
     os.makedirs(os.path.join(OUT, slug), exist_ok=True)
-    cut[0].save(os.path.join(OUT, 'bowl-empty.webp'), 'WEBP', quality=88, method=6)
+    bowl_rel = 'scenes/processed/%s/bowl.webp' % slug
+    if not os.path.exists(os.path.join(OUT, 'bowl-empty.webp')):   # the first dish keeps the shared bowl file
+        bowl_rel = 'scenes/processed/bowl-empty.webp'
+    cut[0].save(os.path.join(ROOT, bowl_rel), 'WEBP', quality=88, method=6)
     for i in range(1, 4):
         cut[i].save(os.path.join(OUT, slug, names[i] + '.webp'), 'WEBP', quality=88, method=6)
 
@@ -202,7 +248,7 @@ def main():
     data = {
         'slug': slug,
         'size': [sw, sh],
-        'bowl': 'scenes/processed/bowl-empty.webp',
+        'bowl': bowl_rel,
         'dry': 'scenes/processed/%s/dry.webp' % slug,
         'wet': 'scenes/processed/%s/wet.webp' % slug,
         'ready': 'scenes/processed/%s/ready.webp' % slug,

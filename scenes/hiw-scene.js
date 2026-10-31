@@ -19,6 +19,7 @@
   var JAG_Y = [10.2, 8.4, 11.5, 9.3, 12, 8.8, 11, 9.6, 12.2, 8.9, 11.4, 9.5, 10.6];   // % of pouch height (art starts at ~6%)
   var MOUTH_Y = 10;                                                                   // mouth marker, % from the top of the pouch
   var POUR_DEG = -115;
+  var KETTLE_DEG = 22;   // tilt of the kettle while it pours (clockwise, the spout dips)
   var STEP_AT = [0, 0.25, 0.55, 0.8];
 
   function esc(s) {
@@ -51,7 +52,6 @@
         '<h2 id="vSceneTitle" class="v-scene-title">How It Works</h2>' +
         '<ol class="v-scene-steps">' + cardsHtml(cfg).replace(/ is-active/, '') + '</ol>' +
         '<img class="v-scene-static-img" src="' + cfg.ready + '" width="' + cfg.size[0] + '" height="' + cfg.size[1] + '" alt="" loading="lazy">' +
-        '<p class="v-scene-label v-scene-label--static">' + esc(minutesText(cfg)) + '</p>' +
       '</div></section>';
   }
 
@@ -87,8 +87,8 @@
             '</div>' +
             '<div class="v-scene-flow"><span class="v-scene-strand v-scene-strand--a"><i></i></span><span class="v-scene-strand v-scene-strand--b"><i></i></span></div>' +
             '<div class="v-scene-particles"></div>' +
+            '<img class="v-scene-kettle" data-src="' + cfg.kettle.src + '" width="' + cfg.kettle.size[0] + '" height="' + cfg.kettle.size[1] + '" alt="" decoding="async">' +
             '<div class="v-scene-steam">' + steam + '</div>' +
-            '<p class="v-scene-label">' + esc(minutesText(cfg)) + '</p>' +
           '</div></div>' +
         '</div>' +
       '</div></div></section>';
@@ -160,9 +160,25 @@
     G.pour = { x: (mxs - ox - G.target.x) / G.s, y: (mys - oy - G.target.y) / G.s };
     markerMouth();
 
-    // water: a thin stream from above the bowl down to the impact point (positions cached here, never per frame)
+    // kettle: its spout tip sits above the impact point once tilted; the stream runs from the tip to the impact
+    var K = cfg.kettle, kw = Math.round((isDesktop() ? 0.7 : 0.72) * bw), kh = Math.round(kw * K.size[1] / K.size[0]);
+    var kt = KETTLE_DEG * Math.PI / 180, kc = Math.cos(kt), ks = Math.sin(kt);
+    var tvx = (K.tip.x / 100 - 0.5) * kw, tvy = (K.tip.y / 100 - 0.6) * kh;
+    var trx = tvx * kc - tvy * ks, tryy = tvx * ks + tvy * kc;           // tip offset from the pivot once tilted
+    var topRel = Math.min.apply(null, [[-0.5, -0.6], [0.5, -0.6], [0.5, 0.4], [-0.5, 0.4]].map(function (c) { return c[0] * kw * ks + c[1] * kh * kc; }));
+    var tipY = Math.min(G.open.cy - G.open.ry - 0.12 * bh, G.impact.y - 0.15 * bh);
+    var kpy = tipY - tryy;
+    var minTop = headBottom - G.stageScreen.y;                          // keep the kettle clear of the headline
+    if (kpy + topRel < minTop) kpy = Math.min(minTop - topRel, G.impact.y - 0.15 * bh - tryy);
+    tipY = kpy + tryy;
+    G.kw = kw; G.kh = kh;
+    S.kettle.style.width = kw + 'px'; S.kettle.style.height = kh + 'px';
+    S.kettle.style.left = Math.round(G.impact.x - trx - 0.5 * kw) + 'px';
+    S.kettle.style.top = Math.round(kpy - 0.6 * kh) + 'px';
+    // water: a thin stream from the spout tip down to the impact point (positions cached here, never per frame)
     S.flow.style.left = Math.round(G.impact.x - 6) + 'px';
-    S.flow.style.height = Math.round(G.impact.y) + 'px';
+    S.flow.style.top = Math.round(tipY) + 'px';
+    S.flow.style.height = Math.round(G.impact.y - tipY) + 'px';
     buildPour();
   }
 
@@ -286,8 +302,8 @@
   function onProgress(p) {
     S.p = p;
     setStep(p >= STEP_AT[3] ? 3 : p >= STEP_AT[2] ? 2 : p >= STEP_AT[1] ? 1 : 0);
-    S.steam.classList.toggle('is-steaming', p >= 0.7 && p < 0.99);
-    S.flow.classList.toggle('is-flowing', p >= 0.55 && p < 0.82);
+    S.steam.classList.toggle('is-steaming', p >= 0.74 && p < 0.99);
+    S.flow.classList.toggle('is-flowing', p >= 0.59 && p < 0.84);
   }
 
   /* ---------- timelines ---------- */
@@ -350,39 +366,42 @@
       .fromTo(layerDry, { opacity: 0 }, { opacity: 1, duration: 0.05, ease: OUT, immediateRender: false }, 0.35)
       .fromTo(layerDry, { scale: 0.985, clipPath: startClip }, { scale: 1, clipPath: endClip, duration: 0.19, ease: OUT, force3D: true, immediateRender: false }, 0.35);
 
-    // 3. Add hot water (52 to 80%): the pouch leaves before the stream arrives, the stream starts while it is still fading
-    tl.to(inner, { rotation: -30, x: function () { return G.pour.x + 70 / G.s; }, duration: 0.09, ease: INOUT }, 0.52)
-      .to(inner, { opacity: 0, duration: 0.07, ease: INOUT }, 0.54)
-      .set(S.flow, { opacity: 1 }, 0.56)
-      .fromTo(S.strands[0], { clipPath: hidden }, { clipPath: grow, duration: 0.06, ease: OUT, immediateRender: false }, 0.56)
-      .fromTo(S.strands[1], { clipPath: hidden }, { clipPath: grow, duration: 0.08, ease: OUT, immediateRender: false }, 0.57)
-      .fromTo(S.strands[0], { clipPath: grow }, { clipPath: gone, duration: 0.07, ease: INOUT, immediateRender: false }, 0.72)
-      .fromTo(S.strands[1], { clipPath: grow }, { clipPath: gone, duration: 0.08, ease: INOUT, immediateRender: false }, 0.73)
-      .set(S.flow, { opacity: 0 }, 0.81)
+    // 3. Add hot water (50 to 82%): the pouch leaves, the kettle comes in and tilts, the stream runs from its spout (60 to 83%)
+    tl.to(inner, { rotation: -30, x: function () { return G.pour.x + 70 / G.s; }, duration: 0.09, ease: INOUT }, 0.50)
+      .to(inner, { opacity: 0, duration: 0.06, ease: INOUT }, 0.52)
+      .fromTo(S.kettle, { opacity: 0, x: function () { return -0.3 * G.kw; }, y: function () { return -0.25 * G.kh; }, rotation: 0 },
+        { opacity: 1, x: 0, y: 0, rotation: KETTLE_DEG, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.53)
+      .set(S.flow, { opacity: 1 }, 0.60)
+      .fromTo(S.strands[0], { clipPath: hidden }, { clipPath: grow, duration: 0.06, ease: OUT, immediateRender: false }, 0.60)
+      .fromTo(S.strands[1], { clipPath: hidden }, { clipPath: grow, duration: 0.08, ease: OUT, immediateRender: false }, 0.61)
+      .fromTo(S.strands[0], { clipPath: grow }, { clipPath: gone, duration: 0.06, ease: INOUT, immediateRender: false }, 0.74)
+      .fromTo(S.strands[1], { clipPath: grow }, { clipPath: gone, duration: 0.07, ease: INOUT, immediateRender: false }, 0.75)
+      .set(S.flow, { opacity: 0 }, 0.83)
+      // the kettle tips back and fades out as the stream thins
+      .fromTo(S.kettle, { rotation: KETTLE_DEG, x: 0, y: 0 }, { rotation: 6, x: function () { return -0.12 * G.kw; }, y: function () { return -0.2 * G.kh; }, duration: 0.08, ease: INOUT, force3D: true, immediateRender: false }, 0.73)
+      .fromTo(S.kettle, { opacity: 1 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.75)
       // water surface: a faint tinted sheen rises inside the opening while the stream flows, then hands over to the wet image
-      .fromTo(S.sheen, { clipPath: 'ellipse(45% 3% at 50% 100%)' }, { clipPath: 'ellipse(78% 74% at 50% 56%)', duration: 0.17, ease: OUT, immediateRender: false }, 0.58)
-      .fromTo(S.sheen, { opacity: 0 }, { opacity: 0.3, duration: 0.08, ease: OUT, immediateRender: false }, 0.58)
-      .fromTo(S.sheen, { opacity: 0.3 }, { opacity: 0, duration: 0.09, ease: INOUT, immediateRender: false }, 0.72)
+      .fromTo(S.sheen, { clipPath: 'ellipse(45% 3% at 50% 100%)' }, { clipPath: 'ellipse(78% 74% at 50% 56%)', duration: 0.17, ease: OUT, immediateRender: false }, 0.62)
+      .fromTo(S.sheen, { opacity: 0 }, { opacity: 0.3, duration: 0.08, ease: OUT, immediateRender: false }, 0.62)
+      .fromTo(S.sheen, { opacity: 0.3 }, { opacity: 0, duration: 0.08, ease: INOUT, immediateRender: false }, 0.74)
       // impact: a soft specular spot and two faint rings (the opening's overflow clips them to the ellipse)
-      .fromTo(S.spec, { opacity: 0 }, { opacity: 0.45, duration: 0.05, ease: OUT, immediateRender: false }, 0.58)
-      .fromTo(S.spec, { opacity: 0.45 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.73);
+      .fromTo(S.spec, { opacity: 0 }, { opacity: 0.45, duration: 0.05, ease: OUT, immediateRender: false }, 0.62)
+      .fromTo(S.spec, { opacity: 0.45 }, { opacity: 0, duration: 0.06, ease: INOUT, immediateRender: false }, 0.75);
     for (var pulse = 0; pulse < 2; pulse++) {
       S.ripples.forEach(function (r, k) {
-        var at = 0.585 + pulse * 0.085 + k * 0.04;
+        var at = 0.625 + pulse * 0.075 + k * 0.04;
         tl.to(r, { keyframes: { opacity: [0, 0.25, 0], scale: [0.15, 0.6, 1.1], easeEach: 'none' }, duration: 0.08 }, at);
       });
     }
-    tl.fromTo(layerWet, { opacity: 0 }, { opacity: 1, duration: 0.13, ease: INOUT, immediateRender: false }, 0.64)
-      .fromTo(layerWet, { scale: 0.99 }, { scale: 1, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.64)
-      .set(layerDry, { opacity: 0 }, 0.78)
-      .fromTo(S.steam, { opacity: 0 }, { opacity: 0.6, duration: 0.08, ease: INOUT, immediateRender: false }, 0.74);
+    tl.fromTo(layerWet, { opacity: 0 }, { opacity: 1, duration: 0.13, ease: INOUT, immediateRender: false }, 0.66)
+      .fromTo(layerWet, { scale: 0.99 }, { scale: 1, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.66)
+      .set(layerDry, { opacity: 0 }, 0.80)
+      .fromTo(S.steam, { opacity: 0 }, { opacity: 0.6, duration: 0.08, ease: INOUT, immediateRender: false }, 0.77);
 
-    // 4. Eat (78 to 100%)
-    tl.fromTo(layerReady, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: INOUT, immediateRender: false }, 0.78)
-      .fromTo(layerReady, { scale: 0.99 }, { scale: 1, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.78)
-      .set(layerWet, { opacity: 0 }, 0.91)
-      .fromTo(S.label, { opacity: 0, scale: 0.85, y: 6 }, { opacity: 1, scale: 1, y: 0, duration: 0.09, ease: OUT, immediateRender: false }, 0.86)
-      .to(S.label, { y: -3, duration: 0.07, ease: INOUT }, 0.95)
+    // 4. Eat (80 to 100%)
+    tl.fromTo(layerReady, { opacity: 0 }, { opacity: 1, duration: 0.11, ease: INOUT, immediateRender: false }, 0.80)
+      .fromTo(layerReady, { scale: 0.99 }, { scale: 1, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.80)
+      .set(layerWet, { opacity: 0 }, 0.92)
       .to(S.stage, { opacity: 0, y: -16, duration: 0.07, ease: INOUT }, 0.93);
   }
 
@@ -415,10 +434,10 @@
     S = {
       host: host, cfg: cfg, hero: hero, section: section, overlay: overlay,
       pin: q('.v-scene-pin'), stage: q('.v-scene-stage'), bowl: q('.v-scene-bowl'), target: q('.v-scene-target'),
-      steam: q('.v-scene-steam'), label: q('.v-scene-label'), fill: q('.v-scene-fill'),
+      steam: q('.v-scene-steam'), fill: q('.v-scene-fill'),
       cards: qa('.v-scene-card'), dots: qa('.v-scene-dot'),
       layers: { dry: q('.v-scene-layer--dry'), wet: q('.v-scene-layer--wet'), ready: q('.v-scene-layer--ready') },
-      flow: q('.v-scene-flow'), strands: qa('.v-scene-strand'), head: q('.v-scene-head'),
+      kettle: q('.v-scene-kettle'), flow: q('.v-scene-flow'), strands: qa('.v-scene-strand'), head: q('.v-scene-head'),
       sheen: q('.v-scene-sheen'), spec: q('.v-scene-spec'), ripples: qa('.v-scene-ripple'),
       pouch: q('.v-scene-pouch', overlay), pouchIn: q('.v-scene-pouch-in', overlay),
       strip: q('.v-scene-strip', overlay), openEl: q('.v-scene-open', overlay), mouth: q('.v-scene-mouth', overlay),
@@ -470,7 +489,7 @@
     // decode the processed images after the hero intro, before the pin starts
     var preload = function () {
       if (!S) return;
-      var imgs = [S.layers.dry, S.layers.wet, S.layers.ready];
+      var imgs = [S.layers.dry, S.layers.wet, S.layers.ready, S.kettle];
       imgs.forEach(function (im) { if (!im.src) { im.src = im.dataset.src; if (im.decode) im.decode().catch(function () {}); } });
     };
     S.timers.push(setTimeout(preload, 2200));

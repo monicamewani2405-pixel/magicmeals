@@ -7,7 +7,12 @@
    (copy the numbers from scenes/processed/<slug>.json).
    Every field is optional except the images and opening; defaults come from sceneFor().
    ========================================================= */
+// The kettle that pours the hot water (step 3); built by `python tools/prep-scene.py kettle`.
+// tip = the spout tip, % of the kettle image: the stream starts there.
+const SCENE_KETTLE = { src: 'scenes/processed/kettle.webp', size: [700, 467], tip: { x: 97, y: 18.84 } };
+
 const SCENE_DEFAULTS = {
+  kettle: SCENE_KETTLE,
   prepMinutes: 5,
   particle: 'grain',   // 'bean' | 'grain' | 'shred'
   steps: [
@@ -36,6 +41,19 @@ const SCENES = {
       { title: 'Add hot water', text: 'Add 155 ml of boiling water.' },
       { title: 'Eat', text: 'Cover, wait 5 minutes, stir well, and enjoy.' }
     ]
+  },
+  // the source images live in scenes/panner-butter-masala/ (folder spelling); the product slug is paneer-butter-masala
+  'paneer-butter-masala': {
+    bowl: 'scenes/processed/panner-butter-masala/bowl.webp',
+    dry: 'scenes/processed/panner-butter-masala/dry.webp',
+    wet: 'scenes/processed/panner-butter-masala/wet.webp',
+    ready: 'scenes/processed/panner-butter-masala/ready.webp',
+    size: [815, 563],
+    opening: { cx: 49.82, cy: 32.14, rx: 42.7, ry: 26.83 },
+    bowlBottom: 94.7,
+    prepMinutes: 5,
+    particle: 'bean',
+    colors: ['var(--scene-panner-butter-masala-c1)', 'var(--scene-panner-butter-masala-c2)', 'var(--scene-panner-butter-masala-c3)']
   }
 };
 

@@ -2,11 +2,11 @@
    heroes/switcher.js: Design 2 "Range Switcher"
    - 3 to 5 pouches positioned by circular offset from the active one
    - Click/tap neighbour, arrow keys, swipe, dots, auto-advance
-   - Same mount(slot) / unmount() API as heroes/classic.js
+   - mount(slot) / unmount() are called by heroes/home.js
    - Prefixed CSS: v-switcher-* (variants.css)
    ========================================================= */
 
-// HERO_PRODUCTS comes from hero-products.js (shared with Design 3). Images are 800px-tall copies of the
+// HERO_PRODUCTS comes from hero-products.js. Images are 800px-tall copies of the
 // transparent front PNGs in assets/hero/ (originals untouched).
 
 (function () {
@@ -151,17 +151,6 @@
       d.setAttribute('aria-pressed', on ? 'true' : 'false');
       d.classList.toggle('is-active', on);
     });
-  }
-
-  // keep the button row fully above the fixed chooser (#heroChooser): bottom padding = its height + bottom offset + 24px
-  function clearChooser() {
-    if (!root) return;
-    var c = document.getElementById('heroChooser'), px = 0;
-    if (c && !c.hidden) {
-      var r = c.getBoundingClientRect();
-      if (r.height) px = Math.ceil(window.innerHeight - r.top) + 24;
-    }
-    root.style.setProperty('--v-sw-clear', px + 'px');
   }
 
   function setTint() {
@@ -375,13 +364,6 @@
     });
 
     fillInfo(); markDots(); setTint();
-    clearChooser();
-    var chooserEl = document.getElementById('heroChooser');
-    if (chooserEl && window.ResizeObserver) {   // fires when the chooser is shown, hidden or resized
-      var ro = new ResizeObserver(clearChooser);
-      ro.observe(chooserEl);
-      cleanups.push(function () { ro.disconnect(); });
-    }
 
     // events
     listen(el.stage, 'click', function (e) {
@@ -416,7 +398,7 @@
     listen(root, 'pointerleave', function () { hovering = false; });
     listen(window, 'resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () { clearChooser(); if (root && window.gsap) setLayout(); }, 120);
+      resizeTimer = setTimeout(function () { if (root && window.gsap) setLayout(); }, 120);
     });
     if (window.IntersectionObserver) {
       var io = new IntersectionObserver(function (entries) { onScreen = entries[entries.length - 1].isIntersecting; }, { threshold: 0.1 });

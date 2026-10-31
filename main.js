@@ -862,7 +862,7 @@
       const combos = PRODUCTS.filter(p => p.category === 'Combos' && (!State.jainOnly || p.jain));
 
       return `
-        <!-- Design hero slot: filled by variants.js (heroes/*.js) -->
+        <!-- Home hero slot: filled by heroes/home.js (heroes/switcher.js) -->
         <section id="hero-slot" data-hero-root></section>
         <div id="hiw-slot"></div>
 
@@ -1763,14 +1763,14 @@
 
 
 
-      // Let feature modules (hero.js) re-initialise after the SPA swaps the view
+      // Let feature modules (heroes/home.js) re-initialise after the SPA swaps the view
       document.dispatchEvent(new CustomEvent('app:rendered', { detail: { view: State.view } }));
     }
 
     function updateHeaderTransparency() {
       const header = document.getElementById('siteHeader');
       if (!header || State.view !== 'home') return;
-      // Threshold follows whichever hero design is mounted ([data-hero-root]); capped at the original 40px
+      // Threshold follows the mounted hero ([data-hero-root]); capped at the original 40px
       const heroRoot = document.querySelector('[data-hero-root]');
       const threshold = heroRoot ? Math.min(40, Math.max(0, heroRoot.offsetHeight - header.offsetHeight)) : 40;
       if (window.scrollY > threshold) {

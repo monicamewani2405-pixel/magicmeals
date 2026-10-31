@@ -135,7 +135,7 @@
   background: radial-gradient(ellipse at center, rgb(var(--black-rgb) / 0.5) 0%, rgb(var(--black-rgb) / 0.2) 45%, rgb(var(--black-rgb) / 0) 72%);
   pointer-events: none;
 }
-.v-scene-bowl { position: absolute; left: 11%; bottom: 8%; width: 78%; }
+.v-scene-bowl { position: absolute; left: 16%; bottom: 8%; width: 68%; }
 .v-scene-base, .v-scene-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .v-scene-layer { opacity: 0; transform-origin: 50% var(--v-pivot, 94.7%); backface-visibility: hidden; }
 .v-scene-opening { position: absolute; border-radius: 50%; overflow: hidden; pointer-events: none; }
@@ -206,6 +206,17 @@
 .v-scene-flow.is-flowing .v-scene-strand i { animation-play-state: running; }
 @keyframes v-scene-shimmer { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.8); } }
 @keyframes v-scene-run { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(0, 40px, 0); } }
+.v-scene-kettle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  max-width: none;
+  opacity: 0;
+  transform-origin: 50% 60%;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
 .v-scene-particles { position: absolute; inset: 0; pointer-events: none; }
 .v-scene-p {
   position: absolute;
@@ -250,18 +261,7 @@
 }
 
 .v-scene-label {
-  position: absolute;
-  top: 2%;
-  right: 0;
-  margin: 0;
-  padding: 8px 16px;
-  font-weight: 800;
-  font-size: clamp(14px, 1.6vw, 18px);
-  color: var(--white);
-  background: var(--brand-primary);
-  border-radius: var(--radius-full);
-  opacity: 0;
-  transform-origin: 100% 0;
+  display: none !important;
 }
 
 /* ---------- pouch overlay (fixed, outside every transformed ancestor) ---------- */
@@ -307,7 +307,7 @@
 .v-scene--static .v-scene-steps { width: 100%; max-width: 560px; }
 .v-scene--static .v-scene-card { opacity: 1; visibility: visible; }
 .v-scene-static-img { display: block; width: min(100%, 420px); height: auto; }
-.v-scene-label--static { position: static; opacity: 1; }
+.v-scene-label--static { display: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
   .v-scene-steam i, .v-scene-strand i { animation: none; }
