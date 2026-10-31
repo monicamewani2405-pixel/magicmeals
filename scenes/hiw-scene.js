@@ -118,6 +118,7 @@
     var pts = JAG_X.map(function (x, i) { return x + '% ' + JAG_Y[i] + '%'; });
     var strip = 'polygon(0% 0%, 100% 0%, ' + pts.slice().reverse().join(', ') + ')';
     return '<div class="v-scene-overlay" aria-hidden="true"><div class="v-scene-pouch"><div class="v-scene-pouch-in">' +
+      '<img class="v-scene-main" src="' + src + '" alt="" draggable="false">' +   // the overlay's own copy: the hero's <img> is never moved
       '<span class="v-scene-open"></span>' +
       '<span class="v-scene-strip"><img src="' + src + '" alt="" draggable="false" style="clip-path:' + strip + '"></span>' +
       '<i class="v-scene-mouth" style="top:' + MOUTH_Y + '%"></i>' +
@@ -247,50 +248,56 @@
   function lift() {
     if (S.lifted) return true;
     var a = S.hero.getActive();
-    if (!a || !a.ready || a.slug !== S.cfg.slug || !a.img || !a.img.offsetWidth) return false;
+    if (!a || !a.ready || a.slug !== S.cfg.slug || !a.img || !a.img.offsetWidth || !S.mainReady) return false;
     var img = a.img, r = img.getBoundingClientRect();
     var rot = 0, sc = 1;
     a.chain.forEach(function (n) { rot += gsap.getProperty(n, 'rotation') || 0; sc *= gsap.getProperty(n, 'scaleX') || 1; });
     S.nat = { x: r.left + r.width / 2, y: r.top + r.height / 2 + window.scrollY, rot: rot, sc: sc };
     S.box.w = img.offsetWidth; S.box.h = img.offsetHeight;
-    var ph = document.createElement('span');
-    ph.style.cssText = 'display:block;width:' + S.box.w + 'px;height:' + S.box.h + 'px';
-    img.parentNode.insertBefore(ph, img);
-    S.placeholder = ph; S.heroImgStyle = img.getAttribute('style');
-    img.style.cssText = 'display:block;width:100%;height:100%;object-fit:contain;position:relative;z-index:1';
-    S.pouchIn.insertBefore(img, S.pouchIn.firstChild);
+    S.heroImg = img;                       // the hero's live <img>: never moved, only hidden while the overlay copy glides
     S.fade = a.fade;
     S.lifted = true;
     S.hero.freeze(true);
+    gsap.killTweensOf([img, S.overlay]);   // a hand-back fade that was still running
+    gsap.set(S.overlay, { opacity: 1 });
     S.overlay.style.visibility = 'visible';
     gsap.set(S.pouch, { willChange: 'transform' });
     measure();
+    gsap.set(img, { opacity: 0 });         // the overlay copy takes over at the same place (glide() positions it in this same tick)
     return true;
   }
 
-  function drop() {
-    if (!S || !S.lifted) return;
-    if (S.placeholder && S.placeholder.parentNode) {
-      S.placeholder.parentNode.replaceChild(S.heroImgEl, S.placeholder);
+  // Hands the pouch back to the hero: the hero's own <img> fades back in while the overlay copy fades out (instant when unmounting).
+  // The hero's DOM is never touched, only its opacity.
+  function drop(instant) {
+    if (!S) return;
+    var s = S, img = s.heroImg, ov = s.overlay, pouch = s.pouch;
+    var restore = function () { if (img) gsap.set(img, { clearProps: 'opacity,visibility' }); };
+    var park = function () {
+      if (S !== s || s.lifted) return;   // lifted again meanwhile
+      ov.style.visibility = 'hidden';
+      gsap.set(pouch, { clearProps: 'all' });
+      pouch.style.width = s.box.w + 'px'; pouch.style.height = s.box.h + 'px';
+    };
+    if (!s.lifted) { if (instant) { gsap.killTweensOf([img, ov]); restore(); park(); } return; }
+    if (s.fade) {
+      gsap.set(s.fade, { clearProps: 'opacity' });
+      gsap.set(s.fade.slice(0, 3), { clearProps: 'y' });
+      s.fade = null;
     }
-    if (S.heroImgStyle === null) S.heroImgEl.removeAttribute('style'); else S.heroImgEl.setAttribute('style', S.heroImgStyle);
-    S.placeholder = null;
-    if (S.fade) {
-      gsap.set(S.fade, { clearProps: 'opacity' });
-      gsap.set(S.fade.slice(0, 3), { clearProps: 'y' });
-      S.fade = null;
-    }
-    gsap.set(S.pouch, { clearProps: 'all' });
-    S.pouch.style.width = S.box.w + 'px'; S.pouch.style.height = S.box.h + 'px';
-    S.overlay.style.visibility = 'hidden';
-    S.lifted = false;
-    S.hero.freeze(false);
+    s.lifted = false;
+    s.hero.freeze(false);
+    gsap.killTweensOf([img, ov]);
+    if (instant) { restore(); park(); return; }
+    gsap.to(img, { opacity: 1, duration: 0.15, ease: 'none', onComplete: restore });
+    gsap.to(ov, { opacity: 0, duration: 0.15, ease: 'none', onComplete: park });
   }
 
   function glide(p) {
     if (!S) return;
-    if (p > 0.0005 && !S.lifted && !lift()) return;
-    if (p <= 0.0005) { if (S.lifted) drop(); return; }
+    // small dead zone: the hero stays live for the first few pixels of scroll (starts above ~8px, hands back below ~4px)
+    if (p > 0.008 && !S.lifted && !lift()) return;
+    if (p <= 0.004) { if (S.lifted) drop(); return; }
     if (!S.lifted) return;
     var G = S.G, e = S.glideEase(clamp(p, 0, 1));
     var st = S.gtween && S.gtween.scrollTrigger;
@@ -494,10 +501,13 @@
       sheen: q('.v-scene-sheen'), spec: q('.v-scene-spec'), ripples: qa('.v-scene-ripple'),
       pouch: q('.v-scene-pouch', overlay), pouchIn: q('.v-scene-pouch-in', overlay),
       strip: q('.v-scene-strip', overlay), openEl: q('.v-scene-open', overlay), mouth: q('.v-scene-mouth', overlay),
-      heroImgEl: active.img, heroImg: active.img, glideEase: gsap.parseEase(M.EASE_INOUT),
+      heroImg: active.img, glideEase: gsap.parseEase(M.EASE_INOUT),
       box: { w: 0, h: 0 }, G: {}, lifted: false, step: -1, p: 0, cleanups: [], timers: []
     };
-    S.pouchImg = active.img;       // the hero's own <img>, moved into the overlay while gliding
+    S.pouchImg = q('.v-scene-main', overlay);   // the overlay's own pouch image (the one that tears and glides)
+    S.mainReady = false;            // lift() waits until it is decoded, so the swap from the hero pouch never shows a blank frame
+    var main = S.pouchImg, mainOk = function () { if (S && S.pouchImg === main) S.mainReady = true; };
+    (main.decode ? main.decode() : Promise.resolve()).then(mainOk, mainOk);
     S.particles = buildParticles(cfg);
     S.pt = gsap.timeline();
     S.dots.forEach(function (d) {
@@ -556,7 +566,7 @@
     if (s.static) {
       s.cleanups.forEach(function (fn) { fn(); });
     } else {
-      drop();
+      drop(true);
       s.timers.forEach(clearTimeout);
       s.cleanups.forEach(function (fn) { fn(); });
       if (s.ctx) s.ctx.revert();
