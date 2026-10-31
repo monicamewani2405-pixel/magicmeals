@@ -24,14 +24,15 @@
   var root = null, ctx = null, cleanups = [], items = [], active = 0, ready = false;
   var autoTimer = null, resizeTimer = null, floatTweens = [], preloadLink = null;
   var hovering = false, onScreen = true, lastAdvance = 0, manualHold = 0, infoToken = 0;
+  var mountToken = 0;
   var frozen = false, exitTween = null;   // frozen: the pinned scene (scenes/hiw-scene.js) owns the hero while scrolling
   var el = {};
 
   /* ---------- data ---------- */
 
-  // phones get the 480px-tall WebP (assets/hero/*-front-480.webp, built by tools/prep-scene.py); desktop keeps the 800px PNG
+  // WebP copies of the transparent front PNGs, built by tools/prep-scene.py: desktop lossless (pixel-identical to the PNG), phones 800px quality 96
   function imgFor(slug) {
-    return window.innerWidth < 768 ? 'assets/hero/' + slug + '-front-480.webp' : 'assets/hero/' + slug + '-front-800.png';
+    return window.innerWidth < 768 ? 'assets/hero/' + slug + '-front-m.webp' : 'assets/hero/' + slug + '-front-800.webp';
   }
 
   function rupees(n) { return '\u20B9' + Number(n).toLocaleString('en-IN'); }
@@ -73,15 +74,26 @@
     var n = items.length, mobile = isMobile();
     var stageW = el.stage ? el.stage.offsetWidth : window.innerWidth;
     var s = offset < 0 ? -1 : 1, a = Math.abs(offset);
-    var x1 = stageW * 0.26;
-    if (mobile) {   // neighbours sit just inside the screen edge, never cut off
-      var pw = items[0] && items[0].btn ? items[0].btn.offsetWidth : 0;
-      x1 = pw ? Math.min(window.innerWidth * 0.36, window.innerWidth / 2 - pw * 0.44 - 4) : window.innerWidth * 0.36;   // 0.3 pw = half the scaled pouch, 0.14 pw = its tilt
+    var pw = items[0] && items[0].btn ? items[0].btn.offsetWidth : 0;   // the centre pouch's width
+    var sc1 = mobile ? 0.64 : 0.8, sc2 = 0.6;                          // neighbour scales (were 0.6 / 0.7 / 0.5)
+    var x1, x2;
+    if (mobile) {   // neighbours sit just inside the screen edge, never cut off (0.717 pw per unit of scale = half the pouch plus its tilt)
+      x1 = pw ? Math.min(window.innerWidth * 0.36, window.innerWidth / 2 - pw * 0.717 * sc1 - 4) : window.innerWidth * 0.36;
+      x2 = x1;
+    } else {
+      x1 = stageW * 0.27;
+      x2 = stageW * 0.45;
+      if (pw) {
+        x1 = Math.max(x1, 0.5 * pw * (1 + sc1) + 14);                        // clear of the centre pouch
+        x2 = Math.max(x2, x1 + 0.5 * pw * (sc1 + sc2) - 20);                 // a little overlap behind the first neighbour at most
+        var half = window.innerWidth / 2 - 8;                                 // narrow screens: pull everything in so the outer pouches stay fully on screen
+        var k = Math.max(0.55, Math.min(1, half / (x2 + 0.717 * pw * sc2)));
+        x1 *= k; x2 *= k; sc1 = Math.max(0.55, sc1 * Math.sqrt(k)); sc2 = Math.max(0.4, Math.min(sc2 * Math.sqrt(k), (half - x2) / (0.717 * pw)));
+      }
     }
-    var x2 = stageW * 0.42;
     if (offset === 0) return { x: 0, scale: 1, rotation: 0, opacity: 1, z: 5, show: true };
-    if (a === 1) return { x: s * x1, scale: mobile ? 0.6 : 0.7, rotation: s * 8, opacity: 1, z: 4, show: true };
-    if (a === 2 && n >= 5 && !mobile) return { x: s * x2, scale: 0.5, rotation: s * 12, opacity: 0.9, z: 3, show: true };
+    if (a === 1) return { x: s * x1, scale: sc1, rotation: s * 8, opacity: 1, z: 4, show: true };
+    if (a === 2 && n >= 5 && !mobile) return { x: s * x2, scale: sc2, rotation: s * 12, opacity: 0.9, z: 3, show: true };
     return { x: s * (mobile ? x1 : x2), scale: 0.5, rotation: s * 12, opacity: 0, z: 1, show: false };
   }
 
@@ -111,7 +123,7 @@
         '<span class="v-switcher-shadow" aria-hidden="true"></span>' +
         '<span class="v-switcher-drop"><span class="v-switcher-par"><span class="v-switcher-float">' +
           '<span class="v-switcher-steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>' +
-          '<img src="' + it.src + '" width="512" height="800" alt="" draggable="false"' + (i === 0 ? ' fetchpriority="high"' : '') + '>' +
+          '<img src="' + it.src + '" width="512" height="800" alt="" draggable="false" decoding="async"' + (i === 0 ? ' fetchpriority="high"' : '') + '>' +
         '</span></span></span>' +
       '</button>';
     }).join('');
@@ -134,7 +146,7 @@
       '</div>' +
       '<div class="v-switcher-actions">' +
         '<button type="button" class="v-switcher-btn v-switcher-add" data-add=""><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.2L21 8H6"/></svg><span>Add to cart</span></button>' +
-        '<button type="button" class="v-switcher-btn v-switcher-shop" data-scroll-to="best-sellers">Shop Now</button>' +
+        '<button type="button" class="v-switcher-btn v-switcher-shop" data-go="shop" data-cat="All">Shop Now</button>' +
       '</div>' +
       '<div class="v-switcher-dots" role="group" aria-label="Choose meal">' + dots + '</div>' +
     '</section>';
@@ -165,6 +177,7 @@
 
   function setTint() {
     root.style.setProperty('--v-sw-tint', 'var(--tint-' + items[active].slug + ')');
+    root.style.setProperty('--v-sw-ink', 'var(--ink-' + items[active].slug + ', var(--brand-primary))');   // tagline colour follows the active pouch
   }
 
   /* ---------- switching ---------- */
@@ -395,10 +408,6 @@
       var d = e.target.closest('[data-dot]');
       if (d) goTo(+d.dataset.dot, true);
     });
-    listen(root.querySelector('.v-switcher-shop'), 'click', function () {
-      var t = document.getElementById('best-sellers');
-      if (t) t.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
-    });
     listen(document, 'keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       var t = e.target;
@@ -441,8 +450,16 @@
     if (!window.gsap) { setLayout(); ready = true; return Promise.resolve(); }
     setLayout();
     if (reduceMotion.matches) { ready = true; return Promise.resolve(); }
-    ctx = gsap.context(function () { intro(); scrollExit(); }, root);
-    return Promise.resolve();
+    // the intro starts only when every pouch image is loaded and decoded (12 s at most, then it starts anyway), so the pouches never drop in empty or missing
+    root.classList.add('is-loading');
+    var token = ++mountToken, imgs = items.map(function (it) { return it.btn.querySelector('img'); });
+    var decoded = Promise.all(imgs.map(function (im) { return im.decode ? im.decode().catch(function () {}) : Promise.resolve(); }));
+    var timeout = new Promise(function (res) { setTimeout(res, 12000); });
+    return Promise.race([decoded, timeout]).then(function () {
+      if (token !== mountToken || !root) return;   // unmounted or remounted while waiting
+      root.classList.remove('is-loading');
+      ctx = gsap.context(function () { intro(); scrollExit(); }, root);
+    });
   }
 
   // Non-transparent or missing art is replaced by a labelled placeholder (never edited or invented)
@@ -468,6 +485,7 @@
   function unmount() {
     clearInterval(autoTimer); autoTimer = null;
     clearTimeout(resizeTimer);
+    mountToken++;
     infoToken++;
     floatTweens.forEach(function (t) { t.kill(); }); floatTweens = []; paused = false;
     if (ctx) { ctx.revert(); ctx = null; }

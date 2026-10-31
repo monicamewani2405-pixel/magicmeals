@@ -812,13 +812,20 @@
       });
     }
 
+    // Small spots (cards, BYOB, cart) use the 640x1000 lossless WebP copy of the product photo (pouch-art/cards/, built by tools/prep-scene.py);
+    // the product page keeps the full-size original. Anything that is not a pouch-art front photo is returned unchanged.
+    function thumbSrc(src) {
+      const m = /^pouch-art\/([a-z0-9-]+)-front-processed\.png$/.exec(src || '');
+      return m ? 'pouch-art/cards/' + m[1] + '-front-640.webp' : src;
+    }
+
     function renderCard(p) {
       const q = getQtyInCart(p.id);
       const discount = Math.round(((p.mrp - p.price) / p.mrp) * 100);
       return `
         <div class="product-card" data-p="${p.id}">
           <div class="card-thumb">
-            <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
+            <img src="${thumbSrc(p.img)}" alt="${p.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
             <div class="card-badges">
               ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
               
@@ -1176,9 +1183,9 @@
             <!-- Product Gallery (Interactive Rotate Viewer) -->
             ${p.imgBack ? `
               <div class="pdp-gallery pdp-gallery-3d" id="pdpGallery3D">
-                <div id="pdp3dCanvasContainer" class="pdp-3d-canvas-container" style="position:relative; width:100%; aspect-ratio:1/1;">
+                <div id="pdp3dCanvasContainer" class="pdp-3d-canvas-container" style="position:relative; width:min(100%, max(420px, calc(100svh - 200px))); height:auto; min-height:0; margin:0 auto; aspect-ratio:var(--pdp3d-ar, 1 / 1);">
                   <div class="pdp-3d-loading" id="pdp3dLoading" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:var(--bg-warm, #FAF6F0); border-radius:16px; z-index:1;">
-                    <img src="${p.img}" alt="${p.title}" style="max-height:88%; max-width:88%; object-fit:contain;">
+                    <img src="${p.img}" alt="${p.title}" style="max-height:78%; max-width:78%; padding:0; object-fit:contain;">
                   </div>
                 </div>
                 <div class="pdp-3d-hint">
@@ -1510,7 +1517,7 @@
                 if (meal) {
                   return `
                     <div class="byob-m-slot filled" id="byobSlotMobile_${i}" data-byob-remove="${i}" title="Tap to remove ${meal.title}">
-                      <img src="${meal.img}" alt="${meal.title}">
+                      <img src="${thumbSrc(meal.img)}" alt="${meal.title}" decoding="async">
                       <button type="button" class="byob-m-slot-x" data-byob-remove="${i}" aria-label="Remove ${meal.title}">✕</button>
                     </div>
                   `;
@@ -1556,7 +1563,7 @@
                   return `
                     <div class="byob-meal-card" data-p="${p.id}">
                       <div class="byob-meal-thumb">
-                        <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
+                        <img src="${thumbSrc(p.img)}" alt="${p.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
                         <div class="card-badges">
                           ${p.jain ? '<span class="badge-jain">Jain</span>' : ''}
                         </div>
@@ -1599,7 +1606,7 @@
                     if (meal) {
                       return `
                         <div class="byob-slot filled" id="byobSlot_${i}">
-                          <img src="${meal.img}" alt="${meal.title}">
+                          <img src="${thumbSrc(meal.img)}" alt="${meal.title}" decoding="async">
                           <div class="byob-slot-title-overlay">${meal.title}</div>
                           <button type="button" class="byob-slot-remove-btn" data-byob-remove="${i}" title="Remove dish" aria-label="Remove ${meal.title}">✕</button>
                         </div>
@@ -1689,8 +1696,19 @@
         void container.offsetWidth;
         container.classList.add('view-swap-fade');
       }
+      // Re-rendering Home (cart change, filter) must not rebuild the hero or the pinned scene: their DOM is carried over untouched
+      let keptHero = null;
+      if (State.view === 'home' && !isRouteChange && document.body.dataset.view === 'home') {
+        const hs = container.querySelector('#hero-slot');
+        if (hs && hs.firstElementChild) keptHero = { hero: hs, hiw: container.querySelector('#hiw-slot') };
+      }
       if (State.view === 'home') {
         container.innerHTML = renderHomeView();
+        if (keptHero) {
+          const nh = container.querySelector('#hero-slot'), nw = container.querySelector('#hiw-slot');
+          if (nh) nh.replaceWith(keptHero.hero);
+          if (nw && keptHero.hiw) nw.replaceWith(keptHero.hiw);
+        }
       } else if (State.view === 'shop') {
         container.innerHTML = renderShopView();
       } else if (State.view === 'product') {
@@ -1746,7 +1764,13 @@
         if (currentPdpPouchProductId !== currentProduct.id) {
           currentPdpPouchProductId = currentProduct.id;
           window._pdpUserInteracted = false;
-          setTimeout(() => initPdp3dPouch(currentProduct), 50);
+          const pid = currentProduct.id;
+          setTimeout(() => {
+            loadPdp3dAssets().then(() => {
+              // still on the same product page after the download?
+              if (State.view === 'product' && State.productId === pid) initPdp3dPouch(currentProduct);
+            }).catch((err) => { console.error('[pdp3d]', err); });
+          }, 50);
         }
       } else {
         currentPdpPouchProductId = null;
@@ -1756,7 +1780,7 @@
 
 
       // Let feature modules (heroes/home.js) re-initialise after the SPA swaps the view
-      document.dispatchEvent(new CustomEvent('app:rendered', { detail: { view: State.view } }));
+      document.dispatchEvent(new CustomEvent('app:rendered', { detail: { view: State.view, preserved: !!keptHero } }));
     }
 
     function updateHeaderTransparency() {
@@ -1839,7 +1863,7 @@
           return `
             <div class="cart-item-row">
               <div class="cart-item-thumb">
-                <img src="${p.img}" alt="${p.title}" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
+                <img src="${thumbSrc(p.img)}" alt="${p.title}" decoding="async" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
               </div>
               <div class="cart-item-info">
                 <b>${p.title}</b>
@@ -2864,6 +2888,34 @@
         pdp3dTargetRotX = 0;
       };
 
+      // three.js, OrbitControls and the 12.7 MB texture file are only needed by the 3D viewer on product pages: load once, on demand
+      let pdp3dAssetsPromise = null;
+      function loadScriptOnce(src) {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = src;
+          s.onload = resolve;
+          s.onerror = () => reject(new Error('failed to load ' + src));
+          document.head.appendChild(s);
+        });
+      }
+      function loadPdp3dAssets() {
+        if (window.THREE && window.THREE.OrbitControls && window.POUCH_TEXTURES) return Promise.resolve();
+        if (!pdp3dAssetsPromise) {
+          pdp3dAssetsPromise = Promise.all([
+            loadScriptOnce('vendor/three.min.js').then(() => loadScriptOnce('vendor/OrbitControls.js')),
+            loadScriptOnce('pouch-art/pouch-textures.js')
+          ]).catch((err) => { pdp3dAssetsPromise = null; throw err; });
+        }
+        return pdp3dAssetsPromise;
+      }
+      // desktop on a good connection: fetch them quietly after the home page has finished, so product pages open instantly
+      window.addEventListener('load', () => {
+        const c = navigator.connection || {};
+        if (c.saveData || window.innerWidth < 768 || (c.effectiveType && c.effectiveType !== '4g')) return;
+        setTimeout(() => (window.requestIdleCallback || setTimeout)(() => { loadPdp3dAssets().catch(() => {}); }, { timeout: 8000 }), 6000);
+      });
+
       function initPdp3dPouch(product) {
         disposePdp3dPouch();
         const container = document.getElementById('pdp3dCanvasContainer');
@@ -3077,6 +3129,19 @@
         pdp3dPouchGroup.add(new THREE.Mesh(createGeo(false), matB));
         pdp3dScene.add(pdp3dPouchGroup);
 
+        // Fit the whole pouch in the canvas at any size or aspect: a 5% margin on top, and the bottom ~92px kept clear for the Front/Back buttons and the hint
+        function fitPdp3dCamera(canvasH) {
+          const fov = pdp3dCamera.fov * Math.PI / 180;
+          const bottomReserve = Math.min(0.24, 92 / (canvasH || 420));
+          const avail = 1 - bottomReserve - 0.05;                       // share of the canvas height the pouch may use
+          const needW = (POUCH_W + 2 * MAX_BULGE) / 0.9;
+          const visH = Math.max(POUCH_H / avail, needW / pdp3dCamera.aspect);
+          pdp3dCamera.position.z = visH / 2 / Math.tan(fov / 2) + MAX_BULGE;
+          pdp3dPouchGroup.position.y = (bottomReserve - 0.05) / 2 * visH;   // lift the pouch into the free area
+          pdp3dCamera.updateProjectionMatrix();
+        }
+        fitPdp3dCamera(height);
+
         function loop() {
           pdp3dAnimId = requestAnimationFrame(loop);
           if (pdp3dIsSpinning && pdp3dPouchGroup) {
@@ -3116,7 +3181,7 @@
             const r = container.getBoundingClientRect();
             if (r.width > 0 && r.height > 0) {
               pdp3dCamera.aspect = r.width / r.height;
-              pdp3dCamera.updateProjectionMatrix();
+              fitPdp3dCamera(r.height);
               pdp3dRenderer.setSize(r.width, r.height);
             }
           });

@@ -149,13 +149,14 @@
 
   /* ---------- routing ---------- */
 
-  function onRendered(view) {
+  function onRendered(view, preserved) {
+    if (preserved) return;   // Home was re-rendered (cart change, filter) and main.js carried the hero and scene over untouched
     if (view === 'home') mountHome();
     else unmountHome();
   }
 
   document.addEventListener('app:rendered', function (e) {
-    onRendered(e.detail && e.detail.view);
+    onRendered(e.detail && e.detail.view, e.detail && e.detail.preserved);
   });
 
   function init() {

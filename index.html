@@ -9,7 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   
-  <link rel="preload" as="image" href="biryani_pouch_front.png">
+  <!-- first hero pouch (HERO_PRODUCTS[0]): desktop gets the lossless WebP, phones the 800px WebP; the rest are decoded by heroes/switcher.js before the intro -->
+  <link rel="preload" as="image" href="assets/hero/veg-biryani-front-800.webp" type="image/webp" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="assets/hero/veg-biryani-front-m.webp" type="image/webp" media="(max-width: 767px)">
   <link rel="icon" type="image/png" href="cropped_logo.png">
   <link rel="stylesheet" href="style.css?v=3">
   <link rel="stylesheet" href="variants.css">
@@ -273,12 +275,10 @@
     </div>
   </div>
 
-  <!-- GSAP 3.12.5 pinned; heroes/home.js falls back to ./vendor/ copies if the CDN fails -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="vendor/three.min.js" defer></script>
-  <script src="vendor/OrbitControls.js" defer></script>
-  <script src="pouch-art/pouch-textures.js" defer></script>
+  <!-- GSAP 3.12.5 + ScrollTrigger, self-hosted (no third-party CDN in the critical path).
+       three.js, OrbitControls and pouch-art/pouch-textures.js (12.7 MB) are NOT loaded here: main.js loads them when a product page opens. -->
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
   <script src="shopify-config.js" defer></script>
   <script src="main.js?v=3" defer></script>
   <script src="hero-products.js" defer></script>

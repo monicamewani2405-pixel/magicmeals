@@ -63,7 +63,7 @@
    Home hero: Range Switcher (v-switcher-*)
    ========================================================= */
 .v-switcher {
-  --v-sw-h: clamp(210px, 44svh, 580px);
+  --v-sw-h: clamp(210px, max(44svh, min(50svh, calc(100svh - 440px), 34vw)), 640px);   /* grows where the screen has room, never smaller than before */
   --v-sw-w: calc(var(--v-sw-h) * 0.64);
   --v-sw-fs: clamp(34px, min(6vw, 9.5svh), 96px);
   position: relative;
@@ -75,7 +75,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 96px 16px 48px;
+  padding: 96px 16px 36px;
   overflow: hidden;
   background-color: var(--v-sw-tint, var(--bg));
   transition: background-color 0.6s ease;
@@ -91,7 +91,8 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   font-size: var(--v-sw-fs);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--brand-primary);
+  color: var(--v-sw-ink, var(--brand-primary));   /* tagline takes the active dish's colour (--ink-<slug> in :root) */
+  transition: color 0.6s ease;
 }
 .v-switcher-line { display: block; }
 .v-switcher-stage {
@@ -100,7 +101,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   width: min(100%, 1100px);
   height: var(--v-sw-h);
   margin-top: calc(var(--v-sw-fs) * -0.1);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   touch-action: pan-y;
 }
 .v-switcher-glow {
@@ -201,13 +202,13 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   100% { transform: translate(12px, -90px) scale(1.7); opacity: 0; }
 }
 
-/* arrows (desktop; touch uses swipe) */
+/* arrows (desktop; touch uses swipe): they sit on either side of the dish name, below the pouches, so they never cover a pouch */
 .v-switcher-arrow {
   position: absolute;
-  top: 45%;
+  top: calc(100% + 16px);
   z-index: 6;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   color: var(--brand-primary);
@@ -217,8 +218,8 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   box-shadow: var(--shadow-md);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.v-switcher-arrow--prev { left: 2%; }
-.v-switcher-arrow--next { right: 2%; }
+.v-switcher-arrow--prev { left: calc(50% - 332px); }
+.v-switcher-arrow--next { right: calc(50% - 332px); }
 .v-switcher-arrow:hover { background: var(--brand-primary); color: var(--white); }
 .v-switcher-arrow:focus-visible, .v-switcher-dot:focus-visible,
 .v-switcher .v-switcher-btn:focus-visible { outline: 3px solid var(--brand-primary); outline-offset: 3px; }
@@ -249,7 +250,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   justify-content: center;
   gap: 14px;
   width: min(92vw, 420px);
-  margin-top: 12px;
+  margin-top: 8px;
 }
 /* only box-shadow, background-color, border-color and color change on hover/active: GSAP owns transform + opacity */
 .v-switcher-btn {
@@ -272,13 +273,13 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
   transition: background-color 0.2s var(--v-ease), border-color 0.2s var(--v-ease), color 0.2s var(--v-ease), box-shadow 0.2s var(--v-ease);
 }
 .v-switcher-btn svg { flex: none; display: block; }
-.v-switcher-add { background-color: var(--brand-primary); color: var(--white); }
-.v-switcher-add:hover { background-color: color-mix(in srgb, var(--brand-primary) 88%, var(--text)); border-color: color-mix(in srgb, var(--brand-primary) 88%, var(--text)); box-shadow: var(--shadow-md); }
-.v-switcher-add:active { background-color: color-mix(in srgb, var(--brand-primary) 78%, var(--text)); border-color: color-mix(in srgb, var(--brand-primary) 78%, var(--text)); box-shadow: none; }
+.v-switcher-add { background-color: var(--v-sw-ink, var(--brand-primary)); border-color: var(--v-sw-ink, var(--brand-primary)); color: var(--white); }   /* follows the active dish, like the tagline */
+.v-switcher-add:hover { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 88%, var(--text)); border-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 88%, var(--text)); box-shadow: var(--shadow-md); }
+.v-switcher-add:active { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 78%, var(--text)); border-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 78%, var(--text)); box-shadow: none; }
 .v-switcher-shop { background-color: transparent; color: var(--brand-primary); }
 .v-switcher-shop:hover { background-color: color-mix(in srgb, var(--brand-primary) 8%, transparent); box-shadow: var(--shadow-md); }
 .v-switcher-shop:active { background-color: color-mix(in srgb, var(--brand-primary) 16%, transparent); box-shadow: none; }
-.v-switcher-dots { position: relative; z-index: 3; display: flex; gap: 2px; margin-top: 6px; }
+.v-switcher-dots { position: relative; z-index: 3; display: flex; gap: 2px; margin-top: 2px; }
 .v-switcher-dot { position: relative; width: 24px; height: 24px; background: none; }
 .v-switcher-dot::before {
   content: '';
@@ -290,16 +291,44 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 }
 .v-switcher-dot.is-active::before { background: var(--brand-primary); transform: scale(1.3); }
 
+/* Large desktops (1600px+ wide: 15" laptops at full resolution, 24-27" monitors, ultrawide): the hero scales with the screen.
+   --v-u is the size of 1px of the 1440x900 design on this screen (limited by both width and height, so nothing overflows). */
+@media (min-width: 1600px) {
+  .v-switcher {
+    --v-u: min(calc(100vw / 1440), calc(100svh / 900));
+    --v-sw-fs: calc(85 * var(--v-u));
+    --v-sw-h: calc(450 * var(--v-u));
+    padding: max(96px, calc(96 * var(--v-u))) 16px calc(36 * var(--v-u));
+  }
+  .v-switcher-stage { width: min(100%, calc(1100 * var(--v-u))); margin-bottom: calc(10 * var(--v-u)); }
+  .v-switcher-info { max-width: min(92vw, calc(560 * var(--v-u))); }
+  .v-switcher-title { font-size: calc(26 * var(--v-u)); }
+  .v-switcher-desc { font-size: calc(14 * var(--v-u)); }
+  .v-switcher-actions { width: min(92vw, calc(420 * var(--v-u))); gap: calc(14 * var(--v-u)); margin-top: calc(8 * var(--v-u)); }
+  .v-switcher-btn { height: calc(52 * var(--v-u)); min-width: calc(170 * var(--v-u)); padding: 0 calc(28 * var(--v-u)); font-size: calc(16 * var(--v-u)); gap: calc(8 * var(--v-u)); }
+  .v-switcher-btn svg { width: calc(18 * var(--v-u)); height: calc(18 * var(--v-u)); }
+  .v-switcher-arrow { width: calc(40 * var(--v-u)); height: calc(40 * var(--v-u)); top: calc(100% + 16 * var(--v-u)); }
+  .v-switcher-arrow--prev { left: calc(50% - 332 * var(--v-u)); }
+  .v-switcher-arrow--next { right: calc(50% - 332 * var(--v-u)); }
+  .v-switcher-dot { width: calc(24 * var(--v-u)); height: calc(24 * var(--v-u)); }
+  .v-switcher-dot::before { inset: calc(7 * var(--v-u)); }
+}
+
 /* touch screens: swipe, tap a neighbour or a dot (the arrows would cover pouches) */
 @media (hover: none) and (pointer: coarse) {
   .v-switcher-arrow { display: none; }
 }
 .v-switcher.is-paused .v-switcher-steam i { animation-play-state: paused; }
+/* until the pouch images are decoded: headline only, no half-loaded pouches (opacity only; the intro then plays) */
+.v-switcher.is-loading .v-switcher-stage,
+.v-switcher.is-loading .v-switcher-info,
+.v-switcher.is-loading .v-switcher-actions,
+.v-switcher.is-loading .v-switcher-dots { opacity: 0; }
 
 /* Phones: everything above the fold on 360x640 and up (pouch height, type and buttons are sized from svh) */
 @media (max-width: 767px) {
   .v-switcher {
-    --v-sw-h: clamp(150px, min(calc(100svh - 425px), 78vw), 340px);
+    --v-sw-h: clamp(150px, min(calc(100svh - 425px), 82vw), 360px);
     --v-sw-fs: clamp(26px, min(9.2vw, 6svh), 48px);
     min-height: 100svh;
     padding: 84px 12px calc(96px + env(safe-area-inset-bottom, 0px));   /* 96px keeps 72px clear above the screen bottom for the WhatsApp button */
@@ -327,7 +356,7 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 }
 @supports not (height: 1svh) {
   @media (max-width: 767px) {
-    .v-switcher { --v-sw-h: clamp(150px, min(calc(100vh - 425px), 78vw), 340px); --v-sw-fs: clamp(26px, min(9.2vw, 6vh), 48px); min-height: 100vh; }
+    .v-switcher { --v-sw-h: clamp(150px, min(calc(100vh - 425px), 82vw), 360px); --v-sw-fs: clamp(26px, min(9.2vw, 6vh), 48px); min-height: 100vh; }
   }
 }
 /* Landscape phones: compact, scrolls normally */

@@ -5,9 +5,13 @@ Usage (from the project root):
     python tools/prep-scene.py <slug>          e.g.  python tools/prep-scene.py rajma-masala
 
        python tools/prep-scene.py kettle          the kettle cutout (scenes/kettle.*), once
-       python tools/prep-scene.py mobile          (re)writes every mobile variant: scenes/processed/**/*-640.webp (scene images and
-                                                  bowls, 640px wide max), kettle-480.webp (480px max) and assets/hero/*-front-480.webp
-                                                  (hero pouches, 480px tall max). Also runs after every dish or kettle run.
+       python tools/prep-scene.py mobile          (re)writes every web variant: scenes/processed/**/*-640.webp (scene images and
+                                                  bowls, 640px wide max), kettle-480.webp (480px max), and for the hero pouches
+                                                  assets/hero/<slug>-front-800.webp (LOSSLESS, pixel-identical to the PNG, desktop) and
+                                                  assets/hero/<slug>-front-m.webp (phones, 800px tall, quality 96), and for the product cards
+                                                  pouch-art/cards/<slug>-front-640.webp (640x1000, LOSSLESS; cards, BYOB and cart thumbnails).
+                                                  The PNGs are never touched.
+                                                  Also runs after every dish or kettle run.
 
 Inputs (any of .jpg .jpeg .png .webp, never modified or moved):
     scenes/bowl-empty.* (or empty-bowl.*)
@@ -177,7 +181,7 @@ def shrink(src, max_w=None, max_h=None, suffix='-640'):
     k = min(1.0, (max_w / float(im.width)) if max_w else 1.0, (max_h / float(im.height)) if max_h else 1.0)
     out = im.convert('RGBA').resize((max(1, int(round(im.width * k))), max(1, int(round(im.height * k)))), Image.LANCZOS)
     dst = os.path.splitext(src)[0] + suffix + '.webp'
-    out.save(dst, 'WEBP', quality=82, method=6)
+    out.save(dst, 'WEBP', quality=92, method=6, alpha_quality=100)
     return dst, out.size, os.path.getsize(dst)
 
 
@@ -200,11 +204,23 @@ def mobile_variants(only=None):
         for f in sorted(os.listdir(hero)):
             if f.endswith('-front-800.png'):
                 src = os.path.join(hero, f)
-                dst = os.path.join(hero, f.replace('-front-800.png', '-front-480.webp'))
                 im = Image.open(src).convert('RGBA')
-                k = min(1.0, 480 / float(im.height))
-                im = im.resize((int(round(im.width * k)), 480 if k < 1 else im.height), Image.LANCZOS)
-                im.save(dst, 'WEBP', quality=82, method=6)
+                dst = os.path.join(hero, f.replace('-front-800.png', '-front-800.webp'))      # desktop: lossless, same pixels as the PNG
+                im.save(dst, 'WEBP', lossless=True, method=6)
+                done.append((dst, im.size, os.path.getsize(dst)))
+                dst = os.path.join(hero, f.replace('-front-800.png', '-front-m.webp'))        # phones: full 800px height, near-transparent loss
+                im.save(dst, 'WEBP', quality=96, method=6, alpha_quality=100)
+                done.append((dst, im.size, os.path.getsize(dst)))
+    cards = os.path.join(ROOT, 'pouch-art')
+    if not only and os.path.isdir(cards):
+        os.makedirs(os.path.join(cards, 'cards'), exist_ok=True)
+        for f in sorted(os.listdir(cards)):
+            if f.endswith('-front-processed.png') and not f.startswith('._'):
+                im = Image.open(os.path.join(cards, f)).convert('RGBA')
+                k = min(1.0, 1000 / float(im.height))
+                im = im.resize((int(round(im.width * k)), int(round(im.height * k))), Image.LANCZOS)
+                dst = os.path.join(cards, 'cards', f.replace('-front-processed.png', '-front-640.webp'))
+                im.save(dst, 'WEBP', lossless=True, method=6)
                 done.append((dst, im.size, os.path.getsize(dst)))
     for d in done:
         print('%s  %dx%d  %d KB' % (os.path.relpath(d[0], ROOT).replace('\\', '/'), d[1][0], d[1][1], d[2] // 1024))

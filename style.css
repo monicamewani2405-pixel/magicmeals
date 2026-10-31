@@ -34,6 +34,12 @@
       --tint-paneer-butter-masala: #FDF7E6;
       --tint-dal-makhani: #FBF5E9;
       --tint-pav-bhaji: #F2F8FA;
+      /* Hero tagline and Add to cart colour per dish ("spice market" set; each >= 4.5:1 on its tint and with white text on it): saffron, deep red, burnt orange, cocoa, beetroot */
+      --ink-veg-biryani: #B45309;
+      --ink-rajma-masala: #9B1C1C;
+      --ink-paneer-butter-masala: #C2410C;
+      --ink-dal-makhani: #5B2A0F;
+      --ink-pav-bhaji: #9D174D;
 
       /* ===== Fonts ===== */
       --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -78,6 +84,10 @@
     :focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 2px; }
 
     .wrap { max-width: 1220px; margin: 0 auto; padding: 0 16px; }
+    /* Large desktops: the page container grows with the screen (1220px at 1600px wide, ~1815px at 2560px, capped at 2000px) */
+    @media (min-width: 1600px) {
+      .wrap { max-width: min(2000px, calc(1220px + (100vw - 1600px) * 0.62)); }
+    }
 
     /* Route View Swap Transition (opacity only, no transform, no filter, no fill-mode forwards/both) */
     .view-swap-fade {
@@ -1055,9 +1065,9 @@
       flex: 0 0 auto;
     }
     .original-logo-img {
-      height: 44px;
+      height: 54px;
       width: auto;
-      max-width: 170px;
+      max-width: 210px;
       object-fit: contain;
       transition: transform 0.2s ease;
       filter: drop-shadow(0 2px 4px rgb(var(--brand-primary-rgb) / 0.12));
@@ -1975,6 +1985,9 @@
       padding: 20px;
       box-sizing: border-box;
     }
+    @media (max-width: 768px) {
+      .pdp-gallery-3d { aspect-ratio: 4 / 5; --pdp3d-ar: 4 / 5; }   /* phones: a taller viewer, so the whole pouch and its buttons fit */
+    }
     .pdp-gallery-3d {
       background: radial-gradient(circle at 50% 40%, #ffffff 0%, #f6f3ee 100%);
       cursor: grab;
@@ -2489,8 +2502,8 @@
         justify-content: center;
       }
       .original-logo-img {
-        height: 32px;
-        max-width: 100px;
+        height: 38px;
+        max-width: 120px;
       }
       .header-right-actions {
         flex: 0 0 auto;

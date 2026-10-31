@@ -21,6 +21,7 @@
   var POUR_DEG = -115;
   var KETTLE_DEG = 22;   // tilt of the kettle while it pours (clockwise, the spout dips)
   var STEP_AT = [0, 0.25, 0.55, 0.8];
+  var HOLD = 0.25;   // extra scroll after "ready" (timeline units, 1 = the whole scene): the finished dish stays, then the stage fades
 
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
@@ -322,7 +323,7 @@
   function onProgress(p) {
     S.p = p;
     setStep(p >= STEP_AT[3] ? 3 : p >= STEP_AT[2] ? 2 : p >= STEP_AT[1] ? 1 : 0);
-    S.steam.classList.toggle('is-steaming', p >= 0.74 && p < 0.99);
+    S.steam.classList.toggle('is-steaming', p >= 0.74 && p < 0.99 + HOLD);
     S.flow.classList.toggle('is-flowing', p >= 0.59 && p < 0.84);
   }
 
@@ -350,13 +351,13 @@
     var OUT = M.EASE_OUT, INOUT = M.EASE_INOUT;
     var tl = gsap.timeline({
       defaults: { ease: 'none' },
-      onUpdate: function () { onProgress(this.progress()); },   // cards and dots follow the smoothed timeline, not the raw scroll
+      onUpdate: function () { onProgress(this.time()); },   // cards and dots follow the smoothed timeline, not the raw scroll
       scrollTrigger: {
         trigger: S.pin,
         start: function () { return 'top ' + headerH() + 'px'; },
-        end: function () { return '+=' + Math.round((isDesktop() ? window.innerHeight : svh()) * (isDesktop() ? 3 : 2.5)); },
+        end: function () { return '+=' + Math.round((isDesktop() ? window.innerHeight : svh()) * (isDesktop() ? 3 : 2.5) * (1 + HOLD)); },
         pin: true, scrub: isDesktop() ? M.SCRUB : 0.5, anticipatePin: 1, invalidateOnRefresh: true,
-        onRefresh: function (self) { onProgress(self.progress); }
+        onRefresh: function (self) { onProgress(self.progress * (1 + HOLD)); }
       }
     });
     S.tl = tl;
@@ -428,7 +429,7 @@
     tl.fromTo(layerReady, { opacity: 0 }, { opacity: 1, duration: 0.11, ease: INOUT, immediateRender: false }, 0.80)
       .fromTo(layerReady, { scale: 0.99 }, { scale: 1, duration: 0.08, ease: OUT, force3D: true, immediateRender: false }, 0.80)
       .set(layerWet, { opacity: 0 }, 0.92)
-      .to(S.stage, { opacity: 0, y: -16, duration: 0.07, ease: INOUT }, 0.93);
+      .to(S.stage, { opacity: 0, y: -16, duration: 0.07, ease: INOUT }, 0.93 + HOLD);
   }
 
   /* ---------- module API ---------- */
@@ -502,7 +503,7 @@
     S.dots.forEach(function (d) {
       d.addEventListener('click', function () {
         var st = S.tl && S.tl.scrollTrigger; if (!st) return;
-        var at = [0.02, 0.27, 0.57, 0.82][+d.dataset.dot];
+        var at = [0.02, 0.27, 0.57, 0.82][+d.dataset.dot] / (1 + HOLD);
         window.scrollTo({ top: st.start + (st.end - st.start) * at, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
       });
     });

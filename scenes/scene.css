@@ -282,6 +282,17 @@
 .v-scene-strip img { display: block; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; }
 .v-scene-mouth { position: absolute; left: 50%; width: 2px; height: 2px; margin: -1px 0 0 -1px; visibility: hidden; }
 
+/* ---------- large desktops (1600px+): the scene grows with the screen ---------- */
+@media (min-width: 1600px) {
+  .v-scene-pin { --v-scene-h: min(70svh, calc(100svh - 250px), calc(560px + (100vw - 1600px) * 0.4)); max-height: none; }
+  .v-scene-inner { max-width: min(1960px, calc(1180px + (100vw - 1600px) * 0.62)); }
+  .v-scene-title { font-size: clamp(38px, 2.4vw, 64px); }
+  .v-scene-name { font-size: clamp(17px, 1.06vw, 30px); }
+  .v-scene-desc { font-size: clamp(14px, 0.875vw, 24px); }
+  .v-scene-card { padding: clamp(14px, 0.9vw, 30px) clamp(20px, 1.3vw, 40px); gap: clamp(16px, 1vw, 28px); }
+  .v-scene-badge { width: clamp(32px, 2vw, 56px); height: clamp(32px, 2vw, 56px); font-size: clamp(14px, 0.875vw, 24px); }
+}
+
 /* ---------- phones: title, stage (44svh max), progress + dots, then only the active card ---------- */
 .v-scene-svh { position: absolute; left: 0; top: 0; width: 0; height: 100svh; visibility: hidden; pointer-events: none; }
 @supports not (height: 1svh) { .v-scene-svh { height: 100vh; } }
