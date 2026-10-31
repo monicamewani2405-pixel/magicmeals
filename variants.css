@@ -276,9 +276,9 @@ body[data-view="home"] .v-switcher { margin-top: -72px; }
 .v-switcher-add { background-color: var(--v-sw-ink, var(--brand-primary)); border-color: var(--v-sw-ink, var(--brand-primary)); color: var(--white); }   /* follows the active dish, like the tagline */
 .v-switcher-add:hover { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 88%, var(--text)); border-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 88%, var(--text)); box-shadow: var(--shadow-md); }
 .v-switcher-add:active { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 78%, var(--text)); border-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 78%, var(--text)); box-shadow: none; }
-.v-switcher-shop { background-color: transparent; color: var(--brand-primary); }
-.v-switcher-shop:hover { background-color: color-mix(in srgb, var(--brand-primary) 8%, transparent); box-shadow: var(--shadow-md); }
-.v-switcher-shop:active { background-color: color-mix(in srgb, var(--brand-primary) 16%, transparent); box-shadow: none; }
+.v-switcher-shop { background-color: transparent; border-color: var(--v-sw-ink, var(--brand-primary)); color: var(--v-sw-ink, var(--brand-primary)); }   /* same colour as Add to cart and the tagline */
+.v-switcher-shop:hover { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 8%, transparent); box-shadow: var(--shadow-md); }
+.v-switcher-shop:active { background-color: color-mix(in srgb, var(--v-sw-ink, var(--brand-primary)) 16%, transparent); box-shadow: none; }
 .v-switcher-dots { position: relative; z-index: 3; display: flex; gap: 2px; margin-top: 2px; }
 .v-switcher-dot { position: relative; width: 24px; height: 24px; background: none; }
 .v-switcher-dot::before {
