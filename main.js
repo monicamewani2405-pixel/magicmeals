@@ -3044,7 +3044,9 @@
         texF.magFilter = THREE.LinearFilter;
         texF.anisotropy = maxAniso;
 
-        const texB = texLoader.load(backSrc, onTextureLoaded);
+        // PROTOTYPE: remove after review
+        const protoBackSrc = (product.id === 'rajma-masala' && /[?&]backs=fitted/.test(location.search)) ? 'pouch-art/preview/rajma-masala-back-fitted.webp' : backSrc; // PROTOTYPE: remove after review
+        const texB = texLoader.load(protoBackSrc, onTextureLoaded); // PROTOTYPE: changed from backSrc, remove after review
         texB.encoding = THREE.sRGBEncoding;
         texB.generateMipmaps = false;
         texB.minFilter = THREE.LinearFilter;
