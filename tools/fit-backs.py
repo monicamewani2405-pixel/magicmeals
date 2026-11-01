@@ -35,9 +35,15 @@ MAX_STRETCH = 0.09
 SLUGS = ["rajma-masala", "paneer-butter-masala", "paneer-bhurji", "pind-ke-chhole", "pav-bhaji", "bhindi-masala", "veg-kadhai",
          "veg-makhanwala", "moong-masala", "dal-makhani", "dal-tadka", "dal-fry", "gujarati-dal", "dal-khichdi",
          "masala-khichdi-kadhi", "veg-biryani", "jeera-rice", "tawa-pulao", "fried-rice-manchurian", "fried-rice",
-         "schezwan-rice", "mexican-rice", "kanda-poha", "idli-sambar", "upma", "mumbai-misal", "tomato-soup",
+         "schezwan-rice", "mexican-rice", "kanda-poha", "jain-poha", "idli-sambar", "upma", "mumbai-misal", "tomato-soup",
          "sweet-corn-soup", "hot-and-sour-soup", "gajar-halwa", "aam-ras", "rawa-sheera"]
-ASSET_NAME = {'pind-ke-chhole': 'pind_ke_chole', 'fried-rice-manchurian': 'fried_rice_with_manchurian_gravy'}
+# Products whose FRONT texture in the viewer is the Jain pouch (printed "Jain" mark). Every other product shows the regular pouch front.
+# A file that exists in both incoming folders is taken from the folder that matches the front the viewer shows, so back and front are the
+# same pouch (the Jain backs have a Jain mark, different ingredients and nutrition values). The main.js `jain` flag only drives the
+# "Jain Friendly" badge and filter, it does not say which pouch the viewer shows, so it is not used for this.
+JAIN_FRONT = {'moong-masala', 'dal-fry', 'jain-poha'}
+FILE_KEY = {'jain-poha': 'poha'}        # normalised incoming file name ('POHA 2.png', JAIN folder) -> product slug
+ASSET_NAME = {'jain-poha': 'poha_jain', 'pind-ke-chhole': 'pind_ke_chole', 'fried-rice-manchurian': 'fried_rice_with_manchurian_gravy'}
 
 _spec = importlib.util.spec_from_file_location('replace_backs', os.path.join(os.path.dirname(__file__), 'replace-backs.py'))
 _rb = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_rb)
@@ -55,10 +61,13 @@ def mapping():
             by_key.setdefault(norm(f), []).append((os.path.join(dp, f), os.path.basename(dp).upper()))
     m, ambiguous, used = {}, {}, set()
     for slug in SLUGS:
-        c = by_key.get(slug.replace('-', ''))
+        c = by_key.get(FILE_KEY.get(slug, slug.replace('-', '')))
         if not c: continue
-        used.add(slug.replace('-', ''))
-        if len({fo for _, fo in c}) > 1: ambiguous[slug] = c; continue      # a file in both folders: needs a Jain rule
+        used.add(FILE_KEY.get(slug, slug.replace('-', '')))
+        if len({fo for _, fo in c}) > 1:                                   # a file in both folders: take the one matching the front shown
+            want = 'JAIN' if slug in JAIN_FRONT else 'REGULAR'
+            ambiguous[slug] = [x for x in c if x[1] != want]               # the twin that is NOT used (for the report)
+            c = [x for x in c if x[1] == want]
         c.sort(key=lambda t: os.path.getmtime(t[0]), reverse=True); m[slug] = c[0]
     unmatched = [p for k, v in by_key.items() if k not in used for p, _ in v]
     return m, unmatched, ambiguous
@@ -137,6 +146,17 @@ def keep_old(slug):
         p = os.path.join(ART, f)
         if os.path.exists(p) and not os.path.exists(os.path.join(OLD, f)): shutil.copy2(p, os.path.join(OLD, f))
 
+def card_assets(slug):
+    """For a NEW product: pouch-art/<slug>-front-processed.png (1024x1600, main.js `img`) and pouch-art/cards/<slug>-front-640.webp
+    (640x1000 lossless, same as tools/prep-scene.py makes for cards, BYOB and cart)."""
+    arr = place_front(asset(slug, 'front'), 1024, 1600)
+    out = os.path.join(ART, f'{slug}-front-processed.png'); Image.fromarray(arr).save(out, 'PNG', optimize=True)
+    im = Image.open(out).convert('RGBA'); k = min(1.0, 1000 / float(im.height))
+    im = im.resize((int(round(im.width * k)), int(round(im.height * k))), Image.LANCZOS)
+    os.makedirs(os.path.join(ART, 'cards'), exist_ok=True)
+    im.save(os.path.join(ART, 'cards', f'{slug}-front-640.webp'), 'WEBP', lossless=True, method=6)
+    print('card assets:', out, im.size)
+
 def build(slug, new_back=None):
     os.makedirs(TEX, exist_ok=True); row = {'slug': slug, 'folder': new_back[1] if new_back else 'unchanged', 'status': 'ok'}
     for name, (W, H, budget) in SIZES.items():
@@ -167,9 +187,10 @@ if __name__ == '__main__':
     if a in ('map', 'all'):
         print(f'{len(m)} products mapped:')
         for s in SLUGS:
-            print(f'  {s:24s} {os.path.relpath(m[s][0], ROOT)}  [{m[s][1]}]' if s in m else f'  {s:24s} (no new back){"  AMBIGUOUS, in both folders: left unchanged" if s in ambiguous else ""}')
+            print(f'  {s:24s} {os.path.relpath(m[s][0], ROOT)}  [{m[s][1]}]' + (f'   (twin in {ambiguous[s][0][1]} not used: regular/Jain pouch must match the front)' if s in ambiguous and ambiguous[s] else '') if s in m else f'  {s:24s} (no new back)')
         print('unmatched new files:', unmatched or 'none')
     if a == 'map': sys.exit()
+    if a == 'card': card_assets(sys.argv[2]); sys.exit()
     todo = SLUGS if a == 'all' else [a]
     rows = [build(s, m.get(s)) for s in todo]
     print_table(rows)

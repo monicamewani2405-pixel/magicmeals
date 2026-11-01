@@ -398,6 +398,23 @@
         desc: 'Flattened rice tempered with crunchy peanuts, curry leaves, onions, and fresh lemon. Light yet satisfying.'
       },
       {
+        id: 'jain-poha',
+        title: 'Jain Poha',
+        category: 'Breakfast',
+        price: 120,
+        mrp: 140,
+        img: 'pouch-art/jain-poha-front-processed.png',
+        imgBack: 'pouch-art/tex/jain-poha-back-800.webp',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '100g net (makes 250g)',
+        calories: '175 kcal',
+        protein: '3g',
+        desc: 'Jain-friendly flattened rice poha with green chilli, lemon, cumin, mustard seed, turmeric and curry leaves. Just add hot water.'
+      },
+      {
         id: 'idli-sambar',
         title: 'South Indian Idli Sambar',
         category: 'Breakfast',
@@ -836,7 +853,7 @@
             <div class="card-meta">
               <span class="card-rating">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                ${p.rating} (${p.reviews})
+                ${p.reviews ? `${p.rating} (${p.reviews})` : 'New'}
               </span>
               <span class="card-spice">${p.spice === 'Spicy' ? '🌶️🌶️' : p.spice === 'Medium' ? '🌶️' : '🌿 Mild'}</span>
             </div>
@@ -1216,7 +1233,7 @@
               <div class="pdp-badges-row">
                 <span class="card-rating">
                   <svg viewBox="0 0 24 24" style="width:16px;height:16px;color:var(--rating);fill:var(--rating);"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  <b>${p.rating}</b> (${p.reviews} verified customer reviews)
+                  ${p.reviews ? `<b>${p.rating}</b> (${p.reviews} verified customer reviews)` : '<b>New</b>'}
                 </span>
                 <span style="color:var(--text-muted);">•</span>
                 <span style="font-size:13px; font-weight:600; color:var(--brand-primary);">In Stock • Ships in 24 hrs</span>
