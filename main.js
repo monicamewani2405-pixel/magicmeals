@@ -2888,7 +2888,7 @@
         pdp3dTargetRotX = 0;
       };
 
-      // three.js, OrbitControls and the 12.7 MB texture file are only needed by the 3D viewer on product pages: load once, on demand
+      // three.js and OrbitControls are only needed by the 3D viewer on product pages: load once, on demand (textures load per product, see initPdp3dPouch)
       let pdp3dAssetsPromise = null;
       function loadScriptOnce(src) {
         return new Promise((resolve, reject) => {
@@ -2900,12 +2900,10 @@
         });
       }
       function loadPdp3dAssets() {
-        if (window.THREE && window.THREE.OrbitControls && window.POUCH_TEXTURES) return Promise.resolve();
+        if (window.THREE && window.THREE.OrbitControls) return Promise.resolve();
         if (!pdp3dAssetsPromise) {
-          pdp3dAssetsPromise = Promise.all([
-            loadScriptOnce('vendor/three.min.js').then(() => loadScriptOnce('vendor/OrbitControls.js')),
-            loadScriptOnce('pouch-art/pouch-textures.js')
-          ]).catch((err) => { pdp3dAssetsPromise = null; throw err; });
+          pdp3dAssetsPromise = loadScriptOnce('vendor/three.min.js').then(() => loadScriptOnce('vendor/OrbitControls.js'))
+            .catch((err) => { pdp3dAssetsPromise = null; throw err; });
         }
         return pdp3dAssetsPromise;
       }
@@ -2936,7 +2934,7 @@
 
         pdp3dRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
         pdp3dRenderer.setSize(width, height);
-        pdp3dRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        pdp3dRenderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.innerWidth < 900 ? 3 : 2));   // phones (DPR 3) were upscaled 1.5x at a cap of 2
         pdp3dRenderer.outputEncoding = THREE.sRGBEncoding;
         pdp3dRenderer.domElement.style.touchAction = 'pan-y';
         container.appendChild(pdp3dRenderer.domElement);
@@ -3011,15 +3009,15 @@
         shadowMesh.position.y = -0.92;
         pdp3dScene.add(shadowMesh);
 
-        // Load Textures with embedded high-resolution data URIs (zero CORS issues) or WebP/PNG fallbacks
+        // Textures: only this product's front and back, as separate WebP files (pouch-art/tex/<id>-front|back-1280|800.webp).
+        // The pouch is ~80% of the canvas height; use the 800 file (pouch 1095px tall) unless the pouch needs more device pixels than that
+        // (a larger file would be minified ~2x and mip-blended = soft); the product photo (#pdp3dLoading) shows until both are decoded.
         const texLoader = new THREE.TextureLoader();
-        const frontSrc = (window.POUCH_TEXTURES && window.POUCH_TEXTURES[product.id] && window.POUCH_TEXTURES[product.id].front)
-                      || (product.id === 'rajma-masala' && window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.front)
-                      || `pouch-art/${product.id}-front-processed.png`;
-        const backSrc = (window.POUCH_TEXTURES && window.POUCH_TEXTURES[product.id] && window.POUCH_TEXTURES[product.id].back)
-                     || (product.id === 'rajma-masala' && window.RAJMA_POUCH_TEXTURES && window.RAJMA_POUCH_TEXTURES.back)
-                     || `pouch-art/${product.id}-back-processed.png`;
-        const maxAniso = pdp3dRenderer.capabilities ? pdp3dRenderer.capabilities.getMaxAnisotropy() : 8;
+        const pouchDevicePx = height * 0.8 * pdp3dRenderer.getPixelRatio();
+        const texSize = pouchDevicePx <= 1150 ? '800' : '1280';
+        const frontSrc = `pouch-art/tex/${product.id}-front-${texSize}.webp`;
+        const backSrc = `pouch-art/tex/${product.id}-back-${texSize}.webp`;
+        const maxAniso = Math.min(pdp3dRenderer.capabilities ? pdp3dRenderer.capabilities.getMaxAnisotropy() : 8, 8);
 
         const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         pdp3dIsSpinning = false;
@@ -3037,21 +3035,18 @@
           }
         };
 
+        // colour is dilated past the outline in the files, so premultiplyAlpha stays false (no dark/light fringe when filtered)
+        const setTexParams = (t) => {
+          t.encoding = THREE.sRGBEncoding;
+          t.generateMipmaps = true;
+          t.minFilter = THREE.LinearMipmapLinearFilter;
+          t.magFilter = THREE.LinearFilter;
+          t.anisotropy = maxAniso;
+        };
         const texF = texLoader.load(frontSrc, onTextureLoaded);
-        texF.encoding = THREE.sRGBEncoding;
-        texF.generateMipmaps = false;
-        texF.minFilter = THREE.LinearFilter;
-        texF.magFilter = THREE.LinearFilter;
-        texF.anisotropy = maxAniso;
-
-        // PROTOTYPE: remove after review
-        const protoBackSrc = (product.id === 'rajma-masala' && /[?&]backs=fitted/.test(location.search)) ? 'pouch-art/preview/rajma-masala-back-fitted.webp' : backSrc; // PROTOTYPE: remove after review
-        const texB = texLoader.load(protoBackSrc, onTextureLoaded); // PROTOTYPE: changed from backSrc, remove after review
-        texB.encoding = THREE.sRGBEncoding;
-        texB.generateMipmaps = false;
-        texB.minFilter = THREE.LinearFilter;
-        texB.magFilter = THREE.LinearFilter;
-        texB.anisotropy = maxAniso;
+        setTexParams(texF);
+        const texB = texLoader.load(backSrc, onTextureLoaded);
+        setTexParams(texB);
 
         // Pouch Geometry
         const POUCH_W = 1.16;
@@ -3203,6 +3198,14 @@
         if (pdp3dRenderer && pdp3dRenderer.domElement && pdp3dRenderer.domElement.parentNode) {
           pdp3dRenderer.domElement.parentNode.removeChild(pdp3dRenderer.domElement);
         }
+        // free the GPU memory of this product's textures, geometry and materials
+        if (pdp3dScene) {
+          pdp3dScene.traverse((o) => {
+            if (o.geometry) o.geometry.dispose();
+            if (o.material) { if (o.material.map) o.material.map.dispose(); o.material.dispose(); }
+          });
+        }
+        if (pdp3dRenderer) pdp3dRenderer.dispose();
         pdp3dScene = null;
         pdp3dCamera = null;
         pdp3dRenderer = null;
