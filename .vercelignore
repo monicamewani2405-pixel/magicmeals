@@ -1,0 +1,4 @@
+# Source images for the Rajma PDP prototype: the deployed site only needs pdp/rajma-masala/gallery and /ingredients (built by tools/compose-lifestyle.py and tools/cutout-sheet.py)
+pdp/rajma-masala/plates
+pdp/rajma-masala/cutout-sheet.png
+pdp/rajma-masala/cutout-sheet-transparent.png

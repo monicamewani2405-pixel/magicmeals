@@ -1,0 +1,206 @@
+/* =========================================================
+   pdp/pdp.css: product-page prototype (Rajma Masala only; mounted by pdp/pdp-scene.js).
+   Every rule is prefixed .pdp- and only matches elements the prototype creates.
+   Colours come from :root tokens in style.css (tints, inks, channel vars); no hard-coded colours.
+   Breakpoints: 768 (two columns) and 992 (three columns), the project's own widths.
+   Animates only transform and opacity. No transform/filter on any ancestor of a sticky element.
+   ========================================================= */
+
+.pdp-proto {
+  --pdp-sticky-top: 104px;                       /* measured in JS: announcement bar + header */
+  --pdp-tint: var(--tint-rajma-masala);
+  --pdp-ink: var(--ink-rajma-masala);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+/* ---------- the 3D "set" ---------- */
+.pdp-stage {
+  position: relative;
+  height: 52svh;
+  min-height: 360px;
+  border-radius: 20px;
+  overflow: hidden;                               /* clips floating ingredients: no horizontal overflow */
+  background: linear-gradient(170deg,
+    color-mix(in srgb, var(--pdp-tint) 55%, var(--white)) 0%,
+    var(--pdp-tint) 48%,
+    color-mix(in srgb, var(--pdp-tint) 82%, var(--pdp-ink)) 100%);
+  border: 1px solid color-mix(in srgb, var(--pdp-tint) 70%, var(--pdp-ink));
+  box-shadow: var(--shadow-md);
+  touch-action: pan-y;
+  isolation: isolate;
+}
+.pdp-backdrop, .pdp-glow, .pdp-ground, .pdp-floor, .pdp-ings { position: absolute; pointer-events: none; }
+.pdp-backdrop { inset: 0; z-index: 0; }
+.pdp-pattern { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--pdp-ink); opacity: 0.04; }
+.pdp-glow {
+  left: 50%; top: 44%; width: 92%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--rating) 42%, transparent), transparent);
+  z-index: 0;
+}
+.pdp-ground {
+  left: 0; right: 0; bottom: 0; top: var(--pdp-floor-y, 82%);
+  background: linear-gradient(to bottom,
+    color-mix(in srgb, var(--pdp-ink) 8%, transparent),
+    color-mix(in srgb, var(--pdp-ink) 3%, transparent));
+  border-top: 1px solid color-mix(in srgb, var(--pdp-ink) 12%, transparent);
+  z-index: 1;
+}
+.pdp-floor {
+  left: 50%; top: var(--pdp-floor-y, 82%);
+  width: var(--pdp-floor-w, 58%); height: 30px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgb(var(--black-rgb) / 0.34), rgb(var(--black-rgb) / 0.12) 60%, transparent);
+  z-index: 1;
+}
+
+.pdp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; z-index: 3; cursor: grab; }
+.pdp-canvas:active { cursor: grabbing; }
+.pdp-canvas-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.pdp-canvas-loading img { max-width: 62%; max-height: 74%; object-fit: contain; }
+.pdp-stage .card-badges, .pdp-stage .veg-corner { z-index: 7; }
+
+/* floating ingredients: back < pouch < mid/front */
+.pdp-ings { inset: 0; }
+.pdp-ings--back { z-index: 2; }
+.pdp-ings--mid { z-index: 3; }
+.pdp-ings--front { z-index: 4; }
+.pdp-ing { position: absolute; aspect-ratio: 1; }
+.pdp-ing-float { display: block; width: 100%; height: 100%; animation: pdp-float var(--pdp-dur, 5s) ease-in-out var(--pdp-ph, 0s) infinite; will-change: transform; }
+.pdp-ing-float img { width: 100%; height: 100%; object-fit: contain; filter: none; }
+.pdp-ing-ph {
+  display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+  border-radius: 50%; border: 2px dashed currentColor; color: var(--pdp-ink);
+  background: rgb(var(--white-rgb) / 0.5);
+  font: 700 12px/1.15 var(--font-body); text-align: center;
+}
+.pdp-paused .pdp-ing-float { animation-play-state: paused; will-change: auto; }
+@keyframes pdp-float {
+  0%, 100% { transform: translateY(0) rotate(var(--pdp-r, 0deg)); }
+  50% { transform: translateY(-6px) rotate(var(--pdp-r, 0deg)); }
+}
+
+/* hotspot chips */
+.pdp-chip {
+  position: absolute; z-index: 6;
+  min-width: 44px; min-height: 44px; max-width: 96px;
+  padding: 6px 10px; border-radius: 22px;
+  background: rgb(var(--white-rgb) / 0.94);
+  color: var(--pdp-ink);
+  border: 1px solid color-mix(in srgb, var(--pdp-ink) 28%, transparent);
+  box-shadow: var(--shadow-md);
+  font: 700 13px/1.2 var(--font-body); text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s var(--v-ease, ease), visibility 0s linear 0.35s;
+}
+.pdp-stage[data-chips="on"] .pdp-chip--front,
+.pdp-stage[data-chips="on"] .pdp-chip--back { opacity: 1; visibility: visible; transition-delay: 0s; }
+.pdp-chip:hover { background: var(--white); }
+
+/* controls */
+.pdp-ui { position: absolute; left: 0; right: 0; bottom: 12px; z-index: 7; display: flex; flex-direction: column; align-items: center; gap: 4px; pointer-events: none; }
+.pdp-hint {
+  margin: 0; height: 32px; display: inline-flex; align-items: center; gap: 8px; padding: 0 14px;
+  border-radius: 16px; background: rgb(var(--black-rgb) / 0.72); color: var(--white);
+  font: 600 14px/1 var(--font-body);
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.pdp-hint.is-gone { opacity: 0; visibility: hidden; }
+.pdp-hint-ico { animation: pdp-nudge 1.6s ease-in-out infinite; }
+@keyframes pdp-nudge { 0%, 100% { transform: translateX(-3px); } 50% { transform: translateX(3px); } }
+.pdp-bar { display: flex; align-items: center; gap: 8px; pointer-events: auto; }
+.pdp-seg { display: inline-flex; border-radius: 22px; background: rgb(var(--white-rgb) / 0.94); border: 1px solid color-mix(in srgb, var(--pdp-ink) 28%, transparent); padding: 0; overflow: hidden; }
+.pdp-seg-btn { min-width: 64px; min-height: 44px; padding: 0 14px; font: 700 14px/1 var(--font-body); color: var(--pdp-ink); }
+.pdp-seg-btn[aria-pressed="true"] { background: var(--pdp-ink); color: var(--white); }
+.pdp-reset {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-width: 44px; min-height: 44px; padding: 0 14px; border-radius: 22px;
+  background: rgb(var(--white-rgb) / 0.94); color: var(--pdp-ink);
+  border: 1px solid color-mix(in srgb, var(--pdp-ink) 28%, transparent);
+  font: 700 14px/1 var(--font-body);
+}
+.pdp-chip:focus-visible, .pdp-seg-btn:focus-visible, .pdp-reset:focus-visible { outline: 3px solid var(--brand-primary); outline-offset: 2px; }
+
+/* ---------- columns ---------- */
+.pdp-col-info { min-width: 0; }
+.pdp-col-info .pdp-info { min-width: 0; }
+.pdp-col-cards { display: grid; gap: 16px; min-width: 0; }
+
+/* ---------- cards ---------- */
+.pdp-card {
+  position: relative; margin: 0; border-radius: 20px; overflow: hidden;
+  background: var(--pdp-tint);
+  border: 1px solid color-mix(in srgb, var(--pdp-tint) 70%, var(--pdp-ink));
+}
+.pdp-card--photo img { width: 100%; height: auto; }
+.pdp-serve {
+  position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; border-radius: 12px;
+  background: rgb(var(--black-rgb) / 0.62); color: var(--white); font: 600 12.5px/1 var(--font-body);
+}
+.pdp-ph {
+  aspect-ratio: 4 / 5; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; padding: 24px; text-align: center; color: var(--text-muted);
+  border: 2px dashed color-mix(in srgb, var(--pdp-ink) 40%, transparent); border-radius: 20px; font: 500 14px/1.4 var(--font-body);
+}
+.pdp-ph b { color: var(--pdp-ink); font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
+.pdp-ph code { font-size: 13px; word-break: break-all; }
+.pdp-card--inside, .pdp-card--facts { padding: 16px; container-type: inline-size; }
+.pdp-card-h { margin: 0 0 12px; font-size: 18px; color: var(--pdp-ink); }
+.pdp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pdp-step { display: flex; flex-direction: column; gap: 6px; margin: 0; }
+.pdp-step img { width: 100%; height: auto; border-radius: 12px; background: var(--white); }
+.pdp-step-cap { display: flex; align-items: flex-start; gap: 6px; font: 600 14px/1.25 var(--font-body); color: var(--text); }
+.pdp-step-cap i { flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--pdp-ink); color: var(--white); font: 700 12px/20px var(--font-body); text-align: center; font-style: normal; }
+@container (max-width: 300px) {
+  .pdp-steps { grid-template-columns: 1fr; }
+  .pdp-step { flex-direction: row; align-items: center; }
+  .pdp-step img { width: 46%; flex: none; }
+}
+.pdp-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.pdp-fact { display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 8px 12px; border-radius: 14px; background: var(--white); color: var(--text); font: 600 14px/1.25 var(--font-body); border: 1px solid var(--border); }
+.pdp-fact svg { flex: none; color: var(--pdp-ink); }
+
+/* reveal: opacity + 12px y; cards are siblings of the sticky elements, never ancestors */
+.pdp-reveal .pdp-card { opacity: 0; transform: translateY(12px); transition: opacity 0.5s var(--v-ease, ease), transform 0.5s var(--v-ease, ease); }
+.pdp-reveal .pdp-card.is-in { opacity: 1; transform: none; }
+
+/* ---------- phones: stacked, floats limited to 4 ---------- */
+@media (max-width: 767px) {
+  .pdp-ing--desk { display: none; }
+  .pdp-ing-float { animation: none; will-change: auto; transform: rotate(var(--pdp-r, 0deg)); }   /* phones: static ingredients (frame budget); parallax stays at half strength */
+  .pdp-chip { font-size: 14px; }
+  .pdp-ing-ph { font-size: 14px; }
+  .pdp-serve { font-size: 14px; }
+  .pdp-reset span { display: none; }
+}
+
+/* ---------- tablet: two columns, stage sticky ---------- */
+@media (min-width: 768px) {
+  .pdp-proto { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .pdp-stage {
+    grid-column: 1; grid-row: 1 / span 2;
+    position: sticky; top: var(--pdp-sticky-top);
+    height: calc(100svh - var(--pdp-sticky-top) - 24px); min-height: 420px;
+  }
+  .pdp-col-info { grid-column: 2; grid-row: 1; }
+  .pdp-col-cards { grid-column: 2; grid-row: 2; }
+}
+
+/* ---------- desktop: three columns ---------- */
+@media (min-width: 992px) {
+  .pdp-proto { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr) minmax(0, 1.1fr); }
+  .pdp-stage { grid-row: 1; }
+  .pdp-col-cards { grid-column: 2; grid-row: 1; }
+  .pdp-col-info { grid-column: 3; grid-row: 1; }
+  .pdp-col-info.pdp-sticky { position: sticky; top: var(--pdp-sticky-top); }
+}
+
+/* ---------- reduced motion: final static states ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pdp-ing-float { animation: none; will-change: auto; transform: rotate(var(--pdp-r, 0deg)); }
+  .pdp-hint-ico { animation: none; }
+  .pdp-chip, .pdp-hint { transition: none; }
+  .pdp-reveal .pdp-card { opacity: 1; transform: none; transition: none; }
+}

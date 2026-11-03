@@ -1713,6 +1713,8 @@
         void container.offsetWidth;
         container.classList.add('view-swap-fade');
       }
+      if (window.PdpProto) window.PdpProto.unmount();   // PDP prototype: tear down the previous mount (observers, timers, listeners)
+      let pdpProtoMounted = false;
       // Re-rendering Home (cart change, filter) must not rebuild the hero or the pinned scene: their DOM is carried over untouched
       let keptHero = null;
       if (State.view === 'home' && !isRouteChange && document.body.dataset.view === 'home') {
@@ -1730,6 +1732,7 @@
         container.innerHTML = renderShopView();
       } else if (State.view === 'product') {
         container.innerHTML = renderProductView();
+        pdpProtoMounted = !!(window.PdpProto && window.PdpProto.mount(container, State.productId));   // PDP prototype: new layout only when PDP_SCENES has this product
       } else if (State.view === 'byob') {
         container.innerHTML = renderByobView();
       }
@@ -1778,6 +1781,7 @@
 
       const currentProduct = PRODUCTS.find(x => x.id === State.productId);
       if (State.view === 'product' && currentProduct && currentProduct.imgBack) {
+        if (pdpProtoMounted) currentPdpPouchProductId = null;   // PDP prototype re-created the canvas container: rebuild the viewer
         if (currentPdpPouchProductId !== currentProduct.id) {
           currentPdpPouchProductId = currentProduct.id;
           window._pdpUserInteracted = false;
@@ -2890,6 +2894,7 @@
       var pdp3dTargetRotX = null;
       var pdp3dResizeObserver = null;
       var currentPdpPouchProductId = null;
+      var pdpHookDispose = null;   // PDP hook: clears window.pouchViewer and its tween when the viewer is disposed
 
       window.snapPdp3d = function(view) {
         pdp3dIsSpinning = false;
@@ -2933,6 +2938,8 @@
 
       function initPdp3dPouch(product) {
         disposePdp3dPouch();
+        const isPdpProto = !!(window.PDP_SCENES && window.PDP_SCENES[(product || { id: State.productId }).id]);   // PDP hook: extras below only for prototype products
+        let pdpHook = null;
         const container = document.getElementById('pdp3dCanvasContainer');
         if (!container || !window.THREE) return;
         if (!product) {
@@ -2964,6 +2971,7 @@
         let velX = 0;
 
         const onPointerDown = (e) => {
+          if (pdpHook) pdpHook.interact();   // PDP hook
           pdp3dIsSpinning = false;
           window._pdpUserInteracted = true;
           pdp3dTargetRotY = null;
@@ -3008,6 +3016,14 @@
         const backFill = new THREE.DirectionalLight(0xf2f4ff, 0.22);
         backFill.position.set(-2, 2, -3);
         pdp3dScene.add(backFill);
+        if (isPdpProto) {   // PDP: scene light (added, not replacing; exposure and colour space unchanged)
+          const pdpRim = new THREE.DirectionalLight(0xffe8c8, 0.16);   // PDP: scene light (soft warm rim from behind right)
+          pdpRim.position.set(2.5, 1.5, -2.5);
+          pdp3dScene.add(pdpRim);
+          const pdpFill = new THREE.DirectionalLight(0xffffff, 0.08);  // PDP: scene light (gentle fill from front left)
+          pdpFill.position.set(-3, 0.5, 2);
+          pdp3dScene.add(pdpFill);
+        }
 
         // Ground shadow
         const shadowCanvas = document.createElement('canvas');
@@ -3183,11 +3199,45 @@
               velX *= 0.92;
             }
           }
+          if (pdpHook) pdpHook.tick();   // PDP hook
           if (pdp3dRenderer && pdp3dScene && pdp3dCamera) {
             pdp3dRenderer.render(pdp3dScene, pdp3dCamera);
           }
         }
         loop();
+
+        // PDP hook: minimal viewer API for the PDP prototype (pdp/pdp-scene.js). Does not touch geometry, controls, textures or sizing.
+        if (isPdpProto) {
+          const changeCbs = [], interactCbs = [];
+          let lastEmit = null, azTween = null;
+          const azimuth = () => { const d = pdp3dPouchGroup ? pdp3dPouchGroup.rotation.y * 180 / Math.PI : 0; return ((d + 180) % 360 + 360) % 360 - 180; };
+          const kill = () => { if (azTween) { azTween.kill(); azTween = null; } };
+          pdpHook = {
+            interact() { kill(); interactCbs.forEach(cb => cb()); },
+            tick() {
+              const a = pdp3dPouchGroup ? pdp3dPouchGroup.rotation.y : 0;
+              if (a !== lastEmit) { lastEmit = a; const d = azimuth(); changeCbs.forEach(cb => cb(d)); }
+            },
+            dispose() { kill(); changeCbs.length = 0; interactCbs.length = 0; }
+          };
+          window.pouchViewer = {
+            getAzimuth: azimuth,
+            setAzimuth(deg, duration) {
+              if (!pdp3dPouchGroup) return;
+              kill();
+              pdp3dIsSpinning = false; pdp3dTargetRotY = null; pdp3dTargetRotX = null; velY = 0; velX = 0;
+              const g = pdp3dPouchGroup;
+              const cur = g.rotation.y, tgt = deg * Math.PI / 180;
+              const to = cur + ((tgt - cur + 3 * Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;   // shortest way round
+              if (!duration || typeof gsap === 'undefined') { g.rotation.y = to; g.rotation.x = 0; return; }
+              azTween = gsap.to(g.rotation, { y: to, x: 0, duration: duration, ease: 'power2.inOut', onComplete() { azTween = null; } });
+            },
+            onChange(cb) { changeCbs.push(cb); return () => { const i = changeCbs.indexOf(cb); if (i > -1) changeCbs.splice(i, 1); }; },
+            onInteract(cb) { interactCbs.push(cb); return () => { const i = interactCbs.indexOf(cb); if (i > -1) interactCbs.splice(i, 1); }; }
+          };
+          pdpHookDispose = () => { pdpHook.dispose(); window.pouchViewer = undefined; };
+          document.dispatchEvent(new CustomEvent('pdp:viewer'));
+        }
 
         if (window.ResizeObserver) {
           pdp3dResizeObserver = new ResizeObserver(() => {
@@ -3204,6 +3254,7 @@
       }
 
       function disposePdp3dPouch() {
+        if (pdpHookDispose) { pdpHookDispose(); pdpHookDispose = null; }   // PDP hook
         if (pdp3dAnimId) {
           cancelAnimationFrame(pdp3dAnimId);
           pdp3dAnimId = null;
