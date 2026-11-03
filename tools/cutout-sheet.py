@@ -2,8 +2,8 @@
 
     python tools/cutout-sheet.py [--sheet PATH] [--names bean,tomato,ginger,...] [--check]
 
-Reads  pdp/rajma-masala/cutout-sheet.(jpg|jpeg|png|webp)  (first one found).
-Writes pdp/rajma-masala/ingredients/ingredient-1..8.webp  (400px long side, <= 40 KB each, 4% padding)
+Reads  pdp/shared/cutout-sheet.(jpg|jpeg|png|webp)  (first one found).
+Writes pdp/shared/ingredients/ingredient-1..8.webp  (400px long side, <= 40 KB each, 4% padding)
 and rewrites the GENERATED INGREDIENTS block of pdp/pdp-data.js.
 
 Steps: flood-fill the near-white background from the border (so white INSIDE an item stays), erode the mask 1px and
@@ -19,7 +19,7 @@ from PIL import Image, ImageFilter
 from scipy import ndimage as ndi
 
 ROOT = Path(os.environ.get('PDP_ROOT') or Path(__file__).resolve().parent.parent)   # PDP_ROOT: test against a scratch copy
-DIR = ROOT / 'pdp' / 'rajma-masala'
+DIR = ROOT / 'pdp' / 'shared'                 # the cutouts are the same for every product
 OUT = DIR / 'ingredients'
 DATA = ROOT / 'pdp' / 'pdp-data.js'
 WHITE_TOL = 22          # a pixel is "near white" when every channel >= 255 - WHITE_TOL
@@ -71,7 +71,7 @@ def main():
 
     sheet = find_sheet(a.sheet)
     if not sheet or not sheet.exists():
-        print('MISSING INPUT: pdp/rajma-masala/cutout-sheet.* not found. Nothing written.')
+        print('MISSING INPUT: pdp/shared/cutout-sheet.* not found. Nothing written.')
         return 2
     src = Image.open(sheet).convert('RGBA')
     im = src.convert('RGB')

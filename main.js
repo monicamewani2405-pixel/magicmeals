@@ -379,7 +379,7 @@
         desc: 'Long-grain rice infused with ripe tomatoes, sweet corn, red kidney beans, bell peppers, and smoked paprika.'
       },
 
-      // Breakfast & Breads
+      // Breakfast
       {
         id: 'kanda-poha',
         title: 'Homestyle Kanda Poha',
@@ -464,22 +464,6 @@
         calories: '310 kcal',
         protein: '9.5g',
         desc: 'Sprouted moth beans simmered in a zesty, spicy rassa (curry). Perfect with pav and crunchy farsan.'
-      },
-      {
-        id: 'authentic-gujarati-thepla',
-        title: 'Methi Thepla (Pack of 5)',
-        category: 'Breads',
-        price: 160,
-        mrp: 190,
-        img: 'https://magicmeals.shop/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2026-06-04-at-2.25.04-PM-rujily6xti8oefr2uleu168l4a89pddubsekayo1m8.jpeg',
-        jain: true,
-        spice: 'Mild',
-        rating: 4.9,
-        reviews: 310,
-        weight: '125g (5 flatbreads)',
-        calories: '360 kcal',
-        protein: '9.0g',
-        desc: 'Soft, nutritious whole-wheat flatbreads seasoned with fresh fenugreek, sesame, and yogurt. The quintessential travel meal.'
       },
 
       // Soups
@@ -703,14 +687,14 @@
       }
     ];
 
-    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Breads', 'Combos', 'All'];
+    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Combos', 'All'];
 
     const REVIEWS = [
       {
         name: 'Pooja Singhal',
         loc: 'Student, London UK',
         rating: 5,
-        text: 'Moving to the UK for my master’s was scary especially missing mom’s food. Magic Meals Dal Khichdi and Theplas are literally a lifesaver. Tastes 100% authentic like mom’s cooking!'
+        text: 'Moving to the UK for my master’s was scary especially missing mom’s food. Magic Meals Dal Khichdi is literally a lifesaver. Tastes 100% authentic like mom’s cooking!'
       },
       {
         name: 'Karan Mehra',
@@ -728,7 +712,7 @@
 
     
     // Valid Category List and URL/Storage Synchronization (Step 6)
-    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'];
+    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'];
 
     function getInitialCategory() {
       try {
@@ -1155,7 +1139,7 @@
               Jain Only
             </button>
             <span style="width:1px; height:20px; background:var(--border); flex-shrink:0;"></span>
-            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'].map(cat => {
+            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'].map(cat => {
               const isActive = State.selectedCategory === cat;
               return `
                 <button type="button" class="cat-pill ${isActive ? 'active' : ''}" data-cat="${cat}" style="white-space:nowrap; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid ${isActive ? 'var(--brand-primary)' : 'var(--border)'}; background:${isActive ? 'var(--brand-primary)' : 'var(--white)'}; color:${isActive ? '#ffffff' : 'var(--text-body)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:5px; box-shadow: ${isActive ? '0 2px 6px rgba(224,90,43,0.25)' : 'none'};">

@@ -30,6 +30,7 @@
   };
 
   function prepMinutes(cfg, slug) {
+    if (cfg.prepMinutes) return cfg.prepMinutes;       // the number printed on this product's own pack
     try { if (typeof sceneFor === 'function') { var sc = sceneFor(slug); if (sc && sc.prepMinutes) return sc.prepMinutes; } } catch (e) { /* fall through */ }
     return cfg.prepMinutesFallback || 5;
   }
@@ -56,7 +57,7 @@
       if (s.hidden) return;
       var f = files[i];
       var inner = f
-        ? '<img src="' + esc(cfg.dir + 'ingredients/' + f.file) + '" alt="" width="' + (f.w || 200) + '" height="' + (f.h || 200) + '" decoding="async" loading="lazy">'
+        ? '<img src="' + esc((cfg.cutoutDir || 'pdp/shared/ingredients/') + f.file) + '" alt="" width="' + (f.w || 200) + '" height="' + (f.h || 200) + '" decoding="async" loading="lazy">'
         : '<span class="pdp-ing-ph" title="Placeholder: ingredient cutout ' + (i + 1) + ' not supplied yet">Cutout<br>#' + (i + 1) + '</span>';
       out[s.layer] += '<div class="pdp-ing' + (s.mobile ? '' : ' pdp-ing--desk') + '" data-depth="' + s.depth + '" aria-hidden="true" ' +
         'style="left:' + s.x + '%;top:' + s.y + '%;width:' + s.size + '%;--pdp-r:' + s.rot + 'deg;--pdp-dur:' + s.dur + 's;--pdp-ph:' + s.phase + 's">' +
@@ -127,15 +128,16 @@
       return '<figure class="pdp-card pdp-card--photo"' + attrs + '>' +
         '<img src="' + base + '-800.webp" srcset="' + base + '-800.webp 800w, ' + base + '-1200.webp 1200w" ' +
         'sizes="(min-width: 992px) 30vw, (min-width: 768px) 46vw, 92vw" width="' + pl.w + '" height="' + pl.h + '" ' +
-        'loading="lazy" decoding="async" alt="' + esc(c.alt) + '">' + serve + '</figure>';
+        'loading="lazy" decoding="async" alt="' + esc(String(c.alt).replace('{name}', cfg.name || 'The')) + '">' + serve + '</figure>';
     }
     return '<figure class="pdp-card pdp-card--ph"' + attrs + '>' +
       '<div class="pdp-ph" role="img" aria-label="Placeholder: ' + esc(c.id) + ' lifestyle image not supplied yet">' +
       '<b>Placeholder</b><span>Lifestyle image: ' + esc(c.id) + '</span>' +
-      '<small>Needs plate <code>pdp/rajma-masala/plates/' + esc(c.plate) + '.*</code>, then run <code>tools/compose-lifestyle.py</code></small></div>' + serve + '</figure>';
+      '<small>Needs plate <code>' + esc(c.plate) + '.*</code> in <code>' + esc(cfg.dir) + 'plates</code> or <code>pdp/shared/plates</code>, then run <code>tools/compose-lifestyle.py</code></small></div>' + serve + '</figure>';
   }
 
   function insideCard(cfg, c, min) {
+    if (!cfg.inside) return '';
     var steps = cfg.inside.map(function (s, i) {
       return '<li class="pdp-step"><img src="' + esc(s.src) + '" alt="' + esc(s.alt) + '" width="640" height="442" loading="lazy" decoding="async">' +
         '<span class="pdp-step-cap"><i>' + (i + 1) + '</i>' + esc(fill(s.caption, min)) + '</span></li>';
@@ -166,6 +168,8 @@
     unmount();
     var cfg = window.PDP_SCENES && window.PDP_SCENES[slug];
     if (!cfg || !root) return false;
+    var titleEl = root.querySelector('.pdp-title');
+    cfg = Object.assign({}, cfg, { name: titleEl ? titleEl.textContent.trim() : '' });
     var view = root.querySelector('.pdp-view');
     var layout = view && view.querySelector('.pdp-layout');
     var info = layout && layout.querySelector('.pdp-info');

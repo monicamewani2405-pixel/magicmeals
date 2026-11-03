@@ -31,7 +31,6 @@ window.SHOPIFY_CONFIG = {
     'masala-khichdi-kadhi': '',
     'fried-rice-manchurian': '',
     'pind-ke-chhole': '',
-    'authentic-gujarati-thepla': '',
     'tomato-soup': '',
     'gajar-halwa': '',
     'aam-ras': '',
