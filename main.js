@@ -2406,6 +2406,7 @@
         State.byobBundles[bundleKey] = {
           title: boxTitle,
           meals: byobMeals.map(m => m.title),
+          mealIds: byobMeals.map(m => m.id),
           price: finalTotal,
           discount: discountAmt,
           size: size
@@ -2595,131 +2596,23 @@
       `;
 
       try {
-        const lines = [];
-        const mapping = cfg.productVariantMapping || {};
-
-        for (const [key, qty] of cartEntries) {
-          if (qty <= 0) continue;
-          let variantId = null;
-          if (key.startsWith('BYOB')) {
-            variantId = mapping[key] || mapping['family-feast-box'] || null;
-          } else {
-            const [pId] = key.split('|');
-            variantId = mapping[pId] || null;
-          }
-
-          if (variantId) {
-            const gid = String(variantId).startsWith('gid://') ? variantId : `gid://shopify/ProductVariant/${variantId}`;
-            lines.push({ merchandiseId: gid, quantity: qty });
-          }
-        }
-
-        // If no mapped variant IDs found yet, auto-discover products from Shopify Storefront API!
-        if (lines.length === 0) {
-          const fetchProductsQuery = `
-            query {
-              products(first: 20) {
-                edges {
-                  node {
-                    id
-                    handle
-                    title
-                    variants(first: 1) {
-                      edges {
-                        node {
-                          id
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          `;
-
-          const prodRes = await fetch(`https://${shop}/api/${cfg.apiVersion || '2024-01'}/graphql.json`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Shopify-Storefront-Access-Token': token
-            },
-            body: JSON.stringify({ query: fetchProductsQuery })
-          });
-
-          const prodData = await prodRes.json();
-          const shopifyProds = prodData?.data?.products?.edges || [];
-
-          if (shopifyProds.length > 0) {
-            for (const [key, qty] of cartEntries) {
-              const [pId] = key.split('|');
-              const localProd = PRODUCTS.find(x => x.id === pId);
-              const matched = shopifyProds.find(e => {
-                const t = e.node.title.toLowerCase();
-                const h = e.node.handle.toLowerCase();
-                return (localProd && (t.includes(localProd.title.toLowerCase().slice(0, 10)) || h.includes(pId))) || false;
-              }) || shopifyProds[0];
-
-              const vId = matched?.node?.variants?.edges?.[0]?.node?.id;
-              if (vId) {
-                lines.push({ merchandiseId: vId, quantity: qty });
-              }
-            }
-          }
-        }
-
-        if (lines.length === 0) {
-          alert(
-            '⚠️ No Products Found in Shopify Store!\n\n' +
-            'Your Storefront API is connected successfully, but no products are published in your Shopify store.\n\n' +
-            'Please go to Shopify Admin > Products, create at least 1 product, and make sure its Sales Channel is set to "Headless" or "Online Store".'
-          );
-          return;
-        }
-
-        // Create Checkout Cart via Storefront API
-        const cartCreateMutation = `
-          mutation cartCreate($input: CartInput!) {
-            cartCreate(input: $input) {
-              cart {
-                id
-                checkoutUrl
-              }
-              userErrors {
-                code
-                field
-                message
-              }
-            }
-          }
-        `;
-
-        const cartRes = await fetch(`https://${shop}/api/${cfg.apiVersion || '2024-01'}/graphql.json`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Shopify-Storefront-Access-Token': token
-          },
-          body: JSON.stringify({
-            query: cartCreateMutation,
-            variables: { input: { lines } }
-          })
+        // shopify-connector.js: exact product/pack/quantity/price match, checked against the live store. It never substitutes or drops a line.
+        const result = await window.ShopifyConnector.checkout({
+          cart: State.cart,
+          byobBundles: State.byobBundles,
+          getProduct: id => PRODUCTS.find(x => x.id === id),
+          calcPrice,
+          subtotal: getCartSubtotal()
         });
-
-        const cartData = await cartRes.json();
-        const checkoutUrl = cartData?.data?.cartCreate?.cart?.checkoutUrl;
-
-        if (checkoutUrl) {
+        if (result.ok) {
           showToast('Redirecting to secure Shopify Checkout...');
-          window.location.href = checkoutUrl;
+          window.location.href = result.checkoutUrl;
           return;
-        } else {
-          const userErrs = cartData?.data?.cartCreate?.userErrors || cartData?.errors || [];
-          const msg = userErrs.map(e => e.message).join('\n') || 'Unable to create checkout cart.';
-          alert('Shopify Notice:\n' + msg);
         }
+        alert('We could not open checkout because:\n\n• ' + result.problems.join('\n• ') + '\n\nNothing was charged. Fix your cart and try again.');
       } catch (err) {
         console.error('Shopify checkout error:', err);
-        alert('Checkout error: ' + err.message + '\n\nPlease check console for details.');
+        alert('Checkout error: ' + err.message + '\n\nNothing was charged. Please try again.');
       } finally {
         btn.disabled = false;
         btn.style.opacity = '1';
