@@ -1,0 +1,51 @@
+{
+  "slug": "veg-biryani",
+  "size": [
+    815,
+    563
+  ],
+  "bowl": "scenes/processed/veg-biryani/bowl.webp",
+  "dry": "scenes/processed/veg-biryani/dry.webp",
+  "wet": "scenes/processed/veg-biryani/wet.webp",
+  "ready": "scenes/processed/veg-biryani/ready.webp",
+  "bowlBox": {
+    "x": 5.4,
+    "y": 5.51,
+    "w": 89.33,
+    "h": 89.17
+  },
+  "opening": {
+    "cx": 49.82,
+    "cy": 32.14,
+    "rx": 42.7,
+    "ry": 26.83
+  },
+  "alignment": {
+    "bowl-empty": {
+      "bbox": [
+        148,
+        278,
+        876,
+        780
+      ]
+    },
+    "dry": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "wet": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "ready": {
+      "dx": -1.0,
+      "dy": -1,
+      "scale": 1.0,
+      "needs_regen": false
+    }
+  }
+}

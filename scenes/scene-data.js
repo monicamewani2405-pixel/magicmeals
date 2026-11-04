@@ -54,6 +54,61 @@ const SCENES = {
     prepMinutes: 5,
     particle: 'bean',
     colors: ['var(--scene-panner-butter-masala-c1)', 'var(--scene-panner-butter-masala-c2)', 'var(--scene-panner-butter-masala-c3)']
+  },
+  // the three entries below: images from scenes/<slug>/ (same black bowl as above), prep time and water read off each pack's back panel
+  'veg-biryani': {
+    bowl: 'scenes/processed/veg-biryani/bowl.webp',
+    dry: 'scenes/processed/veg-biryani/dry.webp',
+    wet: 'scenes/processed/veg-biryani/wet.webp',
+    ready: 'scenes/processed/veg-biryani/ready.webp',
+    size: [815, 563],
+    opening: { cx: 49.82, cy: 32.14, rx: 42.7, ry: 26.83 },
+    bowlBottom: 94.68,
+    prepMinutes: 7,                                     // the Veg Biryani pack says 7 minutes (boiling-water method: 160 ml, wait 7 min)
+    particle: 'grain',
+    colors: ['var(--scene-veg-biryani-c1)', 'var(--scene-veg-biryani-c2)', 'var(--scene-veg-biryani-c3)'],
+    steps: [
+      { title: 'Tear', text: 'Tear open the pouch.' },
+      { title: 'Pour', text: 'Empty the contents into a bowl.' },
+      { title: 'Add hot water', text: 'Add 160 ml of boiling water.' },
+      { title: 'Eat', text: 'Cover, wait 7 minutes, stir well, and enjoy.' }
+    ]
+  },
+  'dal-makhani': {
+    bowl: 'scenes/processed/dal-makhani/bowl.webp',
+    dry: 'scenes/processed/dal-makhani/dry.webp',
+    wet: 'scenes/processed/dal-makhani/wet.webp',
+    ready: 'scenes/processed/dal-makhani/ready.webp',
+    size: [815, 563],
+    opening: { cx: 49.82, cy: 32.14, rx: 42.7, ry: 26.83 },
+    bowlBottom: 94.68,
+    prepMinutes: 5,                                     // the Dal Makhani pack says 5 minutes (165 ml)
+    particle: 'bean',
+    colors: ['var(--scene-dal-makhani-c1)', 'var(--scene-dal-makhani-c2)', 'var(--scene-dal-makhani-c3)'],
+    steps: [
+      { title: 'Tear', text: 'Tear open the pouch.' },
+      { title: 'Pour', text: 'Empty the contents into a bowl.' },
+      { title: 'Add hot water', text: 'Add 165 ml of boiling water.' },
+      { title: 'Eat', text: 'Cover, wait 5 minutes, stir well, and enjoy.' }
+    ]
+  },
+  'pav-bhaji': {
+    bowl: 'scenes/processed/pav-bhaji/bowl.webp',
+    dry: 'scenes/processed/pav-bhaji/dry.webp',
+    wet: 'scenes/processed/pav-bhaji/wet.webp',
+    ready: 'scenes/processed/pav-bhaji/ready.webp',
+    size: [815, 563],
+    opening: { cx: 49.82, cy: 32.14, rx: 42.7, ry: 26.83 },
+    bowlBottom: 94.68,
+    prepMinutes: 5,                                     // the Pav Bhaji pack says 5 minutes (170 ml)
+    particle: 'shred',                                  // there is no 'cube' particle type; 'shred' is the closest
+    colors: ['var(--scene-pav-bhaji-c1)', 'var(--scene-pav-bhaji-c2)', 'var(--scene-pav-bhaji-c3)'],
+    steps: [
+      { title: 'Tear', text: 'Tear open the pouch.' },
+      { title: 'Pour', text: 'Empty the contents into a bowl.' },
+      { title: 'Add hot water', text: 'Add 170 ml of boiling water.' },
+      { title: 'Eat', text: 'Cover, wait 5 minutes, stir well, and enjoy.' }
+    ]
   }
 };
 

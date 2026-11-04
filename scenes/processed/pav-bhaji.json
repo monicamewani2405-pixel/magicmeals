@@ -1,0 +1,51 @@
+{
+  "slug": "pav-bhaji",
+  "size": [
+    815,
+    563
+  ],
+  "bowl": "scenes/processed/pav-bhaji/bowl.webp",
+  "dry": "scenes/processed/pav-bhaji/dry.webp",
+  "wet": "scenes/processed/pav-bhaji/wet.webp",
+  "ready": "scenes/processed/pav-bhaji/ready.webp",
+  "bowlBox": {
+    "x": 5.4,
+    "y": 5.51,
+    "w": 89.33,
+    "h": 89.17
+  },
+  "opening": {
+    "cx": 49.82,
+    "cy": 32.14,
+    "rx": 42.7,
+    "ry": 26.83
+  },
+  "alignment": {
+    "bowl-empty": {
+      "bbox": [
+        148,
+        278,
+        876,
+        780
+      ]
+    },
+    "dry": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "wet": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "ready": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    }
+  }
+}
