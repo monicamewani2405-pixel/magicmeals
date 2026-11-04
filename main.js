@@ -1170,6 +1170,72 @@
         calories: '890 kcal',
         protein: '22.6g',
         desc: 'Get the feel of a home-cooked thali in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, comforting Dal Fry, and aromatic Jeera Rice. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
+      },
+      // More Jain combos added to magicmeals.shop on 4 Nov 2026 (price, photo and text copied from there). They use the Jain pouches
+      // (pouch-art/jain-*-front-processed.png) and are flagged Jain Friendly. Calories / protein = sum of the single packs (derived).
+      {
+        id: 'jain-biryani-royale-veg-biryani-aam-ras',
+        title: 'Jain Biryani Royale (Veg Biryani + Aam Ras)',
+        category: 'Combos',
+        price: 385,
+        mrp: 385,
+        img: 'assets/combos/jain-biryani-royale-veg-biryani-aam-ras.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '145g net (makes 470g)',
+        calories: '530 kcal',
+        protein: '9.0g',
+        desc: 'Treat yourself to the Magic Meals Biryani Royale featuring fragrant Veg Biryani and smooth, sweet Aam Ras dessert. A Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
+      },
+      {
+        id: 'jain-indo-chinese-combo-schezwan-rice-rawa-sheera',
+        title: 'Jain Indo-Chinese Combo (Schezwan Rice + Rawa Sheera)',
+        category: 'Combos',
+        price: 325,
+        mrp: 325,
+        img: 'assets/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '155g net (makes 450g)',
+        calories: '640 kcal',
+        protein: '11.0g',
+        desc: 'Satisfy your Indo-Chinese cravings with the Magic Meals Indo-Chinese Combo featuring bold, spicy Schezwan Rice and soft, sweet Rawa Sheera dessert to cool things down. A Jain-friendly ready-to-eat combo meal perfect for dinner, hostel nights, travel, and quick meals.'
+      },
+      {
+        id: 'jain-light-comfort-combo-dal-khichdi-aam-ras',
+        title: 'Jain Light & Comfort Combo (Dal Khichdi + Aam Ras)',
+        category: 'Combos',
+        price: 345,
+        mrp: 345,
+        img: 'assets/combos/jain-light-comfort-combo-dal-khichdi-aam-ras.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '140g net (makes 460g)',
+        calories: '500 kcal',
+        protein: '10.7g',
+        desc: 'Keep it light, warm, and comforting with the Magic Meals Light & Comfort Combo featuring wholesome Dal Khichdi and smooth, sweet Aam Ras. A Jain-friendly ready-to-eat combo meal perfect for light lunches, dinners, travel, and group tours.'
+      },
+      {
+        id: 'jain-light-dinner-combo-dal-khichdi-moong-masala',
+        title: 'Jain Light Dinner Combo (Dal Khichdi + Moong Masala)',
+        category: 'Combos',
+        price: 350,
+        mrp: 350,
+        img: 'assets/combos/jain-light-dinner-combo-dal-khichdi-moong-masala.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '160g net (makes 500g)',
+        calories: '590 kcal',
+        protein: '20.2g',
+        desc: 'Keep dinner light and wholesome with the Magic Meals Light Dinner Combo featuring comforting Dal Khichdi and Moong Masala. A Jain-friendly ready-to-eat combo meal perfect for easy dinners, hostel nights, travel, and simple comfort-food cravings.'
       }
     ];
 

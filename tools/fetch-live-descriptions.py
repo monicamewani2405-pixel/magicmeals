@@ -71,6 +71,10 @@ MAP = {
     'jain-power-breakfast-combo-poha-upma': 'power-breakfast-combo-poha-upma',
     'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry': 'magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
     'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry': 'magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
+    'jain-biryani-royale-veg-biryani-aam-ras': 'magic-meals-biryani-royale-veg-biryani-aam-ras',
+    'jain-indo-chinese-combo-schezwan-rice-rawa-sheera': 'magic-meals-indo-chinese-combo-schezwan-rice-rawa-sheera',
+    'jain-light-comfort-combo-dal-khichdi-aam-ras': 'magic-meals-light-comfort-combo-dal-khichdi-aam-ras',
+    'jain-light-dinner-combo-dal-khichdi-moong-masala': 'magic-meals-light-dinner-combo-dal-khichdi-moong-masala',
     # 'jain-light-comfort-combo' (Dal Khichdi + Tomato Soup) has no live product: not mapped on purpose
 }
 # combos on the client's list that are not on the live store: id -> (group name, [(dish name, prototype id of the single)])

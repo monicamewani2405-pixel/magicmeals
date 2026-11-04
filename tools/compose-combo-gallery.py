@@ -47,10 +47,10 @@ DISH = {'paneer butter masala': 'paneer-butter-masala', 'jeera rice': 'jeera-ric
         'aam ras': 'aam-ras', 'pind ke chole': 'pind-ke-chhole', 'tomato soup': 'tomato-soup', 'dal makhani': 'dal-makhani',
         'dal fry': 'dal-fry', 'idli sambar': 'idli-sambar', 'upma': 'upma', 'kanda poha': 'kanda-poha', 'mumbai misal': 'mumbai-misal',
         'sweet corn soup': 'sweet-corn-soup', 'mexican rice': 'mexican-rice', 'dal khichdi': 'dal-khichdi',
-        'hot & sour soup': 'hot-and-sour-soup', 'manchurian fried rice': 'fried-rice-manchurian', 'schezwan rice': 'schezwan-rice', 'poha': 'kanda-poha'}
+        'hot & sour soup': 'hot-and-sour-soup', 'manchurian fried rice': 'fried-rice-manchurian', 'schezwan rice': 'schezwan-rice', 'poha': 'kanda-poha', 'moong masala': 'moong-masala'}
 # Jain combos use the Jain pouch (pouch-art/jain-<id>-front-processed.png, from the client's Jain mockups) for these dishes; Jeera Rice, Rawa Sheera and
 # Aam Ras are the same pack in both versions, Dal Fry and Moong Masala only exist as Jain.
-JAIN_POUCH = {'pav-bhaji', 'paneer-bhurji', 'veg-biryani', 'schezwan-rice', 'dal-makhani', 'upma', 'paneer-butter-masala', 'kanda-poha', 'pind-ke-chhole', 'veg-makhanwala'}
+JAIN_POUCH = {'pav-bhaji', 'paneer-bhurji', 'veg-biryani', 'schezwan-rice', 'dal-makhani', 'upma', 'paneer-butter-masala', 'kanda-poha', 'pind-ke-chhole', 'veg-makhanwala', 'dal-khichdi'}
 JAIN_COMBOS = {'north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera'}      # the old site only sells this one as Jain
 
 
