@@ -52,6 +52,9 @@ def find_plate(slug, name):
     cands = [(PDP / slug / 'plates', name)]
     if name in PER_PRODUCT:
         cands.append((SHARED, f'{name}-{slug}'))
+        if slug.startswith('jain-'):                                  # a Jain pack shows the regular dish's own photo (same food)
+            base = slug[5:]
+            cands += [(PDP / base / 'plates', name), (SHARED, f'{name}-{base}')]
     cands.append((SHARED, name))
     for base, stem in cands:
         for ext in ('png', 'webp', 'jpg', 'jpeg'):

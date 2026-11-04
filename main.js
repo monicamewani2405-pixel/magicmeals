@@ -572,6 +572,266 @@
         desc: 'Golden roasted semolina simmered with pure cow ghee, milk, saffron strands, cardamom, and plump raisins.'
       },
 
+      // Jain versions of single dishes and the two breads that magicmeals.shop sells (price and text copied from there; Jain packs use the client's Jain mockups).
+      // calories / protein of the Jain packs = the regular dish's values (ASSUMPTION, not printed on the old store); no reviews yet.
+      {
+        id: 'jain-dal-khichdi',
+        title: 'Jain Dal Khichdi',
+        category: 'Rice',
+        price: 195,
+        mrp: 195,
+        img: 'pouch-art/jain-dal-khichdi-front-processed.png',
+        imgBack: 'pouch-art/jain-dal-khichdi-back-processed.png',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '67g net (makes 250g)',
+        calories: '310 kcal',
+        protein: '9.2g',
+        desc: 'Enjoy wholesome comfort food with Jain Dal Khichdi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal is perfect for travel, office lunches, quick dinners, and healthy eating. Just add hot water and enjoy delicious homemade-style khichdi in minutes.'
+      },
+      {
+        id: 'jain-dal-makhani',
+        title: 'Jain Dal Makhani',
+        category: 'Dals',
+        price: 240,
+        mrp: 240,
+        img: 'pouch-art/jain-dal-makhani-front-processed.png',
+        imgBack: 'pouch-art/jain-dal-makhani-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '85g net (makes 250g)',
+        calories: '360 kcal',
+        protein: '11.5g',
+        desc: 'Enjoy rich Punjabi flavors with Jain Dal Makhani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy creamy dal makhani in minutes.'
+      },
+      {
+        id: 'jain-masala-khichdi-kadhi',
+        title: 'Jain Masala Khichdi Kadhi',
+        category: 'Rice',
+        price: 175,
+        mrp: 175,
+        img: 'pouch-art/jain-masala-khichdi-kadhi-front-processed.png',
+        imgBack: 'pouch-art/jain-masala-khichdi-kadhi-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '55g net (makes 250g)',
+        calories: '320 kcal',
+        protein: '8.5g',
+        desc: 'Enjoy the comforting taste of Jain Masala Khichdi Kadhi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal combines flavorful masala khichdi with delicious kadhi for a wholesome Indian dining experience. Just add hot water and enjoy in minutes.'
+      },
+      {
+        id: 'jain-paneer-bhurji',
+        title: 'Jain Paneer Bhurji',
+        category: 'Meals',
+        price: 290,
+        mrp: 290,
+        img: 'pouch-art/jain-paneer-bhurji-front-processed.png',
+        imgBack: 'pouch-art/jain-paneer-bhurji-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '90g net (makes 250g)',
+        calories: '390 kcal',
+        protein: '15.5g',
+        desc: 'Enjoy rich flavors and wholesome goodness with Jain Paneer Bhurji by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal is perfect for quick lunches, dinners, travel, and office meals. Just add hot water and enjoy authentic taste in minutes.'
+      },
+      {
+        id: 'jain-paneer-butter-masala',
+        title: 'Jain Paneer Butter Masala',
+        category: 'Meals',
+        price: 255,
+        mrp: 255,
+        img: 'pouch-art/jain-paneer-butter-masala-front-processed.png',
+        imgBack: 'pouch-art/jain-paneer-butter-masala-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '83g net (makes 250g)',
+        calories: '380 kcal',
+        protein: '14.0g',
+        desc: 'Enjoy rich restaurant-style flavor with Jain Paneer Butter Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick meals, travel, office lunches, and dinner cravings. Just add hot water and enjoy authentic taste in minutes.'
+      },
+      {
+        id: 'jain-pav-bhaji',
+        title: 'Jain Pav Bhaji',
+        category: 'Meals',
+        price: 215,
+        mrp: 215,
+        img: 'pouch-art/jain-pav-bhaji-front-processed.png',
+        imgBack: 'pouch-art/jain-pav-bhaji-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '80g net (makes 250g)',
+        calories: '290 kcal',
+        protein: '6.8g',
+        desc: 'Enjoy the iconic taste of Mumbai street food in a Jain-friendly version with Jain Pav Bhaji by Magic Meals. Made without onion and garlic, this ready-to-eat meal delivers rich flavor and convenience. Just add hot water and enjoy a delicious meal in minutes.'
+      },
+      {
+        id: 'jain-pind-ke-chhole',
+        title: 'Jain Pind Ke Chole',
+        category: 'Meals',
+        price: 260,
+        mrp: 260,
+        img: 'pouch-art/jain-pind-ke-chhole-front-processed.png',
+        imgBack: 'pouch-art/jain-pind-ke-chhole-back-processed.png',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '70g net (makes 250g)',
+        calories: '330 kcal',
+        protein: '12.0g',
+        desc: 'Enjoy authentic Punjabi flavors with Jain Pind ke Chole by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy rich Indian taste in minutes.'
+      },
+      {
+        id: 'jain-rajma-masala',
+        title: 'Jain Rajma Masala',
+        category: 'Meals',
+        price: 235,
+        mrp: 235,
+        img: 'pouch-art/jain-rajma-masala-front-processed.png',
+        imgBack: 'pouch-art/jain-rajma-masala-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '70g net (makes 250g)',
+        calories: '440 kcal',
+        protein: '13.0g',
+        desc: 'Enjoy the rich and comforting taste of Jain Rajma Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick lunches, dinners, travel, and office meals. Just add hot water and enjoy authentic Indian flavors in minutes.'
+      },
+      {
+        id: 'jain-schezwan-rice',
+        title: 'Jain Schezwan Rice',
+        category: 'Rice',
+        price: 190,
+        mrp: 190,
+        img: 'pouch-art/jain-schezwan-rice-front-processed.png',
+        imgBack: 'pouch-art/jain-schezwan-rice-back-processed.png',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '65g net (makes 250g)',
+        calories: '330 kcal',
+        protein: '6.2g',
+        desc: 'Enjoy Indo-Chinese flavors with Jain Schezwan Rice by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy delicious schezwan rice in minutes.'
+      },
+      {
+        id: 'jain-upma',
+        title: 'Jain Upma',
+        category: 'Breakfast',
+        price: 80,
+        mrp: 80,
+        img: 'pouch-art/jain-upma-front-processed.png',
+        imgBack: 'pouch-art/jain-upma-back-processed.png',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '60g net (makes 250g)',
+        calories: '270 kcal',
+        protein: '6.0g',
+        desc: 'Enjoy a wholesome and quick meal with Jain Instant Upma by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik breakfast is perfect for Jain diets, travel, and busy lifestyles. Just add hot water and enjoy authentic taste in minutes.'
+      },
+      {
+        id: 'jain-veg-biryani',
+        title: 'Jain Veg Biryani',
+        category: 'Rice',
+        price: 240,
+        mrp: 240,
+        img: 'pouch-art/jain-veg-biryani-front-processed.png',
+        imgBack: 'pouch-art/jain-veg-biryani-back-processed.png',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '90g net (makes 250g)',
+        calories: '340 kcal',
+        protein: '7.5g',
+        desc: 'Enjoy the rich aroma and authentic taste of Jain Veg Biryani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy flavorful biryani in minutes.'
+      },
+      {
+        id: 'jain-veg-kadhai',
+        title: 'Jain Veg Kadhai',
+        category: 'Meals',
+        price: 260,
+        mrp: 260,
+        img: 'pouch-art/jain-veg-kadhai-front-processed.png',
+        imgBack: 'pouch-art/jain-veg-kadhai-back-processed.png',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '70g net (makes 250g)',
+        calories: '310 kcal',
+        protein: '8.0g',
+        desc: 'Enjoy bold Indian flavors with Jain Veg Kadhai by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy restaurant-style taste in minutes.'
+      },
+      {
+        id: 'jain-veg-makhanwala',
+        title: 'Jain Veg Makhanwala',
+        category: 'Meals',
+        price: 260,
+        mrp: 260,
+        img: 'pouch-art/jain-veg-makhanwala-front-processed.png',
+        imgBack: 'pouch-art/jain-veg-makhanwala-back-processed.png',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '70g net (makes 250g)',
+        calories: '340 kcal',
+        protein: '7.8g',
+        desc: 'Enjoy rich North Indian flavors with Jain Veg Makhanwala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy delicious restaurant-style taste in minutes.'
+      },
+      {
+        id: 'paratha',
+        title: 'Paratha',
+        category: 'Breads',
+        price: 140,
+        mrp: 140,
+        img: 'assets/breads/paratha.jpg',
+        jain: false,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: 'Ready-to-heat flatbread',
+        calories: '',
+        protein: '',
+        noWater: true,                                   // heat and serve: no hot-water steps on the page
+        shelfLife: '3 Months',                           // "best before 3 months if unopened" (old store)
+        desc: 'Flavourful, comforting, and ready in minutes. Magic Meals Paratha combines the goodness of wheat flour with aromatic jeera and ajwain for a delicious homestyle experience. Simply heat and serve with your favourite dishes.'
+      },
+      {
+        id: 'gujarati-thepla',
+        title: 'Authentic Gujarati Thepla',
+        category: 'Breads',
+        price: 160,
+        mrp: 160,
+        img: 'assets/breads/gujarati-thepla.jpg',
+        jain: false,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: 'Ready-to-heat flatbread',
+        calories: '',
+        protein: '',
+        noWater: true,                                   // heat and serve: no hot-water steps on the page
+        shelfLife: '3 Months',                           // "best before 3 months if unopened" (old store)
+        desc: 'A traditional Gujarati favourite crafted for convenience. Magic Meals Thepla is packed with authentic flavours and can be enjoyed anytime, anywhere. Just heat and serve for a satisfying meal or snack.'
+      },
+
       // Meal Combos
       {
         id: 'punjabi-comfort-combo',
@@ -1236,10 +1496,27 @@
         calories: '590 kcal',
         protein: '20.2g',
         desc: 'Keep dinner light and wholesome with the Magic Meals Light Dinner Combo featuring comforting Dal Khichdi and Moong Masala. A Jain-friendly ready-to-eat combo meal perfect for easy dinners, hostel nights, travel, and simple comfort-food cravings.'
+      },
+      // The regular (non-Jain) Desi Lunch Box from magicmeals.shop. Calories / protein = sum of the single packs (derived).
+      {
+        id: 'desi-lunch-box-paneer-butter-masala-jeera-rice-rawa-sheera',
+        title: 'Desi Lunch Box (Paneer Butter Masala + Jeera Rice + Rawa Sheera)',
+        category: 'Combos',
+        price: 500,
+        mrp: 500,
+        img: 'assets/combos/desi-lunch-box-paneer-butter-masala-jeera-rice-rawa-sheera.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '241g net (makes 650g)',
+        calories: '960 kcal',
+        protein: '23.8g',
+        desc: 'Experience a complete North Indian meal with the Magic Meals Desi Lunch Box featuring creamy Paneer Butter Masala, aromatic Jeera Rice, and delicious Rawa Sheera dessert. A perfect ready-to-eat combo meal for lunch, travel, office, and instant cravings.'
       }
     ];
 
-    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Combos', 'All'];
+    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Breads', 'Combos', 'All'];
 
     const REVIEWS = [
       {
@@ -1264,7 +1541,7 @@
 
     
     // Valid Category List and URL/Storage Synchronization (Step 6)
-    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'];
+    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'];
 
     function getInitialCategory() {
       try {
@@ -1691,7 +1968,7 @@
               Jain Only
             </button>
             <span style="width:1px; height:20px; background:var(--border); flex-shrink:0;"></span>
-            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'].map(cat => {
+            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'].map(cat => {
               const isActive = State.selectedCategory === cat;
               return `
                 <button type="button" class="cat-pill ${isActive ? 'active' : ''}" data-cat="${cat}" style="white-space:nowrap; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid ${isActive ? 'var(--brand-primary)' : 'var(--border)'}; background:${isActive ? 'var(--brand-primary)' : 'var(--white)'}; color:${isActive ? '#ffffff' : 'var(--text-body)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:5px; box-shadow: ${isActive ? '0 2px 6px rgba(224,90,43,0.25)' : 'none'};">
@@ -1848,14 +2125,15 @@
                 </li>
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
-                  <span>9 Months Shelf Life</span>
+                  <span>${p.shelfLife || '9 Months'} Shelf Life</span>
                 </li>
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  <span>Energy: ${p.calories}</span>
+                  <span>${p.calories ? 'Energy: ' + p.calories : 'Heat &amp; serve'}</span>
                 </li>
               </ul>
 
+              ${p.noWater ? '' : `
               <!-- Preparation Guide Accordion -->
               <div style="background:var(--white); border:1px solid var(--border); border-radius:14px; padding:16px;">
                 <h4 style="margin-bottom:8px; display:flex; align-items:center; gap:6px;">
@@ -1867,6 +2145,7 @@
                   <li>Open, give it a quick stir, and eat straight from the travel-friendly bowl!</li>
                 </ol>
               </div>
+              `}
             </div>
           </div>
 
@@ -1877,6 +2156,7 @@
             </section>
           ` : ''}
 
+          ${p.noWater ? '' : `
           <!-- How It Works Video & Prep Showcase -->
           <section class="pdp-hiw-section" aria-label="How Magic Meals Works">
             <div class="pdp-hiw-header">
@@ -1936,6 +2216,7 @@
               </div>
             </div>
           </section>
+          `}
 
           <!-- Related Dishes -->
           ${related.length > 0 ? `
@@ -2019,7 +2300,7 @@
 
       const categories = ['All', 'Rice', 'Meals', 'Breakfast', 'Dals', 'Soups'];
       const pantryMeals = PRODUCTS.filter(p => {
-        if (p.category === 'Combos') return false;
+        if (p.category === 'Combos' || p.category === 'Breads') return false;      // BYOB boxes are ready meals
         if (State.jainOnly && !p.jain) return false;
         if (State.byobCategory !== 'All' && p.category !== State.byobCategory) return false;
         return true;

@@ -75,6 +75,16 @@ MAP = {
     'jain-indo-chinese-combo-schezwan-rice-rawa-sheera': 'magic-meals-indo-chinese-combo-schezwan-rice-rawa-sheera',
     'jain-light-comfort-combo-dal-khichdi-aam-ras': 'magic-meals-light-comfort-combo-dal-khichdi-aam-ras',
     'jain-light-dinner-combo-dal-khichdi-moong-masala': 'magic-meals-light-dinner-combo-dal-khichdi-moong-masala',
+    # the old store's Jain single dishes (separate Jain packs), the two breads and the regular Desi Lunch Box
+    'jain-dal-khichdi': 'jain-dal-khichdi-ready-to-eat', 'jain-dal-makhani': 'jain-dal-makhani-ready-to-eat',
+    'jain-masala-khichdi-kadhi': 'jain-masala-khichdi-kadhi-ready-to-eat', 'jain-paneer-bhurji': 'jain-paneer-bhurji',
+    'jain-paneer-butter-masala': 'jain-paneer-butter-masala', 'jain-pav-bhaji': 'jain-pav-bhaji',
+    'jain-pind-ke-chhole': 'jain-pind-ke-chole-ready-to-eat', 'jain-rajma-masala': 'jain-rajma-masala',
+    'jain-schezwan-rice': 'jain-schezwan-rice-ready-to-eat', 'jain-upma': 'jain-upma-ready-to-eat',
+    'jain-veg-biryani': 'jain-veg-biryani-ready-to-eat', 'jain-veg-kadhai': 'jain-veg-kadhai-ready-to-eat',
+    'jain-veg-makhanwala': 'jain-veg-makhanwala',
+    'paratha': 'paratha', 'gujarati-thepla': 'authentic-gujarati-thepla',
+    'desi-lunch-box-paneer-butter-masala-jeera-rice-rawa-sheera': 'aneer-butter-masala-jeera-rice-rawa-sheera',
     # 'jain-light-comfort-combo' (Dal Khichdi + Tomato Soup) has no live product: not mapped on purpose
 }
 # combos on the client's list that are not on the live store: id -> (group name, [(dish name, prototype id of the single)])
@@ -82,7 +92,9 @@ EXTRA = {
     'comfort-combo-rajma-masala-veg-biryani-gajar-halwa': ('Comfort Combo', [('Rajma Masala', 'rajma-masala'), ('Veg Biryani', 'veg-biryani'), ('Gajar Halwa', 'gajar-halwa')]),
     'street-style-combo-pav-bhaji-tawa-pulao': ('Street Style Combo', [('Pav Bhaji', 'pav-bhaji'), ('Tawa Pulao', 'tawa-pulao')]),
 }
-KEEP = {'p', 'h3', 'ul', 'ol', 'li', 'strong', 'br'}
+KEEP = {'p', 'h3', 'h4', 'ul', 'ol', 'li', 'strong', 'br'}
+# heat-and-serve breads: the live short description carries the ingredients and how to prepare, so it is shown in front of the long one
+SHORT_REST = {'paratha', 'gujarati-thepla'}
 
 
 def fix_text(s):
@@ -161,7 +173,8 @@ def main():
             mm = re.match(r'^\s*([A-Za-z ]{3,30}?)\s*:\s*(.+?)\s*$', fix_text(l))
             if mm:
                 specs.append([mm.group(1), mm.group(2)])
-        out[pid] = {'slug': slug, 'intro': intro, 'specs': specs, 'html': clean_html(long_)}
+        extra = clean_html(rest) if pid in SHORT_REST else ''
+        out[pid] = {'slug': slug, 'intro': intro, 'specs': specs, 'html': extra + clean_html(long_)}
 
     # Combos that have no live product. The intro is our own wording (same pattern as the live combos); the preparation steps are
     # copied from each dish's own live description, so the water amounts and times are the real ones. Marked "placeholder": true.
