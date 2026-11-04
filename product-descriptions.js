@@ -1176,6 +1176,152 @@ window.PRODUCT_DESCRIPTIONS = {
   ],
   "html": "<p>Enjoy the timeless comfort of Dal Fry and Jeera Rice with the Magic Meals Comfort Night Combo. This wholesome ready-to-eat meal is designed for those moments when you crave a light yet satisfying meal without the hassle of cooking.</p><p>The Jain Dal Fry is prepared with lentils, aromatic spices, and traditional Indian seasonings to deliver a rich and comforting flavor. Paired with fragrant Jeera Rice, delicately flavored with cumin seeds, this combo offers a balanced and fulfilling dining experience.</p><p>Whether you’re traveling, camping, trekking, working late, staying in a hostel, or simply looking for a quick dinner option, this combo is ready within minutes. Just add hot water and enjoy a homestyle meal anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it an excellent choice for travel food, emergency food storage, office meals, and everyday convenience.</p><h3>Why Choose Magic Meals Comfort Night Combo?</h3><ul><li>Classic Dal Fry and Jeera Rice combination</li><li>Authentic Jain recipe</li><li>Light yet satisfying meal</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Easy to carry and store</li><li>Lightweight travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for dinner, travel, office, hostels, and home use</li></ul>\n\nPreparation Instructions\n<p><strong>Dal Fry</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 190 ml hot water.</li><li>Stir well and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol>"
  },
+ "jain-street-style-combo-pav-bhaji-rawa-sheera": {
+  "slug": "magic-meals-street-style-combo-pav-bhaji-rawa-sheera",
+  "intro": "Enjoy the flavors of India’s favorite street food with the Magic Meals Street Style Combo, featuring Jain Pav Bhaji and Rawa Sheera. This ready-to-eat combo brings together a rich Mumbai-style Pav Bhaji paired with a traditional sweet dessert, making it the perfect meal for travel, office lunches, hostel stays, and quick hunger cravings.",
+  "specs": [
+   [
+    "Net Weight",
+    "165g (Pav Bhaji 80g + Rawa Sheera 85g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "400g"
+   ],
+   [
+    "Cuisine Type",
+    "Indian Street Food Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>Satisfy your cravings with the Magic Meals Street Style Combo, a delicious ready-to-eat meal that combines the bold flavors of Jain Pav Bhaji with the sweet richness of Rawa Sheera.</p><p>The Pav Bhaji is prepared using vegetables, aromatic spices, and authentic street-style seasonings to deliver the classic taste loved across India. Paired with Rawa Sheera, a traditional semolina-based dessert enriched with cardamom and dry fruits, this combo offers the perfect balance of savory and sweet.</p><p>Whether you’re traveling, camping, trekking, working late, staying in a hostel, or simply looking for a quick and satisfying meal, this combo is ready within minutes. Just add hot water and enjoy a delicious meal anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office meals, and instant snack cravings.</p><h3><strong>Why Choose Street Style Combo?</strong></h3><ul><li>Classic Indian street-food-inspired meal</li><li>Includes Pav Bhaji and Rawa Sheera</li><li>Authentic Jain recipe</li><li>Perfect balance of savory and sweet</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul><h3>Preparation Instructions</h3><p><strong>Pav Bhaji</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 170 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras": {
+  "slug": "magic-meals-protein-veg-combo-paneer-bhurji-jeera-rice-aamras",
+  "intro": "Enjoy a wholesome and satisfying meal with the Magic Meals Protein Veg Combo, featuring Jain Paneer Bhurji, Jeera Rice, and Aamras. This ready-to-eat combo combines protein-rich paneer, aromatic cumin rice, and the refreshing sweetness of mango, making it the perfect meal for travel, office lunches, hostel stays, and quick dining solutions.",
+  "specs": [
+   [
+    "Net Weight",
+    "223g (Paneer Bhurji 90g + Jeera Rice 73g + Aamras 60g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "750g"
+   ],
+   [
+    "Cuisine Type",
+    "North Indian Vegetarian Meal"
+   ]
+  ],
+  "html": "<p>The Magic Meals Protein Veg Combo is crafted for those who love nutritious and flavorful vegetarian meals without compromising on convenience. This complete ready-to-eat combo includes Jain Paneer Bhurji, Jeera Rice, and Aamras, delivering a perfect balance of protein, taste, and indulgence.</p><p>Relish the rich and savory flavors of Paneer Bhurji made with premium paneer and aromatic spices, paired with fragrant Jeera Rice for a satisfying meal experience. Complete your meal with delicious Aamras, a refreshing mango delicacy loved across India.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick meal at home, this combo offers restaurant-style taste with easy preparation. Just add hot water and enjoy a complete meal within minutes.</p><p>Its lightweight packaging and long shelf life make it an ideal choice for travel food, emergency food storage, office lunches, and instant meal cravings.</p><h3>Why Choose Magic Meals Protein Veg Combo?</h3><ul><li>Protein-rich vegetarian meal combo</li><li>Includes Paneer Bhurji, Jeera Rice &amp; Aamras</li><li>Authentic Jain recipe</li><li>Wholesome and satisfying meal</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul><h3>Preparation Instructions</h3><p><strong>Paneer Bhurji</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Aamras</strong></p><ol><li>Empty contents in a bowl.</li><li>Remove oxygen absorber</li><li>Add 190ml cold water</li><li>Grind it in a mixer for 30 second</li><li>Stir well and serve</li></ol>"
+ },
+ "jain-royal-combo-veg-biryani-rawa-sheera": {
+  "slug": "magic-meals-royal-combo-veg-biryani-rawa-sheera",
+  "intro": "Treat yourself to a royal dining experience with the Magic Meals Royal Combo, featuring Jain Veg Biryani and Rawa Sheera. This ready-to-eat combo combines the rich aroma of authentic biryani with the delightful sweetness of traditional sheera, making it perfect for travel, office lunches, hostel stays, celebrations, and quick gourmet meals.",
+  "specs": [
+   [
+    "Net Weight",
+    "175g (Veg Biryani 90g + Rawa Sheera 85g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "400g"
+   ],
+   [
+    "Cuisine Type",
+    "Indian Vegetarian Meal Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>Experience the flavors of a grand Indian feast with the <strong>Magic Meals Royal Combo</strong>. This delicious ready-to-eat meal brings together <strong>Jain Veg Biryani</strong> and <strong>Rawa Sheera</strong>, creating the perfect combination of aromatic spices and traditional sweetness.</p><p>The Veg Biryani is prepared using premium rice, vegetables, and authentic Indian spices, delivering the rich aroma and flavor of a classic biryani. Paired with Rawa Sheera, a traditional dessert made with semolina, cardamom, and dry fruits, this combo offers a complete meal that satisfies both savory and sweet cravings.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick and delicious meal, this combo is ready within minutes. Just add hot water and enjoy restaurant-style flavors anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office lunches, and convenient everyday dining.</p>\nWhy Choose Magic Meals Royal Combo?\n<ul><li>Complete meal with dessert</li><li>Includes Veg Biryani &amp; Rawa Sheera</li><li>Authentic Jain recipe</li><li>Rich and aromatic biryani flavors</li><li>Perfect balance of savory and sweet</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul>\n\nPreparation Instructions\n<p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-royal-fusion-combo-schezwan-rice-aam-ras": {
+  "slug": "magic-meals-royal-fusion-combo-schezwan-rice-aamras",
+  "intro": "Enjoy a unique blend of Indo-Chinese flavors and refreshing mango goodness with the Magic Meals Royal Fusion Combo, featuring Jain Schezwan Rice and Aamras. This ready-to-eat combo offers the perfect balance of bold flavors and natural sweetness, making it ideal for travel, office lunches, hostel stays, camping, and quick meals on the go.",
+  "specs": [
+   [
+    "Net Weight",
+    "125g (Schezwan Rice 65g + Aamras 60g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "500g"
+   ],
+   [
+    "Cuisine Type",
+    "Indo-Chinese Fusion Meal Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>Experience a delightful fusion of flavors with the Magic Meals Royal Fusion Combo. This convenient ready-to-eat meal combines the taste of Jain Schezwan Rice with the refreshing sweetness of Aamras, creating a unique meal experience that satisfies both savory and sweet cravings.</p><p>The Schezwan Rice is prepared using premium rice, vegetables, and authentic Schezwan-style spices that deliver a flavorful Indo-Chinese kick. Complementing this is Aamras, a delicious mango delicacy made from ripe mangoes, offering a smooth and refreshing finish to your meal.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply craving something different, this combo is ready within minutes. Just add hot water to the rice, prepare the Aamras, and enjoy a satisfying meal anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it an excellent choice for travel food, office lunches, emergency food storage, and instant meal solutions.</p>\nWhy Choose Magic Meals Royal Fusion Combo?\n<ul><li>Unique sweet fusion meal</li><li>Includes Schezwan Rice &amp; Aamras</li><li>Authentic Jain recipe</li><li>Bold Indo-Chinese flavors with refreshing mango sweetness</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul>\nPreparation Instructions\n<p><strong>Schezwan Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 185 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Aamras</strong></p><ol><li>Empty contents in a bowl.</li><li>Remove oxygen absorber</li><li>Add 190ml cold water</li><li>Grind it in a mixer for 30 second</li><li>Stir well and serve</li></ol>"
+ },
+ "jain-classic-dinner-combo-dal-makhani-jeera-rice": {
+  "slug": "magic-meals-classic-dinner-combo-dal-makhani-jeera-rice",
+  "intro": "Enjoy the timeless combination of Dal Makhani and Jeera Rice with the Magic Meals Classic Dinner Combo. This ready-to-eat meal brings together rich, creamy Jain Dal Makhani and fragrant Jeera Rice for a wholesome North Indian dining experience. Perfect for travel, office lunches, hostel stays, camping, and quick dinners at home.",
+  "specs": [
+   [
+    "Net Weight",
+    "158g (Dal Makhani 85g + Jeera Rice 73g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "500g"
+   ],
+   [
+    "Cuisine Type",
+    "North Indian Vegetarian Meal Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>The Magic Meals Classic Dinner Combo brings you one of India’s most loved comfort meals in a convenient ready-to-eat format. Featuring Jain Dal Makhani paired with Jeera Rice, this combo delivers rich flavors, satisfying nutrition, and effortless preparation.</p><p>The Dal Makhani is prepared using black gram lentils, aromatic spices, and a creamy makhani-style gravy that offers authentic restaurant-style taste. Paired with fragrant Jeera Rice seasoned with cumin seeds, it creates a hearty and fulfilling meal suitable for any time of the day.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick meal solution, this combo allows you to enjoy delicious North Indian food within minutes. Simply add hot water and enjoy a comforting meal anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office meals, and everyday convenience.</p><h3>Why Choose Magic Meals Classic Dinner Combo?</h3><ul><li>Classic Dal Makhani and Rice combination</li><li>Authentic Jain recipe</li><li>Rich and creamy restaurant-style flavor</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Easy to carry and store</li><li>Lightweight travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for office, travel, trekking, hostels, and home use</li></ul><h3>Preparation Instructions</h3><p><strong>Dal Makhani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 165 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-power-breakfast-combo-poha-upma": {
+  "slug": "power-breakfast-combo-poha-upma",
+  "intro": "Start your day with a wholesome and delicious breakfast using the Magic Meals Power Breakfast Combo, featuring Jain Poha and Jain Upma in one convenient pack. Designed for busy mornings, travel, office breaks, and outdoor adventures, this combo delivers authentic Indian flavors with quick preparation and long shelf life.",
+  "specs": [
+   [
+    "Net Weight",
+    "160g (Poha 100g + Upma 60g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "500g"
+   ],
+   [
+    "Cuisine Type",
+    "Indian Breakfast Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>The <strong>Magic Meals Power Breakfast Combo</strong> brings together two of India’s most loved breakfast dishes — <strong>Jain Poha and Jain Upma</strong> — in a convenient ready-to-eat format.</p><p>Prepared using quality ingredients and traditional recipes, this combo offers the perfect balance of taste, nutrition, and convenience. Whether you’re heading to work, traveling, trekking, camping, staying in a hostel, or simply looking for a quick breakfast solution, Magic Meals ensures you enjoy a satisfying meal anytime, anywhere.</p><p>The lightweight packaging makes it ideal for travel, while the long shelf life ensures you always have a delicious meal ready when hunger strikes. Simply add hot water and enjoy fresh, flavorful Poha and Upma in just a few minutes.</p><h3>Why Choose Magic Meals Power Breakfast Combo?</h3><ul><li>Includes 2 classic Indian breakfast favorites</li><li>Authentic Jain recipe</li><li>Ready to eat in minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Easy to carry and store</li><li>Travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for home, office, travel, and outdoor activities</li></ul>\n\nPreparation Instructions\n<p><strong>Jain Poha</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 150ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jain Upma</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Ad 190 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry": {
+  "slug": "magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry",
+  "intro": "Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and comforting Dal Fry. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.",
+  "specs": [],
+  "html": "<p>Magic Meals Punjabi Swaad Combo brings together the hearty flavors of Punjab with tangy Pind Ke Chole, comforting Dal Fry, and aromatic Jeera Rice in one convenient, Jain-friendly ready-to-eat combo pack. <br> <br>Prepared using authentic Indian spices, premium ingredients, and traditional recipes, this combo delivers homemade-style taste with easy and quick preparation. Pind Ke Chole is a Punjabi classic, and with simple dal and jeera rice it makes a full, satisfying plate, whether you are at work, traveling, camping, or relaxing at home. <br> <br>Its lightweight packaging and long shelf life make it ideal for office lunches, treks and camping trips, travel food, hostel meals, group tours, and instant Indian meal cravings. <br> <br>Simply add hot water and enjoy a Jain-friendly Punjabi-style meal in minutes. <br> <br>Why Choose Magic Meals Punjabi Swaad Combo? <br>• Includes Pind Ke Chole, Jeera Rice &amp; Dal Fry <br>• Jain-friendly meal combo <br>• Complete Punjabi meal combo <br>• Authentic homemade-style taste <br>• Ready in minutes with just hot water <br>• No preservatives, no MSG <br>• Lightweight and travel-friendly <br>• Convenient instant meal solution <br>• Perfect for lunch and dinner <br>• Long shelf life for easy storage </p>"
+ },
+ "jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry": {
+  "slug": "magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry",
+  "intro": "Get the feel of a home-cooked thali in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, comforting Dal Fry, and aromatic Jeera Rice. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.",
+  "specs": [],
+  "html": "<p>Magic Meals Homestyle Combo brings together a complete thali-style meal with rich Veg Makhanwala, comforting Dal Fry, and aromatic Jeera Rice in one convenient, Jain-friendly ready-to-eat combo pack. <br> <br>Prepared using authentic Indian spices, premium ingredients, and traditional recipes, this combo delivers homemade-style taste with easy and quick preparation. A buttery vegetable gravy, a simple comforting dal, and fragrant jeera rice make the kind of plate you would get at home, whether you are at work, traveling, or relaxing at home. <br> <br>Its lightweight packaging and long shelf life make it ideal for office lunches, hostel meals, students and NRIs missing home food, group tours and yatras, and instant Indian meal cravings. <br> <br>Simply add hot water and enjoy a homestyle, Jain-friendly desi meal in minutes. <br> <br>Why Choose Magic Meals Homestyle Combo? <br>• Includes Veg Makhanwala, Jeera Rice &amp; Dal Fry <br>• Jain-friendly meal combo <br>• Complete homestyle thali-style meal combo <br>• Authentic homemade-style taste <br>• Ready in minutes with just hot water <br>• No preservatives, no MSG <br>• Lightweight and travel-friendly <br>• Convenient instant meal solution <br>• Perfect for lunch and dinner <br>• Long shelf life for easy storage </p>"
+ },
  "comfort-combo-rajma-masala-veg-biryani-gajar-halwa": {
   "slug": null,
   "placeholder": true,
@@ -1189,12 +1335,5 @@ window.PRODUCT_DESCRIPTIONS = {
   "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Street Style Combo featuring Pav Bhaji and Tawa Pulao. Just add hot water to each pouch and enjoy in minutes.",
   "specs": [],
   "html": "<h3>Preparation Instructions</h3><p><strong>Pav Bhaji</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 170ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Tawa Pulao</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 163ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol>"
- },
- "royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras": {
-  "slug": null,
-  "placeholder": true,
-  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Royal Combo featuring Veg Biryani, Rawa Sheera, Tawa Pulao and Aam Ras. Just add hot water to each pouch and enjoy in minutes.",
-  "specs": [],
-  "html": "<h3>Preparation Instructions</h3><p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Tawa Pulao</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 163ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Aam Ras</strong></p><ol><li>Empty contents in a bowl.</li><li>Remove oxygen absorber</li><li>Add 190ml cold water</li><li>Grind it in a mixer for 30 second</li><li>Stir well and serve</li></ol>"
  }
 };

@@ -1008,12 +1008,12 @@
         desc: 'End your day with a simple, satisfying meal with the Magic Meals Comfort Night Combo, featuring Jain Dal Fry and Jeera Rice. This ready-to-eat combo combines wholesome lentils and aromatic cumin rice, making it the perfect comfort meal for dinner, travel, office lunches, hostel stays, and quick hunger cravings.'
       },
       // The three combos from the client's list that are not on magicmeals.shop: picture composed from the real pouch fronts,
-      // price is a PLACEHOLDER, description wording is ours (steps are the dishes' own). Shopify status: draft until the price is confirmed.
+      // description wording is ours (steps are the dishes' own). Prices confirmed by the client.
       {
         id: 'comfort-combo-rajma-masala-veg-biryani-gajar-halwa',
         title: 'Comfort Combo (Rajma Masala + Veg Biryani + Gajar Halwa)',
         category: 'Combos',
-        price: 580,   // PLACEHOLDER price: confirm with the client
+        price: 580,   // confirmed by the client
         mrp: 580,
         img: 'assets/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa.jpg',
         jain: false,
@@ -1029,8 +1029,8 @@
         id: 'street-style-combo-pav-bhaji-tawa-pulao',
         title: 'Street Style Combo (Pav Bhaji + Tawa Pulao)',
         category: 'Combos',
-        price: 375,   // PLACEHOLDER price: confirm with the client
-        mrp: 375,
+        price: 380,   // confirmed by the client
+        mrp: 380,
         img: 'assets/combos/street-style-combo-pav-bhaji-tawa-pulao.jpg',
         jain: false,
         spice: 'Medium',
@@ -1041,21 +1041,135 @@
         protein: '13.3g',
         desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Street Style Combo featuring Pav Bhaji and Tawa Pulao. Just add hot water to each pouch and enjoy in minutes.'
       },
+      // Jain versions of combos that are sold on magicmeals.shop (price, photo and text copied from there). They use the Jain pouches
+      // (pouch-art/jain-*-front-processed.png) and are flagged Jain Friendly. Calories / protein = sum of the single packs (derived).
       {
-        id: 'royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras',
-        title: 'Royal Combo (Veg Biryani + Rawa Sheera + Tawa Pulao + Aam Ras)',
+        id: 'jain-street-style-combo-pav-bhaji-rawa-sheera',
+        title: 'Jain Street Style Combo (Pav Bhaji + Rawa Sheera)',
         category: 'Combos',
-        price: 650,   // PLACEHOLDER price: confirm with the client
-        mrp: 650,
-        img: 'assets/combos/royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras.jpg',
-        jain: false,
+        price: 350,
+        mrp: 350,
+        img: 'assets/combos/jain-street-style-combo-pav-bhaji-rawa-sheera.jpg',
+        jain: true,
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '305g net (makes 920g)',
-        calories: '1170 kcal',
-        protein: '20.3g',
-        desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Royal Combo featuring Veg Biryani, Rawa Sheera, Tawa Pulao and Aam Ras. Just add hot water to each pouch and enjoy in minutes.'
+        weight: '165g net (makes 400g)',
+        calories: '600 kcal',
+        protein: '11.6g',
+        desc: 'Enjoy the flavors of India’s favorite street food with the Magic Meals Street Style Combo, featuring Jain Pav Bhaji and Rawa Sheera. This ready-to-eat combo brings together a rich Mumbai-style Pav Bhaji paired with a traditional sweet dessert, making it the perfect meal for travel, office lunches, hostel stays, and quick hunger cravings.'
+      },
+      {
+        id: 'jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras',
+        title: 'Jain Protein Veg Combo (Paneer Bhurji + Jeera Rice + Aam Ras)',
+        category: 'Combos',
+        price: 615,
+        mrp: 615,
+        img: 'assets/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '223g net (makes 750g)',
+        calories: '850 kcal',
+        protein: '22.0g',
+        desc: 'Enjoy a wholesome and satisfying meal with the Magic Meals Protein Veg Combo, featuring Jain Paneer Bhurji, Jeera Rice, and Aamras. This ready-to-eat combo combines protein-rich paneer, aromatic cumin rice, and the refreshing sweetness of mango, making it the perfect meal for travel, office lunches, hostel stays, and quick dining solutions.'
+      },
+      {
+        id: 'jain-royal-combo-veg-biryani-rawa-sheera',
+        title: 'Jain Royal Combo (Veg Biryani + Rawa Sheera)',
+        category: 'Combos',
+        price: 380,
+        mrp: 380,
+        img: 'assets/combos/jain-royal-combo-veg-biryani-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '175g net (makes 400g)',
+        calories: '650 kcal',
+        protein: '12.3g',
+        desc: 'Treat yourself to a royal dining experience with the Magic Meals Royal Combo, featuring Jain Veg Biryani and Rawa Sheera. This ready-to-eat combo combines the rich aroma of authentic biryani with the delightful sweetness of traditional sheera, making it perfect for travel, office lunches, hostel stays, celebrations, and quick gourmet meals.'
+      },
+      {
+        id: 'jain-royal-fusion-combo-schezwan-rice-aam-ras',
+        title: 'Jain Royal Fusion Combo (Schezwan Rice + Aam Ras)',
+        category: 'Combos',
+        price: 360,
+        mrp: 360,
+        img: 'assets/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras.jpg',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '125g net (makes 500g)',
+        calories: '520 kcal',
+        protein: '7.7g',
+        desc: 'Enjoy a unique blend of Indo-Chinese flavors and refreshing mango goodness with the Magic Meals Royal Fusion Combo, featuring Jain Schezwan Rice and Aamras. This ready-to-eat combo offers the perfect balance of bold flavors and natural sweetness, making it ideal for travel, office lunches, hostel stays, camping, and quick meals on the go.'
+      },
+      {
+        id: 'jain-classic-dinner-combo-dal-makhani-jeera-rice',
+        title: 'Jain Classic Dinner Combo (Dal Makhani + Jeera Rice)',
+        category: 'Combos',
+        price: 360,
+        mrp: 360,
+        img: 'assets/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '158g net (makes 500g)',
+        calories: '630 kcal',
+        protein: '16.5g',
+        desc: 'Enjoy the timeless combination of Dal Makhani and Jeera Rice with the Magic Meals Classic Dinner Combo. This ready-to-eat meal brings together rich, creamy Jain Dal Makhani and fragrant Jeera Rice for a wholesome North Indian dining experience. Perfect for travel, office lunches, hostel stays, camping, and quick dinners at home.'
+      },
+      {
+        id: 'jain-power-breakfast-combo-poha-upma',
+        title: 'Jain Power Breakfast Combo (Poha + Upma)',
+        category: 'Combos',
+        price: 160,
+        mrp: 160,
+        img: 'assets/combos/jain-power-breakfast-combo-poha-upma.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '160g net (makes 500g)',
+        calories: '445 kcal',
+        protein: '9.0g',
+        desc: 'Start your day with a wholesome and delicious breakfast using the Magic Meals Power Breakfast Combo, featuring Jain Poha and Jain Upma in one convenient pack. Designed for busy mornings, travel, office breaks, and outdoor adventures, this combo delivers authentic Indian flavors with quick preparation and long shelf life.'
+      },
+      {
+        id: 'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
+        title: 'Jain Punjabi Swaad Combo (Pind Ke Chole + Jeera Rice + Dal Fry)',
+        category: 'Combos',
+        price: 525,
+        mrp: 525,
+        img: 'assets/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry.jpg',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '240g net (makes 770g)',
+        calories: '880 kcal',
+        protein: '26.8g',
+        desc: 'Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and comforting Dal Fry. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
+        title: 'Jain Homestyle Combo (Veg Makhanwala + Jeera Rice + Dal Fry)',
+        category: 'Combos',
+        price: 525,
+        mrp: 525,
+        img: 'assets/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '240g net (makes 770g)',
+        calories: '890 kcal',
+        protein: '22.6g',
+        desc: 'Get the feel of a home-cooked thali in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, comforting Dal Fry, and aromatic Jeera Rice. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       }
     ];
 
@@ -1546,6 +1660,9 @@
       const related = PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
       // description copied from the old live store (product-descriptions.js); a product without one keeps p.desc
       const liveDesc = (window.PRODUCT_DESCRIPTIONS || {})[p.id] || null;
+      // combos: the same 3-column page as the singles (pdp/pdp-scene.js, flat mode): the pouches together instead of the 3D pouch,
+      // then the vertical image cards. Images come from tools/compose-combo-gallery.py (pdp/combos/<id>/).
+      const comboStage = (p.category === 'Combos' && window.COMBO_PDP && window.COMBO_PDP[p.id]) ? `pdp/combos/${p.id}/stage.webp` : null;
 
       return `
         <div class="pdp-view">
@@ -1571,6 +1688,14 @@
                   <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('front')">Front</button>
                   <button type="button" class="pdp-3d-btn" onclick="window.snapPdp3d('back')">Back</button>
                 </div>
+                <div class="card-badges">
+                  ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
+                </div>
+                <div class="veg-corner"></div>
+              </div>
+            ` : comboStage ? `
+              <div class="pdp-gallery pdp-gallery-flat" id="pdpGalleryFlat">
+                <img class="pdp-flat-img" src="${comboStage}" alt="${p.title}" width="1200" height="1200">
                 <div class="card-badges">
                   ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
                 </div>

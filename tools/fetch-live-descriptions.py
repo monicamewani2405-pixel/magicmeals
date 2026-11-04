@@ -62,13 +62,21 @@ MAP = {
     'royal-combo-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera-2',
     'royal-combo-tawa-pulao-aam-ras': 'tawa-pulav-and-aam-ras',
     'comfort-night-combo-dal-fry-jeera-rice': 'magic-meals-comfort-night-combo-dal-fry-jeera-rice',
+    # Jain combos (the old store sells these in addition to the regular ones with the same dishes)
+    'jain-street-style-combo-pav-bhaji-rawa-sheera': 'magic-meals-street-style-combo-pav-bhaji-rawa-sheera',
+    'jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras': 'magic-meals-protein-veg-combo-paneer-bhurji-jeera-rice-aamras',
+    'jain-royal-combo-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera',
+    'jain-royal-fusion-combo-schezwan-rice-aam-ras': 'magic-meals-royal-fusion-combo-schezwan-rice-aamras',
+    'jain-classic-dinner-combo-dal-makhani-jeera-rice': 'magic-meals-classic-dinner-combo-dal-makhani-jeera-rice',
+    'jain-power-breakfast-combo-poha-upma': 'power-breakfast-combo-poha-upma',
+    'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry': 'magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
+    'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry': 'magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
     # 'jain-light-comfort-combo' (Dal Khichdi + Tomato Soup) has no live product: not mapped on purpose
 }
 # combos on the client's list that are not on the live store: id -> (group name, [(dish name, prototype id of the single)])
 EXTRA = {
     'comfort-combo-rajma-masala-veg-biryani-gajar-halwa': ('Comfort Combo', [('Rajma Masala', 'rajma-masala'), ('Veg Biryani', 'veg-biryani'), ('Gajar Halwa', 'gajar-halwa')]),
     'street-style-combo-pav-bhaji-tawa-pulao': ('Street Style Combo', [('Pav Bhaji', 'pav-bhaji'), ('Tawa Pulao', 'tawa-pulao')]),
-    'royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras': ('Royal Combo', [('Veg Biryani', 'veg-biryani'), ('Rawa Sheera', 'rawa-sheera'), ('Tawa Pulao', 'tawa-pulao'), ('Aam Ras', 'aam-ras')]),
 }
 KEEP = {'p', 'h3', 'ul', 'ol', 'li', 'strong', 'br'}
 

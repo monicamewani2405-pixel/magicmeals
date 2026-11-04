@@ -76,12 +76,26 @@
   var ICON_RESET = '<svg ' + ICON_ATTR + '><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>';
   var ICON_DRAG = '<svg class="pdp-hint-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4"/><circle cx="12" cy="12" r="2.2"/></svg>';
 
+  // Combos: no 3D pouch. The stage keeps the same backdrop and shows one flat picture of the pouches together (the <img> main.js rendered).
+  function buildFlatStage(stage, oldGallery, img) {
+    stage.dataset.flat = 'true';
+    stage.innerHTML = '<div class="pdp-backdrop" aria-hidden="true">' + PATTERN + '</div><div class="pdp-glow" aria-hidden="true"></div><div class="pdp-flat"></div>';
+    ['.card-badges', '.veg-corner'].forEach(function (sel) {
+      var n = oldGallery.querySelector(sel);
+      if (n) stage.appendChild(n);
+    });
+    img.removeAttribute('class');
+    stage.querySelector('.pdp-flat').appendChild(img);
+    return stage;
+  }
+
   function buildStage(cfg, min, oldGallery, canvasBox) {
     var stage = el('div', 'pdp-stage');
     stage.style.setProperty('--pdp-tint', cfg.tint);
     stage.style.setProperty('--pdp-ink', cfg.ink);
     stage.dataset.face = 'front';
     stage.dataset.chips = 'on';
+    if (cfg.flat) return buildFlatStage(stage, oldGallery, canvasBox);
     var ing = buildIngredients(cfg);
     stage.innerHTML =
       '<div class="pdp-backdrop" aria-hidden="true">' + PATTERN + '</div>' +
@@ -173,8 +187,8 @@
     var view = root.querySelector('.pdp-view');
     var layout = view && view.querySelector('.pdp-layout');
     var info = layout && layout.querySelector('.pdp-info');
-    var oldGallery = layout && layout.querySelector('#pdpGallery3D');
-    var canvasBox = oldGallery && oldGallery.querySelector('#pdp3dCanvasContainer');
+    var oldGallery = layout && layout.querySelector(cfg.flat ? '#pdpGalleryFlat' : '#pdpGallery3D');
+    var canvasBox = oldGallery && (cfg.flat ? oldGallery.querySelector('.pdp-flat-img') : oldGallery.querySelector('#pdp3dCanvasContainer'));
     if (!info || !canvasBox) return false;
 
     var min = prepMinutes(cfg, slug);

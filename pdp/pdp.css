@@ -56,6 +56,8 @@
   z-index: 1;
 }
 
+.pdp-flat { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; justify-content: center; padding: 4% 3%; }
+.pdp-flat img { display: block; width: 100%; height: 100%; object-fit: contain; }   /* combos: the pouches together, in place of the 3D pouch */
 .pdp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; z-index: 3; cursor: grab; }
 .pdp-canvas:active { cursor: grabbing; }
 .pdp-canvas-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1; }
