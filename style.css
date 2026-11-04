@@ -3559,6 +3559,38 @@ body[data-view="home"] .homepage-sheet {
 /* ==========================================================================
    PDP: HOW IT WORKS VIDEO & PREPARATION SHOWCASE (Option 2)
    ========================================================================== */
+/* product description copied from the old live store (product-descriptions.js) */
+.pdp-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.pdp-specs dt { color: var(--text-muted); font-weight: 600; }
+.pdp-specs dd { margin: 0; color: var(--text); font-weight: 700; }
+.pdp-longdesc {
+  margin-top: 48px;
+  max-width: 860px;
+}
+.pdp-longdesc-title {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+.pdp-longdesc-body { color: var(--text); font-size: 15px; line-height: 1.7; }
+.pdp-longdesc-body p { margin: 0 0 12px; }
+.pdp-longdesc-body h3 { font-size: 17px; margin: 22px 0 8px; }
+.pdp-longdesc-body ul, .pdp-longdesc-body ol { margin: 0 0 12px; padding-left: 22px; }
+.pdp-longdesc-body li { margin-bottom: 4px; }
+@media (max-width: 768px) {
+  .pdp-longdesc { margin-top: 36px; }
+  .pdp-specs { grid-template-columns: 1fr; }
+}
+
 .pdp-hiw-section {
   margin-top: 48px;
   background: var(--bg-alt);

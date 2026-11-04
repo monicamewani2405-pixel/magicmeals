@@ -684,6 +684,378 @@
         calories: '470 kcal',
         protein: '9.8g',
         desc: 'Tangy and savory desi-Chinese combo: 1x Vegetable Hot & Sour Soup (makes 220ml) + 1x Wok Fried Rice with Manchurian Gravy (makes 280g).'
+      },
+      // Combos from the client's list. Price, text and photo are copied from magicmeals.shop; mrp = price (no markdown on the live store).
+      // calories / protein = sum of the single packs (derived, not printed on a combo label); no reviews yet.
+      {
+        id: 'north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera',
+        title: 'North Indian Combo (Paneer Butter Masala + Jeera Rice + Rawa Sheera)',
+        category: 'Combos',
+        price: 500,
+        mrp: 500,
+        img: 'assets/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpeg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '241g net (makes 650g)',
+        calories: '960 kcal',
+        protein: '23.8g',
+        desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. This wholesome ready-to-eat combo combines a rich curry, aromatic rice, and a traditional dessert for a satisfying meal experience in minutes.'
+      },
+      {
+        id: 'north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera',
+        title: 'North Indian Combo (Paneer Butter Masala + Tawa Pulao + Rawa Sheera)',
+        category: 'Combos',
+        price: 570,
+        mrp: 570,
+        img: 'assets/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 710g)',
+        calories: '1020 kcal',
+        protein: '25.3g',
+        desc: 'Enjoy a restaurant-style North Indian meal at home or on the go with the Magic Meals North Indian Combo featuring creamy Paneer Butter Masala, flavorful Tawa Pulao, and soft, sweet Rawa Sheera dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and office breaks.'
+      },
+      {
+        id: 'north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera',
+        title: 'North Indian Combo (Paneer Butter Masala + Veg Biryani + Rawa Sheera)',
+        category: 'Combos',
+        price: 570,
+        mrp: 570,
+        img: 'assets/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 720g)',
+        calories: '1030 kcal',
+        protein: '26.3g',
+        desc: 'Turn any day into a feast with the Magic Meals North Indian Combo featuring creamy Paneer Butter Masala, fragrant Veg Biryani, and soft, sweet Rawa Sheera dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
+      },
+      {
+        id: 'comfort-combo-rajma-masala-jeera-rice-gajar-halwa',
+        title: 'Comfort Combo (Rajma Masala + Jeera Rice + Gajar Halwa)',
+        category: 'Combos',
+        price: 515,
+        mrp: 515,
+        img: 'assets/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '253g net (makes 650g)',
+        calories: '1030 kcal',
+        protein: '23.0g',
+        desc: 'Enjoy the comforting flavors of North India with the Magic Meals Desi Lunch Box featuring rich Rajma Masala, aromatic Jeera Rice, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'comfort-combo-rajma-masala-tawa-pulao-gajar-halwa',
+        title: 'Comfort Combo (Rajma Masala + Tawa Pulao + Gajar Halwa)',
+        category: 'Combos',
+        price: 580,
+        mrp: 580,
+        img: 'assets/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '255g net (makes 690g)',
+        calories: '1090 kcal',
+        protein: '24.5g',
+        desc: 'Bring home-style comfort to any mealtime with the Magic Meals Comfort Combo featuring hearty Rajma Masala, flavorful Tawa Pulao, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa',
+        title: 'Comfort Combo (Rajma Masala + Fried Rice with Manchurian Gravy + Gajar Halwa)',
+        category: 'Combos',
+        price: 570,
+        mrp: 570,
+        img: 'assets/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '260g net (makes 710g)',
+        calories: '1110 kcal',
+        protein: '25.0g',
+        desc: 'Can’t pick between desi and Indo-Chinese? Get both with the Magic Meals Comfort Combo featuring hearty Rajma Masala, Fried Rice with Manchurian Gravy, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa',
+        title: 'Homestyle Combo (Veg Makhanwala + Jeera Rice + Gajar Halwa)',
+        category: 'Combos',
+        price: 535,
+        mrp: 535,
+        img: 'assets/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa.jpeg',
+        jain: false,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '228g net (makes 650g)',
+        calories: '930 kcal',
+        protein: '17.8g',
+        desc: 'Savor the comforting taste of home with the Magic Meals Homestyle Combo featuring creamy Veg Makhanwala, aromatic Jeera Rice, and rich Gajar Halwa. A wholesome ready-to-eat Indian meal perfect for lunch, dinner, travel, office meals, and instant cravings.'
+      },
+      {
+        id: 'homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa',
+        title: 'Homestyle Combo (Veg Makhanwala + Tawa Pulao + Gajar Halwa)',
+        category: 'Combos',
+        price: 599,
+        mrp: 599,
+        img: 'assets/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 700g)',
+        calories: '990 kcal',
+        protein: '19.3g',
+        desc: 'Get the feel of a home-cooked meal in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, flavorful Tawa Pulao, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa',
+        title: 'Homestyle Combo (Veg Makhanwala + Veg Biryani + Gajar Halwa)',
+        category: 'Combos',
+        price: 605,
+        mrp: 605,
+        img: 'assets/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 710g)',
+        calories: '1000 kcal',
+        protein: '20.3g',
+        desc: 'Bring a family-style spread to your table in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, fragrant Veg Biryani, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and instant hunger cravings.'
+      },
+      {
+        id: 'street-style-combo-pav-bhaji-rawa-sheera',
+        title: 'Street Style Combo (Pav Bhaji + Rawa Sheera)',
+        category: 'Combos',
+        price: 330,
+        mrp: 330,
+        img: 'assets/combos/street-style-combo-pav-bhaji-rawa-sheera.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '165g net (makes 400g)',
+        calories: '600 kcal',
+        protein: '11.6g',
+        desc: 'Savor the perfect combination of Mumbai-style Pav Bhaji and delicious sweet Rawa Sheera with the Magic Meals Desi Lunch Box. A comforting ready-to-eat meal combo ideal for lunch, travel, office meals, and instant cravings.'
+      },
+      {
+        id: 'protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras',
+        title: 'Protein Veg Combo (Paneer Bhurji + Jeera Rice + Aam Ras)',
+        category: 'Combos',
+        price: 599,
+        mrp: 599,
+        img: 'assets/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '223g net (makes 750g)',
+        calories: '850 kcal',
+        protein: '22.0g',
+        desc: 'Enjoy a delicious and protein-rich Indian meal combo featuring spicy Paneer Bhurji, aromatic Jeera Rice, and sweet refreshing Aamras. The Magic Meals Protein Veg Combo is perfect for lunch, dinner, travel, office meals, and instant hunger cravings.'
+      },
+      {
+        id: 'protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras',
+        title: 'Protein Veg Combo (Paneer Bhurji + Veg Biryani + Aam Ras)',
+        category: 'Combos',
+        price: 620,
+        mrp: 620,
+        img: 'assets/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '225g net (makes 720g)',
+        calories: '920 kcal',
+        protein: '24.5g',
+        desc: 'Power through your day with the Magic Meals Protein Veg Combo featuring protein-rich Paneer Bhurji, fragrant Veg Biryani, and sweet mango Aamras dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras',
+        title: 'Protein Veg Combo (Paneer Bhurji + Tawa Pulao + Aam Ras)',
+        category: 'Combos',
+        price: 680,
+        mrp: 680,
+        img: 'assets/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '225g net (makes 710g)',
+        calories: '910 kcal',
+        protein: '23.5g',
+        desc: 'Keep your energy up with the Magic Meals Protein Veg Combo featuring protein-rich Paneer Bhurji, flavorful Tawa Pulao, and sweet mango Aamras dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa',
+        title: 'Punjabi Swaad Combo (Pind Ke Chole + Jeera Rice + Gajar Halwa)',
+        category: 'Combos',
+        price: 470,
+        mrp: 470,
+        img: 'assets/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa.jpeg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '228g net (makes 650g)',
+        calories: '920 kcal',
+        protein: '22.0g',
+        desc: 'Experience authentic Punjabi flavors with the Magic Meals Punjabi Swaad Combo featuring spicy Pind Ke Chole, aromatic Jeera Rice, and delicious Gajar Halwa. A complete ready-to-eat vegetarian meal perfect for lunch, dinner, travel, office meals, and quick cravings.'
+      },
+      {
+        id: 'punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa',
+        title: 'Punjabi Swaad (Pind Ke Chole + Tawa Pulao + Gajar Halwa)',
+        category: 'Combos',
+        price: 535,
+        mrp: 535,
+        img: 'assets/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 700g)',
+        calories: '980 kcal',
+        protein: '23.5g',
+        desc: 'Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, flavorful Tawa Pulao, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa',
+        title: 'Punjabi Swaad (Pind Ke Chole + Veg Biryani + Gajar Halwa)',
+        category: 'Combos',
+        price: 540,
+        mrp: 540,
+        img: 'assets/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '245g net (makes 710g)',
+        calories: '990 kcal',
+        protein: '24.5g',
+        desc: 'Enjoy the hearty flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, fragrant Veg Biryani, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice',
+        title: 'Classic Dinner Combo (Tomato Soup + Dal Makhani + Jeera Rice)',
+        category: 'Combos',
+        price: 400,
+        mrp: 400,
+        img: 'assets/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '188g net (makes 830g)',
+        calories: '740 kcal',
+        protein: '19.0g',
+        desc: 'Enjoy a wholesome and satisfying dinner with the Magic Meals Classic Dinner Combo. Featuring a comforting Tomato Soup, rich and creamy Dal Makhani, and aromatic Jeera Rice, this combo offers a complete restaurant-style meal that’s ready in minutes.'
+      },
+      {
+        id: 'royal-combo-veg-biryani-rawa-sheera',
+        title: 'Royal Combo (Veg Biryani + Rawa Sheera)',
+        category: 'Combos',
+        price: 355,
+        mrp: 355,
+        img: 'assets/combos/royal-combo-veg-biryani-rawa-sheera.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '175g net (makes 400g)',
+        calories: '650 kcal',
+        protein: '12.3g',
+        desc: 'Treat yourself to a flavorful royal meal with the Magic Meals Royal Combo featuring aromatic Veg Biryani paired with delicious Rawa Sheera. A satisfying ready-to-eat vegetarian combo perfect for lunch, dinner, travel, and festive cravings.'
+      },
+      {
+        id: 'royal-combo-tawa-pulao-aam-ras',
+        title: 'Royal Combo (Tawa Pulao + Aam Ras)',
+        category: 'Combos',
+        price: 365,
+        mrp: 365,
+        img: 'assets/combos/royal-combo-tawa-pulao-aam-ras.jpeg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '147g net (makes 500g)',
+        calories: '520 kcal',
+        protein: '8.0g',
+        desc: 'Enjoy a delicious Indian feast with the Magic Meals Royal Combo featuring flavorful Tawa Pulav paired with rich and refreshing Aam Ras. A perfect ready-to-eat vegetarian combo crafted for quick meals, travel, and satisfying cravings.'
+      },
+      {
+        id: 'comfort-night-combo-dal-fry-jeera-rice',
+        title: 'Comfort Night Combo (Dal Fry + Jeera Rice)',
+        category: 'Combos',
+        price: 300,
+        mrp: 300,
+        img: 'assets/combos/comfort-night-combo-dal-fry-jeera-rice.jpeg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '133g net (makes 500g)',
+        calories: '550 kcal',
+        protein: '14.8g',
+        desc: 'End your day with a simple, satisfying meal with the Magic Meals Comfort Night Combo, featuring Jain Dal Fry and Jeera Rice. This ready-to-eat combo combines wholesome lentils and aromatic cumin rice, making it the perfect comfort meal for dinner, travel, office lunches, hostel stays, and quick hunger cravings.'
+      },
+      // The three combos from the client's list that are not on magicmeals.shop: picture composed from the real pouch fronts,
+      // price is a PLACEHOLDER, description wording is ours (steps are the dishes' own). Shopify status: draft until the price is confirmed.
+      {
+        id: 'comfort-combo-rajma-masala-veg-biryani-gajar-halwa',
+        title: 'Comfort Combo (Rajma Masala + Veg Biryani + Gajar Halwa)',
+        category: 'Combos',
+        price: 580,   // PLACEHOLDER price: confirm with the client
+        mrp: 580,
+        img: 'assets/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '255g net (makes 700g)',
+        calories: '1100 kcal',
+        protein: '25.5g',
+        desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Comfort Combo featuring Rajma Masala, Veg Biryani and Gajar Halwa. Just add hot water to each pouch and enjoy in minutes.'
+      },
+      {
+        id: 'street-style-combo-pav-bhaji-tawa-pulao',
+        title: 'Street Style Combo (Pav Bhaji + Tawa Pulao)',
+        category: 'Combos',
+        price: 375,   // PLACEHOLDER price: confirm with the client
+        mrp: 375,
+        img: 'assets/combos/street-style-combo-pav-bhaji-tawa-pulao.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '165g net (makes 510g)',
+        calories: '620 kcal',
+        protein: '13.3g',
+        desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Street Style Combo featuring Pav Bhaji and Tawa Pulao. Just add hot water to each pouch and enjoy in minutes.'
+      },
+      {
+        id: 'royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras',
+        title: 'Royal Combo (Veg Biryani + Rawa Sheera + Tawa Pulao + Aam Ras)',
+        category: 'Combos',
+        price: 650,   // PLACEHOLDER price: confirm with the client
+        mrp: 650,
+        img: 'assets/combos/royal-combo-veg-biryani-rawa-sheera-tawa-pulao-aam-ras.jpg',
+        jain: false,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '305g net (makes 920g)',
+        calories: '1170 kcal',
+        protein: '20.3g',
+        desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Royal Combo featuring Veg Biryani, Rawa Sheera, Tawa Pulao and Aam Ras. Just add hot water to each pouch and enjoy in minutes.'
       }
     ];
 
@@ -822,7 +1194,7 @@
 
     function renderCard(p) {
       const q = getQtyInCart(p.id);
-      const discount = Math.round(((p.mrp - p.price) / p.mrp) * 100);
+      const discount = p.mrp > p.price ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;   // no markdown: show the price only
       return `
         <div class="product-card" data-p="${p.id}">
           <div class="card-thumb">
@@ -845,8 +1217,8 @@
             <div class="card-weight">${p.weight}</div>
             <div class="card-price-row">
               <span class="card-price">${formatINR(p.price)}</span>
-              <span class="card-mrp">${formatINR(p.mrp)}</span>
-              <span class="card-discount">${discount}% OFF</span>
+              ${discount > 0 ? `<span class="card-mrp">${formatINR(p.mrp)}</span>
+              <span class="card-discount">${discount}% OFF</span>` : ''}
             </div>
             <div class="card-action">
               ${q > 0 ? `
@@ -1172,6 +1544,8 @@
       const packPrice = calcPrice(p, State.pdpPack);
       const totalAmount = packPrice * State.pdpQty;
       const related = PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
+      // description copied from the old live store (product-descriptions.js); a product without one keeps p.desc
+      const liveDesc = (window.PRODUCT_DESCRIPTIONS || {})[p.id] || null;
 
       return `
         <div class="pdp-view">
@@ -1224,7 +1598,8 @@
               </div>
 
               <h1 class="pdp-title">${p.title}</h1>
-              <p class="pdp-desc">${p.desc}</p>
+              <p class="pdp-desc">${liveDesc ? liveDesc.intro : p.desc}</p>
+              ${liveDesc && liveDesc.specs.length ? `<dl class="pdp-specs">${liveDesc.specs.map(s => `<div><dt>${s[0]}</dt><dd>${s[1]}</dd></div>`).join('')}</dl>` : ''}
 
               <!-- Pack Variant Selector -->
               <div style="margin-top:6px;">
@@ -1303,6 +1678,13 @@
               </div>
             </div>
           </div>
+
+          ${liveDesc && liveDesc.html ? `
+            <section class="pdp-longdesc" aria-label="About ${p.title}">
+              <h2 class="pdp-longdesc-title">About this product</h2>
+              <div class="pdp-longdesc-body">${liveDesc.html}</div>
+            </section>
+          ` : ''}
 
           <!-- How It Works Video & Prep Showcase -->
           <section class="pdp-hiw-section" aria-label="How Magic Meals Works">
