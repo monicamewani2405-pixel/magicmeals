@@ -108,6 +108,7 @@ class Clean(HTMLParser):
         self.out = []
 
     def handle_starttag(self, tag, attrs):
+        tag = 'strong' if tag == 'b' else tag                      # <b> is bold too
         if tag in KEEP:
             self.out.append('<%s>' % tag)
 
@@ -116,6 +117,7 @@ class Clean(HTMLParser):
             self.out.append('<br>')
 
     def handle_endtag(self, tag):
+        tag = 'strong' if tag == 'b' else tag
         if tag in KEEP and tag != 'br':
             self.out.append('</%s>' % tag)
 

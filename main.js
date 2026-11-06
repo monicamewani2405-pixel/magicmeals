@@ -25,7 +25,7 @@
         mrp: 260,
         img: 'pouch-art/paneer-butter-masala-front-processed.png',
         imgBack: 'pouch-art/paneer-butter-masala-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.9,
         reviews: 215,
@@ -42,7 +42,7 @@
         mrp: 280,
         img: 'pouch-art/paneer-bhurji-front-processed.png',
         imgBack: 'pouch-art/paneer-bhurji-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.9,
         reviews: 140,
@@ -59,7 +59,7 @@
         mrp: 240,
         img: 'pouch-art/pind-ke-chhole-front-processed.png',
         imgBack: 'pouch-art/pind-ke-chhole-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Spicy',
         rating: 4.8,
         reviews: 104,
@@ -76,7 +76,7 @@
         mrp: 225,
         img: 'pouch-art/pav-bhaji-front-processed.png',
         imgBack: 'pouch-art/pav-bhaji-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.9,
         reviews: 290,
@@ -110,7 +110,7 @@
         mrp: 255,
         img: 'pouch-art/veg-kadhai-front-processed.png',
         imgBack: 'pouch-art/veg-kadhai-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Spicy',
         rating: 4.7,
         reviews: 88,
@@ -127,7 +127,7 @@
         mrp: 260,
         img: 'pouch-art/veg-makhanwala-front-processed.png',
         imgBack: 'pouch-art/veg-makhanwala-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Mild',
         rating: 4.9,
         reviews: 112,
@@ -233,7 +233,7 @@
         mrp: 220,
         img: 'pouch-art/dal-khichdi-front-processed.png',
         imgBack: 'pouch-art/dal-khichdi-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Mild',
         rating: 4.9,
         reviews: 184,
@@ -250,7 +250,7 @@
         mrp: 199,
         img: 'pouch-art/masala-khichdi-kadhi-front-processed.png',
         imgBack: 'pouch-art/masala-khichdi-kadhi-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.8,
         reviews: 110,
@@ -267,7 +267,7 @@
         mrp: 260,
         img: 'pouch-art/veg-biryani-front-processed.png',
         imgBack: 'pouch-art/veg-biryani-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.7,
         reviews: 130,
@@ -352,7 +352,7 @@
         mrp: 225,
         img: 'pouch-art/schezwan-rice-front-processed.png',
         imgBack: 'pouch-art/schezwan-rice-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Spicy',
         rating: 4.8,
         reviews: 96,
@@ -369,7 +369,7 @@
         mrp: 230,
         img: 'pouch-art/mexican-rice-front-processed.png',
         imgBack: 'pouch-art/mexican-rice-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.7,
         reviews: 65,
@@ -439,7 +439,7 @@
         mrp: 140,
         img: 'pouch-art/upma-front-processed.png',
         imgBack: 'pouch-art/upma-back-processed.png',
-        jain: true,
+        jain: false,
         spice: 'Mild',
         rating: 4.8,
         reviews: 90,
@@ -872,7 +872,7 @@
         price: 299,
         mrp: 350,
         img: 'assets/combos/combo_idli_upma.jpg',
-        jain: true,
+        jain: false,
         spice: 'Mild',
         rating: 4.9,
         reviews: 82,
@@ -904,7 +904,7 @@
         price: 290,
         mrp: 340,
         img: 'assets/combos/combo_soup_mexican_rice.jpg',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 4.8,
         reviews: 58,
@@ -954,7 +954,7 @@
         price: 500,
         mrp: 500,
         img: 'assets/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpeg',
-        jain: true,
+        jain: false,
         spice: 'Medium',
         rating: 0,
         reviews: 0,
@@ -2106,12 +2106,10 @@
               <!-- Pincode Delivery Check -->
               <div class="pincode-box">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-muted);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <input type="text" id="pincodeInput" placeholder="Enter Pincode for Delivery Time" maxlength="6">
+                <input type="text" id="pincodeInput" placeholder="Enter Pincode for Delivery Time" maxlength="6" inputmode="numeric" autocomplete="postal-code" aria-label="PIN code">
                 <button class="pincode-btn" id="checkPincodeBtn">Check</button>
               </div>
-              <div id="pincodeResult" style="font-size:12.5px; color:var(--brand-primary); font-weight:600; display:none;">
-                ✓ Express delivery available in 2-3 business days. COD available.
-              </div>
+              <div id="pincodeResult" class="pincode-result" role="status" aria-live="polite" hidden></div>
 
               <!-- Nutrition & Meal Facts -->
               <ul class="pdp-facts-grid">
@@ -2146,15 +2144,15 @@
                 </ol>
               </div>
               `}
+              ${liveDesc && liveDesc.html ? `
+                <section class="pdp-longdesc" aria-label="Description of ${p.title}">
+                  <h2 class="pdp-longdesc-title">Description</h2>
+                  <div class="pdp-longdesc-body">${liveDesc.html}</div>
+                </section>
+              ` : ''}
             </div>
           </div>
 
-          ${liveDesc && liveDesc.html ? `
-            <section class="pdp-longdesc" aria-label="About ${p.title}">
-              <h2 class="pdp-longdesc-title">About this product</h2>
-              <div class="pdp-longdesc-body">${liveDesc.html}</div>
-            </section>
-          ` : ''}
 
           ${p.noWater ? '' : `
           <!-- How It Works Video & Prep Showcase -->
@@ -3388,12 +3386,19 @@
       }
 
       if (target.id === 'checkPincodeBtn') {
-        const pin = $('#pincodeInput').value.trim();
-        if (pin.length === 6 && /^\d+$/.test(pin)) {
-          $('#pincodeResult').style.display = 'block';
-        } else {
-          alert('Please enter a valid 6-digit Indian PIN code.');
-        }
+        // courier answer through /api/pincode when it is set up, else the zone estimate from Mumbai (pincode.js)
+        const pinValue = $('#pincodeInput').value;
+        const box = $('#pincodeResult');
+        box.textContent = 'Checking…';
+        box.className = 'pincode-result';
+        box.hidden = false;
+        (window.MMPincode ? window.MMPincode.check(pinValue) : Promise.resolve({ ok: false, text: 'The delivery check is not available right now.' })).then(res => {
+          const input = $('#pincodeInput'), out = $('#pincodeResult');
+          if (!input || !out || input.value !== pinValue) return;          // the visitor changed the PIN or left the page meanwhile
+          out.textContent = (res.ok ? '✓ ' : '') + res.text + (res.ok ? ' Free delivery on orders above ₹499.' : '');
+          out.className = 'pincode-result ' + (res.ok ? 'is-ok' : 'is-warn');
+          out.hidden = false;
+        });
         return;
       }
 
