@@ -1281,28 +1281,11 @@ window.PRODUCT_DESCRIPTIONS = {
   ],
   "html": "<p>The Magic Meals Classic Dinner Combo brings you one of India’s most loved comfort meals in a convenient ready-to-eat format. Featuring Jain Dal Makhani paired with Jeera Rice, this combo delivers rich flavors, satisfying nutrition, and effortless preparation.</p><p>The Dal Makhani is prepared using black gram lentils, aromatic spices, and a creamy makhani-style gravy that offers authentic restaurant-style taste. Paired with fragrant Jeera Rice seasoned with cumin seeds, it creates a hearty and fulfilling meal suitable for any time of the day.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick meal solution, this combo allows you to enjoy delicious North Indian food within minutes. Simply add hot water and enjoy a comforting meal anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office meals, and everyday convenience.</p><h3>Why Choose Magic Meals Classic Dinner Combo?</h3><ul><li>Classic Dal Makhani and Rice combination</li><li>Authentic Jain recipe</li><li>Rich and creamy restaurant-style flavor</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Easy to carry and store</li><li>Lightweight travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for office, travel, trekking, hostels, and home use</li></ul><h3>Preparation Instructions</h3><p><strong>Dal Makhani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 165 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol>"
  },
- "jain-power-breakfast-combo-poha-upma": {
-  "slug": "power-breakfast-combo-poha-upma",
-  "intro": "Start your day with a wholesome and delicious breakfast using the Magic Meals Power Breakfast Combo, featuring Jain Poha and Jain Upma in one convenient pack. Designed for busy mornings, travel, office breaks, and outdoor adventures, this combo delivers authentic Indian flavors with quick preparation and long shelf life.",
-  "specs": [
-   [
-    "Net Weight",
-    "160g (Poha 100g + Upma 60g)"
-   ],
-   [
-    "Rehydrated Weight",
-    "500g"
-   ],
-   [
-    "Cuisine Type",
-    "Indian Breakfast Combo"
-   ],
-   [
-    "Shelf Life",
-    "12 Months"
-   ]
-  ],
-  "html": "<p>The <strong>Magic Meals Power Breakfast Combo</strong> brings together two of India’s most loved breakfast dishes — <strong>Jain Poha and Jain Upma</strong> — in a convenient ready-to-eat format.</p><p>Prepared using quality ingredients and traditional recipes, this combo offers the perfect balance of taste, nutrition, and convenience. Whether you’re heading to work, traveling, trekking, camping, staying in a hostel, or simply looking for a quick breakfast solution, Magic Meals ensures you enjoy a satisfying meal anytime, anywhere.</p><p>The lightweight packaging makes it ideal for travel, while the long shelf life ensures you always have a delicious meal ready when hunger strikes. Simply add hot water and enjoy fresh, flavorful Poha and Upma in just a few minutes.</p><h3>Why Choose Magic Meals Power Breakfast Combo?</h3><ul><li>Includes 2 classic Indian breakfast favorites</li><li>Authentic Jain recipe</li><li>Ready to eat in minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Easy to carry and store</li><li>Travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for home, office, travel, and outdoor activities</li></ul><h4></h4><h4>Preparation Instructions</h4><p><strong>Jain Poha</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 150ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jain Upma</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Ad 190 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ "jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry": {
+  "slug": "magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry",
+  "intro": "Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and comforting Dal Fry. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.",
+  "specs": [],
+  "html": "<p>Magic Meals Punjabi Swaad Combo brings together the hearty flavors of Punjab with tangy Pind Ke Chole, comforting Dal Fry, and aromatic Jeera Rice in one convenient, Jain-friendly ready-to-eat combo pack. <br> <br>Prepared using authentic Indian spices, premium ingredients, and traditional recipes, this combo delivers homemade-style taste with easy and quick preparation. Pind Ke Chole is a Punjabi classic, and with simple dal and jeera rice it makes a full, satisfying plate, whether you are at work, traveling, camping, or relaxing at home. <br> <br>Its lightweight packaging and long shelf life make it ideal for office lunches, treks and camping trips, travel food, hostel meals, group tours, and instant Indian meal cravings. <br> <br>Simply add hot water and enjoy a Jain-friendly Punjabi-style meal in minutes. <br> <br>Why Choose Magic Meals Punjabi Swaad Combo? <br>• Includes Pind Ke Chole, Jeera Rice &amp; Dal Fry <br>• Jain-friendly meal combo <br>• Complete Punjabi meal combo <br>• Authentic homemade-style taste <br>• Ready in minutes with just hot water <br>• No preservatives, no MSG <br>• Lightweight and travel-friendly <br>• Convenient instant meal solution <br>• Perfect for lunch and dinner <br>• Long shelf life for easy storage </p>"
  },
  "jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry": {
   "slug": "magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry",
@@ -1658,5 +1641,33 @@ window.PRODUCT_DESCRIPTIONS = {
   "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Street Style Combo featuring Pav Bhaji and Tawa Pulao. Just add hot water to each pouch and enjoy in minutes.",
   "specs": [],
   "html": "<h3>Preparation Instructions</h3><p><strong>Pav Bhaji</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 170ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Tawa Pulao</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 163ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera": {
+  "slug": null,
+  "placeholder": true,
+  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
+  "specs": [],
+  "html": "<h3>Preparation Instructions</h3><p><strong>Jain Paneer Butter Masala</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 167 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera": {
+  "slug": null,
+  "placeholder": true,
+  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain Comfort Combo featuring Jain Rajma Masala, Jeera Rice and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
+  "specs": [],
+  "html": "<h3>Preparation Instructions</h3><p><strong>Jain Rajma Masala</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 180 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-light-comfort-combo-dal-khichdi-rawa-sheera": {
+  "slug": null,
+  "placeholder": true,
+  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain Light & Comfort Combo featuring Jain Dal Khichdi and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
+  "specs": [],
+  "html": "<h3>Preparation Instructions</h3><p><strong>Jain Dal Khichdi</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 183 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-biryani-royale-veg-biryani-rawa-sheera": {
+  "slug": null,
+  "placeholder": true,
+  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain Biryani Royale featuring Jain Veg Biryani and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
+  "specs": [],
+  "html": "<h3>Preparation Instructions</h3><p><strong>Jain Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
  }
 };

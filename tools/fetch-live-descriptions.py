@@ -67,7 +67,7 @@ MAP = {
     'jain-royal-combo-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera',
     'jain-royal-fusion-combo-schezwan-rice-aam-ras': 'magic-meals-royal-fusion-combo-schezwan-rice-aamras',
     'jain-classic-dinner-combo-dal-makhani-jeera-rice': 'magic-meals-classic-dinner-combo-dal-makhani-jeera-rice',
-    'jain-power-breakfast-combo-poha-upma': 'power-breakfast-combo-poha-upma',
+    'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry': 'magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
     'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry': 'magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
     'jain-biryani-royale-veg-biryani-aam-ras': 'magic-meals-biryani-royale-veg-biryani-aam-ras',
     'jain-indo-chinese-combo-schezwan-rice-rawa-sheera': 'magic-meals-indo-chinese-combo-schezwan-rice-rawa-sheera',
@@ -87,6 +87,10 @@ MAP = {
 EXTRA = {
     'comfort-combo-rajma-masala-veg-biryani-gajar-halwa': ('Comfort Combo', [('Rajma Masala', 'rajma-masala'), ('Veg Biryani', 'veg-biryani'), ('Gajar Halwa', 'gajar-halwa')]),
     'street-style-combo-pav-bhaji-tawa-pulao': ('Street Style Combo', [('Pav Bhaji', 'pav-bhaji'), ('Tawa Pulao', 'tawa-pulao')]),
+    'jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera': ('Jain North Indian Combo', [('Jain Paneer Butter Masala', 'jain-paneer-butter-masala'), ('Jeera Rice', 'jeera-rice'), ('Rawa Sheera', 'rawa-sheera')]),
+    'jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera': ('Jain Comfort Combo', [('Jain Rajma Masala', 'jain-rajma-masala'), ('Jeera Rice', 'jeera-rice'), ('Rawa Sheera', 'rawa-sheera')]),
+    'jain-light-comfort-combo-dal-khichdi-rawa-sheera': ('Jain Light & Comfort Combo', [('Jain Dal Khichdi', 'jain-dal-khichdi'), ('Rawa Sheera', 'rawa-sheera')]),
+    'jain-biryani-royale-veg-biryani-rawa-sheera': ('Jain Biryani Royale', [('Jain Veg Biryani', 'jain-veg-biryani'), ('Rawa Sheera', 'rawa-sheera')]),
 }
 KEEP = {'p', 'h3', 'h4', 'ul', 'ol', 'li', 'strong', 'br'}
 # heat-and-serve breads: the live short description carries the ingredients and how to prepare, so it is shown in front of the long one

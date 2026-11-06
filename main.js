@@ -1275,8 +1275,8 @@
         id: 'jain-street-style-combo-pav-bhaji-rawa-sheera',
         title: 'Jain Street Style Combo (Pav Bhaji + Rawa Sheera)',
         category: 'Combos',
-        price: 330,
-        mrp: 330,
+        price: 350,
+        mrp: 350,
         img: 'assets/combos/jain-street-style-combo-pav-bhaji-rawa-sheera.jpg',
         jain: true,
         spice: 'Medium',
@@ -1291,8 +1291,8 @@
         id: 'jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras',
         title: 'Jain Protein Veg Combo (Paneer Bhurji + Jeera Rice + Aam Ras)',
         category: 'Combos',
-        price: 599,
-        mrp: 599,
+        price: 615,
+        mrp: 615,
         img: 'assets/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpg',
         jain: true,
         spice: 'Medium',
@@ -1352,27 +1352,11 @@
         desc: 'Enjoy the timeless combination of Dal Makhani and Jeera Rice with the Magic Meals Classic Dinner Combo. This ready-to-eat meal brings together rich, creamy Jain Dal Makhani and fragrant Jeera Rice for a wholesome North Indian dining experience. Perfect for travel, office lunches, hostel stays, camping, and quick dinners at home.'
       },
       {
-        id: 'jain-power-breakfast-combo-poha-upma',
-        title: 'Jain Power Breakfast Combo (Poha + Upma)',
-        category: 'Combos',
-        price: 160,
-        mrp: 160,
-        img: 'assets/combos/jain-power-breakfast-combo-poha-upma.jpg',
-        jain: true,
-        spice: 'Mild',
-        rating: 0,
-        reviews: 0,
-        weight: '160g net (makes 500g)',
-        calories: '445 kcal',
-        protein: '9.0g',
-        desc: 'Start your day with a wholesome and delicious breakfast using the Magic Meals Power Breakfast Combo, featuring Jain Poha and Jain Upma in one convenient pack. Designed for busy mornings, travel, office breaks, and outdoor adventures, this combo delivers authentic Indian flavors with quick preparation and long shelf life.'
-      },
-      {
         id: 'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
         title: 'Jain Homestyle Combo (Veg Makhanwala + Jeera Rice + Dal Fry)',
         category: 'Combos',
-        price: 590,
-        mrp: 590,
+        price: 525,
+        mrp: 525,
         img: 'assets/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry.jpg',
         jain: true,
         spice: 'Mild',
@@ -1448,6 +1432,86 @@
         calories: '590 kcal',
         protein: '20.2g',
         desc: 'Keep dinner light and wholesome with the Magic Meals Light Dinner Combo featuring comforting Dal Khichdi and Moong Masala. A Jain-friendly ready-to-eat combo meal perfect for easy dinners, hostel nights, travel, and simple comfort-food cravings.'
+      },
+      {
+        id: 'jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera',
+        title: 'Jain North Indian Combo (Paneer Butter Masala + Jeera Rice + Rawa Sheera)',
+        category: 'Combos',
+        price: 550,
+        mrp: 550,
+        img: 'assets/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '233g net (makes 690g)',
+        calories: '960 kcal',
+        protein: '23.8g',
+        desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals Jain North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. A wholesome, Jain-friendly ready-to-eat combo that brings together a rich curry, aromatic rice, and a traditional dessert for a satisfying meal in minutes.'
+      },
+      {
+        id: 'jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera',
+        title: 'Jain Comfort Combo (Rajma Masala + Jeera Rice + Rawa Sheera)',
+        category: 'Combos',
+        price: 500,
+        mrp: 500,
+        img: 'assets/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '220g net (makes 690g)',
+        calories: '1020 kcal',
+        protein: '22.8g',
+        desc: 'Enjoy the comforting flavors of North India with the Magic Meals Jain Comfort Combo featuring rich Jain Rajma Masala, aromatic Jeera Rice, and delicious Rawa Sheera dessert. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
+      },
+      {
+        id: 'jain-light-comfort-combo-dal-khichdi-rawa-sheera',
+        title: 'Jain Light & Comfort Combo (Dal Khichdi + Rawa Sheera)',
+        category: 'Combos',
+        price: 330,
+        mrp: 330,
+        img: 'assets/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Mild',
+        rating: 0,
+        reviews: 0,
+        weight: '142g net (makes 440g)',
+        calories: '620 kcal',
+        protein: '14.0g',
+        desc: 'Keep it light, warm, and comforting with the Magic Meals Jain Light & Comfort Combo featuring wholesome Jain Dal Khichdi and warm, sweet Rawa Sheera. A Jain-friendly ready-to-eat combo meal perfect for light lunches, dinners, travel, and group tours.'
+      },
+      {
+        id: 'jain-biryani-royale-veg-biryani-rawa-sheera',
+        title: 'Jain Biryani Royale (Veg Biryani + Rawa Sheera)',
+        category: 'Combos',
+        price: 435,
+        mrp: 435,
+        img: 'assets/combos/jain-biryani-royale-veg-biryani-rawa-sheera.jpg',
+        jain: true,
+        spice: 'Medium',
+        rating: 0,
+        reviews: 0,
+        weight: '165g net (makes 440g)',
+        calories: '650 kcal',
+        protein: '12.3g',
+        desc: 'Treat yourself to the Magic Meals Biryani Royale featuring fragrant Jain Veg Biryani and warm, sweet Rawa Sheera dessert. A Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
+      },
+      {
+        id: 'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
+        title: 'Jain Punjabi Swaad Combo (Pind Ke Chole + Jeera Rice + Dal Fry)',
+        category: 'Combos',
+        price: 525,
+        mrp: 525,
+        img: 'assets/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry.jpg',
+        jain: true,
+        spice: 'Spicy',
+        rating: 0,
+        reviews: 0,
+        weight: '240g net (makes 770g)',
+        calories: '880 kcal',
+        protein: '26.8g',
+        desc: 'Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and comforting Dal Fry. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       // The regular (non-Jain) Desi Lunch Box from magicmeals.shop. Calories / protein = sum of the single packs (derived).
     ];
@@ -1939,6 +2003,8 @@
       const related = PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
       // description copied from the old live store (product-descriptions.js); a product without one keeps p.desc
       const liveDesc = (window.PRODUCT_DESCRIPTIONS || {})[p.id] || null;
+      // ingredients (product-ingredients.js): shown at the end of the Description; a combo lists the ingredients of each pouch
+      const ingredientsHtml = window.MMIngredients ? window.MMIngredients.html(p, id => (PRODUCTS.find(x => x.id === id) || {}).title) : '';
       // combos: the same 3-column page as the singles (pdp/pdp-scene.js, flat mode): the pouches together instead of the 3D pouch,
       // then the vertical image cards. Images come from tools/compose-combo-gallery.py (pdp/combos/<id>/).
       const comboStage = (p.category === 'Combos' && window.COMBO_PDP && window.COMBO_PDP[p.id]) ? `pdp/combos/${p.id}/stage.webp` : null;
@@ -2080,10 +2146,10 @@
                 </ol>
               </div>
               `}
-              ${liveDesc && liveDesc.html ? `
+              ${(liveDesc && liveDesc.html) || ingredientsHtml ? `
                 <section class="pdp-longdesc" aria-label="Description of ${p.title}">
                   <h2 class="pdp-longdesc-title">Description</h2>
-                  <div class="pdp-longdesc-body">${liveDesc.html}</div>
+                  <div class="pdp-longdesc-body">${liveDesc && liveDesc.html ? liveDesc.html : ''}${ingredientsHtml}</div>
                 </section>
               ` : ''}
             </div>
