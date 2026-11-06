@@ -35,7 +35,6 @@ MAP = {
     'gajar-halwa': 'magic-meals-gajar-halwa-ready-to-eat-instant-carrot-dessert-delight',
     'aam-ras': 'magic-meals-aam-ras', 'rawa-sheera': 'magic-meals-rawa-sheera',
     # combos with the same dishes on the live store
-    'punjabi-comfort-combo': 'dal-makhani-tawa-pulao',
     'south-indian-breakfast-combo': 'magic-meals-power-breakfast-combo-idli-sambar-upma',
     'maharashtrian-nashta-combo': 'magic-meals-power-breakfast-combo-mumbai-misal-kanda-poha',
     'fiesta-bowl-combo': 'magic-meals-global-fusion-combo-sweet-corn-soup-mexican-rice',
@@ -69,7 +68,6 @@ MAP = {
     'jain-royal-fusion-combo-schezwan-rice-aam-ras': 'magic-meals-royal-fusion-combo-schezwan-rice-aamras',
     'jain-classic-dinner-combo-dal-makhani-jeera-rice': 'magic-meals-classic-dinner-combo-dal-makhani-jeera-rice',
     'jain-power-breakfast-combo-poha-upma': 'power-breakfast-combo-poha-upma',
-    'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry': 'magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
     'jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry': 'magic-meal-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry',
     'jain-biryani-royale-veg-biryani-aam-ras': 'magic-meals-biryani-royale-veg-biryani-aam-ras',
     'jain-indo-chinese-combo-schezwan-rice-rawa-sheera': 'magic-meals-indo-chinese-combo-schezwan-rice-rawa-sheera',
@@ -84,8 +82,6 @@ MAP = {
     'jain-veg-biryani': 'jain-veg-biryani-ready-to-eat', 'jain-veg-kadhai': 'jain-veg-kadhai-ready-to-eat',
     'jain-veg-makhanwala': 'jain-veg-makhanwala',
     'paratha': 'paratha', 'gujarati-thepla': 'authentic-gujarati-thepla',
-    'desi-lunch-box-paneer-butter-masala-jeera-rice-rawa-sheera': 'aneer-butter-masala-jeera-rice-rawa-sheera',
-    # 'jain-light-comfort-combo' (Dal Khichdi + Tomato Soup) has no live product: not mapped on purpose
 }
 # combos on the client's list that are not on the live store: id -> (group name, [(dish name, prototype id of the single)])
 EXTRA = {

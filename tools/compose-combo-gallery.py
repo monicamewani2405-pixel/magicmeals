@@ -57,7 +57,7 @@ JAIN_COMBOS = {'north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera'}
 def jain(d):
     return 'jain-poha' if d == 'kanda-poha' else 'jain-' + d if d in JAIN_POUCH else d
 # titles that do not spell out their dishes
-OVERRIDE = {'jain-light-comfort-combo': ['dal-khichdi', 'tomato-soup']}
+OVERRIDE = {}
 
 
 def combos():
