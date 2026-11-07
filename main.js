@@ -890,9 +890,9 @@
         rating: 0,
         reviews: 0,
         weight: '241g net (makes 650g)',
-        calories: '771 kcal',
-        protein: '12.9g',
-        desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. This wholesome ready-to-eat combo combines a rich curry, aromatic rice, and a traditional dessert for a satisfying meal experience in minutes.'
+        calories: '1058 kcal',
+        protein: '22.9g',
+        desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals North Indian Combo featuring Paneer Butter Masala, Jeera Rice, and Rawa Sheera. This wholesome ready-to-eat combo combines a rich curry, aromatic rice, and a traditional dessert for a satisfying meal experience in minutes.'
       },
       {
         id: 'north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera',

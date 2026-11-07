@@ -51,7 +51,7 @@ DISH = {'paneer butter masala': 'paneer-butter-masala', 'jeera rice': 'jeera-ric
 # Jain combos use the Jain pouch (pouch-art/jain-<id>-front-processed.png, from the client's Jain mockups) for these dishes; Jeera Rice, Rawa Sheera and
 # Aam Ras are the same pack in both versions, Dal Fry and Moong Masala only exist as Jain.
 JAIN_POUCH = {'pav-bhaji', 'paneer-bhurji', 'veg-biryani', 'schezwan-rice', 'dal-makhani', 'upma', 'paneer-butter-masala', 'kanda-poha', 'pind-ke-chhole', 'veg-makhanwala', 'dal-khichdi', 'rajma-masala'}
-JAIN_COMBOS = {'north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera'}      # the old site only sells this one as Jain
+JAIN_COMBOS = set()      # (the north-indian PBM + Jeera + Rawa combo was listed here by mistake: it is the regular Paneer Butter Masala)
 
 
 def jain(d):
