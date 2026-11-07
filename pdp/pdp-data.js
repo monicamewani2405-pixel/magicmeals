@@ -240,7 +240,7 @@
       }
     },
     'dal-khichdi': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of dal khichdi with ghee and fresh coriander, seen from above, surrounded by rice, pigeon pea and green moong lentils, a tomato, cumin, mustard seeds, turmeric, curry leaves and coriander on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of dal khichdi, in soft window light' },
@@ -252,7 +252,7 @@
       }
     },
     'masala-khichdi-kadhi': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of vegetable khichdi with a small bowl of kadhi, seen from above, surrounded by rice, pigeon pea lentils, gram flour, curd, French beans, carrot, green peas, ginger, green chillies, garlic and mustard seeds on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of vegetable khichdi and a small bowl of kadhi, in soft window light' },
@@ -264,7 +264,7 @@
       }
     },
     'veg-biryani': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of veg biryani, seen from above, surrounded by cauliflower, carrot, French beans, green peas, capsicum, tomato, onion, garlic, ginger, curd and butter on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg biryani with carrot, peas and beans, in soft window light' },
@@ -276,7 +276,7 @@
       }
     },
     'jeera-rice': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of jeera rice with a little ghee, seen from above, with a small bowl of basmati rice, a dish of cumin seeds and a dish of ghee on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of jeera rice, in soft window light' },
@@ -288,7 +288,7 @@
       }
     },
     'tawa-pulao': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of tawa pulao with peas and a little butter, seen from above, surrounded by a tomato, onion, capsicum, ginger, garlic, green peas, a potato, coriander and butter on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of tawa pulao, in soft window light' },
@@ -300,7 +300,7 @@
       }
     },
     'fried-rice-manchurian': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice beside a small bowl of Manchurian gravy, seen from above, surrounded by rice, cauliflower, carrot, French beans, capsicum, onion, garlic, spring onions, celery, soy sauce and red chilli sauce on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg fried rice and a small bowl of Manchurian gravy, in soft window light' },
@@ -312,7 +312,7 @@
       }
     },
     'fried-rice': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice with cauliflower, French beans and spring onion, seen from above, surrounded by cauliflower, beans, onion, garlic, spring onions, green chillies, butter and rice on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of veg fried rice, in soft window light' },
@@ -324,7 +324,7 @@
       }
     },
     'schezwan-rice': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, carrot, garlic, ginger, dried red chillies, onion, celery, spring onions and butter on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
@@ -336,7 +336,7 @@
       }
     },
     'mexican-rice': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A cream bowl of Mexican rice with kidney beans, sweetcorn, capsicum and jalapeno slices, seen from above, surrounded by kidney beans, tomatoes, onion, green and yellow capsicum, jalapenos, sweetcorn and salsa on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a cream bowl of Mexican rice with beans and corn, in soft window light' },
@@ -348,7 +348,7 @@
       }
     },
     'jain-dal-khichdi': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of Jain dal khichdi with ghee and fresh coriander, seen from above, surrounded by rice, pigeon pea and green moong lentils, a tomato, cumin, mustard seeds, turmeric, curry leaves and coriander on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of dal khichdi, in soft window light' },
@@ -360,7 +360,7 @@
       }
     },
     'jain-masala-khichdi-kadhi': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of vegetable khichdi with a small bowl of kadhi, seen from above, surrounded by rice, pigeon pea lentils, gram flour, curd, French beans, green capsicum, green peas, a tomato, green chillies, cumin seeds and curry leaves on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of vegetable khichdi and a small bowl of kadhi, in soft window light' },
@@ -372,7 +372,7 @@
       }
     },
     'jain-schezwan-rice': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, green capsicum, French beans, a tomato, dried red chillies, celery, coriander, black peppercorns, soy sauce and butter on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
@@ -384,7 +384,7 @@
       }
     },
     'jain-veg-biryani': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of Jain veg biryani with tomato, peas, beans, cashews and peanuts, seen from above, surrounded by cabbage, a tomato, French beans, green peas, cashew nuts, peanuts, cumin seeds, red chilli powder, turmeric, butter and coriander on a dark wooden table' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg biryani with tomato, peas and beans, in soft window light' },
