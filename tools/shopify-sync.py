@@ -21,7 +21,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PACK_TITLES = {
     '1': ('default title', 'single', 'single pouch'),
     '3': ('pack of 3',),
+    '5': ('pack of 5',),
     '6': ('pack of 6',),
+    '7': ('pack of 7',),
 }
 
 
@@ -45,9 +47,21 @@ def local_products():
     return out
 
 
-def calc_price(price, pack):
+def pack_prices():
+    """pack-prices.js: products sold as Single / Pack of 3 / 5 / 7 at the old store's prices (id -> {pack: price})."""
+    t = (ROOT / 'pack-prices.js').read_text(encoding='utf-8')
+    return json.loads(t[t.index('{', t.index('PACK_PRICES')):t.rindex('}') + 1])
+
+
+def site_packs(pid, copied):
+    return ['1', '3', '5', '7'] if pid in copied else ['1', '3', '6']
+
+
+def calc_price(price, pack, pid=None, copied=None):
     """Same rule as calcPrice() in main.js. JS Math.round rounds .5 UP; Python round() rounds .5 to even, so use floor(x+0.5)."""
     import math
+    if copied and pid in copied and pack in copied[pid]:
+        return copied[pid][pack]
     return math.floor(price * 3 * 0.92 + 0.5) if pack == '3' else math.floor(price * 6 * 0.85 + 0.5) if pack == '6' else price
 
 
@@ -84,6 +98,7 @@ def main():
     domain, token, version = read_config()
     if not token:
         sys.exit('No storefrontAccessToken in shopify-config.js')
+    copied = pack_prices()
     local, shop = local_products(), {n['handle']: n for n in shopify_products(domain, token, version)}
     problems, warnings, catalog = [], [], {}
 
@@ -110,13 +125,16 @@ def main():
             problems.append(f'{pid}: Shopify has no single-pouch variant')
             continue
         for pack, v in variants.items():
-            want = calc_price(lp['price'], pack)
+            if pack not in site_packs(pid, copied):
+                warnings.append(f'{pid}: Shopify still has a Pack of {pack} variant, the website no longer sells it')
+                continue
+            want = calc_price(lp['price'], pack, pid, copied)
             if abs(v['price'] - want) > 0.5:
                 problems.append(f'{pid}: pack {pack} price. site ₹{want} / Shopify ₹{v["price"]:g}')
             expect_sku = 'MM-' + pid.upper() + ('' if pack == '1' else '-' + pack)
             if (v['sku'] or '') != expect_sku:
                 warnings.append(f'{pid}: pack {pack} SKU is "{v["sku"]}" (convention: {expect_sku})')
-        missing = [p for p in ('3', '6') if p not in variants]
+        missing = [p for p in site_packs(pid, copied)[1:] if p not in variants]
         if missing:
             warnings.append(f'{pid}: no Pack of {" / Pack of ".join(missing)} variant in Shopify, those pack sizes are blocked at checkout')
         catalog[pid] = dict(handle=n['handle'], product=n['id'], title=n['title'], variants=variants)
@@ -127,8 +145,8 @@ def main():
     print(f'{domain}  API {version}  website products {len(local)}  Shopify products {len(shop)}  matched {len(catalog)}')
     for p in problems:
         print('  PROBLEM  ', p)
-    packs_ok = sum(1 for c in catalog.values() if '3' in c['variants'] and '6' in c['variants'])
-    print(f'  pack variants: {packs_ok}/{len(catalog)} products have Pack of 3 and Pack of 6')
+    packs_ok = sum(1 for k, c in catalog.items() if all(p in c['variants'] for p in site_packs(k, copied)))
+    print(f'  pack variants: {packs_ok}/{len(catalog)} products have every pack size the website sells')
     for w in warnings:
         print('  note     ', w) if 'no Pack of' not in w else None
     print('  ' + ('ALL MATCH' if not problems else f'{len(problems)} problem(s)'))

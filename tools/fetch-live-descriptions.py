@@ -73,7 +73,7 @@ MAP = {
     'jain-indo-chinese-combo-schezwan-rice-rawa-sheera': 'magic-meals-indo-chinese-combo-schezwan-rice-rawa-sheera',
     'jain-light-comfort-combo-dal-khichdi-aam-ras': 'magic-meals-light-comfort-combo-dal-khichdi-aam-ras',
     'jain-light-dinner-combo-dal-khichdi-moong-masala': 'magic-meals-light-dinner-combo-dal-khichdi-moong-masala',
-    # the old store's Jain single dishes (separate Jain packs), the two breads and the regular Desi Lunch Box
+    # the old store's Jain single dishes (separate Jain packs), and the regular Desi Lunch Box
     'jain-dal-khichdi': 'jain-dal-khichdi-ready-to-eat', 'jain-dal-makhani': 'jain-dal-makhani-ready-to-eat',
     'jain-masala-khichdi-kadhi': 'jain-masala-khichdi-kadhi-ready-to-eat', 'jain-paneer-bhurji': 'jain-paneer-bhurji',
     'jain-paneer-butter-masala': 'jain-paneer-butter-masala', 'jain-pav-bhaji': 'jain-pav-bhaji',
@@ -81,7 +81,6 @@ MAP = {
     'jain-schezwan-rice': 'jain-schezwan-rice-ready-to-eat', 'jain-upma': 'jain-upma-ready-to-eat',
     'jain-veg-biryani': 'jain-veg-biryani-ready-to-eat', 'jain-veg-kadhai': 'jain-veg-kadhai-ready-to-eat',
     'jain-veg-makhanwala': 'jain-veg-makhanwala',
-    'paratha': 'paratha', 'gujarati-thepla': 'authentic-gujarati-thepla',
 }
 # combos on the client's list that are not on the live store: id -> (group name, [(dish name, prototype id of the single)])
 EXTRA = {
@@ -93,8 +92,7 @@ EXTRA = {
     'jain-biryani-royale-veg-biryani-rawa-sheera': ('Jain Biryani Royale', [('Jain Veg Biryani', 'jain-veg-biryani'), ('Rawa Sheera', 'rawa-sheera')]),
 }
 KEEP = {'p', 'h3', 'h4', 'ul', 'ol', 'li', 'strong', 'br'}
-# heat-and-serve breads: the live short description carries the ingredients and how to prepare, so it is shown in front of the long one
-SHORT_REST = {'paratha', 'gujarati-thepla'}
+SHORT_REST = set()       # ids whose live short description is shown in front of the long one (none now that the breads are gone)
 
 
 def fix_text(s):

@@ -2117,7 +2117,7 @@
     }
     .pack-selector {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(var(--packs, 3), 1fr);
       gap: 10px;
       margin: 8px 0;
     }
@@ -2132,6 +2132,15 @@
     .pack-opt b { font-size: 14px; display: block; }
     .pack-opt span.p-price { font-size: 15px; font-weight: 800; color: var(--text); margin-top: 4px; display: block; }
     .pack-opt small.savings { color: var(--brand-primary); font-weight: 700; font-size: 11px; display: block; }
+    /* four pack buttons (Single / 3 / 5 / 7) on one row: a little tighter */
+    .pack-selector[style*="--packs:4"] .pack-opt { padding: 10px 6px; }
+    .pack-selector[style*="--packs:4"] .pack-opt b { font-size: 13px; }
+    @media (max-width: 480px) {
+      .pack-selector[style*="--packs:4"] { gap: 6px; }
+      .pack-selector[style*="--packs:4"] .pack-opt { padding: 10px 3px; }
+      .pack-selector[style*="--packs:4"] .pack-opt b { font-size: 12px; }
+      .pack-selector[style*="--packs:4"] .pack-opt span.p-price { font-size: 13px; }
+    }
     .pack-opt[aria-pressed="true"] {
       border-color: var(--brand-primary);
       background: var(--brand-primary-tint);

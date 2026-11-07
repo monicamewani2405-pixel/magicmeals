@@ -5,11 +5,12 @@
 Reads  shopify_products.csv   (the full product data: titles, descriptions, images, tags, single-pouch price)
 Writes shopify_pack_variants.csv  for Shopify Admin > Products > Import  (tick "Overwrite existing products that have the same URL handle")
 
-Prices follow calcPrice() in main.js: Pack of 3 = price x3 -8 %, Pack of 6 = price x6 -15 %. Compare-at, weight and stock scale with the pack.
+Prices follow calcPrice() in main.js: Pack of 3 = price x3 -8 %, Pack of 6 = price x6 -15 %; products in pack-prices.js have Single / 3 / 5 / 7 at the old store's prices. Compare-at, weight and stock scale with the pack.
 SKUs follow the convention the checkout checks: MM-<ID>, MM-<ID>-3, MM-<ID>-6.
 After importing, run  python tools/shopify-sync.py  so the website's catalogue picks up the new variant ids.
 """
 import csv
+import json
 import math
 from pathlib import Path
 
@@ -17,6 +18,12 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC, OUT = ROOT / 'shopify_products.csv', ROOT / 'shopify_pack_variants.csv'
 
 PACKS = [('1', 'Single', 1, None), ('3', 'Pack of 3', 3, 0.92), ('6', 'Pack of 6', 6, 0.85)]
+PACKS_357 = [('1', 'Single', 1, None), ('3', 'Pack of 3', 3, None), ('5', 'Pack of 5', 5, None), ('7', 'Pack of 7', 7, None)]   # products in pack-prices.js
+
+
+def copied_packs():
+    t = (ROOT / 'pack-prices.js').read_text(encoding='utf-8')
+    return json.loads(t[t.index('{', t.index('PACK_PRICES')):t.rindex('}') + 1])
 VARIANT_COLS = ['Variant SKU', 'Variant Grams', 'Variant Inventory Tracker', 'Variant Inventory Qty', 'Variant Inventory Policy',
                 'Variant Fulfillment Service', 'Variant Price', 'Variant Compare At Price', 'Variant Requires Shipping',
                 'Variant Taxable', 'Variant Weight Unit']
@@ -31,6 +38,7 @@ def main():
     for r in rows:
         by_handle.setdefault(r['Handle'], []).append(r)
 
+    copied = copied_packs()
     out = []
     for handle, group in by_handle.items():
         first, rest = group[0], group[1:]
@@ -39,7 +47,7 @@ def main():
         base_grams = int(float(first['Variant Grams'] or 0))
         base_qty = int(float(first['Variant Inventory Qty'] or 0))
         variants = []
-        for pack, label, n, disc in PACKS:
+        for pack, label, n, disc in (PACKS_357 if handle in copied else PACKS):
             v = {c: '' for c in cols}
             v['Handle'] = handle
             v['Option1 Value'] = label
@@ -48,7 +56,10 @@ def main():
             v['Variant SKU'] = first['Variant SKU'] if n == 1 else f'{first["Variant SKU"]}-{pack}'
             v['Variant Grams'] = str(base_grams * n)
             v['Variant Inventory Qty'] = str(base_qty // n)
-            v['Variant Price'] = str(math.floor(base_price * n * disc + 0.5)) if disc else str(round(base_price))
+            if handle in copied and pack in copied[handle]:
+                v['Variant Price'] = str(copied[handle][pack])      # the old store's price for this pack, copied
+            else:
+                v['Variant Price'] = str(math.floor(base_price * n * disc + 0.5)) if disc else str(round(base_price))
             v['Variant Compare At Price'] = str(round(base_compare * n)) if base_compare else ''
             variants.append(v)
         top = dict(first)                 # product-level fields + first variant (Single) + first image

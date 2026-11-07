@@ -572,7 +572,7 @@
         desc: 'Golden roasted semolina simmered with pure cow ghee, milk, saffron strands, cardamom, and plump raisins.'
       },
 
-      // Jain versions of single dishes and the two breads that magicmeals.shop sells (price and text copied from there; Jain packs use the client's Jain mockups).
+      // Jain versions of single dishes that magicmeals.shop sells (price and text copied from there; Jain packs use the client's Jain mockups).
       // calories / protein of the Jain packs = the regular dish's values (ASSUMPTION, not printed on the old store); no reviews yet.
       {
         id: 'jain-dal-khichdi',
@@ -795,43 +795,6 @@
         protein: '7.8g',
         desc: 'Enjoy rich North Indian flavors with Jain Veg Makhanwala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy delicious restaurant-style taste in minutes.'
       },
-      {
-        id: 'paratha',
-        title: 'Paratha',
-        category: 'Breads',
-        price: 140,
-        mrp: 140,
-        img: 'assets/breads/paratha.jpg',
-        jain: false,
-        spice: 'Mild',
-        rating: 0,
-        reviews: 0,
-        weight: 'Ready-to-heat flatbread',
-        calories: '',
-        protein: '',
-        noWater: true,                                   // heat and serve: no hot-water steps on the page
-        shelfLife: '3 Months',                           // "best before 3 months if unopened" (old store)
-        desc: 'Flavourful, comforting, and ready in minutes. Magic Meals Paratha combines the goodness of wheat flour with aromatic jeera and ajwain for a delicious homestyle experience. Simply heat and serve with your favourite dishes.'
-      },
-      {
-        id: 'gujarati-thepla',
-        title: 'Authentic Gujarati Thepla',
-        category: 'Breads',
-        price: 160,
-        mrp: 160,
-        img: 'assets/breads/gujarati-thepla.jpg',
-        jain: false,
-        spice: 'Mild',
-        rating: 0,
-        reviews: 0,
-        weight: 'Ready-to-heat flatbread',
-        calories: '',
-        protein: '',
-        noWater: true,                                   // heat and serve: no hot-water steps on the page
-        shelfLife: '3 Months',                           // "best before 3 months if unopened" (old store)
-        desc: 'A traditional Gujarati favourite crafted for convenience. Magic Meals Thepla is packed with authentic flavours and can be enjoyed anytime, anywhere. Just heat and serve for a satisfying meal or snack.'
-      },
-
       // Meal Combos
       {
         id: 'south-indian-breakfast-combo',
@@ -1516,7 +1479,7 @@
       // The regular (non-Jain) Desi Lunch Box from magicmeals.shop. Calories / protein = sum of the single packs (derived).
     ];
 
-    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Breads', 'Combos', 'All'];
+    const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Combos', 'All'];
 
     const REVIEWS = [
       {
@@ -1541,7 +1504,7 @@
 
     
     // Valid Category List and URL/Storage Synchronization (Step 6)
-    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'];
+    const VALID_CATEGORIES = ['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'];
 
     function getInitialCategory() {
       try {
@@ -1603,7 +1566,14 @@
     const $ = s => document.querySelector(s);
     const formatINR = n => '₹' + Number(n).toLocaleString('en-IN');
 
+    // Pack sizes. Products listed in PACK_PRICES (pack-prices.js, copied from the old store) are sold as Single / Pack of 3 / 5 / 7 at exactly those prices;
+    // every other product keeps Pack of 3 / Pack of 6 at the site's own price (8% / 15% off).
+    function packPricesOf(product) { return (window.PACK_PRICES || {})[product.id] || null; }
+    function packSizes(product) { return packPricesOf(product) ? ['1', '3', '5', '7'] : ['1', '3', '6']; }
+    function packLabel(pack) { return pack === '1' ? 'Single Pouch' : 'Pack of ' + pack; }
     function calcPrice(product, packSize) {
+      const copied = packPricesOf(product);
+      if (copied && copied[packSize]) return copied[packSize];
       if (packSize === '3') return Math.round(product.price * 3 * 0.92);
       if (packSize === '6') return Math.round(product.price * 6 * 0.85);
       return product.price;
@@ -1968,7 +1938,7 @@
               Jain Only
             </button>
             <span style="width:1px; height:20px; background:var(--border); flex-shrink:0;"></span>
-            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts', 'Breads'].map(cat => {
+            ${['All', 'Combos', 'Breakfast', 'Meals', 'Rice', 'Dals', 'Soups', 'Desserts'].map(cat => {
               const isActive = State.selectedCategory === cat;
               return `
                 <button type="button" class="cat-pill ${isActive ? 'active' : ''}" data-cat="${cat}" style="white-space:nowrap; padding:7px 16px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; border:1px solid ${isActive ? 'var(--brand-primary)' : 'var(--border)'}; background:${isActive ? 'var(--brand-primary)' : 'var(--white)'}; color:${isActive ? '#ffffff' : 'var(--text-body)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:5px; box-shadow: ${isActive ? '0 2px 6px rgba(224,90,43,0.25)' : 'none'};">
@@ -2074,22 +2044,15 @@
               <!-- Pack Variant Selector -->
               <div style="margin-top:6px;">
                 <label style="font-size:13.5px; font-weight:700; color:var(--text); display:block; margin-bottom:6px;">Select Pack Size:</label>
-                <div class="pack-selector">
-                  <button class="pack-opt" data-pdp-pack="1" aria-pressed="${State.pdpPack === '1'}">
-                    <b>Single Pack</b>
-                    <span class="p-price">${formatINR(calcPrice(p, '1'))}</span>
-                    <small style="color:var(--text-muted); font-size:11px;">Standard</small>
-                  </button>
-                  <button class="pack-opt" data-pdp-pack="3" aria-pressed="${State.pdpPack === '3'}">
-                    <b>Pack of 3</b>
-                    <span class="p-price">${formatINR(calcPrice(p, '3'))}</span>
-                    <small class="savings">Save 8%</small>
-                  </button>
-                  <button class="pack-opt" data-pdp-pack="6" aria-pressed="${State.pdpPack === '6'}">
-                    <b>Pack of 6</b>
-                    <span class="p-price">${formatINR(calcPrice(p, '6'))}</span>
-                    <small class="savings">Save 15%</small>
-                  </button>
+                <div class="pack-selector" style="--packs:${packSizes(p).length}">
+                  ${packSizes(p).map(n => `
+                  <button class="pack-opt" data-pdp-pack="${n}" aria-pressed="${State.pdpPack === n}">
+                    <b>${n === '1' ? 'Single Pack' : 'Pack of ' + n}</b>
+                    <span class="p-price">${formatINR(calcPrice(p, n))}</span>
+                    ${n === '1' ? '<small style="color:var(--text-muted); font-size:11px;">Standard</small>'
+                      : packPricesOf(p) ? `<small style="color:var(--text-muted); font-size:11px;">${formatINR(Math.round(calcPrice(p, n) / Number(n)))} each</small>`
+                      : `<small class="savings">Save ${n === '3' ? 8 : 15}%</small>`}
+                  </button>`).join('')}
                 </div>
               </div>
 
@@ -2300,7 +2263,7 @@
 
       const categories = ['All', 'Rice', 'Meals', 'Breakfast', 'Dals', 'Soups'];
       const pantryMeals = PRODUCTS.filter(p => {
-        if (p.category === 'Combos' || p.category === 'Breads') return false;      // BYOB boxes are ready meals
+        if (p.category === 'Combos') return false;      // BYOB boxes are ready meals
         if (State.jainOnly && !p.jain) return false;
         if (State.byobCategory !== 'All' && p.category !== State.byobCategory) return false;
         return true;
@@ -2717,7 +2680,7 @@
           const p = PRODUCTS.find(x => x.id === id);
           if (!p) return '';
           const linePrice = calcPrice(p, pack) * qty;
-          const packLabel = pack === '3' ? 'Pack of 3' : pack === '6' ? 'Pack of 6' : 'Single Pouch';
+          const packName = packLabel(pack);
 
           return `
             <div class="cart-item-row">
@@ -2726,7 +2689,7 @@
               </div>
               <div class="cart-item-info">
                 <b>${p.title}</b>
-                <small>${packLabel}</small>
+                <small>${packName}</small>
                 <span class="item-price">${formatINR(linePrice)}</span>
               </div>
               <div class="qty-stepper" style="width:96px; min-height:34px;">

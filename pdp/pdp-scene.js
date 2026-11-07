@@ -22,13 +22,6 @@
   function fill(str, min) { return String(str).replace('{min}', min); }
 
   var ICON_ATTR = 'width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
-  var FACT_ICONS = {
-    snow:  '<svg ' + ICON_ATTR + '><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg>',
-    clock: '<svg ' + ICON_ATTR + '><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-    check: '<svg ' + ICON_ATTR + '><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16 9.5"/></svg>',
-    leaf:  '<svg ' + ICON_ATTR + '><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5-6"/></svg>'
-  };
-
   function prepMinutes(cfg, slug) {
     if (cfg.prepMinutes) return cfg.prepMinutes;       // the number printed on this product's own pack
     try { if (typeof sceneFor === 'function') { var sc = sceneFor(slug); if (sc && sc.prepMinutes) return sc.prepMinutes; } } catch (e) { /* fall through */ }
@@ -160,18 +153,10 @@
       '<h2 id="pdpInsideH" class="pdp-card-h">Inside the pack</h2><ol class="pdp-steps">' + steps + '</ol></section>';
   }
 
-  function factsCard(cfg, c, min) {
-    var items = cfg.chipsFacts.map(function (f) {
-      return '<li class="pdp-fact">' + (FACT_ICONS[f.icon] || '') + '<span>' + esc(fill(f.label, min)) + '</span></li>';
-    }).join('');
-    return '<section class="pdp-card pdp-card--facts" data-pdp-card="' + c.id + '" data-az="' + c.pouchAzimuth + '" aria-labelledby="pdpFactsH">' +
-      '<h2 id="pdpFactsH" class="pdp-card-h">Key facts</h2><ul class="pdp-facts">' + items + '</ul></section>';
-  }
-
   function buildCards(cfg, min) {
     var col = el('div', 'pdp-col-cards');
     col.innerHTML = cfg.cards.map(function (c) {
-      return c.type === 'inside' ? insideCard(cfg, c, min) : c.type === 'facts' ? factsCard(cfg, c, min) : lifestyleCard(cfg, c);
+      return c.type === 'inside' ? insideCard(cfg, c, min) : lifestyleCard(cfg, c);
     }).join('');
     return col;
   }

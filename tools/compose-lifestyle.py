@@ -182,7 +182,10 @@ def job(args):
     plate = plate.resize((W_OUT, round(plate.height * W_OUT / plate.width)), Image.LANCZOS)
     pouch = load_pouch(slug, pouch_override)
     cx, cy, wf, rot = place
-    out, pl = compose(plate, pouch, cx, cy, wf, rot)
+    if name == 'hero' and (Path(src).parent / 'hero.nopouch').exists():     # serving photo with its own decor: no pouch on it
+        out, pl = plate, dict(cx=cx, cy=cy, w=wf, rot=rot)
+    else:
+        out, pl = compose(plate, pouch, cx, cy, wf, rot)
     w, h = out.size
     sizes = ''
     if not check:

@@ -2,7 +2,7 @@
    pdp/ingredients.js: the "Ingredients" part of a product's Description.
    Single dish: its list from product-ingredients.js (window.PRODUCT_INGREDIENTS).
    Combo: one list per pouch, in the order of the pouches (window.COMBO_PDP[id].dishes).
-   A product with no list (Paratha, Thepla) gets nothing. No colours, no animation.
+   A product with no list gets nothing. No colours, no animation.
    window.MMIngredients.html(product, titleOf) -> HTML string ('' when there is nothing to show)
    ========================================================= */
 (function () {

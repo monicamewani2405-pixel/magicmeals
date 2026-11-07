@@ -4,7 +4,7 @@
 
 RAW holds the lists exactly as the client wrote them (ids = site product ids). clean() fixes spelling only (typos, one spelling
 per word, two missing commas) and sets sentence case; it never adds or removes an ingredient. The report at the end lists every fix.
-Paratha and Thepla have no list yet: they simply show no ingredients. Jain Dal Tadka on the client's list is the site's Dal Fry
+Jain Dal Tadka on the client's list is the site's Dal Fry
 (client confirmed: same pack, keep the name Dal Fry). Combos are not stored: pdp/ingredients.js builds them from their pouches.
 """
 import json

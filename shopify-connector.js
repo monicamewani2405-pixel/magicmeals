@@ -46,7 +46,7 @@
     });
   }
 
-  var PACK_LABEL = { '1': 'single pouch', '3': 'Pack of 3', '6': 'Pack of 6' };
+  var PACK_LABEL = { '1': 'single pouch', '3': 'Pack of 3', '5': 'Pack of 5', '6': 'Pack of 6', '7': 'Pack of 7' };
   var SINGLE_TITLES = ['default title', 'single', 'single pouch'];
 
   function money(n) { return '₹' + Number(n).toLocaleString('en-IN'); }

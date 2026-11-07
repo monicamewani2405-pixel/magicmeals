@@ -148,7 +148,7 @@
 }
 .pdp-ph b { color: var(--pdp-ink); font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
 .pdp-ph code { font-size: 13px; word-break: break-all; }
-.pdp-card--inside, .pdp-card--facts { padding: 16px; container-type: inline-size; }
+.pdp-card--inside { padding: 16px; container-type: inline-size; }
 .pdp-card-h { margin: 0 0 12px; font-size: 18px; color: var(--pdp-ink); }
 .pdp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .pdp-step { display: flex; flex-direction: column; gap: 6px; margin: 0; }
@@ -160,9 +160,6 @@
   .pdp-step { flex-direction: row; align-items: center; }
   .pdp-step img { width: 46%; flex: none; }
 }
-.pdp-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.pdp-fact { display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 8px 12px; border-radius: 14px; background: var(--white); color: var(--text); font: 600 14px/1.25 var(--font-body); border: 1px solid var(--border); }
-.pdp-fact svg { flex: none; color: var(--pdp-ink); }
 
 /* reveal: opacity + 12px y; cards are siblings of the sticky elements, never ancestors */
 .pdp-reveal .pdp-card { opacity: 0; transform: translateY(12px); transition: opacity 0.5s var(--v-ease, ease), transform 0.5s var(--v-ease, ease); }
