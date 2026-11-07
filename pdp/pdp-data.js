@@ -298,6 +298,54 @@
       placements: {
         serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
+    },
+    'fried-rice-manchurian': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice beside a small bowl of Manchurian gravy, seen from above, surrounded by rice, cauliflower, carrot, French beans, capsicum, onion, garlic, spring onions, celery, soy sauce and red chilli sauce on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg fried rice and a small bowl of Manchurian gravy, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a hotel window table beside a bowl of fried rice and a small bowl of Manchurian gravy, with the Singapore Marina Bay skyline at night seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'fried-rice': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice with cauliflower, French beans and spring onion, seen from above, surrounded by cauliflower, beans, onion, garlic, spring onions, green chillies, butter and rice on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of veg fried rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a mountain rock beside a steel bowl of fried rice and a small camp stove, with misty Andean peaks and Inca terraces at sunrise' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'schezwan-rice': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, carrot, garlic, ginger, dried red chillies, onion, celery, spring onions and butter on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a terrace table beside a bowl of Schezwan rice, with Hong Kong\'s Victoria Harbour, a red-sailed junk boat and the skyline at dusk' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'mexican-rice': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A cream bowl of Mexican rice with kidney beans, sweetcorn, capsicum and jalapeno slices, seen from above, surrounded by kidney beans, tomatoes, onion, green and yellow capsicum, jalapenos, sweetcorn and salsa on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a cream bowl of Mexican rice with beans and corn, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a folding table beside a bowl of Mexican rice, with the red-orange layers of the Grand Canyon at sunset' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
     }
   };
 
