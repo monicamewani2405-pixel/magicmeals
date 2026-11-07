@@ -346,6 +346,54 @@
       placements: {
         serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
+    },
+    'jain-dal-khichdi': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of Jain dal khichdi with ghee and fresh coriander, seen from above, surrounded by rice, pigeon pea and green moong lentils, a tomato, cumin, mustard seeds, turmeric, curry leaves and coriander on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of dal khichdi, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an overwater villa deck table beside a bowl of dal khichdi, with a turquoise Maldives lagoon at sunset' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-masala-khichdi-kadhi': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of vegetable khichdi with a small bowl of kadhi, seen from above, surrounded by rice, pigeon pea lentils, gram flour, curd, French beans, green capsicum, green peas, a tomato, green chillies, cumin seeds and curry leaves on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of vegetable khichdi and a small bowl of kadhi, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cave hotel window table beside a bowl of khichdi and a small bowl of kadhi, with hot-air balloons rising over Cappadocia at dawn' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-schezwan-rice': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, green capsicum, French beans, a tomato, dried red chillies, celery, coriander, black peppercorns, soy sauce and butter on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cabin window table beside a bowl of Schezwan rice, with a snowy pine forest and frozen lake in Hokkaido seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-veg-biryani': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of Jain veg biryani with tomato, peas, beans, cashews and peanuts, seen from above, surrounded by cabbage, a tomato, French beans, green peas, cashew nuts, peanuts, cumin seeds, red chilli powder, turmeric, butter and coriander on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg biryani with tomato, peas and beans, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rooftop table beside a bowl of veg biryani, with Marrakech rooftops, a minaret, a lantern and the Atlas mountains at dusk' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
     }
   };
 
