@@ -142,6 +142,42 @@
       placements: {
         serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
+    },
+    'tomato-soup': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of tomato soup with a swirl of cream and herbs, with a spoon, seen from above on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of tomato soup with a spoon, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a café window table beside a cup of tomato soup and a scarf, with a rainy Paris street at dusk seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'sweet-corn-soup': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of sweet corn soup topped with spring onion greens and a spoon, seen from above on a dark wooden table, with a small bowl of chilli flakes' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of sweet corn soup with spring onion, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a train window table beside a cup of sweet corn soup and a ticket, with an Alpine lake and snowy peaks seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'hot-and-sour-soup': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of hot and sour soup with shredded vegetables and a spoon, seen from above on a dark wooden table, with a small bowl of chilli flakes' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of hot and sour soup with coriander, in moody window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a mountain rock beside a steel camping mug of hot and sour soup and a small stove, with snowy peaks above a sea of cloud at sunrise' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
     }
   };
 

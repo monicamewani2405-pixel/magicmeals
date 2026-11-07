@@ -33,6 +33,9 @@ PLACE = {
     'upma': {'hero': dict(kind='hero', cx=0.815, base=0.83, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.9, h=0.4, rot=0.0, real3d=True)},
     'mumbai-misal': {'hero': dict(kind='hero', cx=0.82, base=0.83, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.4, rot=0.0, real3d=True)},
     'jain-upma': {'hero': dict(kind='hero', cx=0.155, base=0.88, h=0.36, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.88, h=0.4, rot=0.0, real3d=True)},
+    'tomato-soup': {'hero': dict(kind='hero', cx=0.83, base=0.86, h=0.38, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'sweet-corn-soup': {'hero': dict(kind='hero', cx=0.855, base=0.86, h=0.36, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'hot-and-sour-soup': {'hero': dict(kind='hero', cx=0.86, base=0.87, h=0.34, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.18, base=0.95, h=0.40, rot=0.0, real3d=True)},
 }
 OUT_BIG, OUT_SMALL = 1200, 800
 MAX_BIG, MAX_SMALL = 180 * 1024, 90 * 1024
