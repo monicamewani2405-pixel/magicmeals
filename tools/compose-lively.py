@@ -268,7 +268,8 @@ def main():
     pouch = load_pouch(slug)
     report = {}
     # serving
-    srv = improve_serving(plates / '_old' / 'hero.jpg')
+    own = plates / 'serving.png'                                  # a freshly generated serving picture wins over the old photo
+    srv = improve_serving(own if own.exists() else plates / '_old' / 'hero.jpg')
     outs = {'serving': srv}
     p3d = plates / 'pouch3d-hero.png'
     for name, cfg in PLACE[slug].items():
