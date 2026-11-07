@@ -1152,7 +1152,7 @@
       },
       {
         id: 'royal-combo-veg-biryani-rawa-sheera',
-        title: 'Royal Combo (Veg Biryani + Rawa Sheera)',
+        title: 'Biryani Royale (Veg Biryani + Rawa Sheera)',
         category: 'Combos',
         price: 355,
         mrp: 355,
@@ -1265,22 +1265,6 @@
         calories: '850 kcal',
         protein: '22.0g',
         desc: 'Enjoy a wholesome and satisfying meal with the Magic Meals Protein Veg Combo, featuring Jain Paneer Bhurji, Jeera Rice, and Aamras. This ready-to-eat combo combines protein-rich paneer, aromatic cumin rice, and the refreshing sweetness of mango, making it the perfect meal for travel, office lunches, hostel stays, and quick dining solutions.'
-      },
-      {
-        id: 'jain-royal-combo-veg-biryani-rawa-sheera',
-        title: 'Jain Royal Combo (Veg Biryani + Rawa Sheera)',
-        category: 'Combos',
-        price: 380,
-        mrp: 380,
-        img: 'assets/combos/jain-royal-combo-veg-biryani-rawa-sheera.jpg',
-        jain: true,
-        spice: 'Medium',
-        rating: 0,
-        reviews: 0,
-        weight: '175g net (makes 400g)',
-        calories: '650 kcal',
-        protein: '12.3g',
-        desc: 'Treat yourself to a royal dining experience with the Magic Meals Royal Combo, featuring Jain Veg Biryani and Rawa Sheera. This ready-to-eat combo combines the rich aroma of authentic biryani with the delightful sweetness of traditional sheera, making it perfect for travel, office lunches, hostel stays, celebrations, and quick gourmet meals.'
       },
       {
         id: 'jain-royal-fusion-combo-schezwan-rice-aam-ras',
@@ -1567,9 +1551,9 @@
     const formatINR = n => '₹' + Number(n).toLocaleString('en-IN');
 
     // Pack sizes. Products listed in PACK_PRICES (pack-prices.js, copied from the old store) are sold as Single / Pack of 3 / 5 / 7 at exactly those prices;
-    // every other product keeps Pack of 3 / Pack of 6 at the site's own price (8% / 15% off).
+    // combos have no pack options (Single only); a product without PACK_PRICES keeps Pack of 3 / Pack of 6 at the site's own price (8% / 15% off).
     function packPricesOf(product) { return (window.PACK_PRICES || {})[product.id] || null; }
-    function packSizes(product) { return packPricesOf(product) ? ['1', '3', '5', '7'] : ['1', '3', '6']; }
+    function packSizes(product) { return product.category === 'Combos' ? ['1'] : packPricesOf(product) ? ['1', '3', '5', '7'] : ['1', '3', '6']; }   // combos: one product, no pack options
     function packLabel(pack) { return pack === '1' ? 'Single Pouch' : 'Pack of ' + pack; }
     function calcPrice(product, packSize) {
       const copied = packPricesOf(product);
@@ -2041,7 +2025,8 @@
               <p class="pdp-desc">${liveDesc ? liveDesc.intro : p.desc}</p>
               ${liveDesc && liveDesc.specs.length ? `<dl class="pdp-specs">${liveDesc.specs.map(s => `<div><dt>${s[0]}</dt><dd>${s[1]}</dd></div>`).join('')}</dl>` : ''}
 
-              <!-- Pack Variant Selector -->
+              <!-- Pack Variant Selector (not shown for combos: they have no pack options) -->
+              ${packSizes(p).length > 1 ? `
               <div style="margin-top:6px;">
                 <label style="font-size:13.5px; font-weight:700; color:var(--text); display:block; margin-bottom:6px;">Select Pack Size:</label>
                 <div class="pack-selector" style="--packs:${packSizes(p).length}">
@@ -2055,6 +2040,7 @@
                   </button>`).join('')}
                 </div>
               </div>
+              ` : ''}
 
               <!-- Quantity & Add to Cart -->
               <div class="pdp-action-bar">
@@ -2680,7 +2666,7 @@
           const p = PRODUCTS.find(x => x.id === id);
           if (!p) return '';
           const linePrice = calcPrice(p, pack) * qty;
-          const packName = packLabel(pack);
+          const packName = p.category === 'Combos' ? 'Combo' : packLabel(pack);
 
           return `
             <div class="cart-item-row">

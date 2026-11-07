@@ -53,7 +53,24 @@ def pack_prices():
     return json.loads(t[t.index('{', t.index('PACK_PRICES')):t.rindex('}') + 1])
 
 
+def combo_ids():
+    """Combos are sold as one product with a single variant (no pack sizes)."""
+    ids, cur = set(), None
+    for l in (ROOT / 'main.js').read_text(encoding='utf-8').splitlines():
+        m = re.match(r"\s+id: '([^']+)',\s*$", l)
+        if m:
+            cur = m.group(1)
+        elif cur and re.match(r"\s+category: 'Combos'", l):
+            ids.add(cur)
+    return ids
+
+
+COMBOS = combo_ids()
+
+
 def site_packs(pid, copied):
+    if pid in COMBOS:
+        return ['1']
     return ['1', '3', '5', '7'] if pid in copied else ['1', '3', '6']
 
 

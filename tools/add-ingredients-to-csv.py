@@ -60,7 +60,7 @@ def main():
         if d:                                            # the same text the product page shows
             body = '<p>%s</p>%s' % (escape(d['intro'], quote=False), d['html'])
         add = block(r[0], r[0] in COMBO)
-        r[ib] = body + add
+        r[ib] = ' '.join((body + add).split())      # one line, no line breaks inside the cell (the Shopify importer handles single-line cells best)
         n += bool(add)
     o = io.StringIO()
     csv.writer(o, lineterminator=nl).writerows(rows)

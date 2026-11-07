@@ -5,7 +5,7 @@
 Reads  shopify_products.csv   (the full product data: titles, descriptions, images, tags, single-pouch price)
 Writes shopify_pack_variants.csv  for Shopify Admin > Products > Import  (tick "Overwrite existing products that have the same URL handle")
 
-Prices follow calcPrice() in main.js: Pack of 3 = price x3 -8 %, Pack of 6 = price x6 -15 %; products in pack-prices.js have Single / 3 / 5 / 7 at the old store's prices. Compare-at, weight and stock scale with the pack.
+Prices follow calcPrice() in main.js: Pack of 3 = price x3 -8 %, Pack of 6 = price x6 -15 %; single dishes in pack-prices.js have Single / 3 / 5 / 7 (n x single); combos have only the Single variant. Compare-at, weight and stock scale with the pack.
 SKUs follow the convention the checkout checks: MM-<ID>, MM-<ID>-3, MM-<ID>-6.
 After importing, run  python tools/shopify-sync.py  so the website's catalogue picks up the new variant ids.
 """
@@ -47,7 +47,9 @@ def main():
         base_grams = int(float(first['Variant Grams'] or 0))
         base_qty = int(float(first['Variant Inventory Qty'] or 0))
         variants = []
-        for pack, label, n, disc in (PACKS_357 if handle in copied else PACKS):
+        # combos are one product with ONE variant (Single); single dishes: Single / 3 / 5 / 7 (pack-prices.js)
+        packs_for = PACKS[:1] if first['Type'] == 'Combos' else PACKS_357 if handle in copied else PACKS
+        for pack, label, n, disc in packs_for:
             v = {c: '' for c in cols}
             v['Handle'] = handle
             v['Option1 Value'] = label

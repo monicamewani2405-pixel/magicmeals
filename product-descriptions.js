@@ -1103,7 +1103,7 @@ window.PRODUCT_DESCRIPTIONS = {
  },
  "royal-combo-veg-biryani-rawa-sheera": {
   "slug": "magic-meals-royal-combo-veg-biryani-rawa-sheera-2",
-  "intro": "Treat yourself to a flavorful royal meal with the Magic Meals Royal Combo featuring aromatic Veg Biryani paired with delicious Rawa Sheera. A satisfying ready-to-eat vegetarian combo perfect for lunch, dinner, travel, and festive cravings.",
+  "intro": "Treat yourself to a flavorful royal meal with the Magic Meals Biryani Royale featuring aromatic Veg Biryani paired with delicious Rawa Sheera. A satisfying ready-to-eat vegetarian combo perfect for lunch, dinner, travel, and festive cravings.",
   "specs": [
    [
     "Net Weight",
@@ -1122,7 +1122,30 @@ window.PRODUCT_DESCRIPTIONS = {
     "12 Months"
    ]
   ],
-  "html": "<p>Experience rich Indian flavors with the Magic Meals Royal Combo, a delicious ready-to-eat meal featuring fragrant Veg Biryani and traditional Rawa Sheera dessert.</p><p>Prepared using premium ingredients, aromatic spices, and authentic recipes, this combo offers the perfect balance of savory and sweet flavors. The flavorful Veg Biryani is packed with vegetables and aromatic spices, while the soft and rich Rawa Sheera adds a delightful sweet ending to your meal.</p><p>Ideal for busy lifestyles, travel, office meals, hostel stays, trekking, and emergency food storage, this combo is lightweight, easy to carry, and simple to prepare.</p><p>Just add hot water and enjoy a hot, comforting meal within minutes.</p><h3>Why Choose Magic Meals Royal Combo?</h3><ul><li>Includes Veg Biryani &amp; Rawa Sheera</li><li>Authentic Indian flavors</li><li>Ready-to-eat convenience</li><li>Quick preparation in minutes</li><li>Lightweight and travel-friendly</li><li>Long shelf life for storage</li><li>Perfect sweet and savory combo</li><li>Ideal vegetarian meal option</li></ul><h3>Preparation Instructions</h3><p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+  "html": "<p>Experience rich Indian flavors with the Magic Meals Biryani Royale, a delicious ready-to-eat meal featuring fragrant Veg Biryani and traditional Rawa Sheera dessert.</p><p>Prepared using premium ingredients, aromatic spices, and authentic recipes, this combo offers the perfect balance of savory and sweet flavors. The flavorful Veg Biryani is packed with vegetables and aromatic spices, while the soft and rich Rawa Sheera adds a delightful sweet ending to your meal.</p><p>Ideal for busy lifestyles, travel, office meals, hostel stays, trekking, and emergency food storage, this combo is lightweight, easy to carry, and simple to prepare.</p><p>Just add hot water and enjoy a hot, comforting meal within minutes.</p><h3>Why Choose Magic Meals Biryani Royale?</h3><ul><li>Includes Veg Biryani &amp; Rawa Sheera</li><li>Authentic Indian flavors</li><li>Ready-to-eat convenience</li><li>Quick preparation in minutes</li><li>Lightweight and travel-friendly</li><li>Long shelf life for storage</li><li>Perfect sweet and savory combo</li><li>Ideal vegetarian meal option</li></ul><h3>Preparation Instructions</h3><p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
+ },
+ "jain-biryani-royale-veg-biryani-rawa-sheera": {
+  "slug": "magic-meals-royal-combo-veg-biryani-rawa-sheera",
+  "intro": "Treat yourself to a royal dining experience with the Magic Meals Biryani Royale, featuring Jain Veg Biryani and Rawa Sheera. This ready-to-eat combo combines the rich aroma of authentic biryani with the delightful sweetness of traditional sheera, making it perfect for travel, office lunches, hostel stays, celebrations, and quick gourmet meals.",
+  "specs": [
+   [
+    "Net Weight",
+    "175g (Veg Biryani 90g + Rawa Sheera 85g)"
+   ],
+   [
+    "Rehydrated Weight",
+    "400g"
+   ],
+   [
+    "Cuisine Type",
+    "Indian Vegetarian Meal Combo"
+   ],
+   [
+    "Shelf Life",
+    "12 Months"
+   ]
+  ],
+  "html": "<p>Experience the flavors of a grand Indian feast with the <strong>Magic Meals Biryani Royale</strong>. This delicious ready-to-eat meal brings together <strong>Jain Veg Biryani</strong> and <strong>Rawa Sheera</strong>, creating the perfect combination of aromatic spices and traditional sweetness.</p><p>The Veg Biryani is prepared using premium rice, vegetables, and authentic Indian spices, delivering the rich aroma and flavor of a classic biryani. Paired with Rawa Sheera, a traditional dessert made with semolina, cardamom, and dry fruits, this combo offers a complete meal that satisfies both savory and sweet cravings.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick and delicious meal, this combo is ready within minutes. Just add hot water and enjoy restaurant-style flavors anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office lunches, and convenient everyday dining.</p><h4>Why Choose Magic Meals Biryani Royale?</h4><ul><li>Complete meal with dessert</li><li>Includes Veg Biryani &amp; Rawa Sheera</li><li>Authentic Jain recipe</li><li>Rich and aromatic biryani flavors</li><li>Perfect balance of savory and sweet</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul><h4>Preparation Instructions</h4><p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
  },
  "royal-combo-tawa-pulao-aam-ras": {
   "slug": "tawa-pulav-and-aam-ras",
@@ -1211,29 +1234,6 @@ window.PRODUCT_DESCRIPTIONS = {
    ]
   ],
   "html": "<p>The Magic Meals Protein Veg Combo is crafted for those who love nutritious and flavorful vegetarian meals without compromising on convenience. This complete ready-to-eat combo includes Jain Paneer Bhurji, Jeera Rice, and Aamras, delivering a perfect balance of protein, taste, and indulgence.</p><p>Relish the rich and savory flavors of Paneer Bhurji made with premium paneer and aromatic spices, paired with fragrant Jeera Rice for a satisfying meal experience. Complete your meal with delicious Aamras, a refreshing mango delicacy loved across India.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick meal at home, this combo offers restaurant-style taste with easy preparation. Just add hot water and enjoy a complete meal within minutes.</p><p>Its lightweight packaging and long shelf life make it an ideal choice for travel food, emergency food storage, office lunches, and instant meal cravings.</p><h3>Why Choose Magic Meals Protein Veg Combo?</h3><ul><li>Protein-rich vegetarian meal combo</li><li>Includes Paneer Bhurji, Jeera Rice &amp; Aamras</li><li>Authentic Jain recipe</li><li>Wholesome and satisfying meal</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul><h3>Preparation Instructions</h3><p><strong>Paneer Bhurji</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Jeera Rice</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 177ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Aamras</strong></p><ol><li>Empty contents in a bowl.</li><li>Remove oxygen absorber</li><li>Add 190ml cold water</li><li>Grind it in a mixer for 30 second</li><li>Stir well and serve</li></ol>"
- },
- "jain-royal-combo-veg-biryani-rawa-sheera": {
-  "slug": "magic-meals-royal-combo-veg-biryani-rawa-sheera",
-  "intro": "Treat yourself to a royal dining experience with the Magic Meals Royal Combo, featuring Jain Veg Biryani and Rawa Sheera. This ready-to-eat combo combines the rich aroma of authentic biryani with the delightful sweetness of traditional sheera, making it perfect for travel, office lunches, hostel stays, celebrations, and quick gourmet meals.",
-  "specs": [
-   [
-    "Net Weight",
-    "175g (Veg Biryani 90g + Rawa Sheera 85g)"
-   ],
-   [
-    "Rehydrated Weight",
-    "400g"
-   ],
-   [
-    "Cuisine Type",
-    "Indian Vegetarian Meal Combo"
-   ],
-   [
-    "Shelf Life",
-    "12 Months"
-   ]
-  ],
-  "html": "<p>Experience the flavors of a grand Indian feast with the <strong>Magic Meals Royal Combo</strong>. This delicious ready-to-eat meal brings together <strong>Jain Veg Biryani</strong> and <strong>Rawa Sheera</strong>, creating the perfect combination of aromatic spices and traditional sweetness.</p><p>The Veg Biryani is prepared using premium rice, vegetables, and authentic Indian spices, delivering the rich aroma and flavor of a classic biryani. Paired with Rawa Sheera, a traditional dessert made with semolina, cardamom, and dry fruits, this combo offers a complete meal that satisfies both savory and sweet cravings.</p><p>Whether you’re traveling, trekking, camping, working late, staying in a hostel, or simply looking for a quick and delicious meal, this combo is ready within minutes. Just add hot water and enjoy restaurant-style flavors anytime, anywhere.</p><p>Its lightweight packaging and long shelf life make it ideal for travel food, emergency food storage, office lunches, and convenient everyday dining.</p><h4>Why Choose Magic Meals Royal Combo?</h4><ul><li>Complete meal with dessert</li><li>Includes Veg Biryani &amp; Rawa Sheera</li><li>Authentic Jain recipe</li><li>Rich and aromatic biryani flavors</li><li>Perfect balance of savory and sweet</li><li>Ready in just 5–7 minutes</li><li>Just add hot water</li><li>No preservatives</li><li>No added MSG</li><li>100% natural ingredients</li><li>Lightweight and travel-friendly packaging</li><li>Long shelf life</li><li>Ideal for travel, office, hostels, trekking, and home use</li></ul><h4>Preparation Instructions</h4><p><strong>Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
  },
  "jain-royal-fusion-combo-schezwan-rice-aam-ras": {
   "slug": "magic-meals-royal-fusion-combo-schezwan-rice-aamras",
@@ -1650,12 +1650,5 @@ window.PRODUCT_DESCRIPTIONS = {
   "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain Light & Comfort Combo featuring Jain Dal Khichdi and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
   "specs": [],
   "html": "<h3>Preparation Instructions</h3><p><strong>Jain Dal Khichdi</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 183 ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
- },
- "jain-biryani-royale-veg-biryani-rawa-sheera": {
-  "slug": null,
-  "placeholder": true,
-  "intro": "Enjoy a wholesome ready-to-eat meal with the Magic Meals Jain Biryani Royale featuring Jain Veg Biryani and Rawa Sheera. Just add hot water to each pouch and enjoy in minutes.",
-  "specs": [],
-  "html": "<h3>Preparation Instructions</h3><p><strong>Jain Veg Biryani</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 160 ml hot water.</li><li>Stir thoroughly and cover for 7 minutes.</li><li>Mix well and serve hot.</li><li>Ready in just 7 minutes</li></ol><p><strong>Rawa Sheera</strong></p><ol><li>Empty contents into a bowl.</li><li>Remove oxygen absorber.</li><li>Add 65ml hot water.</li><li>Stir thoroughly and cover for 5 minutes.</li><li>Mix well and serve hot.</li></ol>"
  }
 };

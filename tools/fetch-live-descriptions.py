@@ -59,12 +59,12 @@ MAP = {
     'punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa': 'pind-ke-chole-veg-biryani-gajar-halwa',
     'classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice': 'magic-meals-classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice',
     'royal-combo-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera-2',
+    'jain-biryani-royale-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera',
     'royal-combo-tawa-pulao-aam-ras': 'tawa-pulav-and-aam-ras',
     'comfort-night-combo-dal-fry-jeera-rice': 'magic-meals-comfort-night-combo-dal-fry-jeera-rice',
     # Jain combos (the old store sells these in addition to the regular ones with the same dishes)
     'jain-street-style-combo-pav-bhaji-rawa-sheera': 'magic-meals-street-style-combo-pav-bhaji-rawa-sheera',
     'jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras': 'magic-meals-protein-veg-combo-paneer-bhurji-jeera-rice-aamras',
-    'jain-royal-combo-veg-biryani-rawa-sheera': 'magic-meals-royal-combo-veg-biryani-rawa-sheera',
     'jain-royal-fusion-combo-schezwan-rice-aam-ras': 'magic-meals-royal-fusion-combo-schezwan-rice-aamras',
     'jain-classic-dinner-combo-dal-makhani-jeera-rice': 'magic-meals-classic-dinner-combo-dal-makhani-jeera-rice',
     'jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry': 'magic-meals-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry',
@@ -89,8 +89,10 @@ EXTRA = {
     'jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera': ('Jain North Indian Combo', [('Jain Paneer Butter Masala', 'jain-paneer-butter-masala'), ('Jeera Rice', 'jeera-rice'), ('Rawa Sheera', 'rawa-sheera')]),
     'jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera': ('Jain Comfort Combo', [('Jain Rajma Masala', 'jain-rajma-masala'), ('Jeera Rice', 'jeera-rice'), ('Rawa Sheera', 'rawa-sheera')]),
     'jain-light-comfort-combo-dal-khichdi-rawa-sheera': ('Jain Light & Comfort Combo', [('Jain Dal Khichdi', 'jain-dal-khichdi'), ('Rawa Sheera', 'rawa-sheera')]),
-    'jain-biryani-royale-veg-biryani-rawa-sheera': ('Jain Biryani Royale', [('Jain Veg Biryani', 'jain-veg-biryani'), ('Rawa Sheera', 'rawa-sheera')]),
 }
+# the old store calls this pair 'Royal Combo'; here both versions are named 'Biryani Royale' (client: regular and Jain names must match)
+NAME_FIX = {'royal-combo-veg-biryani-rawa-sheera': ('Royal Combo', 'Biryani Royale'),
+            'jain-biryani-royale-veg-biryani-rawa-sheera': ('Royal Combo', 'Biryani Royale')}
 KEEP = {'p', 'h3', 'h4', 'ul', 'ol', 'li', 'strong', 'br'}
 SHORT_REST = set()       # ids whose live short description is shown in front of the long one (none now that the breads are gone)
 
@@ -175,6 +177,11 @@ def main():
                 specs.append([mm.group(1), mm.group(2)])
         extra = clean_html(rest) if pid in SHORT_REST else ''
         out[pid] = {'slug': slug, 'intro': intro, 'specs': specs, 'html': extra + clean_html(long_)}
+
+    for pid, (old_name, new_name) in NAME_FIX.items():
+        if pid in out:
+            out[pid]['intro'] = out[pid]['intro'].replace(old_name, new_name)
+            out[pid]['html'] = out[pid]['html'].replace(old_name, new_name)
 
     # Combos that have no live product. The intro is our own wording (same pattern as the live combos); the preparation steps are
     # copied from each dish's own live description, so the water amounts and times are the real ones. Marked "placeholder": true.
