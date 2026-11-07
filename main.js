@@ -13,8 +13,8 @@
         rating: 4.9,
         reviews: 168,
         weight: '95g net (makes 250g)',
-        calories: '440 kcal',
-        protein: '13.0g',
+        calories: '444 kcal',
+        protein: '12.90g',
         desc: 'Rich kidney beans slow-simmered in a robust onion, ginger, garlic, and tomato gravy infused with authentic Punjabi spices.'
       },
       {
@@ -29,9 +29,9 @@
         spice: 'Medium',
         rating: 4.9,
         reviews: 215,
-        weight: '85g net (makes 260g)',
-        calories: '380 kcal',
-        protein: '14.0g',
+        weight: '83g net (makes 260g)',
+        calories: '484 kcal',
+        protein: '15.58g',
         desc: 'Tender paneer cubes in a velvety tomato-butter gravy infused with rich cashew paste and aromatic kasuri methi.'
       },
       {
@@ -46,9 +46,9 @@
         spice: 'Medium',
         rating: 4.9,
         reviews: 140,
-        weight: '80g net (makes 250g)',
-        calories: '390 kcal',
-        protein: '15.5g',
+        weight: '90g net (makes 250g)',
+        calories: '514 kcal',
+        protein: '22.59g',
         desc: 'Crumbled cottage cheese sautéed with finely diced bell peppers, tomatoes, onions, and freshly ground Punjabi spices.'
       },
       {
@@ -63,9 +63,9 @@
         spice: 'Spicy',
         rating: 4.8,
         reviews: 104,
-        weight: '85g net (makes 260g)',
-        calories: '330 kcal',
-        protein: '12.0g',
+        weight: '70g net (makes 260g)',
+        calories: '117 kcal',
+        protein: '5.35g',
         desc: 'Robust chickpeas simmered with roasted tea leaves, dried pomegranate seeds, and Punjabi garam masala.'
       },
       {
@@ -81,8 +81,8 @@
         rating: 4.9,
         reviews: 290,
         weight: '80g net (makes 250g)',
-        calories: '290 kcal',
-        protein: '6.8g',
+        calories: '435 kcal',
+        protein: '6.88g',
         desc: 'Zesty mashed vegetable curry infused with authentic Mumbai tava masala and butter. Pair with toasted pav or roti.'
       },
       {
@@ -97,9 +97,9 @@
         spice: 'Medium',
         rating: 4.8,
         reviews: 92,
-        weight: '75g net (makes 220g)',
-        calories: '240 kcal',
-        protein: '4.5g',
+        weight: '97g net (makes 220g)',
+        calories: '461 kcal',
+        protein: '8.4g',
         desc: 'Crisp okra stir-fried with caramelized onions, roasted cumin, amchur (dry mango), and aromatic spices.'
       },
       {
@@ -114,9 +114,9 @@
         spice: 'Spicy',
         rating: 4.7,
         reviews: 88,
-        weight: '85g net (makes 260g)',
-        calories: '310 kcal',
-        protein: '8.0g',
+        weight: '70g net (makes 260g)',
+        calories: '426 kcal',
+        protein: '5.88g',
         desc: 'Assorted crisp vegetables and bell peppers tossed in a spicy, freshly pounded coriander and red chili kadhai masala.'
       },
       {
@@ -131,9 +131,9 @@
         spice: 'Mild',
         rating: 4.9,
         reviews: 112,
-        weight: '85g net (makes 260g)',
-        calories: '340 kcal',
-        protein: '7.8g',
+        weight: '70g net (makes 260g)',
+        calories: '391 kcal',
+        protein: '7.83g',
         desc: 'Garden fresh vegetables slow-cooked in a creamy, buttery tomato-cashew gravy with a hint of fragrant fenugreek.'
       },
       {
@@ -148,9 +148,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 76,
-        weight: '80g net (makes 240g)',
-        calories: '280 kcal',
-        protein: '11.0g',
+        weight: '50g net (makes 240g)',
+        calories: '150 kcal',
+        protein: '7.5g',
         desc: 'Whole green gram cooked in a light, spiced homestyle gravy. Rich in natural plant protein and dietary fiber.'
       },
 
@@ -168,8 +168,8 @@
         rating: 4.8,
         reviews: 142,
         weight: '85g net (makes 270g)',
-        calories: '360 kcal',
-        protein: '11.5g',
+        calories: '463 kcal',
+        protein: '7.31g',
         desc: 'Slow-simmered black urad lentils cooked overnight with cream, butter, and gentle ginger-garlic seasoning.'
       },
       {
@@ -184,9 +184,9 @@
         spice: 'Medium',
         rating: 4.9,
         reviews: 118,
-        weight: '80g net (makes 260g)',
-        calories: '300 kcal',
-        protein: '10.5g',
+        weight: '70g net (makes 260g)',
+        calories: '284 kcal',
+        protein: '11.7g',
         desc: 'Yellow toor dal tempered with double-shot pure desi ghee, cumin, garlic, and fiery Kashmiri red chilies.'
       },
       {
@@ -201,9 +201,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 95,
-        weight: '80g net (makes 260g)',
-        calories: '280 kcal',
-        protein: '9.8g',
+        weight: '60g net (makes 260g)',
+        calories: '262 kcal',
+        protein: '10.6g',
         desc: 'Classic yellow lentils tempered with ghee, cumin seeds, tomatoes, and fresh coriander. Simple and comforting.'
       },
       {
@@ -218,9 +218,9 @@
         spice: 'Sweet',
         rating: 4.9,
         reviews: 130,
-        weight: '80g net (makes 260g)',
-        calories: '290 kcal',
-        protein: '9.0g',
+        weight: '60g net (makes 260g)',
+        calories: '208 kcal',
+        protein: '5.89g',
         desc: 'Sweet and tangy toor dal simmered with peanuts, jaggery, dried kokum, and whole cinnamon-clove tempering.'
       },
 
@@ -237,9 +237,9 @@
         spice: 'Mild',
         rating: 4.9,
         reviews: 184,
-        weight: '80g net (makes 260g)',
-        calories: '310 kcal',
-        protein: '9.2g',
+        weight: '67g net (makes 260g)',
+        calories: '304 kcal',
+        protein: '8.13g',
         desc: 'Classic comforting yellow moong dal and basmati rice tempered with cumin and pure ghee. Feels like home in a bowl.'
       },
       {
@@ -254,9 +254,9 @@
         spice: 'Medium',
         rating: 4.8,
         reviews: 110,
-        weight: '85g net (makes 280g)',
-        calories: '320 kcal',
-        protein: '8.5g',
+        weight: '55g net (makes 280g)',
+        calories: '203 kcal',
+        protein: '6.1g',
         desc: 'Traditional spiced rice-lentil khichdi accompanied by sweet-tangy Gujarati yogurt kadhi.'
       },
       {
@@ -271,9 +271,9 @@
         spice: 'Medium',
         rating: 4.7,
         reviews: 130,
-        weight: '85g net (makes 270g)',
-        calories: '340 kcal',
-        protein: '7.5g',
+        weight: '90g net (makes 270g)',
+        calories: '450 kcal',
+        protein: '7.52g',
         desc: 'Long-grain fragrant basmati rice layered with garden vegetables, caramelized flavors, and whole aromatic spices.'
       },
       {
@@ -288,9 +288,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 84,
-        weight: '75g net (makes 250g)',
-        calories: '270 kcal',
-        protein: '5.0g',
+        weight: '73g net (makes 250g)',
+        calories: '290 kcal',
+        protein: '2.11g',
         desc: 'Fluffy long-grain aged basmati rice tempered with pure desi cow ghee and roasted royal cumin seeds.'
       },
       {
@@ -305,9 +305,9 @@
         spice: 'Medium',
         rating: 4.8,
         reviews: 124,
-        weight: '85g net (makes 260g)',
-        calories: '330 kcal',
-        protein: '6.5g',
+        weight: '87g net (makes 260g)',
+        calories: '359 kcal',
+        protein: '7.64g',
         desc: 'Basmati rice tossed on a high-heat iron griddle with fresh vegetables, pav bhaji masala, and butter.'
       },
       {
@@ -322,9 +322,9 @@
         spice: 'Spicy',
         rating: 4.7,
         reviews: 86,
-        weight: '90g net (makes 280g)',
-        calories: '350 kcal',
-        protein: '7.0g',
+        weight: '70g net (makes 280g)',
+        calories: '275 kcal',
+        protein: '7.4g',
         desc: 'Desi-Chinese wok rice tossed with scallions and paired with flavorful Manchurian gravy.'
       },
       {
@@ -339,9 +339,9 @@
         spice: 'Medium',
         rating: 4.7,
         reviews: 78,
-        weight: '80g net (makes 260g)',
-        calories: '320 kcal',
-        protein: '6.0g',
+        weight: '70g net (makes 260g)',
+        calories: '232 kcal',
+        protein: '4.7g',
         desc: 'Wok-tossed basmati rice with finely shredded cabbage, carrots, bell peppers, soy sauce, and white pepper.'
       },
       {
@@ -356,9 +356,9 @@
         spice: 'Spicy',
         rating: 4.8,
         reviews: 96,
-        weight: '80g net (makes 260g)',
-        calories: '330 kcal',
-        protein: '6.2g',
+        weight: '85g net (makes 260g)',
+        calories: '315 kcal',
+        protein: '6.0g',
         desc: 'Spicy wok rice tossed with authentic homemade red chili Schezwan sauce, ginger, and crunchy celery.'
       },
       {
@@ -373,9 +373,9 @@
         spice: 'Medium',
         rating: 4.7,
         reviews: 65,
-        weight: '80g net (makes 260g)',
-        calories: '310 kcal',
-        protein: '6.8g',
+        weight: '70g net (makes 260g)',
+        calories: '299 kcal',
+        protein: '4.2g',
         desc: 'Long-grain rice infused with ripe tomatoes, sweet corn, red kidney beans, bell peppers, and smoked paprika.'
       },
 
@@ -392,9 +392,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 98,
-        weight: '70g net (makes 220g)',
-        calories: '260 kcal',
-        protein: '5.2g',
+        weight: '100g net (makes 220g)',
+        calories: '220 kcal',
+        protein: '5.0g',
         desc: 'Flattened rice tempered with crunchy peanuts, curry leaves, onions, and fresh lemon. Light yet satisfying.'
       },
       {
@@ -411,7 +411,7 @@
         reviews: 0,
         weight: '100g net (makes 250g)',
         calories: '175 kcal',
-        protein: '3g',
+        protein: '2.6g',
         desc: 'Jain-friendly flattened rice poha with green chilli, lemon, cumin, mustard seed, turmeric and curry leaves. Just add hot water.'
       },
       {
@@ -426,9 +426,9 @@
         spice: 'Mild',
         rating: 4.9,
         reviews: 160,
-        weight: '75g net (makes 240g)',
-        calories: '280 kcal',
-        protein: '8.0g',
+        weight: '55g net (makes 240g)',
+        calories: '233 kcal',
+        protein: '4.0g',
         desc: 'Pillowy mini steamed idlis accompanied by aromatic vegetable lentil sambar. Authentic Udupi taste.'
       },
       {
@@ -443,9 +443,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 90,
-        weight: '70g net (makes 230g)',
-        calories: '270 kcal',
-        protein: '6.0g',
+        weight: '60g net (makes 230g)',
+        calories: '152 kcal',
+        protein: '2.19g',
         desc: 'Roasted semolina tempered with mustard seeds, curry leaves, ginger, cashews, and garden vegetables in pure ghee.'
       },
       {
@@ -460,9 +460,9 @@
         spice: 'Spicy',
         rating: 4.9,
         reviews: 145,
-        weight: '80g net (makes 260g)',
-        calories: '310 kcal',
-        protein: '9.5g',
+        weight: '50g net (makes 260g)',
+        calories: '250 kcal',
+        protein: '5g',
         desc: 'Sprouted moth beans simmered in a zesty, spicy rassa (curry). Perfect with pav and crunchy farsan.'
       },
 
@@ -479,9 +479,9 @@
         spice: 'Mild',
         rating: 4.6,
         reviews: 75,
-        weight: '40g net (makes 200ml)',
-        calories: '110 kcal',
-        protein: '2.5g',
+        weight: '30g net (makes 200ml)',
+        calories: '100 kcal',
+        protein: '2.09g',
         desc: 'Silky farm-fresh tomato soup lightly seasoned with black pepper and mild aromatic herbs.'
       },
       {
@@ -496,9 +496,9 @@
         spice: 'Mild',
         rating: 4.8,
         reviews: 82,
-        weight: '45g net (makes 220ml)',
-        calories: '130 kcal',
-        protein: '3.0g',
+        weight: '30g net (makes 220ml)',
+        calories: '104 kcal',
+        protein: '0.89g',
         desc: 'Velvety soup loaded with crushed tender American sweet corn kernels, spring onions, and gentle white pepper.'
       },
       {
@@ -513,9 +513,9 @@
         spice: 'Spicy',
         rating: 4.7,
         reviews: 68,
-        weight: '45g net (makes 220ml)',
-        calories: '120 kcal',
-        protein: '2.8g',
+        weight: '30g net (makes 220ml)',
+        calories: '106 kcal',
+        protein: '1.04g',
         desc: 'Tangy, spicy soup infused with dark soy, vinegar, black pepper, shredded cabbage, carrots, and mushrooms.'
       },
 
@@ -532,9 +532,9 @@
         spice: 'Sweet',
         rating: 5.0,
         reviews: 240,
-        weight: '75g net (makes 180g)',
-        calories: '320 kcal',
-        protein: '5.0g',
+        weight: '85g net (makes 180g)',
+        calories: '427 kcal',
+        protein: '4.79g',
         desc: 'Sweet winter carrots slow-cooked in pure cow ghee, whole milk mawa, cardamom, and roasted cashews.'
       },
       {
@@ -550,8 +550,8 @@
         rating: 4.9,
         reviews: 195,
         weight: '60g net (makes 200ml)',
-        calories: '190 kcal',
-        protein: '1.5g',
+        calories: '70 kcal',
+        protein: '0.22g',
         desc: '100% natural pulp crafted from authentic Ratnagiri Alphonso mangoes. Zero artificial essence.'
       },
       {
@@ -566,14 +566,14 @@
         spice: 'Sweet',
         rating: 4.9,
         reviews: 115,
-        weight: '75g net (makes 190g)',
-        calories: '310 kcal',
-        protein: '4.8g',
+        weight: '85g net (makes 190g)',
+        calories: '284 kcal',
+        protein: '5.19g',
         desc: 'Golden roasted semolina simmered with pure cow ghee, milk, saffron strands, cardamom, and plump raisins.'
       },
 
       // Jain versions of single dishes that magicmeals.shop sells (price and text copied from there; Jain packs use the client's Jain mockups).
-      // calories / protein of the Jain packs = the regular dish's values (ASSUMPTION, not printed on the old store); no reviews yet.
+      // calories / protein per serving = the Nutrition panel printed on each pack (tools/sync-nutrition.py); no reviews yet.
       {
         id: 'jain-dal-khichdi',
         title: 'Jain Dal Khichdi',
@@ -587,8 +587,8 @@
         rating: 0,
         reviews: 0,
         weight: '67g net (makes 250g)',
-        calories: '310 kcal',
-        protein: '9.2g',
+        calories: '290 kcal',
+        protein: '6.9g',
         desc: 'Enjoy wholesome comfort food with Jain Dal Khichdi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal is perfect for travel, office lunches, quick dinners, and healthy eating. Just add hot water and enjoy delicious homemade-style khichdi in minutes.'
       },
       {
@@ -604,8 +604,8 @@
         rating: 0,
         reviews: 0,
         weight: '85g net (makes 250g)',
-        calories: '360 kcal',
-        protein: '11.5g',
+        calories: '338 kcal',
+        protein: '11.7g',
         desc: 'Enjoy rich Punjabi flavors with Jain Dal Makhani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy creamy dal makhani in minutes.'
       },
       {
@@ -621,8 +621,8 @@
         rating: 0,
         reviews: 0,
         weight: '55g net (makes 250g)',
-        calories: '320 kcal',
-        protein: '8.5g',
+        calories: '90 kcal',
+        protein: '1.68g',
         desc: 'Enjoy the comforting taste of Jain Masala Khichdi Kadhi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal combines flavorful masala khichdi with delicious kadhi for a wholesome Indian dining experience. Just add hot water and enjoy in minutes.'
       },
       {
@@ -638,8 +638,8 @@
         rating: 0,
         reviews: 0,
         weight: '90g net (makes 250g)',
-        calories: '390 kcal',
-        protein: '15.5g',
+        calories: '170 kcal',
+        protein: '8.34g',
         desc: 'Enjoy rich flavors and wholesome goodness with Jain Paneer Bhurji by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal is perfect for quick lunches, dinners, travel, and office meals. Just add hot water and enjoy authentic taste in minutes.'
       },
       {
@@ -655,8 +655,8 @@
         rating: 0,
         reviews: 0,
         weight: '83g net (makes 250g)',
-        calories: '380 kcal',
-        protein: '14.0g',
+        calories: '197 kcal',
+        protein: '5.58g',
         desc: 'Enjoy rich restaurant-style flavor with Jain Paneer Butter Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick meals, travel, office lunches, and dinner cravings. Just add hot water and enjoy authentic taste in minutes.'
       },
       {
@@ -672,8 +672,8 @@
         rating: 0,
         reviews: 0,
         weight: '80g net (makes 250g)',
-        calories: '290 kcal',
-        protein: '6.8g',
+        calories: '96 kcal',
+        protein: '2.14g',
         desc: 'Enjoy the iconic taste of Mumbai street food in a Jain-friendly version with Jain Pav Bhaji by Magic Meals. Made without onion and garlic, this ready-to-eat meal delivers rich flavor and convenience. Just add hot water and enjoy a delicious meal in minutes.'
       },
       {
@@ -689,8 +689,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '330 kcal',
-        protein: '12.0g',
+        calories: '323 kcal',
+        protein: '12.6g',
         desc: 'Enjoy authentic Punjabi flavors with Jain Pind ke Chole by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy rich Indian taste in minutes.'
       },
       {
@@ -706,8 +706,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '440 kcal',
-        protein: '13.0g',
+        calories: '97 kcal',
+        protein: '3.42g',
         desc: 'Enjoy the rich and comforting taste of Jain Rajma Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick lunches, dinners, travel, and office meals. Just add hot water and enjoy authentic Indian flavors in minutes.'
       },
       {
@@ -723,8 +723,8 @@
         rating: 0,
         reviews: 0,
         weight: '65g net (makes 250g)',
-        calories: '330 kcal',
-        protein: '6.2g',
+        calories: '241 kcal',
+        protein: '4.57g',
         desc: 'Enjoy Indo-Chinese flavors with Jain Schezwan Rice by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy delicious schezwan rice in minutes.'
       },
       {
@@ -740,8 +740,8 @@
         rating: 0,
         reviews: 0,
         weight: '60g net (makes 250g)',
-        calories: '270 kcal',
-        protein: '6.0g',
+        calories: '152 kcal',
+        protein: '2.19g',
         desc: 'Enjoy a wholesome and quick meal with Jain Instant Upma by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik breakfast is perfect for Jain diets, travel, and busy lifestyles. Just add hot water and enjoy authentic taste in minutes.'
       },
       {
@@ -757,8 +757,8 @@
         rating: 0,
         reviews: 0,
         weight: '90g net (makes 250g)',
-        calories: '340 kcal',
-        protein: '7.5g',
+        calories: '159 kcal',
+        protein: '2.62g',
         desc: 'Enjoy the rich aroma and authentic taste of Jain Veg Biryani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy flavorful biryani in minutes.'
       },
       {
@@ -774,8 +774,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '310 kcal',
-        protein: '8.0g',
+        calories: '426 kcal',
+        protein: '5.88g',
         desc: 'Enjoy bold Indian flavors with Jain Veg Kadhai by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy restaurant-style taste in minutes.'
       },
       {
@@ -791,8 +791,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '340 kcal',
-        protein: '7.8g',
+        calories: '133 kcal',
+        protein: '2.30g',
         desc: 'Enjoy rich North Indian flavors with Jain Veg Makhanwala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy delicious restaurant-style taste in minutes.'
       },
       // Meal Combos
@@ -807,9 +807,9 @@
         spice: 'Mild',
         rating: 4.9,
         reviews: 82,
-        weight: '145g net (makes 470g)',
-        calories: '550 kcal',
-        protein: '14.0g',
+        weight: '115g net (makes 470g)',
+        calories: '385 kcal',
+        protein: '6.2g',
         desc: 'Traditional morning pairing: 1x South Indian Idli Sambar (makes 250g) + 1x Homestyle Vegetable Upma (makes 220g).'
       },
       {
@@ -824,8 +824,8 @@
         rating: 4.8,
         reviews: 69,
         weight: '150g net (makes 480g)',
-        calories: '570 kcal',
-        protein: '14.7g',
+        calories: '470 kcal',
+        protein: '10.0g',
         desc: 'Classic Mumbai breakfast duo: 1x Homestyle Kanda Poha (makes 220g) + 1x Fiery Mumbai Misal (makes 260g).'
       },
       {
@@ -839,9 +839,9 @@
         spice: 'Medium',
         rating: 4.8,
         reviews: 58,
-        weight: '125g net (makes 480g)',
-        calories: '440 kcal',
-        protein: '9.8g',
+        weight: '100g net (makes 480g)',
+        calories: '403 kcal',
+        protein: '5.1g',
         desc: 'Global flavors comfort set: 1x Creamy Sweet Corn Vegetable Soup (makes 220ml) + 1x Zesty Mexican Rice (makes 260g).'
       },
       {
@@ -855,9 +855,9 @@
         spice: 'Sweet',
         rating: 5.0,
         reviews: 104,
-        weight: '155g net (makes 440g)',
-        calories: '630 kcal',
-        protein: '14.2g',
+        weight: '152g net (makes 440g)',
+        calories: '731 kcal',
+        protein: '12.9g',
         desc: 'Ultimate comfort meal: 1x Pure Ghee Comforting Dal Khichdi (makes 260g) + 1x Slow-Cooked Winter Gajar Ka Halwa with mawa & cashews (makes 180g).'
       },
       {
@@ -871,13 +871,13 @@
         spice: 'Spicy',
         rating: 4.8,
         reviews: 63,
-        weight: '135g net (makes 500g)',
-        calories: '470 kcal',
-        protein: '9.8g',
+        weight: '100g net (makes 500g)',
+        calories: '381 kcal',
+        protein: '8.4g',
         desc: 'Tangy and savory desi-Chinese combo: 1x Vegetable Hot & Sour Soup (makes 220ml) + 1x Wok Fried Rice with Manchurian Gravy (makes 280g).'
       },
       // Combos from the client's list. Price, text and photo are copied from magicmeals.shop; mrp = price (no markdown on the live store).
-      // calories / protein = sum of the single packs (derived, not printed on a combo label); no reviews yet.
+      // calories / protein = sum of its pouches' per-serving values (tools/sync-nutrition.py; a combo has no label of its own); no reviews yet.
       {
         id: 'north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera',
         title: 'North Indian Combo (Paneer Butter Masala + Jeera Rice + Rawa Sheera)',
@@ -890,8 +890,8 @@
         rating: 0,
         reviews: 0,
         weight: '241g net (makes 650g)',
-        calories: '960 kcal',
-        protein: '23.8g',
+        calories: '771 kcal',
+        protein: '12.9g',
         desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. This wholesome ready-to-eat combo combines a rich curry, aromatic rice, and a traditional dessert for a satisfying meal experience in minutes.'
       },
       {
@@ -905,9 +905,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '245g net (makes 710g)',
-        calories: '1020 kcal',
-        protein: '25.3g',
+        weight: '255g net (makes 710g)',
+        calories: '1127 kcal',
+        protein: '28.4g',
         desc: 'Enjoy a restaurant-style North Indian meal at home or on the go with the Magic Meals North Indian Combo featuring creamy Paneer Butter Masala, flavorful Tawa Pulao, and soft, sweet Rawa Sheera dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and office breaks.'
       },
       {
@@ -921,9 +921,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '245g net (makes 720g)',
-        calories: '1030 kcal',
-        protein: '26.3g',
+        weight: '258g net (makes 720g)',
+        calories: '1218 kcal',
+        protein: '28.3g',
         desc: 'Turn any day into a feast with the Magic Meals North Indian Combo featuring creamy Paneer Butter Masala, fragrant Veg Biryani, and soft, sweet Rawa Sheera dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
       },
       {
@@ -938,8 +938,8 @@
         rating: 0,
         reviews: 0,
         weight: '253g net (makes 650g)',
-        calories: '1030 kcal',
-        protein: '23.0g',
+        calories: '1161 kcal',
+        protein: '19.8g',
         desc: 'Enjoy the comforting flavors of North India with the Magic Meals Desi Lunch Box featuring rich Rajma Masala, aromatic Jeera Rice, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -953,9 +953,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '255g net (makes 690g)',
-        calories: '1090 kcal',
-        protein: '24.5g',
+        weight: '267g net (makes 690g)',
+        calories: '1230 kcal',
+        protein: '25.3g',
         desc: 'Bring home-style comfort to any mealtime with the Magic Meals Comfort Combo featuring hearty Rajma Masala, flavorful Tawa Pulao, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -969,9 +969,9 @@
         spice: 'Spicy',
         rating: 0,
         reviews: 0,
-        weight: '260g net (makes 710g)',
-        calories: '1110 kcal',
-        protein: '25.0g',
+        weight: '250g net (makes 710g)',
+        calories: '1146 kcal',
+        protein: '25.1g',
         desc: 'Can’t pick between desi and Indo-Chinese? Get both with the Magic Meals Comfort Combo featuring hearty Rajma Masala, Fried Rice with Manchurian Gravy, and delicious Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -986,8 +986,8 @@
         rating: 0,
         reviews: 0,
         weight: '228g net (makes 650g)',
-        calories: '930 kcal',
-        protein: '17.8g',
+        calories: '1108 kcal',
+        protein: '14.7g',
         desc: 'Savor the comforting taste of home with the Magic Meals Homestyle Combo featuring creamy Veg Makhanwala, aromatic Jeera Rice, and rich Gajar Halwa. A wholesome ready-to-eat Indian meal perfect for lunch, dinner, travel, office meals, and instant cravings.'
       },
       {
@@ -1001,9 +1001,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '245g net (makes 700g)',
-        calories: '990 kcal',
-        protein: '19.3g',
+        weight: '242g net (makes 700g)',
+        calories: '1177 kcal',
+        protein: '20.3g',
         desc: 'Get the feel of a home-cooked meal in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, flavorful Tawa Pulao, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -1018,8 +1018,8 @@
         rating: 0,
         reviews: 0,
         weight: '245g net (makes 710g)',
-        calories: '1000 kcal',
-        protein: '20.3g',
+        calories: '1268 kcal',
+        protein: '20.1g',
         desc: 'Bring a family-style spread to your table in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, fragrant Veg Biryani, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, and instant hunger cravings.'
       },
       {
@@ -1034,8 +1034,8 @@
         rating: 0,
         reviews: 0,
         weight: '165g net (makes 400g)',
-        calories: '600 kcal',
-        protein: '11.6g',
+        calories: '719 kcal',
+        protein: '12.1g',
         desc: 'Savor the perfect combination of Mumbai-style Pav Bhaji and delicious sweet Rawa Sheera with the Magic Meals Desi Lunch Box. A comforting ready-to-eat meal combo ideal for lunch, travel, office meals, and instant cravings.'
       },
       {
@@ -1050,8 +1050,8 @@
         rating: 0,
         reviews: 0,
         weight: '223g net (makes 750g)',
-        calories: '850 kcal',
-        protein: '22.0g',
+        calories: '874 kcal',
+        protein: '24.9g',
         desc: 'Enjoy a delicious and protein-rich Indian meal combo featuring spicy Paneer Bhurji, aromatic Jeera Rice, and sweet refreshing Aamras. The Magic Meals Protein Veg Combo is perfect for lunch, dinner, travel, office meals, and instant hunger cravings.'
       },
       {
@@ -1065,9 +1065,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '225g net (makes 720g)',
-        calories: '920 kcal',
-        protein: '24.5g',
+        weight: '240g net (makes 720g)',
+        calories: '1034 kcal',
+        protein: '30.3g',
         desc: 'Power through your day with the Magic Meals Protein Veg Combo featuring protein-rich Paneer Bhurji, fragrant Veg Biryani, and sweet mango Aamras dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       {
@@ -1081,9 +1081,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '225g net (makes 710g)',
-        calories: '910 kcal',
-        protein: '23.5g',
+        weight: '237g net (makes 710g)',
+        calories: '943 kcal',
+        protein: '30.4g',
         desc: 'Keep your energy up with the Magic Meals Protein Veg Combo featuring protein-rich Paneer Bhurji, flavorful Tawa Pulao, and sweet mango Aamras dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       {
@@ -1098,8 +1098,8 @@
         rating: 0,
         reviews: 0,
         weight: '228g net (makes 650g)',
-        calories: '920 kcal',
-        protein: '22.0g',
+        calories: '834 kcal',
+        protein: '12.2g',
         desc: 'Experience authentic Punjabi flavors with the Magic Meals Punjabi Swaad Combo featuring spicy Pind Ke Chole, aromatic Jeera Rice, and delicious Gajar Halwa. A complete ready-to-eat vegetarian meal perfect for lunch, dinner, travel, office meals, and quick cravings.'
       },
       {
@@ -1113,9 +1113,9 @@
         spice: 'Spicy',
         rating: 0,
         reviews: 0,
-        weight: '245g net (makes 700g)',
-        calories: '980 kcal',
-        protein: '23.5g',
+        weight: '242g net (makes 700g)',
+        calories: '903 kcal',
+        protein: '17.8g',
         desc: 'Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, flavorful Tawa Pulao, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -1130,8 +1130,8 @@
         rating: 0,
         reviews: 0,
         weight: '245g net (makes 710g)',
-        calories: '990 kcal',
-        protein: '24.5g',
+        calories: '994 kcal',
+        protein: '17.7g',
         desc: 'Enjoy the hearty flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, fragrant Veg Biryani, and sweet Gajar Halwa dessert. A wholesome ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       {
@@ -1146,8 +1146,8 @@
         rating: 0,
         reviews: 0,
         weight: '188g net (makes 830g)',
-        calories: '740 kcal',
-        protein: '19.0g',
+        calories: '853 kcal',
+        protein: '11.5g',
         desc: 'Enjoy a wholesome and satisfying dinner with the Magic Meals Classic Dinner Combo. Featuring a comforting Tomato Soup, rich and creamy Dal Makhani, and aromatic Jeera Rice, this combo offers a complete restaurant-style meal that’s ready in minutes.'
       },
       {
@@ -1162,8 +1162,8 @@
         rating: 0,
         reviews: 0,
         weight: '175g net (makes 400g)',
-        calories: '650 kcal',
-        protein: '12.3g',
+        calories: '734 kcal',
+        protein: '12.7g',
         desc: 'Treat yourself to a flavorful royal meal with the Magic Meals Royal Combo featuring aromatic Veg Biryani paired with delicious Rawa Sheera. A satisfying ready-to-eat vegetarian combo perfect for lunch, dinner, travel, and festive cravings.'
       },
       {
@@ -1178,8 +1178,8 @@
         rating: 0,
         reviews: 0,
         weight: '147g net (makes 500g)',
-        calories: '520 kcal',
-        protein: '8.0g',
+        calories: '429 kcal',
+        protein: '7.9g',
         desc: 'Enjoy a delicious Indian feast with the Magic Meals Royal Combo featuring flavorful Tawa Pulav paired with rich and refreshing Aam Ras. A perfect ready-to-eat vegetarian combo crafted for quick meals, travel, and satisfying cravings.'
       },
       {
@@ -1194,8 +1194,8 @@
         rating: 0,
         reviews: 0,
         weight: '133g net (makes 500g)',
-        calories: '550 kcal',
-        protein: '14.8g',
+        calories: '552 kcal',
+        protein: '12.7g',
         desc: 'End your day with a simple, satisfying meal with the Magic Meals Comfort Night Combo, featuring Jain Dal Fry and Jeera Rice. This ready-to-eat combo combines wholesome lentils and aromatic cumin rice, making it the perfect comfort meal for dinner, travel, office lunches, hostel stays, and quick hunger cravings.'
       },
       // The three combos from the client's list that are not on magicmeals.shop: picture composed from the real pouch fronts,
@@ -1211,9 +1211,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '255g net (makes 700g)',
-        calories: '1100 kcal',
-        protein: '25.5g',
+        weight: '270g net (makes 700g)',
+        calories: '1321 kcal',
+        protein: '25.2g',
         desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Comfort Combo featuring Rajma Masala, Veg Biryani and Gajar Halwa. Just add hot water to each pouch and enjoy in minutes.'
       },
       {
@@ -1227,9 +1227,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '165g net (makes 510g)',
-        calories: '620 kcal',
-        protein: '13.3g',
+        weight: '167g net (makes 510g)',
+        calories: '794 kcal',
+        protein: '14.5g',
         desc: 'Enjoy a wholesome ready-to-eat meal with the Magic Meals Street Style Combo featuring Pav Bhaji and Tawa Pulao. Just add hot water to each pouch and enjoy in minutes.'
       },
       // Jain versions of combos that are sold on magicmeals.shop (price, photo and text copied from there). They use the Jain pouches
@@ -1246,8 +1246,8 @@
         rating: 0,
         reviews: 0,
         weight: '165g net (makes 400g)',
-        calories: '600 kcal',
-        protein: '11.6g',
+        calories: '380 kcal',
+        protein: '7.3g',
         desc: 'Enjoy the flavors of India’s favorite street food with the Magic Meals Street Style Combo, featuring Jain Pav Bhaji and Rawa Sheera. This ready-to-eat combo brings together a rich Mumbai-style Pav Bhaji paired with a traditional sweet dessert, making it the perfect meal for travel, office lunches, hostel stays, and quick hunger cravings.'
       },
       {
@@ -1262,8 +1262,8 @@
         rating: 0,
         reviews: 0,
         weight: '223g net (makes 750g)',
-        calories: '850 kcal',
-        protein: '22.0g',
+        calories: '530 kcal',
+        protein: '10.7g',
         desc: 'Enjoy a wholesome and satisfying meal with the Magic Meals Protein Veg Combo, featuring Jain Paneer Bhurji, Jeera Rice, and Aamras. This ready-to-eat combo combines protein-rich paneer, aromatic cumin rice, and the refreshing sweetness of mango, making it the perfect meal for travel, office lunches, hostel stays, and quick dining solutions.'
       },
       {
@@ -1278,8 +1278,8 @@
         rating: 0,
         reviews: 0,
         weight: '125g net (makes 500g)',
-        calories: '520 kcal',
-        protein: '7.7g',
+        calories: '311 kcal',
+        protein: '4.8g',
         desc: 'Enjoy a unique blend of Indo-Chinese flavors and refreshing mango goodness with the Magic Meals Royal Fusion Combo, featuring Jain Schezwan Rice and Aamras. This ready-to-eat combo offers the perfect balance of bold flavors and natural sweetness, making it ideal for travel, office lunches, hostel stays, camping, and quick meals on the go.'
       },
       {
@@ -1294,8 +1294,8 @@
         rating: 0,
         reviews: 0,
         weight: '158g net (makes 500g)',
-        calories: '630 kcal',
-        protein: '16.5g',
+        calories: '628 kcal',
+        protein: '13.8g',
         desc: 'Enjoy the timeless combination of Dal Makhani and Jeera Rice with the Magic Meals Classic Dinner Combo. This ready-to-eat meal brings together rich, creamy Jain Dal Makhani and fragrant Jeera Rice for a wholesome North Indian dining experience. Perfect for travel, office lunches, hostel stays, camping, and quick dinners at home.'
       },
       {
@@ -1309,9 +1309,9 @@
         spice: 'Mild',
         rating: 0,
         reviews: 0,
-        weight: '240g net (makes 770g)',
-        calories: '890 kcal',
-        protein: '22.6g',
+        weight: '203g net (makes 770g)',
+        calories: '685 kcal',
+        protein: '15.0g',
         desc: 'Get the feel of a home-cooked thali in minutes with the Magic Meals Homestyle Combo featuring rich Veg Makhanwala, comforting Dal Fry, and aromatic Jeera Rice. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       // More Jain combos added to magicmeals.shop on 4 Nov 2026 (price, photo and text copied from there). They use the Jain pouches
@@ -1327,9 +1327,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '145g net (makes 470g)',
-        calories: '530 kcal',
-        protein: '9.0g',
+        weight: '150g net (makes 470g)',
+        calories: '229 kcal',
+        protein: '2.8g',
         desc: 'Treat yourself to the Magic Meals Biryani Royale featuring fragrant Veg Biryani and smooth, sweet Aam Ras dessert. A Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
       },
       {
@@ -1343,9 +1343,9 @@
         spice: 'Spicy',
         rating: 0,
         reviews: 0,
-        weight: '155g net (makes 450g)',
-        calories: '640 kcal',
-        protein: '11.0g',
+        weight: '150g net (makes 450g)',
+        calories: '525 kcal',
+        protein: '9.8g',
         desc: 'Satisfy your Indo-Chinese cravings with the Magic Meals Indo-Chinese Combo featuring bold, spicy Schezwan Rice and soft, sweet Rawa Sheera dessert to cool things down. A Jain-friendly ready-to-eat combo meal perfect for dinner, hostel nights, travel, and quick meals.'
       },
       {
@@ -1359,9 +1359,9 @@
         spice: 'Mild',
         rating: 0,
         reviews: 0,
-        weight: '140g net (makes 460g)',
-        calories: '500 kcal',
-        protein: '10.7g',
+        weight: '127g net (makes 460g)',
+        calories: '360 kcal',
+        protein: '7.1g',
         desc: 'Keep it light, warm, and comforting with the Magic Meals Light & Comfort Combo featuring wholesome Dal Khichdi and smooth, sweet Aam Ras. A Jain-friendly ready-to-eat combo meal perfect for light lunches, dinners, travel, and group tours.'
       },
       {
@@ -1375,9 +1375,9 @@
         spice: 'Mild',
         rating: 0,
         reviews: 0,
-        weight: '160g net (makes 500g)',
-        calories: '590 kcal',
-        protein: '20.2g',
+        weight: '117g net (makes 500g)',
+        calories: '440 kcal',
+        protein: '14.4g',
         desc: 'Keep dinner light and wholesome with the Magic Meals Light Dinner Combo featuring comforting Dal Khichdi and Moong Masala. A Jain-friendly ready-to-eat combo meal perfect for easy dinners, hostel nights, travel, and simple comfort-food cravings.'
       },
       {
@@ -1391,9 +1391,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '233g net (makes 690g)',
-        calories: '960 kcal',
-        protein: '23.8g',
+        weight: '241g net (makes 690g)',
+        calories: '771 kcal',
+        protein: '12.9g',
         desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals Jain North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. A wholesome, Jain-friendly ready-to-eat combo that brings together a rich curry, aromatic rice, and a traditional dessert for a satisfying meal in minutes.'
       },
       {
@@ -1407,9 +1407,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '220g net (makes 690g)',
-        calories: '1020 kcal',
-        protein: '22.8g',
+        weight: '228g net (makes 690g)',
+        calories: '671 kcal',
+        protein: '10.7g',
         desc: 'Enjoy the comforting flavors of North India with the Magic Meals Jain Comfort Combo featuring rich Jain Rajma Masala, aromatic Jeera Rice, and delicious Rawa Sheera dessert. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, travel, office, and instant hunger cravings.'
       },
       {
@@ -1423,9 +1423,9 @@
         spice: 'Mild',
         rating: 0,
         reviews: 0,
-        weight: '142g net (makes 440g)',
-        calories: '620 kcal',
-        protein: '14.0g',
+        weight: '152g net (makes 440g)',
+        calories: '574 kcal',
+        protein: '12.1g',
         desc: 'Keep it light, warm, and comforting with the Magic Meals Jain Light & Comfort Combo featuring wholesome Jain Dal Khichdi and warm, sweet Rawa Sheera. A Jain-friendly ready-to-eat combo meal perfect for light lunches, dinners, travel, and group tours.'
       },
       {
@@ -1439,9 +1439,9 @@
         spice: 'Medium',
         rating: 0,
         reviews: 0,
-        weight: '165g net (makes 440g)',
-        calories: '650 kcal',
-        protein: '12.3g',
+        weight: '175g net (makes 440g)',
+        calories: '443 kcal',
+        protein: '7.8g',
         desc: 'Treat yourself to the Magic Meals Biryani Royale featuring fragrant Jain Veg Biryani and warm, sweet Rawa Sheera dessert. A Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, and indulgent cravings.'
       },
       {
@@ -1455,9 +1455,9 @@
         spice: 'Spicy',
         rating: 0,
         reviews: 0,
-        weight: '240g net (makes 770g)',
-        calories: '880 kcal',
-        protein: '26.8g',
+        weight: '203g net (makes 770g)',
+        calories: '875 kcal',
+        protein: '25.3g',
         desc: 'Taste the bold, tangy flavors of Punjab with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and comforting Dal Fry. A wholesome, Jain-friendly ready-to-eat combo meal perfect for lunch, dinner, travel, office, and instant hunger cravings.'
       },
       // The regular (non-Jain) Desi Lunch Box from magicmeals.shop. Calories / protein = sum of the single packs (derived).

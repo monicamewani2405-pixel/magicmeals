@@ -132,8 +132,9 @@
     var attrs = ' data-pdp-card="' + c.id + '" data-az="' + c.pouchAzimuth + '"';
     if (pl) {
       var base = cfg.dir + 'gallery/' + c.image;
+      var q = cfg.imgVersion ? '?v=' + cfg.imgVersion : '';
       return '<figure class="pdp-card pdp-card--photo"' + attrs + '>' +
-        '<img src="' + base + '-800.webp" srcset="' + base + '-800.webp 800w, ' + base + '-1200.webp 1200w" ' +
+        '<img src="' + base + '-800.webp' + q + '" srcset="' + base + '-800.webp' + q + ' 800w, ' + base + '-1200.webp' + q + ' 1200w" ' +
         'sizes="(min-width: 992px) 30vw, (min-width: 768px) 46vw, 92vw" width="' + pl.w + '" height="' + pl.h + '" ' +
         'loading="lazy" decoding="async" alt="' + esc(String(c.alt).replace('{name}', cfg.name || 'The')) + '">' + serve + '</figure>';
     }

@@ -67,6 +67,84 @@
     { id: 'onthego',     type: 'lifestyle', image: 'onthego',     pouchAzimuth: -20, serving: false }
   ];
 
+  // Lively gallery (v2, tools/compose-lively.py): products listed here show 4 pictures in this order instead of CARD_PLAN:
+  // serving suggestion (the improved original), eye-level hero, an 'abroad' picture (the pack works anywhere in the world), and the pack's nutrition tables. The old ingredients / prepare /
+  // on-the-go pictures are retired for them (copies in _old-images/<slug>/). imgVersion is added to the picture URLs (cache busting).
+  var LIVELY = {
+    'kanda-poha': {
+      imgVersion: 3,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of kanda poha with a lemon wedge and curry leaves, a glass of chai and a bowl of lemons and green chillies on a wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a wooden table in a morning kitchen beside a steel plate of kanda poha and a kulhad of chai' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a wooden table beside a bowl of kanda poha, a mug of tea and woollen gloves, with a snowy alpine village seen through the chalet window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-poha': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of Jain poha with lemon wedges and curry leaves on a green cloth' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a cream kitchen counter beside a brass plate of Jain poha and a brass tumbler, with a sunny window behind' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a weathered wooden table beside a bowl of Jain poha and a cup of tea, with blue-domed white houses and the sea seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'idli-sambar': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'Steamed idlis on a steel plate with sambar and coconut chutney in small bowls, on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside idlis on a banana leaf with sambar and chutney, and brass lamps behind' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a window table beside a steel plate of idlis with sambar and chutney, with a rainy European street seen through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'upma': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of upma with curry leaves and a lime wedge, a bowl of chutney and a spoon on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a wooden desk beside a bowl of upma and a steel tumbler, with books and a window behind' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rock beside a plate of upma, a camping stove and a mug, with snowy mountains above a sea of cloud at sunrise' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'mumbai-misal': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of misal with pav, farsan, lime and chillies on a dark wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a steel counter beside a plate of misal with pav and a steel tumbler, with a sunlit street behind' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rain-wet table beside a bowl of misal, sunglasses and a notebook, with green misty hills behind' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-upma': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of Jain upma with curry leaves and lime wedges on a stone surface' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a windowsill table beside a bowl of Jain upma, a steel kettle and a herb pot, with soft curtains behind' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a hotel table beside a bowl of Jain upma on a tray, a travel pillow and headphones, with a city skyline at dusk through the window' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
+      }
+    }
+  };
+
   var BASE = {
     // Stage dressing: the four claim chips are ON, the floating ingredient cutouts are OFF (too busy next to the pouch).
     // Flip either flag to switch them; the cutout files (pdp/shared/ingredients, the same set for every product) are unaffected.
@@ -103,10 +181,11 @@
 
   function build(slug, o) {
     o = o || {};
-    var cards = CARD_PLAN.filter(function (c) { return c.type !== 'inside' || INSIDE_DIR[slug]; }).map(function (c) {
+    var lively = LIVELY[slug] || null;
+    var cards = (lively ? lively.cards : CARD_PLAN).filter(function (c) { return c.type !== 'inside' || INSIDE_DIR[slug]; }).map(function (c) {
       var n = Object.assign({}, c);
       if (c.type === 'lifestyle') {
-        n.alt = (o.own && o.own[c.image]) || SHARED_ALT[c.image];
+        n.alt = c.alt || (o.own && o.own[c.image]) || SHARED_ALT[c.image];
         if (o.serving && o.serving[c.image] != null) n.serving = o.serving[c.image];
         n.plate = c.image;
       }
@@ -123,7 +202,8 @@
         { src: INSIDE_DIR[slug] + 'ready-640.webp', alt: INSIDE_ALT.ready, caption: 'Ready in {min} minutes' }
       ] : null,
       cards: cards,
-      placements: PDP_PLACEMENTS[slug] || {},
+      placements: lively ? lively.placements : (PDP_PLACEMENTS[slug] || {}),
+      imgVersion: lively ? lively.imgVersion : 0,
       ingredientFiles: PDP_INGREDIENT_FILES
     });
   }

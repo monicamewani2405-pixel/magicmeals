@@ -231,6 +231,10 @@ def main():
     ap.add_argument('--jobs', type=int, default=4)
     a = ap.parse_args()
     slugs = all_slugs() if a.all else [s for s in a.slug.split(',') if s]
+    skipped = [s for s in slugs if (PDP / s / 'plates' / 'lively.v2').exists()]
+    if skipped:
+        print('  skipped (lively gallery v2, built by tools/compose-lively.py):', ', '.join(skipped))
+    slugs = [s for s in slugs if s not in skipped]
     if not slugs:
         ap.error('give --slug <name> or --all')
     only = [s for s in a.only.split(',') if s] or NAMES
