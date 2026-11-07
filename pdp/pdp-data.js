@@ -168,9 +168,9 @@
       }
     },
     'hot-and-sour-soup': {
-      imgVersion: 3,
+      imgVersion: 4,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A black bowl of hot and sour soup with shredded cabbage, carrot, capsicum, corn, peas and coriander, seen from above, surrounded by cabbage, carrots, capsicum, ginger, garlic, green chillies and coriander on a dark wooden table' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of hot and sour soup with shredded carrot and cabbage and fresh coriander, seen from above on a dark wooden table, with a carrot, a piece of ginger, a small bowl of black peppercorns and a spoon' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of hot and sour soup with coriander, in moody window light' },
         { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a mountain rock beside a steel camping mug of hot and sour soup and a small stove, with snowy peaks above a sea of cloud at sunrise' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
