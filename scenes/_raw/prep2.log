@@ -1,0 +1,47 @@
+=== veg-biryani
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "wet": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "ready": {
+      "dx": -1.0,
+      "dy": -1,
+      "scale": 1.0,
+      "needs_regen": false
+    }
+  }
+}
+scenes/processed/veg-biryani/bowl-640.webp  640x442  18 KB
+scenes/processed/veg-biryani/dry-640.webp  640x442  32 KB
+scenes/processed/veg-biryani/ready-640.webp  640x442  45 KB
+scenes/processed/veg-biryani/wet-640.webp  640x442  31 KB
+scenes/processed/bowl-empty-640.webp  640x442  18 KB
+=== pav-bhaji
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "wet": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    },
+    "ready": {
+      "dx": 0.0,
+      "dy": 0,
+      "scale": 1.0,
+      "needs_regen": false
+    }
+  }
+}
+scenes/processed/pav-bhaji/bowl-640.webp  640x442  18 KB
+scenes/processed/pav-bhaji/dry-640.webp  640x442  34 KB
+scenes/processed/pav-bhaji/ready-640.webp  640x442  46 KB
+scenes/processed/pav-bhaji/wet-640.webp  640x442  31 KB
+scenes/processed/bowl-empty-640.webp  640x442  18 KB
+ALLDONE

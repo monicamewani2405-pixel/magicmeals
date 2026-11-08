@@ -24,15 +24,12 @@ POUCH_DIR = ROOT / 'pouch-art'
 # hero: cx = centre of the pouch, base = y of its bottom edge (fraction of plate height), h = pouch height (fraction of plate height).
 PLACE = {
     # real3d: the pouch is rendered from the site's own 3D viewer (tools/render-pouch-3d.py); 'abroad' = the pack used anywhere in the world
-    'kanda-poha': {
-        'hero': dict(kind='hero', cx=0.815, base=0.79, h=0.4, rot=-1.0, real3d=True),
-        'abroad': dict(kind='hero', cx=0.19, base=0.85, h=0.4, rot=1.0, real3d=True),
-    },
-    'jain-poha': {'hero': dict(kind='hero', cx=0.17, base=0.83, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.87, h=0.4, rot=0.0, real3d=True)},
-    'idli-sambar': {'hero': dict(kind='hero', cx=0.82, base=0.82, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.9, h=0.4, rot=0.0, real3d=True)},
-    'upma': {'hero': dict(kind='hero', cx=0.815, base=0.83, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.9, h=0.4, rot=0.0, real3d=True)},
-    'mumbai-misal': {'hero': dict(kind='hero', cx=0.82, base=0.83, h=0.4, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.4, rot=0.0, real3d=True)},
-    'jain-upma': {'hero': dict(kind='hero', cx=0.155, base=0.88, h=0.36, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.88, h=0.4, rot=0.0, real3d=True)},
+    'kanda-poha': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'jain-poha': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'idli-sambar': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'upma': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'mumbai-misal': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    'jain-upma': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
     'tomato-soup': {'hero': dict(kind='hero', cx=0.83, base=0.86, h=0.38, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.40, rot=0.0, real3d=True)},
     'sweet-corn-soup': {'hero': dict(kind='hero', cx=0.855, base=0.86, h=0.36, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.19, base=0.93, h=0.40, rot=0.0, real3d=True)},
     'hot-and-sour-soup': {'hero': dict(kind='hero', cx=0.86, base=0.87, h=0.34, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.18, base=0.95, h=0.40, rot=0.0, real3d=True)},
@@ -54,6 +51,28 @@ PLACE = {
     'veg-biryani': {'hero': dict(kind='hero', cx=0.855, base=0.9, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
     'jeera-rice': {'hero': dict(kind='hero', cx=0.855, base=0.9, h=0.33, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
     'tawa-pulao': {'hero': dict(kind='hero', cx=0.87, base=0.93, h=0.32, rot=0.0, real3d=True), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=True)},
+    # Meals category (v2 lively gallery)
+    'rajma-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'paneer-butter-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'paneer-bhurji': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'pind-ke-chhole': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'pav-bhaji': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'bhindi-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'veg-kadhai': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'veg-makhanwala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'moong-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    # Jain Meals (v2 lively gallery)
+    'jain-paneer-bhurji': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-paneer-butter-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-pav-bhaji': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-pind-ke-chhole': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-rajma-masala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-veg-kadhai': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'jain-veg-makhanwala': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    # Desserts category (v2 lively gallery)
+    'gajar-halwa': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'aam-ras': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
+    'rawa-sheera': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
 }
 OUT_BIG, OUT_SMALL = 1200, 800
 MAX_BIG, MAX_SMALL = 180 * 1024, 90 * 1024

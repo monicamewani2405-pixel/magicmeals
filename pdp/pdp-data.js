@@ -72,11 +72,11 @@
   // on-the-go pictures are retired for them (copies in _old-images/<slug>/). imgVersion is added to the picture URLs (cache busting).
   var LIVELY = {
     'kanda-poha': {
-      imgVersion: 3,
+      imgVersion: 4,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of kanda poha with a lemon wedge and curry leaves, a glass of chai and a bowl of lemons and green chillies on a wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a wooden table in a morning kitchen beside a steel plate of kanda poha and a kulhad of chai' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a wooden table beside a bowl of kanda poha, a mug of tea and woollen gloves, with a snowy alpine village seen through the chalet window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional brass plate of golden Maharashtrian Poha with roasted peanuts, curry leaves, fresh coconut, and lemon wedge' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a morning wooden table beside a steaming brass plate of golden Poha and cutting chai' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside a warm bowl of Indian Poha and hot tea' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -84,11 +84,11 @@
       }
     },
     'jain-poha': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of Jain poha with lemon wedges and curry leaves on a green cloth' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a cream kitchen counter beside a brass plate of Jain poha and a brass tumbler, with a sunny window behind' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a weathered wooden table beside a bowl of Jain poha and a cup of tea, with blue-domed white houses and the sea seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional brass plate of pure Jain Poha tempered with mustard seeds, curry leaves, crunchy peanuts, and fresh lemon' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a morning wooden table beside a steaming brass plate of pure Jain Poha and chai' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside a warm bowl of pure Jain Poha and hot tea' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -96,11 +96,11 @@
       }
     },
     'idli-sambar': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'Steamed idlis on a steel plate with sambar and coconut chutney in small bowls, on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside idlis on a banana leaf with sambar and chutney, and brass lamps behind' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a window table beside a steel plate of idlis with sambar and chutney, with a rainy European street seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'Steaming pillowy-soft white mini idlis on a banana leaf with aromatic vegetable lentil sambar and coconut chutney' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden breakfast table beside steaming idlis, vegetable sambar, and filter coffee' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a European window-side table beside a plate of fluffy steamed idlis and warm sambar' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -108,11 +108,11 @@
       }
     },
     'upma': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of upma with curry leaves and a lime wedge, a bowl of chutney and a spoon on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a wooden desk beside a bowl of upma and a steel tumbler, with books and a window behind' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rock beside a plate of upma, a camping stove and a mug, with snowy mountains above a sea of cloud at sunrise' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of authentic South Indian Rava Upma with roasted cashews, curry leaves, green peas, and coconut chutney' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden breakfast table beside a steaming plate of Rava Upma and filter coffee' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine mountain balcony table beside a bowl of South Indian Rava Upma and coffee' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -120,11 +120,11 @@
       }
     },
     'mumbai-misal': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A steel plate of misal with pav, farsan, lime and chillies on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a steel counter beside a plate of misal with pav and a steel tumbler, with a sunlit street behind' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rain-wet table beside a bowl of misal, sunglasses and a notebook, with green misty hills behind' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow ceramic bowl of fiery Mumbai Misal topped with crunchy farsan and coriander, beside soft buttered pav bread' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden dining table beside a bowl of spicy Mumbai Misal with butter-toasted pavs and lemon' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor harbor terrace table beside a bowl of Mumbai Misal and two buttered pav buns' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -132,11 +132,11 @@
       }
     },
     'jain-upma': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of Jain upma with curry leaves and lime wedges on a stone surface' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a windowsill table beside a bowl of Jain upma, a steel kettle and a herb pot, with soft curtains behind' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a hotel table beside a bowl of Jain upma on a tray, a travel pillow and headphones, with a city skyline at dusk through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A brass plate of pure Jain Rava Upma with roasted cashews, curry leaves, sweet green peas, and coconut chutney' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden breakfast table beside a steaming plate of pure Jain Rava Upma and filter coffee' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine mountain balcony table beside a bowl of pure Jain Rava Upma and coffee' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -240,11 +240,11 @@
       }
     },
     'dal-khichdi': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of dal khichdi with ghee and fresh coriander, seen from above, surrounded by rice, pigeon pea and green moong lentils, a tomato, cumin, mustard seeds, turmeric, curry leaves and coriander on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of dal khichdi, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a window table beside a bowl of dal khichdi, with green northern lights over a snowy Icelandic landscape seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic artisanal bowl of comforting yellow Moong Dal Khichdi with sizzling ghee tadka, cumin, garlic flakes, red chili, curry leaves and melted desi ghee' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a steaming bowl of comforting Dal Khichdi, in natural morning light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy wooden desk by a rainy twilight window overlooking city rooftops, beside a bowl of Dal Khichdi' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -252,11 +252,11 @@
       }
     },
     'masala-khichdi-kadhi': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of vegetable khichdi with a small bowl of kadhi, seen from above, surrounded by rice, pigeon pea lentils, gram flour, curd, French beans, carrot, green peas, ginger, green chillies, garlic and mustard seeds on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of vegetable khichdi and a small bowl of kadhi, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a villa balcony table beside a bowl of khichdi and a small bowl of kadhi, with green Bali rice terraces and palm trees seen beyond the railing' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic artisanal bowl of authentic Gujarati Masala Khichdi with carrots, peas and peanuts, served with a katori of velvety white Gujarati Kadhi and desi ghee' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of Masala Khichdi and Gujarati Kadhi, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a charming European cottage window table beside a bowl of Masala Khichdi and Kadhi at autumn twilight' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -264,11 +264,11 @@
       }
     },
     'veg-biryani': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of veg biryani, seen from above, surrounded by cauliflower, carrot, French beans, green peas, capsicum, tomato, onion, garlic, ginger, curd and butter on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg biryani with carrot, peas and beans, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rooftop table beside a bowl of veg biryani, with the Bosphorus and mosque minarets at dusk in the distance' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic earthenware handi of royal Dum Veg Biryani with long saffron basmati grains, golden paneer cubes, caramelized onions, cashews, mint and raita' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a steaming handi of royal Veg Biryani, in warm restaurant dining ambiance' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rustic wooden table by a Parisian window overlooking European architecture at sunset, beside a bowl of Veg Biryani' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -276,11 +276,11 @@
       }
     },
     'jeera-rice': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of jeera rice with a little ghee, seen from above, with a small bowl of basmati rice, a dish of cumin seeds and a dish of ghee on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of jeera rice, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cottage window table beside a bowl of jeera rice, with a misty Scottish loch and heather hills seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal bowl of fragrant Basmati Jeera Rice tempered in golden desi ghee with crackled roasted cumin seeds, bay leaf, cloves and fresh coriander' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm rustic wooden dining table beside a steaming bowl of fragrant Jeera Rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit wooden balcony table beside a bowl of Jeera Rice, overlooking the Swiss Alps' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -288,11 +288,11 @@
       }
     },
     'tawa-pulao': {
-      imgVersion: 2,
+      imgVersion: 5,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of tawa pulao with peas and a little butter, seen from above, surrounded by a tomato, onion, capsicum, ginger, garlic, green peas, a potato, coriander and butter on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of tawa pulao, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a hotel window table beside a bowl of tawa pulao, with Sydney Harbour, the Opera House and the harbour bridge at night seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic handcrafted ceramic dish of vibrant Mumbai Street-Style Tawa Pulao with fluffy spiced basmati, golden-seared paneer cubes, green peas, capsicum, onion rings and a fresh lemon wedge' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm rustic wooden table beside a bowl of vibrant Tawa Pulao, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of Tawa Pulao, with Sydney Harbour and the Opera House in the distance' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -300,11 +300,11 @@
       }
     },
     'fried-rice-manchurian': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice beside a small bowl of Manchurian gravy, seen from above, surrounded by rice, cauliflower, carrot, French beans, capsicum, onion, garlic, spring onions, celery, soy sauce and red chilli sauce on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg fried rice and a small bowl of Manchurian gravy, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a hotel window table beside a bowl of fried rice and a small bowl of Manchurian gravy, with the Singapore Marina Bay skyline at night seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic platter of golden Veg Fried Rice served with Vegetable Manchurian balls in rich savory soy-garlic gravy with spring onions' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a platter of Veg Fried Rice with Manchurian, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a modern dining table beside a platter of Fried Rice Manchurian, overlooking an international city skyline at twilight' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -312,11 +312,11 @@
       }
     },
     'fried-rice': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of veg fried rice with cauliflower, French beans and spring onion, seen from above, surrounded by cauliflower, beans, onion, garlic, spring onions, green chillies, butter and rice on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of veg fried rice, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a mountain rock beside a steel bowl of fried rice and a small camp stove, with misty Andean peaks and Inca terraces at sunrise' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic bowl of steaming wok-tossed Veg Fried Rice with crisp carrots, green beans, sweet corn and fresh spring onions' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside a bowl of Veg Fried Rice, in soft directional window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a modern balcony table beside a bowl of Fried Rice, overlooking a sparkling city harbor at dusk' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -324,11 +324,11 @@
       }
     },
     'schezwan-rice': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, carrot, garlic, ginger, dried red chillies, onion, celery, spring onions and butter on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a terrace table beside a bowl of Schezwan rice, with Hong Kong\'s Victoria Harbour, a red-sailed junk boat and the skyline at dusk' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of fiery, vibrant red Indo-Chinese Schezwan Fried Rice tossed in spicy chili-garlic sauce with bell peppers and scallions' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of steaming hot Schezwan Rice, in warm soft light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a high-floor terrace table beside a bowl of Schezwan Rice, overlooking a glowing cityscape at dusk' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -336,11 +336,11 @@
       }
     },
     'mexican-rice': {
-      imgVersion: 2,
+      imgVersion: 4,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A cream bowl of Mexican rice with kidney beans, sweetcorn, capsicum and jalapeno slices, seen from above, surrounded by kidney beans, tomatoes, onion, green and yellow capsicum, jalapenos, sweetcorn and salsa on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a cream bowl of Mexican rice with beans and corn, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a folding table beside a bowl of Mexican rice, with the red-orange layers of the Grand Canyon at sunset' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic stoneware bowl of fluffy Mexican Fiesta rice with kidney beans, sweet corn, bell peppers, fresh cilantro, jalapeno rings, and a lime wedge on a wooden table' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm rustic wooden table beside a bowl of fluffy Mexican fiesta rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a scenic outdoor wooden camp table beside a bowl of Mexican rice, with red rock canyon cliffs at golden hour' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -348,11 +348,11 @@
       }
     },
     'jain-dal-khichdi': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of Jain dal khichdi with ghee and fresh coriander, seen from above, surrounded by rice, pigeon pea and green moong lentils, a tomato, cumin, mustard seeds, turmeric, curry leaves and coriander on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of dal khichdi, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an overwater villa deck table beside a bowl of dal khichdi, with a turquoise Maldives lagoon at sunset' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic artisanal bowl of comforting yellow Moong Dal Khichdi with sizzling ghee tadka, cumin, red chili, curry leaves and melted desi ghee' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of dal khichdi, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy wooden desk by a rainy twilight window overlooking city rooftops, beside a bowl of Dal Khichdi' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -360,11 +360,11 @@
       }
     },
     'jain-masala-khichdi-kadhi': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A bowl of vegetable khichdi with a small bowl of kadhi, seen from above, surrounded by rice, pigeon pea lentils, gram flour, curd, French beans, green capsicum, green peas, a tomato, green chillies, cumin seeds and curry leaves on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of vegetable khichdi and a small bowl of kadhi, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cave hotel window table beside a bowl of khichdi and a small bowl of kadhi, with hot-air balloons rising over Cappadocia at dawn' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic artisanal bowl of authentic Gujarati Masala Khichdi with peas and peanuts, served with a katori of velvety white Gujarati Kadhi and desi ghee' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of Masala Khichdi and Gujarati Kadhi, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a charming European cottage window table beside a bowl of Masala Khichdi and Kadhi at autumn twilight' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -372,11 +372,11 @@
       }
     },
     'jain-schezwan-rice': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A white bowl of red-orange Schezwan fried rice, seen from above, surrounded by cabbage, green capsicum, French beans, a tomato, dried red chillies, celery, coriander, black peppercorns, soy sauce and butter on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a white bowl of Schezwan rice, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cabin window table beside a bowl of Schezwan rice, with a snowy pine forest and frozen lake in Hokkaido seen through the window' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of fiery, vibrant red Schezwan Fried Rice tossed in spicy sauce with bell peppers and scallions' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of Schezwan rice, in soft window light' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a high-floor terrace table beside a bowl of Schezwan Rice, overlooking a glowing cityscape at dusk' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
@@ -384,17 +384,226 @@
       }
     },
     'jain-veg-biryani': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A dark bowl of Jain veg biryani with tomato, peas, beans, cashews and peanuts, seen from above, surrounded by cabbage, a tomato, French beans, green peas, cashew nuts, peanuts, cumin seeds, red chilli powder, turmeric, butter and coriander on a dark wooden table' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of veg biryani with tomato, peas and beans, in soft window light' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rooftop table beside a bowl of veg biryani, with Marrakech rooftops, a minaret, a lantern and the Atlas mountains at dusk' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic earthenware handi of royal Dum Veg Biryani with long saffron basmati grains, golden paneer cubes, cashews, mint and raita' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a steaming handi of royal Veg Biryani, in warm restaurant dining ambiance' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rustic wooden table by a Parisian window overlooking European architecture at sunset, beside a bowl of Veg Biryani' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
         serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
-    }
+    },
+    'rajma-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic ceramic bowl of rich authentic Punjabi Rajma Masala slow-simmered in tomato-ginger gravy with fresh coriander and butter' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm dark wooden table beside a steaming bowl of Punjabi Rajma Masala with warm folded roti on a linen cloth' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of steaming Rajma Masala, overlooking mountain peaks' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'paneer-butter-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional ceramic handi of royal Paneer Butter Masala with soft paneer cubes in creamy makhani gravy with kasuri methi and cream' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a traditional handi of rich Paneer Butter Masala and warm folded roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of Paneer Butter Masala, overlooking a scenic European cityscape' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'paneer-bhurji': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted ceramic dish of spiced crumbled Paneer Bhurji tossed with ripe tomatoes, green capsicum and fresh coriander' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic dish of authentic scrambled Paneer Bhurji and warm folded roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table in a snowy alpine chalet beside a plate of scrambled Paneer Bhurji and hot tea' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'pind-ke-chhole': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An authentic earthenware handi of dark spiced Amritsari Pind Ke Chhole with slit green chilies and roasted cumin' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside an earthenware handi of dark spiced Amritsari Chhole and warm bhatura' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of spiced Amritsari Chhole, overlooking a sunny historic city' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'pav-bhaji': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow rustic ceramic plate of rich buttery Mumbai Pav Bhaji topped with melting butter beside golden toasted pav bread and lemon' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden dining table beside a plate of Mumbai Pav Bhaji with butter-toasted pav buns and a lemon wedge' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of buttered Pav Bhaji and toasted pavs' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'bhindi-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic bowl of homestyle Bhindi Masala with crisp-tender green okra sautéed with tomatoes, cumin and coriander' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of homestyle Bhindi Masala and warm folded roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside a bowl of spiced Bhindi Masala in soft natural light' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'veg-kadhai': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional Indian kadhai dish of vibrant Veg Kadhai with crisp bell peppers, baby corn and garden vegetables in pounded coriander masala' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a rustic kadhai of colorful Veg Kadhai and warm folded roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of spiced Veg Kadhai, overlooking scenic city rooftops' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'veg-makhanwala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic handi of rich Shahi Veg Makhanwala with garden vegetables in velvety tomato-cashew makhani gravy and butter' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic handi of Veg Makhanwala with warm folded roti on a linen napkin' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window-side table beside an artisanal bowl of delicious Veg Makhanwala in soft afternoon light' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'moong-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A wholesome rustic ceramic bowl of comforting homestyle Moong Masala with tender green whole moong beans and fresh coriander' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside a bowl of wholesome green Moong Masala and warm folded roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table beside an artisanal bowl of warm green Moong Masala overlooking city rooftops' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-paneer-bhurji': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted ceramic dish of pure Jain Paneer Bhurji with spiced crumbled paneer, diced tomatoes and green capsicum' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic dish of authentic Jain scrambled Paneer Bhurji and warm roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine chalet window table beside a plate of pure Jain scrambled Paneer Bhurji and tea' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-paneer-butter-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional ceramic handi of pure Jain Paneer Butter Masala in velvety tomato-cashew makhani gravy with cream and kasuri methi' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a handi of pure Jain Paneer Butter Masala and warm roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of pure Jain Paneer Butter Masala, overlooking a scenic European cityscape' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-pav-bhaji': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow ceramic plate of authentic Jain Mumbai Pav Bhaji with spiced mashed vegetables, melting butter and toasted pav bread' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden dining table beside a plate of Jain Pav Bhaji with butter-toasted pav buns and lemon' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of pure Jain Pav Bhaji and toasted pavs' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-pind-ke-chhole': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An authentic earthenware handi of pure Jain Amritsari Pind Ke Chhole with dark spiced chickpeas and slit green chilies' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside an earthenware handi of pure Jain Amritsari Chhole and warm bhatura' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of pure Jain Amritsari Chhole, overlooking a sunny historic city' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-rajma-masala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic ceramic bowl of pure Jain Punjabi Rajma Masala with tender red kidney beans in rich tomato-ginger gravy with butter' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm dark wooden table beside a steaming bowl of pure Jain Rajma Masala with warm roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of pure Jain Rajma Masala, overlooking mountain peaks' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-veg-kadhai': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional kadhai dish of pure Jain Veg Kadhai with crisp bell peppers, baby corn and garden vegetables in aromatic kadhai spices' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a kadhai dish of pure Jain Veg Kadhai and warm roti' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of pure Jain Veg Kadhai, overlooking scenic city rooftops' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'jain-veg-makhanwala': {
+      imgVersion: 2,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic handi of pure Jain Shahi Veg Makhanwala with garden vegetables in creamy tomato-cashew makhani gravy' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic handi of pure Jain Veg Makhanwala with warm roti on a linen napkin' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside an artisanal bowl of pure Jain Veg Makhanwala in soft afternoon light' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'gajar-halwa': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional brass bowl of rich Gajar Ka Halwa with grated winter carrots, ghee, mawa, cashews, and pistachios' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a steaming bowl of Gajar Ka Halwa' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a Himalayan winter lodge window table in Manali beside a bowl of warm Gajar Ka Halwa' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'aam-ras': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An elegant brass katori of pure Ratnagiri Alphonso Aam Ras with saffron strands and cardamom' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a sunny table beside a bowl of golden Alphonso Aam Ras' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a coastal Ratnagiri Goa balcony terrace beside a bowl of refreshing Aam Ras overlooking the Arabian Sea' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
+    'rawa-sheera': {
+      imgVersion: 1,
+      cards: [
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted brass bowl of Desi Ghee Rawa Sheera with roasted cashews, saffron, and golden raisins' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a steaming bowl of Rawa Sheera' },
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a stone carved jharokha balcony overlooking the sacred Ganges in Rishikesh beside a bowl of warm Rawa Sheera' }
+      ],
+      placements: {
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+      }
+    },
   };
 
   var BASE = {
