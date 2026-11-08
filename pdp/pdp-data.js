@@ -396,212 +396,231 @@
       }
     },
     'rajma-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic ceramic bowl of rich authentic Punjabi Rajma Masala slow-simmered in tomato-ginger gravy with fresh coriander and butter' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm dark wooden table beside a steaming bowl of Punjabi Rajma Masala with warm folded roti on a linen cloth' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of steaming Rajma Masala, overlooking mountain peaks' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of steaming Rajma Masala, overlooking mountain peaks' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'paneer-butter-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional ceramic handi of royal Paneer Butter Masala with soft paneer cubes in creamy makhani gravy with kasuri methi and cream' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a traditional handi of rich Paneer Butter Masala and warm folded roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of Paneer Butter Masala, overlooking a scenic European cityscape' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of Paneer Butter Masala, overlooking a scenic European cityscape' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'paneer-bhurji': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted ceramic dish of spiced crumbled Paneer Bhurji tossed with ripe tomatoes, green capsicum and fresh coriander' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic dish of authentic scrambled Paneer Bhurji and warm folded roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table in a snowy alpine chalet beside a plate of scrambled Paneer Bhurji and hot tea' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table in a snowy alpine chalet beside a plate of scrambled Paneer Bhurji and hot tea' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'pind-ke-chhole': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An authentic earthenware handi of dark spiced Amritsari Pind Ke Chhole with slit green chilies and roasted cumin' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside an earthenware handi of dark spiced Amritsari Chhole and warm bhatura' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of spiced Amritsari Chhole, overlooking a sunny historic city' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of spiced Amritsari Chhole, overlooking a sunny historic city' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'pav-bhaji': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow rustic ceramic plate of rich buttery Mumbai Pav Bhaji topped with melting butter beside golden toasted pav bread and lemon' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden dining table beside a plate of Mumbai Pav Bhaji with butter-toasted pav buns and a lemon wedge' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of buttered Pav Bhaji and toasted pavs' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of buttered Pav Bhaji and toasted pavs' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'bhindi-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic bowl of homestyle Bhindi Masala with crisp-tender green okra sautéed with tomatoes, cumin and coriander' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of homestyle Bhindi Masala and warm folded roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside a bowl of spiced Bhindi Masala in soft natural light' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside a bowl of spiced Bhindi Masala in soft natural light' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'veg-kadhai': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional Indian kadhai dish of vibrant Veg Kadhai with crisp bell peppers, baby corn and garden vegetables in pounded coriander masala' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a rustic kadhai of colorful Veg Kadhai and warm folded roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of spiced Veg Kadhai, overlooking scenic city rooftops' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of spiced Veg Kadhai, overlooking scenic city rooftops' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'veg-makhanwala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic handi of rich Shahi Veg Makhanwala with garden vegetables in velvety tomato-cashew makhani gravy and butter' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic handi of Veg Makhanwala with warm folded roti on a linen napkin' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window-side table beside an artisanal bowl of delicious Veg Makhanwala in soft afternoon light' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window-side table beside an artisanal bowl of delicious Veg Makhanwala in soft afternoon light' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'moong-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A wholesome rustic ceramic bowl of comforting homestyle Moong Masala with tender green whole moong beans and fresh coriander' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside a bowl of wholesome green Moong Masala and warm folded roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table beside an artisanal bowl of warm green Moong Masala overlooking city rooftops' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy window table beside an artisanal bowl of warm green Moong Masala overlooking city rooftops' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-paneer-bhurji': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted ceramic dish of pure Jain Paneer Bhurji with spiced crumbled paneer, diced tomatoes and green capsicum' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic dish of authentic Jain scrambled Paneer Bhurji and warm roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine chalet window table beside a plate of pure Jain scrambled Paneer Bhurji and tea' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine chalet window table beside a plate of pure Jain scrambled Paneer Bhurji and tea' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-paneer-butter-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional ceramic handi of pure Jain Paneer Butter Masala in velvety tomato-cashew makhani gravy with cream and kasuri methi' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a handi of pure Jain Paneer Butter Masala and warm roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of pure Jain Paneer Butter Masala, overlooking a scenic European cityscape' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit balcony table beside a bowl of pure Jain Paneer Butter Masala, overlooking a scenic European cityscape' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-pav-bhaji': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow ceramic plate of authentic Jain Mumbai Pav Bhaji with spiced mashed vegetables, melting butter and toasted pav bread' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden dining table beside a plate of Jain Pav Bhaji with butter-toasted pav buns and lemon' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of pure Jain Pav Bhaji and toasted pavs' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunny terrace table overlooking blue harbor waters beside a plate of pure Jain Pav Bhaji and toasted pavs' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-pind-ke-chhole': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An authentic earthenware handi of pure Jain Amritsari Pind Ke Chhole with dark spiced chickpeas and slit green chilies' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden table beside an earthenware handi of pure Jain Amritsari Chhole and warm bhatura' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of pure Jain Amritsari Chhole, overlooking a sunny historic city' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor terrace table beside a bowl of pure Jain Amritsari Chhole, overlooking a sunny historic city' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-rajma-masala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic ceramic bowl of pure Jain Punjabi Rajma Masala with tender red kidney beans in rich tomato-ginger gravy with butter' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm dark wooden table beside a steaming bowl of pure Jain Rajma Masala with warm roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of pure Jain Rajma Masala, overlooking mountain peaks' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an alpine lake terrace table beside an artisanal bowl of pure Jain Rajma Masala, overlooking mountain peaks' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-veg-kadhai': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional kadhai dish of pure Jain Veg Kadhai with crisp bell peppers, baby corn and garden vegetables in aromatic kadhai spices' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a kadhai dish of pure Jain Veg Kadhai and warm roti' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of pure Jain Veg Kadhai, overlooking scenic city rooftops' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a sunlit terrace table beside a kadhai dish of pure Jain Veg Kadhai, overlooking scenic city rooftops' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'jain-veg-makhanwala': {
-      imgVersion: 2,
+      imgVersion: 3,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An artisanal ceramic handi of pure Jain Shahi Veg Makhanwala with garden vegetables in creamy tomato-cashew makhani gravy' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a ceramic handi of pure Jain Veg Makhanwala with warm roti on a linen napkin' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside an artisanal bowl of pure Jain Veg Makhanwala in soft afternoon light' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a cozy European window table beside an artisanal bowl of pure Jain Veg Makhanwala in soft afternoon light' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'gajar-halwa': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A traditional brass bowl of rich Gajar Ka Halwa with grated winter carrots, ghee, mawa, cashews, and pistachios' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a steaming bowl of Gajar Ka Halwa' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a Himalayan winter lodge window table in Manali beside a bowl of warm Gajar Ka Halwa' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a Himalayan winter lodge window table in Manali beside a bowl of warm Gajar Ka Halwa' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'aam-ras': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'An elegant brass katori of pure Ratnagiri Alphonso Aam Ras with saffron strands and cardamom' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a sunny table beside a bowl of golden Alphonso Aam Ras' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a coastal Ratnagiri Goa balcony terrace beside a bowl of refreshing Aam Ras overlooking the Arabian Sea' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a coastal Ratnagiri Goa balcony terrace beside a bowl of refreshing Aam Ras overlooking the Arabian Sea' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
     'rawa-sheera': {
-      imgVersion: 1,
+      imgVersion: 2,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted brass bowl of Desi Ghee Rawa Sheera with roasted cashews, saffron, and golden raisins' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm wooden dining table beside a steaming bowl of Rawa Sheera' },
-        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a stone carved jharokha balcony overlooking the sacred Ganges in Rishikesh beside a bowl of warm Rawa Sheera' }
+        { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a stone carved jharokha balcony overlooking the sacred Ganges in Rishikesh beside a bowl of warm Rawa Sheera' },
+        { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
       placements: {
-        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }
+        serving: { w: 1200, h: 1500 }, hero: { w: 1200, h: 1500 }, abroad: { w: 1200, h: 1500 }, nutrition: { w: 1200, h: 1500 }
       }
     },
   };
@@ -692,9 +711,11 @@
     cfg.tint = 'var(--pdp-tint-' + dishes[0] + ')';      // the first dish's colours
     cfg.ink = 'var(--pdp-ink-' + dishes[0] + ')';
     cfg.showChips = false;
-    cfg.placements = { hero: { w: W_CARD, h: H_CARD }, ingredients: { w: W_CARD, h: H_CARD }, prep: { w: W_CARD, h: H_CARD }, onthego: { w: W_CARD, h: H_CARD } };
+    cfg.placements = { hero: { w: W_CARD, h: H_CARD }, ingredients: { w: W_CARD, h: H_CARD }, prep: { w: W_CARD, h: H_CARD }, nutrition: { w: W_CARD, h: H_CARD } };
     cfg.cards = cfg.cards.map(function (c) {
       if (c.type !== 'lifestyle') return c;
+      // the 4th picture is the nutrition tables of every pouch in the combo (tools/combo-nutrition-card.py); it replaces the on-the-go picture
+      if (c.image === 'onthego') return { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 0, serving: false, plate: 'nutrition', alt: '{name}: the Nutrition Information table of each pouch in the combo, and the combo total per serving' };
       return Object.assign({}, c, { alt: COMBO_ALT[c.image], serving: c.image === 'hero' || c.image === 'prep' });
     });
     return cfg;

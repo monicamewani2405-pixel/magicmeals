@@ -5,7 +5,7 @@ lifestyle photos the single products use. Same lighting and shadows as tools/com
     python tools/compose-combo-gallery.py --only <id>     one combo
     options: --jobs 4
 
-Per combo it writes pdp/combos/<id>/gallery/{hero,ingredients,prep,onthego}-{1200,800}.webp and pdp/combos/<id>/stage.webp
+Per combo it writes pdp/combos/<id>/gallery/{hero,ingredients,prep}-{1200,800}.webp and pdp/combos/<id>/stage.webp (the 4th picture, nutrition, comes from tools/combo-nutrition-card.py; the old onthego picture is retired)
     hero          the pouches on the FIRST dish's own hero photo (food on a table), lower-left, like the single products ("Serving suggestion")
     stage         the pouches together on a transparent background: shown in the big left panel in place of the 3D pouch
     prep          the shared kitchen plate (kettle, bowl, spoon)      pdp/shared/plates/prep.jpg
