@@ -288,7 +288,7 @@
       }
     },
     'tawa-pulao': {
-      imgVersion: 6,
+      imgVersion: 7,
       cards: [
         { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic handcrafted ceramic dish of vibrant Mumbai Street-Style Tawa Pulao with fluffy spiced basmati, golden-seared paneer cubes, green peas, capsicum, onion rings and a fresh lemon wedge' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a warm rustic wooden table beside a bowl of vibrant Tawa Pulao, in soft window light' },
@@ -707,7 +707,7 @@
     var lo = Math.min.apply(null, mins), hi = Math.max.apply(null, mins);
     var cfg = build(id, { min: lo === hi ? lo : lo + '–' + hi });
     cfg.flat = true;
-    cfg.imgVersion = 4;
+    cfg.imgVersion = 5;
     cfg.dir = 'pdp/combos/' + id + '/';
     cfg.tint = 'var(--pdp-tint-' + dishes[0] + ')';      // the first dish's colours
     cfg.ink = 'var(--pdp-ink-' + dishes[0] + ')';

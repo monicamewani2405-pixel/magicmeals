@@ -42,8 +42,8 @@
       "needs_regen": false
     },
     "ready": {
-      "dx": -1.0,
-      "dy": -1,
+      "dx": 0.0,
+      "dy": 0,
       "scale": 1.0,
       "needs_regen": false
     }

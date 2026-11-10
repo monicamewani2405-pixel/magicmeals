@@ -127,3 +127,4 @@ def build_combo_serving(cid, dishes):
     save_webp(im_1200, gal_dir / 'serving-1200.webp', 180 * 1024)
     save_webp(im_800, gal_dir / 'serving-800.webp', 90 * 1024)
     print(f"[{cid}] Composed serving: 1200w={s1200//1024}KB (q={q1200}), 800w={s800//1024}KB (q={q800})")
+

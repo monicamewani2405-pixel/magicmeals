@@ -46,3 +46,4 @@ if __name__ == '__main__':
         src = sys.argv[1]
         cids = sys.argv[2].split(',')
         process_combo_image(src, cids)
+

@@ -60,7 +60,7 @@ const SCENES = {
     bowl: 'scenes/processed/veg-biryani/bowl.webp',
     dry: 'scenes/processed/veg-biryani/dry.webp',
     wet: 'scenes/processed/veg-biryani/wet.webp',
-    ready: 'scenes/processed/veg-biryani/ready.webp',
+    ready: 'scenes/processed/veg-biryani/ready.webp?v=2',
     size: [815, 563],
     opening: { cx: 49.82, cy: 32.14, rx: 42.7, ry: 26.83 },
     bowlBottom: 94.68,

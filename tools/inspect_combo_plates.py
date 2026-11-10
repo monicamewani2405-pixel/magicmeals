@@ -40,3 +40,4 @@ if missing:
     print("Missing details:", set(missing))
 else:
     print("ALL individual product serving plates exist!")
+

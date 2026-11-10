@@ -95,9 +95,9 @@ def compose_editorial_3dish(dish1, dish2, dish3):
 
 def save_webp(im, path, limit):
     path.parent.mkdir(parents=True, exist_ok=True)
-    for q in (85, 82, 78, 74, 70, 66, 62, 58, 54, 50, 46, 42):
+    for q in (82, 78, 74, 70, 66, 62, 58, 54, 50, 46, 42):
         buf = io.BytesIO()
-        im.save(buf, 'WEBP', quality=q, method=6)
+        im.save(buf, 'WEBP', quality=q, method=4)
         if buf.tell() <= limit:
             break
     path.write_bytes(buf.getvalue())
