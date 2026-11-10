@@ -264,9 +264,9 @@
       }
     },
     'veg-biryani': {
-      imgVersion: 3,
+      imgVersion: 4,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A rustic earthenware handi of royal Dum Veg Biryani with long saffron basmati grains, golden paneer cubes, caramelized onions, cashews, mint and raita' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A handcrafted bowl of aromatic Veg Biryani with fragrant saffron basmati rice, tender green peas, carrots, French beans, and crispy caramelized onions' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a steaming handi of royal Veg Biryani, in warm restaurant dining ambiance' },
         { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a rustic wooden table by a Parisian window overlooking European architecture at sunset, beside a bowl of Veg Biryani' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
@@ -707,7 +707,7 @@
     var lo = Math.min.apply(null, mins), hi = Math.max.apply(null, mins);
     var cfg = build(id, { min: lo === hi ? lo : lo + '–' + hi });
     cfg.flat = true;
-    cfg.imgVersion = 5;
+    cfg.imgVersion = 6;
     cfg.dir = 'pdp/combos/' + id + '/';
     cfg.tint = 'var(--pdp-tint-' + dishes[0] + ')';      // the first dish's colours
     cfg.ink = 'var(--pdp-ink-' + dishes[0] + ')';
