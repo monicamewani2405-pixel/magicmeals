@@ -10,6 +10,7 @@
    Setup steps: shiprocket-pincode.md
    ========================================================= */
 'use strict';
+const redis = require('./_lib/redis');
 
 const BASE = 'https://apiv2.shiprocket.in/v1/external';
 const TOKEN_TTL_MS = 8 * 24 * 3600 * 1000;           // Shiprocket tokens last 10 days; renew a little earlier
@@ -17,7 +18,7 @@ const RESULT_TTL_MS = 6 * 3600 * 1000;               // same PIN asked again wit
 const MAX_UPSTREAM_PER_MIN = 60;                     // per warm instance: a cheap guard against someone enumerating PIN codes
 
 let token = null, tokenAt = 0;
-const results = new Map();                           // pin -> { at, body }
+const results = new Map();                           // pin -> { at, body }: per-instance fallback when Redis is not configured or down
 let windowStart = 0, windowCount = 0;
 
 async function login() {
@@ -67,8 +68,12 @@ module.exports = async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     return res.status(503).end(JSON.stringify({ ok: false, error: 'not_configured' }));
   }
-  const hit = results.get(pin);
-  if (hit && Date.now() - hit.at < RESULT_TTL_MS) {
+  let hit = results.get(pin);
+  if (hit && Date.now() - hit.at >= RESULT_TTL_MS) hit = null;
+  if (!hit && redis.configured()) {                  // shared across all instances: 6 h per PIN
+    try { const raw = await redis.cmd('GET', 'pin:' + pin); if (raw) hit = { at: Date.now(), body: JSON.parse(raw) }; } catch (e) { /* Redis down: ask Shiprocket */ }
+  }
+  if (hit) {
     res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate=86400');
     return res.status(200).end(JSON.stringify(hit.body));
   }
@@ -82,6 +87,7 @@ module.exports = async (req, res) => {
     else if (status === 404 || status === 422) body = { ok: true, serviceable: false };      // Shiprocket: no courier serves this PIN
     else throw new Error('serviceability ' + status);
     results.set(pin, { at: Date.now(), body });
+    if (redis.configured()) { try { await redis.cmd('SET', 'pin:' + pin, JSON.stringify(body), 'EX', Math.floor(RESULT_TTL_MS / 1000)); } catch (e) { /* cache is optional */ } }
     res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate=86400');
     return res.status(200).end(JSON.stringify(body));
   } catch (e) {

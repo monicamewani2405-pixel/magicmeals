@@ -3102,11 +3102,7 @@
       }
       if (target.id === 'drawerProfileBtn' || target.closest('#drawerProfileBtn') || target.dataset.action === 'profile' || target.closest('[data-action="profile"]')) {
         closeMobileDrawer();
-        const backdrop = document.getElementById('authModalBackdrop');
-        if (backdrop) {
-          backdrop.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        }
+        if (window.MMAuth) window.MMAuth.open();   // auth.js: Sign In, or the profile when signed in
         return;
       }
       if (target.closest('#mobileDrawer') && (target.dataset.cat || target.dataset.go)) {
@@ -3519,51 +3515,7 @@
     initRoute();
     window.addEventListener('hashchange', initRoute);
     
-      // Auth Modal Open/Close & Tabs (Delegated on document)
-      document.addEventListener('click', (e) => {
-        const authBtn = e.target.closest('#authOpenBtn');
-        if (authBtn) {
-          const backdrop = document.getElementById('authModalBackdrop');
-          if (backdrop) {
-            backdrop.classList.add('open');
-            document.body.style.overflow = 'hidden';
-          }
-          return;
-        }
-        const closeBtn = e.target.closest('#authModalCloseBtn');
-        if (closeBtn) {
-          const backdrop = document.getElementById('authModalBackdrop');
-          if (backdrop) {
-            backdrop.classList.remove('open');
-            document.body.style.overflow = '';
-          }
-          return;
-        }
-        const backdrop = document.getElementById('authModalBackdrop');
-        if (backdrop && e.target === backdrop) {
-          backdrop.classList.remove('open');
-          document.body.style.overflow = '';
-          return;
-        }
-        if (e.target.closest('#tabSignInBtn')) {
-          document.getElementById('tabSignInBtn')?.classList.add('active');
-          document.getElementById('tabSignUpBtn')?.classList.remove('active');
-          const sIn = document.getElementById('signInForm');
-          const sUp = document.getElementById('signUpForm');
-          if (sIn) sIn.style.display = 'block';
-          if (sUp) sUp.style.display = 'none';
-          return;
-        }
-        if (e.target.closest('#tabSignUpBtn')) {
-          document.getElementById('tabSignUpBtn')?.classList.add('active');
-          document.getElementById('tabSignInBtn')?.classList.remove('active');
-          const sIn = document.getElementById('signInForm');
-          const sUp = document.getElementById('signUpForm');
-          if (sIn) sIn.style.display = 'none';
-          if (sUp) sUp.style.display = 'block';
-          return;
-        }
-      });
+      // Auth modal (open/close, tabs, forms, profile) lives in auth.js
 
       initPromoBar();
 

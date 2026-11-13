@@ -128,6 +128,9 @@
       attributes: [{ key: 'source', value: 'magicmeals-headless' }]
     };
     if (codes.length) input.discountCodes = codes;
+    // Signed in (auth.js): Shopify attaches the order to this customer by email. The login token itself never reaches the page.
+    var who = window.MMAuth && window.MMAuth.email();
+    if (who) input.buyerIdentity = { email: who };
     return gql(m, { input: input }).then(function (data) {
       var r = data.cartCreate, cart = r && r.cart;
       if (!cart) { (r && r.userErrors || [{ message: 'Shopify did not create the cart.' }]).forEach(function (e) { problems.push(e.message); }); return null; }
