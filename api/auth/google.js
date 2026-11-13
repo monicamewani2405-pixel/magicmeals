@@ -31,6 +31,9 @@ module.exports = async (req, res) => {
       if (!c.ok && c.reason === 'taken') {
         return H.send(res, 409, { ok: false, error: 'exists', message: 'This email already has a Magic Meals account. Please sign in with your password (or use “Forgot password”).' });
       }
+      if (!c.ok && c.reason === 'disabled') {
+        return H.send(res, 409, { ok: false, error: 'not_activated', message: 'This email already has a Magic Meals customer record that is not activated yet. We have emailed you an activation link: open it, choose a password, then sign in here.' });
+      }
       if (!c.ok) return H.send(res, 502, { ok: false, error: 'upstream', message: 'Could not sign you in with Google. Please try again.' });
       t = await S.createToken(email, pw);
       if (!t.ok) return H.send(res, 502, { ok: false, error: 'upstream', message: 'Could not sign you in with Google. Please try again.' });

@@ -33,15 +33,18 @@ async function createToken(email, password) {
   return { ok: false, reason: isThrottle(r && r.customerUserErrors) ? 'throttled' : 'invalid' };
 }
 
-// -> { ok:true } | { ok:false, reason:'taken'|'throttled'|'invalid', fields:[...] }
+// -> { ok:true } | { ok:false, reason:'taken'|'disabled'|'throttled'|'invalid', fields:[...], codes:[...] }
+// 'disabled' = the email already exists as a customer with no active account (e.g. from an earlier guest order); Shopify then emails an activation link.
 async function createCustomer(input) {
   const d = await gql(
     'mutation($i: CustomerCreateInput!){ customerCreate(input:$i){ customer{ id } customerUserErrors{ code field } } }', { i: input });
   const r = d.customerCreate, errs = (r && r.customerUserErrors) || [];
   if (r && r.customer && !errs.length) return { ok: true };
-  if (isThrottle(errs)) return { ok: false, reason: 'throttled', fields: [] };
+  const codes = errs.map(e => String(e.code || '').replace(/[^A-Z_]/g, '').slice(0, 40));   // Shopify's fixed error codes, safe to return
+  if (isThrottle(errs)) return { ok: false, reason: 'throttled', fields: [], codes };
   const fields = errs.map(e => (e.field || []).slice(-1)[0]);
-  return { ok: false, reason: errs.some(e => e.code === 'TAKEN') ? 'taken' : 'invalid', fields };
+  const reason = errs.some(e => e.code === 'TAKEN') ? 'taken' : errs.some(e => e.code === 'CUSTOMER_DISABLED') ? 'disabled' : 'invalid';
+  return { ok: false, reason, fields, codes };
 }
 
 async function recover(email) {

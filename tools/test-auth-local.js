@@ -42,6 +42,7 @@ function shopify(query, v) {
     return { customerAccessTokenCreate: { customerAccessToken: { accessToken: t, expiresAt: new Date(Date.now() + 14 * 864e5).toISOString() }, customerUserErrors: [] } };
   }
   if (query.includes('customerCreate')) {
+    if (v.i.email === 'guest@example.com') return { customerCreate: { customer: null, customerUserErrors: [{ code: 'CUSTOMER_DISABLED', field: null }] } };
     if (customers.has(v.i.email)) return { customerCreate: { customer: null, customerUserErrors: [{ code: 'TAKEN', field: ['input', 'email'] }] } };
     customers.set(v.i.email, { password: v.i.password, firstName: v.i.firstName, lastName: v.i.lastName, phone: v.i.phone });
     return { customerCreate: { customer: { id: 'gid://1' }, customerUserErrors: [] } };
@@ -132,6 +133,8 @@ const ok = (name, cond, extra) => { console.log((cond ? '  PASS ' : '  FAIL ') +
   ok('phone is stored as +91 and the name is split', customers.get('meera@example.com').phone === '+919820000001' && customers.get('meera@example.com').lastName === 'Shah');
   ok('honeypot filled: rejected', (await call('signup.js', { body: { name: 'Bot', email: 'bot@example.com', password: 'longenough1', website: 'http://spam' }, ip: '5.5.5.7' })).statusCode === 400 && !customers.has('bot@example.com'));
   ok('duplicate email: 409 with no detail leaked', (await call('signup.js', { body: { name: 'Again', email: 'meera@example.com', password: 'longenough1' }, ip: '5.5.5.8' })).statusCode === 409);
+  r = await call('signup.js', { body: { name: 'Gina Guest', email: 'guest@example.com', password: 'longenough1' }, ip: '5.5.5.10' });
+  ok('existing not-activated customer: tells them to use the activation email (409), with the Shopify code', r.statusCode === 409 && r.body.error === 'not_activated' && /activation link/.test(r.body.message) && !r.headers['set-cookie'], [r.statusCode, r.body]);
   ok('password over 40 characters is refused', (await call('signup.js', { body: { name: 'A', email: 'long@example.com', password: 'x'.repeat(41) }, ip: '5.5.5.9' })).body.field === 'password');
 
   console.log('Login IP limit, recover, origin');

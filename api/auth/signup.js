@@ -37,8 +37,9 @@ module.exports = async (req, res) => {
     }
     if (!c.ok) {
       if (c.reason === 'throttled') return H.limited(res, 60);
+      if (c.reason === 'disabled') return H.send(res, 409, { ok: false, error: 'not_activated', codes: c.codes, message: 'This email already has a Magic Meals customer record that is not activated yet. We have emailed you an activation link: open it, choose a password, then sign in here.' });
       if (c.reason === 'taken') return H.send(res, 409, { ok: false, error: 'exists', message: 'We could not create that account. If you already have one, sign in or use “Forgot password”.' });
-      return H.send(res, 400, { ok: false, error: 'invalid', message: 'Please check your details and try again.' });
+      return H.send(res, 400, { ok: false, error: 'invalid', codes: c.codes, message: 'Please check your details and try again.' });
     }
     const t = await S.createToken(email, b.password);
     if (!t.ok) return H.send(res, 200, { ok: true, user: null, message: 'Account created. Please sign in.' });
