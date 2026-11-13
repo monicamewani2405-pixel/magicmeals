@@ -74,6 +74,236 @@ PLACE = {
     'aam-ras': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
     'rawa-sheera': {'hero': dict(kind='hero', cx=0.855, base=0.92, h=0.33, rot=0.0, real3d=False), 'abroad': dict(kind='hero', cx=0.17, base=0.93, h=0.40, rot=0.0, real3d=False)},
 }
+
+
+
+# PACK-SIZE FIX (13 Nov 2026, tools/fix-pack-size.py): client rule "the pack must look larger than the plate or bowl". These placements replace the
+# ones in PLACE above for the pictures that had room for a bigger pack; every other picture keeps its PLACE entry.
+PLACE_OVERRIDES = json.loads(r'''{
+ "aam-ras": {
+  "abroad": {
+   "cx": 0.2137,
+   "base": 0.93,
+   "h": 0.482,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.798,
+   "base": 0.965,
+   "h": 0.453,
+   "exact": true
+  }
+ },
+ "dal-fry": {
+  "abroad": {
+   "cx": 0.2004,
+   "base": 0.93,
+   "h": 0.453,
+   "exact": true
+  }
+ },
+ "fried-rice": {
+  "abroad": {
+   "cx": 0.2044,
+   "base": 0.93,
+   "h": 0.463,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.7689,
+   "base": 0.965,
+   "h": 0.53,
+   "exact": true
+  }
+ },
+ "gajar-halwa": {
+  "abroad": {
+   "cx": 0.202,
+   "base": 0.93,
+   "h": 0.453,
+   "exact": true
+  }
+ },
+ "gujarati-dal": {
+  "abroad": {
+   "cx": 0.2235,
+   "base": 0.93,
+   "h": 0.511,
+   "exact": true
+  }
+ },
+ "idli-sambar": {
+  "abroad": {
+   "cx": 0.2004,
+   "base": 0.93,
+   "h": 0.453,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.7804,
+   "base": 0.965,
+   "h": 0.501,
+   "exact": true
+  }
+ },
+ "jain-dal-makhani": {
+  "abroad": {
+   "cx": 0.2235,
+   "base": 0.93,
+   "h": 0.511,
+   "exact": true
+  }
+ },
+ "jain-masala-khichdi-kadhi": {
+  "hero": {
+   "cx": 0.7996,
+   "base": 0.965,
+   "h": 0.453,
+   "exact": true
+  }
+ },
+ "jain-paneer-butter-masala": {
+  "hero": {
+   "cx": 0.7695,
+   "base": 0.965,
+   "h": 0.524,
+   "exact": true
+  }
+ },
+ "jain-pind-ke-chhole": {
+  "abroad": {
+   "cx": 0.2137,
+   "base": 0.93,
+   "h": 0.482,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.792,
+   "base": 0.965,
+   "h": 0.468,
+   "exact": true
+  }
+ },
+ "jain-rajma-masala": {
+  "abroad": {
+   "cx": 0.2253,
+   "base": 0.93,
+   "h": 0.511,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.794,
+   "base": 0.965,
+   "h": 0.463,
+   "exact": true
+  }
+ },
+ "jain-veg-biryani": {
+  "abroad": {
+   "cx": 0.2196,
+   "base": 0.93,
+   "h": 0.501,
+   "exact": true
+  }
+ },
+ "jain-veg-kadhai": {
+  "abroad": {
+   "cx": 0.2193,
+   "base": 0.93,
+   "h": 0.496,
+   "exact": true
+  }
+ },
+ "jain-veg-makhanwala": {
+  "hero": {
+   "cx": 0.7863,
+   "base": 0.965,
+   "h": 0.482,
+   "exact": true
+  }
+ },
+ "jeera-rice": {
+  "abroad": {
+   "cx": 0.2235,
+   "base": 0.93,
+   "h": 0.511,
+   "exact": true
+  }
+ },
+ "masala-khichdi-kadhi": {
+  "hero": {
+   "cx": 0.7653,
+   "base": 0.965,
+   "h": 0.539,
+   "exact": true
+  }
+ },
+ "mexican-rice": {
+  "abroad": {
+   "cx": 0.2196,
+   "base": 0.93,
+   "h": 0.501,
+   "exact": true
+  }
+ },
+ "paneer-butter-masala": {
+  "hero": {
+   "cx": 0.7695,
+   "base": 0.965,
+   "h": 0.524,
+   "exact": true
+  }
+ },
+ "pind-ke-chhole": {
+  "abroad": {
+   "cx": 0.2137,
+   "base": 0.93,
+   "h": 0.482,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.792,
+   "base": 0.965,
+   "h": 0.468,
+   "exact": true
+  }
+ },
+ "rajma-masala": {
+  "abroad": {
+   "cx": 0.2253,
+   "base": 0.93,
+   "h": 0.511,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.794,
+   "base": 0.965,
+   "h": 0.463,
+   "exact": true
+  }
+ },
+ "veg-kadhai": {
+  "abroad": {
+   "cx": 0.2193,
+   "base": 0.93,
+   "h": 0.496,
+   "exact": true
+  }
+ },
+ "pav-bhaji": {
+  "hero": {
+   "cx": 0.7591,
+   "base": 0.93,
+   "h": 0.5,
+   "exact": true
+  }
+ }
+}''')
+for _s, _o in PLACE_OVERRIDES.items():
+    for _k, _v in _o.items():
+        PLACE[_s][_k].update(_v)
+# END PACK-SIZE FIX
+
 OUT_BIG, OUT_SMALL = 1200, 800
 MAX_BIG, MAX_SMALL = 180 * 1024, 90 * 1024
 
@@ -235,15 +465,18 @@ def place_hero(plate, pouch, cfg):
     ph = round(H * cfg['h'])
     pw = round(pouch.width * ph / pouch.height)
     p = pouch.resize((pw, ph), Image.LANCZOS)
-    if not cfg.get('real3d'):                              # a flat front image needs shading and perspective; the 3D render already has them
+    exact = cfg.get('exact')                               # exact: the printed art is only resized (no shading, tilt, blur, contrast change or grain), 13 Nov 2026
+    if not cfg.get('real3d') and not exact:                # a flat front image needs shading and perspective; the 3D render already has them
         p = shade(p, 0.07, side_light=True)
         p = keystone(p, 0.025)
-    big = p.resize((pw * 2, ph * 2), Image.LANCZOS).rotate(-cfg['rot'], resample=Image.BICUBIC, expand=True)
-    p = big.resize((big.width // 2, big.height // 2), Image.LANCZOS)
+    if not (exact and not cfg['rot']):                     # exact art with no rotation: no second resample at all
+        big = p.resize((pw * 2, ph * 2), Image.LANCZOS).rotate(-cfg['rot'], resample=Image.BICUBIC, expand=True)
+        p = big.resize((big.width // 2, big.height // 2), Image.LANCZOS)
     # sit in the shallow depth of field: tiny blur, 3 % less contrast (the product name stays readable)
-    rgb = Image.merge('RGB', p.split()[:3]).filter(ImageFilter.GaussianBlur(0.8))
-    rgb = ImageEnhance.Contrast(rgb).enhance(0.97)
-    p = Image.merge('RGBA', (*rgb.split(), p.split()[3]))
+    if not exact:
+        rgb = Image.merge('RGB', p.split()[:3]).filter(ImageFilter.GaussianBlur(0.8))
+        rgb = ImageEnhance.Contrast(rgb).enhance(0.97)
+        p = Image.merge('RGBA', (*rgb.split(), p.split()[3]))
     x0 = round(cfg['cx'] * W - p.width / 2)
     y0 = round(cfg['base'] * H - p.height)
     assert x0 >= 0 and y0 >= 0 and x0 + p.width <= W, ('pouch leaves the frame', x0, y0, p.size)
@@ -275,7 +508,8 @@ def place_hero(plate, pouch, cfg):
     sl = (slice(y0, y0 + p.height), slice(x0, x0 + p.width))
     m = (pa[..., 3] / 255.0)[..., None]
     arr[sl] = arr[sl] * (1 - m) + pa[..., :3] * m
-    arr = grain(arr, (alpha > 0.5).astype(np.float32), 3.0)
+    if not exact:
+        arr = grain(arr, (alpha > 0.5).astype(np.float32), 3.0)
     return Image.fromarray(np.clip(arr, 0, 255).astype('uint8')), dict(x0=x0, y0=y0, pw=p.width, ph=p.height, dE=round(de, 1))
 
 
@@ -311,6 +545,8 @@ def main():
     p3d = plates / 'pouch3d-hero.png'
     for name, cfg in PLACE[slug].items():
         plate = Image.open(plates / f'{name}.png').convert('RGB')
+        if abs(plate.width / plate.height - 0.8) > 0.005:          # a regenerated plate that is not 4:5: keep the top, cut the bottom
+            plate = plate.crop((0, 0, plate.width, round(plate.width * 1.25)))
         fn = place_hero if cfg['kind'] == 'hero' else place_flat
         use = load_pouch(slug, p3d) if (cfg.get('real3d') and p3d.exists()) else pouch
         img, info = fn(plate, use, cfg)

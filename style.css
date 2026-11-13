@@ -3815,3 +3815,7 @@ body[data-view="home"] .homepage-sheet {
 /* footer: contact + social columns */
 .footer-contact address { font-style: normal; color: var(--border); line-height: 1.6; }
 .footer-social { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; }
+
+/* shelf life row directly under the pincode field; the last fact chip fills the row when the count is odd */
+.pdp-shelf { margin-top: 10px; }
+.pdp-facts-grid .pdp-fact-item:last-child:nth-child(odd) { grid-column: 1 / -1; }

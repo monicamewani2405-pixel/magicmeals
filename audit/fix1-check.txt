@@ -19,7 +19,7 @@ MAPPING (row | product id | display name now | new name from sheet | kcal in mai
   18 | jeera-rice                 | Jeera Rice                         | Jeera Rice                 | 290 kcal  | 290
   19 | fried-rice                 | Desi Chinese Veg Fried Rice        | Fried Rice  (COLLISION, not applied) | 230 kcal  | 230
   20 | mexican-rice               | Mexican Rice                       | Mexican Rice               | 299 kcal  | 299
-  21 | dal-makhani                | Dal Makhani                        | Dal Makhni                 | 460 kcal  | 460
+  21 | dal-makhani                | Dal Makhni                         | Dal Makhni                 | 460 kcal  | 460
   22 | gujarati-dal               | Gujarati Dal                       | Gujarati Dal               | 210 kcal  | 210
   23 | dal-tadka                  | Dal Tadka                          | Dal Tadka                  | 284 kcal  | 284
   24 | sweet-corn-soup            | Sweet & Corn Soup                  | Sweet & Corn Soup          | 100 kcal  | 100
@@ -40,7 +40,7 @@ MAPPING (row | product id | display name now | new name from sheet | kcal in mai
   39 | jain-schezwan-rice         | Jain Schezwan Rice                 | Jain Schezwan Rice         | 240 kcal  | 240
   40 | jain-veg-biryani           | Jain Veg Biryani                   | Jain Veg Biryani           | 160 kcal  | 160
   41 | dal-fry                    | Homestyle Yellow Dal Fry           | Homestyle Yellow Dal Fry   | 260 kcal  | 260
-  42 | jain-dal-makhani           | Jain Dal Makhani                   | Jain Dal Makhni            | 340 kcal  | 340
+  42 | jain-dal-makhani           | Jain Dal Makhni                    | Jain Dal Makhni            | 340 kcal  | 340
 
 UNMATCHED ROWS: none
 PRODUCTS WITH NO ROW (left unchanged): ['masala-khichdi-kadhi', 'fried-rice-manchurian', 'jain-paneer-bhurji', 'jain-paneer-butter-masala']

@@ -59,6 +59,11 @@
   // Gallery column, in order. pouchAzimuth = where the 3D pouch turns when the card is mid-screen (desktop/tablet).
   // The "Inside the pack" card appears only for dishes that have a scene in scenes/scene-data.js.
   // serving = show the "Serving suggestion" caption (the photo shows food that is not the pack's own contents).
+  // Cache busting for the pictures re-composed for the client rule "the pack must look larger than the plate or bowl" (tools/fix-pack-size.py):
+  // the products in PACK_RESIZED get ASSET_VERSION added to their picture URLs. Bump ASSET_VERSION when one of those files changes again.
+  var ASSET_VERSION = 20261113;
+  var PACK_RESIZED = ["aam-ras", "dal-fry", "fried-rice", "gajar-halwa", "gujarati-dal", "idli-sambar", "jain-dal-makhani", "jain-masala-khichdi-kadhi", "jain-paneer-butter-masala", "jain-pind-ke-chhole", "jain-rajma-masala", "jain-veg-biryani", "jain-veg-kadhai", "jain-veg-makhanwala", "jeera-rice", "masala-khichdi-kadhi", "mexican-rice", "paneer-butter-masala", "pav-bhaji", "pind-ke-chhole", "rajma-masala", "veg-kadhai"];
+
   var CARD_PLAN = [
     { id: 'hero',        type: 'lifestyle', image: 'hero',        pouchAzimuth: 20,  serving: true  },
     { id: 'inside',      type: 'inside',                           pouchAzimuth: 0 },
@@ -683,7 +688,7 @@
       ] : null,
       cards: cards,
       placements: lively ? lively.placements : (PDP_PLACEMENTS[slug] || {}),
-      imgVersion: lively ? lively.imgVersion : 0,
+      imgVersion: lively ? lively.imgVersion + (PACK_RESIZED.indexOf(slug) >= 0 ? '.' + ASSET_VERSION : '') : 0,
       ingredientFiles: PDP_INGREDIENT_FILES
     });
   }

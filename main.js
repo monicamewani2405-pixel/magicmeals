@@ -181,7 +181,7 @@
       // Dals
       {
         id: 'dal-makhani',
-        title: 'Dal Makhani',
+        title: 'Dal Makhni',
         category: 'Dals',
         price: 225,
         mrp: 240,
@@ -640,7 +640,7 @@
       },
       {
         id: 'jain-dal-makhani',
-        title: 'Jain Dal Makhani',
+        title: 'Jain Dal Makhni',
         category: 'Dals',
         price: 240,
         mrp: 240,
@@ -2012,7 +2012,18 @@
     // product-descriptions.js itself is not edited.
     function waterFactsOnly(html) {
       const m = html.match(/<h[34]>(?:<strong>)?\s*Preparation Instructions\s*(?:<\/strong>)?<\/h[34]>/i);
-      if (!m) return html;
+      if (!m) {
+        // 10 combos have no heading: after the benefit list each dish is a bold name followed by its own numbered steps (as <ol> or as text with <br>), to the end of the description
+        const at = html.search(/Empty\s+content/i);
+        const start = at < 0 ? -1 : html.lastIndexOf('<p><strong>', at);
+        if (start < 0) return html;
+        const found = [];
+        html.slice(start).split(/(?=<p><strong>)/).forEach(chunk => {
+          const nm = chunk.match(/<p><strong>([^<]*)/), w = chunk.match(/Add\s+(\d+)\s?ml\s+(?:of\s+)?(?:(boiling|hot|cold)\s+)?water/i);
+          if (nm && w) found.push(`<strong>${nm[1].trim().replace(/^./, c => c.toUpperCase())}</strong>: ${w[1]} ml ${w[2] ? (w[2].toLowerCase() === 'cold' ? 'cold ' : 'hot ') : ''}water`);
+        });
+        return html.slice(0, start) + (found.length ? `<h3>Water to add</h3><p>${found.join('<br>')}</p>` : '');
+      }
       const tail = html.slice(m.index + m[0].length), lines = [], re = /(?:<p><strong>([^<]*)<\/strong><\/p>)?\s*<ol>([\s\S]*?)<\/ol>/gi;
       let x;
       while ((x = re.exec(tail))) {
@@ -2133,6 +2144,11 @@
                 <input type="text" id="pincodeInput" placeholder="Enter Pincode for Delivery Time" maxlength="6" inputmode="numeric" autocomplete="postal-code" aria-label="PIN code">
                 <button class="pincode-btn" id="checkPincodeBtn">Check</button>
               </div>
+              <!-- Shelf life: the block directly under the pincode field (one SHELF_LIFE constant for every product) -->
+              <div class="pdp-fact-item pdp-shelf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
+                <span>${SHELF_LIFE} Shelf Life</span>
+              </div>
               <div id="pincodeResult" class="pincode-result" role="status" aria-live="polite" hidden></div>
 
               <!-- Nutrition & Meal Facts -->
@@ -2144,10 +2160,6 @@
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
                   <span>Zero Preservatives</span>
-                </li>
-                <li class="pdp-fact-item">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
-                  <span>${SHELF_LIFE} Shelf Life</span>
                 </li>
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>

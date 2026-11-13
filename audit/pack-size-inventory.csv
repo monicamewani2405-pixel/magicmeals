@@ -1,0 +1,528 @@
+product,file,gallery_position,serving_suggestion,type,how_made
+kanda-poha,pdp/kanda-poha/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+kanda-poha,pdp/kanda-poha/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+kanda-poha,pdp/kanda-poha/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+kanda-poha,pdp/kanda-poha/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+kanda-poha,pdp/kanda-poha/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+kanda-poha,pdp/kanda-poha/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+kanda-poha,pdp/kanda-poha/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-poha,pdp/jain-poha/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-poha,pdp/jain-poha/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-poha,pdp/jain-poha/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-poha,pdp/jain-poha/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-poha,pdp/jain-poha/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-poha,pdp/jain-poha/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-poha,pdp/jain-poha/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+idli-sambar,pdp/idli-sambar/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+idli-sambar,pdp/idli-sambar/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+idli-sambar,pdp/idli-sambar/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+idli-sambar,pdp/idli-sambar/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+idli-sambar,pdp/idli-sambar/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+idli-sambar,pdp/idli-sambar/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+idli-sambar,pdp/idli-sambar/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+upma,pdp/upma/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+upma,pdp/upma/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+upma,pdp/upma/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+upma,pdp/upma/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+upma,pdp/upma/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+upma,pdp/upma/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+upma,pdp/upma/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-upma,pdp/jain-upma/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-upma,pdp/jain-upma/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-upma,pdp/jain-upma/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-upma,pdp/jain-upma/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-upma,pdp/jain-upma/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-upma,pdp/jain-upma/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-upma,pdp/jain-upma/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mumbai-misal,pdp/mumbai-misal/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+mumbai-misal,pdp/mumbai-misal/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+mumbai-misal,pdp/mumbai-misal/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+mumbai-misal,pdp/mumbai-misal/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+mumbai-misal,pdp/mumbai-misal/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mumbai-misal,pdp/mumbai-misal/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mumbai-misal,pdp/mumbai-misal/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tomato-soup,pdp/tomato-soup/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+tomato-soup,pdp/tomato-soup/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+tomato-soup,pdp/tomato-soup/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+tomato-soup,pdp/tomato-soup/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+tomato-soup,pdp/tomato-soup/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tomato-soup,pdp/tomato-soup/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tomato-soup,pdp/tomato-soup/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+sweet-corn-soup,pdp/sweet-corn-soup/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-makhani,pdp/dal-makhani/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+dal-makhani,pdp/dal-makhani/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-makhani,pdp/dal-makhani/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-makhani,pdp/dal-makhani/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+dal-makhani,pdp/dal-makhani/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-makhani,pdp/dal-makhani/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-makhani,pdp/dal-makhani/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-tadka,pdp/dal-tadka/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+dal-tadka,pdp/dal-tadka/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-tadka,pdp/dal-tadka/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-tadka,pdp/dal-tadka/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+dal-tadka,pdp/dal-tadka/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-tadka,pdp/dal-tadka/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-tadka,pdp/dal-tadka/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-fry,pdp/dal-fry/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+dal-fry,pdp/dal-fry/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-fry,pdp/dal-fry/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-fry,pdp/dal-fry/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+dal-fry,pdp/dal-fry/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-fry,pdp/dal-fry/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-fry,pdp/dal-fry/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gujarati-dal,pdp/gujarati-dal/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+gujarati-dal,pdp/gujarati-dal/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+gujarati-dal,pdp/gujarati-dal/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+gujarati-dal,pdp/gujarati-dal/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+gujarati-dal,pdp/gujarati-dal/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gujarati-dal,pdp/gujarati-dal/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gujarati-dal,pdp/gujarati-dal/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-khichdi,pdp/dal-khichdi/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+dal-khichdi,pdp/dal-khichdi/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-khichdi,pdp/dal-khichdi/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+dal-khichdi,pdp/dal-khichdi/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+dal-khichdi,pdp/dal-khichdi/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-khichdi,pdp/dal-khichdi/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+dal-khichdi,pdp/dal-khichdi/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-biryani,pdp/veg-biryani/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+veg-biryani,pdp/veg-biryani/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-biryani,pdp/veg-biryani/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-biryani,pdp/veg-biryani/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+veg-biryani,pdp/veg-biryani/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-biryani,pdp/veg-biryani/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-biryani,pdp/veg-biryani/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jeera-rice,pdp/jeera-rice/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jeera-rice,pdp/jeera-rice/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jeera-rice,pdp/jeera-rice/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jeera-rice,pdp/jeera-rice/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jeera-rice,pdp/jeera-rice/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jeera-rice,pdp/jeera-rice/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jeera-rice,pdp/jeera-rice/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tawa-pulao,pdp/tawa-pulao/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+tawa-pulao,pdp/tawa-pulao/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+tawa-pulao,pdp/tawa-pulao/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+tawa-pulao,pdp/tawa-pulao/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+tawa-pulao,pdp/tawa-pulao/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tawa-pulao,pdp/tawa-pulao/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+tawa-pulao,pdp/tawa-pulao/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice,pdp/fried-rice/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+fried-rice,pdp/fried-rice/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+fried-rice,pdp/fried-rice/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+fried-rice,pdp/fried-rice/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+fried-rice,pdp/fried-rice/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice,pdp/fried-rice/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+fried-rice,pdp/fried-rice/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+schezwan-rice,pdp/schezwan-rice/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+schezwan-rice,pdp/schezwan-rice/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+schezwan-rice,pdp/schezwan-rice/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+schezwan-rice,pdp/schezwan-rice/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+schezwan-rice,pdp/schezwan-rice/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+schezwan-rice,pdp/schezwan-rice/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+schezwan-rice,pdp/schezwan-rice/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mexican-rice,pdp/mexican-rice/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+mexican-rice,pdp/mexican-rice/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+mexican-rice,pdp/mexican-rice/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+mexican-rice,pdp/mexican-rice/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+mexican-rice,pdp/mexican-rice/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mexican-rice,pdp/mexican-rice/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+mexican-rice,pdp/mexican-rice/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-biryani,pdp/jain-veg-biryani/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rajma-masala,pdp/rajma-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+rajma-masala,pdp/rajma-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+rajma-masala,pdp/rajma-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+rajma-masala,pdp/rajma-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+rajma-masala,pdp/rajma-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rajma-masala,pdp/rajma-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rajma-masala,pdp/rajma-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-butter-masala,pdp/paneer-butter-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-bhurji,pdp/paneer-bhurji/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+paneer-bhurji,pdp/paneer-bhurji/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+paneer-bhurji,pdp/paneer-bhurji/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+paneer-bhurji,pdp/paneer-bhurji/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+paneer-bhurji,pdp/paneer-bhurji/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-bhurji,pdp/paneer-bhurji/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+paneer-bhurji,pdp/paneer-bhurji/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pind-ke-chhole,pdp/pind-ke-chhole/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pav-bhaji,pdp/pav-bhaji/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+pav-bhaji,pdp/pav-bhaji/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+pav-bhaji,pdp/pav-bhaji/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+pav-bhaji,pdp/pav-bhaji/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+pav-bhaji,pdp/pav-bhaji/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pav-bhaji,pdp/pav-bhaji/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+pav-bhaji,pdp/pav-bhaji/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+bhindi-masala,pdp/bhindi-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+bhindi-masala,pdp/bhindi-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+bhindi-masala,pdp/bhindi-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+bhindi-masala,pdp/bhindi-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+bhindi-masala,pdp/bhindi-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+bhindi-masala,pdp/bhindi-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+bhindi-masala,pdp/bhindi-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-kadhai,pdp/veg-kadhai/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+veg-kadhai,pdp/veg-kadhai/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-kadhai,pdp/veg-kadhai/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-kadhai,pdp/veg-kadhai/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+veg-kadhai,pdp/veg-kadhai/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-kadhai,pdp/veg-kadhai/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-kadhai,pdp/veg-kadhai/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-makhanwala,pdp/veg-makhanwala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+veg-makhanwala,pdp/veg-makhanwala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-makhanwala,pdp/veg-makhanwala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+veg-makhanwala,pdp/veg-makhanwala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+veg-makhanwala,pdp/veg-makhanwala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-makhanwala,pdp/veg-makhanwala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+veg-makhanwala,pdp/veg-makhanwala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+moong-masala,pdp/moong-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+moong-masala,pdp/moong-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+moong-masala,pdp/moong-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+moong-masala,pdp/moong-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+moong-masala,pdp/moong-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+moong-masala,pdp/moong-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+moong-masala,pdp/moong-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-bhurji,pdp/jain-paneer-bhurji/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-paneer-butter-masala,pdp/jain-paneer-butter-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pav-bhaji,pdp/jain-pav-bhaji/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-rajma-masala,pdp/jain-rajma-masala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gajar-halwa,pdp/gajar-halwa/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+gajar-halwa,pdp/gajar-halwa/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+gajar-halwa,pdp/gajar-halwa/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+gajar-halwa,pdp/gajar-halwa/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+gajar-halwa,pdp/gajar-halwa/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gajar-halwa,pdp/gajar-halwa/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+gajar-halwa,pdp/gajar-halwa/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+aam-ras,pdp/aam-ras/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+aam-ras,pdp/aam-ras/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+aam-ras,pdp/aam-ras/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+aam-ras,pdp/aam-ras/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+aam-ras,pdp/aam-ras/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+aam-ras,pdp/aam-ras/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+aam-ras,pdp/aam-ras/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rawa-sheera,pdp/rawa-sheera/gallery/serving-1200.webp,1,yes,C,"food only, no pack (serving suggestion)"
+rawa-sheera,pdp/rawa-sheera/gallery/hero-1200.webp,2,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+rawa-sheera,pdp/rawa-sheera/gallery/abroad-1200.webp,3,,A,real pouch composited on an AI plate (compose-lively.py); the plate has no pack
+rawa-sheera,pdp/rawa-sheera/gallery/nutrition-1200.webp,4,,C,"back of the pack, no plate or bowl"
+rawa-sheera,pdp/rawa-sheera/gallery/ingredients-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rawa-sheera,pdp/rawa-sheera/gallery/prep-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+rawa-sheera,pdp/rawa-sheera/gallery/onthego-1200.webp,,,A,"old gallery picture, retired: the lively gallery replaced it, not shown on the page"
+classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice,pdp/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice,pdp/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice,pdp/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice,pdp/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice,pdp/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+comfort-combo-rajma-masala-jeera-rice-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+comfort-combo-rajma-masala-jeera-rice-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+comfort-combo-rajma-masala-jeera-rice-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+comfort-combo-rajma-masala-jeera-rice-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+comfort-combo-rajma-masala-jeera-rice-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+comfort-combo-rajma-masala-tawa-pulao-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+comfort-combo-rajma-masala-tawa-pulao-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+comfort-combo-rajma-masala-tawa-pulao-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+comfort-combo-rajma-masala-tawa-pulao-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+comfort-combo-rajma-masala-tawa-pulao-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+comfort-combo-rajma-masala-veg-biryani-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+comfort-combo-rajma-masala-veg-biryani-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+comfort-combo-rajma-masala-veg-biryani-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+comfort-combo-rajma-masala-veg-biryani-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+comfort-combo-rajma-masala-veg-biryani-gajar-halwa,pdp/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+comfort-night-combo-dal-fry-jeera-rice,pdp/combos/comfort-night-combo-dal-fry-jeera-rice/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+comfort-night-combo-dal-fry-jeera-rice,pdp/combos/comfort-night-combo-dal-fry-jeera-rice/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+comfort-night-combo-dal-fry-jeera-rice,pdp/combos/comfort-night-combo-dal-fry-jeera-rice/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+comfort-night-combo-dal-fry-jeera-rice,pdp/combos/comfort-night-combo-dal-fry-jeera-rice/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+comfort-night-combo-dal-fry-jeera-rice,pdp/combos/comfort-night-combo-dal-fry-jeera-rice/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+dinner-dessert-combo,pdp/combos/dinner-dessert-combo/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+dinner-dessert-combo,pdp/combos/dinner-dessert-combo/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+dinner-dessert-combo,pdp/combos/dinner-dessert-combo/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+dinner-dessert-combo,pdp/combos/dinner-dessert-combo/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+dinner-dessert-combo,pdp/combos/dinner-dessert-combo/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+fiesta-bowl-combo,pdp/combos/fiesta-bowl-combo/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+fiesta-bowl-combo,pdp/combos/fiesta-bowl-combo/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+fiesta-bowl-combo,pdp/combos/fiesta-bowl-combo/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+fiesta-bowl-combo,pdp/combos/fiesta-bowl-combo/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+fiesta-bowl-combo,pdp/combos/fiesta-bowl-combo/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa,pdp/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+indo-chinese-feast-combo,pdp/combos/indo-chinese-feast-combo/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+indo-chinese-feast-combo,pdp/combos/indo-chinese-feast-combo/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+indo-chinese-feast-combo,pdp/combos/indo-chinese-feast-combo/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+indo-chinese-feast-combo,pdp/combos/indo-chinese-feast-combo/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+indo-chinese-feast-combo,pdp/combos/indo-chinese-feast-combo/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-biryani-royale-veg-biryani-aam-ras,pdp/combos/jain-biryani-royale-veg-biryani-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-biryani-royale-veg-biryani-aam-ras,pdp/combos/jain-biryani-royale-veg-biryani-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-biryani-royale-veg-biryani-aam-ras,pdp/combos/jain-biryani-royale-veg-biryani-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-biryani-royale-veg-biryani-aam-ras,pdp/combos/jain-biryani-royale-veg-biryani-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-biryani-royale-veg-biryani-aam-ras,pdp/combos/jain-biryani-royale-veg-biryani-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-biryani-royale-veg-biryani-rawa-sheera,pdp/combos/jain-biryani-royale-veg-biryani-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-biryani-royale-veg-biryani-rawa-sheera,pdp/combos/jain-biryani-royale-veg-biryani-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-biryani-royale-veg-biryani-rawa-sheera,pdp/combos/jain-biryani-royale-veg-biryani-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-biryani-royale-veg-biryani-rawa-sheera,pdp/combos/jain-biryani-royale-veg-biryani-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-biryani-royale-veg-biryani-rawa-sheera,pdp/combos/jain-biryani-royale-veg-biryani-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-classic-dinner-combo-dal-makhani-jeera-rice,pdp/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-classic-dinner-combo-dal-makhani-jeera-rice,pdp/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-classic-dinner-combo-dal-makhani-jeera-rice,pdp/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-classic-dinner-combo-dal-makhani-jeera-rice,pdp/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-classic-dinner-combo-dal-makhani-jeera-rice,pdp/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera,pdp/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera,pdp/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera,pdp/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera,pdp/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera,pdp/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry,pdp/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry,pdp/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry,pdp/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry,pdp/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry,pdp/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-indo-chinese-combo-schezwan-rice-rawa-sheera,pdp/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-indo-chinese-combo-schezwan-rice-rawa-sheera,pdp/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-indo-chinese-combo-schezwan-rice-rawa-sheera,pdp/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-indo-chinese-combo-schezwan-rice-rawa-sheera,pdp/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-indo-chinese-combo-schezwan-rice-rawa-sheera,pdp/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-light-comfort-combo-dal-khichdi-aam-ras,pdp/combos/jain-light-comfort-combo-dal-khichdi-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-light-comfort-combo-dal-khichdi-aam-ras,pdp/combos/jain-light-comfort-combo-dal-khichdi-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-light-comfort-combo-dal-khichdi-aam-ras,pdp/combos/jain-light-comfort-combo-dal-khichdi-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-light-comfort-combo-dal-khichdi-aam-ras,pdp/combos/jain-light-comfort-combo-dal-khichdi-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-light-comfort-combo-dal-khichdi-aam-ras,pdp/combos/jain-light-comfort-combo-dal-khichdi-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-light-comfort-combo-dal-khichdi-rawa-sheera,pdp/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-light-comfort-combo-dal-khichdi-rawa-sheera,pdp/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-light-comfort-combo-dal-khichdi-rawa-sheera,pdp/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-light-comfort-combo-dal-khichdi-rawa-sheera,pdp/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-light-comfort-combo-dal-khichdi-rawa-sheera,pdp/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-light-dinner-combo-dal-khichdi-moong-masala,pdp/combos/jain-light-dinner-combo-dal-khichdi-moong-masala/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-light-dinner-combo-dal-khichdi-moong-masala,pdp/combos/jain-light-dinner-combo-dal-khichdi-moong-masala/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-light-dinner-combo-dal-khichdi-moong-masala,pdp/combos/jain-light-dinner-combo-dal-khichdi-moong-masala/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-light-dinner-combo-dal-khichdi-moong-masala,pdp/combos/jain-light-dinner-combo-dal-khichdi-moong-masala/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-light-dinner-combo-dal-khichdi-moong-masala,pdp/combos/jain-light-dinner-combo-dal-khichdi-moong-masala/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry,pdp/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry,pdp/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry,pdp/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry,pdp/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry,pdp/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-royal-fusion-combo-schezwan-rice-aam-ras,pdp/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-royal-fusion-combo-schezwan-rice-aam-ras,pdp/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-royal-fusion-combo-schezwan-rice-aam-ras,pdp/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-royal-fusion-combo-schezwan-rice-aam-ras,pdp/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-royal-fusion-combo-schezwan-rice-aam-ras,pdp/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+jain-street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/jain-street-style-combo-pav-bhaji-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+jain-street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/jain-street-style-combo-pav-bhaji-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+jain-street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/jain-street-style-combo-pav-bhaji-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+jain-street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/jain-street-style-combo-pav-bhaji-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+jain-street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/jain-street-style-combo-pav-bhaji-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+maharashtrian-nashta-combo,pdp/combos/maharashtrian-nashta-combo/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+maharashtrian-nashta-combo,pdp/combos/maharashtrian-nashta-combo/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+maharashtrian-nashta-combo,pdp/combos/maharashtrian-nashta-combo/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+maharashtrian-nashta-combo,pdp/combos/maharashtrian-nashta-combo/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+maharashtrian-nashta-combo,pdp/combos/maharashtrian-nashta-combo/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera,pdp/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras,pdp/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa,pdp/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa,pdp/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa,pdp/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa,pdp/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa,pdp/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa,pdp/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+royal-combo-tawa-pulao-aam-ras,pdp/combos/royal-combo-tawa-pulao-aam-ras/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+royal-combo-tawa-pulao-aam-ras,pdp/combos/royal-combo-tawa-pulao-aam-ras/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+royal-combo-tawa-pulao-aam-ras,pdp/combos/royal-combo-tawa-pulao-aam-ras/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+royal-combo-tawa-pulao-aam-ras,pdp/combos/royal-combo-tawa-pulao-aam-ras/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+royal-combo-tawa-pulao-aam-ras,pdp/combos/royal-combo-tawa-pulao-aam-ras/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+royal-combo-veg-biryani-rawa-sheera,pdp/combos/royal-combo-veg-biryani-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+royal-combo-veg-biryani-rawa-sheera,pdp/combos/royal-combo-veg-biryani-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+royal-combo-veg-biryani-rawa-sheera,pdp/combos/royal-combo-veg-biryani-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+royal-combo-veg-biryani-rawa-sheera,pdp/combos/royal-combo-veg-biryani-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+royal-combo-veg-biryani-rawa-sheera,pdp/combos/royal-combo-veg-biryani-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+south-indian-breakfast-combo,pdp/combos/south-indian-breakfast-combo/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+south-indian-breakfast-combo,pdp/combos/south-indian-breakfast-combo/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+south-indian-breakfast-combo,pdp/combos/south-indian-breakfast-combo/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+south-indian-breakfast-combo,pdp/combos/south-indian-breakfast-combo/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+south-indian-breakfast-combo,pdp/combos/south-indian-breakfast-combo/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/street-style-combo-pav-bhaji-rawa-sheera/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/street-style-combo-pav-bhaji-rawa-sheera/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/street-style-combo-pav-bhaji-rawa-sheera/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/street-style-combo-pav-bhaji-rawa-sheera/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+street-style-combo-pav-bhaji-rawa-sheera,pdp/combos/street-style-combo-pav-bhaji-rawa-sheera/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
+street-style-combo-pav-bhaji-tawa-pulao,pdp/combos/street-style-combo-pav-bhaji-tawa-pulao/gallery/hero-1200.webp,1,yes,C,"multi-dish serving suggestion, food only, no pack"
+street-style-combo-pav-bhaji-tawa-pulao,pdp/combos/street-style-combo-pav-bhaji-tawa-pulao/gallery/ingredients-1200.webp,2,,A,pouches composited on the shared spices plate (compose-combo-gallery.js); no plate or bowl of note
+street-style-combo-pav-bhaji-tawa-pulao,pdp/combos/street-style-combo-pav-bhaji-tawa-pulao/gallery/prep-1200.webp,3,,A,pouches composited on the shared kitchen plate with the steel pot (compose-combo-gallery.js)
+street-style-combo-pav-bhaji-tawa-pulao,pdp/combos/street-style-combo-pav-bhaji-tawa-pulao/gallery/nutrition-1200.webp,4,,C,"nutrition tables, no plate or bowl"
+street-style-combo-pav-bhaji-tawa-pulao,pdp/combos/street-style-combo-pav-bhaji-tawa-pulao/stage.webp,left panel,,C,"pouches together on a transparent background, no plate or bowl"
