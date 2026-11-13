@@ -71,7 +71,8 @@
 
   function failed(form, res) {
     if (res.status === 429) { lockout(form, res.body.retryAfter || 60); return; }
-    say(res.body.message || 'Something went wrong. Please try again.', 'error');
+    // Normally the server's own sentence. If a reply has none, show the code so the cause can be found.
+    say(res.body.message || ('Something went wrong (error ' + res.status + (res.body.error ? ': ' + res.body.error : '') + '). Please try again.'), 'error');
     if (res.body.field) { var f = form.elements[res.body.field]; if (f) { f.setAttribute('aria-invalid', 'true'); f.focus(); } }
   }
 

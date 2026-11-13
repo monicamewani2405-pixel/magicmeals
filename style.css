@@ -2754,7 +2754,9 @@
     .auth-google-slot { display: flex; justify-content: center; min-height: 44px; }
 
     .auth-modal-card [hidden] { display: none !important; }
-    .auth-modal-card { max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; }
+    /* the dark backdrop scrolls when the form is taller than the screen, so the card itself never gets a scrollbar and keeps four round corners */
+    .auth-modal-backdrop { overflow-y: auto; overscroll-behavior: contain; align-items: flex-start; }
+    .auth-modal-card { margin: auto; flex: none; overflow: visible; border-radius: 20px; }
     .auth-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .auth-forgot, .auth-link-btn {
       background: none; border: none; padding: 0; font: inherit; cursor: pointer;

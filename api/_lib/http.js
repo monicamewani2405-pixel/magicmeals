@@ -20,14 +20,14 @@ function clientIp(req) {
 
 // Method + same-origin check. Returns true if the request may continue; otherwise it has already answered.
 function guard(req, res, method) {
-  if (req.method !== method) { res.setHeader('Allow', method); send(res, 405, { ok: false, error: 'method' }); return false; }
+  if (req.method !== method) { res.setHeader('Allow', method); send(res, 405, { ok: false, error: 'method', message: 'That request is not allowed.' }); return false; }
   if (method === 'POST') {
     const origin = req.headers.origin;
     const host = req.headers['x-forwarded-host'] || req.headers.host;
     let sameOrigin = true;
     if (origin) { try { sameOrigin = new URL(origin).host === host; } catch (e) { sameOrigin = false; } }
-    if (!sameOrigin || req.headers['sec-fetch-site'] === 'cross-site') { send(res, 403, { ok: false, error: 'origin' }); return false; }
-    if (!String(req.headers['content-type'] || '').toLowerCase().startsWith('application/json')) { send(res, 415, { ok: false, error: 'content_type' }); return false; }
+    if (!sameOrigin || req.headers['sec-fetch-site'] === 'cross-site') { send(res, 403, { ok: false, error: 'origin', message: 'This request was blocked for safety. Please reload the page and try again.' }); return false; }
+    if (!String(req.headers['content-type'] || '').toLowerCase().startsWith('application/json')) { send(res, 415, { ok: false, error: 'content_type', message: 'Please reload the page and try again.' }); return false; }
   }
   return true;
 }
