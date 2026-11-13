@@ -26,7 +26,7 @@ async function pipeline(cmds) {
     if (!r.ok) throw new Error('redis_http_' + r.status);
     const out = await r.json();
     return out.map(x => {
-      if (x && x.error) throw new Error('redis_cmd');         // never include the command: keys can hold hashed emails
+      if (x && x.error) throw new Error('redis_cmd:' + String(x.error).replace(/[^A-Za-z0-9 _-]/g, '').slice(0, 40));   // error TYPE only, never the command or key
       return x.result;
     });
   } finally { clearTimeout(t); }

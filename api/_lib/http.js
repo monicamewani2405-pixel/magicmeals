@@ -44,9 +44,17 @@ function limited(res, retryAfter) {
 }
 
 // Redis down / env missing: log the reason only (never credentials) and refuse, so protection is never silently off.
+// `reason` is a fixed code (which setting or service failed), never a value or secret, so a broken setup can be diagnosed.
+const REASON_OK = /^(missing_session_secret|missing_google_secret|redis_not_configured|redis_http_\d{3}|redis_cmd:[A-Za-z0-9 _-]{0,40}|shopify_not_configured|shopify_http_\d{3}|shopify_graphql)$/;
+function reasonOf(e) {
+  const m = (e && e.message) || '';
+  if (REASON_OK.test(m)) return m;
+  if (e && e.name === 'AbortError') return 'timeout';
+  return 'unknown_' + String((e && e.name) || 'Error').replace(/[^A-Za-z]/g, '').slice(0, 20);
+}
 function unavailable(res, e) {
   console.error('auth unavailable:', e && e.message);
-  send(res, 503, { ok: false, error: 'unavailable', message: 'Sign-in is temporarily unavailable. Please try again in a few minutes.' });
+  send(res, 503, { ok: false, error: 'unavailable', reason: reasonOf(e), message: 'Sign-in is temporarily unavailable. Please try again in a few minutes.' });
 }
 
 const cleanEmail = v => (typeof v === 'string' ? v.trim().toLowerCase() : '');
