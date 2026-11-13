@@ -32,11 +32,21 @@
     var d = new Date(iso);
     return isNaN(d) ? '' : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
   }
-  // Shopify's two statuses, turned into one plain-English label for the customer
+  // Shopify's two statuses (+ optional live Shiprocket status), turned into one plain-English label for the customer
   function status(o) {
     var f = String(o.fulfilment || '').toUpperCase(), p = String(o.payment || '').toUpperCase();
     if (p === 'REFUNDED' || p === 'VOIDED') return ['Refunded', ''];
     if (p === 'PENDING' || p === 'AUTHORIZED') return ['Payment pending', 'is-warn'];
+    var live = String(o.liveStatus || '').trim();
+    if (live) {
+      var ls = live.toLowerCase();
+      if (/delivered/.test(ls) && !/rto|undelivered/.test(ls)) return ['Delivered', 'is-good'];
+      if (/out for delivery/.test(ls)) return ['Out for delivery', 'is-good'];
+      if (/in transit|reached|dispatched|shipped|picked up|manifested/.test(ls)) return ['In transit', 'is-info'];
+      if (/rto|return|undelivered/.test(ls)) return ['Returning to sender', 'is-warn'];
+      if (/cancel/.test(ls)) return ['Cancelled', ''];
+      return [live, 'is-info'];
+    }
     if (f === 'FULFILLED') return ['Shipped', 'is-good'];
     if (f === 'PARTIALLY_FULFILLED') return ['Partly shipped', 'is-info'];
     return ['Being prepared', 'is-info'];
@@ -123,6 +133,11 @@
       var ul = el('ul', 'acct-items');
       o.items.forEach(function (i) { ul.appendChild(el('li', null, i.title + ' × ' + i.qty)); });
       b.appendChild(ul);
+      (o.tracking || []).forEach(function (t) {
+        var line = el('p', 'acct-trackline', (t.company ? t.company + ' · ' : '') + (t.number ? 'AWB ' + t.number : 'Tracking available'));
+        if (t.url) { line.appendChild(document.createTextNode(' ')); var ta = el('a', 'acct-track', 'Track shipment'); ta.href = t.url; ta.target = '_blank'; ta.rel = 'noopener noreferrer'; line.appendChild(ta); }
+        b.appendChild(line);
+      });
       if (/^https:\/\//.test(o.statusUrl || '')) {
         var a = el('a', 'acct-track', 'Track / view this order'); a.href = o.statusUrl; a.target = '_blank'; a.rel = 'noopener noreferrer';
         b.appendChild(a);
@@ -155,7 +170,7 @@
     s.textContent = '';
     var w = shell();
 
-    var head = el('header', 'acct-head'), txt = el('div');
+    var head = el('div', 'acct-head'), txt = el('div');
     txt.appendChild(el('p', 'acct-eyebrow', 'My account'));
     txt.appendChild(el('h1', 'acct-title', 'Hi, ' + (u.firstName || 'there') + ' 👋'));
     txt.appendChild(el('p', 'acct-sub', 'Manage your details and see your orders.'));

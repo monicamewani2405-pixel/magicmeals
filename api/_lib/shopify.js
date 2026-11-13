@@ -73,6 +73,7 @@ const ME = 'query($t: String!){ customer(customerAccessToken:$t){ firstName last
   ' defaultAddress{ id }' +
   ' addresses(first:10){ edges{ node{ id address1 address2 city province zip country phone } } }' +
   ' orders(first:10, sortKey:PROCESSED_AT, reverse:true){ edges{ node{ orderNumber processedAt financialStatus fulfillmentStatus statusUrl' +
+  ' successfulFulfillments{ trackingCompany trackingInfo{ number url } }' +
   ' totalPrice{ amount currencyCode } lineItems(first:5){ edges{ node{ title quantity } } } } } } } }';
 
 // Plain shape for the page. null = token no longer valid.
@@ -92,6 +93,9 @@ async function getCustomer(token) {
       number: o.orderNumber, date: o.processedAt, payment: o.financialStatus || '', fulfilment: o.fulfillmentStatus || '',
       total: o.totalPrice ? { amount: o.totalPrice.amount, currency: o.totalPrice.currencyCode } : null,
       statusUrl: /^https:\/\//.test(o.statusUrl || '') ? o.statusUrl : '',
+      tracking: (o.successfulFulfillments || []).reduce((acc, f) => acc.concat((f.trackingInfo || []).map(t => ({
+        company: f.trackingCompany || '', number: t.number || '', url: /^https:\/\//.test(t.url || '') ? t.url : ''
+      }))), []).filter(t => t.number || t.url),
       items: nodes(o.lineItems).map(l => ({ title: l.title, qty: l.quantity }))
     }))
   };

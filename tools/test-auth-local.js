@@ -61,7 +61,9 @@ function shopify(query, v) {
     if (!c) return { customer: null };
     return { customer: { firstName: c.firstName, lastName: c.lastName, email: tokens.get(v.t), phone: c.phone || null, defaultAddress: null,
       addresses: { edges: [] }, orders: { edges: [{ node: { orderNumber: 1001, processedAt: '2026-11-01T10:00:00Z', financialStatus: 'PAID', fulfillmentStatus: 'FULFILLED',
-        statusUrl: 'https://fake.myshopify.com/s/1', totalPrice: { amount: '499.0', currencyCode: 'INR' }, lineItems: { edges: [{ node: { title: 'Rajma Masala', quantity: 2 } }] } } }] } } };
+        statusUrl: 'https://fake.myshopify.com/s/1', totalPrice: { amount: '499.0', currencyCode: 'INR' },
+        successfulFulfillments: [{ trackingCompany: 'Blue Dart', trackingInfo: [{ number: 'AWB123456', url: '' }] }],
+        lineItems: { edges: [{ node: { title: 'Rajma Masala', quantity: 2 } }] } } }] } } };
   }
   throw new Error('fake shopify: unknown query');
 }
@@ -71,6 +73,8 @@ global.fetch = async (url, init) => {
   if (url.startsWith('https://fake-redis.local/pipeline')) return json(JSON.parse(init.body).map(c => ({ result: redisCmd(c) })));
   if (url.includes('fake.myshopify.com')) { const b = JSON.parse(init.body); return json({ data: shopify(b.query, b.variables) }); }
   if (url.includes('googleapis.com/oauth2/v3/certs')) return json({ keys: [jwk] });
+  if (url.endsWith('apiv2.shiprocket.in/v1/external/auth/login')) return json({ token: 'sr_tok_1' });
+  if (url.includes('apiv2.shiprocket.in/v1/external/courier/track/awb/AWB123456')) return json({ tracking_data: { track_url: 'https://shiprocket.co/tracking/AWB123456', shipment_track: [{ current_status: 'Delivered', delivered_date: '2026-11-05 14:20:00' }] } });
   throw new Error('unexpected fetch ' + url);
 };
 
@@ -200,6 +204,15 @@ const ok = (name, cond, extra) => { console.log((cond ? '  PASS ' : '  FAIL ') +
   r = await call('login.js', { body: { email: 'rahul@example.com', password: 'correct-horse' }, ip: '10.0.0.1' });
   console.error = origErr; process.env.KV_REST_API_URL = keep;
   ok('Redis missing: login is refused with 503, never left unprotected', r.statusCode === 503 && !r.headers['set-cookie'], r.statusCode);
+
+  console.log('Shiprocket live tracking');
+  process.env.SHIPROCKET_EMAIL = 'api@magicmeals.test';
+  process.env.SHIPROCKET_PASSWORD = 'secret';
+  const srLogin = await call('login.js', { body: { email: 'rahul@example.com', password: 'correct-horse' }, ip: '11.0.0.1' });
+  const srMe = await call('me.js', { method: 'GET', cookie: cookieFrom(srLogin), ip: '11.0.0.1' });
+  const srOrd = srMe.body && srMe.body.user && srMe.body.user.orders[0];
+  ok('me attaches liveStatus and Shiprocket trackUrl for AWB', srMe.statusCode === 200 && srOrd && srOrd.liveStatus === 'Delivered' && srOrd.tracking[0].url === 'https://shiprocket.co/tracking/AWB123456', srOrd);
+  delete process.env.SHIPROCKET_EMAIL; delete process.env.SHIPROCKET_PASSWORD;
 
   console.log(fails ? '\n' + fails + ' FAILED' : '\nAll checks passed');
   process.exit(fails ? 1 : 0);
