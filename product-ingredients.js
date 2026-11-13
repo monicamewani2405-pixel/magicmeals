@@ -13,7 +13,7 @@ window.PRODUCT_INGREDIENTS = {
   ]
  ],
  "aam-ras": "Mango pulp (Kesar)",
- "dal-khichdi": "Pigeon peas, green gram, clarified butter, mustard seeds, cumin seeds, curry leaves, tomato, turmeric powder, red chilli powder, coriander powder, cumin powder, iodised salt, garam masala, lemon powder, coriander leaves, asafoetida, rice, water",
+ "dal-khichdi": "Pigeon peas, green gram, clarified butter, mustard seeds, cumin seeds, curry leaves, tomato, turmeric powder, red chilli powder, coriander powder, cumin powder, iodised salt, garam masala, lemon powder, coriander leaves, asafoetida, rice",
  "dal-makhani": "Black gram lentils, tomato, milk cream, vegetable oil, butter, clarified butter, ginger, garlic, whole red chilli, green chilli, salt, spices & condiments",
  "dal-tadka": "Pigeon peas, onion, tomato, clarified butter (milk), yellow lentils, garlic, ginger, green chillies, coriander, mix Indian spices, salt, dried fenugreek leaves, dry red chillies, whole cumin seeds, Indian bay leaves",
  "fried-rice": "Rice, cauliflower, French beans, onion, garlic, spring onion, pasteurised butter, vinegar (spices & condiments), iodised salt, green chilli, aromat seasoning (spices & condiments), white pepper",
@@ -30,7 +30,7 @@ window.PRODUCT_INGREDIENTS = {
  "paneer-butter-masala": "Cottage cheese, garlic, butter, onion, tomato puree, milk cream, ginger, green chilli, curd, sugar, salt, fenugreek, melon seeds, cashew, milk solids, spices & condiments",
  "pav-bhaji": "Potato, onion, tomato, cabbage, capsicum, dry peas, coriander leaves, ginger, garlic, salt, cumin seeds, spices & condiments",
  "pind-ke-chhole": "Kabuli chana (chickpeas), tomato, onion, pasteurised butter, chole masala (blended spices), coriander leaves, clarified butter (ghee), iodised salt, tea extract, mint leaves, garlic, Indian gooseberry (amla), green chilli, ginger, chaat masala (blended spices), cumin, black salt, black pepper, coriander, red chilli, pomegranate seeds, dry mango, black cardamom, carrom seeds (ajwain), green cardamom, cinnamon, fenugreek, dry fenugreek, fennel, bay leaf, cloves, star anise, mace",
- "rajma-masala": "Kidney beans, clarified butter, butter, cardamom, onion, ginger, garlic, tomato, bay leaves, salt, spices & condiments",
+ "rajma-masala": "Kidney beans, clarified butter, cardamom, onion, ginger, garlic, tomato, bay leaves, salt, spices & condiments",
  "schezwan-rice": "Rice, cabbage, carrot, garlic, butter, ginger, whole red chilli, onion, celery, vinegar, spring onion, corn starch, refined wheat flour, spices & condiments",
  "sweet-corn-soup": "Sweet corn, sugar, edible starch, salt, carrot, capsicum, ginger, hydrolysed vegetable protein (soya), vegetable fat, green chilli, coriander, black pepper, garlic, onion flavour, green peas, cabbage, coriander leaves, natural & nature identical flavouring substances (all in dried & powder form)",
  "tawa-pulao": "Rice, tomato, butter, onion, capsicum, ginger, garlic, green peas, potato, coriander, salt, spices & other condiments",

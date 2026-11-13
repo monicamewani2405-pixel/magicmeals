@@ -1,0 +1,83 @@
+MAPPING (row | product id | display name now | new name from sheet | kcal in main.js | kcal in sheet)
+   1 | idli-sambar                | Idli Sambar                        | Idli Sambar                | 230 kcal  | 230
+   2 | mumbai-misal               | Mumbai Misal                       | Mumbai Misal               | 250 kcal  | 250
+   3 | kanda-poha                 | Kanda Poha                         | Kanda Poha                 | 220 kcal  | 220
+   4 | upma                       | Upma                               | Upma                       | 150 kcal  | 150
+   5 | pav-bhaji                  | Pav Bhaji                          | Pav Bhaji                  | 435 kcal  | 435
+   6 | paneer-butter-masala       | Paneer Butter Masala               | Paneer Butter Masala       | 580 kcal  | 580
+   7 | rajma-masala               | Rajma Masala                       | Rajma Masala               | 440 kcal  | 440
+   8 | paneer-bhurji              | Paneer Bhurji                      | Paneer Bhurji              | 510 kcal  | 510
+   9 | veg-makhanwala             | Veg Makhanwala                     | Veg Makhanwala             | 390 kcal  | 390
+  10 | pind-ke-chhole             | Pind Ke Chole                      | Pind Ke Chole              | 120 kcal  | 120
+  11 | bhindi-masala              | Bhindi Masala                      | Bhindi Masala              | 460 kcal  | 460
+  12 | veg-kadhai                 | Veg Kadhai                         | Veg Kadhai                 | 430 kcal  | 430
+  13 | moong-masala               | Moong Masala                       | Moong Masala               | 150 kcal  | 150
+  14 | dal-khichdi                | Dal Khichdi                        | Dal Khichdi                | 300 kcal  | 300
+  15 | veg-biryani                | Veg Biryani                        | Veg Biryani                | 450 kcal  | 450
+  16 | tawa-pulao                 | Tawa Pulao                         | Tawa Pulao                 | 360 kcal  | 360
+  17 | schezwan-rice              | Fiery Schezwan Fried Rice          | Fried Rice  (COLLISION, not applied) | 315 kcal  | 315
+  18 | jeera-rice                 | Jeera Rice                         | Jeera Rice                 | 290 kcal  | 290
+  19 | fried-rice                 | Desi Chinese Veg Fried Rice        | Fried Rice  (COLLISION, not applied) | 230 kcal  | 230
+  20 | mexican-rice               | Mexican Rice                       | Mexican Rice               | 299 kcal  | 299
+  21 | dal-makhani                | Dal Makhani                        | Dal Makhni                 | 460 kcal  | 460
+  22 | gujarati-dal               | Gujarati Dal                       | Gujarati Dal               | 210 kcal  | 210
+  23 | dal-tadka                  | Dal Tadka                          | Dal Tadka                  | 284 kcal  | 284
+  24 | sweet-corn-soup            | Sweet & Corn Soup                  | Sweet & Corn Soup          | 100 kcal  | 100
+  25 | tomato-soup                | Tomato Soup                        | Tomato Soup                | 100 kcal  | 100
+  26 | hot-and-sour-soup          | Hot & Sour Soup                    | Hot & Sour Soup            | 110 kcal  | 110
+  27 | gajar-halwa                | Gajar Halwa                        | Gajar Halwa                | 430 kcal  | 430
+  28 | aam-ras                    | Aam Ras                            | Aam Ras                    | 70 kcal   | 70
+  29 | rawa-sheera                | Rawa Sheera                        | Rawa Sheera                | 284 kcal  | 284
+  30 | jain-poha                  | Jain Poha                          | Jain Poha                  | 175 kcal  | 175
+  31 | jain-upma                  | Jain Upma                          | Jain Upma                  | 150 kcal  | 150
+  32 | jain-pav-bhaji             | Jain Pav Bhaji                     | Jain Pav Bhaji             | 100 kcal  | 100
+  33 | jain-pind-ke-chhole        | Jain Pind Ke Chole                 | Jain Pind Ke Chole         | 320 kcal  | 320
+  34 | jain-rajma-masala          | Jain Rajma Masala                  | Jain Rajma Masala          | 100 kcal  | 100
+  35 | jain-veg-kadhai            | Jain Veg Kadhai                    | Jain Veg Kadhai            | 430 kcal  | 430
+  36 | jain-veg-makhanwala        | Jain Veg Makhanwala                | Jain Veg Makhanwala        | 130 kcal  | 130
+  37 | jain-dal-khichdi           | Jain Dal Khichdi                   | Jain Dal Khichdi           | 290 kcal  | 290
+  38 | jain-masala-khichdi-kadhi  | Jain Masala Khichdi Kadhi          | Jain Masala Khichdi Kadhi  | 160 kcal  | 160
+  39 | jain-schezwan-rice         | Jain Schezwan Rice                 | Jain Schezwan Rice         | 240 kcal  | 240
+  40 | jain-veg-biryani           | Jain Veg Biryani                   | Jain Veg Biryani           | 160 kcal  | 160
+  41 | dal-fry                    | Homestyle Yellow Dal Fry           | Homestyle Yellow Dal Fry   | 260 kcal  | 260
+  42 | jain-dal-makhani           | Jain Dal Makhani                   | Jain Dal Makhni            | 340 kcal  | 340
+
+UNMATCHED ROWS: none
+PRODUCTS WITH NO ROW (left unchanged): ['masala-khichdi-kadhi', 'fried-rice-manchurian', 'jain-paneer-bhurji', 'jain-paneer-butter-masala']
+COMBOS (not in the sheet, unchanged): 41
+NAME COLLISIONS (left on their current names, client to decide): {'fried rice': ['schezwan-rice', 'fried-rice']}
+
+PACK ARTWORK vs SHEET (28 differ; artwork not edited):
+  idli-sambar: pack 233, sheet 230
+  upma: pack 152, sheet 150
+  paneer-butter-masala: pack 484, sheet 580
+  rajma-masala: pack 444, sheet 440
+  paneer-bhurji: pack 514, sheet 510
+  veg-makhanwala: pack 391, sheet 390
+  pind-ke-chhole: pack 117, sheet 120
+  bhindi-masala: pack 461, sheet 460
+  veg-kadhai: pack 426, sheet 430
+  dal-khichdi: pack 304, sheet 300
+  tawa-pulao: pack 359, sheet 360
+  fried-rice: pack 232, sheet 230
+  dal-makhani: pack 463, sheet 460
+  gujarati-dal: pack 208, sheet 210
+  sweet-corn-soup: pack 104, sheet 100
+  hot-and-sour-soup: pack 106, sheet 110
+  gajar-halwa: pack 427, sheet 430
+  jain-upma: pack 152, sheet 150
+  jain-pav-bhaji: pack 96, sheet 100
+  jain-pind-ke-chhole: pack 323, sheet 320
+  jain-rajma-masala: pack 97, sheet 100
+  jain-veg-kadhai: pack 426, sheet 430
+  jain-veg-makhanwala: pack 133, sheet 130
+  jain-masala-khichdi-kadhi: pack 90, sheet 160
+  jain-schezwan-rice: pack 241, sheet 240
+  jain-veg-biryani: pack 159, sheet 160
+  dal-fry: pack 262, sheet 260
+  jain-dal-makhani: pack 338, sheet 340
+
+JAIN FILTER SHOWS (single dishes flagged Jain): ['aam-ras', 'dal-fry', 'jain-dal-khichdi', 'jain-dal-makhani', 'jain-masala-khichdi-kadhi', 'jain-paneer-bhurji', 'jain-paneer-butter-masala', 'jain-pav-bhaji', 'jain-pind-ke-chhole', 'jain-poha', 'jain-rajma-masala', 'jain-schezwan-rice', 'jain-upma', 'jain-veg-biryani', 'jain-veg-kadhai', 'jain-veg-makhanwala', 'jeera-rice', 'moong-masala', 'rawa-sheera']
+Jain Dal Khichdi lists Water: True | Jain Masala Khichdi Kadhi water text: ['195 ml']
+
+ALL CHECKS PASS

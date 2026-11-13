@@ -1,8 +1,10 @@
     // Complete Product Database with Real Imagery (40 Products & Combos)
+    // One shelf life for every product (client, 13 Nov 2026). Shown under the pincode box and in the specs list on every product page.
+    const SHELF_LIFE = '12 Months';
     const PRODUCTS = [
       {
         id: 'rajma-masala',
-        title: 'Authentic Punjabi Rajma Masala',
+        title: 'Rajma Masala',
         category: 'Meals',
         price: 225,
         mrp: 240,
@@ -13,13 +15,14 @@
         rating: 4.9,
         reviews: 168,
         weight: '95g net (makes 250g)',
-        calories: '444 kcal',
+        calories: '440 kcal',
+        kcal: 440,
         protein: '12.90g',
         desc: 'Rich kidney beans slow-simmered in a robust onion, ginger, garlic, and tomato gravy infused with authentic Punjabi spices.'
       },
       {
         id: 'paneer-butter-masala',
-        title: 'Rich Paneer Butter Masala',
+        title: 'Paneer Butter Masala',
         category: 'Meals',
         price: 240,
         mrp: 260,
@@ -30,13 +33,14 @@
         rating: 4.9,
         reviews: 215,
         weight: '83g net (makes 260g)',
-        calories: '484 kcal',
+        calories: '580 kcal',
+        kcal: 580,
         protein: '15.58g',
         desc: 'Tender paneer cubes in a velvety tomato-butter gravy infused with rich cashew paste and aromatic kasuri methi.'
       },
       {
         id: 'paneer-bhurji',
-        title: 'Amritsari Paneer Bhurji',
+        title: 'Paneer Bhurji',
         category: 'Meals',
         price: 278,
         mrp: 280,
@@ -47,13 +51,14 @@
         rating: 4.9,
         reviews: 140,
         weight: '90g net (makes 250g)',
-        calories: '514 kcal',
+        calories: '510 kcal',
+        kcal: 510,
         protein: '22.59g',
         desc: 'Crumbled cottage cheese sautéed with finely diced bell peppers, tomatoes, onions, and freshly ground Punjabi spices.'
       },
       {
         id: 'pind-ke-chhole',
-        title: 'Amritsari Pind Ke Chhole',
+        title: 'Pind Ke Chole',
         category: 'Meals',
         price: 178,
         mrp: 240,
@@ -64,13 +69,14 @@
         rating: 4.8,
         reviews: 104,
         weight: '70g net (makes 260g)',
-        calories: '117 kcal',
+        calories: '120 kcal',
+        kcal: 120,
         protein: '5.35g',
         desc: 'Robust chickpeas simmered with roasted tea leaves, dried pomegranate seeds, and Punjabi garam masala.'
       },
       {
         id: 'pav-bhaji',
-        title: 'Mumbai Street Pav Bhaji',
+        title: 'Pav Bhaji',
         category: 'Meals',
         price: 199,
         mrp: 225,
@@ -82,12 +88,13 @@
         reviews: 290,
         weight: '80g net (makes 250g)',
         calories: '435 kcal',
+        kcal: 435,
         protein: '6.88g',
         desc: 'Zesty mashed vegetable curry infused with authentic Mumbai tava masala and butter. Pair with toasted pav or roti.'
       },
       {
         id: 'bhindi-masala',
-        title: 'Homestyle Bhindi Masala',
+        title: 'Bhindi Masala',
         category: 'Meals',
         price: 225,
         mrp: 230,
@@ -98,13 +105,14 @@
         rating: 4.8,
         reviews: 92,
         weight: '97g net (makes 220g)',
-        calories: '461 kcal',
+        calories: '460 kcal',
+        kcal: 460,
         protein: '8.4g',
         desc: 'Crisp okra stir-fried with caramelized onions, roasted cumin, amchur (dry mango), and aromatic spices.'
       },
       {
         id: 'veg-kadhai',
-        title: 'North Indian Veg Kadhai',
+        title: 'Veg Kadhai',
         category: 'Meals',
         price: 250,
         mrp: 255,
@@ -115,13 +123,14 @@
         rating: 4.7,
         reviews: 88,
         weight: '70g net (makes 260g)',
-        calories: '426 kcal',
+        calories: '430 kcal',
+        kcal: 430,
         protein: '5.88g',
         desc: 'Assorted crisp vegetables and bell peppers tossed in a spicy, freshly pounded coriander and red chili kadhai masala.'
       },
       {
         id: 'veg-makhanwala',
-        title: 'Shahi Veg Makhanwala',
+        title: 'Veg Makhanwala',
         category: 'Meals',
         price: 250,
         mrp: 260,
@@ -132,13 +141,14 @@
         rating: 4.9,
         reviews: 112,
         weight: '70g net (makes 260g)',
-        calories: '391 kcal',
+        calories: '390 kcal',
+        kcal: 390,
         protein: '7.83g',
         desc: 'Garden fresh vegetables slow-cooked in a creamy, buttery tomato-cashew gravy with a hint of fragrant fenugreek.'
       },
       {
         id: 'moong-masala',
-        title: 'Nutritious Moong Masala',
+        title: 'Moong Masala',
         category: 'Meals',
         price: 190,
         mrp: 215,
@@ -150,6 +160,7 @@
         reviews: 76,
         weight: '50g net (makes 240g)',
         calories: '150 kcal',
+        kcal: 150,
         protein: '7.5g',
         desc: 'Whole green gram cooked in a light, spiced homestyle gravy. Rich in natural plant protein and dietary fiber.'
       },
@@ -157,7 +168,7 @@
       // Dals
       {
         id: 'dal-makhani',
-        title: 'Authentic Punjabi Dal Makhani',
+        title: 'Dal Makhani',
         category: 'Dals',
         price: 225,
         mrp: 240,
@@ -168,13 +179,14 @@
         rating: 4.8,
         reviews: 142,
         weight: '85g net (makes 270g)',
-        calories: '463 kcal',
+        calories: '460 kcal',
+        kcal: 460,
         protein: '7.31g',
         desc: 'Slow-simmered black urad lentils cooked overnight with cream, butter, and gentle ginger-garlic seasoning.'
       },
       {
         id: 'dal-tadka',
-        title: 'Dhaba Style Dal Tadka',
+        title: 'Dal Tadka',
         category: 'Dals',
         price: 185,
         mrp: 215,
@@ -186,6 +198,7 @@
         reviews: 118,
         weight: '70g net (makes 260g)',
         calories: '284 kcal',
+        kcal: 284,
         protein: '11.7g',
         desc: 'Yellow toor dal tempered with double-shot pure desi ghee, cumin, garlic, and fiery Kashmiri red chilies.'
       },
@@ -202,24 +215,26 @@
         rating: 4.8,
         reviews: 95,
         weight: '60g net (makes 260g)',
-        calories: '262 kcal',
+        calories: '260 kcal',
+        kcal: 260,
         protein: '10.6g',
         desc: 'Classic yellow lentils tempered with ghee, cumin seeds, tomatoes, and fresh coriander. Simple and comforting.'
       },
       {
         id: 'gujarati-dal',
-        title: 'Traditional Gujarati Dal',
+        title: 'Gujarati Dal',
         category: 'Dals',
         price: 175,
         mrp: 205,
         img: 'pouch-art/gujarati-dal-front-processed.png',
         imgBack: 'pouch-art/gujarati-dal-back-processed.png',
-        jain: true,
+        jain: false,   // client 13 Nov 2026: not Jain friendly
         spice: 'Sweet',
         rating: 4.9,
         reviews: 130,
         weight: '60g net (makes 260g)',
-        calories: '208 kcal',
+        calories: '210 kcal',
+        kcal: 210,
         protein: '5.89g',
         desc: 'Sweet and tangy toor dal simmered with peanuts, jaggery, dried kokum, and whole cinnamon-clove tempering.'
       },
@@ -227,7 +242,7 @@
       // Rice & Khichdi
       {
         id: 'dal-khichdi',
-        title: 'Comforting Dal Khichdi',
+        title: 'Dal Khichdi',
         category: 'Rice',
         price: 190,
         mrp: 220,
@@ -238,7 +253,8 @@
         rating: 4.9,
         reviews: 184,
         weight: '67g net (makes 260g)',
-        calories: '304 kcal',
+        calories: '300 kcal',
+        kcal: 300,
         protein: '8.13g',
         desc: 'Classic comforting yellow moong dal and basmati rice tempered with cumin and pure ghee. Feels like home in a bowl.'
       },
@@ -261,7 +277,7 @@
       },
       {
         id: 'veg-biryani',
-        title: 'Royal Dum Veg Biryani',
+        title: 'Veg Biryani',
         category: 'Rice',
         price: 225,
         mrp: 260,
@@ -273,12 +289,13 @@
         reviews: 130,
         weight: '90g net (makes 270g)',
         calories: '450 kcal',
+        kcal: 450,
         protein: '7.52g',
         desc: 'Long-grain fragrant basmati rice layered with garden vegetables, caramelized flavors, and whole aromatic spices.'
       },
       {
         id: 'jeera-rice',
-        title: 'Fragrant Ghee Jeera Rice',
+        title: 'Jeera Rice',
         category: 'Rice',
         price: 150,
         mrp: 165,
@@ -290,12 +307,13 @@
         reviews: 84,
         weight: '73g net (makes 250g)',
         calories: '290 kcal',
+        kcal: 290,
         protein: '2.11g',
         desc: 'Fluffy long-grain aged basmati rice tempered with pure desi cow ghee and roasted royal cumin seeds.'
       },
       {
         id: 'tawa-pulao',
-        title: 'Mumbai Chowpatty Tawa Pulao',
+        title: 'Tawa Pulao',
         category: 'Rice',
         price: 220,
         mrp: 225,
@@ -306,7 +324,8 @@
         rating: 4.8,
         reviews: 124,
         weight: '87g net (makes 260g)',
-        calories: '359 kcal',
+        calories: '360 kcal',
+        kcal: 360,
         protein: '7.64g',
         desc: 'Basmati rice tossed on a high-heat iron griddle with fresh vegetables, pav bhaji masala, and butter.'
       },
@@ -340,7 +359,8 @@
         rating: 4.7,
         reviews: 78,
         weight: '70g net (makes 260g)',
-        calories: '232 kcal',
+        calories: '230 kcal',
+        kcal: 230,
         protein: '4.7g',
         desc: 'Wok-tossed basmati rice with finely shredded cabbage, carrots, bell peppers, soy sauce, and white pepper.'
       },
@@ -358,12 +378,13 @@
         reviews: 96,
         weight: '85g net (makes 260g)',
         calories: '315 kcal',
+        kcal: 315,
         protein: '6.0g',
         desc: 'Spicy wok rice tossed with authentic homemade red chili Schezwan sauce, ginger, and crunchy celery.'
       },
       {
         id: 'mexican-rice',
-        title: 'Zesty Mexican Fiesta Rice',
+        title: 'Mexican Rice',
         category: 'Rice',
         price: 220,
         mrp: 230,
@@ -375,6 +396,7 @@
         reviews: 65,
         weight: '70g net (makes 260g)',
         calories: '299 kcal',
+        kcal: 299,
         protein: '4.2g',
         desc: 'Long-grain rice infused with ripe tomatoes, sweet corn, red kidney beans, bell peppers, and smoked paprika.'
       },
@@ -382,7 +404,7 @@
       // Breakfast
       {
         id: 'kanda-poha',
-        title: 'Homestyle Kanda Poha',
+        title: 'Kanda Poha',
         category: 'Breakfast',
         price: 85,
         mrp: 140,
@@ -394,6 +416,7 @@
         reviews: 98,
         weight: '100g net (makes 220g)',
         calories: '220 kcal',
+        kcal: 220,
         protein: '5.0g',
         desc: 'Flattened rice tempered with crunchy peanuts, curry leaves, onions, and fresh lemon. Light yet satisfying.'
       },
@@ -411,29 +434,31 @@
         reviews: 0,
         weight: '100g net (makes 250g)',
         calories: '175 kcal',
+        kcal: 175,
         protein: '2.6g',
         desc: 'Jain-friendly flattened rice poha with green chilli, lemon, cumin, mustard seed, turmeric and curry leaves. Just add hot water.'
       },
       {
         id: 'idli-sambar',
-        title: 'South Indian Idli Sambar',
+        title: 'Idli Sambar',
         category: 'Breakfast',
         price: 150,
         mrp: 165,
         img: 'pouch-art/idli-sambar-front-processed.png',
         imgBack: 'pouch-art/idli-sambar-back-processed.png',
-        jain: true,
+        jain: false,   // client 13 Nov 2026: not Jain friendly
         spice: 'Mild',
         rating: 4.9,
         reviews: 160,
         weight: '55g net (makes 240g)',
-        calories: '233 kcal',
+        calories: '230 kcal',
+        kcal: 230,
         protein: '4.0g',
         desc: 'Pillowy mini steamed idlis accompanied by aromatic vegetable lentil sambar. Authentic Udupi taste.'
       },
       {
         id: 'upma',
-        title: 'South Indian Rava Upma',
+        title: 'Upma',
         category: 'Breakfast',
         price: 70,
         mrp: 140,
@@ -444,13 +469,14 @@
         rating: 4.8,
         reviews: 90,
         weight: '60g net (makes 230g)',
-        calories: '152 kcal',
+        calories: '150 kcal',
+        kcal: 150,
         protein: '2.19g',
         desc: 'Roasted semolina tempered with mustard seeds, curry leaves, ginger, cashews, and garden vegetables in pure ghee.'
       },
       {
         id: 'mumbai-misal',
-        title: 'Fiery Kolhapuri Mumbai Misal',
+        title: 'Mumbai Misal',
         category: 'Breakfast',
         price: 188,
         mrp: 210,
@@ -462,6 +488,7 @@
         reviews: 145,
         weight: '50g net (makes 260g)',
         calories: '250 kcal',
+        kcal: 250,
         protein: '5g',
         desc: 'Sprouted moth beans simmered in a zesty, spicy rassa (curry). Perfect with pav and crunchy farsan.'
       },
@@ -469,7 +496,7 @@
       // Soups
       {
         id: 'tomato-soup',
-        title: 'Creamy Ripe Tomato Soup',
+        title: 'Tomato Soup',
         category: 'Soups',
         price: 75,
         mrp: 120,
@@ -481,12 +508,13 @@
         reviews: 75,
         weight: '30g net (makes 200ml)',
         calories: '100 kcal',
+        kcal: 100,
         protein: '2.09g',
         desc: 'Silky farm-fresh tomato soup lightly seasoned with black pepper and mild aromatic herbs.'
       },
       {
         id: 'sweet-corn-soup',
-        title: 'Creamy Sweet Corn Veg Soup',
+        title: 'Sweet & Corn Soup',
         category: 'Soups',
         price: 75,
         mrp: 120,
@@ -497,13 +525,14 @@
         rating: 4.8,
         reviews: 82,
         weight: '30g net (makes 220ml)',
-        calories: '104 kcal',
+        calories: '100 kcal',
+        kcal: 100,
         protein: '0.89g',
         desc: 'Velvety soup loaded with crushed tender American sweet corn kernels, spring onions, and gentle white pepper.'
       },
       {
         id: 'hot-and-sour-soup',
-        title: 'Desi Hot & Sour Veg Soup',
+        title: 'Hot & Sour Soup',
         category: 'Soups',
         price: 75,
         mrp: 120,
@@ -514,7 +543,8 @@
         rating: 4.7,
         reviews: 68,
         weight: '30g net (makes 220ml)',
-        calories: '106 kcal',
+        calories: '110 kcal',
+        kcal: 110,
         protein: '1.04g',
         desc: 'Tangy, spicy soup infused with dark soy, vinegar, black pepper, shredded cabbage, carrots, and mushrooms.'
       },
@@ -522,7 +552,7 @@
       // Desserts
       {
         id: 'gajar-halwa',
-        title: 'Gajar Ka Halwa Delight',
+        title: 'Gajar Halwa',
         category: 'Desserts',
         price: 195,
         mrp: 195,
@@ -533,13 +563,14 @@
         rating: 5.0,
         reviews: 240,
         weight: '85g net (makes 180g)',
-        calories: '427 kcal',
+        calories: '430 kcal',
+        kcal: 430,
         protein: '4.79g',
         desc: 'Sweet winter carrots slow-cooked in pure cow ghee, whole milk mawa, cardamom, and roasted cashews.'
       },
       {
         id: 'aam-ras',
-        title: 'Pure Alphonso Aam Ras',
+        title: 'Aam Ras',
         category: 'Desserts',
         price: 185,
         mrp: 210,
@@ -551,12 +582,13 @@
         reviews: 195,
         weight: '60g net (makes 200ml)',
         calories: '70 kcal',
+        kcal: 70,
         protein: '0.22g',
         desc: '100% natural pulp crafted from authentic Ratnagiri Alphonso mangoes. Zero artificial essence.'
       },
       {
         id: 'rawa-sheera',
-        title: 'Desi Ghee Rawa Sheera',
+        title: 'Rawa Sheera',
         category: 'Desserts',
         price: 170,
         mrp: 170,
@@ -568,6 +600,7 @@
         reviews: 115,
         weight: '85g net (makes 190g)',
         calories: '284 kcal',
+        kcal: 284,
         protein: '5.19g',
         desc: 'Golden roasted semolina simmered with pure cow ghee, milk, saffron strands, cardamom, and plump raisins.'
       },
@@ -588,6 +621,7 @@
         reviews: 0,
         weight: '67g net (makes 250g)',
         calories: '290 kcal',
+        kcal: 290,
         protein: '6.9g',
         desc: 'Enjoy wholesome comfort food with Jain Dal Khichdi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal is perfect for travel, office lunches, quick dinners, and healthy eating. Just add hot water and enjoy delicious homemade-style khichdi in minutes.'
       },
@@ -604,7 +638,8 @@
         rating: 0,
         reviews: 0,
         weight: '85g net (makes 250g)',
-        calories: '338 kcal',
+        calories: '340 kcal',
+        kcal: 340,
         protein: '11.7g',
         desc: 'Enjoy rich Punjabi flavors with Jain Dal Makhani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy creamy dal makhani in minutes.'
       },
@@ -621,7 +656,8 @@
         rating: 0,
         reviews: 0,
         weight: '55g net (makes 250g)',
-        calories: '90 kcal',
+        calories: '160 kcal',
+        kcal: 160,
         protein: '1.68g',
         desc: 'Enjoy the comforting taste of Jain Masala Khichdi Kadhi by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik meal combines flavorful masala khichdi with delicious kadhi for a wholesome Indian dining experience. Just add hot water and enjoy in minutes.'
       },
@@ -672,7 +708,8 @@
         rating: 0,
         reviews: 0,
         weight: '80g net (makes 250g)',
-        calories: '96 kcal',
+        calories: '100 kcal',
+        kcal: 100,
         protein: '2.14g',
         desc: 'Enjoy the iconic taste of Mumbai street food in a Jain-friendly version with Jain Pav Bhaji by Magic Meals. Made without onion and garlic, this ready-to-eat meal delivers rich flavor and convenience. Just add hot water and enjoy a delicious meal in minutes.'
       },
@@ -689,7 +726,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '323 kcal',
+        calories: '320 kcal',
+        kcal: 320,
         protein: '12.6g',
         desc: 'Enjoy authentic Punjabi flavors with Jain Pind ke Chole by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy rich Indian taste in minutes.'
       },
@@ -706,7 +744,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '97 kcal',
+        calories: '100 kcal',
+        kcal: 100,
         protein: '3.42g',
         desc: 'Enjoy the rich and comforting taste of Jain Rajma Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick lunches, dinners, travel, and office meals. Just add hot water and enjoy authentic Indian flavors in minutes.'
       },
@@ -723,7 +762,8 @@
         rating: 0,
         reviews: 0,
         weight: '65g net (makes 250g)',
-        calories: '241 kcal',
+        calories: '240 kcal',
+        kcal: 240,
         protein: '4.57g',
         desc: 'Enjoy Indo-Chinese flavors with Jain Schezwan Rice by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy delicious schezwan rice in minutes.'
       },
@@ -740,7 +780,8 @@
         rating: 0,
         reviews: 0,
         weight: '60g net (makes 250g)',
-        calories: '152 kcal',
+        calories: '150 kcal',
+        kcal: 150,
         protein: '2.19g',
         desc: 'Enjoy a wholesome and quick meal with Jain Instant Upma by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik breakfast is perfect for Jain diets, travel, and busy lifestyles. Just add hot water and enjoy authentic taste in minutes.'
       },
@@ -757,7 +798,8 @@
         rating: 0,
         reviews: 0,
         weight: '90g net (makes 250g)',
-        calories: '159 kcal',
+        calories: '160 kcal',
+        kcal: 160,
         protein: '2.62g',
         desc: 'Enjoy the rich aroma and authentic taste of Jain Veg Biryani by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik rice meal is perfect for travel, office lunches, quick dinners, and instant food cravings. Just add hot water and enjoy flavorful biryani in minutes.'
       },
@@ -774,7 +816,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '426 kcal',
+        calories: '430 kcal',
+        kcal: 430,
         protein: '5.88g',
         desc: 'Enjoy bold Indian flavors with Jain Veg Kadhai by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office lunches, quick dinners, and instant meal cravings. Just add hot water and enjoy restaurant-style taste in minutes.'
       },
@@ -791,7 +834,8 @@
         rating: 0,
         reviews: 0,
         weight: '70g net (makes 250g)',
-        calories: '133 kcal',
+        calories: '130 kcal',
+        kcal: 130,
         protein: '2.30g',
         desc: 'Enjoy rich North Indian flavors with Jain Veg Makhanwala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for travel, office meals, quick lunches, and dinner cravings. Just add hot water and enjoy delicious restaurant-style taste in minutes.'
       },
@@ -2023,7 +2067,7 @@
 
               <h1 class="pdp-title">${p.title}</h1>
               <p class="pdp-desc">${liveDesc ? liveDesc.intro : p.desc}</p>
-              ${liveDesc && liveDesc.specs.length ? `<dl class="pdp-specs">${liveDesc.specs.map(s => `<div><dt>${s[0]}</dt><dd>${s[1]}</dd></div>`).join('')}</dl>` : ''}
+              ${liveDesc && liveDesc.specs.length ? `<dl class="pdp-specs">${liveDesc.specs.map(s => `<div><dt>${s[0]}</dt><dd>${s[0] === 'Shelf Life' ? SHELF_LIFE : s[1]}</dd></div>`).join('')}</dl>` : ''}
 
               <!-- Pack Variant Selector (not shown for combos: they have no pack options) -->
               ${packSizes(p).length > 1 ? `
@@ -2074,7 +2118,7 @@
                 </li>
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
-                  <span>${p.shelfLife || '9 Months'} Shelf Life</span>
+                  <span>${SHELF_LIFE} Shelf Life</span>
                 </li>
                 <li class="pdp-fact-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>

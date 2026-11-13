@@ -53,6 +53,15 @@ def main():
     nl = '\r\n' if '\r\n' in src else '\n'
     lines = src.split(nl)
     W = want()
+    # Products with a numeric `kcal:` line take their calories from the client's sheet (data/kcal-source.csv, 13 Nov 2026), not from the pack:
+    # leave their calories line alone (tools/check-data.py checks them). Protein still follows the pack.
+    sheet_owned, c0 = set(), None
+    for l in lines:
+        m0 = re.match(r"\s+id: '([^']+)',\s*$", l)
+        if m0:
+            c0 = m0.group(1)
+        elif re.match(r"\s+kcal: \d+,\s*$", l):
+            sheet_owned.add(c0)
     cur, changed, seen = None, [], set()
     for i, l in enumerate(lines):
         m = re.match(r"(\s+)id: '([^']+)',\s*$", l)
@@ -63,6 +72,9 @@ def main():
             m = re.match(r"(\s+)(calories|protein): '([^']*)',\s*$", l)
             if m:
                 kind = m.group(2)
+                if kind == 'calories' and cur in sheet_owned:
+                    seen.add((cur, kind))
+                    continue
                 new = W[cur][0 if kind == 'calories' else 1]
                 seen.add((cur, kind))
                 if new != m.group(3):
