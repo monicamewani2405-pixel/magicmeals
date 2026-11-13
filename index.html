@@ -13,8 +13,9 @@
   <link rel="preload" as="image" href="assets/hero/veg-biryani-front-800.webp" type="image/webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/hero/veg-biryani-front-m.webp" type="image/webp" media="(max-width: 767px)">
   <link rel="icon" type="image/png" href="cropped_logo.png">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <link rel="stylesheet" href="variants.css">
+  <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="scenes/scene-colors.css">
   <link rel="stylesheet" href="scenes/scene.css?v=2">
   <link rel="stylesheet" href="pdp/pdp.css">
@@ -216,7 +217,7 @@
     </div>
   </div>
 
-  <!-- Sign In / Sign Up / Forgot / Profile modal. Behaviour: auth.js. Accounts live in Shopify; the login token is an HttpOnly cookie. -->
+  <!-- Sign In / Sign Up / Forgot modal. Behaviour: auth.js. After sign-in the visitor goes to the #profile page (profile.js). -->
   <div class="auth-modal-backdrop" id="authModalBackdrop">
     <div class="auth-modal-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
       <button class="auth-modal-close" id="authModalCloseBtn" aria-label="Close">✕</button>
@@ -262,7 +263,7 @@
         </div>
         <div class="auth-field">
           <label for="suPhone">Mobile Number</label>
-          <input id="suPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number" maxlength="16">
+          <input id="suPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number" maxlength="16" required>
         </div>
         <div class="auth-field">
           <label for="suPassword">Create Password</label>
@@ -283,20 +284,6 @@
         <button type="button" class="auth-link-btn" id="authBackBtn">Back to Sign In</button>
       </form>
 
-      <!-- Profile (shown when signed in) -->
-      <div class="auth-profile" id="profileView" hidden>
-        <div class="auth-profile-head">
-          <strong id="profName"></strong>
-          <span id="profEmail"></span>
-          <span id="profPhone"></span>
-        </div>
-        <h4>Saved addresses</h4>
-        <div id="profAddresses"></div>
-        <h4>Recent orders</h4>
-        <div id="profOrders"></div>
-        <button type="button" class="auth-submit-btn auth-logout-btn" id="authLogoutBtn">Sign Out</button>
-      </div>
-
       <div id="authGoogleBlock" hidden>
         <div class="auth-divider"><span>OR</span></div>
         <div class="auth-google-slot" id="authGoogleSlot"></div>
@@ -312,6 +299,7 @@
   <script src="shopify-catalog.js" defer></script>
   <script src="shopify-connector.js" defer></script>
   <script src="auth.js" defer></script>
+  <script src="profile.js" defer></script>
   <script src="pdp/combos/combo-gallery.js" defer></script>
   <script src="pdp/pdp-data.js" defer></script>
   <script src="pdp/pdp-scene.js" defer></script>
@@ -320,7 +308,7 @@
   <script src="pdp/ingredients.js" defer></script>
   <script src="pack-prices.js" defer></script>
   <script src="pincode.js" defer></script>
-  <script src="main.js?v=7" defer></script>
+  <script src="main.js?v=8" defer></script>
   <script src="hero-products.js" defer></script>
   <script src="scenes/motion.js" defer></script>
   <script src="heroes/switcher.js?v=2" defer></script>

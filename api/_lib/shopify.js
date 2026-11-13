@@ -47,6 +47,19 @@ async function createCustomer(input) {
   return { ok: false, reason, fields, codes };
 }
 
+// Name and phone only (the email is never changeable). -> { ok:true } | { ok:false, reason:'signed_out'|'phone'|'invalid'|'throttled' }
+async function updateCustomer(token, input) {
+  const d = await gql(
+    'mutation($t: String!, $c: CustomerUpdateInput!){ customerUpdate(customerAccessToken:$t, customer:$c){ customer{ id } customerUserErrors{ code field } } }',
+    { t: token, c: input });
+  const r = d.customerUpdate, errs = (r && r.customerUserErrors) || [];
+  if (r && r.customer && !errs.length) return { ok: true };
+  if (isThrottle(errs)) return { ok: false, reason: 'throttled' };
+  if (errs.some(e => e.code === 'INVALID' && !(e.field || []).length) || errs.some(e => /TOKEN|CUSTOMER_DISABLED/.test(e.code || ''))) return { ok: false, reason: 'signed_out' };
+  if (errs.some(e => (e.field || []).slice(-1)[0] === 'phone')) return { ok: false, reason: 'phone' };
+  return { ok: false, reason: 'invalid' };
+}
+
 async function recover(email) {
   const d = await gql('mutation($e: String!){ customerRecover(email:$e){ customerUserErrors{ code } } }', { e: email });
   return !isThrottle(d.customerRecover && d.customerRecover.customerUserErrors);
@@ -84,4 +97,4 @@ async function getCustomer(token) {
   };
 }
 
-module.exports = { createToken, createCustomer, recover, deleteToken, getCustomer };
+module.exports = { createToken, createCustomer, updateCustomer, recover, deleteToken, getCustomer };

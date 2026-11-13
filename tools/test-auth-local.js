@@ -47,6 +47,13 @@ function shopify(query, v) {
     customers.set(v.i.email, { password: v.i.password, firstName: v.i.firstName, lastName: v.i.lastName, phone: v.i.phone });
     return { customerCreate: { customer: { id: 'gid://1' }, customerUserErrors: [] } };
   }
+  if (query.includes('customerUpdate')) {
+    const email = tokens.get(v.t);
+    if (!email) return { customerUpdate: { customer: null, customerUserErrors: [{ code: 'INVALID', field: ['customerAccessToken'] }] } };
+    if (v.c.phone === '+919999999999') return { customerUpdate: { customer: null, customerUserErrors: [{ code: 'TAKEN', field: ['customer', 'phone'] }] } };
+    Object.assign(customers.get(email), { firstName: v.c.firstName, lastName: v.c.lastName, phone: v.c.phone });
+    return { customerUpdate: { customer: { id: 'gid://1' }, customerUserErrors: [] } };
+  }
   if (query.includes('customerRecover')) return { customerRecover: { customerUserErrors: [] } };
   if (query.includes('customerAccessTokenDelete')) { tokens.delete(v.t); return { customerAccessTokenDelete: { deletedAccessToken: v.t } }; }
   if (query.includes('customer(customerAccessToken')) {
@@ -124,18 +131,36 @@ const ok = (name, cond, extra) => { console.log((cond ? '  PASS ' : '  FAIL ') +
   console.log('Signup');
   const sigs = []; for (let i = 0; i < 6; i++) sigs.push((await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.5.5.5' })).statusCode);
   ok('mistyped signups do NOT use up the 5 real ones', sigs.every(c => c === 400), sigs);
-  const good = []; for (let i = 0; i < 6; i++) good.push((await call('signup.js', { body: { name: 'Lim ' + i, email: 'lim' + i + '@example.com', password: 'longenough1' }, ip: '5.5.5.5' })).statusCode);
+  const good = []; for (let i = 0; i < 6; i++) good.push((await call('signup.js', { body: { name: 'Lim ' + i, email: 'lim' + i + '@example.com', phone: '9820000009', password: 'longenough1' }, ip: '5.5.5.5' })).statusCode);
   ok('5 valid signups per IP per hour, the 6th is blocked', good.join() === '200,200,200,200,200,429', good);
   let flood = 0; for (let i = 0; i < 30; i++) flood = (await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.6.6.6' })).statusCode;
   ok('junk floods are still capped (31st request from one IP: 429)', flood === 400 && (await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.6.6.6' })).statusCode === 429);
   r = await call('signup.js', { body: { name: 'Meera Shah', email: 'Meera@Example.com', phone: '98200 00001', password: 'longenough1' }, ip: '5.5.5.6' });
   ok('valid signup creates the customer, logs in and sets the cookie', r.statusCode === 200 && r.body.user.email === 'meera@example.com' && cookieFrom(r).includes('__Host-mm_session='), [r.statusCode, r.body]);
   ok('phone is stored as +91 and the name is split', customers.get('meera@example.com').phone === '+919820000001' && customers.get('meera@example.com').lastName === 'Shah');
-  ok('honeypot filled: rejected', (await call('signup.js', { body: { name: 'Bot', email: 'bot@example.com', password: 'longenough1', website: 'http://spam' }, ip: '5.5.5.7' })).statusCode === 400 && !customers.has('bot@example.com'));
-  ok('duplicate email: 409 with no detail leaked', (await call('signup.js', { body: { name: 'Again', email: 'meera@example.com', password: 'longenough1' }, ip: '5.5.5.8' })).statusCode === 409);
-  r = await call('signup.js', { body: { name: 'Gina Guest', email: 'guest@example.com', password: 'longenough1' }, ip: '5.5.5.10' });
+  ok('honeypot filled: rejected', (await call('signup.js', { body: { name: 'Bot', email: 'bot@example.com', phone: '9820000009', password: 'longenough1', website: 'http://spam' }, ip: '5.5.5.7' })).statusCode === 400 && !customers.has('bot@example.com'));
+  ok('duplicate email: 409 with no detail leaked', (await call('signup.js', { body: { name: 'Again', email: 'meera@example.com', phone: '9820000009', password: 'longenough1' }, ip: '5.5.5.8' })).statusCode === 409);
+  r = await call('signup.js', { body: { name: 'Gina Guest', email: 'guest@example.com', phone: '9820000009', password: 'longenough1' }, ip: '5.5.5.10' });
   ok('existing not-activated customer: tells them to use the activation email (409), with the Shopify code', r.statusCode === 409 && r.body.error === 'not_activated' && /activation link/.test(r.body.message) && !r.headers['set-cookie'], [r.statusCode, r.body]);
-  ok('password over 40 characters is refused', (await call('signup.js', { body: { name: 'A', email: 'long@example.com', password: 'x'.repeat(41) }, ip: '5.5.5.9' })).body.field === 'password');
+  ok('password over 40 characters is refused', (await call('signup.js', { body: { name: 'A', email: 'long@example.com', phone: '9820000009', password: 'x'.repeat(41) }, ip: '5.5.5.9' })).body.field === 'password');
+
+  console.log('Profile editing');
+  ok('signup without a mobile number is refused', (await call('signup.js', { body: { name: 'No Phone', email: 'np@example.com', password: 'longenough1' }, ip: '5.5.5.11' })).body.field === 'phone');
+  const prof = await call('login.js', { body: { email: 'meera@example.com', password: 'longenough1' }, ip: '5.5.5.12' });
+  const pck = cookieFrom(prof);
+  await call('me.js', { method: 'GET', cookie: pck });                         // fills the 60 s cache
+  r = await call('update.js', { body: { name: 'Meera Shah Patel', phone: '98200 00003' }, cookie: pck, ip: '5.5.5.12' });
+  ok('update saves a new name and mobile number', r.statusCode === 200 && r.body.user.firstName === 'Meera' && r.body.user.lastName === 'Shah Patel' && r.body.user.phone === '+919820000003', [r.statusCode, r.body]);
+  ok('the email is unchanged and cannot be sent in', r.body.user.email === 'meera@example.com' && (await call('update.js', { body: { name: 'M S', phone: '9820000003', email: 'hacker@example.com' }, cookie: pck, ip: '5.5.5.12' })).body.user.email === 'meera@example.com');
+  ok('update clears the cached profile, so me shows the change at once', (await call('me.js', { method: 'GET', cookie: pck })).body.user.lastName === 'S');
+  ok('empty name is refused', (await call('update.js', { body: { name: '   ', phone: '9820000003' }, cookie: pck, ip: '5.5.5.12' })).body.field === 'name');
+  ok('empty or invalid mobile is refused', (await call('update.js', { body: { name: 'Meera S', phone: '' }, cookie: pck, ip: '5.5.5.12' })).body.field === 'phone' && (await call('update.js', { body: { name: 'Meera S', phone: '12345' }, cookie: pck, ip: '5.5.5.12' })).statusCode === 400);
+  r = await call('update.js', { body: { name: 'Meera S', phone: '9999999999' }, cookie: pck, ip: '5.5.5.12' });
+  ok('a mobile number used by another account: 409 with a clear message', r.statusCode === 409 && r.body.field === 'phone' && /another account/.test(r.body.message), [r.statusCode, r.body]);
+  ok('update without being signed in: 401', (await call('update.js', { body: { name: 'X Y', phone: '9820000003' }, ip: '5.5.5.13' })).statusCode === 401);
+  ok('update from another origin: 403', (await call('update.js', { body: { name: 'X Y', phone: '9820000003' }, cookie: pck, origin: 'https://evil.example' })).statusCode === 403);
+  let up; for (let i = 0; i < 11; i++) up = await call('update.js', { body: { name: 'Meera S', phone: '9820000003' }, cookie: pck, ip: '5.5.5.12' });
+  ok('more than 10 saves an hour is limited (429)', up.statusCode === 429, up.statusCode);
 
   console.log('Login IP limit, recover, origin');
   const ipCodes = []; for (let i = 0; i < 21; i++) ipCodes.push((await call('login.js', { body: { email: 'u' + i + '@example.com', password: 'wrongpass1' }, ip: '6.6.6.6' })).statusCode);

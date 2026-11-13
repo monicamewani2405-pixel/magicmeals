@@ -2772,19 +2772,6 @@
     .auth-msg.is-error { background: rgb(var(--danger-rgb) / 0.08); color: var(--danger); }
     .auth-msg.is-ok { background: rgb(var(--veg-green-rgb) / 0.1); color: var(--veg-green); }
 
-    .auth-profile { text-align: left; }
-    .auth-profile h4 { margin: 18px 0 8px; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); }
-    .auth-profile-head { display: grid; gap: 2px; padding: 12px 14px; background: var(--brand-primary-tint); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted); overflow-wrap: anywhere; }
-    .auth-profile-head strong { font-size: 16px; color: var(--text); }
-    .auth-addr, .auth-order { padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.5; margin-bottom: 8px; overflow-wrap: anywhere; }
-    .auth-addr em { font-style: normal; font-size: 11px; font-weight: 700; color: var(--brand-primary); margin-left: 6px; }
-    .auth-order-top { display: flex; justify-content: space-between; gap: 8px; font-weight: 700; }
-    .auth-order-meta { color: var(--text-muted); font-size: 12px; }
-    .auth-order a { color: var(--brand-primary); font-weight: 600; }
-    .auth-empty { font-size: 13px; color: var(--text-muted); margin: 0 0 8px; }
-    .auth-logout-btn { margin-top: 18px; background: var(--white); color: var(--text); border: 1px solid var(--border); }
-    .auth-logout-btn:hover { background: var(--bg-alt); }
-
     /* Header account icon: green dot when signed in */
     #authOpenBtn { position: relative; }
     #authOpenBtn.is-signed-in::after {

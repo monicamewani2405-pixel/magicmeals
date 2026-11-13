@@ -2522,6 +2522,8 @@
         pdpProtoMounted = !!(window.PdpProto && window.PdpProto.mount(container, State.productId));   // PDP prototype: new layout only when PDP_SCENES has this product
       } else if (State.view === 'byob') {
         container.innerHTML = renderByobView();
+      } else if (State.view === 'profile') {
+        container.innerHTML = '<div id="profile-slot"></div>';   // profile.js draws the page on "app:rendered"
       }
 
       // Update Header State (Transparent on Home, Solid on Shop, Product & BYOB views)
@@ -3507,6 +3509,10 @@
       }
       if (hash === 'byob') {
         navigateTo('byob');
+        return;
+      }
+      if (hash === 'profile') {
+        navigateTo('profile');
         return;
       }
       navigateTo('home');
