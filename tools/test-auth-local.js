@@ -121,8 +121,12 @@ const ok = (name, cond, extra) => { console.log((cond ? '  PASS ' : '  FAIL ') +
   ok('the old cookie no longer works after logout', (await call('me.js', { method: 'GET', cookie: ck })).statusCode === 401);
 
   console.log('Signup');
-  const sigs = []; for (let i = 0; i < 4; i++) sigs.push((await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.5.5.5' })).statusCode);
-  ok('4th signup from one IP is blocked (invalid bodies count too)', sigs.join() === '400,400,400,429', sigs);
+  const sigs = []; for (let i = 0; i < 6; i++) sigs.push((await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.5.5.5' })).statusCode);
+  ok('mistyped signups do NOT use up the 5 real ones', sigs.every(c => c === 400), sigs);
+  const good = []; for (let i = 0; i < 6; i++) good.push((await call('signup.js', { body: { name: 'Lim ' + i, email: 'lim' + i + '@example.com', password: 'longenough1' }, ip: '5.5.5.5' })).statusCode);
+  ok('5 valid signups per IP per hour, the 6th is blocked', good.join() === '200,200,200,200,200,429', good);
+  let flood = 0; for (let i = 0; i < 30; i++) flood = (await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.6.6.6' })).statusCode;
+  ok('junk floods are still capped (31st request from one IP: 429)', flood === 400 && (await call('signup.js', { body: { name: '', email: 'x', password: 'y' }, ip: '5.6.6.6' })).statusCode === 429);
   r = await call('signup.js', { body: { name: 'Meera Shah', email: 'Meera@Example.com', phone: '98200 00001', password: 'longenough1' }, ip: '5.5.5.6' });
   ok('valid signup creates the customer, logs in and sets the cookie', r.statusCode === 200 && r.body.user.email === 'meera@example.com' && cookieFrom(r).includes('__Host-mm_session='), [r.statusCode, r.body]);
   ok('phone is stored as +91 and the name is split', customers.get('meera@example.com').phone === '+919820000001' && customers.get('meera@example.com').lastName === 'Shah');

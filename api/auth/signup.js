@@ -1,5 +1,6 @@
 /* POST /api/auth/signup  { name, email, phone?, password, website(honeypot) }  -> creates the Shopify customer, logs in, sets the cookie.
-   Limit: 3 per hour per IP (invalid and bot requests count too). */
+   Limits per IP: 5 valid signups per hour (the ones that would reach Shopify), plus a loose cap of 30 requests per hour of any kind
+   so floods of junk are still stopped. Mistyped forms do NOT use up the 5. */
 'use strict';
 const H = require('../_lib/http');
 const RL = require('../_lib/ratelimit');
@@ -9,8 +10,9 @@ const { setSession } = require('../_lib/session');
 module.exports = async (req, res) => {
   if (!H.guard(req, res, 'POST')) return;
   try {
-    const ip = await RL.hit('signup-ip', H.clientIp(req), 3, 3600);
-    if (!ip.allowed) return H.limited(res, ip.retryAfter);
+    const ip = H.clientIp(req);
+    const flood = await RL.hit('signup-all', ip, 30, 3600);
+    if (!flood.allowed) return H.limited(res, flood.retryAfter);
 
     const b = H.body(req);
     if (b.website) return H.send(res, 400, { ok: false, error: 'invalid', message: 'Could not create the account.' });   // honeypot filled: a bot
@@ -21,6 +23,9 @@ module.exports = async (req, res) => {
     if (!H.validEmail(email)) return H.send(res, 400, { ok: false, error: 'invalid', field: 'email', message: 'Enter a valid email address.' });
     if (phone && !/^[6-9]\d{9}$/.test(phone)) return H.send(res, 400, { ok: false, error: 'invalid', field: 'phone', message: 'Enter a 10-digit mobile number.' });
     if (!H.validPassword(b.password)) return H.send(res, 400, { ok: false, error: 'invalid', field: 'password', message: 'Password must be 8 to 40 characters.' });
+
+    const real = await RL.hit('signup-valid', ip, 5, 3600);        // only well-formed requests count here
+    if (!real.allowed) return H.limited(res, real.retryAfter);
 
     const sp = name.indexOf(' ');
     const input = { email, password: b.password, firstName: sp > 0 ? name.slice(0, sp) : name, lastName: sp > 0 ? name.slice(sp + 1).trim() : '' };

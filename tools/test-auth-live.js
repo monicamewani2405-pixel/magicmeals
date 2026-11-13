@@ -1,7 +1,6 @@
 /* tools/test-auth-live.js: checks a DEPLOYED site (Phase 6). Usage:   node tools/test-auth-live.js https://magicmeals-one.vercel.app
-   It never creates a Shopify customer: signup probes send invalid bodies (they still count against the IP limit),
-   login probes use a made-up email. WARNING: it uses up your own IP's signup (3/h) and login limits for an hour,
-   and locks the made-up email for 15 minutes. Run it once, not in a loop.
+   It never creates a Shopify customer and does not touch the signup limit. Login probes use a made-up email,
+   which is locked for 15 minutes, and they count against this IP's login limit (20 per hour). Run it once, not in a loop.
    Not covered here (needs a person): the real lock-expiry login, cookie flags in dev tools, Google login, the reset email. */
 'use strict';
 const base = (process.argv[2] || '').replace(/\/+$/, '');
@@ -24,8 +23,7 @@ async function post(path, body) {
   ok('429 carries Retry-After and the friendly message', !!last.retry && /Try again in \d+ (minute|minutes|second|seconds)\./.test(last.body.message || ''), [last.retry, last.body]);
   ok('auth responses are no-store', /no-store/.test(last.cache || ''), last.cache);
 
-  const s = []; for (let i = 0; i < 4; i++) s.push((await post('signup', { name: '', email: 'x', password: 'y' })).status);
-  ok('4th signup from this IP is blocked (3 per hour)', s[3] === 429 && s.slice(0, 3).every(c => c === 400), s);
+  // Signup limit (5 valid per hour per IP) is covered by test-auth-local.js: testing it live would use up your own signups.
 
   const me = await fetch(base + '/api/auth/me');
   ok('/api/auth/me without a cookie: 401', me.status === 401, me.status);
