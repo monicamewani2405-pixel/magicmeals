@@ -1,6 +1,19 @@
     // Complete Product Database with Real Imagery (40 Products & Combos)
     // One shelf life for every product (client, 13 Nov 2026). Shown under the pincode box and in the specs list on every product page.
     const SHELF_LIFE = '12 Months';
+    // The four how-to-prepare steps and the absorber note come from ONE place: how-to-prepare.js (client wording). No product has its own steps.
+    const HOW_TO_PREPARE = window.HOW_TO_PREPARE;
+    // The name users see for the builder (route #byob, ids and classes keep the old short name). Static copies in index.html carry data-byob-label and are synced below.
+    const BYOB_LABEL = 'Build Your Box';
+    // Policy pages: copied word for word from magicmeals.shop into policies/<key>.html (source URL and date are in a comment at the top of each file).
+    const POLICIES = {
+      'privacy-policy': 'Privacy Policy',
+      'terms-conditions': 'Terms & Conditions',
+      'return-refund-policy': 'Return & Refund Policy',
+      'delivery-policy': 'Delivery Policy'
+    };
+    const BASE_TITLE = document.title;
+    document.querySelectorAll('[data-byob-label]').forEach(el => { el.textContent = BYOB_LABEL; if (el.hasAttribute('data-byob-aria')) el.setAttribute('aria-label', BYOB_LABEL); });
     const PRODUCTS = [
       {
         id: 'rajma-masala',
@@ -1994,6 +2007,21 @@
     }
 
     // Product Detail Page (PDP) View
+    // The old store's description ends with its own "Preparation Instructions" (different steps per product). Every product now shows the shared
+    // HOW_TO_PREPARE steps instead, so that list is cut out here and only each pouch's water amount is kept (a combo: one line per pouch).
+    // product-descriptions.js itself is not edited.
+    function waterFactsOnly(html) {
+      const m = html.match(/<h[34]>(?:<strong>)?\s*Preparation Instructions\s*(?:<\/strong>)?<\/h[34]>/i);
+      if (!m) return html;
+      const tail = html.slice(m.index + m[0].length), lines = [], re = /(?:<p><strong>([^<]*)<\/strong><\/p>)?\s*<ol>([\s\S]*?)<\/ol>/gi;
+      let x;
+      while ((x = re.exec(tail))) {
+        const w = x[2].match(/Add\s+(\d+)\s?ml\s+(hot|cold)\s+water/i);
+        if (w) lines.push((x[1] ? `<strong>${x[1]}</strong>: ` : '') + `${w[1]} ml ${w[2].toLowerCase()} water`);
+      }
+      return html.slice(0, m.index) + (lines.length ? `<h3>Water to add</h3><p>${lines.join('<br>')}</p>` : '');
+    }
+
     function renderProductView() {
       const p = PRODUCTS.find(x => x.id === State.productId) || PRODUCTS[0];
       const packPrice = calcPrice(p, State.pdpPack);
@@ -2001,6 +2029,7 @@
       const related = PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
       // description copied from the old live store (product-descriptions.js); a product without one keeps p.desc
       const liveDesc = (window.PRODUCT_DESCRIPTIONS || {})[p.id] || null;
+      const descHtml = liveDesc && liveDesc.html ? waterFactsOnly(liveDesc.html) : '';
       // ingredients (product-ingredients.js): shown at the end of the Description; a combo lists the ingredients of each pouch
       const ingredientsHtml = window.MMIngredients ? window.MMIngredients.html(p, id => (PRODUCTS.find(x => x.id === id) || {}).title) : '';
       // combos: the same 3-column page as the singles (pdp/pdp-scene.js, flat mode): the pouches together instead of the 3D pouch,
@@ -2129,20 +2158,19 @@
               ${p.noWater ? '' : `
               <!-- Preparation Guide Accordion -->
               <div style="background:var(--white); border:1px solid var(--border); border-radius:14px; padding:16px;">
-                <h4 style="margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-                  <span>🫕 How to Prepare:</span>
+                <h4 id="pdpPrepTitle" style="margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+                  <span><span aria-hidden="true">🫕</span> How to Prepare:</span>
                 </h4>
-                <ol style="margin:0; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.7;">
-                  <li>Open pouch and add boiling hot water up to the marked line inside.</li>
-                  <li>Stir well, zip the pouch tightly, and let rest until fully hydrated.</li>
-                  <li>Open, give it a quick stir, and eat straight from the travel-friendly bowl!</li>
+                <ol aria-labelledby="pdpPrepTitle" style="margin:0; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.7;">
+                  ${HOW_TO_PREPARE.steps.map(st => `<li>${st.text}</li>`).join('')}
                 </ol>
+                <p class="pdp-prep-note">${HOW_TO_PREPARE.note}</p>
               </div>
               `}
-              ${(liveDesc && liveDesc.html) || ingredientsHtml ? `
+              ${descHtml || ingredientsHtml ? `
                 <section class="pdp-longdesc" aria-label="Description of ${p.title}">
                   <h2 class="pdp-longdesc-title">Description</h2>
-                  <div class="pdp-longdesc-body">${liveDesc && liveDesc.html ? liveDesc.html : ''}${ingredientsHtml}</div>
+                  <div class="pdp-longdesc-body">${descHtml}${ingredientsHtml}</div>
                 </section>
               ` : ''}
             </div>
@@ -2175,31 +2203,16 @@
                 </div>
               </div>
 
-              <!-- Right: 3 Visual Steps -->
+              <!-- Right: the four steps (same text as How to Prepare above; how-to-prepare.js) -->
               <div class="pdp-hiw-steps">
+                ${HOW_TO_PREPARE.steps.map((st, n) => `
                 <div class="pdp-hiw-step">
-                  <div class="pdp-hiw-step-num">1</div>
+                  <div class="pdp-hiw-step-num">${n + 1}</div>
                   <div class="pdp-hiw-step-info">
-                    <h4>Open Pouch & Remove Absorber</h4>
-                    <p>Unzip the top of the pouch and take out the small white freshness absorber packet inside.</p>
+                    <h4>${st.title}</h4>
+                    <p>${st.text}</p>
                   </div>
-                </div>
-
-                <div class="pdp-hiw-step">
-                  <div class="pdp-hiw-step-num">2</div>
-                  <div class="pdp-hiw-step-info">
-                    <h4>Pour Boiling Hot Water</h4>
-                    <p>Pour boiling water up to the marked fill line inside. Stir gently to mix the authentic spices.</p>
-                  </div>
-                </div>
-
-                <div class="pdp-hiw-step">
-                  <div class="pdp-hiw-step-num">3</div>
-                  <div class="pdp-hiw-step-info">
-                    <h4>Zip Tight & Rest 5–7 Minutes</h4>
-                    <p>Zip seal the pouch tightly. Wait 5-7 minutes for the meal to naturally rehydrate into fresh, hot comfort food!</p>
-                  </div>
-                </div>
+                </div>`).join('')}
 
                 <div class="pdp-hiw-perks">
                   <span>✨ Pure Ghee & Natural Spices</span>
@@ -2324,7 +2337,7 @@
         <div class="byob-container">
           <div class="byob-header">
             <span class="byob-badge-pill">🍱 Custom Meal Builder</span>
-            <h1 class="byob-title">Build Your Own Meal Box</h1>
+            <h1 class="byob-title">${BYOB_LABEL}</h1>
             <p class="byob-subtitle">
               Pick your favorite homestyle freeze-dried dishes. Perfect for treks, hostels, and international flights!
             </p>
@@ -2537,6 +2550,19 @@
     }
 
     // Main Render Function
+    // Policy page: the title is the H1; the text is fetched from policies/<key>.html and put in as is.
+    function renderPolicyView(key) {
+      return `<article class="policy" aria-labelledby="policyTitle"><h1 id="policyTitle" class="policy-title">${POLICIES[key] || ''}</h1><div class="policy-body" id="policyBody"><p class="policy-loading">Loading…</p></div></article>`;
+    }
+    const POLICY_CACHE = {};
+    function loadPolicy(key) {
+      const show = html => { const el = document.getElementById('policyBody'); if (el && State.view === 'policy' && State.productId === key) el.innerHTML = html; };
+      if (POLICY_CACHE[key]) { show(POLICY_CACHE[key]); return; }
+      fetch(`policies/${key}.html`).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(html => { POLICY_CACHE[key] = html; show(html); })
+        .catch(() => show('<p>This page could not be loaded. Please refresh and try again.</p>'));
+    }
+
     function renderApp(isRouteChange = false) {
       const container = $('#app');
       if (container && isRouteChange) {
@@ -2568,7 +2594,13 @@
         container.innerHTML = renderByobView();
       } else if (State.view === 'profile') {
         container.innerHTML = '<div id="profile-slot"></div>';   // profile.js draws the page on "app:rendered"
+      } else if (State.view === 'policy') {
+        container.innerHTML = renderPolicyView(State.productId);
+        loadPolicy(State.productId);
       }
+      // browser tab title: the builder and the policy pages have their own, every other view keeps the site title
+      document.title = State.view === 'policy' ? `${POLICIES[State.productId] || 'Policy'} | Magic Meals`
+        : State.view === 'byob' ? `${BYOB_LABEL} | Magic Meals` : BASE_TITLE;
 
       // Update Header State (Transparent on Home, Solid on Shop, Product & BYOB views)
       document.body.dataset.view = State.view;
@@ -2583,7 +2615,7 @@
         }
       }
 
-      // Update Header Quick Links (Shop, BYOB)
+      // Update Header Quick Links (Shop, Build Your Box)
       document.querySelectorAll('.header-quick-link').forEach(link => {
         const go = link.dataset.go;
         const cat = link.dataset.cat;
@@ -2596,7 +2628,7 @@
         }
       });
 
-      // Update Mobile Drawer States (Shop, Build Your Own Box, Profile)
+      // Update Mobile Drawer States (Shop, Build Your Box)
       document.querySelectorAll('.drawer-cat-btn').forEach(btn => {
         const go = btn.dataset.go;
         if (go === 'shop' && State.view === 'shop') {
@@ -2756,6 +2788,8 @@
         let hash = view;
         if (view === 'product') {
           hash = `p-${productId}`;
+        } else if (view === 'policy') {
+          hash = productId;
         } else if (view === 'shop') {
           hash = State.selectedCategory !== 'All' ? `shop?category=${encodeURIComponent(State.selectedCategory)}` : 'shop';
         }
@@ -3557,6 +3591,10 @@
       }
       if (hash === 'profile') {
         navigateTo('profile');
+        return;
+      }
+      if (Object.prototype.hasOwnProperty.call(POLICIES, hash)) {
+        navigateTo('policy', hash);
         return;
       }
       navigateTo('home');

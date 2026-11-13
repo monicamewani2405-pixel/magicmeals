@@ -2464,7 +2464,7 @@
         align-items: start;
       }
       .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
       }
     }
   
@@ -3796,3 +3796,22 @@ body[data-view="home"] .homepage-sheet {
   }
 }
 
+
+/* the oxygen absorber note under How to Prepare */
+.pdp-prep-note { margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: var(--text-muted); }
+
+/* policy pages (#privacy-policy, #terms-conditions, #return-refund-policy, #delivery-policy) */
+.policy { max-width: 760px; margin: 0 auto; padding: 36px 0 72px; overflow-wrap: anywhere; }
+.policy-title { font-size: clamp(28px, 4.5vw, 40px); margin-bottom: 24px; }
+.policy-body { font-size: 15.5px; line-height: 1.75; color: var(--text); }
+.policy-body h2 { font-size: 19px; margin: 28px 0 8px; }
+.policy-body h3 { font-size: 16.5px; margin: 18px 0 6px; }
+.policy-body p, .policy-body ul { margin: 0 0 14px; }
+.policy-body ul { padding-left: 22px; }
+.policy-body li { margin-bottom: 6px; }
+.policy-body hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0 0; }
+.policy-loading { color: var(--text-muted); }
+
+/* footer: contact + social columns */
+.footer-contact address { font-style: normal; color: var(--border); line-height: 1.6; }
+.footer-social { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; }

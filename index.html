@@ -13,7 +13,7 @@
   <link rel="preload" as="image" href="assets/hero/veg-biryani-front-800.webp" type="image/webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/hero/veg-biryani-front-m.webp" type="image/webp" media="(max-width: 767px)">
   <link rel="icon" type="image/png" href="cropped_logo.png">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="stylesheet" href="variants.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="scenes/scene-colors.css">
@@ -57,8 +57,7 @@
 
         <nav class="header-key-links" aria-label="Quick Links">
           <a class="header-quick-link" data-go="shop" data-cat="All">Shop</a>
-          <a class="header-quick-link" data-go="byob" id="byobHeaderLink">BYOB</a>
-          <button class="header-quick-link" id="headerProfileBtn" data-action="profile" aria-label="Profile">Profile</button>
+          <a class="header-quick-link" data-go="byob" id="byobHeaderLink" data-byob-label>Build Your Box</a>
         </nav>
       </div>
 
@@ -100,8 +99,7 @@
     <div class="mobile-drawer-body">
       <nav class="mobile-categories-list" aria-label="Main Menu">
         <button class="drawer-cat-btn" data-go="shop" aria-label="Shop">Shop</button>
-        <button class="drawer-cat-btn" data-go="byob" aria-label="Build Your Own Box">Build Your Own Box</button>
-        <button class="drawer-cat-btn" id="drawerProfileBtn" data-action="profile" aria-label="Profile">Profile</button>
+        <button class="drawer-cat-btn" data-go="byob" data-byob-label data-byob-aria aria-label="Build Your Box">Build Your Box</button>
       </nav>
     </div>
   </aside>
@@ -185,19 +183,33 @@
             <li><a data-go="shop" data-cat="Rice">Dal Khichdi & Rice Bowls</a></li>
             <li><a data-go="shop" data-cat="Meals">Paneer & Punjabi Curries</a></li>
             <li><a data-go="shop" data-cat="Breakfast">Poha & Upma</a></li>
+            <li><a onclick="alert('Magic Meals shelf life is 12 months at room temperature. No freezing required.')">Storage & Shelf Life FAQ</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Customer Care</h4>
+          <h4>Quick Link</h4>
           <ul class="footer-links">
-            <li><a onclick="alert('Shipping takes 2-4 business days via BlueDart & Delhivery express delivery.')">Track Shipping</a></li>
-            <li><a onclick="alert('Magic Meals shelf life is 12 months at room temperature. No freezing required.')">Storage & Shelf Life FAQ</a></li>
-            <li><a onclick="alert('Support: contact@magicmeals.shop | WhatsApp: +91 98200 00000')">WhatsApp Help Desk</a></li>
-            <li><a onclick="alert('Hassle-free 7-day replacement guarantee on damaged pouches.')">Refund Policy</a></li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-conditions">Terms &amp; Conditions</a></li>
+            <li><a href="#return-refund-policy">Return &amp; Refund Policy</a></li>
+            <li><a href="#delivery-policy">Delivery Policy</a></li>
           </ul>
         </div>
 
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links footer-contact">
+            <li><a href="tel:+918009900966">+91 80099 00966</a></li>
+            <li><address>Address : 307, D Wing, 3rd Floor,<br>Marathon Monte Plaza, Madan Mohan Malavia Road, Opp. Telephone Exchange, Above Achija Hotel, Mulund (W), Mumbai–80</address></li>
+            <li><a href="mailto:magicmeals.shop@gmail.com">Email Id : magicmeals.shop@gmail.com</a></li>
+          </ul>
+          <ul class="footer-links footer-social">
+            <li><a href="https://www.facebook.com/profile.php?id=61577473937858" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.instagram.com/magicmeals.shop" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@magicmealsofficial" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+          </ul>
+        </div>
 
       </div>
 
@@ -306,9 +318,10 @@
   <script src="product-descriptions.js" defer></script>
   <script src="product-ingredients.js" defer></script>
   <script src="pdp/ingredients.js" defer></script>
+  <script src="how-to-prepare.js" defer></script>
   <script src="pack-prices.js" defer></script>
   <script src="pincode.js" defer></script>
-  <script src="main.js?v=9" defer></script>
+  <script src="main.js?v=10" defer></script>
   <script src="hero-products.js" defer></script>
   <script src="scenes/motion.js" defer></script>
   <script src="heroes/switcher.js?v=2" defer></script>

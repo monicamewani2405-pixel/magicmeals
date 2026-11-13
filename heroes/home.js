@@ -43,12 +43,9 @@
     eat: '<svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24h36a18 18 0 0 1-36 0z"/><path d="M18 14c0-3 3-3 3-6M26 14c0-3 3-3 3-6"/></svg>'
   };
 
-  var STEPS = [
-    { name: 'Tear', desc: 'Tear open the pouch along the notch.', icon: ICONS.tear },
-    { name: 'Pour', desc: 'Empty the rice and veggies into a bowl.', icon: ICONS.pour },
-    { name: 'Add hot water', desc: 'Pour hot water up to the line.', icon: ICONS.water },
-    { name: 'Eat', desc: 'Wait a few minutes, stir gently, and enjoy.', icon: ICONS.eat }
-  ];
+  var STEPS = window.HOW_TO_PREPARE.steps.map(function (s, i) {
+    return { name: s.title, desc: s.text, icon: [ICONS.tear, ICONS.pour, ICONS.water, ICONS.eat][i] };
+  });
 
   function mountStaticHiw() {
     var host = document.getElementById('hiw-slot');
