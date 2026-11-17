@@ -2200,14 +2200,14 @@
             <div class="pdp-hiw-grid">
               <!-- Left: Real Video Reel -->
               <div class="pdp-hiw-video-card">
-                <video 
-                  class="pdp-hiw-video" 
-                  src="https://magicmeals.shop/wp-content/uploads/2026/04/WhatsApp-Video-2026-04-09-at-1.03.01-PM-1-1.mp4" 
-                  controls 
-                  playsinline 
+                ${(window.MMVideo && window.MMVideo.cardHtml(p)) || `<video
+                  class="pdp-hiw-video"
+                  src="https://magicmeals.shop/wp-content/uploads/2026/04/WhatsApp-Video-2026-04-09-at-1.03.01-PM-1-1.mp4"
+                  controls
+                  playsinline
                   preload="metadata"
                   title="How to Prepare Magic Meals"
-                ></video>
+                ></video>`}
                 <div class="pdp-hiw-video-tag">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                   <span>Real Preparation Video</span>
@@ -2601,6 +2601,7 @@
       } else if (State.view === 'product') {
         container.innerHTML = renderProductView();
         pdpProtoMounted = !!(window.PdpProto && window.PdpProto.mount(container, State.productId));   // PDP prototype: new layout only when PDP_SCENES has this product
+        if (window.MMVideo) window.MMVideo.observe(container);   // cooking video: starts muted when the card scrolls into view (videos/video-facade.js)
       } else if (State.view === 'byob') {
         container.innerHTML = renderByobView();
       } else if (State.view === 'profile') {
@@ -3163,8 +3164,10 @@
       const target = e.target.closest('button, a, [data-go], [data-p], [data-cat], [data-byob-remove], [data-byob-add], [data-byob-size], [data-byob-cat], #mobileDrawerBackdrop');
       if (!target) return;
 
-      
-      
+      // product page: tap-to-play cooking video (videos/video-facade.js)
+      if (target.dataset.mmv && window.MMVideo) { window.MMVideo.play(target); return; }
+      if (target.dataset.mmvSound !== undefined && window.MMVideo) { window.MMVideo.sound(target); return; }
+
       const reelCard = target.closest('.reel-card');
       if (reelCard && reelCard.dataset.videoId) {
         openVideoModal(reelCard.dataset.videoId);

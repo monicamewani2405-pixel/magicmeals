@@ -1,0 +1,31 @@
+video_file,product_slug,jain_or_regular,match_basis,pack_seen_in_video,confidence,flag
+REGULAR/BREAKFAST/IDLI SAMBAR.mp4,idli-sambar,regular,file name,Idli Sambar,HIGH,
+REGULAR/BREAKFAST/KANDA POHA.mp4,kanda-poha,regular,file name,Kanda Poha,HIGH,
+REGULAR/BREAKFAST/MUMBAI MISAL.mp4,mumbai-misal,regular,file name,Mumbai Misal,HIGH,
+REGULAR/BREAKFAST/UPMA.mp4,upma,regular,file name,Upma,HIGH,
+REGULAR/DALS/DAL MAKHANI.mp4,dal-makhani,regular,file name,Dal Makhani,HIGH,no audio track
+REGULAR/DALS/DAL TADKA (BOILING WATER) .mp4,dal-tadka,regular,file name,Dal Tadka,HIGH,"identical copy also in MEALS; says 7 mins"
+REGULAR/MEALS/DAL TADKA (BOILING WATER) .mp4,dal-tadka,regular,file name,Dal Tadka,HIGH,identical copy of the DALS file (same SHA-1); ignored
+REGULAR/DALS/GUJARATI DAL.mp4,gujarati-dal,regular,file name,Gujarati Dal,HIGH,no audio track
+REGULAR/DESSERT/AAM RAS.mp4,aam-ras,JAIN per product data,file name,Aam Ras,HIGH,DOUBT 1: product flagged jain in main.js but video is in REGULAR; uses COLD water + blender
+REGULAR/DESSERT/GAJAR HALWA.mp4,gajar-halwa,regular,file name,Gajar Halwa,HIGH,
+REGULAR/DESSERT/RAWA SHEERA.mp4,rawa-sheera,JAIN per product data,file name,Rawa Sheera,HIGH,DOUBT 1: product flagged jain in main.js but video is in REGULAR
+REGULAR/MEALS/BHINDI MASALA .mp4,bhindi-masala,regular,file name,Bhindi Masala,HIGH,last frame is an animated end graphic (avoid for poster)
+REGULAR/MEALS/PANNER BHURJI.mp4,paneer-bhurji,regular,file name,Paneer Bhurji,HIGH,
+REGULAR/MEALS/PANNERE BUTTER MASALA.mp4,paneer-butter-masala,regular,file name,Paneer Butter Masala,HIGH,
+REGULAR/MEALS/PAV BHAJI.mp4,pav-bhaji,regular,file name,Pav Bhaji,HIGH,
+REGULAR/MEALS/PIND KE CHOLE.mp4,pind-ke-chhole,regular,file name,Pind Ke Chole,HIGH,
+REGULAR/MEALS/RAJMA MASALA.mp4,rajma-masala,regular,file name,Rajma Masala,HIGH,
+REGULAR/MEALS/VEG KADHAI.mp4,veg-kadhai,regular,file name,Veg Kadhai,HIGH,
+REGULAR/MEALS/VEG MAKHANWALA.mp4,veg-makhanwala,regular,file name,Veg Makhanwala,HIGH,
+REGULAR/RICE/DAL KHICDHI.mp4,dal-khichdi,regular,file name (khicdhi=khichdi),Dal Khichdi,HIGH,
+REGULAR/RICE/FREID RICE WITH M.GRAVY.mp4,fried-rice-manchurian,regular,file name (freid=fried),Fried Rice Manchurian Gravy,HIGH,
+REGULAR/RICE/FRIED RICE.mp4,fried-rice,regular,file name,Fried Rice (a Manchurian-gravy pack also visible),MEDIUM,DOUBT 4
+REGULAR/RICE/JEERA RICE.mp4,jeera-rice,JAIN per product data,file name,Jeera Rice,HIGH,DOUBT 1: product flagged jain in main.js but video is in REGULAR
+REGULAR/RICE/MASALA KHICHADI KADHI 1.mp4,masala-khichdi-kadhi,regular,file name,Masala Khichdi Kadhi,HIGH,DOUBT 2: two different videos for one product
+REGULAR/RICE/MASALA KHICHADI KADHI.mp4,masala-khichdi-kadhi,regular,file name,Masala Khichdi Kadhi,HIGH,DOUBT 2: two different videos for one product
+REGULAR/RICE/SCHEZWAN  RICE.mp4,schezwan-rice,regular,file name,pack not legible,MEDIUM,DOUBT 5
+REGULAR/RICE/TAWA PULAO.mp4,tawa-pulao,regular,file name,Tawa Pulao,HIGH,
+REGULAR/RICE/VEG BIRYANI ..mp4,veg-biryani,regular,file name,Veg Biryani (top of pack cut off),HIGH,DOUBT 3: two different videos for one product
+REGULAR/RICE/VEG BIRYANI.mp4,veg-biryani,regular,file name,Veg Biryani,HIGH,DOUBT 3: two different videos for one product
+JAIN/SCHEZWAN RICE .mp4,jain-schezwan-rice,jain,subfolder JAIN,not inspected,n/a,SKIPPED by instruction: Jain products are left untouched; no audio track

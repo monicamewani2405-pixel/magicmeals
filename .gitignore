@@ -11,3 +11,14 @@ scratch/
 page_view*.png
 live_vercel*.png
 dal_khichdi_raw.jpg
+
+# Cooking videos: never commit secrets or video files
+.env.local
+.env*.local
+incoming-videos/
+video-out/
+*.mp4
+*.mov
+*.m4v
+
+audit/tmp/
