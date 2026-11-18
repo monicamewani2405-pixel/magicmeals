@@ -4,14 +4,14 @@
    keep Pack of 3 / Pack of 6 at the sites own prices (calcPrice in main.js). */
 window.PACK_PRICES = {
  "rajma-masala": {
-  "3": 675,
-  "5": 1125,
-  "7": 1575
- },
- "paneer-butter-masala": {
   "3": 720,
   "5": 1200,
   "7": 1680
+ },
+ "paneer-butter-masala": {
+  "3": 780,
+  "5": 1300,
+  "7": 1820
  },
  "paneer-bhurji": {
   "3": 834,
@@ -69,9 +69,9 @@ window.PACK_PRICES = {
   "7": 1190
  },
  "veg-biryani": {
-  "3": 675,
-  "5": 1125,
-  "7": 1575
+  "3": 720,
+  "5": 1200,
+  "7": 1680
  },
  "tawa-pulao": {
   "3": 660,
@@ -129,9 +129,9 @@ window.PACK_PRICES = {
   "7": 525
  },
  "aam-ras": {
-  "3": 555,
-  "5": 925,
-  "7": 1295
+  "3": 855,
+  "5": 1425,
+  "7": 1995
  },
  "rawa-sheera": {
   "3": 510,
@@ -159,14 +159,14 @@ window.PACK_PRICES = {
   "7": 2030
  },
  "jain-paneer-butter-masala": {
-  "3": 765,
-  "5": 1275,
-  "7": 1785
+  "3": 810,
+  "5": 1350,
+  "7": 1890
  },
  "jain-pav-bhaji": {
-  "3": 645,
-  "5": 1075,
-  "7": 1505
+  "3": 660,
+  "5": 1100,
+  "7": 1540
  },
  "jain-pind-ke-chhole": {
   "3": 780,
@@ -209,9 +209,9 @@ window.PACK_PRICES = {
   "7": 1393
  },
  "bhindi-masala": {
-  "3": 675,
-  "5": 1125,
-  "7": 1575
+  "3": 690,
+  "5": 1150,
+  "7": 1610
  },
  "jeera-rice": {
   "3": 450,

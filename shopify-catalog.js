@@ -13,25 +13,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499145023771",
      "sku": "MM-AAM-RAS",
-     "price": 185.0,
+     "price": 285.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54499145056539",
      "sku": "MM-AAM-RAS-3",
-     "price": 555.0,
+     "price": 855.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544256106779",
      "sku": "MM-AAM-RAS-5",
-     "price": 925.0,
+     "price": 1425.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544256139547",
      "sku": "MM-AAM-RAS-7",
-     "price": 1295.0,
+     "price": 1995.0,
      "title": "Pack of 7"
     }
    }
@@ -44,25 +44,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499140600091",
      "sku": "MM-BHINDI-MASALA",
-     "price": 225.0,
+     "price": 230.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54499140632859",
      "sku": "MM-BHINDI-MASALA-3",
-     "price": 675.0,
+     "price": 690.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544252436763",
      "sku": "MM-BHINDI-MASALA-5",
-     "price": 1125.0,
+     "price": 1150.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544252469531",
      "sku": "MM-BHINDI-MASALA-7",
-     "price": 1575.0,
+     "price": 1610.0,
      "title": "Pack of 7"
     }
    }
@@ -795,25 +795,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54544258629915",
      "sku": "MM-JAIN-PANEER-BUTTER-MASALA",
-     "price": 255.0,
+     "price": 270.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54544258662683",
      "sku": "MM-JAIN-PANEER-BUTTER-MASALA-3",
-     "price": 765.0,
+     "price": 810.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544258695451",
      "sku": "MM-JAIN-PANEER-BUTTER-MASALA-5",
-     "price": 1275.0,
+     "price": 1350.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544258728219",
      "sku": "MM-JAIN-PANEER-BUTTER-MASALA-7",
-     "price": 1785.0,
+     "price": 1890.0,
      "title": "Pack of 7"
     }
    }
@@ -826,25 +826,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54544258760987",
      "sku": "MM-JAIN-PAV-BHAJI",
-     "price": 215.0,
+     "price": 220.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54544258793755",
      "sku": "MM-JAIN-PAV-BHAJI-3",
-     "price": 645.0,
+     "price": 660.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544258826523",
      "sku": "MM-JAIN-PAV-BHAJI-5",
-     "price": 1075.0,
+     "price": 1100.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544258859291",
      "sku": "MM-JAIN-PAV-BHAJI-7",
-     "price": 1505.0,
+     "price": 1540.0,
      "title": "Pack of 7"
     }
    }
@@ -1258,7 +1258,7 @@ window.SHOPIFY_CATALOG = {
   "mexican-rice": {
    "handle": "mexican-rice",
    "product": "gid://shopify/Product/10561714454811",
-   "title": "Zesty Mexican Fiesta Rice",
+   "title": "Mexican Fiesta Rice",
    "variants": {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499143876891",
@@ -1320,7 +1320,7 @@ window.SHOPIFY_CATALOG = {
   "mumbai-misal": {
    "handle": "mumbai-misal",
    "product": "gid://shopify/Product/10561714618651",
-   "title": "Fiery Kolhapuri Mumbai Misal",
+   "title": "Kolhapuri Mumbai Misal",
    "variants": {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499144433947",
@@ -1426,25 +1426,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499140108571",
      "sku": "MM-PANEER-BUTTER-MASALA",
-     "price": 240.0,
+     "price": 260.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54499140141339",
      "sku": "MM-PANEER-BUTTER-MASALA-3",
-     "price": 720.0,
+     "price": 780.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544252141851",
      "sku": "MM-PANEER-BUTTER-MASALA-5",
-     "price": 1200.0,
+     "price": 1300.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544252174619",
      "sku": "MM-PANEER-BUTTER-MASALA-7",
-     "price": 1680.0,
+     "price": 1820.0,
      "title": "Pack of 7"
     }
    }
@@ -1597,25 +1597,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499139944731",
      "sku": "MM-RAJMA-MASALA",
-     "price": 225.0,
+     "price": 240.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54499139977499",
      "sku": "MM-RAJMA-MASALA-3",
-     "price": 675.0,
+     "price": 720.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544252076315",
      "sku": "MM-RAJMA-MASALA-5",
-     "price": 1125.0,
+     "price": 1200.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544252109083",
      "sku": "MM-RAJMA-MASALA-7",
-     "price": 1575.0,
+     "price": 1680.0,
      "title": "Pack of 7"
     }
    }
@@ -1680,7 +1680,7 @@ window.SHOPIFY_CATALOG = {
   "schezwan-rice": {
    "handle": "schezwan-rice",
    "product": "gid://shopify/Product/10561714422043",
-   "title": "Fiery Schezwan Fried Rice",
+   "title": "Schezwan Fried Rice",
    "variants": {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499143647515",
@@ -1879,25 +1879,25 @@ window.SHOPIFY_CATALOG = {
     "1": {
      "gid": "gid://shopify/ProductVariant/54499141878043",
      "sku": "MM-VEG-BIRYANI",
-     "price": 225.0,
+     "price": 240.0,
      "title": "Single"
     },
     "3": {
      "gid": "gid://shopify/ProductVariant/54499141910811",
      "sku": "MM-VEG-BIRYANI-3",
-     "price": 675.0,
+     "price": 720.0,
      "title": "Pack of 3"
     },
     "5": {
      "gid": "gid://shopify/ProductVariant/54544253780251",
      "sku": "MM-VEG-BIRYANI-5",
-     "price": 1125.0,
+     "price": 1200.0,
      "title": "Pack of 5"
     },
     "7": {
      "gid": "gid://shopify/ProductVariant/54544253813019",
      "sku": "MM-VEG-BIRYANI-7",
-     "price": 1575.0,
+     "price": 1680.0,
      "title": "Pack of 7"
     }
    }
