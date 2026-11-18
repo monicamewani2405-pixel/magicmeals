@@ -1,0 +1,8 @@
+{
+  "name": "magic-meals-prototype",
+  "private": true,
+  "description": "Static prototype (plain HTML, CSS and JS). The only dependency is for the Vercel function api/brochure.js.",
+  "dependencies": {
+    "nodemailer": "^10.6.0"
+  }
+}

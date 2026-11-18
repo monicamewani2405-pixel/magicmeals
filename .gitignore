@@ -22,3 +22,9 @@ video-out/
 *.m4v
 
 audit/tmp/
+
+# Secrets and installed packages (the brochure mailer reads SMTP settings from environment variables only)
+node_modules/
+.env
+.env.*
+!.env.example
