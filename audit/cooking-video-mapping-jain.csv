@@ -1,0 +1,9 @@
+video_file,product_slug,jain_or_regular,match_basis,pack_seen_in_video,confidence,duration_s,resolution,audio,flag
+JAIN/JAIN POHA FINAL.mp4,jain-poha,jain,file name + JAIN folder,Poha (pack),HIGH,25,1080x1920,yes,ends on an animated graphic
+JAIN/JAIN VEG KADAI.mp4,jain-veg-kadhai,jain,file name + JAIN folder,not seen in the frames checked,LOW,224,1080x1920,yes,DOUBT 1: only about 32 s of real video then about 3 min of plain white
+JAIN/MASALA KHICDI KADHI JAIN.mp4,jain-masala-khichdi-kadhi,jain,file name + JAIN folder,Masala Khichdi Kadhi (pack),HIGH,32,1080x1920,yes,ends on the Magic Meals logo
+JAIN/PANEER BHURJI JAIN.mp4,jain-paneer-bhurji,jain,file name + JAIN folder,Paneer Bhurji (pack shows the word Jain),HIGH,32,1080x1920,yes,
+JAIN/PANEER BUTTER MASALA JAIN.mp4,jain-paneer-butter-masala,jain,file name + JAIN folder,Paneer Butter Masala (pack),HIGH,32,1080x1920,yes,
+JAIN/RAJMA MASALA  JAIN.mp4,jain-rajma-masala,jain,file name + JAIN folder,Rajma Masala (pack),HIGH,36,1080x1920,yes,
+JAIN/SCHEZWAN RICE .mp4,jain-schezwan-rice,jain,JAIN folder (file name does not say Jain),Schezwan Rice (pack shows the word Jain),HIGH,37,1080x1920,NO,no audio track; 41 MB at 9 Mbps
+JAIN/VEG MAKHANWALA JAIN.mp4,jain-veg-makhanwala,jain,file name + JAIN folder,Veg Makhanwala (pack),HIGH,36,1080x1920,yes,
