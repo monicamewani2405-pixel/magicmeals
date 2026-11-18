@@ -12,6 +12,9 @@ window.SHOPIFY_CONFIG = {
   // PUBLIC Storefront API access token
   storefrontAccessToken: 'c490756ca639d9a1a1ea506ff0631bc0',
 
+  // Minimum order value in rupees (cart total after box discounts). Below it the cart drawer blocks checkout and shopify-connector.js refuses to open it.
+  minOrderValue: 499,
+
   // Pinned on purpose: an unpinned or retired version is silently served as a different one.
   apiVersion: '2026-07',
 

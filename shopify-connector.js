@@ -154,6 +154,7 @@
     var c = cfg(), problems = [];
     if (!c.shopDomain || !c.storefrontAccessToken) return Promise.resolve({ ok: false, problems: ['Shopify is not configured (shopify-config.js).'] });
     if (!window.SHOPIFY_CATALOG) return Promise.resolve({ ok: false, problems: ['The product catalogue file (shopify-catalog.js) is missing.'] });
+    if (c.minOrderValue && ctx.subtotal < c.minOrderValue) return Promise.resolve({ ok: false, problems: ['The minimum order value is ' + money(c.minOrderValue) + '. Your cart is ' + money(ctx.subtotal) + '.'] });
     var want = wantedLines(ctx, problems);
     if (!want.lines.length && !problems.length) return Promise.resolve({ ok: false, problems: ['Your meal box is empty.'] });
     return verifyLive(ctx, want.lines, problems).then(function (lines) {

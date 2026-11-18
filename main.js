@@ -3,6 +3,12 @@
     const SHELF_LIFE = '12 Months';
     // The four how-to-prepare steps and the absorber note come from ONE place: how-to-prepare.js (client wording). No product has its own steps.
     const HOW_TO_PREPARE = window.HOW_TO_PREPARE;
+    // Client rule: no spice-level label or chilli icon anywhere. The `spice` field stays in the product data; set this to true to show it again.
+    const SHOW_SPICE_LEVEL = false;
+    // The one WhatsApp number for the whole site (country code + number, digits only). Every [data-whatsapp] link is set from it.
+    const WHATSAPP_NUMBER = '918009900966';
+    document.querySelectorAll('a[data-whatsapp]').forEach(a => { a.href = 'https://wa.me/' + WHATSAPP_NUMBER; });
+    const spiceIcon = (p, mild = '🌿 Mild') => p.spice === 'Spicy' ? '🌶️🌶️' : p.spice === 'Medium' ? '🌶️' : mild;
     // The name users see for the builder (route #byob, ids and classes keep the old short name). Static copies in index.html carry data-byob-label and are synced below.
     const BYOB_LABEL = 'Build Your Box';
     // Policy pages: copied word for word from magicmeals.shop into policies/<key>.html (source URL and date are in a comment at the top of each file).
@@ -103,7 +109,7 @@
         calories: '435 kcal',
         kcal: 435,
         protein: '6.88g',
-        desc: 'Zesty mashed vegetable curry infused with authentic Mumbai tava masala and butter. Pair with toasted pav or roti.'
+        desc: 'Mashed vegetable curry infused with authentic Mumbai tava masala and butter. Pair with toasted pav or roti.'
       },
       {
         id: 'bhindi-masala',
@@ -139,7 +145,7 @@
         calories: '430 kcal',
         kcal: 430,
         protein: '5.88g',
-        desc: 'Assorted crisp vegetables and bell peppers tossed in a spicy, freshly pounded coriander and red chili kadhai masala.'
+        desc: 'Assorted crisp vegetables and bell peppers tossed in a freshly pounded coriander and red chili kadhai masala.'
       },
       {
         id: 'veg-makhanwala',
@@ -213,7 +219,7 @@
         calories: '284 kcal',
         kcal: 284,
         protein: '11.7g',
-        desc: 'Yellow toor dal tempered with double-shot pure desi ghee, cumin, garlic, and fiery Kashmiri red chilies.'
+        desc: 'Yellow toor dal tempered with double-shot pure desi ghee, cumin, garlic, and Kashmiri red chilies.'
       },
       {
         id: 'dal-fry',
@@ -284,7 +290,7 @@
         rating: 4.8,
         reviews: 110,
         weight: '55g net (makes 280g)',
-        calories: '203 kcal',
+        calories: '200 kcal',
         protein: '6.1g',
         desc: 'Traditional spiced rice-lentil khichdi accompanied by sweet-tangy Gujarati yogurt kadhi.'
       },
@@ -379,7 +385,7 @@
       },
       {
         id: 'schezwan-rice',
-        title: 'Fiery Schezwan Fried Rice',
+        title: 'Schezwan Fried Rice',
         category: 'Rice',
         price: 220,
         mrp: 225,
@@ -393,7 +399,7 @@
         calories: '315 kcal',
         kcal: 315,
         protein: '6.0g',
-        desc: 'Spicy wok rice tossed with authentic homemade red chili Schezwan sauce, ginger, and crunchy celery.'
+        desc: 'Wok rice tossed with authentic homemade red chili Schezwan sauce, ginger, and crunchy celery.'
       },
       {
         id: 'mexican-rice',
@@ -503,7 +509,7 @@
         calories: '250 kcal',
         kcal: 250,
         protein: '5g',
-        desc: 'Sprouted moth beans simmered in a zesty, spicy rassa (curry). Perfect with pav and crunchy farsan.'
+        desc: 'Sprouted moth beans simmered in a rassa (curry). Perfect with pav and crunchy farsan.'
       },
 
       // Soups
@@ -523,7 +529,7 @@
         calories: '100 kcal',
         kcal: 100,
         protein: '2.09g',
-        desc: 'Silky farm-fresh tomato soup lightly seasoned with black pepper and mild aromatic herbs.'
+        desc: 'Silky farm-fresh tomato soup lightly seasoned with black pepper and aromatic herbs.'
       },
       {
         id: 'sweet-corn-soup',
@@ -559,7 +565,7 @@
         calories: '110 kcal',
         kcal: 110,
         protein: '1.04g',
-        desc: 'Tangy, spicy soup infused with dark soy, vinegar, black pepper, shredded cabbage, carrots, and mushrooms.'
+        desc: 'Tangy soup infused with dark soy, vinegar, black pepper, shredded cabbage, carrots, and mushrooms.'
       },
 
       // Desserts
@@ -704,7 +710,7 @@
         rating: 0,
         reviews: 0,
         weight: '83g net (makes 250g)',
-        calories: '197 kcal',
+        calories: '200 kcal',
         protein: '5.58g',
         desc: 'Enjoy rich restaurant-style flavor with Jain Paneer Butter Masala by Magic Meals. Made without onion and garlic, this ready-to-eat sattvik curry is perfect for quick meals, travel, office lunches, and dinner cravings. Just add hot water and enjoy authentic taste in minutes.'
       },
@@ -883,7 +889,7 @@
         weight: '150g net (makes 480g)',
         calories: '470 kcal',
         protein: '10.0g',
-        desc: 'Classic Mumbai breakfast duo: 1x Homestyle Kanda Poha (makes 220g) + 1x Fiery Mumbai Misal (makes 260g).'
+        desc: 'Classic Mumbai breakfast duo: 1x Homestyle Kanda Poha (makes 220g) + 1x Mumbai Misal (makes 260g).'
       },
       {
         id: 'fiesta-bowl-combo',
@@ -899,7 +905,7 @@
         weight: '100g net (makes 480g)',
         calories: '403 kcal',
         protein: '5.1g',
-        desc: 'Global flavors comfort set: 1x Creamy Sweet Corn Vegetable Soup (makes 220ml) + 1x Zesty Mexican Rice (makes 260g).'
+        desc: 'Global flavors comfort set: 1x Creamy Sweet Corn Vegetable Soup (makes 220ml) + 1x Mexican Rice (makes 260g).'
       },
       {
         id: 'dinner-dessert-combo',
@@ -1109,7 +1115,7 @@
         weight: '223g net (makes 750g)',
         calories: '874 kcal',
         protein: '24.9g',
-        desc: 'Enjoy a delicious and protein-rich Indian meal combo featuring spicy Paneer Bhurji, aromatic Jeera Rice, and sweet refreshing Aamras. The Magic Meals Protein Veg Combo is perfect for lunch, dinner, travel, office meals, and instant hunger cravings.'
+        desc: 'Enjoy a delicious and protein-rich Indian meal combo featuring Paneer Bhurji, aromatic Jeera Rice, and sweet refreshing Aamras. The Magic Meals Protein Veg Combo is perfect for lunch, dinner, travel, office meals, and instant hunger cravings.'
       },
       {
         id: 'protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras',
@@ -1157,7 +1163,7 @@
         weight: '228g net (makes 650g)',
         calories: '834 kcal',
         protein: '12.2g',
-        desc: 'Experience authentic Punjabi flavors with the Magic Meals Punjabi Swaad Combo featuring spicy Pind Ke Chole, aromatic Jeera Rice, and delicious Gajar Halwa. A complete ready-to-eat vegetarian meal perfect for lunch, dinner, travel, office meals, and quick cravings.'
+        desc: 'Experience authentic Punjabi flavors with the Magic Meals Punjabi Swaad Combo featuring Pind Ke Chole, aromatic Jeera Rice, and delicious Gajar Halwa. A complete ready-to-eat vegetarian meal perfect for lunch, dinner, travel, office meals, and quick cravings.'
       },
       {
         id: 'punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa',
@@ -1403,7 +1409,7 @@
         weight: '150g net (makes 450g)',
         calories: '525 kcal',
         protein: '9.8g',
-        desc: 'Satisfy your Indo-Chinese cravings with the Magic Meals Indo-Chinese Combo featuring bold, spicy Schezwan Rice and soft, sweet Rawa Sheera dessert to cool things down. A Jain-friendly ready-to-eat combo meal perfect for dinner, hostel nights, travel, and quick meals.'
+        desc: 'Satisfy your Indo-Chinese cravings with the Magic Meals Indo-Chinese Combo featuring Schezwan Rice and soft, sweet Rawa Sheera dessert to cool things down. A Jain-friendly ready-to-eat combo meal perfect for dinner, hostel nights, travel, and quick meals.'
       },
       {
         id: 'jain-light-comfort-combo-dal-khichdi-aam-ras',
@@ -1449,7 +1455,7 @@
         rating: 0,
         reviews: 0,
         weight: '241g net (makes 690g)',
-        calories: '771 kcal',
+        calories: '774 kcal',
         protein: '12.9g',
         desc: 'Enjoy a complete North Indian feast anytime, anywhere with the Magic Meals Jain North Indian Combo featuring Jain Paneer Butter Masala, Jeera Rice, and Rawa Sheera. A wholesome, Jain-friendly ready-to-eat combo that brings together a rich curry, aromatic rice, and a traditional dessert for a satisfying meal in minutes.'
       },
@@ -1675,11 +1681,11 @@
           </div>
           <div class="card-body">
             <div class="card-meta">
-              <span class="card-rating">
+              ${p.reviews ? `<span class="card-rating">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                ${p.reviews ? `${p.rating} (${p.reviews})` : 'New'}
-              </span>
-              <span class="card-spice">${p.spice === 'Spicy' ? '🌶️🌶️' : p.spice === 'Medium' ? '🌶️' : '🌿 Mild'}</span>
+                ${p.rating} (${p.reviews})
+              </span>` : ''}
+              ${SHOW_SPICE_LEVEL ? `<span class="card-spice">${spiceIcon(p)}</span>` : ''}
             </div>
             <h3 class="card-title">${p.title}</h3>
             <div class="card-weight">${p.weight}</div>
@@ -1842,7 +1848,7 @@
                   </div>
                 </div>
                 <div class="reel-bottom-overlay">
-                  <span class="reel-dish-tag">Spicy Mumbai Misal</span>
+                  <span class="reel-dish-tag">Mumbai Misal</span>
                 </div>
               </div>
 
@@ -2097,11 +2103,11 @@
             <!-- Product Purchase Details -->
             <div class="pdp-info">
               <div class="pdp-badges-row">
-                <span class="card-rating">
+                ${p.reviews ? `<span class="card-rating">
                   <svg viewBox="0 0 24 24" style="width:16px;height:16px;color:var(--rating);fill:var(--rating);"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  ${p.reviews ? `<b>${p.rating}</b> (${p.reviews} verified customer reviews)` : '<b>New</b>'}
+                  <b>${p.rating}</b> (${p.reviews} verified customer reviews)
                 </span>
-                <span style="color:var(--text-muted);">•</span>
+                <span style="color:var(--text-muted);">•</span>` : ''}
                 <span style="font-size:13px; font-weight:600; color:var(--brand-primary);">In Stock • Ships in 24 hrs</span>
               </div>
 
@@ -2226,7 +2232,6 @@
                 </div>`).join('')}
 
                 <div class="pdp-hiw-perks">
-                  <span>✨ Pure Ghee & Natural Spices</span>
                   <span>🌿 Zero Preservatives</span>
                   <span>✈️ Travel-Ready Bowl Included</span>
                 </div>
@@ -2444,7 +2449,7 @@
                       <div class="byob-meal-body">
                         <h3 class="byob-meal-title">${p.title}</h3>
                         <div class="byob-meal-meta">
-                          <span>${p.weight} • ${p.spice === 'Spicy' ? '🌶️🌶️' : p.spice === 'Medium' ? '🌶️' : '🌿'}</span>
+                          <span>${p.weight}${SHOW_SPICE_LEVEL ? ' • ' + spiceIcon(p, '🌿') : ''}</span>
                           <span class="byob-meal-price">${formatINR(p.price)}</span>
                         </div>
                         <button type="button" class="btn-byob-add ${inBoxCount > 0 ? 'in-box' : ''}" data-byob-add="${p.id}">
@@ -2695,6 +2700,29 @@
     }
     window.addEventListener('scroll', updateHeaderTransparency, { passive: true });
 
+    // Minimum order: below it the checkout button is disabled and says why (shopify-connector.js refuses too)
+    const MIN_ORDER_VALUE = Number((window.SHOPIFY_CONFIG || {}).minOrderValue) || 499;
+    function applyMinOrderState(subtotal) {
+      const btn = document.getElementById('checkoutBtn');
+      if (!btn) return;
+      const short = subtotal > 0 && subtotal < MIN_ORDER_VALUE;
+      btn.disabled = short;
+      btn.setAttribute('aria-disabled', short ? 'true' : 'false');
+      let note = document.getElementById('minOrderNote');
+      if (short) {
+        if (!note) {
+          note = document.createElement('p');
+          note.id = 'minOrderNote';
+          note.className = 'min-order-note';
+          note.setAttribute('role', 'status');
+          btn.parentNode.insertBefore(note, btn);
+        }
+        note.textContent = `Minimum order value is ${formatINR(MIN_ORDER_VALUE)}. Add ${formatINR(MIN_ORDER_VALUE - subtotal)} more to place your order.`;
+      } else if (note) {
+        note.remove();
+      }
+    }
+
     function renderCartDrawer() {
       const totalCount = getCartTotalCount();
       const subtotal = getCartSubtotal();
@@ -2710,9 +2738,10 @@
         $('#shippingMeterMsg').innerHTML = '🎉 You unlocked <b>FREE Express Delivery!</b>';
         $('#shippingMeterPercent').textContent = '100%';
       } else {
-        $('#shippingMeterMsg').innerHTML = `Add <b>${formatINR(leftForFreeShip)}</b> more for FREE Shipping`;
+        $('#shippingMeterMsg').innerHTML = `Minimum order ${formatINR(MIN_ORDER_VALUE)}: add <b>${formatINR(leftForFreeShip)}</b> more to checkout`;
         $('#shippingMeterPercent').textContent = `${shipPercent}%`;
       }
+      applyMinOrderState(subtotal);
       $('#shippingBarFill').style.width = `${shipPercent}%`;
 
       const itemsList = $('#cartItemsList');
@@ -3473,6 +3502,10 @@
         showToast('Your meal box is empty!');
         return;
       }
+      if (getCartSubtotal() < MIN_ORDER_VALUE) {
+        showToast(`Minimum order value is ${formatINR(MIN_ORDER_VALUE)}. Add ${formatINR(MIN_ORDER_VALUE - getCartSubtotal())} more.`);
+        return;
+      }
 
       // Check if token is still placeholder
       if (!token || token.includes('PASTE_YOUR_PUBLIC_STOREFRONT_TOKEN') || token.trim() === '') {
@@ -3517,6 +3550,7 @@
         btn.disabled = false;
         btn.style.opacity = '1';
         btn.innerHTML = originalText;
+        applyMinOrderState(getCartSubtotal());
       }
     }
 

@@ -68,7 +68,7 @@
     { id: 'hero',        type: 'lifestyle', image: 'hero',        pouchAzimuth: 20,  serving: true  },
     { id: 'inside',      type: 'inside',                           pouchAzimuth: 0 },
     { id: 'ingredients', type: 'lifestyle', image: 'ingredients', pouchAzimuth: 180, serving: false },
-    { id: 'prep',        type: 'lifestyle', image: 'prep',        pouchAzimuth: 25,  serving: true },
+    { id: 'prep',        type: 'lifestyle', image: 'prep',        pouchAzimuth: 25,  serving: false },
     { id: 'onthego',     type: 'lifestyle', image: 'onthego',     pouchAzimuth: -20, serving: false }
   ];
 
@@ -127,8 +127,8 @@
     'mumbai-misal': {
       imgVersion: 2,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow ceramic bowl of fiery Mumbai Misal topped with crunchy farsan and coriander, beside soft buttered pav bread' },
-        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden dining table beside a bowl of spicy Mumbai Misal with butter-toasted pavs and lemon' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A shallow ceramic bowl of Mumbai Misal topped with crunchy farsan and coriander, beside soft buttered pav bread' },
+        { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a rustic wooden dining table beside a bowl of Mumbai Misal with butter-toasted pavs and lemon' },
         { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on an outdoor harbor terrace table beside a bowl of Mumbai Misal and two buttered pav buns' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
       ],
@@ -331,7 +331,7 @@
     'schezwan-rice': {
       imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of fiery, vibrant red Indo-Chinese Schezwan Fried Rice tossed in spicy chili-garlic sauce with bell peppers and scallions' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of vibrant red Indo-Chinese Schezwan Fried Rice tossed in chili-garlic sauce with bell peppers and scallions' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of steaming hot Schezwan Rice, in warm soft light' },
         { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a high-floor terrace table beside a bowl of Schezwan Rice, overlooking a glowing cityscape at dusk' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
@@ -379,7 +379,7 @@
     'jain-schezwan-rice': {
       imgVersion: 3,
       cards: [
-        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of fiery, vibrant red Schezwan Fried Rice tossed in spicy sauce with bell peppers and scallions' },
+        { id: 'serving',   type: 'lifestyle', image: 'serving',   pouchAzimuth: 20,  serving: true,  alt: 'A stylish rustic dark bowl of vibrant red Schezwan Fried Rice tossed in sauce with bell peppers and scallions' },
         { id: 'hero',      type: 'lifestyle', image: 'hero',      pouchAzimuth: 25,  serving: false, alt: '{name} pouch standing on a dark wooden table beside a bowl of Schezwan rice, in soft window light' },
         { id: 'abroad',    type: 'lifestyle', image: 'abroad',    pouchAzimuth: -20, serving: false, alt: '{name} pouch standing on a high-floor terrace table beside a bowl of Schezwan Rice, overlooking a glowing cityscape at dusk' },
         { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 180, serving: false, alt: 'Nutrition facts and nutrition information tables printed on the back of the {name} pack' }
@@ -722,7 +722,7 @@
       if (c.type !== 'lifestyle') return c;
       // the 4th picture is the nutrition tables of every pouch in the combo (tools/combo-nutrition-card.py); it replaces the on-the-go picture
       if (c.image === 'onthego') return { id: 'nutrition', type: 'lifestyle', image: 'nutrition', pouchAzimuth: 0, serving: false, plate: 'nutrition', alt: '{name}: the Nutrition Information table of each pouch in the combo, and the combo total per serving' };
-      return Object.assign({}, c, { alt: COMBO_ALT[c.image], serving: c.image === 'hero' || c.image === 'prep' });
+      return Object.assign({}, c, { alt: COMBO_ALT[c.image], serving: c.image === 'hero' });
     });
     return cfg;
   }
