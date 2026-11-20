@@ -2700,8 +2700,9 @@
     }
     window.addEventListener('scroll', updateHeaderTransparency, { passive: true });
 
-    // Minimum order: below it the checkout button is disabled and says why (shopify-connector.js refuses too)
-    const MIN_ORDER_VALUE = Number((window.SHOPIFY_CONFIG || {}).minOrderValue) || 499;
+    // Minimum order: 0 = none (orders of any value are accepted; delivery below the free-delivery amount is charged at checkout).
+    // A value above 0 in shopify-config.js disables the checkout button below it (shopify-connector.js refuses too).
+    const MIN_ORDER_VALUE = Number((window.SHOPIFY_CONFIG || {}).minOrderValue) || 0;
     function applyMinOrderState(subtotal) {
       const btn = document.getElementById('checkoutBtn');
       if (!btn) return;
@@ -2738,7 +2739,7 @@
         $('#shippingMeterMsg').innerHTML = '🎉 You unlocked <b>FREE Express Delivery!</b>';
         $('#shippingMeterPercent').textContent = '100%';
       } else {
-        $('#shippingMeterMsg').innerHTML = `Minimum order ${formatINR(MIN_ORDER_VALUE)}: add <b>${formatINR(leftForFreeShip)}</b> more to checkout`;
+        $('#shippingMeterMsg').innerHTML = subtotal > 0 ? `Add <b>${formatINR(leftForFreeShip)}</b> more for <b>FREE delivery</b>` : `Free delivery on orders above ${formatINR(freeShipThreshold)}`;
         $('#shippingMeterPercent').textContent = `${shipPercent}%`;
       }
       applyMinOrderState(subtotal);

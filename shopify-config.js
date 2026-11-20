@@ -12,8 +12,9 @@ window.SHOPIFY_CONFIG = {
   // PUBLIC Storefront API access token
   storefrontAccessToken: 'c490756ca639d9a1a1ea506ff0631bc0',
 
-  // Minimum order value in rupees (cart total after box discounts). Below it the cart drawer blocks checkout and shopify-connector.js refuses to open it.
-  minOrderValue: 499,
+  // Minimum order value in rupees (cart total after box discounts). 0 = no minimum: any order can be placed. Delivery is free above 499 and charged
+  // below it by the shipping partner at checkout (set in Shopify / Razorpay, not here); the 100 rupee COD fee applies to every COD order.
+  minOrderValue: 0,
 
   // Pinned on purpose: an unpinned or retired version is silently served as a different one.
   apiVersion: '2026-07',
