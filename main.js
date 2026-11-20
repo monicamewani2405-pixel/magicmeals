@@ -3539,8 +3539,8 @@
           subtotal: getCartSubtotal()
         });
         if (result.ok) {
-          showToast('Redirecting to secure Shopify Checkout...');
-          window.location.href = result.checkoutUrl;
+          showToast(result.cartUrl ? 'Opening your cart to complete the order...' : 'Redirecting to secure Shopify Checkout...');
+          window.location.href = result.cartUrl || result.checkoutUrl;
           return;
         }
         alert('We could not open checkout because:\n\n• ' + result.problems.join('\n• ') + '\n\nNothing was charged. Fix your cart and try again.');

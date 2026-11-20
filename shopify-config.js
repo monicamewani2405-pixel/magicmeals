@@ -12,6 +12,9 @@ window.SHOPIFY_CONFIG = {
   // PUBLIC Storefront API access token
   storefrontAccessToken: 'c490756ca639d9a1a1ea506ff0631bc0',
 
+  // true: "Checkout" opens the store's cart page, where Razorpay Magic Checkout (COD, partial COD, shipping) takes over. false: Shopify's plain checkout.
+  useMagicCart: true,
+
   // Minimum order value in rupees (cart total after box discounts). 0 = no minimum: any order can be placed. Delivery is free above 499 and charged
   // below it by the shipping partner at checkout (set in Shopify / Razorpay, not here); the 100 rupee COD fee applies to every COD order.
   minOrderValue: 0,

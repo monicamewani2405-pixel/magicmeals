@@ -4,7 +4,8 @@
  * One job: what is in the website cart is EXACTLY what opens in Shopify checkout: same product, same pack, same quantity, same price.
  * It never guesses. If anything cannot be matched exactly, checkout is stopped and the reason is shown.
  *
- *   ShopifyConnector.checkout(ctx) -> { ok: true, checkoutUrl } | { ok: false, problems: [text, ...] }
+ *   ShopifyConnector.checkout(ctx) -> { ok: true, checkoutUrl, cartUrl? } | { ok: false, problems: [text, ...] }
+ *     cartUrl (when present) opens the store's own cart page (Razorpay Magic Checkout lives there); checkoutUrl is Shopify's plain checkout.
  *
  *   ctx = {
  *     cart:         { 'productId|pack': qty, 'BYOB-4-123|1': qty }      the website cart
@@ -150,6 +151,14 @@
     });
   }
 
+  /* https://<shop>/cart/clear?return_to=<cart/add?items[..]&return_to=/cart>: empties the store cart, adds exactly these variants, lands on /cart
+     (with a box code: lands on /discount/<code>?redirect=/cart, which stores the code and then opens /cart). */
+  function magicCartUrl(lines, code) {
+    var back = code ? encodeURIComponent('/discount/' + encodeURIComponent(code) + '?redirect=/cart') : '/cart';
+    var add = '/cart/add?' + lines.map(function (l, i) { return 'items[' + i + '][id]=' + encodeURIComponent(l.merchandiseId.split('/').pop()) + '&items[' + i + '][quantity]=' + l.quantity; }).join('&') + '&return_to=' + back;
+    return 'https://' + cfg().shopDomain + '/cart/clear?return_to=' + encodeURIComponent(add);
+  }
+
   function checkout(ctx) {
     var c = cfg(), problems = [];
     if (!c.shopDomain || !c.storefrontAccessToken) return Promise.resolve({ ok: false, problems: ['Shopify is not configured (shopify-config.js).'] });
@@ -160,7 +169,11 @@
     return verifyLive(ctx, want.lines, problems).then(function (lines) {
       if (problems.length) return { ok: false, problems: problems };
       return createCart(ctx, lines, want.codes, problems).then(function (url) {
-        return url ? { ok: true, checkoutUrl: url } : { ok: false, problems: problems };
+        if (!url) return { ok: false, problems: problems };
+        // Magic cart: the store's cart page, emptied first so an earlier attempt can never double the lines. The store keeps ONE discount code per
+        // visitor, so a cart holding boxes of two different sizes (two codes) stays on the plain checkout link, which carries both.
+        var cartUrl = (c.useMagicCart !== false && want.codes.length <= 1) ? magicCartUrl(lines, want.codes[0]) : '';
+        return { ok: true, checkoutUrl: url, cartUrl: cartUrl };
       });
     }).catch(function (err) {
       return { ok: false, problems: ['Could not reach Shopify (' + err.message + '). Nothing was charged. Please try again.'] };
