@@ -4,7 +4,8 @@
  * One job: what is in the website cart is EXACTLY what opens in Shopify checkout: same product, same pack, same quantity, same price.
  * It never guesses. If anything cannot be matched exactly, checkout is stopped and the reason is shown.
  *
- *   ShopifyConnector.checkout(ctx) -> { ok: true, checkoutUrl, cartUrl? } | { ok: false, problems: [text, ...] }
+ *   ShopifyConnector.checkout(ctx) -> { ok: true, checkoutUrl, cartUrl?, direct? } | { ok: false, problems: [text, ...] }
+ *     direct (when present) is what magic-checkout.js needs to open the Razorpay Magic window on this page: { cartId, code, items[] }.
  *     cartUrl (when present) opens the store's own cart page (Razorpay Magic Checkout lives there); checkoutUrl is Shopify's plain checkout.
  *
  *   ctx = {
@@ -112,7 +113,7 @@
         if (!variant.availableForSale) { problems.push(name + ' is out of stock.'); return; }
         var price = parseFloat(variant.price.amount);
         if (Math.abs(price - l.unit) > 0.5) { problems.push(name + ': price differs. The site shows ' + money(l.unit) + ' but Shopify charges ' + money(price) + '.'); return; }
-        out.push({ merchandiseId: variant.id, quantity: l.qty, sku: variant.sku, label: name });
+        out.push({ merchandiseId: variant.id, productId: String(prod.id).split('/').pop(), quantity: l.qty, sku: variant.sku, label: name });
       });
       return out;
     });
@@ -147,7 +148,7 @@
       });
       var total = parseFloat(cart.cost.totalAmount.amount);
       if (Math.abs(total - ctx.subtotal) > 1.01) problems.push('Total differs. Your cart shows ' + money(ctx.subtotal) + ' but Shopify has ' + money(total) + '.');
-      return problems.length ? null : cart.checkoutUrl;
+      return problems.length ? null : { url: cart.checkoutUrl, id: cart.id };
     });
   }
 
@@ -168,12 +169,21 @@
     if (!want.lines.length && !problems.length) return Promise.resolve({ ok: false, problems: ['Your meal box is empty.'] });
     return verifyLive(ctx, want.lines, problems).then(function (lines) {
       if (problems.length) return { ok: false, problems: problems };
-      return createCart(ctx, lines, want.codes, problems).then(function (url) {
-        if (!url) return { ok: false, problems: problems };
+      return createCart(ctx, lines, want.codes, problems).then(function (made) {
+        if (!made) return { ok: false, problems: problems };
         // Magic cart: the store's cart page, emptied first so an earlier attempt can never double the lines. The store keeps ONE discount code per
         // visitor, so a cart holding boxes of two different sizes (two codes) stays on the plain checkout link, which carries both.
-        var cartUrl = (c.useMagicCart !== false && want.codes.length <= 1) ? magicCartUrl(lines, want.codes[0]) : '';
-        return { ok: true, checkoutUrl: url, cartUrl: cartUrl };
+        var single = want.codes.length <= 1;
+        var cartUrl = (c.useMagicCart !== false && single) ? magicCartUrl(lines, want.codes[0]) : '';
+        // Direct: the Razorpay Magic window opens on this page (magic-checkout.js). Same single-code limit; cartUrl / checkoutUrl stay as the fallback.
+        // Testing: opening the site with ?direct=1 in the address forces the direct window even while the config switch is off.
+        var wantDirect = c.directMagic === true || /[?&]direct=1(&|$|#)/.test(window.location.search + window.location.hash);
+        var direct = (wantDirect && single) ? {
+          cartId: made.id,
+          code: want.codes[0] || '',
+          items: lines.map(function (l) { return { variantId: l.merchandiseId.split('/').pop(), productId: l.productId, quantity: l.quantity }; })
+        } : null;
+        return { ok: true, checkoutUrl: made.url, cartUrl: cartUrl, direct: direct };
       });
     }).catch(function (err) {
       return { ok: false, problems: ['Could not reach Shopify (' + err.message + '). Nothing was charged. Please try again.'] };

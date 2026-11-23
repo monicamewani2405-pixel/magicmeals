@@ -77,6 +77,9 @@ PLACE = {
 
 
 
+
+
+
 # PACK-SIZE FIX (13 Nov 2026, tools/fix-pack-size.py): client rule "the pack must look larger than the plate or bowl". These placements replace the
 # ones in PLACE above for the pictures that had room for a bigger pack; every other picture keeps its PLACE entry.
 PLACE_OVERRIDES = json.loads(r'''{
@@ -100,6 +103,12 @@ PLACE_OVERRIDES = json.loads(r'''{
    "base": 0.93,
    "h": 0.453,
    "exact": true
+  },
+  "hero": {
+   "cx": 0.8131,
+   "base": 0.965,
+   "h": 0.394,
+   "exact": true
   }
  },
  "fried-rice": {
@@ -122,6 +131,12 @@ PLACE_OVERRIDES = json.loads(r'''{
    "base": 0.93,
    "h": 0.453,
    "exact": true
+  },
+  "hero": {
+   "cx": 0.8157,
+   "base": 0.965,
+   "h": 0.384,
+   "exact": true
   }
  },
  "gujarati-dal": {
@@ -129,6 +144,12 @@ PLACE_OVERRIDES = json.loads(r'''{
    "cx": 0.2235,
    "base": 0.93,
    "h": 0.511,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.8246,
+   "base": 0.965,
+   "h": 0.365,
    "exact": true
   }
  },
@@ -151,6 +172,12 @@ PLACE_OVERRIDES = json.loads(r'''{
    "cx": 0.2235,
    "base": 0.93,
    "h": 0.511,
+   "exact": true
+  },
+  "hero": {
+   "cx": 0.8055,
+   "base": 0.965,
+   "h": 0.413,
    "exact": true
   }
  },
@@ -295,6 +322,62 @@ PLACE_OVERRIDES = json.loads(r'''{
    "cx": 0.7591,
    "base": 0.93,
    "h": 0.5,
+   "exact": true
+  }
+ },
+ "bhindi-masala": {
+  "hero": {
+   "cx": 0.7888,
+   "base": 0.965,
+   "h": 0.451,
+   "exact": true
+  }
+ },
+ "dal-khichdi": {
+  "hero": {
+   "cx": 0.7979,
+   "base": 0.965,
+   "h": 0.432,
+   "exact": true
+  }
+ },
+ "dal-makhani": {
+  "hero": {
+   "cx": 0.8055,
+   "base": 0.965,
+   "h": 0.413,
+   "exact": true
+  }
+ },
+ "dal-tadka": {
+  "hero": {
+   "cx": 0.7979,
+   "base": 0.965,
+   "h": 0.432,
+   "exact": true
+  }
+ },
+ "fried-rice-manchurian": {
+  "hero": {
+   "cx": 0.7712,
+   "base": 0.965,
+   "h": 0.499,
+   "exact": true
+  }
+ },
+ "jain-dal-khichdi": {
+  "hero": {
+   "cx": 0.7979,
+   "base": 0.965,
+   "h": 0.432,
+   "exact": true
+  }
+ },
+ "hot-and-sour-soup": {
+  "hero": {
+   "cx": 0.62,
+   "base": 0.83,
+   "h": 0.4,
    "exact": true
   }
  }

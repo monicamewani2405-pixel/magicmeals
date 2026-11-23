@@ -3539,6 +3539,11 @@
           subtotal: getCartSubtotal()
         });
         if (result.ok) {
+          // Preferred: the Razorpay Magic window opens right here. If it cannot open, fall through to the store's cart page / plain checkout.
+          if (result.direct && window.MagicDirect) {
+            showToast('Opening secure checkout...');
+            if (await window.MagicDirect.open(result.direct)) return;
+          }
           showToast(result.cartUrl ? 'Opening your cart to complete the order...' : 'Redirecting to secure Shopify Checkout...');
           window.location.href = result.cartUrl || result.checkoutUrl;
           return;

@@ -12,6 +12,10 @@ window.SHOPIFY_CONFIG = {
   // PUBLIC Storefront API access token
   storefrontAccessToken: 'c490756ca639d9a1a1ea506ff0631bc0',
 
+  // true: "Checkout" opens the Razorpay Magic Checkout window right on this page (magic-checkout.js, api/magic-order.js). If it cannot open, or the
+  // cart holds boxes with two different box codes, the store's cart page (useMagicCart) is used instead. false: always use that fallback.
+  directMagic: false,
+
   // true: "Checkout" opens the store's cart page, where Razorpay Magic Checkout (COD, partial COD, shipping) takes over. false: Shopify's plain checkout.
   useMagicCart: true,
 

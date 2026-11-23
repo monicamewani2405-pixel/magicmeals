@@ -8,21 +8,21 @@ mumbai-misal,pdp/mumbai-misal/gallery/hero-1200.webp,A,495,840,0.59,FAIL,regener
 tomato-soup,pdp/tomato-soup/gallery/hero-1200.webp,A,570,720,0.79,FAIL,regenerate,the free area allows a pack of at most 714 px; 842 px are needed for a ratio of 1.17: the dish takes the picture
 sweet-corn-soup,pdp/sweet-corn-soup/gallery/hero-1200.webp,A,540,768,0.7,FAIL,regenerate,the free area allows a pack of at most 696 px; 899 px are needed for a ratio of 1.17: the dish takes the picture
 hot-and-sour-soup,pdp/hot-and-sour-soup/gallery/hero-1200.webp,A,510,792,0.64,FAIL,regenerate,the free area allows a pack of at most 602 px; 927 px are needed for a ratio of 1.17: the dish takes the picture
-dal-makhani,pdp/dal-makhani/gallery/hero-1200.webp,A,540,828,0.65,FAIL,regenerate,the free area allows a pack of at most 602 px; 969 px are needed for a ratio of 1.17: the dish takes the picture
-dal-tadka,pdp/dal-tadka/gallery/hero-1200.webp,A,495,888,0.56,FAIL,regenerate,the free area allows a pack of at most 507 px; 1039 px are needed for a ratio of 1.17: the dish takes the picture
-dal-fry,pdp/dal-fry/gallery/hero-1200.webp,A,495,888,0.56,FAIL,regenerate,the free area allows a pack of at most 507 px; 1039 px are needed for a ratio of 1.17: the dish takes the picture
-gujarati-dal,pdp/gujarati-dal/gallery/hero-1200.webp,A,495,792,0.62,FAIL,regenerate,the free area allows a pack of at most 639 px; 927 px are needed for a ratio of 1.17: the dish takes the picture
-jain-dal-makhani,pdp/jain-dal-makhani/gallery/hero-1200.webp,A,495,816,0.61,FAIL,regenerate,the free area allows a pack of at most 621 px; 955 px are needed for a ratio of 1.17: the dish takes the picture
-dal-khichdi,pdp/dal-khichdi/gallery/hero-1200.webp,A,480,792,0.61,FAIL,regenerate,the free area allows a pack of at most 639 px; 927 px are needed for a ratio of 1.17: the dish takes the picture
+dal-makhani,pdp/dal-makhani/gallery/hero-1200.webp,A,540,828,0.65,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
+dal-tadka,pdp/dal-tadka/gallery/hero-1200.webp,A,495,888,0.56,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
+dal-fry,pdp/dal-fry/gallery/hero-1200.webp,A,495,888,0.56,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
+gujarati-dal,pdp/gujarati-dal/gallery/hero-1200.webp,A,495,792,0.62,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
+jain-dal-makhani,pdp/jain-dal-makhani/gallery/hero-1200.webp,A,495,816,0.61,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
+dal-khichdi,pdp/dal-khichdi/gallery/hero-1200.webp,A,480,792,0.61,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
 masala-khichdi-kadhi,pdp/masala-khichdi-kadhi/gallery/hero-1200.webp,A,465,684,0.68,FAIL,fix,"pack height 465 -> 808 px (ratio 1.18), flush right, base 0.965"
 veg-biryani,pdp/veg-biryani/gallery/hero-1200.webp,A,495,660,0.75,FAIL,regenerate,the free area allows a pack of at most 676 px; 772 px are needed for a ratio of 1.17: the dish takes the picture
 jeera-rice,pdp/jeera-rice/gallery/hero-1200.webp,A,495,816,0.61,FAIL,regenerate,the free area allows a pack of at most 602 px; 955 px are needed for a ratio of 1.17: the dish takes the picture
 tawa-pulao,pdp/tawa-pulao/gallery/hero-1200.webp,A,480,780,0.62,FAIL,regenerate,the free area allows a pack of at most 676 px; 913 px are needed for a ratio of 1.17: the dish takes the picture
-fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/hero-1200.webp,A,450,744,0.6,FAIL,regenerate,the free area allows a pack of at most 584 px; 870 px are needed for a ratio of 1.17: the dish takes the picture
+fried-rice-manchurian,pdp/fried-rice-manchurian/gallery/hero-1200.webp,A,450,744,0.6,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
 fried-rice,pdp/fried-rice/gallery/hero-1200.webp,A,495,660,0.75,FAIL,fix,"pack height 495 -> 795 px (ratio 1.20), flush right, base 0.965"
 schezwan-rice,pdp/schezwan-rice/gallery/hero-1200.webp,A,495,684,0.72,FAIL,regenerate,the free area allows a pack of at most 771 px; 800 px are needed for a ratio of 1.17: the dish takes the picture
 mexican-rice,pdp/mexican-rice/gallery/hero-1200.webp,A,465,780,0.6,FAIL,regenerate,the free area allows a pack of at most 676 px; 913 px are needed for a ratio of 1.17: the dish takes the picture
-jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/hero-1200.webp,A,495,756,0.65,FAIL,regenerate,the free area allows a pack of at most 696 px; 885 px are needed for a ratio of 1.17: the dish takes the picture
+jain-dal-khichdi,pdp/jain-dal-khichdi/gallery/hero-1200.webp,A,495,756,0.65,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
 jain-masala-khichdi-kadhi,pdp/jain-masala-khichdi-kadhi/gallery/hero-1200.webp,A,450,564,0.8,FAIL,fix,"pack height 450 -> 680 px (ratio 1.20), flush right, base 0.965"
 jain-schezwan-rice,pdp/jain-schezwan-rice/gallery/hero-1200.webp,A,495,744,0.67,FAIL,regenerate,the free area allows a pack of at most 621 px; 870 px are needed for a ratio of 1.17: the dish takes the picture
 jain-veg-biryani,pdp/jain-veg-biryani/gallery/hero-1200.webp,A,480,696,0.69,FAIL,regenerate,the free area allows a pack of at most 676 px; 814 px are needed for a ratio of 1.17: the dish takes the picture
@@ -31,7 +31,7 @@ paneer-butter-masala,pdp/paneer-butter-masala/gallery/hero-1200.webp,A,495,600,0
 paneer-bhurji,pdp/paneer-bhurji/gallery/hero-1200.webp,A,495,696,0.71,FAIL,regenerate,the free area allows a pack of at most 548 px; 814 px are needed for a ratio of 1.17: the dish takes the picture
 pind-ke-chhole,pdp/pind-ke-chhole/gallery/hero-1200.webp,A,495,540,0.92,FAIL,fix,"pack height 495 -> 651 px (ratio 1.21), flush right, base 0.965"
 pav-bhaji,pdp/pav-bhaji/gallery/hero-1200.webp,A,495,876,0.57,FAIL,fixed after regeneration,"plate regenerated (dish about 0.50 of the width); pack now 750 px, ratio about 1.25"
-bhindi-masala,pdp/bhindi-masala/gallery/hero-1200.webp,A,495,600,0.82,FAIL,regenerate,the free area allows a pack of at most 578 px; 702 px are needed for a ratio of 1.17: the dish takes the picture
+bhindi-masala,pdp/bhindi-masala/gallery/hero-1200.webp,A,495,600,0.82,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
 veg-kadhai,pdp/veg-kadhai/gallery/hero-1200.webp,A,495,756,0.65,FAIL,regenerate,the free area allows a pack of at most 501 px; 885 px are needed for a ratio of 1.17: the dish takes the picture
 veg-makhanwala,pdp/veg-makhanwala/gallery/hero-1200.webp,A,495,696,0.71,FAIL,regenerate,the free area allows a pack of at most 634 px; 814 px are needed for a ratio of 1.17: the dish takes the picture
 moong-masala,pdp/moong-masala/gallery/hero-1200.webp,A,495,744,0.67,FAIL,regenerate,the free area allows a pack of at most 652 px; 870 px are needed for a ratio of 1.17: the dish takes the picture
@@ -42,7 +42,7 @@ jain-pind-ke-chhole,pdp/jain-pind-ke-chhole/gallery/hero-1200.webp,A,495,540,0.9
 jain-rajma-masala,pdp/jain-rajma-masala/gallery/hero-1200.webp,A,495,576,0.86,FAIL,fix,"pack height 495 -> 694 px (ratio 1.21), flush right, base 0.965"
 jain-veg-kadhai,pdp/jain-veg-kadhai/gallery/hero-1200.webp,A,495,756,0.65,FAIL,regenerate,the free area allows a pack of at most 501 px; 885 px are needed for a ratio of 1.17: the dish takes the picture
 jain-veg-makhanwala,pdp/jain-veg-makhanwala/gallery/hero-1200.webp,A,495,600,0.82,FAIL,fix,"pack height 495 -> 723 px (ratio 1.21), flush right, base 0.965"
-gajar-halwa,pdp/gajar-halwa/gallery/hero-1200.webp,A,495,756,0.65,FAIL,regenerate,the free area allows a pack of at most 615 px; 885 px are needed for a ratio of 1.17: the dish takes the picture
+gajar-halwa,pdp/gajar-halwa/gallery/hero-1200.webp,A,495,756,0.65,FAIL,fixed after regeneration,plate regenerated (dish about 0.4-0.5 of the width); pack about 1.2 times the vessel
 aam-ras,pdp/aam-ras/gallery/hero-1200.webp,A,495,564,0.88,FAIL,fix,"pack height 495 -> 680 px (ratio 1.20), flush right, base 0.965"
 rawa-sheera,pdp/rawa-sheera/gallery/hero-1200.webp,A,495,720,0.69,FAIL,regenerate,the free area allows a pack of at most 728 px; 842 px are needed for a ratio of 1.17: the dish takes the picture
 kanda-poha,pdp/kanda-poha/gallery/abroad-1200.webp,A,600,420,1.43,PASS,,pack clearly larger than the vessel
