@@ -4,3 +4,18 @@ pdp/shared/plates
 pdp/shared/cutout-sheet.png
 pdp/shared/cutout-sheet-transparent.png
 pdp/*/plates
+
+# Not part of the website (never deployed). Added by the cleanup task.
+_archive/
+audit/
+tools/
+docs/
+incoming-backs/
+incoming-videos/
+video-out/
+scratch/
+_old-images/
+_old-backs/
+*.py
+*.md
+TASK-*

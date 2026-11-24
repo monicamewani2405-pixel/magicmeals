@@ -1,0 +1,924 @@
+source,line,kind,raw,resolved,status
+CLAUDE.md,25,script,main.js,main.js,ok
+CLAUDE.md,26,script,style.css,style.css,ok
+CLAUDE.md,39,script,index.html,index.html,ok
+CLAUDE.md,39,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+CLAUDE.md,40,script,style.css,style.css,ok
+CLAUDE.md,41,script,main.js,main.js,ok
+CLAUDE.md,42,script,variants.css,variants.css,ok
+CLAUDE.md,42,script,hero-products.js,hero-products.js,ok
+CLAUDE.md,42,script,heroes/home.js,heroes/home.js,ok
+CLAUDE.md,42,script,heroes/switcher.js,heroes/switcher.js,ok
+CLAUDE.md,43,script,scene.css,scene.css,missing
+CLAUDE.md,43,script,motion.js,motion.js,missing
+CLAUDE.md,43,script,scene-data.js,scene-data.js,missing
+CLAUDE.md,43,script,scene-colors.css,scene-colors.css,missing
+CLAUDE.md,43,script,hiw-scene.js,hiw-scene.js,missing
+CLAUDE.md,44,script,gsap.min.js,gsap.min.js,missing
+CLAUDE.md,44,script,ScrollTrigger.min.js,ScrollTrigger.min.js,missing
+CLAUDE.md,45,script,pouch_cutout_cropped.png,pouch_cutout_cropped.png,ok
+CLAUDE.md,45,script,logo_live.png,logo_live.png,ok
+CLAUDE.md,45,script,thumb_*.jpg,thumb_*.jpg,missing
+CLAUDE.md,47,script,._BHINDI-MASALA.jpg,._BHINDI-MASALA.jpg,missing
+CLAUDE.md,69,script,logo_live.png,logo_live.png,ok
+CLAUDE.md,76,script,heroes/switcher.js,heroes/switcher.js,ok
+CLAUDE.md,77,script,scenes/scene-data.js,scenes/scene-data.js,ok
+CLAUDE.md,77,script,heroes/home.js,heroes/home.js,ok
+CLAUDE.md,78,script,scenes/motion.js,scenes/motion.js,ok
+CLAUDE.md,79,script,main.js,main.js,ok
+CLAUDE.md,109,script,anaar.js,anaar.js,missing
+CLAUDE.md,109,script,hamper.js,hamper.js,missing
+CLAUDE.md,109,script,diya.js,diya.js,missing
+CLAUDE.md,109,script,festive/config.js,festive/config.js,missing
+Magic Meals – Real Indian meals in 5 minutes.html,2498,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,2547,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,2647,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3081,site,magic_hero_mobile_perfect.jpg,magic_hero_mobile_perfect.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3082,site,magic_hero_warm_desktop_clean.jpg,magic_hero_warm_desktop_clean.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3169,site,thumb_stLqnv38SHk.jpg,thumb_stLqnv38SHk.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3172,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3194,site,thumb_FQu7hM1dFAA.jpg,thumb_FQu7hM1dFAA.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3197,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3219,site,thumb_248l3FWQ5ls.jpg,thumb_248l3FWQ5ls.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3222,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3244,site,thumb_hveTAhjX3zk.jpg,thumb_hveTAhjX3zk.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3247,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3269,site,thumb_D8cyKsu4w84.jpg,thumb_D8cyKsu4w84.jpg,ok
+Magic Meals – Real Indian meals in 5 minutes.html,3272,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+Magic Meals – Real Indian meals in 5 minutes.html,4015,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+TASK-design2-scene.md,27,script,scenes/processed/bowl-empty.webp,scenes/processed/bowl-empty.webp,ok
+TASK-design2-scene.md,27,script,"scenes/processed/<slug>/{dry,wet,ready}.webp","scenes/processed/<slug>/{dry,wet,ready}.webp",missing
+TASK-design2-scene.md,28,script,scenes/processed/<slug>.json,scenes/processed/<slug>.json,missing
+TASK-design2-scene.md,29,script,scenes/scene-colors.css,scenes/scene-colors.css,ok
+TASK-design2-scene.md,29,script,dry.webp,dry.webp,missing
+TASK-design2-scene.md,34,script,scenes/processed/rajma-masala.json,scenes/processed/rajma-masala.json,ok
+TASK-design2-scene.md,37,script,scenes/processed/bowl-empty.webp,scenes/processed/bowl-empty.webp,ok
+TASK-design2-scene.md,38,script,.../wet.webp,.../wet.webp,missing
+TASK-design2-scene.md,38,script,.../dry.webp,.../dry.webp,missing
+TASK-design2-scene.md,38,script,.../ready.webp,.../ready.webp,missing
+TASK-fit-all-and-sharpen.md,34,script,*-1280.webp,*-1280.webp,missing
+TASK-fit-all-and-sharpen.md,34,script,*-800.webp,*-800.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,pouch-art/tex/<slug>-front-1280.webp,pouch-art/tex/<slug>-front-1280.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,<slug>-back-1280.webp,<slug>-back-1280.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,<slug>-back.webp,<slug>-back.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,-front-800.webp,-front-800.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,-back-800.webp,-back-800.webp,missing
+TASK-fit-all-and-sharpen.md,37,script,pouch-art/<slug>-back-processed.png,pouch-art/<slug>-back-processed.png,missing
+TASK-fit-all-and-sharpen.md,40,script,pouch-art/pouch-textures.js,pouch-art/pouch-textures.js,missing
+TASK-mobile.md,51,script,*-640.webp,*-640.webp,missing
+TASK-new-backs.md,24,script,-640.webp,-640.webp,missing
+TASK-new-backs.md,37,script,*-640.webp,*-640.webp,missing
+api/_lib/http.js,28,api,origin,api/_lib/origin,missing
+api/_lib/shopify.js,11,api,/graphql.json,graphql.json,missing
+api/magic-complete.js,19,api,u,api/u,missing
+api/magic-complete.js,21,api,u,api/u,missing
+api/magic-complete.js,35,api,r.order_status_url,api/r.order_status_url,missing
+apply_fa_wa.py,4,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_fa_wa.py,17,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_final_vibe_updates.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_final_vibe_updates.py,301,script,magic_hero_warm_mobile_grounded.jpg,magic_hero_warm_mobile_grounded.jpg,ok
+apply_final_vibe_updates.py,302,script,magic_hero_warm_desktop_clean.jpg,magic_hero_warm_desktop_clean.jpg,ok
+apply_final_vibe_updates.py,398,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_mobile_banner_fix.py,2,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_mobile_banner_fix.py,6,script,magic_hero_warm_mobile_grounded.jpg,magic_hero_warm_mobile_grounded.jpg,ok
+apply_mobile_banner_fix.py,7,script,magic_hero_mobile_perfect.jpg,magic_hero_mobile_perfect.jpg,ok
+apply_mobile_banner_fix.py,42,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_option_1.py,3,script,index.html,index.html,ok
+apply_option_1.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_quick_3_fixes.py,3,script,index.html,index.html,ok
+apply_quick_3_fixes.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_requested_4_fixes.py,3,script,index.html,index.html,ok
+apply_requested_4_fixes.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_requested_4_fixes.py,188,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+apply_requested_4_fixes.py,256,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+apply_requested_4_fixes.py,649,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+apply_requested_removals.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_requested_removals.py,71,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_safe_fixes.py,3,script,index.html,index.html,ok
+apply_safe_fixes.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_user_3_changes.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_user_3_changes.py,18,script,magic_hero_warm_mobile_grounded.jpg,magic_hero_warm_mobile_grounded.jpg,ok
+apply_user_3_changes.py,19,script,magic_hero_warm_desktop_clean.jpg,magic_hero_warm_desktop_clean.jpg,ok
+apply_user_3_changes.py,262,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_user_fixes.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+apply_user_fixes.py,6,script,index.html,index.html,ok
+audit/cooking-video-mapping-jain.md,3,audit,cooking-video-mapping-jain.csv,audit/cooking-video-mapping-jain.csv,ok
+audit/cooking-video-mapping.md,3,audit,cooking-video-mapping.csv,audit/cooking-video-mapping.csv,ok
+auth-plan.md,3,script,index.html,index.html,ok
+auth-plan.md,20,script,shopify-config.js,shopify-config.js,ok
+auth-plan.md,31,script,signup.js,signup.js,missing
+auth-plan.md,32,script,login.js,login.js,missing
+auth-plan.md,33,script,google.js,google.js,missing
+auth-plan.md,34,script,logout.js,logout.js,missing
+auth-plan.md,35,script,me.js,me.js,missing
+auth-plan.md,36,script,recover.js,recover.js,missing
+auth-plan.md,37,script,api/_lib/ratelimit.js,api/_lib/ratelimit.js,ok
+auth-plan.md,37,script,shopify.js,shopify.js,missing
+auth-plan.md,37,script,session.js,session.js,missing
+auth-plan.md,58,script,index.html,index.html,ok
+auth-plan.md,58,script,main.js,main.js,ok
+auth-plan.md,65,script,api/pincode.js,api/pincode.js,ok
+auth-plan.md,66,script,vercel.json,vercel.json,ok
+auth-plan.md,71,script,vercel.json,vercel.json,ok
+brochure/brochure.js,9,site,assets/brochure/Magic-Meals-Brochure.pdf,assets/brochure/Magic-Meals-Brochure.pdf,ok
+brochure/brochure.js,10,site,Magic-Meals-Brochure.pdf,brochure/Magic-Meals-Brochure.pdf,missing
+check_banner.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+check_structure.py,1,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+clean_drawer_link.py,2,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+clean_drawer_link.py,16,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+find_drawer_js.py,4,script,index.html,index.html,ok
+fix_auth_listener.py,3,script,index.html,index.html,ok
+fix_auth_listener.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_cart_and_remove_5m.py,4,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_cart_and_remove_5m.py,108,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_hero_fullwidth.py,4,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_hero_fullwidth.py,111,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_missing_tags.py,4,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_missing_tags.py,65,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_wa_icon.py,4,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+fix_wa_icon.py,19,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+heroes/home.js,32,site,vendor/gsap.min.js,vendor/gsap.min.js,ok
+heroes/home.js,33,site,vendor/ScrollTrigger.min.js,vendor/ScrollTrigger.min.js,ok
+heroes/switcher.js,35,site,-front-800.webp,heroes/-front-800.webp,missing
+heroes/switcher.js,35,site,-front-m.webp,heroes/-front-m.webp,missing
+index.html,13,site,assets/hero/veg-biryani-front-800.webp,assets/hero/veg-biryani-front-800.webp,ok
+index.html,14,site,assets/hero/veg-biryani-front-m.webp,assets/hero/veg-biryani-front-m.webp,ok
+index.html,15,site,cropped_logo.png,cropped_logo.png,ok
+index.html,16,site,style.css?v=9,style.css,ok
+index.html,17,site,variants.css,variants.css,ok
+index.html,18,site,profile.css,profile.css,ok
+index.html,19,site,scenes/scene-colors.css,scenes/scene-colors.css,ok
+index.html,20,site,scenes/scene.css?v=2,scenes/scene.css,ok
+index.html,21,site,pdp/pdp.css,pdp/pdp.css,ok
+index.html,22,site,pdp/pdp-tints.css,pdp/pdp-tints.css,ok
+index.html,23,site,videos/video-facade.css,videos/video-facade.css,ok
+index.html,24,site,brochure/brochure.css,brochure/brochure.css,ok
+index.html,68,site,logo_live.png,logo_live.png,ok
+index.html,170,site,logo_live.png,logo_live.png,ok
+index.html,239,site,logo_live.png,logo_live.png,ok
+index.html,310,site,vendor/gsap.min.js,vendor/gsap.min.js,ok
+index.html,311,site,vendor/ScrollTrigger.min.js,vendor/ScrollTrigger.min.js,ok
+index.html,312,site,shopify-config.js,shopify-config.js,ok
+index.html,313,site,shopify-catalog.js,shopify-catalog.js,ok
+index.html,314,site,shopify-connector.js,shopify-connector.js,ok
+index.html,315,site,magic-checkout.js,magic-checkout.js,ok
+index.html,316,site,auth.js,auth.js,ok
+index.html,317,site,profile.js,profile.js,ok
+index.html,318,site,pdp/combos/combo-gallery.js,pdp/combos/combo-gallery.js,ok
+index.html,319,site,pdp/pdp-data.js,pdp/pdp-data.js,ok
+index.html,320,site,pdp/pdp-scene.js,pdp/pdp-scene.js,ok
+index.html,321,site,product-descriptions.js,product-descriptions.js,ok
+index.html,322,site,product-ingredients.js,product-ingredients.js,ok
+index.html,323,site,pdp/ingredients.js,pdp/ingredients.js,ok
+index.html,324,site,how-to-prepare.js,how-to-prepare.js,ok
+index.html,325,site,videos/product-videos.js,videos/product-videos.js,ok
+index.html,326,site,videos/video-facade.js,videos/video-facade.js,ok
+index.html,327,site,brochure/brochure.js,brochure/brochure.js,ok
+index.html,328,site,pack-prices.js,pack-prices.js,ok
+index.html,329,site,pincode.js,pincode.js,ok
+index.html,330,site,main.js?v=12,main.js,ok
+index.html,331,site,hero-products.js,hero-products.js,ok
+index.html,332,site,scenes/motion.js,scenes/motion.js,ok
+index.html,333,site,heroes/switcher.js?v=2,heroes/switcher.js,ok
+index.html,334,site,scenes/scene-data.js?v=4,scenes/scene-data.js,ok
+index.html,335,site,scenes/hiw-scene.js?v=4,scenes/hiw-scene.js,ok
+index.html,336,site,heroes/home.js,heroes/home.js,ok
+inspect_drawer.py,5,script,index.html,index.html,ok
+inspect_freeze_drying.py,5,script,index.html,index.html,ok
+inspect_header_and_drawer.py,4,script,index.html,index.html,ok
+inspect_promo.py,6,script,index.html,index.html,ok
+inspect_trust.py,5,script,index.html,index.html,ok
+main.js,30,site,pouch-art/rajma-masala-front-processed.png,pouch-art/rajma-masala-front-processed.png,ok
+main.js,31,site,pouch-art/rajma-masala-back-processed.png,pouch-art/rajma-masala-back-processed.png,missing
+main.js,48,site,pouch-art/paneer-butter-masala-front-processed.png,pouch-art/paneer-butter-masala-front-processed.png,ok
+main.js,49,site,pouch-art/paneer-butter-masala-back-processed.png,pouch-art/paneer-butter-masala-back-processed.png,missing
+main.js,66,site,pouch-art/paneer-bhurji-front-processed.png,pouch-art/paneer-bhurji-front-processed.png,ok
+main.js,67,site,pouch-art/paneer-bhurji-back-processed.png,pouch-art/paneer-bhurji-back-processed.png,missing
+main.js,84,site,pouch-art/pind-ke-chhole-front-processed.png,pouch-art/pind-ke-chhole-front-processed.png,ok
+main.js,85,site,pouch-art/pind-ke-chhole-back-processed.png,pouch-art/pind-ke-chhole-back-processed.png,missing
+main.js,102,site,pouch-art/pav-bhaji-front-processed.png,pouch-art/pav-bhaji-front-processed.png,ok
+main.js,103,site,pouch-art/pav-bhaji-back-processed.png,pouch-art/pav-bhaji-back-processed.png,missing
+main.js,120,site,pouch-art/bhindi-masala-front-processed.png,pouch-art/bhindi-masala-front-processed.png,ok
+main.js,121,site,pouch-art/bhindi-masala-back-processed.png,pouch-art/bhindi-masala-back-processed.png,missing
+main.js,138,site,pouch-art/veg-kadhai-front-processed.png,pouch-art/veg-kadhai-front-processed.png,ok
+main.js,139,site,pouch-art/veg-kadhai-back-processed.png,pouch-art/veg-kadhai-back-processed.png,missing
+main.js,156,site,pouch-art/veg-makhanwala-front-processed.png,pouch-art/veg-makhanwala-front-processed.png,ok
+main.js,157,site,pouch-art/veg-makhanwala-back-processed.png,pouch-art/veg-makhanwala-back-processed.png,missing
+main.js,174,site,pouch-art/moong-masala-front-processed.png,pouch-art/moong-masala-front-processed.png,ok
+main.js,175,site,pouch-art/moong-masala-back-processed.png,pouch-art/moong-masala-back-processed.png,missing
+main.js,194,site,pouch-art/dal-makhani-front-processed.png,pouch-art/dal-makhani-front-processed.png,ok
+main.js,195,site,pouch-art/dal-makhani-back-processed.png,pouch-art/dal-makhani-back-processed.png,missing
+main.js,212,site,pouch-art/dal-tadka-front-processed.png,pouch-art/dal-tadka-front-processed.png,ok
+main.js,213,site,pouch-art/dal-tadka-back-processed.png,pouch-art/dal-tadka-back-processed.png,missing
+main.js,230,site,pouch-art/dal-fry-front-processed.png,pouch-art/dal-fry-front-processed.png,ok
+main.js,231,site,pouch-art/dal-fry-back-processed.png,pouch-art/dal-fry-back-processed.png,missing
+main.js,248,site,pouch-art/gujarati-dal-front-processed.png,pouch-art/gujarati-dal-front-processed.png,ok
+main.js,249,site,pouch-art/gujarati-dal-back-processed.png,pouch-art/gujarati-dal-back-processed.png,missing
+main.js,268,site,pouch-art/dal-khichdi-front-processed.png,pouch-art/dal-khichdi-front-processed.png,ok
+main.js,269,site,pouch-art/dal-khichdi-back-processed.png,pouch-art/dal-khichdi-back-processed.png,missing
+main.js,286,site,pouch-art/masala-khichdi-kadhi-front-processed.png,pouch-art/masala-khichdi-kadhi-front-processed.png,ok
+main.js,287,site,pouch-art/masala-khichdi-kadhi-back-processed.png,pouch-art/masala-khichdi-kadhi-back-processed.png,missing
+main.js,303,site,pouch-art/veg-biryani-front-processed.png,pouch-art/veg-biryani-front-processed.png,ok
+main.js,304,site,pouch-art/veg-biryani-back-processed.png,pouch-art/veg-biryani-back-processed.png,missing
+main.js,321,site,pouch-art/jeera-rice-front-processed.png,pouch-art/jeera-rice-front-processed.png,ok
+main.js,322,site,pouch-art/jeera-rice-back-processed.png,pouch-art/jeera-rice-back-processed.png,missing
+main.js,339,site,pouch-art/tawa-pulao-front-processed.png,pouch-art/tawa-pulao-front-processed.png,ok
+main.js,340,site,pouch-art/tawa-pulao-back-processed.png,pouch-art/tawa-pulao-back-processed.png,missing
+main.js,357,site,pouch-art/fried-rice-manchurian-front-processed.png,pouch-art/fried-rice-manchurian-front-processed.png,ok
+main.js,358,site,pouch-art/fried-rice-manchurian-back-processed.png,pouch-art/fried-rice-manchurian-back-processed.png,missing
+main.js,374,site,pouch-art/fried-rice-front-processed.png,pouch-art/fried-rice-front-processed.png,ok
+main.js,375,site,pouch-art/fried-rice-back-processed.png,pouch-art/fried-rice-back-processed.png,missing
+main.js,392,site,pouch-art/schezwan-rice-front-processed.png,pouch-art/schezwan-rice-front-processed.png,ok
+main.js,393,site,pouch-art/schezwan-rice-back-processed.png,pouch-art/schezwan-rice-back-processed.png,missing
+main.js,410,site,pouch-art/mexican-rice-front-processed.png,pouch-art/mexican-rice-front-processed.png,ok
+main.js,411,site,pouch-art/mexican-rice-back-processed.png,pouch-art/mexican-rice-back-processed.png,missing
+main.js,430,site,pouch-art/kanda-poha-front-processed.png,pouch-art/kanda-poha-front-processed.png,ok
+main.js,431,site,pouch-art/kanda-poha-back-processed.png,pouch-art/kanda-poha-back-processed.png,missing
+main.js,448,site,pouch-art/jain-poha-front-processed.png,pouch-art/jain-poha-front-processed.png,ok
+main.js,449,site,pouch-art/tex/jain-poha-back-800.webp,pouch-art/tex/jain-poha-back-800.webp,ok
+main.js,466,site,pouch-art/idli-sambar-front-processed.png,pouch-art/idli-sambar-front-processed.png,ok
+main.js,467,site,pouch-art/idli-sambar-back-processed.png,pouch-art/idli-sambar-back-processed.png,missing
+main.js,484,site,pouch-art/upma-front-processed.png,pouch-art/upma-front-processed.png,ok
+main.js,485,site,pouch-art/upma-back-processed.png,pouch-art/upma-back-processed.png,missing
+main.js,502,site,pouch-art/mumbai-misal-front-processed.png,pouch-art/mumbai-misal-front-processed.png,ok
+main.js,503,site,pouch-art/mumbai-misal-back-processed.png,pouch-art/mumbai-misal-back-processed.png,missing
+main.js,522,site,pouch-art/tomato-soup-front-processed.png,pouch-art/tomato-soup-front-processed.png,ok
+main.js,523,site,pouch-art/tomato-soup-back-processed.png,pouch-art/tomato-soup-back-processed.png,missing
+main.js,540,site,pouch-art/sweet-corn-soup-front-processed.png,pouch-art/sweet-corn-soup-front-processed.png,ok
+main.js,541,site,pouch-art/sweet-corn-soup-back-processed.png,pouch-art/sweet-corn-soup-back-processed.png,missing
+main.js,558,site,pouch-art/hot-and-sour-soup-front-processed.png,pouch-art/hot-and-sour-soup-front-processed.png,ok
+main.js,559,site,pouch-art/hot-and-sour-soup-back-processed.png,pouch-art/hot-and-sour-soup-back-processed.png,missing
+main.js,578,site,pouch-art/gajar-halwa-front-processed.png,pouch-art/gajar-halwa-front-processed.png,ok
+main.js,579,site,pouch-art/gajar-halwa-back-processed.png,pouch-art/gajar-halwa-back-processed.png,missing
+main.js,596,site,pouch-art/aam-ras-front-processed.png,pouch-art/aam-ras-front-processed.png,ok
+main.js,597,site,pouch-art/aam-ras-back-processed.png,pouch-art/aam-ras-back-processed.png,missing
+main.js,614,site,pouch-art/rawa-sheera-front-processed.png,pouch-art/rawa-sheera-front-processed.png,ok
+main.js,615,site,pouch-art/rawa-sheera-back-processed.png,pouch-art/rawa-sheera-back-processed.png,missing
+main.js,635,site,pouch-art/jain-dal-khichdi-front-processed.png,pouch-art/jain-dal-khichdi-front-processed.png,ok
+main.js,636,site,pouch-art/jain-dal-khichdi-back-processed.png,pouch-art/jain-dal-khichdi-back-processed.png,ok
+main.js,653,site,pouch-art/jain-dal-makhani-front-processed.png,pouch-art/jain-dal-makhani-front-processed.png,ok
+main.js,654,site,pouch-art/jain-dal-makhani-back-processed.png,pouch-art/jain-dal-makhani-back-processed.png,ok
+main.js,671,site,pouch-art/jain-masala-khichdi-kadhi-front-processed.png,pouch-art/jain-masala-khichdi-kadhi-front-processed.png,ok
+main.js,672,site,pouch-art/jain-masala-khichdi-kadhi-back-processed.png,pouch-art/jain-masala-khichdi-kadhi-back-processed.png,ok
+main.js,689,site,pouch-art/jain-paneer-bhurji-front-processed.png,pouch-art/jain-paneer-bhurji-front-processed.png,ok
+main.js,690,site,pouch-art/jain-paneer-bhurji-back-processed.png,pouch-art/jain-paneer-bhurji-back-processed.png,ok
+main.js,706,site,pouch-art/jain-paneer-butter-masala-front-processed.png,pouch-art/jain-paneer-butter-masala-front-processed.png,ok
+main.js,707,site,pouch-art/jain-paneer-butter-masala-back-processed.png,pouch-art/jain-paneer-butter-masala-back-processed.png,ok
+main.js,723,site,pouch-art/jain-pav-bhaji-front-processed.png,pouch-art/jain-pav-bhaji-front-processed.png,ok
+main.js,724,site,pouch-art/jain-pav-bhaji-back-processed.png,pouch-art/jain-pav-bhaji-back-processed.png,ok
+main.js,741,site,pouch-art/jain-pind-ke-chhole-front-processed.png,pouch-art/jain-pind-ke-chhole-front-processed.png,ok
+main.js,742,site,pouch-art/jain-pind-ke-chhole-back-processed.png,pouch-art/jain-pind-ke-chhole-back-processed.png,ok
+main.js,759,site,pouch-art/jain-rajma-masala-front-processed.png,pouch-art/jain-rajma-masala-front-processed.png,ok
+main.js,760,site,pouch-art/jain-rajma-masala-back-processed.png,pouch-art/jain-rajma-masala-back-processed.png,ok
+main.js,777,site,pouch-art/jain-schezwan-rice-front-processed.png,pouch-art/jain-schezwan-rice-front-processed.png,ok
+main.js,778,site,pouch-art/jain-schezwan-rice-back-processed.png,pouch-art/jain-schezwan-rice-back-processed.png,ok
+main.js,795,site,pouch-art/jain-upma-front-processed.png,pouch-art/jain-upma-front-processed.png,ok
+main.js,796,site,pouch-art/jain-upma-back-processed.png,pouch-art/jain-upma-back-processed.png,ok
+main.js,813,site,pouch-art/jain-veg-biryani-front-processed.png,pouch-art/jain-veg-biryani-front-processed.png,ok
+main.js,814,site,pouch-art/jain-veg-biryani-back-processed.png,pouch-art/jain-veg-biryani-back-processed.png,ok
+main.js,831,site,pouch-art/jain-veg-kadhai-front-processed.png,pouch-art/jain-veg-kadhai-front-processed.png,ok
+main.js,832,site,pouch-art/jain-veg-kadhai-back-processed.png,pouch-art/jain-veg-kadhai-back-processed.png,ok
+main.js,849,site,pouch-art/jain-veg-makhanwala-front-processed.png,pouch-art/jain-veg-makhanwala-front-processed.png,ok
+main.js,850,site,pouch-art/jain-veg-makhanwala-back-processed.png,pouch-art/jain-veg-makhanwala-back-processed.png,ok
+main.js,868,site,assets/combos/combo_idli_upma.jpg,assets/combos/combo_idli_upma.jpg,ok
+main.js,884,site,assets/combos/combo_poha_misal.jpg,assets/combos/combo_poha_misal.jpg,ok
+main.js,900,site,assets/combos/combo_soup_mexican_rice.jpg,assets/combos/combo_soup_mexican_rice.jpg,ok
+main.js,916,site,assets/combos/combo_khichdi_gajar_halwa.jpg,assets/combos/combo_khichdi_gajar_halwa.jpg,ok
+main.js,932,site,assets/combos/combo_hot_sour_manchurian.jpg,assets/combos/combo_hot_sour_manchurian.jpg,ok
+main.js,950,site,assets/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpeg,assets/combos/north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpeg,ok
+main.js,966,site,assets/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera.jpg,assets/combos/north-indian-combo-paneer-butter-masala-tawa-pulao-rawa-sheera.jpg,ok
+main.js,982,site,assets/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera.jpg,assets/combos/north-indian-combo-paneer-butter-masala-veg-biryani-rawa-sheera.jpg,ok
+main.js,998,site,assets/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa.jpeg,assets/combos/comfort-combo-rajma-masala-jeera-rice-gajar-halwa.jpeg,ok
+main.js,1014,site,assets/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa.jpg,assets/combos/comfort-combo-rajma-masala-tawa-pulao-gajar-halwa.jpg,ok
+main.js,1030,site,assets/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa.jpg,assets/combos/comfort-combo-rajma-masala-fried-rice-with-manchurian-gravy-gajar-halwa.jpg,ok
+main.js,1046,site,assets/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa.jpeg,assets/combos/homestyle-combo-veg-makhanwala-jeera-rice-gajar-halwa.jpeg,ok
+main.js,1062,site,assets/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa.jpg,assets/combos/homestyle-combo-veg-makhanwala-tawa-pulao-gajar-halwa.jpg,ok
+main.js,1078,site,assets/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa.jpg,assets/combos/homestyle-combo-veg-makhanwala-veg-biryani-gajar-halwa.jpg,ok
+main.js,1094,site,assets/combos/street-style-combo-pav-bhaji-rawa-sheera.jpeg,assets/combos/street-style-combo-pav-bhaji-rawa-sheera.jpeg,ok
+main.js,1110,site,assets/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpeg,assets/combos/protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpeg,ok
+main.js,1126,site,assets/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras.jpg,assets/combos/protein-veg-combo-paneer-bhurji-veg-biryani-aam-ras.jpg,ok
+main.js,1142,site,assets/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras.jpg,assets/combos/protein-veg-combo-paneer-bhurji-tawa-pulao-aam-ras.jpg,ok
+main.js,1158,site,assets/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa.jpeg,assets/combos/punjabi-swaad-combo-pind-ke-chole-jeera-rice-gajar-halwa.jpeg,ok
+main.js,1174,site,assets/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa.jpg,assets/combos/punjabi-swaad-pind-ke-chole-tawa-pulao-gajar-halwa.jpg,ok
+main.js,1190,site,assets/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa.jpg,assets/combos/punjabi-swaad-pind-ke-chole-veg-biryani-gajar-halwa.jpg,ok
+main.js,1206,site,assets/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice.jpeg,assets/combos/classic-dinner-combo-tomato-soup-dal-makhani-jeera-rice.jpeg,ok
+main.js,1222,site,assets/combos/royal-combo-veg-biryani-rawa-sheera.jpeg,assets/combos/royal-combo-veg-biryani-rawa-sheera.jpeg,ok
+main.js,1238,site,assets/combos/royal-combo-tawa-pulao-aam-ras.jpeg,assets/combos/royal-combo-tawa-pulao-aam-ras.jpeg,ok
+main.js,1254,site,assets/combos/comfort-night-combo-dal-fry-jeera-rice.jpeg,assets/combos/comfort-night-combo-dal-fry-jeera-rice.jpeg,ok
+main.js,1272,site,assets/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa.jpg,assets/combos/comfort-combo-rajma-masala-veg-biryani-gajar-halwa.jpg,ok
+main.js,1288,site,assets/combos/street-style-combo-pav-bhaji-tawa-pulao.jpg,assets/combos/street-style-combo-pav-bhaji-tawa-pulao.jpg,ok
+main.js,1306,site,assets/combos/jain-street-style-combo-pav-bhaji-rawa-sheera.jpg,assets/combos/jain-street-style-combo-pav-bhaji-rawa-sheera.jpg,ok
+main.js,1322,site,assets/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpg,assets/combos/jain-protein-veg-combo-paneer-bhurji-jeera-rice-aam-ras.jpg,ok
+main.js,1338,site,assets/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras.jpg,assets/combos/jain-royal-fusion-combo-schezwan-rice-aam-ras.jpg,ok
+main.js,1354,site,assets/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice.jpg,assets/combos/jain-classic-dinner-combo-dal-makhani-jeera-rice.jpg,ok
+main.js,1370,site,assets/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry.jpg,assets/combos/jain-homestyle-combo-veg-makhanwala-jeera-rice-dal-fry.jpg,ok
+main.js,1388,site,assets/combos/jain-biryani-royale-veg-biryani-aam-ras.jpg,assets/combos/jain-biryani-royale-veg-biryani-aam-ras.jpg,ok
+main.js,1404,site,assets/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera.jpg,assets/combos/jain-indo-chinese-combo-schezwan-rice-rawa-sheera.jpg,ok
+main.js,1420,site,assets/combos/jain-light-comfort-combo-dal-khichdi-aam-ras.jpg,assets/combos/jain-light-comfort-combo-dal-khichdi-aam-ras.jpg,ok
+main.js,1436,site,assets/combos/jain-light-dinner-combo-dal-khichdi-moong-masala.jpg,assets/combos/jain-light-dinner-combo-dal-khichdi-moong-masala.jpg,ok
+main.js,1452,site,assets/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpg,assets/combos/jain-north-indian-combo-paneer-butter-masala-jeera-rice-rawa-sheera.jpg,ok
+main.js,1468,site,assets/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera.jpg,assets/combos/jain-comfort-combo-rajma-masala-jeera-rice-rawa-sheera.jpg,ok
+main.js,1484,site,assets/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera.jpg,assets/combos/jain-light-comfort-combo-dal-khichdi-rawa-sheera.jpg,ok
+main.js,1500,site,assets/combos/jain-biryani-royale-veg-biryani-rawa-sheera.jpg,assets/combos/jain-biryani-royale-veg-biryani-rawa-sheera.jpg,ok
+main.js,1516,site,assets/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry.jpg,assets/combos/jain-punjabi-swaad-combo-pind-ke-chole-jeera-rice-dal-fry.jpg,ok
+main.js,1666,site,-front-640.webp,-front-640.webp,missing
+main.js,1807,site,thumb_stLqnv38SHk.jpg,thumb_stLqnv38SHk.jpg,ok
+main.js,1810,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+main.js,1832,site,thumb_FQu7hM1dFAA.jpg,thumb_FQu7hM1dFAA.jpg,ok
+main.js,1835,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+main.js,1857,site,thumb_248l3FWQ5ls.jpg,thumb_248l3FWQ5ls.jpg,ok
+main.js,1860,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+main.js,1882,site,thumb_hveTAhjX3zk.jpg,thumb_hveTAhjX3zk.jpg,ok
+main.js,1885,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+main.js,1907,site,thumb_D8cyKsu4w84.jpg,thumb_D8cyKsu4w84.jpg,ok
+main.js,1910,site,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+main.js,3515,site,shopify-config.js,shopify-config.js,ok
+main.js,3708,site,vendor/three.min.js,vendor/three.min.js,ok
+main.js,3708,site,vendor/OrbitControls.js,vendor/OrbitControls.js,ok
+pdp/pdp-data.js,20,site,ingredient-1.webp,pdp/ingredient-1.webp,missing
+pdp/pdp-data.js,20,site,ingredient-8.webp,pdp/ingredient-8.webp,missing
+pdp/pdp-data.js,20,site,ingredient-5.webp,pdp/ingredient-5.webp,missing
+pdp/pdp-data.js,20,site,ingredient-3.webp,pdp/ingredient-3.webp,missing
+pdp/pdp-data.js,20,site,ingredient-4.webp,pdp/ingredient-4.webp,missing
+pdp/pdp-data.js,20,site,ingredient-7.webp,pdp/ingredient-7.webp,missing
+pdp/pdp-data.js,20,site,ingredient-2.webp,pdp/ingredient-2.webp,missing
+pdp/pdp-data.js,20,site,ingredient-6.webp,pdp/ingredient-6.webp,missing
+pdp/pdp-data.js,685,site,dry-640.webp,pdp/dry-640.webp,missing
+pdp/pdp-data.js,686,site,wet-640.webp,pdp/wet-640.webp,missing
+pdp/pdp-data.js,687,site,ready-640.webp,pdp/ready-640.webp,missing
+pdp/pdp-scene.js,137,site,-800.webp,pdp/-800.webp,missing
+pdp/pdp-scene.js,137,site,-1200.webp,pdp/-1200.webp,missing
+polish_mobile_header.py,3,script,index.html,index.html,ok
+polish_mobile_header.py,3,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+pouch-art/batch_process_all_pouches.py,35,script,Rajma Masala.png,pouch-art/Rajma Masala.png,missing
+pouch-art/batch_process_all_pouches.py,35,script,RAJMA MASALA.png,pouch-art/RAJMA MASALA.png,missing
+pouch-art/batch_process_all_pouches.py,36,script,PANNER BUTTER MASALA.png,pouch-art/PANNER BUTTER MASALA.png,missing
+pouch-art/batch_process_all_pouches.py,36,script,Paneer Butter Masala.png,pouch-art/Paneer Butter Masala.png,missing
+pouch-art/batch_process_all_pouches.py,37,script,Paneer Bhurji.png,pouch-art/Paneer Bhurji.png,missing
+pouch-art/batch_process_all_pouches.py,37,script,PANNER BHURJI.png,pouch-art/PANNER BHURJI.png,missing
+pouch-art/batch_process_all_pouches.py,38,script,Pind Ke Chole.png,pouch-art/Pind Ke Chole.png,missing
+pouch-art/batch_process_all_pouches.py,38,script,PIND KE CHOLE.png,pouch-art/PIND KE CHOLE.png,missing
+pouch-art/batch_process_all_pouches.py,39,script,PAV BHAJI.png,pouch-art/PAV BHAJI.png,missing
+pouch-art/batch_process_all_pouches.py,39,script,Pav Bhaji.png,pouch-art/Pav Bhaji.png,missing
+pouch-art/batch_process_all_pouches.py,40,script,BHINDI MASALA.png,pouch-art/BHINDI MASALA.png,missing
+pouch-art/batch_process_all_pouches.py,40,script,Bhindi Masala.png,pouch-art/Bhindi Masala.png,missing
+pouch-art/batch_process_all_pouches.py,41,script,VEG KADHAI.png,pouch-art/VEG KADHAI.png,missing
+pouch-art/batch_process_all_pouches.py,41,script,Veg Kadhai.png,pouch-art/Veg Kadhai.png,missing
+pouch-art/batch_process_all_pouches.py,42,script,VEG MAKHANWALA.png,pouch-art/VEG MAKHANWALA.png,missing
+pouch-art/batch_process_all_pouches.py,42,script,Veg Makhanwala.png,pouch-art/Veg Makhanwala.png,missing
+pouch-art/batch_process_all_pouches.py,43,script,Moong masala.png,pouch-art/Moong masala.png,missing
+pouch-art/batch_process_all_pouches.py,43,script,moong masala.png,pouch-art/moong masala.png,missing
+pouch-art/batch_process_all_pouches.py,44,script,DAL MAKHANI.png,pouch-art/DAL MAKHANI.png,missing
+pouch-art/batch_process_all_pouches.py,44,script,Dal Makhani.png,pouch-art/Dal Makhani.png,missing
+pouch-art/batch_process_all_pouches.py,45,script,DAL TADKA.png,pouch-art/DAL TADKA.png,missing
+pouch-art/batch_process_all_pouches.py,45,script,Dal Tadka.png,pouch-art/Dal Tadka.png,missing
+pouch-art/batch_process_all_pouches.py,46,script,DAL FRY.png,pouch-art/DAL FRY.png,missing
+pouch-art/batch_process_all_pouches.py,46,script,Dal Fry.png,pouch-art/Dal Fry.png,missing
+pouch-art/batch_process_all_pouches.py,47,script,Gujarati Dal.png,pouch-art/Gujarati Dal.png,missing
+pouch-art/batch_process_all_pouches.py,47,script,GUJRATI DAL.png,pouch-art/GUJRATI DAL.png,missing
+pouch-art/batch_process_all_pouches.py,48,script,DAL KHICHDI.png,pouch-art/DAL KHICHDI.png,missing
+pouch-art/batch_process_all_pouches.py,48,script,Dal Khichdi.png,pouch-art/Dal Khichdi.png,missing
+pouch-art/batch_process_all_pouches.py,49,script,MASALA KHICHDI KADHI.png,pouch-art/MASALA KHICHDI KADHI.png,missing
+pouch-art/batch_process_all_pouches.py,49,script,Masala Khichdi Kadhi.png,pouch-art/Masala Khichdi Kadhi.png,missing
+pouch-art/batch_process_all_pouches.py,50,script,VEG BIRYANI.png,pouch-art/VEG BIRYANI.png,missing
+pouch-art/batch_process_all_pouches.py,50,script,Veg Biryani.png,pouch-art/Veg Biryani.png,missing
+pouch-art/batch_process_all_pouches.py,51,script,JEERA RICE.png,pouch-art/JEERA RICE.png,missing
+pouch-art/batch_process_all_pouches.py,51,script,Jeera Rice.png,pouch-art/Jeera Rice.png,missing
+pouch-art/batch_process_all_pouches.py,52,script,Tawa Pulao.png,pouch-art/Tawa Pulao.png,missing
+pouch-art/batch_process_all_pouches.py,52,script,TAWA PULAO.png,pouch-art/TAWA PULAO.png,missing
+pouch-art/batch_process_all_pouches.py,53,script,Fried Rice.png,pouch-art/Fried Rice.png,missing
+pouch-art/batch_process_all_pouches.py,53,script,FRIED RICE.png,pouch-art/FRIED RICE.png,missing
+pouch-art/batch_process_all_pouches.py,54,script,Schezwan Rice.png,pouch-art/Schezwan Rice.png,missing
+pouch-art/batch_process_all_pouches.py,54,script,SCHEZWAN RICE.png,pouch-art/SCHEZWAN RICE.png,missing
+pouch-art/batch_process_all_pouches.py,55,script,MEXICAN RICE.png,pouch-art/MEXICAN RICE.png,missing
+pouch-art/batch_process_all_pouches.py,55,script,Mexican Rice.png,pouch-art/Mexican Rice.png,missing
+pouch-art/batch_process_all_pouches.py,56,script,Fried Rice with Manchurian Gravy.png,pouch-art/Fried Rice with Manchurian Gravy.png,missing
+pouch-art/batch_process_all_pouches.py,56,script,FRIED RICE WITH MANCHURIAN GRAVY.png,pouch-art/FRIED RICE WITH MANCHURIAN GRAVY.png,missing
+pouch-art/batch_process_all_pouches.py,57,script,KANDA POHA.png,pouch-art/KANDA POHA.png,missing
+pouch-art/batch_process_all_pouches.py,57,script,Kanda Poha.png,pouch-art/Kanda Poha.png,missing
+pouch-art/batch_process_all_pouches.py,58,script,IDLI SAMBAR.2.png,pouch-art/IDLI SAMBAR.2.png,missing
+pouch-art/batch_process_all_pouches.py,58,script,IDLI SAMBAR.png,pouch-art/IDLI SAMBAR.png,missing
+pouch-art/batch_process_all_pouches.py,59,script,Upma.png,pouch-art/Upma.png,missing
+pouch-art/batch_process_all_pouches.py,59,script,UPMA.png,pouch-art/UPMA.png,missing
+pouch-art/batch_process_all_pouches.py,60,script,Mumbai Misal.png,pouch-art/Mumbai Misal.png,missing
+pouch-art/batch_process_all_pouches.py,60,script,MUMBAI MISAL.png,pouch-art/MUMBAI MISAL.png,missing
+pouch-art/batch_process_all_pouches.py,61,script,TOMATO SOUP.png,pouch-art/TOMATO SOUP.png,missing
+pouch-art/batch_process_all_pouches.py,61,script,Tomato Soup.png,pouch-art/Tomato Soup.png,missing
+pouch-art/batch_process_all_pouches.py,62,script,sweet corn soup.png,pouch-art/sweet corn soup.png,missing
+pouch-art/batch_process_all_pouches.py,62,script,Sweet Corn Soup.png,pouch-art/Sweet Corn Soup.png,missing
+pouch-art/batch_process_all_pouches.py,63,script,Hot & Sour Soup.png,pouch-art/Hot & Sour Soup.png,missing
+pouch-art/batch_process_all_pouches.py,63,script,hot and sour soup.png,pouch-art/hot and sour soup.png,missing
+pouch-art/batch_process_all_pouches.py,64,script,Gajar Halwa.png,pouch-art/Gajar Halwa.png,missing
+pouch-art/batch_process_all_pouches.py,64,script,GAJAR HALWA.png,pouch-art/GAJAR HALWA.png,missing
+pouch-art/batch_process_all_pouches.py,65,script,AAMRAS.png,pouch-art/AAMRAS.png,missing
+pouch-art/batch_process_all_pouches.py,65,script,Aam Ras.png,pouch-art/Aam Ras.png,missing
+pouch-art/batch_process_all_pouches.py,66,script,Rawa Sheera.png,pouch-art/Rawa Sheera.png,missing
+pouch-art/batch_process_all_pouches.py,66,script,RAWA SHEERA.png,pouch-art/RAWA SHEERA.png,missing
+pouch-art/batch_process_all_pouches.py,136,script,missing-back-neutral.png,pouch-art/missing-back-neutral.png,ok
+pouch-art/batch_process_all_pouches.py,140,script,{pid}-front-processed.png,pouch-art/{pid}-front-processed.png,missing
+pouch-art/batch_process_all_pouches.py,141,script,{pid}-back-processed.png,pouch-art/{pid}-back-processed.png,missing
+pouch-art/batch_process_all_pouches.py,142,script,{pid}-front.webp,pouch-art/{pid}-front.webp,missing
+pouch-art/batch_process_all_pouches.py,143,script,{pid}-back.webp,pouch-art/{pid}-back.webp,missing
+pouch-art/process_pouch_art.py,149,script,arial.ttf,pouch-art/arial.ttf,missing
+pouch-art/process_pouch_art.py,150,script,arial.ttf,pouch-art/arial.ttf,missing
+pouch-art/process_pouch_art.py,172,script,{slug}-front.png,pouch-art/{slug}-front.png,missing
+pouch-art/process_pouch_art.py,173,script,{slug}-back.png,pouch-art/{slug}-back.png,missing
+pouch-art/process_pouch_art.py,201,script,{slug}-back.png,pouch-art/{slug}-back.png,missing
+pouch-art/process_pouch_art.py,231,script,{slug}-front-processed.png,pouch-art/{slug}-front-processed.png,missing
+pouch-art/process_pouch_art.py,232,script,{slug}-back-processed.png,pouch-art/{slug}-back-processed.png,missing
+pouch-art/process_pouch_art.py,241,script,missing-back-neutral.png,pouch-art/missing-back-neutral.png,ok
+print_loved_sections.py,5,script,index.html,index.html,ok
+print_ticker.py,5,script,index.html,index.html,ok
+run_screenshot_test.py,10,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+run_screenshot_test.py,16,script,reels_section_authentic.png,reels_section_authentic.png,ok
+run_screenshot_test.py,17,script,Saved reels_section_authentic.png,Saved reels_section_authentic.png,missing
+run_screenshot_test.py,21,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html#shop,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+run_screenshot_test.py,23,script,shop_page_clean.png,shop_page_clean.png,ok
+run_screenshot_test.py,24,script,Saved shop_page_clean.png,Saved shop_page_clean.png,missing
+run_screenshot_test.py,29,script,shop_page_rice_filtered.png,shop_page_rice_filtered.png,ok
+run_screenshot_test.py,30,script,Saved shop_page_rice_filtered.png,Saved shop_page_rice_filtered.png,missing
+scenes/_raw/composite.py,4,script,scenes/_base-bowl.png,scenes/_base-bowl.png,ok
+scenes/hiw-scene.js,44,site,-640.webp,scenes/-640.webp,missing
+scenes/hiw-scene.js,49,site,-480.webp,scenes/-480.webp,missing
+scenes/processed/dal-makhani.json,7,site,scenes/processed/dal-makhani/bowl.webp,scenes/processed/dal-makhani/bowl.webp,ok
+scenes/processed/dal-makhani.json,8,site,scenes/processed/dal-makhani/dry.webp,scenes/processed/dal-makhani/dry.webp,ok
+scenes/processed/dal-makhani.json,9,site,scenes/processed/dal-makhani/wet.webp,scenes/processed/dal-makhani/wet.webp,ok
+scenes/processed/dal-makhani.json,10,site,scenes/processed/dal-makhani/ready.webp,scenes/processed/dal-makhani/ready.webp,ok
+scenes/processed/panner-butter-masala.json,7,site,scenes/processed/panner-butter-masala/bowl.webp,scenes/processed/panner-butter-masala/bowl.webp,ok
+scenes/processed/panner-butter-masala.json,8,site,scenes/processed/panner-butter-masala/dry.webp,scenes/processed/panner-butter-masala/dry.webp,ok
+scenes/processed/panner-butter-masala.json,9,site,scenes/processed/panner-butter-masala/wet.webp,scenes/processed/panner-butter-masala/wet.webp,ok
+scenes/processed/panner-butter-masala.json,10,site,scenes/processed/panner-butter-masala/ready.webp,scenes/processed/panner-butter-masala/ready.webp,ok
+scenes/processed/pav-bhaji.json,7,site,scenes/processed/pav-bhaji/bowl.webp,scenes/processed/pav-bhaji/bowl.webp,ok
+scenes/processed/pav-bhaji.json,8,site,scenes/processed/pav-bhaji/dry.webp,scenes/processed/pav-bhaji/dry.webp,ok
+scenes/processed/pav-bhaji.json,9,site,scenes/processed/pav-bhaji/wet.webp,scenes/processed/pav-bhaji/wet.webp,ok
+scenes/processed/pav-bhaji.json,10,site,scenes/processed/pav-bhaji/ready.webp,scenes/processed/pav-bhaji/ready.webp,ok
+scenes/processed/rajma-masala.json,7,site,scenes/processed/bowl-empty.webp,scenes/processed/bowl-empty.webp,ok
+scenes/processed/rajma-masala.json,8,site,scenes/processed/rajma-masala/dry.webp,scenes/processed/rajma-masala/dry.webp,ok
+scenes/processed/rajma-masala.json,9,site,scenes/processed/rajma-masala/wet.webp,scenes/processed/rajma-masala/wet.webp,ok
+scenes/processed/rajma-masala.json,10,site,scenes/processed/rajma-masala/ready.webp,scenes/processed/rajma-masala/ready.webp,ok
+scenes/processed/veg-biryani.json,7,site,scenes/processed/veg-biryani/bowl.webp,scenes/processed/veg-biryani/bowl.webp,ok
+scenes/processed/veg-biryani.json,8,site,scenes/processed/veg-biryani/dry.webp,scenes/processed/veg-biryani/dry.webp,ok
+scenes/processed/veg-biryani.json,9,site,scenes/processed/veg-biryani/wet.webp,scenes/processed/veg-biryani/wet.webp,ok
+scenes/processed/veg-biryani.json,10,site,scenes/processed/veg-biryani/ready.webp,scenes/processed/veg-biryani/ready.webp,ok
+scenes/scene-data.js,12,site,scenes/processed/kettle.webp,scenes/processed/kettle.webp,ok
+scenes/scene-data.js,26,site,scenes/processed/bowl-empty.webp,scenes/processed/bowl-empty.webp,ok
+scenes/scene-data.js,27,site,scenes/processed/rajma-masala/dry.webp,scenes/processed/rajma-masala/dry.webp,ok
+scenes/scene-data.js,28,site,scenes/processed/rajma-masala/wet.webp,scenes/processed/rajma-masala/wet.webp,ok
+scenes/scene-data.js,29,site,scenes/processed/rajma-masala/ready.webp,scenes/processed/rajma-masala/ready.webp,ok
+scenes/scene-data.js,40,site,scenes/processed/panner-butter-masala/bowl.webp,scenes/processed/panner-butter-masala/bowl.webp,ok
+scenes/scene-data.js,41,site,scenes/processed/panner-butter-masala/dry.webp,scenes/processed/panner-butter-masala/dry.webp,ok
+scenes/scene-data.js,42,site,scenes/processed/panner-butter-masala/wet.webp,scenes/processed/panner-butter-masala/wet.webp,ok
+scenes/scene-data.js,43,site,scenes/processed/panner-butter-masala/ready.webp,scenes/processed/panner-butter-masala/ready.webp,ok
+scenes/scene-data.js,53,site,scenes/processed/veg-biryani/bowl.webp,scenes/processed/veg-biryani/bowl.webp,ok
+scenes/scene-data.js,54,site,scenes/processed/veg-biryani/dry.webp,scenes/processed/veg-biryani/dry.webp,ok
+scenes/scene-data.js,55,site,scenes/processed/veg-biryani/wet.webp,scenes/processed/veg-biryani/wet.webp,ok
+scenes/scene-data.js,56,site,scenes/processed/veg-biryani/ready.webp?v=5,scenes/processed/veg-biryani/ready.webp,ok
+scenes/scene-data.js,66,site,scenes/processed/dal-makhani/bowl.webp,scenes/processed/dal-makhani/bowl.webp,ok
+scenes/scene-data.js,67,site,scenes/processed/dal-makhani/dry.webp,scenes/processed/dal-makhani/dry.webp,ok
+scenes/scene-data.js,68,site,scenes/processed/dal-makhani/wet.webp,scenes/processed/dal-makhani/wet.webp,ok
+scenes/scene-data.js,69,site,scenes/processed/dal-makhani/ready.webp,scenes/processed/dal-makhani/ready.webp,ok
+scenes/scene-data.js,79,site,scenes/processed/pav-bhaji/bowl.webp,scenes/processed/pav-bhaji/bowl.webp,ok
+scenes/scene-data.js,80,site,scenes/processed/pav-bhaji/dry.webp,scenes/processed/pav-bhaji/dry.webp,ok
+scenes/scene-data.js,81,site,scenes/processed/pav-bhaji/wet.webp,scenes/processed/pav-bhaji/wet.webp,ok
+scenes/scene-data.js,82,site,scenes/processed/pav-bhaji/ready.webp,scenes/processed/pav-bhaji/ready.webp,ok
+shiprocket-pincode.md,3,script,api/pincode.js,api/pincode.js,ok
+shiprocket-pincode.md,5,script,pincode.js,pincode.js,ok
+shiprocket-pincode.md,43,script,api/pincode.js,api/pincode.js,ok
+shopify-box-discounts.md,31,script,shopify-config.js,shopify-config.js,ok
+shopify-box-discounts.md,32,script,main.js,main.js,ok
+shopify-connector.js,34,site,/graphql.json,graphql.json,missing
+shopify-connector.js,157,site,lines,lines,missing
+shopify-connector.js,157,site,code,code,missing
+shopify-connector.js,177,site,lines,lines,missing
+shopify-connector.js,177,site,want.codes[0],want.codes[0],missing
+test_cart_drawer.py,11,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+test_cart_drawer.py,19,script,cart_drawer_opened_verified.png,cart_drawer_opened_verified.png,ok
+test_cart_drawer.py,20,script,Saved cart_drawer_opened_verified.png,Saved cart_drawer_opened_verified.png,missing
+test_cart_drawer.py,25,script,cart_drawer_closed_verified.png,cart_drawer_closed_verified.png,ok
+test_cart_drawer.py,26,script,Saved cart_drawer_closed_verified.png,Saved cart_drawer_closed_verified.png,missing
+test_final_changes.py,10,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+test_final_changes.py,22,script,final_desktop_hero_banner.png,final_desktop_hero_banner.png,ok
+test_final_changes.py,23,script,Saved final_desktop_hero_banner.png,Saved final_desktop_hero_banner.png,missing
+test_final_changes.py,32,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+test_final_changes.py,34,script,final_mobile_hero_banner.png,final_mobile_hero_banner.png,ok
+test_final_changes.py,35,script,Saved final_mobile_hero_banner.png,Saved final_mobile_hero_banner.png,missing
+test_pouch_3d.html,239,site,vendor/three.min.js,vendor/three.min.js,ok
+test_pouch_3d.html,240,site,vendor/OrbitControls.js,vendor/OrbitControls.js,ok
+test_pouch_3d.html,396,site,pouch-art/rajma-masala-front-processed.png,pouch-art/rajma-masala-front-processed.png,ok
+test_pouch_3d.html,399,site,pouch-art/rajma-masala-back-processed.png,pouch-art/rajma-masala-back-processed.png,missing
+test_pouch_3d.html,402,site,pouch-art/missing-back-neutral.png,pouch-art/missing-back-neutral.png,ok
+test_pouch_3d.html,674,site,missing-back-neutral.png,missing-back-neutral.png,missing
+test_pouch_3d.html,674,site,rajma-masala-back-processed.png,rajma-masala-back-processed.png,missing
+test_quick.py,10,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+test_quick.py,12,script,check_header_no_active_rice.png,check_header_no_active_rice.png,ok
+test_quick.py,13,script,Captured check_header_no_active_rice.png,Captured check_header_no_active_rice.png,missing
+test_quick.py,18,script,check_rice_active_on_shop.png,check_rice_active_on_shop.png,ok
+test_quick.py,19,script,Captured check_rice_active_on_shop.png,Captured check_rice_active_on_shop.png,missing
+test_quick.py,23,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+test_quick.py,25,script,check_mobile_header_icon_only.png,check_mobile_header_icon_only.png,ok
+test_quick.py,26,script,Captured check_mobile_header_icon_only.png,Captured check_mobile_header_icon_only.png,missing
+tools/add-ingredients-to-csv.py,21,tool,product-ingredients.js,product-ingredients.js,ok
+tools/add-ingredients-to-csv.py,22,tool,product-descriptions.js,product-descriptions.js,ok
+tools/add-ingredients-to-csv.py,23,tool,combo-gallery.js,tools/combo-gallery.js,missing
+tools/add-ingredients-to-csv.py,25,tool,main.js,main.js,ok
+tools/add-ingredients-to-csv.py,47,tool,shopify_products.csv,shopify_products.csv,ok
+tools/batch_indo_chinese_rice.py,29,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/batch_indo_chinese_rice.py,55,tool,{n}-old-ai.png,tools/{n}-old-ai.png,missing
+tools/batch_indo_chinese_rice.py,55,tool,{n}.png,tools/{n}.png,missing
+tools/batch_indo_chinese_rice.py,59,tool,serving.png,tools/serving.png,missing
+tools/batch_indo_chinese_rice.py,63,tool,hero.png,tools/hero.png,missing
+tools/batch_indo_chinese_rice.py,67,tool,abroad.png,tools/abroad.png,missing
+tools/batch_indo_chinese_rice.py,76,tool,{n}-old-ai.png,tools/{n}-old-ai.png,missing
+tools/batch_indo_chinese_rice.py,76,tool,{n}.png,tools/{n}.png,missing
+tools/batch_indo_chinese_rice.py,80,tool,serving.png,tools/serving.png,missing
+tools/batch_indo_chinese_rice.py,84,tool,hero.png,tools/hero.png,missing
+tools/batch_indo_chinese_rice.py,88,tool,abroad.png,tools/abroad.png,missing
+tools/batch_indo_chinese_rice.py,97,tool,{n}-old-ai.png,tools/{n}-old-ai.png,missing
+tools/batch_indo_chinese_rice.py,97,tool,{n}.png,tools/{n}.png,missing
+tools/batch_indo_chinese_rice.py,101,tool,serving.png,tools/serving.png,missing
+tools/batch_indo_chinese_rice.py,105,tool,hero.png,tools/hero.png,missing
+tools/batch_indo_chinese_rice.py,109,tool,abroad.png,tools/abroad.png,missing
+tools/batch_indo_chinese_rice.py,116,tool,hero.png,tools/hero.png,missing
+tools/batch_indo_chinese_rice.py,116,tool,serving.png,tools/serving.png,missing
+tools/batch_indo_chinese_rice.py,116,tool,abroad.png,tools/abroad.png,missing
+tools/batch_masala_khichdi.py,31,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/batch_masala_khichdi.py,52,tool,{name}.png,tools/{name}.png,missing
+tools/batch_masala_khichdi.py,53,tool,{name}-old-ai.png,tools/{name}-old-ai.png,missing
+tools/batch_masala_khichdi.py,60,tool,serving.png,tools/serving.png,missing
+tools/batch_masala_khichdi.py,66,tool,hero.png,tools/hero.png,missing
+tools/batch_masala_khichdi.py,72,tool,abroad.png,tools/abroad.png,missing
+tools/build-ingredients.py,115,tool,product-ingredients.js,product-ingredients.js,ok
+tools/build_clean_combo_editorial.py,28,tool,serving.png,tools/serving.png,missing
+tools/build_clean_combo_editorial.py,30,tool,serving.png,tools/serving.png,missing
+tools/build_clean_combo_editorial.py,116,tool,hero-1200.webp,tools/hero-1200.webp,missing
+tools/build_clean_combo_editorial.py,117,tool,hero-800.webp,tools/hero-800.webp,missing
+tools/build_clean_combo_editorial.py,118,tool,serving-1200.webp,tools/serving-1200.webp,missing
+tools/build_clean_combo_editorial.py,119,tool,serving-800.webp,tools/serving-800.webp,missing
+tools/check-data.py,40,tool,main.js,main.js,ok
+tools/check-data.py,54,tool,kcal-source.csv,tools/kcal-source.csv,missing
+tools/check-data.py,109,tool,product-ingredients.js,product-ingredients.js,ok
+tools/check-data.py,110,tool,product-descriptions.js,product-descriptions.js,ok
+tools/check-data.py,126,tool,main.js,main.js,ok
+tools/check-data.py,129,tool,index.html,index.html,ok
+tools/check_catalog.py,6,tool,pdp/pdp-data.js,pdp/pdp-data.js,ok
+tools/check_catalog.py,16,tool,main.js,main.js,ok
+tools/check_catalog.py,28,tool,hero-1200.webp,tools/hero-1200.webp,missing
+tools/check_catalog.py,28,tool,stage.webp,tools/stage.webp,missing
+tools/clean_tawa_pulao.py,6,tool,serving.png,tools/serving.png,missing
+tools/clean_tawa_pulao.py,7,tool,serving-with-paneer.png,tools/serving-with-paneer.png,missing
+tools/clean_tawa_pulao.py,63,tool,tawa_pulao_cleaned_preview.jpg,tools/tawa_pulao_cleaned_preview.jpg,missing
+tools/cleanup-inventory.py,45,tool,inventory.csv,tools/inventory.csv,missing
+tools/cleanup-refs.py,100,tool,static-refs.csv,tools/static-refs.csv,missing
+tools/cleanup-refs.py,102,tool,dynamic-patterns.csv,tools/dynamic-patterns.csv,missing
+tools/combo-nutrition-card.py,34,tool,C:\Windows\Fonts\segoeui.ttf,C:/Windows/Fonts/segoeui.ttf,missing
+tools/combo-nutrition-card.py,34,tool,C:\Windows\Fonts\segoeuib.ttf,C:/Windows/Fonts/segoeuib.ttf,missing
+tools/combo-nutrition-card.py,38,tool,main.js,main.js,ok
+tools/combo-nutrition-card.py,54,tool,{d}.png,tools/{d}.png,missing
+tools/combo-nutrition-card.py,101,tool,nutrition-1200.webp,tools/nutrition-1200.webp,missing
+tools/combo-nutrition-card.py,102,tool,nutrition-800.webp,tools/nutrition-800.webp,missing
+tools/compose-combo-gallery.py,64,tool,main.js,main.js,ok
+tools/compose-combo-gallery.py,97,tool,hero-{dish}.jpg,tools/hero-{dish}.jpg,missing
+tools/compose-combo-gallery.py,99,tool,hero.jpg,tools/hero.jpg,missing
+tools/compose-combo-gallery.py,100,tool,hero-{dish}.jpg,tools/hero-{dish}.jpg,missing
+tools/compose-combo-gallery.py,101,tool,placements.json,tools/placements.json,missing
+tools/compose-combo-gallery.py,136,tool,stage.webp,tools/stage.webp,missing
+tools/compose-combo-gallery.py,137,tool,stage.webp,tools/stage.webp,missing
+tools/compose-combo-gallery.py,144,tool,{name}.jpg,tools/{name}.jpg,missing
+tools/compose-combo-gallery.py,153,tool,{name}-1200.webp,tools/{name}-1200.webp,missing
+tools/compose-combo-gallery.py,154,tool,{name}-800.webp,tools/{name}-800.webp,missing
+tools/compose-combo-gallery.py,169,tool,*/gallery/hero-1200.webp,tools/*/gallery/hero-1200.webp,missing
+tools/compose-combo-gallery.py,170,tool,combo-gallery.js,tools/combo-gallery.js,missing
+tools/compose-lifestyle.py,35,tool,pdp-data.js,tools/pdp-data.js,missing
+tools/compose-lifestyle.py,75,tool,{slug}-front-processed.png,tools/{slug}-front-processed.png,missing
+tools/compose-lifestyle.py,194,tool,{name}-1200.webp,tools/{name}-1200.webp,missing
+tools/compose-lifestyle.py,195,tool,{name}-800.webp,tools/{name}-800.webp,missing
+tools/compose-lifestyle.py,201,tool,-front-processed.png,tools/-front-processed.png,missing
+tools/compose-lifestyle.py,201,tool,*-front-processed.png,tools/*-front-processed.png,missing
+tools/compose-lifestyle.py,254,tool,placements.json,tools/placements.json,missing
+tools/compose-lifestyle.py,293,tool,Could not find the GENERATED PLACEMENTS block in pdp-data.js,tools/Could not find the GENERATED PLACEMENTS block in pdp-data.js,missing
+tools/compose-lively.py,395,tool,{slug}-front-processed.png,tools/{slug}-front-processed.png,missing
+tools/compose-lively.py,625,tool,serving.png,tools/serving.png,missing
+tools/compose-lively.py,626,tool,hero.jpg,tools/hero.jpg,missing
+tools/compose-lively.py,628,tool,pouch3d-hero.png,tools/pouch3d-hero.png,missing
+tools/compose-lively.py,630,tool,{name}.png,tools/{name}.png,missing
+tools/compose-lively.py,646,tool,{name}-1200.webp,tools/{name}-1200.webp,missing
+tools/compose-lively.py,647,tool,{name}-800.webp,tools/{name}-800.webp,missing
+tools/compose-lively.py,650,tool,lively-report.json,tools/lively-report.json,missing
+tools/compose_combo_plates.py,10,tool,C:\Users\Monica\.gemini\antigravity\brain\42853d2c-5f2a-43ac-a48b-ac8c6874bad1\combo_north_indian_sample.jpg,C:/Users/Monica/.gemini/antigravity/brain/42853d2c-5f2a-43ac-a48b-ac8c6874bad1/combo_north_indian_sample.jpg,missing
+tools/compose_combo_plates.py,26,tool,serving.png,tools/serving.png,missing
+tools/compose_combo_plates.py,29,tool,serving.png,tools/serving.png,missing
+tools/compose_combo_plates.py,125,tool,hero-1200.webp,tools/hero-1200.webp,missing
+tools/compose_combo_plates.py,126,tool,hero-800.webp,tools/hero-800.webp,missing
+tools/compose_combo_plates.py,127,tool,serving-1200.webp,tools/serving-1200.webp,missing
+tools/compose_combo_plates.py,128,tool,serving-800.webp,tools/serving-800.webp,missing
+tools/cutout-sheet.py,24,tool,pdp-data.js,tools/pdp-data.js,missing
+tools/cutout-sheet.py,150,tool,ingredient-*.webp,tools/ingredient-*.webp,missing
+tools/cutout-sheet.py,155,tool,ingredient-{i}.webp,tools/ingredient-{i}.webp,missing
+tools/cutout-sheet.py,157,tool,ingredient-{i}.webp,tools/ingredient-{i}.webp,missing
+tools/cutout-sheet.py,166,tool,Could not find the GENERATED INGREDIENTS block in pdp-data.js,tools/Could not find the GENERATED INGREDIENTS block in pdp-data.js,missing
+tools/desktop-baseline.py,38,tool,%s/%s_home-top.png,tools/%s/%s_home-top.png,missing
+tools/desktop-baseline.py,40,tool,%s/%s_home-end.png,tools/%s/%s_home-end.png,missing
+tools/desktop-baseline.py,44,tool,%s/%s_%s.png,tools/%s/%s_%s.png,missing
+tools/desktop-baseline.py,48,tool,%s/%s_cart-drawer.png,tools/%s/%s_cart-drawer.png,missing
+tools/desktop-baseline.py,51,tool,%s/%s_auth-modal.png,tools/%s/%s_auth-modal.png,missing
+tools/desktop-baseline.py,118,tool,-diff.json,tools/-diff.json,missing
+tools/fetch-live-descriptions.py,201,tool,product-descriptions.js,product-descriptions.js,ok
+tools/fetch-pack-prices.py,35,tool,main.js,main.js,ok
+tools/fetch-pack-prices.py,95,tool,pack-prices.js,pack-prices.js,ok
+tools/fit-backs.py,45,tool,POHA 2.png,tools/POHA 2.png,missing
+tools/fit-backs.py,80,tool,{base}_{kind}.png,tools/{base}_{kind}.png,missing
+tools/fit-backs.py,80,tool,{base}.png,tools/{base}.png,missing
+tools/fit-backs.py,145,tool,{slug}-back-processed.png,tools/{slug}-back-processed.png,missing
+tools/fit-backs.py,145,tool,{slug}-back.webp,tools/{slug}-back.webp,missing
+tools/fit-backs.py,153,tool,{slug}-front-processed.png,tools/{slug}-front-processed.png,missing
+tools/fit-backs.py,157,tool,{slug}-front-640.webp,tools/{slug}-front-640.webp,missing
+tools/fit-backs.py,173,tool,{slug}-{kind}-{name}.webp,tools/{slug}-{kind}-{name}.webp,missing
+tools/fix-pack-size.py,95,tool,pouch3d-hero.png,tools/pouch3d-hero.png,missing
+tools/fix-pack-size.py,161,tool,combo-gallery.js,tools/combo-gallery.js,missing
+tools/fix-pack-size.py,174,tool,pdp/{slug}/gallery/{pic}-1200.webp,tools/pdp/{slug}/gallery/{pic}-1200.webp,missing
+tools/fix-pack-size.py,176,tool,pdp/{slug}/gallery/{pic}-1200.webp,tools/pdp/{slug}/gallery/{pic}-1200.webp,missing
+tools/fix-pack-size.py,183,tool,pdp/combos/{cid}/gallery/{pic}-1200.webp,tools/pdp/combos/{cid}/gallery/{pic}-1200.webp,missing
+tools/fix-pack-size.py,184,tool,pdp/combos/{cid}/stage.webp,tools/pdp/combos/{cid}/stage.webp,missing
+tools/fix-pack-size.py,185,tool,pack-size-inventory.csv,tools/pack-size-inventory.csv,missing
+tools/fix-pack-size.py,191,tool,pdp/{r['slug']}/gallery/{r['picture']}-1200.webp,tools/pdp/{r['slug']}/gallery/{r['picture']}-1200.webp,missing
+tools/fix-pack-size.py,199,tool,pdp/combos/{cid}/gallery/prep-1200.webp,tools/pdp/combos/{cid}/gallery/prep-1200.webp,missing
+tools/fix-pack-size.py,202,tool,pdp/combos/{cid}/gallery/ingredients-1200.webp,tools/pdp/combos/{cid}/gallery/ingredients-1200.webp,missing
+tools/fix-pack-size.py,204,tool,pack-size-results.csv,tools/pack-size-results.csv,missing
+tools/fix-pack-size.py,223,tool,{pic}.png,tools/{pic}.png,missing
+tools/fix-pack-size.py,228,tool,pouch3d-hero.png,tools/pouch3d-hero.png,missing
+tools/fix-pack-size.py,235,tool,{pic}-{size}.webp,tools/{pic}-{size}.webp,missing
+tools/fix-pack-size.py,277,tool,pack-size-fix-report.json,tools/pack-size-fix-report.json,missing
+tools/fix_meals_gallery.py,30,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/fix_meals_gallery.py,193,tool,{plate_name}.png,tools/{plate_name}.png,missing
+tools/fix_meals_gallery.py,202,tool,hero.png,tools/hero.png,missing
+tools/fix_meals_gallery.py,202,tool,serving.png,tools/serving.png,missing
+tools/fix_meals_gallery.py,202,tool,abroad.png,tools/abroad.png,missing
+tools/fix_meals_gallery.py,203,tool,hero.png,tools/hero.png,missing
+tools/fix_meals_gallery.py,203,tool,abroad.png,tools/abroad.png,missing
+tools/fix_meals_gallery.py,204,tool,hero.png,tools/hero.png,missing
+tools/fix_meals_gallery.py,204,tool,abroad.png,tools/abroad.png,missing
+tools/fix_meals_gallery.py,205,tool,hero.png,tools/hero.png,missing
+tools/fix_meals_gallery.py,205,tool,serving.png,tools/serving.png,missing
+tools/fix_meals_gallery.py,205,tool,abroad.png,tools/abroad.png,missing
+tools/fix_meals_gallery.py,206,tool,hero.png,tools/hero.png,missing
+tools/fix_meals_gallery.py,206,tool,abroad.png,tools/abroad.png,missing
+tools/fix_meals_gallery.py,207,tool,abroad.png,tools/abroad.png,missing
+tools/fix_tawa_abroad.py,29,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/fix_tawa_abroad.py,49,tool,abroad.png,tools/abroad.png,missing
+tools/fix_tawa_abroad.py,50,tool,abroad-marine-drive-old.png,tools/abroad-marine-drive-old.png,missing
+tools/fix_tawa_abroad.py,50,tool,abroad.png,tools/abroad.png,missing
+tools/fix_tawa_abroad.py,61,tool,abroad.png,tools/abroad.png,missing
+tools/generate_all_meals.py,30,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/generate_all_meals.py,59,tool,hero_gravy.png,tools/hero_gravy.png,missing
+tools/generate_all_meals.py,68,tool,hero_paneer.png,tools/hero_paneer.png,missing
+tools/generate_all_meals.py,78,tool,abroad_terrace.png,tools/abroad_terrace.png,missing
+tools/generate_all_meals.py,87,tool,abroad_window.png,tools/abroad_window.png,missing
+tools/generate_all_meals.py,169,tool,serving.png,tools/serving.png,missing
+tools/generate_all_meals.py,173,tool,hero.png,tools/hero.png,missing
+tools/generate_all_meals.py,174,tool,abroad.png,tools/abroad.png,missing
+tools/generate_all_meals.py,195,tool,hero.png,tools/hero.png,missing
+tools/generate_all_meals.py,195,tool,serving.png,tools/serving.png,missing
+tools/generate_all_meals.py,195,tool,abroad.png,tools/abroad.png,missing
+tools/generate_breakfast.py,30,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/generate_breakfast.py,152,tool,{plate_name}.png,tools/{plate_name}.png,missing
+tools/generate_breakfast.py,160,tool,hero.png,tools/hero.png,missing
+tools/generate_breakfast.py,160,tool,serving.png,tools/serving.png,missing
+tools/generate_breakfast.py,160,tool,abroad.png,tools/abroad.png,missing
+tools/generate_breakfast.py,167,tool,hero.png,tools/hero.png,missing
+tools/generate_breakfast.py,167,tool,serving.png,tools/serving.png,missing
+tools/generate_breakfast.py,167,tool,abroad.png,tools/abroad.png,missing
+tools/generate_desserts.py,29,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/generate_desserts.py,114,tool,pdp-data.js,tools/pdp-data.js,missing
+tools/generate_desserts.py,162,tool,{plate_name}.png,tools/{plate_name}.png,missing
+tools/generate_jain_rice.py,30,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/generate_jain_rice.py,58,tool,serving.png,tools/serving.png,missing
+tools/generate_jain_rice.py,65,tool,hero.png,tools/hero.png,missing
+tools/generate_jain_rice.py,72,tool,abroad.png,tools/abroad.png,missing
+tools/generate_jain_rice.py,83,tool,serving.png,tools/serving.png,missing
+tools/generate_jain_rice.py,90,tool,hero.png,tools/hero.png,missing
+tools/generate_jain_rice.py,97,tool,abroad.png,tools/abroad.png,missing
+tools/generate_jain_rice.py,108,tool,serving.png,tools/serving.png,missing
+tools/generate_jain_rice.py,115,tool,hero.png,tools/hero.png,missing
+tools/generate_jain_rice.py,122,tool,abroad.png,tools/abroad.png,missing
+tools/generate_jain_rice.py,133,tool,serving.png,tools/serving.png,missing
+tools/generate_jain_rice.py,140,tool,hero.png,tools/hero.png,missing
+tools/generate_jain_rice.py,147,tool,abroad.png,tools/abroad.png,missing
+tools/inspect_combo_plates.py,5,tool,main.js,main.js,ok
+tools/inspect_combo_plates.py,33,tool,serving.png,tools/serving.png,missing
+tools/list_combos.py,5,tool,main.js,main.js,ok
+tools/make-pack-variants-csv.py,18,tool,shopify_products.csv,shopify_products.csv,ok
+tools/make-pack-variants-csv.py,18,tool,shopify_pack_variants.csv,shopify_pack_variants.csv,ok
+tools/make-pack-variants-csv.py,25,tool,pack-prices.js,pack-prices.js,ok
+tools/mobile-check.py,247,tool,mobile-sheet.png,tools/mobile-sheet.png,ok
+tools/nutrition-card.py,115,tool,nutrition-1200.webp,tools/nutrition-1200.webp,missing
+tools/nutrition-card.py,116,tool,nutrition-800.webp,tools/nutrition-800.webp,missing
+tools/pdp-tints.py,73,tool,-front-processed.png,tools/-front-processed.png,missing
+tools/pdp-tints.py,73,tool,*-front-processed.png,tools/*-front-processed.png,missing
+tools/pdp-tints.py,81,tool,{slug}-front-processed.png,tools/{slug}-front-processed.png,missing
+tools/pdp-tints.py,88,tool,pdp-tints.css,tools/pdp-tints.css,missing
+tools/prep-scene.py,50,tool,scene-colors.css,tools/scene-colors.css,missing
+tools/prep-scene.py,193,tool,-480.webp,tools/-480.webp,missing
+tools/prep-scene.py,193,tool,-640.webp,tools/-640.webp,missing
+tools/prep-scene.py,198,tool,kettle.webp,tools/kettle.webp,missing
+tools/prep-scene.py,205,tool,-front-800.png,tools/-front-800.png,missing
+tools/prep-scene.py,208,tool,-front-800.webp,tools/-front-800.webp,missing
+tools/prep-scene.py,208,tool,-front-800.png,tools/-front-800.png,missing
+tools/prep-scene.py,211,tool,-front-m.webp,tools/-front-m.webp,missing
+tools/prep-scene.py,211,tool,-front-800.png,tools/-front-800.png,missing
+tools/prep-scene.py,218,tool,-front-processed.png,tools/-front-processed.png,missing
+tools/prep-scene.py,222,tool,-front-640.webp,tools/-front-640.webp,missing
+tools/prep-scene.py,222,tool,-front-processed.png,tools/-front-processed.png,missing
+tools/prep-scene.py,252,tool,kettle.webp,tools/kettle.webp,missing
+tools/prep-scene.py,258,tool,scenes/processed/kettle.webp,scenes/processed/kettle.webp,ok
+tools/prep-scene.py,263,tool,qa-kettle.png,tools/qa-kettle.png,missing
+tools/prep-scene.py,297,tool,scenes/processed/%s/bowl.webp,tools/scenes/processed/%s/bowl.webp,missing
+tools/prep-scene.py,298,tool,bowl-empty.webp,tools/bowl-empty.webp,missing
+tools/prep-scene.py,299,tool,scenes/processed/bowl-empty.webp,scenes/processed/bowl-empty.webp,ok
+tools/prep-scene.py,313,tool,scenes/processed/%s/dry.webp,tools/scenes/processed/%s/dry.webp,missing
+tools/prep-scene.py,314,tool,scenes/processed/%s/wet.webp,tools/scenes/processed/%s/wet.webp,missing
+tools/prep-scene.py,315,tool,scenes/processed/%s/ready.webp,tools/scenes/processed/%s/ready.webp,missing
+tools/prep-scene.py,334,tool,qa-%s.png,tools/qa-%s.png,missing
+tools/render-pouch-3d.py,46,tool,_pouch3d-raw.png,tools/_pouch3d-raw.png,missing
+tools/render-pouch-3d.py,48,tool,pouch3d-hero.png,tools/pouch3d-hero.png,missing
+tools/replace-backs.py,76,tool,{slug}-front-processed.png,tools/{slug}-front-processed.png,missing
+tools/replace-backs.py,110,tool,{slug}-back-processed.png,tools/{slug}-back-processed.png,missing
+tools/replace-backs.py,110,tool,{slug}-back.webp,tools/{slug}-back.webp,missing
+tools/replace-backs.py,112,tool,{slug}-back-processed.png,tools/{slug}-back-processed.png,missing
+tools/replace-backs.py,113,tool,{slug}-back.webp,tools/{slug}-back.webp,missing
+tools/run_batch_rice.py,41,tool,.temp.jpg,tools/.temp.jpg,missing
+tools/run_batch_rice.py,74,tool,hero.png,tools/hero.png,missing
+tools/run_batch_rice.py,75,tool,hero-old-ai.png,tools/hero-old-ai.png,missing
+tools/run_batch_rice.py,75,tool,hero.png,tools/hero.png,missing
+tools/run_batch_rice.py,76,tool,hero.png,tools/hero.png,missing
+tools/run_batch_rice.py,84,tool,abroad.png,tools/abroad.png,missing
+tools/run_batch_rice.py,85,tool,abroad-old-ai.png,tools/abroad-old-ai.png,missing
+tools/run_batch_rice.py,85,tool,abroad.png,tools/abroad.png,missing
+tools/run_batch_rice.py,86,tool,abroad.png,tools/abroad.png,missing
+tools/save_combo_serving.py,34,tool,hero-1200.webp,tools/hero-1200.webp,missing
+tools/save_combo_serving.py,35,tool,hero-800.webp,tools/hero-800.webp,missing
+tools/save_combo_serving.py,37,tool,serving-1200.webp,tools/serving-1200.webp,missing
+tools/save_combo_serving.py,38,tool,serving-800.webp,tools/serving-800.webp,missing
+tools/shopify-sync.py,31,tool,shopify-config.js,shopify-config.js,ok
+tools/shopify-sync.py,37,tool,main.js,main.js,ok
+tools/shopify-sync.py,52,tool,pack-prices.js,pack-prices.js,ok
+tools/shopify-sync.py,59,tool,main.js,main.js,ok
+tools/shopify-sync.py,117,tool,No storefrontAccessToken in shopify-config.js,tools/No storefrontAccessToken in shopify-config.js,missing
+tools/shopify-sync.py,177,tool,shopify-catalog.js,shopify-catalog.js,ok
+tools/shopify-sync.py,178,tool,wrote shopify-catalog.js,tools/wrote shopify-catalog.js,missing
+tools/sync-nutrition.py,37,tool,combo-gallery.js,tools/combo-gallery.js,missing
+tools/sync-nutrition.py,52,tool,main.js,main.js,ok
+tools/sync-nutrition.py,93,tool,main.js,main.js,ok
+tools/sync-weights.py,31,tool,combo-gallery.js,tools/combo-gallery.js,missing
+tools/sync-weights.py,44,tool,main.js,main.js,ok
+tools/sync-weights.py,66,tool,main.js,main.js,ok
+tools/test-auth-local.js,96,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,101,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,102,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,104,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,112,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,118,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,122,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,126,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,129,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,130,tool,logout.js,tools/logout.js,missing
+tools/test-auth-local.js,133,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,136,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,138,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,140,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,141,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,142,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,145,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,146,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,147,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,149,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,152,tool,signup.js,tools/signup.js,missing
+tools/test-auth-local.js,153,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,155,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,156,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,158,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,159,tool,me.js,tools/me.js,missing
+tools/test-auth-local.js,160,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,161,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,162,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,164,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,165,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,166,tool,update.js,tools/update.js,missing
+tools/test-auth-local.js,170,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,172,tool,recover.js,tools/recover.js,missing
+tools/test-auth-local.js,174,tool,recover.js,tools/recover.js,missing
+tools/test-auth-local.js,176,tool,recover.js,tools/recover.js,missing
+tools/test-auth-local.js,177,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,178,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,187,tool,google.js,tools/google.js,missing
+tools/test-auth-local.js,204,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,211,tool,login.js,tools/login.js,missing
+tools/test-auth-local.js,212,tool,me.js,tools/me.js,missing
+tools/upload-cooking-videos.py,22,tool,product-videos.js,tools/product-videos.js,missing
+tools/upload-cooking-videos.py,35,tool,cooking-video-map.csv,tools/cooking-video-map.csv,missing
+tools/upload-cooking-videos.py,63,tool,{r['slug']}.webp,tools/{r['slug']}.webp,missing
+tools/upload-cooking-videos.py,175,tool,videos/posters/{slug}.webp,tools/videos/posters/{slug}.webp,missing
+tools/verify-textures.py,17,tool,pouch-art/tex/{s}-{kind}-{size}.webp,tools/pouch-art/tex/{s}-{kind}-{size}.webp,missing
+tools/verify-textures.py,34,tool,pouch-art/tex/{s}-{kind}-800.webp,tools/pouch-art/tex/{s}-{kind}-800.webp,missing
+tools/verify-textures.py,36,tool,textures-sheet.png,tools/textures-sheet.png,ok
+tools/viewer-metrics.py,56,tool,{slug}_{w}_{view}_{tag}.png,tools/{slug}_{w}_{view}_{tag}.png,missing
+tools/viewer-metrics.py,98,tool,{slug}_{w}_{view}_{tag}.png,tools/{slug}_{w}_{view}_{tag}.png,missing
+tools/viewer-metrics.py,101,tool,{slug}_{w}_side_{tag}.png,tools/{slug}_{w}_side_{tag}.png,missing
+update_prototype_final.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+update_prototype_final.py,417,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_prototype_final.py,468,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_prototype_final.py,539,script,banner_travel_opt.jpg,banner_travel_opt.jpg,ok
+update_prototype_final.py,553,script,magic_travel_banner_mobile.jpg,magic_travel_banner_mobile.jpg,ok
+update_prototype_final.py,554,script,magic_travel_banner_desktop.jpg,magic_travel_banner_desktop.jpg,ok
+update_prototype_final.py,734,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+update_reels_authentic.py,5,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+update_reels_authentic.py,209,script,thumb_stLqnv38SHk.jpg,thumb_stLqnv38SHk.jpg,ok
+update_reels_authentic.py,212,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_reels_authentic.py,234,script,thumb_FQu7hM1dFAA.jpg,thumb_FQu7hM1dFAA.jpg,ok
+update_reels_authentic.py,237,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_reels_authentic.py,259,script,thumb_248l3FWQ5ls.jpg,thumb_248l3FWQ5ls.jpg,ok
+update_reels_authentic.py,262,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_reels_authentic.py,284,script,thumb_hveTAhjX3zk.jpg,thumb_hveTAhjX3zk.jpg,ok
+update_reels_authentic.py,287,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_reels_authentic.py,309,script,thumb_D8cyKsu4w84.jpg,thumb_D8cyKsu4w84.jpg,ok
+update_reels_authentic.py,312,script,magic_meals_logo_saffron.png,magic_meals_logo_saffron.png,ok
+update_reels_authentic.py,393,script,Magic Meals – Real Indian meals in 5 minutes.html,Magic Meals – Real Indian meals in 5 minutes.html,ok
+verify_3_changes.py,13,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+verify_3_changes.py,17,script,desktop_unobstructed_banner.png,desktop_unobstructed_banner.png,ok
+verify_3_changes.py,18,script,Saved desktop_unobstructed_banner.png,Saved desktop_unobstructed_banner.png,missing
+verify_3_changes.py,22,script,whatsapp_button_verified.png,whatsapp_button_verified.png,ok
+verify_3_changes.py,23,script,Saved whatsapp_button_verified.png,Saved whatsapp_button_verified.png,missing
+verify_3_changes.py,27,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+verify_3_changes.py,29,script,mobile_unobstructed_banner.png,mobile_unobstructed_banner.png,ok
+verify_3_changes.py,30,script,Saved mobile_unobstructed_banner.png,Saved mobile_unobstructed_banner.png,missing
+verify_3_changes.py,35,script,mobile_drawer_rice_first.png,mobile_drawer_rice_first.png,ok
+verify_3_changes.py,36,script,Saved mobile_drawer_rice_first.png,Saved mobile_drawer_rice_first.png,missing
+verify_all_user_fixes.py,10,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+verify_all_user_fixes.py,14,script,check_desktop_header_auth.png,check_desktop_header_auth.png,ok
+verify_all_user_fixes.py,15,script,Captured check_desktop_header_auth.png,Captured check_desktop_header_auth.png,missing
+verify_all_user_fixes.py,20,script,check_desktop_auth_modal.png,check_desktop_auth_modal.png,ok
+verify_all_user_fixes.py,21,script,Captured check_desktop_auth_modal.png,Captured check_desktop_auth_modal.png,missing
+verify_all_user_fixes.py,30,script,check_titles_bestsellers_combos.png,check_titles_bestsellers_combos.png,ok
+verify_all_user_fixes.py,31,script,Captured check_titles_bestsellers_combos.png,Captured check_titles_bestsellers_combos.png,missing
+verify_all_user_fixes.py,35,script,check_titles_freezedrying_reels.png,check_titles_freezedrying_reels.png,ok
+verify_all_user_fixes.py,36,script,Captured check_titles_freezedrying_reels.png,Captured check_titles_freezedrying_reels.png,missing
+verify_all_user_fixes.py,40,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+verify_all_user_fixes.py,44,script,check_mobile_header_auth.png,check_mobile_header_auth.png,ok
+verify_all_user_fixes.py,45,script,Captured check_mobile_header_auth.png,Captured check_mobile_header_auth.png,missing
+verify_all_user_fixes.py,50,script,check_mobile_burger_modern.png,check_mobile_burger_modern.png,ok
+verify_all_user_fixes.py,51,script,Captured check_mobile_burger_modern.png,Captured check_mobile_burger_modern.png,missing
+verify_hero.py,5,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+verify_hero.py,26,script,hero_final_{w}.png,hero_final_{w}.png,missing
+verify_hero.py,59,script,**/pouch_cutout_cropped.png,**/pouch_cutout_cropped.png,missing
+verify_hero.py,65,script,hero_fallback.png,hero_fallback.png,ok
+verify_mobile_banner.py,12,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+verify_mobile_banner.py,16,script,mobile_banner_fixed_verified.png,mobile_banner_fixed_verified.png,ok
+verify_mobile_banner.py,17,script,Saved mobile_banner_fixed_verified.png,Saved mobile_banner_fixed_verified.png,missing
+verify_mobile_banner.py,21,script,file:///C:/Users/Monica/Desktop/magicmeals/Magic%20Meals%20%E2%80%93%20Real%20Indian%20meals%20in%205%20minutes.html,file:/C:/Users/Monica/Desktop/magicmeals/Magic Meals – Real Indian meals in 5 minutes.html,missing
+verify_mobile_banner.py,23,script,desktop_banner_verified.png,desktop_banner_verified.png,ok
+verify_mobile_banner.py,24,script,Saved desktop_banner_verified.png,Saved desktop_banner_verified.png,missing
+verify_new_changes.py,10,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+verify_new_changes.py,14,script,check_promo_arrows_desktop.png,check_promo_arrows_desktop.png,ok
+verify_new_changes.py,15,script,Captured check_promo_arrows_desktop.png,Captured check_promo_arrows_desktop.png,missing
+verify_new_changes.py,22,script,check_freeze_drying_desktop.png,check_freeze_drying_desktop.png,ok
+verify_new_changes.py,23,script,Captured check_freeze_drying_desktop.png,Captured check_freeze_drying_desktop.png,missing
+verify_new_changes.py,27,script,file:///C:/Users/Monica/Desktop/magicmeals/index.html,file:/C:/Users/Monica/Desktop/magicmeals/index.html,missing
+verify_new_changes.py,31,script,check_mobile_top_no_strip.png,check_mobile_top_no_strip.png,ok
+verify_new_changes.py,32,script,Captured check_mobile_top_no_strip.png,Captured check_mobile_top_no_strip.png,missing
+verify_new_changes.py,39,script,check_freeze_drying_mobile.png,check_freeze_drying_mobile.png,ok
+verify_new_changes.py,40,script,Captured check_freeze_drying_mobile.png,Captured check_freeze_drying_mobile.png,missing
+verify_new_changes.py,47,script,check_reels_header_mobile.png,check_reels_header_mobile.png,ok
+verify_new_changes.py,48,script,Captured check_reels_header_mobile.png,Captured check_reels_header_mobile.png,missing
+videos/product-videos.js,2,site,videos/posters/fried-rice.webp,videos/posters/fried-rice.webp,ok
+videos/product-videos.js,2,site,videos/posters/idli-sambar.webp,videos/posters/idli-sambar.webp,ok
+videos/product-videos.js,2,site,videos/posters/dal-makhani.webp,videos/posters/dal-makhani.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-veg-kadhai.webp,videos/posters/jain-veg-kadhai.webp,ok
+videos/product-videos.js,2,site,videos/posters/rawa-sheera.webp,videos/posters/rawa-sheera.webp,ok
+videos/product-videos.js,2,site,videos/posters/pav-bhaji.webp,videos/posters/pav-bhaji.webp,ok
+videos/product-videos.js,2,site,videos/posters/veg-kadhai.webp,videos/posters/veg-kadhai.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-paneer-bhurji.webp,videos/posters/jain-paneer-bhurji.webp,ok
+videos/product-videos.js,2,site,videos/posters/veg-makhanwala.webp,videos/posters/veg-makhanwala.webp,ok
+videos/product-videos.js,2,site,videos/posters/schezwan-rice.webp,videos/posters/schezwan-rice.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-schezwan-rice.webp,videos/posters/jain-schezwan-rice.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-veg-makhanwala.webp,videos/posters/jain-veg-makhanwala.webp,ok
+videos/product-videos.js,2,site,videos/posters/paneer-bhurji.webp,videos/posters/paneer-bhurji.webp,ok
+videos/product-videos.js,2,site,videos/posters/fried-rice-manchurian.webp,videos/posters/fried-rice-manchurian.webp,ok
+videos/product-videos.js,2,site,videos/posters/mumbai-misal.webp,videos/posters/mumbai-misal.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-rajma-masala.webp,videos/posters/jain-rajma-masala.webp,ok
+videos/product-videos.js,2,site,videos/posters/paneer-butter-masala.webp,videos/posters/paneer-butter-masala.webp,ok
+videos/product-videos.js,2,site,videos/posters/pind-ke-chhole.webp,videos/posters/pind-ke-chhole.webp,ok
+videos/product-videos.js,2,site,videos/posters/gujarati-dal.webp,videos/posters/gujarati-dal.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-paneer-butter-masala.webp,videos/posters/jain-paneer-butter-masala.webp,ok
+videos/product-videos.js,2,site,videos/posters/bhindi-masala.webp,videos/posters/bhindi-masala.webp,ok
+videos/product-videos.js,2,site,videos/posters/aam-ras.webp,videos/posters/aam-ras.webp,ok
+videos/product-videos.js,2,site,videos/posters/dal-tadka.webp,videos/posters/dal-tadka.webp,ok
+videos/product-videos.js,2,site,videos/posters/jeera-rice.webp,videos/posters/jeera-rice.webp,ok
+videos/product-videos.js,2,site,videos/posters/gajar-halwa.webp,videos/posters/gajar-halwa.webp,ok
+videos/product-videos.js,2,site,videos/posters/rajma-masala.webp,videos/posters/rajma-masala.webp,ok
+videos/product-videos.js,2,site,videos/posters/tawa-pulao.webp,videos/posters/tawa-pulao.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-poha.webp,videos/posters/jain-poha.webp,ok
+videos/product-videos.js,2,site,videos/posters/veg-biryani.webp,videos/posters/veg-biryani.webp,ok
+videos/product-videos.js,2,site,videos/posters/masala-khichdi-kadhi.webp,videos/posters/masala-khichdi-kadhi.webp,ok
+videos/product-videos.js,2,site,videos/posters/upma.webp,videos/posters/upma.webp,ok
+videos/product-videos.js,2,site,videos/posters/jain-masala-khichdi-kadhi.webp,videos/posters/jain-masala-khichdi-kadhi.webp,ok
+videos/product-videos.js,2,site,videos/posters/kanda-poha.webp,videos/posters/kanda-poha.webp,ok
+videos/product-videos.js,2,site,videos/posters/dal-khichdi.webp,videos/posters/dal-khichdi.webp,ok

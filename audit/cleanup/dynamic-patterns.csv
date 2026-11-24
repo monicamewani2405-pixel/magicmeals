@@ -1,0 +1,7 @@
+source,line,kind,pattern
+main.js,2054,site,pdp/combos/${p.id}/stage.webp
+main.js,2577,site,policies/${key}.html
+main.js,3832,site,pouch-art/tex/${product.id}-front-${texSize}.webp
+main.js,3832,site,`pouch-art/tex/${product.id}-front-${texSize}.webp
+main.js,3833,site,`pouch-art/tex/${product.id}-back-${texSize}.webp
+main.js,3833,site,pouch-art/tex/${product.id}-back-${texSize}.webp
