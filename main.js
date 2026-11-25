@@ -2051,6 +2051,8 @@
       const ingredientsHtml = window.MMIngredients ? window.MMIngredients.html(p, id => (PRODUCTS.find(x => x.id === id) || {}).title) : '';
       // combos: the same 3-column page as the singles (pdp/pdp-scene.js, flat mode): the pouches together instead of the 3D pouch,
       // then the vertical image cards. Images come from tools/compose-combo-gallery.py (pdp/combos/<id>/).
+      // combos: tabs with the cooking video of each pouch (videos/video-facade.js), shown in the Preparation Guide in place of the generic clip
+      const comboVideoHtml = (p.category === 'Combos' && window.MMVideo && window.MMVideo.comboHtml) ? window.MMVideo.comboHtml(p, ((window.COMBO_PDP || {})[p.id] || {}).dishes) : '';
       const comboStage = (p.category === 'Combos' && window.COMBO_PDP && window.COMBO_PDP[p.id]) ? `pdp/combos/${p.id}/stage.webp` : null;
 
       return `
@@ -2204,8 +2206,8 @@
             </div>
 
             <div class="pdp-hiw-grid">
-              <!-- Left: Real Video Reel -->
-              <div class="pdp-hiw-video-card">
+              <!-- Left: Real Video Reel (a combo with cooking videos: one tab per pouch) -->
+              ${comboVideoHtml ? `<div class="pdp-hiw-combo-video">${comboVideoHtml}</div>` : `<div class="pdp-hiw-video-card">
                 ${(window.MMVideo && window.MMVideo.cardHtml(p)) || `<video
                   class="pdp-hiw-video"
                   src="https://magicmeals.shop/wp-content/uploads/2026/04/WhatsApp-Video-2026-04-09-at-1.03.01-PM-1-1.mp4"
@@ -2218,7 +2220,7 @@
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                   <span>Real Preparation Video</span>
                 </div>
-              </div>
+              </div>`}
 
               <!-- Right: the four steps (same text as How to Prepare above; how-to-prepare.js) -->
               <div class="pdp-hiw-steps">

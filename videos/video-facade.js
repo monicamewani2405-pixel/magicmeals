@@ -80,7 +80,7 @@
     v.poster = e.poster;
     if (auto) { v.muted = true; v.setAttribute('muted', ''); v.loop = true; }
     v.setAttribute('aria-label', (btn.getAttribute('aria-label') || '').replace(/^Play video: /, 'Video: '));
-    v.addEventListener('error', function () { fail(card, btn, v, auto); }, { once: true });
+    v.addEventListener('error', function () { if (v._mmvDead) return; fail(card, btn, v, auto); }, { once: true });
     v.src = pick(e, height).u;
     card.insertBefore(v, btn);
     btn.hidden = true;
@@ -169,5 +169,139 @@
     else document.querySelectorAll('video.mmv-video').forEach(function (v) { if (v._mmvAutoPaused && v.paused) { var r = v.getBoundingClientRect(); if (r.bottom > 0 && r.top < window.innerHeight) { v._mmvAutoPaused = false; var p = v.play(); if (p && p.catch) p.catch(function () {}); } } });
   });
 
-  window.MMVideo = { cardHtml: cardHtml, observe: observe, play: play, sound: sound, stop: stop };
+
+  /* ------------------------------------------------------------------------------------------------------------------------------------------
+     COMBO PAGES: ONE card with a tab per pouch ("1 Rajma Masala", "2 Jeera Rice", ...). No new video files: each tab reuses the cooking video that
+     the single product already has (window.PRODUCT_VIDEOS, hosted by Shopify). Nothing but the selected tab's poster is requested; a video file is
+     requested only after a play tap, and only for the selected tab. Switching tabs stops and removes the player. Never autoplays.
+     main.js: MMVideo.comboHtml(product, dishes)  (dishes = window.COMBO_PDP[id].dishes, pouch-art ids). This file handles its own clicks and keys.
+      COMBO_VIDEOS_ENABLED: one switch. true = every combo shows the card (a component without a video gets no tab; none at all = no card, the page keeps the generic clip). false = off everywhere.
+     ------------------------------------------------------------------------------------------------------------------------------------------ */
+  var COMBO_VIDEOS_ENABLED = true;
+  function comboEnabled() { return COMBO_VIDEOS_ENABLED; }
+  var comboSeq = 0;
+
+  function titleCase(id) { return String(id).split('-').map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' '); }
+
+  // short names: the combo title ends with "(A + B + C)" in the same order as the dishes; otherwise the dish id, spelled out
+  function comboNames(p, dishes) {
+    var m = /\(([^)]+)\)\s*$/.exec(p.title || '');
+    var parts = m ? m[1].split(/\s+\+\s+/) : [];
+    return dishes.map(function (d, i) { return (parts.length === dishes.length && parts[i]) ? parts[i] : titleCase(d); });
+  }
+
+  function comboHtml(p, dishes) {
+    if (!p || !comboEnabled(p.id) || !dishes || !dishes.length) return '';
+    var uniq = [];
+    dishes.forEach(function (d) { if (uniq.indexOf(d) < 0) uniq.push(d); });
+    var names = comboNames(p, uniq);
+    var tabs = [];
+    uniq.forEach(function (d, i) { if (entryFor(d)) tabs.push({ dish: d, name: names[i], e: entryFor(d) }); });
+    if (!tabs.length) return '';
+    var id = 'vidc' + (++comboSeq);
+    var first = tabs[0];
+    var strip = tabs.length < 2 ? '' :
+      '<div class="vid-tabs" role="tablist" aria-label="Pouches in this combo">' + tabs.map(function (t, i) {
+        return '<button type="button" role="tab" class="vid-tab" id="' + id + '-tab-' + i + '" aria-selected="' + (i === 0) + '" aria-controls="' + id + '-panel"' +
+          ' tabindex="' + (i === 0 ? 0 : -1) + '" data-vid-tab="' + i + '" data-vid-dish="' + esc(t.dish) + '" data-vid-name="' + esc(t.name) + '">' +
+          '<span class="vid-tab-n" aria-hidden="true">' + (i + 1) + '</span> ' + esc(t.name) + '</button>';
+      }).join('') + '</div>';
+    return '<section class="vid-combo" data-vid-combo aria-label="Watch how to prepare">' +
+      '<h5 class="vid-combo-title">Watch how to prepare</h5>' + strip +
+      '<div class="vid-panel" id="' + id + '-panel" role="tabpanel" tabindex="0" aria-labelledby="' + id + '-tab-0">' +
+        '<div class="vid-stage">' + comboPoster(first.dish, first.name, first.e) + '</div>' +
+      '</div></section>';
+  }
+
+  function comboPoster(dish, name, e) {
+    return '<button type="button" class="vid-play" data-vid-play data-vid-dish="' + esc(dish) + '" aria-label="Play video: how to prepare ' + esc(name) + '">' +
+      '<img class="mmv-poster" src="' + esc(e.poster) + '" alt="' + esc(name) + ': how to prepare (video preview)" width="' + (e.w || 478) + '" height="' + (e.h || 850) + '" decoding="async">' +
+      '<span class="mmv-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>' +
+      '<span class="mmv-dur" aria-hidden="true">' + mmss(e.duration) + '</span></button>';
+  }
+
+  // pause, drop the source, reload (frees the connection), remove the node
+  function stopPlayer(stage) {
+    var v = stage.querySelector('video');
+    if (v) {
+      v._mmvDead = true;
+      try { v.pause(); } catch (_) { /* ignore */ }
+      v.removeAttribute('src');
+      try { v.load(); } catch (_) { /* ignore */ }
+      if (v.parentNode) v.parentNode.removeChild(v);
+    }
+    clearBits(stage);
+    var n = stage.querySelector('.vid-next'); if (n) n.parentNode.removeChild(n);
+  }
+
+  function tabsOf(root) { return [].slice.call(root.querySelectorAll('[role="tab"][data-vid-tab]')); }
+
+  // show tab i: its poster only (the video is requested on a play tap, never here)
+  function selectTab(root, i, focusPlay) {
+    var tabs = tabsOf(root), tab = tabs[i];
+    var stage = root.querySelector('.vid-stage');
+    if (!tab || !stage) return;
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+    root.querySelector('[role="tabpanel"]').setAttribute('aria-labelledby', tab.id);
+    stopPlayer(stage);
+    var e = entryFor(tab.dataset.vidDish);
+    if (!e) return;
+    stage.innerHTML = comboPoster(tab.dataset.vidDish, tab.dataset.vidName, e);
+    if (focusPlay) { var b = stage.querySelector('.vid-play'); if (b) try { b.focus({ preventScroll: true }); } catch (_) { /* ignore */ } }
+  }
+
+  function currentIndex(root) {
+    var tabs = tabsOf(root), at = 0;
+    tabs.forEach(function (t, k) { if (t.getAttribute('aria-selected') === 'true') at = k; });
+    return at;
+  }
+
+  // the visitor tapped play on the selected tab's poster
+  function comboPlay(btn) {
+    var stage = btn.parentNode, root = btn.closest('[data-vid-combo]');
+    var e = entryFor(btn.dataset.vidDish);
+    if (!stage || !root || !e) return;
+    var v = makeVideo(stage, btn, e, manualHeight(), false);
+    v.addEventListener('ended', function () {
+      var tabs = tabsOf(root), at = currentIndex(root);
+      if (at + 1 >= tabs.length || v._mmvDead || stage.querySelector('.vid-next')) return;   // after the last video: nothing extra
+      var nb = document.createElement('button');
+      nb.type = 'button'; nb.className = 'vid-next'; nb.setAttribute('data-vid-next', '');
+      nb.textContent = 'Watch next: ' + tabs[at + 1].dataset.vidName;
+      stage.appendChild(nb);
+    });
+    var p = v.play();
+    if (p && p.catch) p.catch(function (err) {
+      if (err && (err.name === 'NotAllowedError' || err.name === 'AbortError')) return;
+      fail(stage, btn, v, false);
+    });
+    try { v.focus({ preventScroll: true }); } catch (_) { /* ignore */ }
+  }
+
+  document.addEventListener('click', function (ev) {
+    var t = ev.target && ev.target.closest ? ev.target.closest('[data-vid-tab], [data-vid-play], [data-vid-next]') : null;
+    if (!t) return;
+    var root = t.closest('[data-vid-combo]');
+    if (!root) return;
+    if (t.hasAttribute('data-vid-tab')) selectTab(root, +t.dataset.vidTab, false);
+    else if (t.hasAttribute('data-vid-play')) comboPlay(t);
+    else selectTab(root, currentIndex(root) + 1, true);
+  });
+
+  document.addEventListener('keydown', function (ev) {
+    var t = ev.target && ev.target.closest ? ev.target.closest('[role="tab"][data-vid-tab]') : null;
+    if (!t) return;
+    var root = t.closest('[data-vid-combo]'); if (!root) return;
+    var n = tabsOf(root).length, i = +t.dataset.vidTab, to = -1;
+    if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') to = (i + 1) % n;
+    else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') to = (i - 1 + n) % n;
+    else if (ev.key === 'Home') to = 0;
+    else if (ev.key === 'End') to = n - 1;
+    if (to < 0) return;
+    ev.preventDefault();
+    selectTab(root, to, false);
+    tabsOf(root)[to].focus();
+  });
+
+  window.MMVideo = { cardHtml: cardHtml, observe: observe, play: play, sound: sound, stop: stop, comboHtml: comboHtml };
 })();
