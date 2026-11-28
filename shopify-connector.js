@@ -87,7 +87,7 @@
     lines.forEach(function (l) { if (ids.indexOf(l.id) < 0) ids.push(l.id); });
     if (!ids.length) return Promise.resolve([]);
     var q = 'query {' + ids.map(function (id, i) {
-      return 'p' + i + ': product(handle: ' + JSON.stringify(id) + ') { id handle title availableForSale variants(first: 50) { edges { node { id title sku availableForSale price { amount } selectedOptions { name value } } } } }';
+      return 'p' + i + ': product(handle: ' + JSON.stringify(id) + ') { id handle title availableForSale variants(first: 50) { edges { node { id title sku availableForSale currentlyNotInStock price { amount } selectedOptions { name value } } } } }';
     }).join(' ') + '}';
     return gql(q).then(function (data) {
       var live = {};
@@ -110,7 +110,11 @@
         var isPack = variantName.indexOf(PACK_LABEL[l.pack].toLowerCase()) >= 0;
         if (l.pack === '1' ? !isSingle : !isPack) { problems.push(name + ': the pinned Shopify variant is "' + variant.title + '", which is not that pack.'); return; }
         if (pinned.sku && variant.sku !== pinned.sku) { problems.push(name + ': its SKU in Shopify changed (' + variant.sku + ').'); return; }
-        if (!variant.availableForSale) { problems.push(name + ' is out of stock.'); return; }
+        if (!variant.availableForSale || variant.currentlyNotInStock) { problems.push(name + ' is out of stock.'); return; }   // no stock = out, even if Shopify would still sell it
+        // the Single pack is the master: when it is out, every pack of the product is out (same rule as the site, stock-status.js)
+        var singlePin = catalog()[l.id].variants && catalog()[l.id].variants['1'], singleNode = null;
+        prod.variants.edges.forEach(function (e) { if (singlePin && e.node.id === singlePin.gid) singleNode = e.node; });
+        if (singleNode && (!singleNode.availableForSale || singleNode.currentlyNotInStock)) { problems.push(name + ' is out of stock.'); return; }
         var price = parseFloat(variant.price.amount);
         if (Math.abs(price - l.unit) > 0.5) { problems.push(name + ': price differs. The site shows ' + money(l.unit) + ' but Shopify charges ' + money(price) + '.'); return; }
         out.push({ merchandiseId: variant.id, productId: String(prod.id).split('/').pop(), quantity: l.qty, sku: variant.sku, label: name });

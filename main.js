@@ -1668,15 +1668,17 @@
 
     function renderCard(p) {
       const q = getQtyInCart(p.id);
+      const soldOut = !!(window.MMStock && window.MMStock.soldOut(p.id));   // live stock from Shopify (stock-status.js)
       const discount = p.mrp > p.price ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;   // no markdown: show the price only
       return `
-        <div class="product-card" data-p="${p.id}">
+        <div class="product-card${soldOut ? ' is-soldout' : ''}" data-p="${p.id}">
           <div class="card-thumb">
             <img src="${thumbSrc(p.img)}" alt="${p.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
             <div class="card-badges">
               ${p.jain ? '<span class="badge-jain">Jain Friendly</span>' : ''}
               
             </div>
+            ${soldOut ? '<span class="soldout-badge">Sold out</span>' : ''}
             <div class="veg-corner" title="100% Vegetarian"></div>
           </div>
           <div class="card-body">
@@ -1695,7 +1697,7 @@
               <span class="card-discount">${discount}% OFF</span>` : ''}
             </div>
             <div class="card-action">
-              ${q > 0 ? `
+              ${soldOut ? '<button type="button" class="btn-add btn-soldout" disabled aria-disabled="true">Sold out</button>' : q > 0 ? `
                 <div class="qty-stepper">
                   <button data-minus="${p.id}" aria-label="Decrease quantity">−</button>
                   <span>${q} in box</span>
@@ -2041,6 +2043,10 @@
 
     function renderProductView() {
       const p = PRODUCTS.find(x => x.id === State.productId) || PRODUCTS[0];
+      const stock = window.MMStock;   // live stock from Shopify (stock-status.js)
+      const soldOut = !!(stock && stock.soldOut(p.id));
+      // a sold-out pack cannot stay selected while another pack is still available
+      if (!soldOut && stock && stock.packSoldOut(p.id, State.pdpPack)) { const open = packSizes(p).find(n => !stock.packSoldOut(p.id, n)); if (open) State.pdpPack = open; }
       const packPrice = calcPrice(p, State.pdpPack);
       const totalAmount = packPrice * State.pdpQty;
       const related = PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
@@ -2056,7 +2062,7 @@
       const comboStage = (p.category === 'Combos' && window.COMBO_PDP && window.COMBO_PDP[p.id]) ? `pdp/combos/${p.id}/stage.webp` : null;
 
       return `
-        <div class="pdp-view">
+        <div class="pdp-view${soldOut ? ' is-soldout' : ''}">
           <div class="pdp-back" data-go="shop">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
             Back to All Meals
@@ -2110,7 +2116,7 @@
                   <b>${p.rating}</b> (${p.reviews} verified customer reviews)
                 </span>
                 <span style="color:var(--text-muted);">•</span>` : ''}
-                <span style="font-size:13px; font-weight:600; color:var(--brand-primary);">In Stock • Ships in 24 hrs</span>
+                ${soldOut ? '<span class="pdp-soldout-note">Sold out</span>' : '<span style="font-size:13px; font-weight:600; color:var(--brand-primary);">In Stock • Ships in 24 hrs</span>'}
               </div>
 
               <h1 class="pdp-title">${p.title}</h1>
@@ -2123,7 +2129,7 @@
                 <label style="font-size:13.5px; font-weight:700; color:var(--text); display:block; margin-bottom:6px;">Select Pack Size:</label>
                 <div class="pack-selector" style="--packs:${packSizes(p).length}">
                   ${packSizes(p).map(n => `
-                  <button class="pack-opt" data-pdp-pack="${n}" aria-pressed="${State.pdpPack === n}">
+                  <button class="pack-opt${stock && stock.packSoldOut(p.id, n) ? ' is-out' : ''}" data-pdp-pack="${n}" aria-pressed="${State.pdpPack === n}"${stock && stock.packSoldOut(p.id, n) ? ' disabled' : ''}>
                     <b>${n === '1' ? 'Single Pack' : 'Pack of ' + n}</b>
                     <span class="p-price">${formatINR(calcPrice(p, n))}</span>
                     ${n === '1' ? '<small style="color:var(--text-muted); font-size:11px;">Standard</small>'
@@ -2137,12 +2143,12 @@
               <!-- Quantity & Add to Cart -->
               <div class="pdp-action-bar">
                 <div class="qty-stepper" style="width:130px; border-radius:12px;">
-                  <button id="pdpQtyMinus" aria-label="Decrease quantity">−</button>
+                  <button id="pdpQtyMinus" aria-label="Decrease quantity"${soldOut ? ' disabled' : ''}>−</button>
                   <span>${State.pdpQty}</span>
-                  <button id="pdpQtyPlus" aria-label="Increase quantity">+</button>
+                  <button id="pdpQtyPlus" aria-label="Increase quantity"${soldOut ? ' disabled' : ''}>+</button>
                 </div>
-                <button class="btn" style="flex:1;" id="pdpAddToCartBtn">
-                  Add to Meal Box • ${formatINR(totalAmount)}
+                <button class="btn" style="flex:1;" id="pdpAddToCartBtn"${soldOut ? ' disabled aria-disabled="true"' : ''}>
+                  ${soldOut ? 'Sold out' : `Add to Meal Box • ${formatINR(totalAmount)}`}
                 </button>
               </div>
 
@@ -2439,13 +2445,15 @@
               <div class="byob-meals-grid">
                 ${pantryMeals.map(p => {
                   const inBoxCount = State.byobSlots.filter(id => id === p.id).length;
+                  const soldOut = !!(window.MMStock && window.MMStock.soldOut(p.id));
                   return `
-                    <div class="byob-meal-card" data-p="${p.id}">
+                    <div class="byob-meal-card${soldOut ? ' is-soldout' : ''}" data-p="${p.id}">
                       <div class="byob-meal-thumb">
                         <img src="${thumbSrc(p.img)}" alt="${p.title}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.src='https://magicmeals.shop/wp-content/uploads/2026/08/Magic-Meals-300x300.jpg'">
                         <div class="card-badges">
                           ${p.jain ? '<span class="badge-jain">Jain</span>' : ''}
                         </div>
+                        ${soldOut ? '<span class="soldout-badge">Sold out</span>' : ''}
                         <div class="veg-corner"></div>
                       </div>
                       <div class="byob-meal-body">
@@ -2454,9 +2462,9 @@
                           <span>${p.weight}${SHOW_SPICE_LEVEL ? ' • ' + spiceIcon(p, '🌿') : ''}</span>
                           <span class="byob-meal-price">${formatINR(p.price)}</span>
                         </div>
-                        <button type="button" class="btn-byob-add ${inBoxCount > 0 ? 'in-box' : ''}" data-byob-add="${p.id}">
+                        ${soldOut ? '<button type="button" class="btn-byob-add btn-soldout" disabled aria-disabled="true">Sold out</button>' : `<button type="button" class="btn-byob-add ${inBoxCount > 0 ? 'in-box' : ''}" data-byob-add="${p.id}">
                           ${inBoxCount > 0 ? `✓ In Box (${inBoxCount})` : '+ Add to Box'}
-                        </button>
+                        </button>`}
                       </div>
                     </div>
                   `;
@@ -3184,6 +3192,10 @@
     }
 
     function modifyCart(itemKey, delta) {
+      if (delta > 0 && window.MMStock && itemKey.indexOf('BYOB') !== 0) {
+        const [soldId, soldPack] = itemKey.split('|');
+        if (window.MMStock.packSoldOut(soldId, soldPack || '1')) { showToast('Sorry, this one is sold out right now.'); return; }
+      }
       State.cart[itemKey] = (State.cart[itemKey] || 0) + delta;
       if (State.cart[itemKey] <= 0) {
         delete State.cart[itemKey];
@@ -3268,6 +3280,7 @@
       if (target.dataset.byobAdd) {
         e.stopPropagation();
         const pId = target.dataset.byobAdd;
+        if (window.MMStock && window.MMStock.soldOut(pId)) { showToast('Sorry, this dish is sold out right now.'); return; }
         if (State.byobSlots.length >= State.byobSize) {
           showToast(`Box is full (${State.byobSize}/${State.byobSize})! Complete your box or remove a dish.`);
           return;
@@ -3355,6 +3368,7 @@
       if (target.dataset.add) {
         e.stopPropagation();
         const pId = target.dataset.add;
+        if (window.MMStock && window.MMStock.soldOut(pId)) { showToast('Sorry, this dish is sold out right now.'); return; }
         const card = target.closest('.product-card');
         const img = card ? card.querySelector('.card-thumb img') : null;
         flyToCart(img || target);
@@ -3420,6 +3434,7 @@
       }
 
       if (target.dataset.pdpPack) {
+        if (window.MMStock && window.MMStock.packSoldOut(State.productId, target.dataset.pdpPack)) return;
         State.pdpPack = target.dataset.pdpPack;
         document.querySelectorAll('.pack-opt').forEach(btn => {
           btn.setAttribute('aria-pressed', btn.dataset.pdpPack === State.pdpPack ? 'true' : 'false');
@@ -3450,6 +3465,7 @@
       }
 
       if (target.id === 'pdpAddToCartBtn') {
+        if (window.MMStock && window.MMStock.packSoldOut(State.productId, State.pdpPack)) { showToast('Sorry, this is sold out right now.'); return; }
         const itemKey = `${State.productId}|${State.pdpPack}`;
         const pdpImg = document.querySelector('.pdp-gallery img');
         flyToCart(pdpImg || target);
@@ -3658,6 +3674,7 @@
 
     initRoute();
     window.addEventListener('hashchange', initRoute);
+    if (window.MMStock) window.MMStock.onChange(() => { renderApp(); renderCartDrawer(); });   // stock-status.js: a dish sold out (or back) since the page loaded
     
       // Auth modal (open/close, tabs, forms, profile) lives in auth.js
 

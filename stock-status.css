@@ -1,0 +1,75 @@
+/* Sold-out dishes (stock-status.js): the picture is blurred and washed out, a "Sold out" label is shown, and nothing can be added.
+   Colours and radii come from :root variables only. Filters sit on <img> and <canvas> leaves only, never on a pinned or fixed ancestor. */
+.soldout-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--white);
+  background: rgb(var(--black-rgb) / 0.78);
+  pointer-events: none;
+}
+.product-card.is-soldout .card-thumb img,
+.byob-meal-card.is-soldout .byob-meal-thumb img,
+.pdp-view.is-soldout .pdp-gallery img,
+.pdp-view.is-soldout .pdp-gallery canvas,
+.pdp-view.is-soldout .pdp-3d-canvas-container canvas,
+.pdp-view.is-soldout .pdp-card img {
+  filter: blur(4px) grayscale(0.7);
+  opacity: 0.6;
+}
+.product-card.is-soldout .card-thumb,
+.byob-meal-card.is-soldout .byob-meal-thumb { position: relative; }
+.btn-soldout,
+.btn-soldout:hover {
+  cursor: not-allowed;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border-color: var(--border);
+  box-shadow: none;
+  transform: none;
+}
+.pdp-soldout-note {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.pdp-view.is-soldout #pdpAddToCartBtn,
+.pdp-view.is-soldout #pdpAddToCartBtn:hover {
+  cursor: not-allowed;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border-color: var(--border);
+  box-shadow: none;
+  transform: none;
+}
+.pdp-view.is-soldout .qty-stepper { opacity: 0.45; }
+.pdp-view.is-soldout .qty-stepper button { cursor: not-allowed; }
+.pack-opt.is-out { opacity: 0.5; cursor: not-allowed; }
+.pack-opt.is-out small { color: var(--text-muted); }
+/* the 3D pouch on the product page gets the label too (a pseudo-element on a leaf container, not on the pinned stage) */
+.pdp-view.is-soldout .pdp-3d-canvas-container::after {
+  content: 'Sold out';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgb(var(--black-rgb) / 0.78);
+  pointer-events: none;
+}
