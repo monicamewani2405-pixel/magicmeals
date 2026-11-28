@@ -19,3 +19,6 @@ _old-backs/
 *.py
 *.md
 TASK-*
+shopify-theme/
+shopify-theme-preview/
+shopify-theme.zip

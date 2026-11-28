@@ -1,0 +1,32 @@
+/* Shopify theme: the plain pages around the site (cart, 404, gift card). The site itself is on the home page and uses style.css.
+   Brand colours are the same tokens as :root in style.css. */
+:root { --brand-primary: #0173C2; --brand-primary-dark: #014E82; --brand-primary-tint: #E3F1FB; --text: #000000; --text-muted: #555555; --border: #DADADA; --bg: #FFFFFF; --bg-alt: #ECECEC; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); line-height: 1.5; }
+a { color: var(--brand-primary); }
+.mm-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 20px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.mm-bar-logo img { display: block; height: 44px; width: auto; }
+.mm-bar-nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+.mm-bar-nav a { text-decoration: none; color: var(--text); }
+.mm-page { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
+.mm-foot { text-align: center; padding: 20px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+.mm-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border: 0; border-radius: 12px; font: inherit; font-size: 15px; font-weight: 700; color: var(--bg); background: var(--brand-primary); text-decoration: none; cursor: pointer; }
+.mm-btn:hover { background: var(--brand-primary-dark); }
+.mm-btn-light { color: var(--brand-primary); background: var(--brand-primary-tint); }
+.mm-btn-light:hover { background: var(--bg-alt); }
+.mm-cart h1 { margin: 0 0 18px; font-size: 28px; }
+.mm-cart-list { list-style: none; margin: 0; padding: 0; }
+.mm-cart-line { display: grid; grid-template-columns: 80px 1fr 84px 96px; gap: 8px 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.mm-cart-img img { display: block; width: 80px; height: 80px; object-fit: contain; border-radius: 10px; background: var(--bg-alt); }
+.mm-cart-title { font-weight: 700; text-decoration: none; color: var(--text); }
+.mm-cart-variant, .mm-cart-disc { margin: 2px 0 0; font-size: 13px; color: var(--text-muted); }
+.mm-cart-qty input { width: 72px; min-height: 42px; padding: 0 8px; border: 1.5px solid var(--border); border-radius: 10px; font: inherit; text-align: center; }
+.mm-cart-price { font-weight: 700; text-align: right; }
+.mm-cart-remove { grid-column: 2 / 5; font-size: 13px; }
+.mm-cart-summary { margin-top: 20px; padding: 18px; border-radius: 16px; background: var(--bg-alt); }
+.mm-cart-total { display: flex; justify-content: space-between; margin: 0 0 6px; font-size: 18px; }
+.mm-cart-note { margin: 0 0 16px; font-size: 13px; color: var(--text-muted); }
+.mm-cart-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mm-cart-actions .mm-btn { flex: 1 1 160px; }
+.mm-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 560px) { .mm-cart-line { grid-template-columns: 64px 1fr 72px; } .mm-cart-img img { width: 64px; height: 64px; } .mm-cart-price { grid-column: 2 / 4; text-align: left; } .mm-cart-remove { grid-column: 2 / 4; } }

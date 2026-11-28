@@ -3566,17 +3566,13 @@ body[data-view="home"] .homepage-sheet {
   position: relative;
   z-index: 20;
   background: var(--bg);
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
-  box-shadow: 0 -14px 44px rgba(0, 0, 0, 0.12);
+  /* flat: it used to be a rounded sheet with a shadow meant to slide over the How It Works scene; with no overlap it just looked like a stray box */
   padding-top: 36px;
   padding-bottom: 24px;
 }
 
 @media (max-width: 768px) {
   body[data-view="home"] .homepage-sheet {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     padding-top: 28px;
   }
 }

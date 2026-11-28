@@ -28,3 +28,8 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Shopify theme build output (tools/build-shopify-theme.py)
+shopify-theme/
+shopify-theme-preview/
+shopify-theme.zip

@@ -1,0 +1,41 @@
+<section class="mm-cart" aria-labelledby="mmCartTitle">
+  <h1 id="mmCartTitle">Your cart</h1>
+  {%- if cart.item_count == 0 -%}
+    <p class="mm-cart-empty">Your cart is empty.</p>
+    <a class="mm-btn" href="/#shop">Browse meals</a>
+  {%- else -%}
+    <form action="{{ routes.cart_url }}" method="post" id="mmCartForm" novalidate>
+      <ul class="mm-cart-list">
+        {%- for item in cart.items -%}
+          <li class="mm-cart-line">
+            <a class="mm-cart-img" href="/#p-{{ item.product.handle }}">
+              {%- if item.image -%}<img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.image.alt | escape }}" width="80" height="80" loading="lazy">{%- endif -%}
+            </a>
+            <div class="mm-cart-info">
+              <a class="mm-cart-title" href="/#p-{{ item.product.handle }}">{{ item.product.title | escape }}</a>
+              {%- unless item.product.has_only_default_variant -%}<p class="mm-cart-variant">{{ item.variant.title | escape }}</p>{%- endunless -%}
+              {%- for allocation in item.line_level_discount_allocations -%}<p class="mm-cart-disc">{{ allocation.discount_application.title | escape }}</p>{%- endfor -%}
+            </div>
+            <div class="mm-cart-qty">
+              <label class="mm-visually-hidden" for="mmQty{{ item.index }}">Quantity for {{ item.product.title | escape }}</label>
+              <input id="mmQty{{ item.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" max="99" inputmode="numeric">
+            </div>
+            <div class="mm-cart-price">{{ item.final_line_price | money }}</div>
+            <a class="mm-cart-remove" href="{{ item.url_to_remove }}" aria-label="Remove {{ item.product.title | escape }}">Remove</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="mm-cart-summary">
+        {%- for discount in cart.cart_level_discount_applications -%}
+          <p class="mm-cart-disc">{{ discount.title | escape }}: −{{ discount.total_allocated_amount | money }}</p>
+        {%- endfor -%}
+        <p class="mm-cart-total"><span>Subtotal</span><strong>{{ cart.total_price | money }}</strong></p>
+        <p class="mm-cart-note">Delivery is worked out at checkout. Free delivery on orders above ₹499.</p>
+        <div class="mm-cart-actions">
+          <button type="submit" name="update" class="mm-btn mm-btn-light">Update cart</button>
+          <button type="submit" name="checkout" class="mm-btn">Check out</button>
+        </div>
+      </div>
+    </form>
+  {%- endif -%}
+</section>

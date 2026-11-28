@@ -1528,24 +1528,28 @@
 
     const CATEGORIES = ['Rice', 'Meals', 'Breakfast', 'Dals', 'Soups', 'Desserts', 'Combos', 'All'];
 
+    // Customer reviews: the five testimonials published on the home page of magicmeals.shop (copied word for word on 2026-11-28).
+    // They carry a first name and initial and nothing else: no star rating and no location are shown, because the live site shows none.
     const REVIEWS = [
       {
-        name: 'Pooja Singhal',
-        loc: 'Student, London UK',
-        rating: 5,
-        text: 'Moving to the UK for my master’s was scary especially missing mom’s food. Magic Meals Dal Khichdi is literally a lifesaver. Tastes 100% authentic like mom’s cooking!'
+        name: 'Atul B',
+        text: 'As a student living away from home, Magic Meals has honestly been a lifesaver. The food feels comforting, tastes familiar, and takes barely 5 minutes to prepare.'
       },
       {
-        name: 'Karan Mehra',
-        loc: 'Frequent Trekker, Himachal',
-        rating: 5,
-        text: 'Carried 12 packets on our Kedarkantha trek. While others ate bland packaged bars, we had hot Pav Bhaji and Biryani at 12,000 ft in sub-zero weather. Super lightweight to carry.'
+        name: 'Bhavini V',
+        text: 'I carried Magic Meals on my trip and was genuinely surprised by how good the food tasted. Lightweight, convenient, and actually satisfying.'
       },
       {
-        name: 'Nitin & Sonal Shah',
-        loc: 'Europe Tour, Mumbai',
-        rating: 5,
-        text: 'Finding pure Jain food during international travel is extremely tough. We packed an entire suitcase of Magic Meals Jain Dal Khichdi and Paneer Butter Masala. Absolutely stellar taste.'
+        name: 'Mehek',
+        text: 'Late office nights are so much easier now. Instead of ordering unhealthy food, I just make a quick Magic Meal and I’m sorted.'
+      },
+      {
+        name: 'Ajay S',
+        text: 'The best part about Magic Meals is that it doesn’t feel like typical ready to eat food. The flavours feel authentic and comforting.'
+      },
+      {
+        name: 'Sumit',
+        text: 'Tried the Gajar Halwa and honestly didn’t expect it to taste this good. Warm, sweet, and perfect for cravings.'
       }
     ];
 
@@ -1940,13 +1944,12 @@
             <div class="reviews-scroll">
               ${REVIEWS.map(r => `
                 <div class="review-card">
-                  <div class="review-stars">★★★★★</div>
                   <blockquote>"${r.text}"</blockquote>
                   <div class="reviewer-meta">
                     <div class="reviewer-avatar">${r.name.charAt(0)}</div>
                     <div>
                       <b>${r.name}</b>
-                      <small>${r.loc}</small>
+                      ${r.loc ? `<small>${r.loc}</small>` : ''}
                     </div>
                   </div>
                 </div>

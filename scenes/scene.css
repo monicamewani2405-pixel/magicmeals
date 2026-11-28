@@ -13,7 +13,7 @@
     rgb(var(--brand-primary-rgb) / 0.05) 0%,
     var(--bg) 180px,
     var(--bg) calc(100% - 180px),
-    rgb(var(--brand-primary-rgb) / 0.04) 100%
+    var(--bg) 100%   /* ends white so the scene meets Best Sellers without a visible edge */
   );
 }
 .v-scene-pin {
